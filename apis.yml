@@ -22,7 +22,7 @@ apis:
       - type: Documentation
         url: https://www.dropbox.com/developers/documentation/http/overview
       - type: OpenAPI
-        url: properties/dropbox-openapi-original.yml
+        url: openapidropbox-openapi-original.yml
   - aid: dropbox:dropbox-sign-api
     name: Dropbox Sign API
     description: The Dropbox Sign API offers a reliable, flexible set of eSignature tools that can be used to power digital agreements and turn slow, outdated business processes into a competitive advantage. With a broad range of highly-configurable features, the Dropbox Sign API empowers you to build secure signing experiences and document workflows that delight your users.
@@ -38,7 +38,7 @@ apis:
       - type: Quickstart
         url: https://developers.hellosign.com/api/quickstart/                
       - type: OpenAPI
-        url: properties/dropbox-sign-openapi-original.yml       
+        url: openapidropbox-sign-openapi-original.yml       
 common:
   - type: Portal
     url: https://www.dropbox.com/developers
