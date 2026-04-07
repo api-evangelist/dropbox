@@ -131,11 +131,11 @@ components:
 security:
   - bearerAuth: []
 tags:
-  - name: account
-  - name: auth
-  - name: check
-  - name: contacts
-  - name: file_properties
+  - name: Account
+  - name: Auth
+  - name: Check
+  - name: Contacts
+  - name: File_properties
     description: >
       This namespace contains helpers for property and template metadata
       endpoints.
@@ -182,37 +182,37 @@ tags:
       Finally, properties can be accessed from a number of endpoints that return
       metadata, including `files/get_metadata`, and `files/list_folder`.
       Properties can also be added during upload, using `files/upload`.
-  - name: file_requests
+  - name: File_requests
     description: >
       This namespace contains endpoints and data types for file request
       operations.
-  - name: files
+  - name: Files
     description: >
       This namespace contains endpoints and data types for basic file
       operations.
-  - name: sharing
+  - name: Sharing
     description: >
       This namespace contains endpoints and data types for creating and managing
       shared links and shared folders.
-  - name: team
-  - name: team > devices
-  - name: team > groups
-  - name: team > legal_holds
-  - name: team > linked_apps
-  - name: team > member_space_limits
-  - name: team > members
-  - name: team > namespaces
-  - name: team > reports
-  - name: team > team_folder
-  - name: team_log
-  - name: users
+  - name: Team
+  - name: Team > Devices
+  - name: Team > Groups
+  - name: Team > Legal_holds
+  - name: Team > Linked_apps
+  - name: Team > Member_space_limits
+  - name: Team > Members
+  - name: Team > Namespaces
+  - name: Team > Reports
+  - name: Team > Team_folder
+  - name: Team_log
+  - name: Users
     description: |
       This namespace contains endpoints and data types for user management.
 paths:
   /2/account/set_profile_photo:
     post:
       tags:
-        - account
+        - Account
       summary: Dropbox set_profile_photo
       description: >-
         [set_profile_photo](https://www.dropbox.com/developers/documentation/http/documentation#account-set_profile_photo)
@@ -259,7 +259,7 @@ paths:
   /2/auth/token/from_oauth1:
     post:
       tags:
-        - auth
+        - Auth
       summary: Dropbox token/from_oauth1
       description: >-
         [token/from_oauth1](https://www.dropbox.com/developers/documentation/http/documentation#auth-token-from_oauth1)
@@ -305,7 +305,7 @@ paths:
   /2/auth/token/revoke:
     post:
       tags:
-        - auth
+        - Auth
       summary: Dropbox token/revoke
       description: >-
         [token/revoke](https://www.dropbox.com/developers/documentation/http/documentation#auth-token-revoke)
@@ -323,7 +323,7 @@ paths:
   /2/check/app:
     post:
       tags:
-        - check
+        - Check
       summary: Dropbox app
       description: >-
         [app](https://www.dropbox.com/developers/documentation/http/documentation#check-app)
@@ -371,7 +371,7 @@ paths:
   /2/check/user:
     post:
       tags:
-        - check
+        - Check
       summary: Dropbox user
       description: >-
         [user](https://www.dropbox.com/developers/documentation/http/documentation#check-user)
@@ -419,7 +419,7 @@ paths:
   /2/contacts/delete_manual_contacts:
     post:
       tags:
-        - contacts
+        - Contacts
       summary: Dropbox delete_manual_contacts
       description: >-
         [delete_manual_contacts](https://www.dropbox.com/developers/documentation/http/documentation#contacts-delete_manual_contacts)
@@ -439,7 +439,7 @@ paths:
   /2/contacts/delete_manual_contacts_batch:
     post:
       tags:
-        - contacts
+        - Contacts
       summary: Dropbox delete_manual_contacts_batch
       description: >-
         [delete_manual_contacts_batch](https://www.dropbox.com/developers/documentation/http/documentation#contacts-delete_manual_contacts_batch)
@@ -470,7 +470,7 @@ paths:
   /2/file_properties/properties/add:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox properties/add
       description: >-
         [properties/add](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-add)
@@ -506,7 +506,7 @@ paths:
   /2/file_properties/properties/overwrite:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox properties/overwrite
       description: >-
         [properties/overwrite](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-overwrite)
@@ -546,7 +546,7 @@ paths:
   /2/file_properties/properties/remove:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox properties/remove
       description: >-
         [properties/remove](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-remove)
@@ -581,7 +581,7 @@ paths:
   /2/file_properties/properties/search:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox properties/search
       description: >-
         [properties/search](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search)
@@ -640,7 +640,7 @@ paths:
   /2/file_properties/properties/search/continue:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox properties/search/continue
       description: >-
         [properties/search/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search-continue)
@@ -694,7 +694,7 @@ paths:
   /2/file_properties/properties/update:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox properties/update
       description: >-
         [properties/update](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-update)
@@ -734,7 +734,7 @@ paths:
   /2/file_properties/templates/add_for_team:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/add_for_team
       description: >-
         [templates/add_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-add_for_team)
@@ -789,7 +789,7 @@ paths:
   /2/file_properties/templates/add_for_user:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/add_for_user
       description: >-
         [templates/add_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-add_for_user)
@@ -841,7 +841,7 @@ paths:
   /2/file_properties/templates/get_for_team:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/get_for_team
       description: >-
         [templates/get_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-get_for_team)
@@ -898,7 +898,7 @@ paths:
   /2/file_properties/templates/get_for_user:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/get_for_user
       description: >-
         [templates/get_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-get_for_user)
@@ -954,7 +954,7 @@ paths:
   /2/file_properties/templates/list_for_team:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/list_for_team
       description: >-
         [templates/list_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-list_for_team)
@@ -989,7 +989,7 @@ paths:
   /2/file_properties/templates/list_for_user:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/list_for_user
       description: >-
         [templates/list_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-list_for_user)
@@ -1023,7 +1023,7 @@ paths:
   /2/file_properties/templates/remove_for_team:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/remove_for_team
       description: >-
         [templates/remove_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-remove_for_team)
@@ -1057,7 +1057,7 @@ paths:
   /2/file_properties/templates/remove_for_user:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/remove_for_user
       description: >-
         [templates/remove_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-remove_for_user)
@@ -1089,7 +1089,7 @@ paths:
   /2/file_properties/templates/update_for_team:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/update_for_team
       description: >-
         [templates/update_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-update_for_team)
@@ -1142,7 +1142,7 @@ paths:
   /2/file_properties/templates/update_for_user:
     post:
       tags:
-        - file_properties
+        - File_properties
       summary: Dropbox templates/update_for_user
       description: >-
         [templates/update_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-update_for_user)
@@ -1194,7 +1194,7 @@ paths:
   /2/file_requests/count:
     post:
       tags:
-        - file_requests
+        - File_requests
       summary: Dropbox count
       description: >-
         [count](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-count)
@@ -1226,7 +1226,7 @@ paths:
   /2/file_requests/create:
     post:
       tags:
-        - file_requests
+        - File_requests
       summary: Dropbox create
       description: >-
         [create](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-create)
@@ -1281,7 +1281,7 @@ paths:
   /2/file_requests/delete:
     post:
       tags:
-        - file_requests
+        - File_requests
       summary: Dropbox delete
       description: >-
         [delete](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete)
@@ -1352,7 +1352,7 @@ paths:
   /2/file_requests/delete_all_closed:
     post:
       tags:
-        - file_requests
+        - File_requests
       summary: Dropbox delete_all_closed
       description: >-
         [delete_all_closed](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete_all_closed)
@@ -1410,7 +1410,7 @@ paths:
   /2/file_requests/get:
     post:
       tags:
-        - file_requests
+        - File_requests
       summary: Dropbox get
       description: >-
         [get](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-get)
@@ -1463,7 +1463,7 @@ paths:
   /2/file_requests/list_v2:
     post:
       tags:
-        - file_requests
+        - File_requests
       summary: Dropbox list
       description: >-
         [list](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list)
@@ -1537,7 +1537,7 @@ paths:
   /2/file_requests/list/continue:
     post:
       tags:
-        - file_requests
+        - File_requests
       summary: Dropbox list/continue
       description: >-
         [list/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list-continue)
@@ -1613,7 +1613,7 @@ paths:
   /2/file_requests/update:
     post:
       tags:
-        - file_requests
+        - File_requests
       summary: Dropbox update
       description: >-
         [update](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-update)
@@ -1671,7 +1671,7 @@ paths:
   /2/files/copy_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox copy
       description: >-
         [copy](https://www.dropbox.com/developers/documentation/http/documentation#files-copy)
@@ -1746,7 +1746,7 @@ paths:
   /2/files/copy_batch_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox copy_batch
       description: >-
         [copy_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch)
@@ -1831,7 +1831,7 @@ paths:
   /2/files/copy_batch/check_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox copy_batch/check
       description: >-
         [copy_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch-check)
@@ -1904,7 +1904,7 @@ paths:
   /2/files/copy_reference/get:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox copy_reference/get
       description: >-
         [copy_reference/get](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-get)
@@ -1977,7 +1977,7 @@ paths:
   /2/files/copy_reference/save:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox copy_reference/save
       description: >-
         [copy_reference/save](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-save)
@@ -2048,7 +2048,7 @@ paths:
   /2/files/create_folder_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox create_folder
       description: >-
         [create_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder)
@@ -2107,7 +2107,7 @@ paths:
   /2/files/create_folder_batch:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox create_folder_batch
       description: >-
         [create_folder_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch)
@@ -2175,7 +2175,7 @@ paths:
   /2/files/create_folder_batch/check:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox create_folder_batch/check
       description: >-
         [create_folder_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch-check)
@@ -2236,7 +2236,7 @@ paths:
   /2/files/delete_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox delete
       description: >-
         [delete](https://www.dropbox.com/developers/documentation/http/documentation#files-delete)
@@ -2312,7 +2312,7 @@ paths:
   /2/files/delete_batch:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox delete_batch
       description: >-
         [delete_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch)
@@ -2390,7 +2390,7 @@ paths:
   /2/files/delete_batch/check:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox delete_batch/check
       description: >-
         [delete_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch-check)
@@ -2463,7 +2463,7 @@ paths:
   /2/files/download:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox download
       description: >-
         [download](https://www.dropbox.com/developers/documentation/http/documentation#files-download)
@@ -2527,7 +2527,7 @@ paths:
   /2/files/download_zip:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox download_zip
       description: >-
         [download_zip](https://www.dropbox.com/developers/documentation/http/documentation#files-download_zip)
@@ -2584,7 +2584,7 @@ paths:
   /2/files/export:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox export
       description: >-
         [export](https://www.dropbox.com/developers/documentation/http/documentation#files-export)
@@ -2656,7 +2656,7 @@ paths:
   /2/files/get_file_lock_batch:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox get_file_lock_batch
       description: >-
         [get_file_lock_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_file_lock_batch)
@@ -2735,7 +2735,7 @@ paths:
   /2/files/get_metadata:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox get_metadata
       description: >-
         [get_metadata](https://www.dropbox.com/developers/documentation/http/documentation#files-get_metadata)
@@ -2807,7 +2807,7 @@ paths:
   /2/files/get_preview:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox get_preview
       description: >-
         [get_preview](https://www.dropbox.com/developers/documentation/http/documentation#files-get_preview)
@@ -2880,7 +2880,7 @@ paths:
   /2/files/get_temporary_link:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox get_temporary_link
       description: >-
         [get_temporary_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_link)
@@ -2953,7 +2953,7 @@ paths:
   /2/files/get_temporary_upload_link:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox get_temporary_upload_link
       description: >-
         [get_temporary_upload_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_upload_link)
@@ -3056,7 +3056,7 @@ paths:
   /2/files/get_thumbnail_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox get_thumbnail
       description: >-
         [get_thumbnail](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail)
@@ -3127,7 +3127,7 @@ paths:
   /2/files/get_thumbnail_batch:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox get_thumbnail_batch
       description: >-
         [get_thumbnail_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail_batch)
@@ -3207,7 +3207,7 @@ paths:
   /2/files/list_folder:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox list_folder
       description: >-
         [list_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder)
@@ -3323,7 +3323,7 @@ paths:
   /2/files/list_folder/continue:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox list_folder/continue
       description: >-
         [list_folder/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-continue)
@@ -3413,7 +3413,7 @@ paths:
   /2/files/list_folder/get_latest_cursor:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox list_folder/get_latest_cursor
       description: >-
         [list_folder/get_latest_cursor](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-get_latest_cursor)
@@ -3462,7 +3462,7 @@ paths:
   /2/files/list_folder/longpoll:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox list_folder/longpoll
       description: >-
         [list_folder/longpoll](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-longpoll)
@@ -3513,7 +3513,7 @@ paths:
   /2/files/list_revisions:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox list_revisions
       description: >-
         [list_revisions](https://www.dropbox.com/developers/documentation/http/documentation#files-list_revisions)
@@ -3593,7 +3593,7 @@ paths:
   /2/files/lock_file_batch:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox lock_file_batch
       description: >-
         [lock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-lock_file_batch)
@@ -3675,7 +3675,7 @@ paths:
   /2/files/move_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox move
       description: >-
         [move](https://www.dropbox.com/developers/documentation/http/documentation#files-move)
@@ -3752,7 +3752,7 @@ paths:
   /2/files/move_batch_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox move_batch
       description: >-
         [move_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch)
@@ -3838,7 +3838,7 @@ paths:
   /2/files/move_batch/check_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox move_batch/check
       description: >-
         [move_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch-check)
@@ -3911,7 +3911,7 @@ paths:
   /2/files/permanently_delete:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox permanently_delete
       description: >-
         [permanently_delete](https://www.dropbox.com/developers/documentation/http/documentation#files-permanently_delete)
@@ -3944,7 +3944,7 @@ paths:
   /2/files/restore:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox restore
       description: >-
         [restore](https://www.dropbox.com/developers/documentation/http/documentation#files-restore)
@@ -4013,7 +4013,7 @@ paths:
   /2/files/save_url:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox save_url
       description: >-
         [save_url](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url)
@@ -4089,7 +4089,7 @@ paths:
   /2/files/save_url/check_job_status:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox save_url/check_job_status
       description: >-
         [save_url/check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url-check_job_status)
@@ -4132,7 +4132,7 @@ paths:
   /2/files/search_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox search
       description: >-
         [search](https://www.dropbox.com/developers/documentation/http/documentation#files-search)
@@ -4214,7 +4214,7 @@ paths:
   /2/files/search/continue_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox search/continue
       description: >-
         [search/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-search-continue)
@@ -4296,7 +4296,7 @@ paths:
   /2/files/unlock_file_batch:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox unlock_file_batch
       description: >-
         [unlock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-unlock_file_batch)
@@ -4378,7 +4378,7 @@ paths:
   /2/files/upload:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox upload
       description: >-
         [upload](https://www.dropbox.com/developers/documentation/http/documentation#files-upload)
@@ -4455,7 +4455,7 @@ paths:
   /2/files/upload_session/append_v2:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox upload_session/append
       description: >-
         [upload_session/append](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-append)
@@ -4497,7 +4497,7 @@ paths:
   /2/files/upload_session/finish:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox upload_session/finish
       description: >-
         [upload_session/finish](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish)
@@ -4581,7 +4581,7 @@ paths:
   /2/files/upload_session/finish_batch:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox upload_session/finish_batch
       description: >-
         [upload_session/finish_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch)
@@ -4681,7 +4681,7 @@ paths:
   /2/files/upload_session/finish_batch/check:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox upload_session/finish_batch/check
       description: >-
         [upload_session/finish_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch-check)
@@ -4753,7 +4753,7 @@ paths:
   /2/files/upload_session/start:
     post:
       tags:
-        - files
+        - Files
       summary: Dropbox upload_session/start
       description: >-
         [upload_session/start](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-start)
@@ -4811,7 +4811,7 @@ paths:
   /2/sharing/add_file_member:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox add_file_member
       description: >-
         [add_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_file_member)
@@ -4862,7 +4862,7 @@ paths:
   /2/sharing/add_folder_member:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox add_folder_member
       description: >-
         [add_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_folder_member)
@@ -4903,7 +4903,7 @@ paths:
   /2/sharing/check_job_status:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox check_job_status
       description: >-
         [check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_job_status)
@@ -4946,7 +4946,7 @@ paths:
   /2/sharing/check_remove_member_job_status:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox check_remove_member_job_status
       description: >-
         [check_remove_member_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_remove_member_job_status)
@@ -4989,7 +4989,7 @@ paths:
   /2/sharing/check_share_job_status:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox check_share_job_status
       description: >-
         [check_share_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_share_job_status)
@@ -5066,7 +5066,7 @@ paths:
   /2/sharing/get_file_metadata:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox get_file_metadata
       description: >-
         [get_file_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata)
@@ -5132,7 +5132,7 @@ paths:
   /2/sharing/get_file_metadata/batch:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox get_file_metadata/batch
       description: >-
         [get_file_metadata/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata-batch)
@@ -5202,7 +5202,7 @@ paths:
   /2/sharing/get_folder_metadata:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox get_folder_metadata
       description: >-
         [get_folder_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_folder_metadata)
@@ -5279,7 +5279,7 @@ paths:
   /2/sharing/get_shared_link_file:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox get_shared_link_file
       description: >-
         [get_shared_link_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_file)
@@ -5341,7 +5341,7 @@ paths:
   /2/sharing/get_shared_link_metadata:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox get_shared_link_metadata
       description: >-
         [get_shared_link_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_metadata)
@@ -5408,7 +5408,7 @@ paths:
   /2/sharing/list_file_members:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_file_members
       description: >-
         [list_file_members](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members)
@@ -5490,7 +5490,7 @@ paths:
   /2/sharing/list_file_members/batch:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_file_members/batch
       description: >-
         [list_file_members/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-batch)
@@ -5583,7 +5583,7 @@ paths:
   /2/sharing/list_file_members/continue:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_file_members/continue
       description: >-
         [list_file_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-continue)
@@ -5667,7 +5667,7 @@ paths:
   /2/sharing/list_folder_members/continue:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_folder_members/continue
       description: >-
         [list_folder_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folder_members-continue)
@@ -5748,7 +5748,7 @@ paths:
   /2/sharing/list_folders:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_folders
       description: >-
         [list_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders)
@@ -5826,7 +5826,7 @@ paths:
   /2/sharing/list_folders/continue:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_folders/continue
       description: >-
         [list_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders-continue)
@@ -5908,7 +5908,7 @@ paths:
   /2/sharing/list_mountable_folders:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_mountable_folders
       description: >-
         [list_mountable_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders)
@@ -5987,7 +5987,7 @@ paths:
   /2/sharing/list_mountable_folders/continue:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_mountable_folders/continue
       description: >-
         [list_mountable_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders-continue)
@@ -6070,7 +6070,7 @@ paths:
   /2/sharing/list_received_files:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_received_files
       description: >-
         [list_received_files](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files)
@@ -6139,7 +6139,7 @@ paths:
   /2/sharing/list_received_files/continue:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_received_files/continue
       description: >-
         [list_received_files/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files-continue)
@@ -6209,7 +6209,7 @@ paths:
   /2/sharing/list_shared_links:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox list_shared_links
       description: >-
         [list_shared_links](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_shared_links)
@@ -6286,7 +6286,7 @@ paths:
   /2/sharing/modify_shared_link_settings:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox modify_shared_link_settings
       description: >-
         [modify_shared_link_settings](https://www.dropbox.com/developers/documentation/http/documentation#sharing-modify_shared_link_settings)
@@ -6362,7 +6362,7 @@ paths:
   /2/sharing/mount_folder:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox mount_folder
       description: >-
         [mount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-mount_folder)
@@ -6441,7 +6441,7 @@ paths:
   /2/sharing/relinquish_file_membership:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox relinquish_file_membership
       description: >-
         [relinquish_file_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_file_membership)
@@ -6473,7 +6473,7 @@ paths:
   /2/sharing/relinquish_folder_membership:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox relinquish_folder_membership
       description: >-
         [relinquish_folder_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_folder_membership)
@@ -6522,7 +6522,7 @@ paths:
   /2/sharing/remove_file_member_2:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox remove_file_member_2
       description: >-
         [remove_file_member_2](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_file_member_2)
@@ -6567,7 +6567,7 @@ paths:
   /2/sharing/remove_folder_member:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox remove_folder_member
       description: >-
         [remove_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_folder_member)
@@ -6615,7 +6615,7 @@ paths:
   /2/sharing/revoke_shared_link:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox revoke_shared_link
       description: >-
         [revoke_shared_link](https://www.dropbox.com/developers/documentation/http/documentation#sharing-revoke_shared_link)
@@ -6653,7 +6653,7 @@ paths:
   /2/sharing/set_access_inheritance:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox set_access_inheritance
       description: >-
         [set_access_inheritance](https://www.dropbox.com/developers/documentation/http/documentation#sharing-set_access_inheritance)
@@ -6736,7 +6736,7 @@ paths:
   /2/sharing/share_folder:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox share_folder
       description: >-
         [share_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-share_folder)
@@ -6823,7 +6823,7 @@ paths:
   /2/sharing/transfer_folder:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox transfer_folder
       description: >-
         [transfer_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-transfer_folder)
@@ -6858,7 +6858,7 @@ paths:
   /2/sharing/unmount_folder:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox unmount_folder
       description: >-
         [unmount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unmount_folder)
@@ -6889,7 +6889,7 @@ paths:
   /2/sharing/unshare_file:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox unshare_file
       description: >-
         [unshare_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_file)
@@ -6919,7 +6919,7 @@ paths:
   /2/sharing/unshare_folder:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox unshare_folder
       description: >-
         [unshare_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_folder)
@@ -6966,7 +6966,7 @@ paths:
   /2/sharing/update_file_member:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox update_file_member
       description: >-
         [update_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_file_member)
@@ -7011,7 +7011,7 @@ paths:
   /2/sharing/update_folder_member:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox update_folder_member
       description: >-
         [update_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_member)
@@ -7058,7 +7058,7 @@ paths:
   /2/sharing/update_folder_policy:
     post:
       tags:
-        - sharing
+        - Sharing
       summary: Dropbox update_folder_policy
       description: >-
         [update_folder_policy](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_policy)
@@ -7139,7 +7139,7 @@ paths:
   /2/team/devices/list_member_devices:
     post:
       tags:
-        - team > devices
+        - Team > Devices
       summary: Dropbox devices/list_member_devices
       description: >-
         [devices/list_member_devices](https://www.dropbox.com/developers/documentation/http/teams#team-devices-list_member_devices)
@@ -7171,7 +7171,7 @@ paths:
   /2/team/devices/list_members_devices:
     post:
       tags:
-        - team > devices
+        - Team > Devices
       summary: Dropbox devices/list_members_devices
       description: >-
         [devices/list_members_devices](https://www.dropbox.com/developers/documentation/http/teams#team-devices-list_members_devices)
@@ -7203,7 +7203,7 @@ paths:
   /2/team/devices/revoke_device_session:
     post:
       tags:
-        - team > devices
+        - Team > Devices
       summary: Dropbox devices/revoke_device_session
       description: >-
         [devices/revoke_device_session](https://www.dropbox.com/developers/documentation/http/teams#team-devices-revoke_device_session)
@@ -7236,7 +7236,7 @@ paths:
   /2/team/devices/revoke_device_session_batch:
     post:
       tags:
-        - team > devices
+        - Team > Devices
       summary: Dropbox devices/revoke_device_session_batch
       description: >-
         [devices/revoke_device_session_batch](https://www.dropbox.com/developers/documentation/http/teams#team-devices-revoke_device_session_batch)
@@ -7270,7 +7270,7 @@ paths:
   /2/team/groups/create:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/create
       description: >-
         [groups/create](https://www.dropbox.com/developers/documentation/http/teams#team-groups-create)
@@ -7350,7 +7350,7 @@ paths:
   /2/team/groups/delete:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/delete
       description: >-
         [groups/delete](https://www.dropbox.com/developers/documentation/http/teams#team-groups-delete)
@@ -7401,7 +7401,7 @@ paths:
   /2/team/groups/get_info:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/get_info
       description: >-
         [groups/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-groups-get_info)
@@ -7483,7 +7483,7 @@ paths:
   /2/team/groups/job_status/get:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/job_status/get
       description: >-
         [groups/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-groups-job_status-get)
@@ -7531,7 +7531,7 @@ paths:
   /2/team/groups/list:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/list
       description: >-
         [groups/list](https://www.dropbox.com/developers/documentation/http/teams#team-groups-list)
@@ -7583,7 +7583,7 @@ paths:
   /2/team/groups/list/continue:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/list/continue
       description: >-
         [groups/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-groups-list-continue)
@@ -7638,7 +7638,7 @@ paths:
   /2/team/groups/members/add:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/members/add
       description: >-
         [groups/members/add](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-add)
@@ -7727,7 +7727,7 @@ paths:
   /2/team/groups/members/list:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/members/list
       description: >-
         [groups/members/list](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-list)
@@ -7776,7 +7776,7 @@ paths:
   /2/team/groups/members/list/continue:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/members/list/continue
       description: >-
         [groups/members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-list-continue)
@@ -7826,7 +7826,7 @@ paths:
   /2/team/groups/members/remove:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/members/remove
       description: >-
         [groups/members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-remove)
@@ -7918,7 +7918,7 @@ paths:
   /2/team/groups/members/set_access_type:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/members/set_access_type
       description: >-
         [groups/members/set_access_type](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-set_access_type)
@@ -8000,7 +8000,7 @@ paths:
   /2/team/groups/update:
     post:
       tags:
-        - team > groups
+        - Team > Groups
       summary: Dropbox groups/update
       description: >-
         [groups/update](https://www.dropbox.com/developers/documentation/http/teams#team-groups-update)
@@ -8083,7 +8083,7 @@ paths:
   /2/team/legal_holds/create_policy:
     post:
       tags:
-        - team > legal_holds
+        - Team > Legal_holds
       summary: Dropbox legal_holds/create_policy
       description: >-
         [legal_holds/create_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-create_policy)
@@ -8143,7 +8143,7 @@ paths:
   /2/team/legal_holds/get_policy:
     post:
       tags:
-        - team > legal_holds
+        - Team > Legal_holds
       summary: Dropbox legal_holds/get_policy
       description: >-
         [legal_holds/get_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-get_policy)
@@ -8199,7 +8199,7 @@ paths:
   /2/team/legal_holds/list_held_revisions:
     post:
       tags:
-        - team > legal_holds
+        - Team > Legal_holds
       summary: Dropbox legal_holds/list_held_revisions
       description: >-
         [legal_holds/list_held_revisions](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_held_revisions)
@@ -8258,7 +8258,7 @@ paths:
   /2/team/legal_holds/list_held_revisions_continue:
     post:
       tags:
-        - team > legal_holds
+        - Team > Legal_holds
       summary: Dropbox legal_holds/list_held_revisions_continue
       description: >-
         [legal_holds/list_held_revisions_continue](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_held_revisions_continue)
@@ -8317,7 +8317,7 @@ paths:
   /2/team/legal_holds/list_policies:
     post:
       tags:
-        - team > legal_holds
+        - Team > Legal_holds
       summary: Dropbox legal_holds/list_policies
       description: >-
         [legal_holds/list_policies](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_policies)
@@ -8374,7 +8374,7 @@ paths:
   /2/team/legal_holds/release_policy:
     post:
       tags:
-        - team > legal_holds
+        - Team > Legal_holds
       summary: Dropbox legal_holds/release_policy
       description: >-
         [legal_holds/release_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-release_policy)
@@ -8407,7 +8407,7 @@ paths:
   /2/team/legal_holds/update_policy:
     post:
       tags:
-        - team > legal_holds
+        - Team > Legal_holds
       summary: Dropbox legal_holds/update_policy
       description: >-
         [legal_holds/update_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-update_policy)
@@ -8465,7 +8465,7 @@ paths:
   /2/team/linked_apps/list_member_linked_apps:
     post:
       tags:
-        - team > linked_apps
+        - Team > Linked_apps
       summary: Dropbox linked_apps/list_member_linked_apps
       description: >-
         [linked_apps/list_member_linked_apps](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-list_member_linked_apps)
@@ -8499,7 +8499,7 @@ paths:
   /2/team/linked_apps/list_members_linked_apps:
     post:
       tags:
-        - team > linked_apps
+        - Team > Linked_apps
       summary: Dropbox linked_apps/list_members_linked_apps
       description: >-
         [linked_apps/list_members_linked_apps](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-list_members_linked_apps)
@@ -8531,7 +8531,7 @@ paths:
   /2/team/linked_apps/revoke_linked_app:
     post:
       tags:
-        - team > linked_apps
+        - Team > Linked_apps
       summary: Dropbox linked_apps/revoke_linked_app
       description: >-
         [linked_apps/revoke_linked_app](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-revoke_linked_app)
@@ -8561,7 +8561,7 @@ paths:
   /2/team/linked_apps/revoke_linked_app_batch:
     post:
       tags:
-        - team > linked_apps
+        - Team > Linked_apps
       summary: Dropbox linked_apps/revoke_linked_app_batch
       description: >-
         [linked_apps/revoke_linked_app_batch](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-revoke_linked_app_batch)
@@ -8591,7 +8591,7 @@ paths:
   /2/team/member_space_limits/excluded_users/add:
     post:
       tags:
-        - team > member_space_limits
+        - Team > Member_space_limits
       summary: Dropbox member_space_limits/excluded_users/add
       description: >-
         [member_space_limits/excluded_users/add](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-add)
@@ -8638,7 +8638,7 @@ paths:
   /2/team/member_space_limits/excluded_users/list:
     post:
       tags:
-        - team > member_space_limits
+        - Team > Member_space_limits
       summary: Dropbox member_space_limits/excluded_users/list
       description: >-
         [member_space_limits/excluded_users/list](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-list)
@@ -8683,7 +8683,7 @@ paths:
   /2/team/member_space_limits/excluded_users/list/continue:
     post:
       tags:
-        - team > member_space_limits
+        - Team > Member_space_limits
       summary: Dropbox member_space_limits/excluded_users/list/continue
       description: >-
         [member_space_limits/excluded_users/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-list-continue)
@@ -8730,7 +8730,7 @@ paths:
   /2/team/member_space_limits/excluded_users/remove:
     post:
       tags:
-        - team > member_space_limits
+        - Team > Member_space_limits
       summary: Dropbox member_space_limits/excluded_users/remove
       description: >-
         [member_space_limits/excluded_users/remove](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-remove)
@@ -8777,7 +8777,7 @@ paths:
   /2/team/member_space_limits/get_custom_quota:
     post:
       tags:
-        - team > member_space_limits
+        - Team > Member_space_limits
       summary: Dropbox member_space_limits/get_custom_quota
       description: >-
         [member_space_limits/get_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-get_custom_quota)
@@ -8824,7 +8824,7 @@ paths:
   /2/team/member_space_limits/remove_custom_quota:
     post:
       tags:
-        - team > member_space_limits
+        - Team > Member_space_limits
       summary: Dropbox member_space_limits/remove_custom_quota
       description: >-
         [member_space_limits/remove_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-remove_custom_quota)
@@ -8871,7 +8871,7 @@ paths:
   /2/team/member_space_limits/set_custom_quota:
     post:
       tags:
-        - team > member_space_limits
+        - Team > Member_space_limits
       summary: Dropbox member_space_limits/set_custom_quota
       description: >-
         [member_space_limits/set_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-set_custom_quota)
@@ -8919,7 +8919,7 @@ paths:
   /2/team/members/add:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/add
       description: >-
         [members/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-add)
@@ -9013,7 +9013,7 @@ paths:
   /2/team/members/add/job_status/get:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/add/job_status/get
       description: >-
         [members/add/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-add-job_status-get)
@@ -9090,7 +9090,7 @@ paths:
   /2/team/members/delete_profile_photo:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/delete_profile_photo
       description: >-
         [members/delete_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-delete_profile_photo)
@@ -9165,7 +9165,7 @@ paths:
   /2/team/members/get_info:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/get_info
       description: >-
         [members/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-members-get_info)
@@ -9245,7 +9245,7 @@ paths:
   /2/team/members/list:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/list
       description: >-
         [members/list](https://www.dropbox.com/developers/documentation/http/teams#team-members-list)
@@ -9321,7 +9321,7 @@ paths:
   /2/team/members/list/continue:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/list/continue
       description: >-
         [members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-members-list-continue)
@@ -9400,7 +9400,7 @@ paths:
   /2/team/members/move_former_member_files:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/move_former_member_files
       description: >-
         [members/move_former_member_files](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files)
@@ -9452,7 +9452,7 @@ paths:
   /2/team/members/move_former_member_files/job_status/check:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/move_former_member_files/job_status/check
       description: >-
         [members/move_former_member_files/job_status/check](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files-job_status-check)
@@ -9498,7 +9498,7 @@ paths:
   /2/team/members/recover:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/recover
       description: >-
         [members/recover](https://www.dropbox.com/developers/documentation/http/teams#team-members-recover)
@@ -9535,7 +9535,7 @@ paths:
   /2/team/members/remove:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/remove
       description: >-
         [members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove)
@@ -9601,7 +9601,7 @@ paths:
   /2/team/members/remove/job_status/get:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/remove/job_status/get
       description: >-
         [members/remove/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove-job_status-get)
@@ -9647,7 +9647,7 @@ paths:
   /2/team/members/secondary_emails/add:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/secondary_emails/add
       description: >-
         [members/secondary_emails/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-add)
@@ -9715,7 +9715,7 @@ paths:
   /2/team/members/secondary_emails/delete:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/secondary_emails/delete
       description: >-
         [members/secondary_emails/delete](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-delete)
@@ -9776,7 +9776,7 @@ paths:
   /2/team/members/secondary_emails/resend_verification_emails:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/secondary_emails/resend_verification_emails
       description: >-
         [members/secondary_emails/resend_verification_emails](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-resend_verification_emails)
@@ -9832,7 +9832,7 @@ paths:
   /2/team/members/send_welcome_email:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/send_welcome_email
       description: >-
         [members/send_welcome_email](https://www.dropbox.com/developers/documentation/http/teams#team-members-send_welcome_email)
@@ -9871,7 +9871,7 @@ paths:
   /2/team/members/set_admin_permissions:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/set_admin_permissions
       description: >-
         [members/set_admin_permissions](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_admin_permissions)
@@ -9920,7 +9920,7 @@ paths:
   /2/team/members/set_profile:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/set_profile
       description: >-
         [members/set_profile](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile)
@@ -9996,7 +9996,7 @@ paths:
   /2/team/members/set_profile_photo:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/set_profile_photo
       description: >-
         [members/set_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile_photo)
@@ -10072,7 +10072,7 @@ paths:
   /2/team/members/suspend:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/suspend
       description: >-
         [members/suspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-suspend)
@@ -10109,7 +10109,7 @@ paths:
   /2/team/members/unsuspend:
     post:
       tags:
-        - team > members
+        - Team > Members
       summary: Dropbox members/unsuspend
       description: >-
         [members/unsuspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-unsuspend)
@@ -10146,7 +10146,7 @@ paths:
   /2/team/namespaces/list:
     post:
       tags:
-        - team > namespaces
+        - Team > Namespaces
       summary: Dropbox namespaces/list
       description: >-
         [namespaces/list](https://www.dropbox.com/developers/documentation/http/teams#team-namespaces-list)
@@ -10205,7 +10205,7 @@ paths:
   /2/team/namespaces/list/continue:
     post:
       tags:
-        - team > namespaces
+        - Team > Namespaces
       summary: Dropbox namespaces/list/continue
       description: >-
         [namespaces/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-namespaces-list-continue)
@@ -10263,7 +10263,7 @@ paths:
   /2/team/reports/get_activity:
     post:
       tags:
-        - team > reports
+        - Team > Reports
       summary: Dropbox reports/get_activity
       description: >-
         [reports/get_activity](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_activity)
@@ -10293,7 +10293,7 @@ paths:
   /2/team/reports/get_devices:
     post:
       tags:
-        - team > reports
+        - Team > Reports
       summary: Dropbox reports/get_devices
       description: >-
         [reports/get_devices](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_devices)
@@ -10323,7 +10323,7 @@ paths:
   /2/team/reports/get_membership:
     post:
       tags:
-        - team > reports
+        - Team > Reports
       summary: Dropbox reports/get_membership
       description: >-
         [reports/get_membership](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_membership)
@@ -10353,7 +10353,7 @@ paths:
   /2/team/reports/get_storage:
     post:
       tags:
-        - team > reports
+        - Team > Reports
       summary: Dropbox reports/get_storage
       description: >-
         [reports/get_storage](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_storage)
@@ -10383,7 +10383,7 @@ paths:
   /2/team/team_folder/activate:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/activate
       description: >-
         [team_folder/activate](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-activate)
@@ -10438,7 +10438,7 @@ paths:
   /2/team/team_folder/archive:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/archive
       description: >-
         [team_folder/archive](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-archive)
@@ -10496,7 +10496,7 @@ paths:
   /2/team/team_folder/archive/check:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/archive/check
       description: >-
         [team_folder/archive/check](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-archive-check)
@@ -10552,7 +10552,7 @@ paths:
   /2/team/team_folder/create:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/create
       description: >-
         [team_folder/create](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-create)
@@ -10609,7 +10609,7 @@ paths:
   /2/team/team_folder/get_info:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/get_info
       description: >-
         [team_folder/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-get_info)
@@ -10642,7 +10642,7 @@ paths:
   /2/team/team_folder/list:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/list
       description: >-
         [team_folder/list](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-list)
@@ -10700,7 +10700,7 @@ paths:
   /2/team/team_folder/list/continue:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/list/continue
       description: >-
         [team_folder/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-list-continue)
@@ -10761,7 +10761,7 @@ paths:
   /2/team/team_folder/permanently_delete:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/permanently_delete
       description: >-
         [team_folder/permanently_delete](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-permanently_delete)
@@ -10793,7 +10793,7 @@ paths:
   /2/team/team_folder/rename:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/rename
       description: >-
         [team_folder/rename](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-rename)
@@ -10850,7 +10850,7 @@ paths:
   /2/team/team_folder/update_sync_settings:
     post:
       tags:
-        - team > team_folder
+        - Team > Team_folder
       summary: Dropbox team_folder/update_sync_settings
       description: >-
         [team_folder/update_sync_settings](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-update_sync_settings)
@@ -10907,7 +10907,7 @@ paths:
   /2/team/features/get_values:
     post:
       tags:
-        - team
+        - Team
       summary: Dropbox features/get_values
       description: >-
         [features/get_values](https://www.dropbox.com/developers/documentation/http/teams#team-features-get_values)
@@ -10964,7 +10964,7 @@ paths:
   /2/team/get_info:
     post:
       tags:
-        - team
+        - Team
       summary: Dropbox get_info
       description: >-
         [get_info](https://www.dropbox.com/developers/documentation/http/teams#team-get_info)
@@ -11012,7 +11012,7 @@ paths:
   /2/team/token/get_authenticated_admin:
     post:
       tags:
-        - team
+        - Team
       summary: Dropbox token/get_authenticated_admin
       description: >-
         [token/get_authenticated_admin](https://www.dropbox.com/developers/documentation/http/teams#team-token-get_authenticated_admin)
@@ -11070,7 +11070,7 @@ paths:
   /2/team_log/get_events:
     post:
       tags:
-        - team_log
+        - Team_log
       summary: Dropbox get_events
       description: >-
         [get_events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events)
@@ -11203,7 +11203,7 @@ paths:
   /2/team_log/get_events/continue:
     post:
       tags:
-        - team_log
+        - Team_log
       summary: Dropbox get_events/continue
       description: >-
         [get_events/continue](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events-continue)
@@ -11327,7 +11327,7 @@ paths:
   /2/users/features/get_values:
     post:
       tags:
-        - users
+        - Users
       summary: Dropbox features/get_values
       description: >-
         [features/get_values](https://www.dropbox.com/developers/documentation/http/documentation#users-features-get_values)
@@ -11377,7 +11377,7 @@ paths:
   /2/users/get_account:
     post:
       tags:
-        - users
+        - Users
       summary: Dropbox get_account
       description: >-
         [get_account](https://www.dropbox.com/developers/documentation/http/documentation#users-get_account)
@@ -11434,7 +11434,7 @@ paths:
   /2/users/get_account_batch:
     post:
       tags:
-        - users
+        - Users
       summary: Dropbox get_account_batch
       description: >-
         [get_account_batch](https://www.dropbox.com/developers/documentation/http/documentation#users-get_account_batch)
@@ -11491,7 +11491,7 @@ paths:
   /2/users/get_current_account:
     post:
       tags:
-        - users
+        - Users
       summary: Dropbox get_current_account
       description: >-
         [get_current_account](https://www.dropbox.com/developers/documentation/http/documentation#users-get_current_account)
@@ -11554,7 +11554,7 @@ paths:
   /2/users/get_space_usage:
     post:
       tags:
-        - users
+        - Users
       summary: Dropbox get_space_usage
       description: >-
         [get_space_usage](https://www.dropbox.com/developers/documentation/http/documentation#users-get_space_usage)

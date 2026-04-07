@@ -11177,26 +11177,24 @@ security:
 tags:
   - name: Account
     description: '_md__OpenApi::TAG::ACCOUNT::DESCRIPTION'
-  - name: 'Signature Request'
-    description: '_md__OpenApi::TAG::SIGNATURE_REQUEST::DESCRIPTION'
-  - name: Template
-    description: '_md__OpenApi::TAG::TEMPLATE::DESCRIPTION'
-  - name: 'Bulk Send Job'
-    description: '_md__OpenApi::TAG::BULK_SEND_JOB::DESCRIPTION'
-  - name: Report
-    description: '_md__OpenApi::TAG::REPORT::DESCRIPTION'
-  - name: Team
-    description: '_md__OpenApi::TAG::TEAM::DESCRIPTION'
-  - name: 'Unclaimed Draft'
-    description: '_md__OpenApi::TAG::UNCLAIMED_DRAFT::DESCRIPTION'
-  - name: Embedded
-    description: '_md__OpenApi::TAG::EMBEDDED::DESCRIPTION'
   - name: 'Api App'
     description: '_md__OpenApi::TAG::API_APP::DESCRIPTION'
+  - name: 'Bulk Send Job'
+    description: '_md__OpenApi::TAG::BULK_SEND_JOB::DESCRIPTION'
+  - name: Embedded
+    description: '_md__OpenApi::TAG::EMBEDDED::DESCRIPTION'
   - name: OAuth
     description: '_md__OpenApi::TAG::OAUTH::DESCRIPTION'
-  - name: 'Callbacks and Events'
-    description: '_md__OpenApi::TAG::CALLBACKS_AND_EVENTS::DESCRIPTION'
+  - name: Report
+    description: '_md__OpenApi::TAG::REPORT::DESCRIPTION'
+  - name: 'Signature Request'
+    description: '_md__OpenApi::TAG::SIGNATURE_REQUEST::DESCRIPTION'
+  - name: Team
+    description: '_md__OpenApi::TAG::TEAM::DESCRIPTION'
+  - name: Template
+    description: '_md__OpenApi::TAG::TEMPLATE::DESCRIPTION'
+  - name: 'Unclaimed Draft'
+    description: '_md__OpenApi::TAG::UNCLAIMED_DRAFT::DESCRIPTION'
 externalDocs:
   description: 'Legacy API Reference'
   url: 'https://app.hellosign.com/api/reference'
