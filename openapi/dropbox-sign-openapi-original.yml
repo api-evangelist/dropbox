@@ -10,14 +10,13 @@ info:
     url: 'https://opensource.org/licenses/MIT'
   version: 3.0.0
 servers:
-  -
-    url: 'https://api.hellosign.com/v3'
+  - url: 'https://api.hellosign.com/v3'
 paths:
   /account/create:
     post:
       tags:
         - Account
-      summary: '_t__AccountCreate::SUMMARY'
+      summary: 'Dropbox _t__AccountCreate::SUMMARY'
       description: '_t__AccountCreate::DESCRIPTION'
       operationId: accountCreate
       requestBody:
@@ -68,49 +67,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - account_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/AccountCreate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/AccountCreate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/AccountCreate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/AccountCreate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/AccountCreate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/AccountCreate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/AccountCreate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/AccountCreate.sh
@@ -122,19 +111,17 @@ paths:
     get:
       tags:
         - Account
-      summary: '_t__AccountGet::SUMMARY'
+      summary: 'Dropbox _t__AccountGet::SUMMARY'
       description: '_t__AccountGet::DESCRIPTION'
       operationId: accountGet
       parameters:
-        -
-          name: account_id
+        - name: account_id
           in: query
           description: '_t__AccountGet::ACCOUNT_ID'
           required: false
           schema:
             type: string
-        -
-          name: email_address
+        - name: email_address
           in: query
           description: '_t__AccountGet::EMAIL_ADDRESS'
           required: false
@@ -175,50 +162,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - account_access
             - basic_account_info
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/AccountGet.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/AccountGet.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/AccountGet.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/AccountGet.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/AccountGet.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/AccountGet.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/AccountGet.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/AccountGet.sh
@@ -229,7 +206,7 @@ paths:
     put:
       tags:
         - Account
-      summary: '_t__AccountUpdate::SUMMARY'
+      summary: 'Dropbox _t__AccountUpdate::SUMMARY'
       description: '_t__AccountUpdate::DESCRIPTION'
       operationId: accountUpdate
       requestBody:
@@ -278,49 +255,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - account_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/AccountUpdate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/AccountUpdate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/AccountUpdate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/AccountUpdate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/AccountUpdate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/AccountUpdate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/AccountUpdate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/AccountUpdate.sh
@@ -332,7 +299,7 @@ paths:
     post:
       tags:
         - Account
-      summary: '_t__AccountVerify::SUMMARY'
+      summary: 'Dropbox _t__AccountVerify::SUMMARY'
       description: '_t__AccountVerify::DESCRIPTION'
       operationId: accountVerify
       requestBody:
@@ -381,49 +348,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - account_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/AccountVerify.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/AccountVerify.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/AccountVerify.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/AccountVerify.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/AccountVerify.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/AccountVerify.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/AccountVerify.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/AccountVerify.sh
@@ -435,7 +392,7 @@ paths:
     post:
       tags:
         - 'Api App'
-      summary: '_t__ApiAppCreate::SUMMARY'
+      summary: 'Dropbox _t__ApiAppCreate::SUMMARY'
       description: '_t__ApiAppCreate::DESCRIPTION'
       operationId: apiAppCreate
       requestBody:
@@ -487,49 +444,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - api_app_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/ApiAppCreate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/ApiAppCreate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/ApiAppCreate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/ApiAppCreate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/ApiAppCreate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/ApiAppCreate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/ApiAppCreate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/ApiAppCreate.sh
@@ -541,12 +488,11 @@ paths:
     get:
       tags:
         - 'Api App'
-      summary: '_t__ApiAppGet::SUMMARY'
+      summary: 'Dropbox _t__ApiAppGet::SUMMARY'
       description: '_t__ApiAppGet::DESCRIPTION'
       operationId: apiAppGet
       parameters:
-        -
-          name: client_id
+        - name: client_id
           in: path
           description: '_t__ApiAppGet::CLIENT_ID'
           required: true
@@ -592,49 +538,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - api_app_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/ApiAppGet.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/ApiAppGet.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/ApiAppGet.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/ApiAppGet.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/ApiAppGet.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/ApiAppGet.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/ApiAppGet.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/ApiAppGet.sh
@@ -645,12 +581,11 @@ paths:
     put:
       tags:
         - 'Api App'
-      summary: '_t__ApiAppUpdate::SUMMARY'
+      summary: 'Dropbox _t__ApiAppUpdate::SUMMARY'
       description: '_t__ApiAppUpdate::DESCRIPTION'
       operationId: apiAppUpdate
       parameters:
-        -
-          name: client_id
+        - name: client_id
           in: path
           description: '_t__ApiAppUpdate::CLIENT_ID'
           required: true
@@ -708,49 +643,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - api_app_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/ApiAppUpdate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/ApiAppUpdate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/ApiAppUpdate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/ApiAppUpdate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/ApiAppUpdate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/ApiAppUpdate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/ApiAppUpdate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/ApiAppUpdate.sh
@@ -761,12 +686,11 @@ paths:
     delete:
       tags:
         - 'Api App'
-      summary: '_t__ApiAppDelete::SUMMARY'
+      summary: 'Dropbox _t__ApiAppDelete::SUMMARY'
       description: '_t__ApiAppDelete::DESCRIPTION'
       operationId: apiAppDelete
       parameters:
-        -
-          name: client_id
+        - name: client_id
           in: path
           description: '_t__ApiAppDelete::CLIENT_ID'
           required: true
@@ -803,49 +727,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - api_app_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/ApiAppDelete.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/ApiAppDelete.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/ApiAppDelete.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/ApiAppDelete.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/ApiAppDelete.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/ApiAppDelete.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/ApiAppDelete.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/ApiAppDelete.sh
@@ -857,19 +771,17 @@ paths:
     get:
       tags:
         - 'Api App'
-      summary: '_t__ApiAppList::SUMMARY'
+      summary: 'Dropbox _t__ApiAppList::SUMMARY'
       description: '_t__ApiAppList::DESCRIPTION'
       operationId: apiAppList
       parameters:
-        -
-          name: page
+        - name: page
           in: query
           description: '_t__ApiAppList::PAGE'
           schema:
             type: integer
             default: 1
-        -
-          name: page_size
+        - name: page_size
           in: query
           description: '_t__ApiAppList::PAGE_SIZE'
           schema:
@@ -910,49 +822,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - api_app_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/ApiAppList.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/ApiAppList.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/ApiAppList.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/ApiAppList.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/ApiAppList.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/ApiAppList.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/ApiAppList.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/ApiAppList.sh
@@ -964,27 +866,24 @@ paths:
     get:
       tags:
         - 'Bulk Send Job'
-      summary: '_t__BulkSendJobGet::SUMMARY'
+      summary: 'Dropbox _t__BulkSendJobGet::SUMMARY'
       description: '_t__BulkSendJobGet::DESCRIPTION'
       operationId: bulkSendJobGet
       parameters:
-        -
-          name: bulk_send_job_id
+        - name: bulk_send_job_id
           in: path
           description: '_t__BulkSendJobGet::BULK_SEND_JOB_ID'
           required: true
           schema:
             type: string
           example: 6e683bc0369ba3d5b6f43c2c22a8031dbf6bd174
-        -
-          name: page
+        - name: page
           in: query
           description: '_t__BulkSendJobGet::PAGE'
           schema:
             type: integer
             default: 1
-        -
-          name: page_size
+        - name: page_size
           in: query
           description: '_t__BulkSendJobGet::PAGE_SIZE'
           schema:
@@ -1025,50 +924,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/BulkSendJobGet.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/BulkSendJobGet.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/BulkSendJobGet.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/BulkSendJobGet.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/BulkSendJobGet.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/BulkSendJobGet.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/BulkSendJobGet.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/BulkSendJobGet.sh
@@ -1080,19 +969,17 @@ paths:
     get:
       tags:
         - 'Bulk Send Job'
-      summary: '_t__BulkSendJobList::SUMMARY'
+      summary: 'Dropbox _t__BulkSendJobList::SUMMARY'
       description: '_t__BulkSendJobList::DESCRIPTION'
       operationId: bulkSendJobList
       parameters:
-        -
-          name: page
+        - name: page
           in: query
           description: '_t__BulkSendJobList::PAGE'
           schema:
             type: integer
             default: 1
-        -
-          name: page_size
+        - name: page_size
           in: query
           description: '_t__BulkSendJobList::PAGE_SIZE'
           schema:
@@ -1133,50 +1020,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/BulkSendJobList.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/BulkSendJobList.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/BulkSendJobList.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/BulkSendJobList.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/BulkSendJobList.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/BulkSendJobList.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/BulkSendJobList.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/BulkSendJobList.sh
@@ -1188,12 +1065,11 @@ paths:
     post:
       tags:
         - Embedded
-      summary: '_t__EmbeddedEditUrl::SUMMARY'
+      summary: 'Dropbox _t__EmbeddedEditUrl::SUMMARY'
       description: '_t__EmbeddedEditUrl::DESCRIPTION'
       operationId: embeddedEditUrl
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__EmbeddedEditUrl::TEMPLATE_ID'
           required: true
@@ -1246,49 +1122,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/EmbeddedEditUrl.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/EmbeddedEditUrl.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/EmbeddedEditUrl.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/EmbeddedEditUrl.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/EmbeddedEditUrl.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/EmbeddedEditUrl.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/EmbeddedEditUrl.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/EmbeddedEditUrl.sh
@@ -1300,12 +1166,11 @@ paths:
     get:
       tags:
         - Embedded
-      summary: '_t__EmbeddedSignUrl::SUMMARY'
+      summary: 'Dropbox _t__EmbeddedSignUrl::SUMMARY'
       description: '_t__EmbeddedSignUrl::DESCRIPTION'
       operationId: embeddedSignUrl
       parameters:
-        -
-          name: signature_id
+        - name: signature_id
           in: path
           description: '_t__EmbeddedSignUrl::SIGNATURE_ID'
           required: true
@@ -1353,49 +1218,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/EmbeddedSignUrl.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/EmbeddedSignUrl.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/EmbeddedSignUrl.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/EmbeddedSignUrl.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/EmbeddedSignUrl.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/EmbeddedSignUrl.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/EmbeddedSignUrl.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/EmbeddedSignUrl.sh
@@ -1407,7 +1262,7 @@ paths:
     post:
       tags:
         - OAuth
-      summary: '_t__OAuthTokenGenerate::SUMMARY'
+      summary: 'Dropbox _t__OAuthTokenGenerate::SUMMARY'
       description: '_t__OAuthTokenGenerate::DESCRIPTION'
       operationId: oauthTokenGenerate
       requestBody:
@@ -1438,46 +1293,37 @@ paths:
                   $ref: '#/components/examples/OAuthTokenGenerateResponseExample'
       security: []
       servers:
-        -
-          url: 'https://app.hellosign.com'
+        - url: 'https://app.hellosign.com'
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/OauthTokenGenerate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/OauthTokenGenerate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/OauthTokenGenerate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/OauthTokenGenerate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/OauthTokenGenerate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/OauthTokenGenerate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/OauthTokenGenerate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/OauthTokenGenerate.sh
@@ -1490,7 +1336,7 @@ paths:
     post:
       tags:
         - OAuth
-      summary: '_t__OAuthTokenRefresh::SUMMARY'
+      summary: 'Dropbox _t__OAuthTokenRefresh::SUMMARY'
       description: '_t__OAuthTokenRefresh::DESCRIPTION'
       operationId: oauthTokenRefresh
       requestBody:
@@ -1521,46 +1367,37 @@ paths:
                   $ref: '#/components/examples/OAuthTokenRefreshResponseExample'
       security: []
       servers:
-        -
-          url: 'https://app.hellosign.com'
+        - url: 'https://app.hellosign.com'
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/OauthTokenRefresh.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/OauthTokenRefresh.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/OauthTokenRefresh.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/OauthTokenRefresh.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/OauthTokenRefresh.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/OauthTokenRefresh.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/OauthTokenRefresh.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/OauthTokenRefresh.sh
@@ -1573,7 +1410,7 @@ paths:
     post:
       tags:
         - Report
-      summary: '_t__ReportCreate::SUMMARY'
+      summary: 'Dropbox _t__ReportCreate::SUMMARY'
       description: '_t__ReportCreate::DESCRIPTION'
       operationId: reportCreate
       requestBody:
@@ -1620,46 +1457,37 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
+        - api_key: []
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/ReportCreate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/ReportCreate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/ReportCreate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/ReportCreate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/ReportCreate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/ReportCreate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/ReportCreate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/ReportCreate.sh
@@ -1671,7 +1499,7 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestBulkCreateEmbeddedWithTemplate::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SUMMARY'
       description: '_t__SignatureRequestBulkCreateEmbeddedWithTemplate::DESCRIPTION'
       operationId: signatureRequestBulkCreateEmbeddedWithTemplate
       requestBody:
@@ -1727,46 +1555,37 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
+        - api_key: []
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.sh
@@ -1778,7 +1597,7 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestBulkSendWithTemplate::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestBulkSendWithTemplate::SUMMARY'
       description: '_t__SignatureRequestBulkSendWithTemplate::DESCRIPTION'
       operationId: signatureRequestBulkSendWithTemplate
       requestBody:
@@ -1830,50 +1649,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.sh
@@ -1885,12 +1694,11 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestCancel::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestCancel::SUMMARY'
       description: '_t__SignatureRequestCancel::DESCRIPTION'
       operationId: signatureRequestCancel
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestCancel::SIGNATURE_REQUEST_ID'
           required: true
@@ -1908,7 +1716,7 @@ paths:
             X-Ratelimit-Reset:
               $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
-            application/json: {  }
+            application/json: {}
         4XX:
           description: failed_operation
           content:
@@ -1933,50 +1741,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestCancel.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestCancel.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestCancel.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestCancel.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestCancel.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestCancel.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestCancel.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestCancel.sh
@@ -1988,7 +1786,7 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestCreateEmbedded::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestCreateEmbedded::SUMMARY'
       description: '_t__SignatureRequestCreateEmbedded::DESCRIPTION'
       operationId: signatureRequestCreateEmbedded
       requestBody:
@@ -2044,49 +1842,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestCreateEmbedded.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestCreateEmbedded.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestCreateEmbedded.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestCreateEmbedded.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestCreateEmbedded.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestCreateEmbedded.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestCreateEmbedded.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestCreateEmbedded.sh
@@ -2098,7 +1886,7 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestCreateEmbeddedWithTemplate::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestCreateEmbeddedWithTemplate::SUMMARY'
       description: '_t__SignatureRequestCreateEmbeddedWithTemplate::DESCRIPTION'
       operationId: signatureRequestCreateEmbeddedWithTemplate
       requestBody:
@@ -2152,49 +1940,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.sh
@@ -2206,12 +1984,11 @@ paths:
     put:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestEdit::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestEdit::SUMMARY'
       description: '_t__SignatureRequestEdit::DESCRIPTION'
       operationId: signatureRequestEdit
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestEdit::SIGNATURE_REQUEST_ID'
           required: true
@@ -2273,50 +2050,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestEdit.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestEdit.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestEdit.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestEdit.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestEdit.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestEdit.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestEdit.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestEdit.sh
@@ -2330,12 +2097,11 @@ paths:
     put:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestEditEmbedded::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestEditEmbedded::SUMMARY'
       description: '_t__SignatureRequestEditEmbedded::DESCRIPTION'
       operationId: signatureRequestEditEmbedded
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestEditEmbedded::SIGNATURE_REQUEST_ID'
           required: true
@@ -2397,49 +2163,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestEditEmbedded.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestEditEmbedded.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestEditEmbedded.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestEditEmbedded.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestEditEmbedded.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestEditEmbedded.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestEditEmbedded.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestEditEmbedded.sh
@@ -2453,12 +2209,11 @@ paths:
     put:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestEditEmbeddedWithTemplate::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestEditEmbeddedWithTemplate::SUMMARY'
       description: '_t__SignatureRequestEditEmbeddedWithTemplate::DESCRIPTION'
       operationId: signatureRequestEditEmbeddedWithTemplate
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestEditEmbeddedWithTemplate::SIGNATURE_REQUEST_ID'
           required: true
@@ -2518,49 +2273,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestEditEmbeddedWithTemplate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestEditEmbeddedWithTemplate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestEditEmbeddedWithTemplate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestEditEmbeddedWithTemplate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestEditEmbeddedWithTemplate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestEditEmbeddedWithTemplate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestEditEmbeddedWithTemplate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestEditEmbeddedWithTemplate.sh
@@ -2574,12 +2319,11 @@ paths:
     put:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestEditWithTemplate::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestEditWithTemplate::SUMMARY'
       description: '_t__SignatureRequestEditWithTemplate::DESCRIPTION'
       operationId: signatureRequestEditWithTemplate
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestEditWithTemplate::SIGNATURE_REQUEST_ID'
           required: true
@@ -2639,50 +2383,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestEditWithTemplate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestEditWithTemplate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestEditWithTemplate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestEditWithTemplate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestEditWithTemplate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestEditWithTemplate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestEditWithTemplate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestEditWithTemplate.sh
@@ -2696,20 +2430,18 @@ paths:
     get:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestFiles::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestFiles::SUMMARY'
       description: '_t__SignatureRequestFiles::DESCRIPTION'
       operationId: signatureRequestFiles
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestFiles::SIGNATURE_REQUEST_ID'
           required: true
           schema:
             type: string
           example: fa5c8a0b0f492d768749333ad6fcc214c111e967
-        -
-          name: file_type
+        - name: file_type
           in: query
           description: '_t__SignatureRequestFiles::FILE_TYPE'
           schema:
@@ -2763,50 +2495,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestFiles.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestFiles.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestFiles.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestFiles.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestFiles.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestFiles.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestFiles.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestFiles.sh
@@ -2818,12 +2540,11 @@ paths:
     get:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestFilesAsDataUri::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestFilesAsDataUri::SUMMARY'
       description: '_t__SignatureRequestFilesAsDataUri::DESCRIPTION'
       operationId: signatureRequestFilesAsDataUri
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestFiles::SIGNATURE_REQUEST_ID'
           required: true
@@ -2873,50 +2594,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestFilesAsDataUri.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestFilesAsDataUri.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestFilesAsDataUri.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestFilesAsDataUri.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestFilesAsDataUri.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestFilesAsDataUri.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestFilesAsDataUri.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestFilesAsDataUri.sh
@@ -2928,20 +2639,18 @@ paths:
     get:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestFilesAsFileUrl::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestFilesAsFileUrl::SUMMARY'
       description: '_t__SignatureRequestFilesAsFileUrl::DESCRIPTION'
       operationId: signatureRequestFilesAsFileUrl
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestFiles::SIGNATURE_REQUEST_ID'
           required: true
           schema:
             type: string
           example: fa5c8a0b0f492d768749333ad6fcc214c111e967
-        -
-          name: force_download
+        - name: force_download
           in: query
           description: '_t__SignatureRequestFiles::FORCE_DOWNLOAD'
           schema:
@@ -2990,50 +2699,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestFilesAsFileUrl.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestFilesAsFileUrl.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestFilesAsFileUrl.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestFilesAsFileUrl.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestFilesAsFileUrl.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestFilesAsFileUrl.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestFilesAsFileUrl.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestFilesAsFileUrl.sh
@@ -3045,12 +2744,11 @@ paths:
     get:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestGet::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestGet::SUMMARY'
       description: '_t__SignatureRequestGet::DESCRIPTION'
       operationId: signatureRequestGet
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestGet::SIGNATURE_REQUEST_ID'
           required: true
@@ -3096,50 +2794,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestGet.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestGet.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestGet.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestGet.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestGet.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestGet.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestGet.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestGet.sh
@@ -3151,33 +2839,29 @@ paths:
     get:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestList::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestList::SUMMARY'
       description: '_t__SignatureRequestList::DESCRIPTION'
       operationId: signatureRequestList
       parameters:
-        -
-          name: account_id
+        - name: account_id
           in: query
           description: '_t__SignatureRequestList::ACCOUNT_ID'
           schema:
             type: string
-        -
-          name: page
+        - name: page
           in: query
           description: '_t__SignatureRequestList::PAGE'
           schema:
             type: integer
             default: 1
             example: 1
-        -
-          name: page_size
+        - name: page_size
           in: query
           description: '_t__SignatureRequestList::PAGE_SIZE'
           schema:
             type: integer
             default: 20
-        -
-          name: query
+        - name: query
           in: query
           description: '_t__SignatureRequestList::QUERY'
           schema:
@@ -3219,50 +2903,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestList.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestList.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestList.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestList.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestList.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestList.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestList.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestList.sh
@@ -3274,12 +2948,11 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestReleaseHold::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestReleaseHold::SUMMARY'
       description: '_t__SignatureRequestReleaseHold::DESCRIPTION'
       operationId: signatureRequestReleaseHold
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestReleaseHold::SIGNATURE_REQUEST_ID'
           required: true
@@ -3323,49 +2996,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestReleaseHold.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestReleaseHold.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestReleaseHold.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestReleaseHold.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestReleaseHold.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestReleaseHold.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestReleaseHold.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestReleaseHold.sh
@@ -3377,12 +3040,11 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestRemind::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestRemind::SUMMARY'
       description: '_t__SignatureRequestRemind::DESCRIPTION'
       operationId: signatureRequestRemind
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestRemind::SIGNATURE_REQUEST_ID'
           required: true
@@ -3441,50 +3103,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestRemind.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestRemind.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestRemind.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestRemind.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestRemind.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestRemind.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestRemind.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestRemind.sh
@@ -3496,12 +3148,11 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestRemove::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestRemove::SUMMARY'
       description: '_t__SignatureRequestRemove::DESCRIPTION'
       operationId: signatureRequestRemove
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestRemove::SIGNATURE_REQUEST_ID'
           required: true
@@ -3519,7 +3170,7 @@ paths:
             X-Ratelimit-Reset:
               $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
-            application/json: {  }
+            application/json: {}
         4XX:
           description: failed_operation
           content:
@@ -3544,46 +3195,37 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
+        - api_key: []
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestRemove.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestRemove.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestRemove.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestRemove.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestRemove.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestRemove.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestRemove.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestRemove.sh
@@ -3595,7 +3237,7 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestSend::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestSend::SUMMARY'
       description: '_t__SignatureRequestSend::DESCRIPTION'
       operationId: signatureRequestSend
       requestBody:
@@ -3651,50 +3293,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestSend.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestSend.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestSend.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestSend.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestSend.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestSend.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestSend.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestSend.sh
@@ -3706,7 +3338,7 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestSendWithTemplate::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestSendWithTemplate::SUMMARY'
       description: '_t__SignatureRequestSendWithTemplate::DESCRIPTION'
       operationId: signatureRequestSendWithTemplate
       requestBody:
@@ -3758,50 +3390,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestSendWithTemplate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestSendWithTemplate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestSendWithTemplate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestSendWithTemplate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestSendWithTemplate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestSendWithTemplate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestSendWithTemplate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestSendWithTemplate.sh
@@ -3813,12 +3435,11 @@ paths:
     post:
       tags:
         - 'Signature Request'
-      summary: '_t__SignatureRequestUpdate::SUMMARY'
+      summary: 'Dropbox _t__SignatureRequestUpdate::SUMMARY'
       description: '_t__SignatureRequestUpdate::DESCRIPTION'
       operationId: signatureRequestUpdate
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__SignatureRequestUpdate::SIGNATURE_REQUEST_ID'
           required: true
@@ -3871,49 +3492,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/SignatureRequestUpdate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/SignatureRequestUpdate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/SignatureRequestUpdate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/SignatureRequestUpdate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/SignatureRequestUpdate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/SignatureRequestUpdate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/SignatureRequestUpdate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/SignatureRequestUpdate.sh
@@ -3925,12 +3536,11 @@ paths:
     put:
       tags:
         - Team
-      summary: '_t__TeamAddMember::SUMMARY'
+      summary: 'Dropbox _t__TeamAddMember::SUMMARY'
       description: '_t__TeamAddMember::DESCRIPTION'
       operationId: teamAddMember
       parameters:
-        -
-          name: team_id
+        - name: team_id
           in: query
           description: '_t__TeamAddMember::TEAM_ID'
           required: false
@@ -3985,49 +3595,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamAddMember.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamAddMember.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamAddMember.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamAddMember.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamAddMember.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamAddMember.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamAddMember.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamAddMember.sh
@@ -4039,7 +3639,7 @@ paths:
     post:
       tags:
         - Team
-      summary: '_t__TeamCreate::SUMMARY'
+      summary: 'Dropbox _t__TeamCreate::SUMMARY'
       description: '_t__TeamCreate::DESCRIPTION'
       operationId: teamCreate
       requestBody:
@@ -4086,49 +3686,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamCreate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamCreate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamCreate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamCreate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamCreate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamCreate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamCreate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamCreate.sh
@@ -4140,7 +3730,7 @@ paths:
     delete:
       tags:
         - Team
-      summary: '_t__TeamDelete::SUMMARY'
+      summary: 'Dropbox _t__TeamDelete::SUMMARY'
       description: '_t__TeamDelete::DESCRIPTION'
       operationId: teamDelete
       responses:
@@ -4171,49 +3761,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamDelete.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamDelete.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamDelete.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamDelete.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamDelete.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamDelete.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamDelete.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamDelete.sh
@@ -4225,7 +3805,7 @@ paths:
     get:
       tags:
         - Team
-      summary: '_t__TeamGet::SUMMARY'
+      summary: 'Dropbox _t__TeamGet::SUMMARY'
       description: '_t__TeamGet::DESCRIPTION'
       operationId: teamGet
       responses:
@@ -4265,49 +3845,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamGet.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamGet.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamGet.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamGet.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamGet.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamGet.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamGet.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamGet.sh
@@ -4318,7 +3888,7 @@ paths:
     put:
       tags:
         - Team
-      summary: '_t__TeamUpdate::SUMMARY'
+      summary: 'Dropbox _t__TeamUpdate::SUMMARY'
       description: '_t__TeamUpdate::DESCRIPTION'
       operationId: teamUpdate
       requestBody:
@@ -4365,49 +3935,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamUpdate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamUpdate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamUpdate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamUpdate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamUpdate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamUpdate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamUpdate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamUpdate.sh
@@ -4419,12 +3979,11 @@ paths:
     get:
       tags:
         - Team
-      summary: '_t__TeamInfo::SUMMARY'
+      summary: 'Dropbox _t__TeamInfo::SUMMARY'
       description: '_t__TeamInfo::DESCRIPTION'
       operationId: teamInfo
       parameters:
-        -
-          name: team_id
+        - name: team_id
           in: query
           description: '_t__TeamInfo::TEAM_ID'
           required: false
@@ -4470,49 +4029,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamInfo.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamInfo.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamInfo.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamInfo.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamInfo.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamInfo.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamInfo.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamInfo.sh
@@ -4524,12 +4073,11 @@ paths:
     get:
       tags:
         - Team
-      summary: '_t__TeamInvites::SUMMARY'
+      summary: 'Dropbox _t__TeamInvites::SUMMARY'
       description: '_t__TeamInvites::DESCRIPTION'
       operationId: teamInvites
       parameters:
-        -
-          name: email_address
+        - name: email_address
           in: query
           description: '_t__TeamInvites::EMAIL_ADDRESS'
           required: false
@@ -4570,50 +4118,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - account_access
             - basic_account_info
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamInvites.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamInvites.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamInvites.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamInvites.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamInvites.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamInvites.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamInvites.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamInvites.sh
@@ -4625,27 +4163,24 @@ paths:
     get:
       tags:
         - Team
-      summary: '_t__TeamMembers::SUMMARY'
+      summary: 'Dropbox _t__TeamMembers::SUMMARY'
       description: '_t__TeamMembers::DESCRIPTION'
       operationId: teamMembers
       parameters:
-        -
-          name: team_id
+        - name: team_id
           in: path
           description: '_t__TeamMembers::TEAM_ID'
           required: true
           schema:
             type: string
           example: 4fea99bfcf2b26bfccf6cea3e127fb8bb74d8d9c
-        -
-          name: page
+        - name: page
           in: query
           description: '_t__TeamMembers::PAGE'
           schema:
             type: integer
             default: 1
-        -
-          name: page_size
+        - name: page_size
           in: query
           description: '_t__TeamMembers::PAGE_SIZE'
           schema:
@@ -4692,49 +4227,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamMembers.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamMembers.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamMembers.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamMembers.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamMembers.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamMembers.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamMembers.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamMembers.sh
@@ -4746,7 +4271,7 @@ paths:
     post:
       tags:
         - Team
-      summary: '_t__TeamRemoveMember::SUMMARY'
+      summary: 'Dropbox _t__TeamRemoveMember::SUMMARY'
       description: '_t__TeamRemoveMember::DESCRIPTION'
       operationId: teamRemoveMember
       requestBody:
@@ -4797,49 +4322,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamRemoveMember.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamRemoveMember.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamRemoveMember.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamRemoveMember.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamRemoveMember.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamRemoveMember.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamRemoveMember.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamRemoveMember.sh
@@ -4851,27 +4366,24 @@ paths:
     get:
       tags:
         - Team
-      summary: '_t__TeamSubTeams::SUMMARY'
+      summary: 'Dropbox _t__TeamSubTeams::SUMMARY'
       description: '_t__TeamSubTeams::DESCRIPTION'
       operationId: teamSubTeams
       parameters:
-        -
-          name: team_id
+        - name: team_id
           in: path
           description: '_t__TeamSubTeams::TEAM_ID'
           required: true
           schema:
             type: string
           example: 4fea99bfcf2b26bfccf6cea3e127fb8bb74d8d9c
-        -
-          name: page
+        - name: page
           in: query
           description: '_t__TeamSubTeams::PAGE'
           schema:
             type: integer
             default: 1
-        -
-          name: page_size
+        - name: page_size
           in: query
           description: '_t__TeamSubTeams::PAGE_SIZE'
           schema:
@@ -4918,49 +4430,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - team_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TeamSubTeams.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TeamSubTeams.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TeamSubTeams.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TeamSubTeams.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TeamSubTeams.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TeamSubTeams.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TeamSubTeams.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TeamSubTeams.sh
@@ -4972,12 +4474,11 @@ paths:
     post:
       tags:
         - Template
-      summary: '_t__TemplateAddUser::SUMMARY'
+      summary: 'Dropbox _t__TemplateAddUser::SUMMARY'
       description: '_t__TemplateAddUser::DESCRIPTION'
       operationId: templateAddUser
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__TemplateAddUser::TEMPLATE_ID'
           required: true
@@ -5030,49 +4531,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateAddUser.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateAddUser.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateAddUser.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateAddUser.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateAddUser.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateAddUser.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateAddUser.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateAddUser.sh
@@ -5084,7 +4575,7 @@ paths:
     post:
       tags:
         - Template
-      summary: '_t__TemplateCreate::SUMMARY'
+      summary: 'Dropbox _t__TemplateCreate::SUMMARY'
       description: '_t__TemplateCreate::DESCRIPTION'
       operationId: templateCreate
       requestBody:
@@ -5144,49 +4635,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateCreate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateCreate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateCreate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateCreate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateCreate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateCreate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateCreate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateCreate.sh
@@ -5198,7 +4679,7 @@ paths:
     post:
       tags:
         - Template
-      summary: '_t__TemplateCreateEmbeddedDraft::SUMMARY'
+      summary: 'Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY'
       description: '_t__TemplateCreateEmbeddedDraft::DESCRIPTION'
       operationId: templateCreateEmbeddedDraft
       requestBody:
@@ -5258,49 +4739,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.sh
@@ -5312,12 +4783,11 @@ paths:
     post:
       tags:
         - Template
-      summary: '_t__TemplateDelete::SUMMARY'
+      summary: 'Dropbox _t__TemplateDelete::SUMMARY'
       description: '_t__TemplateDelete::DESCRIPTION'
       operationId: templateDelete
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__TemplateDelete::TEMPLATE_ID'
           required: true
@@ -5335,7 +4805,7 @@ paths:
             X-Ratelimit-Reset:
               $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
-            application/json: {  }
+            application/json: {}
         4XX:
           description: failed_operation
           content:
@@ -5358,49 +4828,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateDelete.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateDelete.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateDelete.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateDelete.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateDelete.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateDelete.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateDelete.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateDelete.sh
@@ -5412,20 +4872,18 @@ paths:
     get:
       tags:
         - Template
-      summary: '_t__TemplateFiles::SUMMARY'
+      summary: 'Dropbox _t__TemplateFiles::SUMMARY'
       description: '_t__TemplateFiles::DESCRIPTION'
       operationId: templateFiles
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__TemplateFiles::TEMPLATE_ID'
           required: true
           schema:
             type: string
           example: f57db65d3f933b5316d398057a36176831451a35
-        -
-          name: file_type
+        - name: file_type
           in: query
           description: '_t__TemplateFiles::FILE_TYPE'
           schema:
@@ -5478,49 +4936,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateFiles.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateFiles.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateFiles.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateFiles.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateFiles.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateFiles.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateFiles.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateFiles.sh
@@ -5532,12 +4980,11 @@ paths:
     get:
       tags:
         - Template
-      summary: '_t__TemplateFilesAsDataUri::SUMMARY'
+      summary: 'Dropbox _t__TemplateFilesAsDataUri::SUMMARY'
       description: '_t__TemplateFilesAsDataUri::DESCRIPTION'
       operationId: templateFilesAsDataUri
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__TemplateFiles::TEMPLATE_ID'
           required: true
@@ -5587,49 +5034,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateFilesAsDataUri.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateFilesAsDataUri.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateFilesAsDataUri.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateFilesAsDataUri.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateFilesAsDataUri.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateFilesAsDataUri.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateFilesAsDataUri.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateFilesAsDataUri.sh
@@ -5641,20 +5078,18 @@ paths:
     get:
       tags:
         - Template
-      summary: '_t__TemplateFilesAsFileUrl::SUMMARY'
+      summary: 'Dropbox _t__TemplateFilesAsFileUrl::SUMMARY'
       description: '_t__TemplateFilesAsFileUrl::DESCRIPTION'
       operationId: templateFilesAsFileUrl
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__TemplateFiles::TEMPLATE_ID'
           required: true
           schema:
             type: string
           example: f57db65d3f933b5316d398057a36176831451a35
-        -
-          name: force_download
+        - name: force_download
           in: query
           description: '_t__TemplateFiles::FORCE_DOWNLOAD'
           schema:
@@ -5703,49 +5138,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateFilesAsFileUrl.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateFilesAsFileUrl.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateFilesAsFileUrl.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateFilesAsFileUrl.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateFilesAsFileUrl.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateFilesAsFileUrl.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateFilesAsFileUrl.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateFilesAsFileUrl.sh
@@ -5757,12 +5182,11 @@ paths:
     get:
       tags:
         - Template
-      summary: '_t__TemplateGet::SUMMARY'
+      summary: 'Dropbox _t__TemplateGet::SUMMARY'
       description: '_t__TemplateGet::DESCRIPTION'
       operationId: templateGet
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__TemplateGet::TEMPLATE_ID'
           required: true
@@ -5808,49 +5232,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateGet.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateGet.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateGet.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateGet.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateGet.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateGet.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateGet.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateGet.sh
@@ -5862,25 +5276,22 @@ paths:
     get:
       tags:
         - Template
-      summary: '_t__TemplateList::SUMMARY'
+      summary: 'Dropbox _t__TemplateList::SUMMARY'
       description: '_t__TemplateList::DESCRIPTION'
       operationId: templateList
       parameters:
-        -
-          name: account_id
+        - name: account_id
           in: query
           description: '_t__TemplateList::ACCOUNT_ID'
           schema:
             type: string
-        -
-          name: page
+        - name: page
           in: query
           description: '_t__TemplateList::PAGE'
           schema:
             type: integer
             default: 1
-        -
-          name: page_size
+        - name: page_size
           in: query
           description: '_t__TemplateList::PAGE_SIZE'
           schema:
@@ -5888,8 +5299,7 @@ paths:
             default: 20
             maximum: 100
             minimum: 1
-        -
-          name: query
+        - name: query
           in: query
           description: '_t__TemplateList::QUERY'
           schema:
@@ -5933,49 +5343,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateList.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateList.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateList.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateList.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateList.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateList.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateList.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateList.sh
@@ -5987,12 +5387,11 @@ paths:
     post:
       tags:
         - Template
-      summary: '_t__TemplateRemoveUser::SUMMARY'
+      summary: 'Dropbox _t__TemplateRemoveUser::SUMMARY'
       description: '_t__TemplateRemoveUser::DESCRIPTION'
       operationId: templateRemoveUser
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__TemplateRemoveUser::TEMPLATE_ID'
           required: true
@@ -6045,49 +5444,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateRemoveUser.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateRemoveUser.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateRemoveUser.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateRemoveUser.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateRemoveUser.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateRemoveUser.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateRemoveUser.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateRemoveUser.sh
@@ -6099,12 +5488,11 @@ paths:
     post:
       tags:
         - Template
-      summary: '_t__TemplateUpdateFiles::SUMMARY'
+      summary: 'Dropbox _t__TemplateUpdateFiles::SUMMARY'
       description: '_t__TemplateUpdateFiles::DESCRIPTION'
       operationId: templateUpdateFiles
       parameters:
-        -
-          name: template_id
+        - name: template_id
           in: path
           description: '_t__TemplateUpdateFiles::TEMPLATE_ID'
           required: true
@@ -6164,49 +5552,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - template_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/TemplateUpdateFiles.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/TemplateUpdateFiles.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/TemplateUpdateFiles.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/TemplateUpdateFiles.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/TemplateUpdateFiles.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/TemplateUpdateFiles.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/TemplateUpdateFiles.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/TemplateUpdateFiles.sh
@@ -6218,7 +5596,7 @@ paths:
     post:
       tags:
         - 'Unclaimed Draft'
-      summary: '_t__UnclaimedDraftCreate::SUMMARY'
+      summary: 'Dropbox _t__UnclaimedDraftCreate::SUMMARY'
       description: '_t__UnclaimedDraftCreate::DESCRIPTION'
       operationId: unclaimedDraftCreate
       requestBody:
@@ -6274,49 +5652,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/UnclaimedDraftCreate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/UnclaimedDraftCreate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/UnclaimedDraftCreate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/UnclaimedDraftCreate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/UnclaimedDraftCreate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/UnclaimedDraftCreate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/UnclaimedDraftCreate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/UnclaimedDraftCreate.sh
@@ -6328,7 +5696,7 @@ paths:
     post:
       tags:
         - 'Unclaimed Draft'
-      summary: '_t__UnclaimedDraftCreateEmbedded::SUMMARY'
+      summary: 'Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY'
       description: '_t__UnclaimedDraftCreateEmbedded::DESCRIPTION'
       operationId: unclaimedDraftCreateEmbedded
       requestBody:
@@ -6388,50 +5756,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.sh
@@ -6443,7 +5801,7 @@ paths:
     post:
       tags:
         - 'Unclaimed Draft'
-      summary: '_t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY'
+      summary: 'Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY'
       description: '_t__UnclaimedDraftCreateEmbeddedWithTemplate::DESCRIPTION'
       operationId: unclaimedDraftCreateEmbeddedWithTemplate
       requestBody:
@@ -6499,49 +5857,39 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.sh
@@ -6553,12 +5901,11 @@ paths:
     post:
       tags:
         - 'Unclaimed Draft'
-      summary: '_t__UnclaimedDraftEditAndResend::SUMMARY'
+      summary: 'Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY'
       description: '_t__UnclaimedDraftEditAndResend::DESCRIPTION'
       operationId: unclaimedDraftEditAndResend
       parameters:
-        -
-          name: signature_request_id
+        - name: signature_request_id
           in: path
           description: '_t__UnclaimedDraftEditAndResend::SIGNATURE_REQUEST_ID'
           required: true
@@ -6615,50 +5962,40 @@ paths:
                 4XX_example:
                   $ref: '#/components/examples/Error4XXResponseExample'
       security:
-        -
-          api_key: []
-        -
-          oauth2:
+        - api_key: []
+        - oauth2:
             - request_signature
             - signature_request_access
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/UnclaimedDraftEditAndResend.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/UnclaimedDraftEditAndResend.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/UnclaimedDraftEditAndResend.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/UnclaimedDraftEditAndResend.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/UnclaimedDraftEditAndResend.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/UnclaimedDraftEditAndResend.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/UnclaimedDraftEditAndResend.py
-        -
-          lang: cURL
+        - lang: cURL
           label: cURL
           source:
             $ref: examples/UnclaimedDraftEditAndResend.sh
@@ -6910,7 +6247,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signing_redirect_url:
           description: '_t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL'
           type: string
@@ -6970,7 +6307,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signing_redirect_url:
           description: '_t__SignatureRequestBulkSendWithTemplate::SIGNING_REDIRECT_URL'
           type: string
@@ -7068,7 +6405,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signing_options:
           $ref: '#/components/schemas/SubSigningOptions'
         subject:
@@ -7143,7 +6480,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signers:
           description: '_t__Sub::SignatureRequestTemplateSigner::DESCRIPTION'
           type: array
@@ -7257,7 +6594,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signing_options:
           $ref: '#/components/schemas/SubSigningOptions'
         signing_redirect_url:
@@ -7365,7 +6702,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signing_options:
           $ref: '#/components/schemas/SubSigningOptions'
         subject:
@@ -7440,7 +6777,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signers:
           description: '_t__Sub::SignatureRequestTemplateSigner::DESCRIPTION'
           type: array
@@ -7522,7 +6859,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signers:
           description: '_t__Sub::SignatureRequestTemplateSigner::DESCRIPTION'
           type: array
@@ -7647,7 +6984,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signing_options:
           $ref: '#/components/schemas/SubSigningOptions'
         signing_redirect_url:
@@ -7731,7 +7068,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signers:
           description: '_t__Sub::SignatureRequestTemplateSigner::DESCRIPTION'
           type: array
@@ -7978,10 +7315,8 @@ components:
     SubFormFieldsPerDocumentCheckbox:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
             - is_checked
           properties:
@@ -7996,15 +7331,12 @@ components:
               description: '_t__Sub::FormFieldsPerDocument::IS_CHECKED_CHECKBOX'
               type: boolean
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentCheckboxMerge:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
           properties:
             type:
@@ -8012,15 +7344,12 @@ components:
               type: string
               default: checkbox-merge
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentDateSigned:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
           properties:
             type:
@@ -8052,15 +7381,12 @@ components:
               type: integer
               default: 12
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentDropdown:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
             - options
           properties:
@@ -8102,15 +7428,12 @@ components:
               type: integer
               default: 12
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentHyperlink:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
             - content
             - content_url
@@ -8150,15 +7473,12 @@ components:
               type: integer
               default: 12
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentInitials:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
           properties:
             type:
@@ -8166,15 +7486,12 @@ components:
               type: string
               default: initials
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentRadio:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
             - group
             - is_checked
@@ -8190,15 +7507,12 @@ components:
               description: '_t__Sub::FormFieldsPerDocument::IS_CHECKED_RADIO'
               type: boolean
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentSignature:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
           properties:
             type:
@@ -8206,15 +7520,12 @@ components:
               type: string
               default: signature
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentText:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
             - options
           properties:
@@ -8280,15 +7591,12 @@ components:
               type: integer
               default: 12
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentTextMerge:
       description: '_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS'
       allOf:
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        -
-          required:
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - required:
             - type
           properties:
             type:
@@ -8320,8 +7628,7 @@ components:
               type: integer
               default: 12
           type: object
-        -
-          $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        - $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
     SubFormFieldsPerDocumentTypeEnum:
       type: string
       enum:
@@ -8803,7 +8110,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         signer_roles:
           description: '_t__TemplateCreate::SIGNER_ROLES'
           type: array
@@ -8901,7 +8208,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         show_preview:
           description: '_t__TemplateCreateEmbeddedDraft::SHOW_PREVIEW'
           type: boolean
@@ -9042,7 +8349,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         show_progress_stepper:
           description: '_t__UnclaimedDraftCreate::SHOW_PROGRESS_STEPPER'
           type: boolean
@@ -9179,7 +8486,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         requester_email_address:
           description: '_t__UnclaimedDraftCreateEmbedded::REQUESTER_EMAIL_ADDRESS'
           type: string
@@ -9306,7 +8613,7 @@ components:
           description: '_t__Sub::Metadata::DESCRIPTION'
           type: object
           maxItems: 10
-          additionalProperties: {  }
+          additionalProperties: {}
         preview_only:
           description: '_t__UnclaimedDraftCreateEmbeddedWithTemplate::PREVIEW_ONLY'
           type: boolean
@@ -9803,10 +9110,8 @@ components:
       title: BulkSendJobGetResponseSignatureRequests
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponse'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponse'
+        - properties:
             bulk_send_job_id:
               description: '_t__BulkSendJobGetResponseSignatureRequests::BULK_SEND_JOB_ID'
               type: string
@@ -10057,10 +9362,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseCustomField::TYPE'
               type: string
@@ -10074,10 +9377,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseCustomField::TYPE'
               type: string
@@ -10137,10 +9438,8 @@ components:
     SignatureRequestResponseDataValueCheckbox:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::CHECKBOX_TYPE'
               type: string
@@ -10151,10 +9450,8 @@ components:
     SignatureRequestResponseDataValueCheckboxMerge:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::CHECKBOXMERGE_TYPE'
               type: string
@@ -10165,10 +9462,8 @@ components:
     SignatureRequestResponseDataValueDateSigned:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::DATESIGNED_TYPE'
               type: string
@@ -10179,10 +9474,8 @@ components:
     SignatureRequestResponseDataValueDropdown:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::DROPDOWN_TYPE'
               type: string
@@ -10193,10 +9486,8 @@ components:
     SignatureRequestResponseDataValueInitials:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::INITIAL_TYPE'
               type: string
@@ -10207,10 +9498,8 @@ components:
     SignatureRequestResponseDataValueRadio:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::RADIO_TYPE'
               type: string
@@ -10221,10 +9510,8 @@ components:
     SignatureRequestResponseDataValueSignature:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::SIGNATURE_TYPE'
               type: string
@@ -10235,10 +9522,8 @@ components:
     SignatureRequestResponseDataValueText:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::TEXT_TYPE'
               type: string
@@ -10249,10 +9534,8 @@ components:
     SignatureRequestResponseDataValueTextMerge:
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        - properties:
             type:
               description: '_t__SignatureRequestResponseDataValue::TEXTMERGE_TYPE'
               type: string
@@ -10659,10 +9942,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentCustomField::TYPE'
               type: string
@@ -10673,10 +9954,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentCustomField::TYPE'
               type: string
@@ -10767,10 +10046,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentFormField::TYPE'
               type: string
@@ -10781,10 +10058,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentFormField::TYPE'
               type: string
@@ -10795,10 +10070,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentFormField::TYPE'
               type: string
@@ -10809,10 +10082,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentFormField::TYPE'
               type: string
@@ -10834,10 +10105,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentFormField::TYPE'
               type: string
@@ -10849,10 +10118,8 @@ components:
         - group
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentFormField::TYPE'
               type: string
@@ -10863,10 +10130,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentFormField::TYPE'
               type: string
@@ -10877,10 +10142,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentFormField::TYPE'
               type: string
@@ -10967,10 +10230,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentStaticField::TYPE'
               type: string
@@ -10981,10 +10242,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentStaticField::TYPE'
               type: string
@@ -10995,10 +10254,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentStaticField::TYPE'
               type: string
@@ -11009,10 +10266,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentStaticField::TYPE'
               type: string
@@ -11023,10 +10278,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentStaticField::TYPE'
               type: string
@@ -11037,10 +10290,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentStaticField::TYPE'
               type: string
@@ -11051,10 +10302,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentStaticField::TYPE'
               type: string
@@ -11065,10 +10314,8 @@ components:
         - type
       type: object
       allOf:
-        -
-          $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-        -
-          properties:
+        - $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+        - properties:
             type:
               description: '_t__TemplateResponseDocumentStaticField::TYPE'
               type: string
@@ -11918,8 +11165,7 @@ components:
       bearerFormat: JWT
       scheme: bearer
 security:
-  -
-    api_key: []
+  - api_key: []
     oauth2:
       - account_access
       - signature_request_access
@@ -11929,38 +11175,27 @@ security:
       - basic_account_info
       - request_signature
 tags:
-  -
-    name: Account
+  - name: Account
     description: '_md__OpenApi::TAG::ACCOUNT::DESCRIPTION'
-  -
-    name: 'Signature Request'
+  - name: 'Signature Request'
     description: '_md__OpenApi::TAG::SIGNATURE_REQUEST::DESCRIPTION'
-  -
-    name: Template
+  - name: Template
     description: '_md__OpenApi::TAG::TEMPLATE::DESCRIPTION'
-  -
-    name: 'Bulk Send Job'
+  - name: 'Bulk Send Job'
     description: '_md__OpenApi::TAG::BULK_SEND_JOB::DESCRIPTION'
-  -
-    name: Report
+  - name: Report
     description: '_md__OpenApi::TAG::REPORT::DESCRIPTION'
-  -
-    name: Team
+  - name: Team
     description: '_md__OpenApi::TAG::TEAM::DESCRIPTION'
-  -
-    name: 'Unclaimed Draft'
+  - name: 'Unclaimed Draft'
     description: '_md__OpenApi::TAG::UNCLAIMED_DRAFT::DESCRIPTION'
-  -
-    name: Embedded
+  - name: Embedded
     description: '_md__OpenApi::TAG::EMBEDDED::DESCRIPTION'
-  -
-    name: 'Api App'
+  - name: 'Api App'
     description: '_md__OpenApi::TAG::API_APP::DESCRIPTION'
-  -
-    name: OAuth
+  - name: OAuth
     description: '_md__OpenApi::TAG::OAUTH::DESCRIPTION'
-  -
-    name: 'Callbacks and Events'
+  - name: 'Callbacks and Events'
     description: '_md__OpenApi::TAG::CALLBACKS_AND_EVENTS::DESCRIPTION'
 externalDocs:
   description: 'Legacy API Reference'
@@ -11976,38 +11211,31 @@ x-webhooks:
           title: '_t__accountUpdateEventCallback::SEO::TITLE'
           description: '_t__accountUpdateEventCallback::SEO::DESCRIPTION'
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/EventCallback.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/EventCallback.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/EventCallback.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/EventCallback.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/EventCallback.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/EventCallback.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/EventCallback.py
@@ -12028,38 +11256,31 @@ x-webhooks:
           title: '_t__appCreateEventCallback::SEO::TITLE'
           description: '_t__appCreateEventCallback::SEO::DESCRIPTION'
       x-codeSamples:
-        -
-          lang: PHP
+        - lang: PHP
           label: PHP
           source:
             $ref: examples/EventCallback.php
-        -
-          lang: 'C#'
+        - lang: 'C#'
           label: 'C#'
           source:
             $ref: examples/EventCallback.cs
-        -
-          lang: JavaScript
+        - lang: JavaScript
           label: JavaScript
           source:
             $ref: examples/EventCallback.js
-        -
-          lang: TypeScript
+        - lang: TypeScript
           label: TypeScript
           source:
             $ref: examples/EventCallback.ts
-        -
-          lang: Java
+        - lang: Java
           label: Java
           source:
             $ref: examples/EventCallback.java
-        -
-          lang: Ruby
+        - lang: Ruby
           label: Ruby
           source:
             $ref: examples/EventCallback.rb
-        -
-          lang: Python
+        - lang: Python
           label: Python
           source:
             $ref: examples/EventCallback.py

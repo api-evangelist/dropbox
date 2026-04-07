@@ -122,7 +122,7 @@ info:
 
   version: 1.0.0
 servers:
-  - url: https://api.dropbox.com  
+  - url: https://api.dropbox.com
 components:
   securitySchemes:
     bearerAuth:
@@ -213,7 +213,7 @@ paths:
     post:
       tags:
         - account
-      summary: set_profile_photo
+      summary: Dropbox set_profile_photo
       description: >-
         [set_profile_photo](https://www.dropbox.com/developers/documentation/http/documentation#account-set_profile_photo)
 
@@ -230,8 +230,7 @@ paths:
               example: >-
                 "{\n    \"photo\": {\n        \".tag\": \"base64_data\",
                 \n        \"base64_data\":
-                \"SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4=\"\n   
-                }\n}"
+                \"SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4=\"\n    }\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -261,7 +260,7 @@ paths:
     post:
       tags:
         - auth
-      summary: token/from_oauth1
+      summary: Dropbox token/from_oauth1
       description: >-
         [token/from_oauth1](https://www.dropbox.com/developers/documentation/http/documentation#auth-token-from_oauth1)
 
@@ -277,8 +276,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"oauth1_token\": \"qievr8hamyg6ndck\", \n   
-                \"oauth1_token_secret\": \"qomoftv0472git7\"\n}"
+                "{\n    \"oauth1_token\": \"qievr8hamyg6ndck\", \n    \"oauth1_token_secret\": \"qomoftv0472git7\"\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -308,7 +306,7 @@ paths:
     post:
       tags:
         - auth
-      summary: token/revoke
+      summary: Dropbox token/revoke
       description: >-
         [token/revoke](https://www.dropbox.com/developers/documentation/http/documentation#auth-token-revoke)
 
@@ -326,7 +324,7 @@ paths:
     post:
       tags:
         - check
-      summary: app
+      summary: Dropbox app
       description: >-
         [app](https://www.dropbox.com/developers/documentation/http/documentation#check-app)
 
@@ -374,7 +372,7 @@ paths:
     post:
       tags:
         - check
-      summary: user
+      summary: Dropbox user
       description: >-
         [user](https://www.dropbox.com/developers/documentation/http/documentation#check-user)
 
@@ -422,7 +420,7 @@ paths:
     post:
       tags:
         - contacts
-      summary: delete_manual_contacts
+      summary: Dropbox delete_manual_contacts
       description: >-
         [delete_manual_contacts](https://www.dropbox.com/developers/documentation/http/documentation#contacts-delete_manual_contacts)
 
@@ -442,7 +440,7 @@ paths:
     post:
       tags:
         - contacts
-      summary: delete_manual_contacts_batch
+      summary: Dropbox delete_manual_contacts_batch
       description: >-
         [delete_manual_contacts_batch](https://www.dropbox.com/developers/documentation/http/documentation#contacts-delete_manual_contacts_batch)
 
@@ -457,9 +455,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"email_addresses\": [\n       
-                \"contactemailaddress1@domain.com\", \n       
-                \"contactemailaddress2@domain.com\"\n    ]\n}"
+                "{\n    \"email_addresses\": [\n        \"contactemailaddress1@domain.com\", \n        \"contactemailaddress2@domain.com\"\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -475,7 +471,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: properties/add
+      summary: Dropbox properties/add
       description: >-
         [properties/add](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-add)
 
@@ -491,13 +487,11 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"path\": \"/my_awesome/word.docx\", \n   
-                \"property_groups\": [\n        {\n            \"template_id\":
+                "{\n    \"path\": \"/my_awesome/word.docx\", \n    \"property_groups\": [\n        {\n            \"template_id\":
                 \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n            \"fields\":
                 [\n                {\n                    \"name\": \"Security
                 Policy\", \n                    \"value\":
-                \"Confidential\"\n                }\n            ]\n       
-                }\n    ]\n}"
+                \"Confidential\"\n                }\n            ]\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -513,7 +507,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: properties/overwrite
+      summary: Dropbox properties/overwrite
       description: >-
         [properties/overwrite](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-overwrite)
 
@@ -533,13 +527,11 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"path\": \"/my_awesome/word.docx\", \n   
-                \"property_groups\": [\n        {\n            \"template_id\":
+                "{\n    \"path\": \"/my_awesome/word.docx\", \n    \"property_groups\": [\n        {\n            \"template_id\":
                 \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n            \"fields\":
                 [\n                {\n                    \"name\": \"Security
                 Policy\", \n                    \"value\":
-                \"Confidential\"\n                }\n            ]\n       
-                }\n    ]\n}"
+                \"Confidential\"\n                }\n            ]\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -555,7 +547,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: properties/remove
+      summary: Dropbox properties/remove
       description: >-
         [properties/remove](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-remove)
 
@@ -574,9 +566,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"path\": \"/my_awesome/word.docx\", \n   
-                \"property_template_ids\": [\n       
-                \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n    ]\n}"
+                "{\n    \"path\": \"/my_awesome/word.docx\", \n    \"property_template_ids\": [\n        \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -592,7 +582,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: properties/search
+      summary: Dropbox properties/search
       description: >-
         [properties/search](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search)
 
@@ -609,10 +599,7 @@ paths:
               example: >-
                 "{\n    \"queries\": [\n        {\n            \"query\":
                 \"Compliance Bot - Beta\", \n            \"mode\":
-                {\n                \".tag\": \"field_name\", \n               
-                \"field_name\": \"Security\"\n            }, \n           
-                \"logical_operator\": \"or_operator\"\n        }\n    ], \n   
-                \"template_filter\": \"filter_none\"\n}"
+                {\n                \".tag\": \"field_name\", \n                \"field_name\": \"Security\"\n            }, \n            \"logical_operator\": \"or_operator\"\n        }\n    ], \n    \"template_filter\": \"filter_none\"\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -654,7 +641,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: properties/search/continue
+      summary: Dropbox properties/search/continue
       description: >-
         [properties/search/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search-continue)
 
@@ -708,7 +695,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: properties/update
+      summary: Dropbox properties/update
       description: >-
         [properties/update](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-update)
 
@@ -729,11 +716,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"path\": \"/my_awesome/word.docx\", \n   
-                \"update_property_groups\": [\n        {\n           
-                \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n           
-                \"add_or_update_fields\": [\n               
-                {\n                    \"name\": \"Security Policy\",
+                "{\n    \"path\": \"/my_awesome/word.docx\", \n    \"update_property_groups\": [\n        {\n            \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n            \"add_or_update_fields\": [\n                {\n                    \"name\": \"Security Policy\",
                 \n                    \"value\":
                 \"Confidential\"\n                }\n            ],
                 \n            \"remove_fields\": []\n        }\n    ]\n}"
@@ -752,7 +735,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/add_for_team
+      summary: Dropbox templates/add_for_team
       description: >-
         [templates/add_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-add_for_team)
 
@@ -807,7 +790,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/add_for_user
+      summary: Dropbox templates/add_for_user
       description: >-
         [templates/add_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-add_for_user)
 
@@ -859,7 +842,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/get_for_team
+      summary: Dropbox templates/get_for_team
       description: >-
         [templates/get_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-get_for_team)
 
@@ -916,7 +899,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/get_for_user
+      summary: Dropbox templates/get_for_user
       description: >-
         [templates/get_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-get_for_user)
 
@@ -972,7 +955,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/list_for_team
+      summary: Dropbox templates/list_for_team
       description: >-
         [templates/list_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-list_for_team)
 
@@ -1007,7 +990,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/list_for_user
+      summary: Dropbox templates/list_for_user
       description: >-
         [templates/list_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-list_for_user)
 
@@ -1041,7 +1024,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/remove_for_team
+      summary: Dropbox templates/remove_for_team
       description: >-
         [templates/remove_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-remove_for_team)
 
@@ -1075,7 +1058,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/remove_for_user
+      summary: Dropbox templates/remove_for_user
       description: >-
         [templates/remove_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-remove_for_user)
 
@@ -1107,7 +1090,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/update_for_team
+      summary: Dropbox templates/update_for_team
       description: >-
         [templates/update_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-update_for_team)
 
@@ -1124,15 +1107,12 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n   
-                \"name\": \"New Security Template Name\", \n    \"description\":
+                "{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n    \"name\": \"New Security Template Name\", \n    \"description\":
                 \"These properties will describe how confidential this file or
-                folder is.\", \n    \"add_fields\": [\n        {\n           
-                \"name\": \"Security Policy\", \n            \"description\":
+                folder is.\", \n    \"add_fields\": [\n        {\n            \"name\": \"Security Policy\", \n            \"description\":
                 \"This is the security policy of the file or folder
                 described.\\nPolicies can be Confidential, Public or
-                Internal.\", \n            \"type\": \"string\"\n        }\n   
-                ]\n}"
+                Internal.\", \n            \"type\": \"string\"\n        }\n    ]\n}"
       security:
         - bearerAuth: []
       parameters:
@@ -1163,7 +1143,7 @@ paths:
     post:
       tags:
         - file_properties
-      summary: templates/update_for_user
+      summary: Dropbox templates/update_for_user
       description: >-
         [templates/update_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-update_for_user)
 
@@ -1181,15 +1161,12 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n   
-                \"name\": \"New Security Template Name\", \n    \"description\":
+                "{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n    \"name\": \"New Security Template Name\", \n    \"description\":
                 \"These properties will describe how confidential this file or
-                folder is.\", \n    \"add_fields\": [\n        {\n           
-                \"name\": \"Security Policy\", \n            \"description\":
+                folder is.\", \n    \"add_fields\": [\n        {\n            \"name\": \"Security Policy\", \n            \"description\":
                 \"This is the security policy of the file or folder
                 described.\\nPolicies can be Confidential, Public or
-                Internal.\", \n            \"type\": \"string\"\n        }\n   
-                ]\n}"
+                Internal.\", \n            \"type\": \"string\"\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -1218,7 +1195,7 @@ paths:
     post:
       tags:
         - file_requests
-      summary: count
+      summary: Dropbox count
       description: >-
         [count](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-count)
 
@@ -1250,7 +1227,7 @@ paths:
     post:
       tags:
         - file_requests
-      summary: create
+      summary: Dropbox create
       description: >-
         [create](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-create)
 
@@ -1265,11 +1242,8 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"title\": \"Homework submission\", \n   
-                \"destination\": \"/File Requests/Homework\", \n   
-                \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\",
-                \n        \"allow_late_uploads\": \"seven_days\"\n    }, \n   
-                \"open\": true\n}"
+                "{\n    \"title\": \"Homework submission\", \n    \"destination\": \"/File Requests/Homework\", \n    \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\",
+                \n        \"allow_late_uploads\": \"seven_days\"\n    }, \n    \"open\": true\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -1308,7 +1282,7 @@ paths:
     post:
       tags:
         - file_requests
-      summary: delete
+      summary: Dropbox delete
       description: >-
         [delete](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete)
 
@@ -1323,8 +1297,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"ids\": [\n        \"oaCAVmEyrqYnkZX9955Y\", \n       
-                \"BaZmehYoXMPtaRmfTbSG\"\n    ]\n}"
+                "{\n    \"ids\": [\n        \"oaCAVmEyrqYnkZX9955Y\", \n        \"BaZmehYoXMPtaRmfTbSG\"\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -1380,7 +1353,7 @@ paths:
     post:
       tags:
         - file_requests
-      summary: delete_all_closed
+      summary: Dropbox delete_all_closed
       description: >-
         [delete_all_closed](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete_all_closed)
 
@@ -1438,7 +1411,7 @@ paths:
     post:
       tags:
         - file_requests
-      summary: get
+      summary: Dropbox get
       description: >-
         [get](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-get)
 
@@ -1491,7 +1464,7 @@ paths:
     post:
       tags:
         - file_requests
-      summary: list
+      summary: Dropbox list
       description: >-
         [list](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list)
 
@@ -1565,7 +1538,7 @@ paths:
     post:
       tags:
         - file_requests
-      summary: list/continue
+      summary: Dropbox list/continue
       description: >-
         [list/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list-continue)
 
@@ -1641,7 +1614,7 @@ paths:
     post:
       tags:
         - file_requests
-      summary: update
+      summary: Dropbox update
       description: >-
         [update](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-update)
 
@@ -1660,8 +1633,7 @@ paths:
                 \"Homework submission\", \n    \"destination\": \"/File
                 Requests/Homework\", \n    \"deadline\": {\n        \".tag\":
                 \"update\", \n        \"deadline\": \"2020-10-12T17:00:00Z\",
-                \n        \"allow_late_uploads\": \"seven_days\"\n    }, \n   
-                \"open\": true\n}"
+                \n        \"allow_late_uploads\": \"seven_days\"\n    }, \n    \"open\": true\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -1700,7 +1672,7 @@ paths:
     post:
       tags:
         - files
-      summary: copy
+      summary: Dropbox copy
       description: >-
         [copy](https://www.dropbox.com/developers/documentation/http/documentation#files-copy)
 
@@ -1775,7 +1747,7 @@ paths:
     post:
       tags:
         - files
-      summary: copy_batch
+      summary: Dropbox copy_batch
       description: >-
         [copy_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch)
 
@@ -1860,7 +1832,7 @@ paths:
     post:
       tags:
         - files
-      summary: copy_batch/check
+      summary: Dropbox copy_batch/check
       description: >-
         [copy_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch-check)
 
@@ -1933,7 +1905,7 @@ paths:
     post:
       tags:
         - files
-      summary: copy_reference/get
+      summary: Dropbox copy_reference/get
       description: >-
         [copy_reference/get](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-get)
 
@@ -2006,7 +1978,7 @@ paths:
     post:
       tags:
         - files
-      summary: copy_reference/save
+      summary: Dropbox copy_reference/save
       description: >-
         [copy_reference/save](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-save)
 
@@ -2022,8 +1994,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"copy_reference\": \"z1X6ATl6aWtzOGq0c3g5Ng\", \n   
-                \"path\": \"/video.mp4\"\n}"
+                "{\n    \"copy_reference\": \"z1X6ATl6aWtzOGq0c3g5Ng\", \n    \"path\": \"/video.mp4\"\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -2078,7 +2049,7 @@ paths:
     post:
       tags:
         - files
-      summary: create_folder
+      summary: Dropbox create_folder
       description: >-
         [create_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder)
 
@@ -2137,7 +2108,7 @@ paths:
     post:
       tags:
         - files
-      summary: create_folder_batch
+      summary: Dropbox create_folder_batch
       description: >-
         [create_folder_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch)
 
@@ -2159,8 +2130,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"paths\": [\n        \"/Homework/math\"\n    ], \n   
-                \"autorename\": false, \n    \"force_async\": false\n}"
+                "{\n    \"paths\": [\n        \"/Homework/math\"\n    ], \n    \"autorename\": false, \n    \"force_async\": false\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -2206,7 +2176,7 @@ paths:
     post:
       tags:
         - files
-      summary: create_folder_batch/check
+      summary: Dropbox create_folder_batch/check
       description: >-
         [create_folder_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch-check)
 
@@ -2267,7 +2237,7 @@ paths:
     post:
       tags:
         - files
-      summary: delete
+      summary: Dropbox delete
       description: >-
         [delete](https://www.dropbox.com/developers/documentation/http/documentation#files-delete)
 
@@ -2343,7 +2313,7 @@ paths:
     post:
       tags:
         - files
-      summary: delete_batch
+      summary: Dropbox delete_batch
       description: >-
         [delete_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch)
 
@@ -2421,7 +2391,7 @@ paths:
     post:
       tags:
         - files
-      summary: delete_batch/check
+      summary: Dropbox delete_batch/check
       description: >-
         [delete_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch-check)
 
@@ -2494,7 +2464,7 @@ paths:
     post:
       tags:
         - files
-      summary: download
+      summary: Dropbox download
       description: >-
         [download](https://www.dropbox.com/developers/documentation/http/documentation#files-download)
 
@@ -2558,7 +2528,7 @@ paths:
     post:
       tags:
         - files
-      summary: download_zip
+      summary: Dropbox download_zip
       description: >-
         [download_zip](https://www.dropbox.com/developers/documentation/http/documentation#files-download_zip)
 
@@ -2615,7 +2585,7 @@ paths:
     post:
       tags:
         - files
-      summary: export
+      summary: Dropbox export
       description: >-
         [export](https://www.dropbox.com/developers/documentation/http/documentation#files-export)
 
@@ -2687,7 +2657,7 @@ paths:
     post:
       tags:
         - files
-      summary: get_file_lock_batch
+      summary: Dropbox get_file_lock_batch
       description: >-
         [get_file_lock_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_file_lock_batch)
 
@@ -2766,7 +2736,7 @@ paths:
     post:
       tags:
         - files
-      summary: get_metadata
+      summary: Dropbox get_metadata
       description: >-
         [get_metadata](https://www.dropbox.com/developers/documentation/http/documentation#files-get_metadata)
 
@@ -2783,8 +2753,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"path\": \"/Homework/math\", \n   
-                \"include_media_info\": false, \n    \"include_deleted\": false,
+                "{\n    \"path\": \"/Homework/math\", \n    \"include_media_info\": false, \n    \"include_deleted\": false,
                 \n    \"include_has_explicit_shared_members\": false\n}"
       parameters:
         - name: Content-Type
@@ -2839,7 +2808,7 @@ paths:
     post:
       tags:
         - files
-      summary: get_preview
+      summary: Dropbox get_preview
       description: >-
         [get_preview](https://www.dropbox.com/developers/documentation/http/documentation#files-get_preview)
 
@@ -2912,7 +2881,7 @@ paths:
     post:
       tags:
         - files
-      summary: get_temporary_link
+      summary: Dropbox get_temporary_link
       description: >-
         [get_temporary_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_link)
 
@@ -2985,7 +2954,7 @@ paths:
     post:
       tags:
         - files
-      summary: get_temporary_upload_link
+      summary: Dropbox get_temporary_upload_link
       description: >-
         [get_temporary_upload_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_upload_link)
 
@@ -3088,7 +3057,7 @@ paths:
     post:
       tags:
         - files
-      summary: get_thumbnail
+      summary: Dropbox get_thumbnail
       description: >-
         [get_thumbnail](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail)
 
@@ -3159,7 +3128,7 @@ paths:
     post:
       tags:
         - files
-      summary: get_thumbnail_batch
+      summary: Dropbox get_thumbnail_batch
       description: >-
         [get_thumbnail_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail_batch)
 
@@ -3239,7 +3208,7 @@ paths:
     post:
       tags:
         - files
-      summary: list_folder
+      summary: Dropbox list_folder
       description: >-
         [list_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder)
 
@@ -3283,11 +3252,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"path\": \"/Homework/math\", \n    \"recursive\":
-                false, \n    \"include_media_info\": false, \n   
-                \"include_deleted\": false, \n   
-                \"include_has_explicit_shared_members\": false, \n   
-                \"include_mounted_folders\": true, \n   
-                \"include_non_downloadable_files\": true\n}"
+                false, \n    \"include_media_info\": false, \n    \"include_deleted\": false, \n    \"include_has_explicit_shared_members\": false, \n    \"include_mounted_folders\": true, \n    \"include_non_downloadable_files\": true\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -3359,7 +3324,7 @@ paths:
     post:
       tags:
         - files
-      summary: list_folder/continue
+      summary: Dropbox list_folder/continue
       description: >-
         [list_folder/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-continue)
 
@@ -3449,7 +3414,7 @@ paths:
     post:
       tags:
         - files
-      summary: list_folder/get_latest_cursor
+      summary: Dropbox list_folder/get_latest_cursor
       description: >-
         [list_folder/get_latest_cursor](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-get_latest_cursor)
 
@@ -3469,11 +3434,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"path\": \"/Homework/math\", \n    \"recursive\":
-                false, \n    \"include_media_info\": false, \n   
-                \"include_deleted\": false, \n   
-                \"include_has_explicit_shared_members\": false, \n   
-                \"include_mounted_folders\": true, \n   
-                \"include_non_downloadable_files\": true\n}"
+                false, \n    \"include_media_info\": false, \n    \"include_deleted\": false, \n    \"include_has_explicit_shared_members\": false, \n    \"include_mounted_folders\": true, \n    \"include_non_downloadable_files\": true\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -3502,7 +3463,7 @@ paths:
     post:
       tags:
         - files
-      summary: list_folder/longpoll
+      summary: Dropbox list_folder/longpoll
       description: >-
         [list_folder/longpoll](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-longpoll)
 
@@ -3524,8 +3485,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"cursor\":
-                \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\", \n   
-                \"timeout\": 30\n}"
+                \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\", \n    \"timeout\": 30\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -3554,7 +3514,7 @@ paths:
     post:
       tags:
         - files
-      summary: list_revisions
+      summary: Dropbox list_revisions
       description: >-
         [list_revisions](https://www.dropbox.com/developers/documentation/http/documentation#files-list_revisions)
 
@@ -3634,7 +3594,7 @@ paths:
     post:
       tags:
         - files
-      summary: lock_file_batch
+      summary: Dropbox lock_file_batch
       description: >-
         [lock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-lock_file_batch)
 
@@ -3716,7 +3676,7 @@ paths:
     post:
       tags:
         - files
-      summary: move
+      summary: Dropbox move
       description: >-
         [move](https://www.dropbox.com/developers/documentation/http/documentation#files-move)
 
@@ -3793,7 +3753,7 @@ paths:
     post:
       tags:
         - files
-      summary: move_batch
+      summary: Dropbox move_batch
       description: >-
         [move_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch)
 
@@ -3879,7 +3839,7 @@ paths:
     post:
       tags:
         - files
-      summary: move_batch/check
+      summary: Dropbox move_batch/check
       description: >-
         [move_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch-check)
 
@@ -3952,7 +3912,7 @@ paths:
     post:
       tags:
         - files
-      summary: permanently_delete
+      summary: Dropbox permanently_delete
       description: >-
         [permanently_delete](https://www.dropbox.com/developers/documentation/http/documentation#files-permanently_delete)
 
@@ -3985,7 +3945,7 @@ paths:
     post:
       tags:
         - files
-      summary: restore
+      summary: Dropbox restore
       description: >-
         [restore](https://www.dropbox.com/developers/documentation/http/documentation#files-restore)
 
@@ -4054,7 +4014,7 @@ paths:
     post:
       tags:
         - files
-      summary: save_url
+      summary: Dropbox save_url
       description: >-
         [save_url](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url)
 
@@ -4130,7 +4090,7 @@ paths:
     post:
       tags:
         - files
-      summary: save_url/check_job_status
+      summary: Dropbox save_url/check_job_status
       description: >-
         [save_url/check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url-check_job_status)
 
@@ -4173,7 +4133,7 @@ paths:
     post:
       tags:
         - files
-      summary: search
+      summary: Dropbox search
       description: >-
         [search](https://www.dropbox.com/developers/documentation/http/documentation#files-search)
 
@@ -4255,7 +4215,7 @@ paths:
     post:
       tags:
         - files
-      summary: search/continue
+      summary: Dropbox search/continue
       description: >-
         [search/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-search-continue)
 
@@ -4337,7 +4297,7 @@ paths:
     post:
       tags:
         - files
-      summary: unlock_file_batch
+      summary: Dropbox unlock_file_batch
       description: >-
         [unlock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-unlock_file_batch)
 
@@ -4419,7 +4379,7 @@ paths:
     post:
       tags:
         - files
-      summary: upload
+      summary: Dropbox upload
       description: >-
         [upload](https://www.dropbox.com/developers/documentation/http/documentation#files-upload)
 
@@ -4496,7 +4456,7 @@ paths:
     post:
       tags:
         - files
-      summary: upload_session/append
+      summary: Dropbox upload_session/append
       description: >-
         [upload_session/append](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-append)
 
@@ -4538,7 +4498,7 @@ paths:
     post:
       tags:
         - files
-      summary: upload_session/finish
+      summary: Dropbox upload_session/finish
       description: >-
         [upload_session/finish](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish)
 
@@ -4622,7 +4582,7 @@ paths:
     post:
       tags:
         - files
-      summary: upload_session/finish_batch
+      summary: Dropbox upload_session/finish_batch
       description: >-
         [upload_session/finish_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch)
 
@@ -4663,12 +4623,10 @@ paths:
               example: >-
                 "{\n    \"entries\": [\n        {\n            \"cursor\":
                 {\n                \"session_id\": \"1234faaf0678bcde\",
-                \n                \"offset\": 0\n            }, \n           
-                \"commit\": {\n                \"path\":
+                \n                \"offset\": 0\n            }, \n            \"commit\": {\n                \"path\":
                 \"/Homework/math/Matrices.txt\", \n                \"mode\":
                 \"add\", \n                \"autorename\": true,
-                \n                \"mute\": false, \n               
-                \"strict_conflict\": false\n            }\n        }\n    ]\n}"
+                \n                \"mute\": false, \n                \"strict_conflict\": false\n            }\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -4724,7 +4682,7 @@ paths:
     post:
       tags:
         - files
-      summary: upload_session/finish_batch/check
+      summary: Dropbox upload_session/finish_batch/check
       description: >-
         [upload_session/finish_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch-check)
 
@@ -4796,7 +4754,7 @@ paths:
     post:
       tags:
         - files
-      summary: upload_session/start
+      summary: Dropbox upload_session/start
       description: >-
         [upload_session/start](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-start)
 
@@ -4854,7 +4812,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: add_file_member
+      summary: Dropbox add_file_member
       description: >-
         [add_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_file_member)
 
@@ -4869,10 +4827,8 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n   
-                \"members\": [\n        {\n            \".tag\": \"email\",
-                \n            \"email\": \"justin@example.com\"\n        }\n   
-                ], \n    \"custom_message\": \"This is a custom message about
+                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"members\": [\n        {\n            \".tag\": \"email\",
+                \n            \"email\": \"justin@example.com\"\n        }\n    ], \n    \"custom_message\": \"This is a custom message about
                 ACME.doc\", \n    \"quiet\": false, \n    \"access_level\":
                 \"viewer\", \n    \"add_message_as_comment\": false\n}"
       parameters:
@@ -4907,7 +4863,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: add_folder_member
+      summary: Dropbox add_folder_member
       description: >-
         [add_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_folder_member)
 
@@ -4926,12 +4882,8 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"shared_folder_id\": \"84528192421\", \n   
-                \"members\": [\n        {\n            \"member\":
-                {\n                \".tag\": \"email\", \n               
-                \"email\": \"justin@example.com\"\n            }, \n           
-                \"access_level\": \"editor\"\n        }, \n       
-                {\n            \"member\": {\n                \".tag\":
+                "{\n    \"shared_folder_id\": \"84528192421\", \n    \"members\": [\n        {\n            \"member\":
+                {\n                \".tag\": \"email\", \n                \"email\": \"justin@example.com\"\n            }, \n            \"access_level\": \"editor\"\n        }, \n        {\n            \"member\": {\n                \".tag\":
                 \"dropbox_id\", \n                \"dropbox_id\":
                 \"dbid:AAEufNrMPSPe0dMQijRP0N_aZtBJRm26W4Q\"\n            },
                 \n            \"access_level\": \"viewer\"\n        }\n    ],
@@ -4952,7 +4904,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: check_job_status
+      summary: Dropbox check_job_status
       description: >-
         [check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_job_status)
 
@@ -4995,7 +4947,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: check_remove_member_job_status
+      summary: Dropbox check_remove_member_job_status
       description: >-
         [check_remove_member_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_remove_member_job_status)
 
@@ -5038,7 +4990,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: check_share_job_status
+      summary: Dropbox check_share_job_status
       description: >-
         [check_share_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_share_job_status)
 
@@ -5115,7 +5067,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: get_file_metadata
+      summary: Dropbox get_file_metadata
       description: >-
         [get_file_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata)
 
@@ -5130,8 +5082,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n   
-                \"actions\": []\n}"
+                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"actions\": []\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -5182,7 +5133,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: get_file_metadata/batch
+      summary: Dropbox get_file_metadata/batch
       description: >-
         [get_file_metadata/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata-batch)
 
@@ -5198,8 +5149,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"files\": [\n        \"id:3kmLmQFnf1AAAAAAAAAAAw\",
-                \n        \"id:VvTaJu2VZzAAAAAAAAAADQ\"\n    ], \n   
-                \"actions\": []\n}"
+                \n        \"id:VvTaJu2VZzAAAAAAAAAADQ\"\n    ], \n    \"actions\": []\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -5253,7 +5203,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: get_folder_metadata
+      summary: Dropbox get_folder_metadata
       description: >-
         [get_folder_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_folder_metadata)
 
@@ -5268,8 +5218,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"shared_folder_id\": \"84528192421\", \n   
-                \"actions\": []\n}"
+                "{\n    \"shared_folder_id\": \"84528192421\", \n    \"actions\": []\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -5331,7 +5280,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: get_shared_link_file
+      summary: Dropbox get_shared_link_file
       description: >-
         [get_shared_link_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_file)
 
@@ -5393,7 +5342,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: get_shared_link_metadata
+      summary: Dropbox get_shared_link_metadata
       description: >-
         [get_shared_link_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_metadata)
 
@@ -5460,7 +5409,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_file_members
+      summary: Dropbox list_file_members
       description: >-
         [list_file_members](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members)
 
@@ -5476,8 +5425,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n   
-                \"include_inherited\": true, \n    \"limit\": 100\n}"
+                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"include_inherited\": true, \n    \"limit\": 100\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -5543,7 +5491,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_file_members/batch
+      summary: Dropbox list_file_members/batch
       description: >-
         [list_file_members/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-batch)
 
@@ -5636,7 +5584,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_file_members/continue
+      summary: Dropbox list_file_members/continue
       description: >-
         [list_file_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-continue)
 
@@ -5720,7 +5668,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_folder_members/continue
+      summary: Dropbox list_folder_members/continue
       description: >-
         [list_folder_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folder_members-continue)
 
@@ -5801,7 +5749,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_folders
+      summary: Dropbox list_folders
       description: >-
         [list_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders)
 
@@ -5879,7 +5827,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_folders/continue
+      summary: Dropbox list_folders/continue
       description: >-
         [list_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders-continue)
 
@@ -5961,7 +5909,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_mountable_folders
+      summary: Dropbox list_mountable_folders
       description: >-
         [list_mountable_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders)
 
@@ -6040,7 +5988,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_mountable_folders/continue
+      summary: Dropbox list_mountable_folders/continue
       description: >-
         [list_mountable_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders-continue)
 
@@ -6123,7 +6071,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_received_files
+      summary: Dropbox list_received_files
       description: >-
         [list_received_files](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files)
 
@@ -6192,7 +6140,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_received_files/continue
+      summary: Dropbox list_received_files/continue
       description: >-
         [list_received_files/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files-continue)
 
@@ -6262,7 +6210,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: list_shared_links
+      summary: Dropbox list_shared_links
       description: >-
         [list_shared_links](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_shared_links)
 
@@ -6339,7 +6287,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: modify_shared_link_settings
+      summary: Dropbox modify_shared_link_settings
       description: >-
         [modify_shared_link_settings](https://www.dropbox.com/developers/documentation/http/documentation#sharing-modify_shared_link_settings)
 
@@ -6364,8 +6312,7 @@ paths:
                 "{\n    \"url\":
                 \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\",
                 \n    \"settings\": {\n        \"requested_visibility\":
-                \"public\", \n        \"audience\": \"public\", \n       
-                \"access\": \"viewer\"\n    }, \n    \"remove_expiration\":
+                \"public\", \n        \"audience\": \"public\", \n        \"access\": \"viewer\"\n    }, \n    \"remove_expiration\":
                 false\n}"
       parameters:
         - name: Content-Type
@@ -6416,7 +6363,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: mount_folder
+      summary: Dropbox mount_folder
       description: >-
         [mount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-mount_folder)
 
@@ -6495,7 +6442,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: relinquish_file_membership
+      summary: Dropbox relinquish_file_membership
       description: >-
         [relinquish_file_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_file_membership)
 
@@ -6527,7 +6474,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: relinquish_folder_membership
+      summary: Dropbox relinquish_folder_membership
       description: >-
         [relinquish_folder_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_folder_membership)
 
@@ -6547,8 +6494,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"shared_folder_id\": \"84528192421\", \n   
-                \"leave_a_copy\": false\n}"
+                "{\n    \"shared_folder_id\": \"84528192421\", \n    \"leave_a_copy\": false\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -6577,7 +6523,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: remove_file_member_2
+      summary: Dropbox remove_file_member_2
       description: >-
         [remove_file_member_2](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_file_member_2)
 
@@ -6592,8 +6538,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n   
-                \"member\": {\n        \".tag\": \"email\", \n        \"email\":
+                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"member\": {\n        \".tag\": \"email\", \n        \"email\":
                 \"justin@example.com\"\n    }\n}"
       parameters:
         - name: Content-Type
@@ -6623,7 +6568,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: remove_folder_member
+      summary: Dropbox remove_folder_member
       description: >-
         [remove_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_folder_member)
 
@@ -6671,7 +6616,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: revoke_shared_link
+      summary: Dropbox revoke_shared_link
       description: >-
         [revoke_shared_link](https://www.dropbox.com/developers/documentation/http/documentation#sharing-revoke_shared_link)
 
@@ -6709,7 +6654,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: set_access_inheritance
+      summary: Dropbox set_access_inheritance
       description: >-
         [set_access_inheritance](https://www.dropbox.com/developers/documentation/http/documentation#sharing-set_access_inheritance)
 
@@ -6729,8 +6674,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"shared_folder_id\": \"84528192421\", \n   
-                \"access_inheritance\": \"inherit\"\n}"
+                "{\n    \"shared_folder_id\": \"84528192421\", \n    \"access_inheritance\": \"inherit\"\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -6793,7 +6737,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: share_folder
+      summary: Dropbox share_folder
       description: >-
         [share_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-share_folder)
 
@@ -6816,11 +6760,8 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"path\": \"/example/workspace\", \n   
-                \"acl_update_policy\": \"editors\", \n    \"force_async\":
-                false, \n    \"member_policy\": \"team\", \n   
-                \"shared_link_policy\": \"members\", \n   
-                \"access_inheritance\": \"inherit\"\n}"
+                "{\n    \"path\": \"/example/workspace\", \n    \"acl_update_policy\": \"editors\", \n    \"force_async\":
+                false, \n    \"member_policy\": \"team\", \n    \"shared_link_policy\": \"members\", \n    \"access_inheritance\": \"inherit\"\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -6883,7 +6824,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: transfer_folder
+      summary: Dropbox transfer_folder
       description: >-
         [transfer_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-transfer_folder)
 
@@ -6901,8 +6842,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"shared_folder_id\": \"84528192421\", \n   
-                \"to_dropbox_id\":
+                "{\n    \"shared_folder_id\": \"84528192421\", \n    \"to_dropbox_id\":
                 \"dbid:AAEufNrMPSPe0dMQijRP0N_aZtBJRm26W4Q\"\n}"
       parameters:
         - name: Content-Type
@@ -6919,7 +6859,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: unmount_folder
+      summary: Dropbox unmount_folder
       description: >-
         [unmount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unmount_folder)
 
@@ -6950,7 +6890,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: unshare_file
+      summary: Dropbox unshare_file
       description: >-
         [unshare_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_file)
 
@@ -6980,7 +6920,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: unshare_folder
+      summary: Dropbox unshare_folder
       description: >-
         [unshare_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_folder)
 
@@ -6998,8 +6938,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"shared_folder_id\": \"84528192421\", \n   
-                \"leave_a_copy\": false\n}"
+                "{\n    \"shared_folder_id\": \"84528192421\", \n    \"leave_a_copy\": false\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -7028,7 +6967,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: update_file_member
+      summary: Dropbox update_file_member
       description: >-
         [update_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_file_member)
 
@@ -7043,8 +6982,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n   
-                \"member\": {\n        \".tag\": \"email\", \n        \"email\":
+                "{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"member\": {\n        \".tag\": \"email\", \n        \"email\":
                 \"justin@example.com\"\n    }, \n    \"access_level\":
                 \"viewer\"\n}"
       parameters:
@@ -7074,7 +7012,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: update_folder_member
+      summary: Dropbox update_folder_member
       description: >-
         [update_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_member)
 
@@ -7121,7 +7059,7 @@ paths:
     post:
       tags:
         - sharing
-      summary: update_folder_policy
+      summary: Dropbox update_folder_policy
       description: >-
         [update_folder_policy](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_policy)
 
@@ -7139,8 +7077,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"shared_folder_id\": \"84528192421\", \n   
-                \"member_policy\": \"team\", \n    \"acl_update_policy\":
+                "{\n    \"shared_folder_id\": \"84528192421\", \n    \"member_policy\": \"team\", \n    \"acl_update_policy\":
                 \"owner\", \n    \"shared_link_policy\": \"members\"\n}"
       parameters:
         - name: Content-Type
@@ -7203,7 +7140,7 @@ paths:
     post:
       tags:
         - team > devices
-      summary: devices/list_member_devices
+      summary: Dropbox devices/list_member_devices
       description: >-
         [devices/list_member_devices](https://www.dropbox.com/developers/documentation/http/teams#team-devices-list_member_devices)
 
@@ -7219,10 +7156,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"team_member_id\":
-                \"dbmid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\", \n   
-                \"include_web_sessions\": true, \n   
-                \"include_desktop_clients\": true, \n   
-                \"include_mobile_clients\": true\n}"
+                \"dbmid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\", \n    \"include_web_sessions\": true, \n    \"include_desktop_clients\": true, \n    \"include_mobile_clients\": true\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -7238,7 +7172,7 @@ paths:
     post:
       tags:
         - team > devices
-      summary: devices/list_members_devices
+      summary: Dropbox devices/list_members_devices
       description: >-
         [devices/list_members_devices](https://www.dropbox.com/developers/documentation/http/teams#team-devices-list_members_devices)
 
@@ -7270,7 +7204,7 @@ paths:
     post:
       tags:
         - team > devices
-      summary: devices/revoke_device_session
+      summary: Dropbox devices/revoke_device_session
       description: >-
         [devices/revoke_device_session](https://www.dropbox.com/developers/documentation/http/teams#team-devices-revoke_device_session)
 
@@ -7303,7 +7237,7 @@ paths:
     post:
       tags:
         - team > devices
-      summary: devices/revoke_device_session_batch
+      summary: Dropbox devices/revoke_device_session_batch
       description: >-
         [devices/revoke_device_session_batch](https://www.dropbox.com/developers/documentation/http/teams#team-devices-revoke_device_session_batch)
 
@@ -7321,8 +7255,7 @@ paths:
                 "{\n    \"revoke_devices\": [\n        {\n            \".tag\":
                 \"web_session\", \n            \"session_id\":
                 \"1234faaf0678bcde\", \n            \"team_member_id\":
-                \"dbmid:AAHhy7WsR0x-u4ZCqiDl5Fz5zvuL3kmspwU\"\n        }\n   
-                ]\n}"
+                \"dbmid:AAHhy7WsR0x-u4ZCqiDl5Fz5zvuL3kmspwU\"\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -7338,7 +7271,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/create
+      summary: Dropbox groups/create
       description: >-
         [groups/create](https://www.dropbox.com/developers/documentation/http/teams#team-groups-create)
 
@@ -7355,8 +7288,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"group_name\": \"Europe sales\", \n   
-                \"add_creator_as_owner\": false, \n    \"group_external_id\":
+                "{\n    \"group_name\": \"Europe sales\", \n    \"add_creator_as_owner\": false, \n    \"group_external_id\":
                 \"group-134\"\n}"
       parameters:
         - name: Content-Type
@@ -7419,7 +7351,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/delete
+      summary: Dropbox groups/delete
       description: >-
         [groups/delete](https://www.dropbox.com/developers/documentation/http/teams#team-groups-delete)
 
@@ -7470,7 +7402,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/get_info
+      summary: Dropbox groups/get_info
       description: >-
         [groups/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-groups-get_info)
 
@@ -7489,9 +7421,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \".tag\": \"group_ids\", \n    \"group_ids\": [\n       
-                \"g:e2db7665347abcd600000000001a2b3c\", \n       
-                \"g:111111147abcd6000000000222222c\"\n    ]\n}"
+                "{\n    \".tag\": \"group_ids\", \n    \"group_ids\": [\n        \"g:e2db7665347abcd600000000001a2b3c\", \n        \"g:111111147abcd6000000000222222c\"\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -7554,7 +7484,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/job_status/get
+      summary: Dropbox groups/job_status/get
       description: >-
         [groups/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-groups-job_status-get)
 
@@ -7602,7 +7532,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/list
+      summary: Dropbox groups/list
       description: >-
         [groups/list](https://www.dropbox.com/developers/documentation/http/teams#team-groups-list)
 
@@ -7654,7 +7584,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/list/continue
+      summary: Dropbox groups/list/continue
       description: >-
         [groups/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-groups-list-continue)
 
@@ -7709,7 +7639,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/members/add
+      summary: Dropbox groups/members/add
       description: >-
         [groups/members/add](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-add)
 
@@ -7730,14 +7660,11 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n       
-                \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
+                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
                 \n    \"members\": [\n        {\n            \"user\":
                 {\n                \".tag\": \"team_member_id\",
                 \n                \"team_member_id\":
-                \"dbmid:efgh5678\"\n            }, \n           
-                \"access_type\": \"member\"\n        }\n    ], \n   
-                \"return_members\": true\n}"
+                \"dbmid:efgh5678\"\n            }, \n            \"access_type\": \"member\"\n        }\n    ], \n    \"return_members\": true\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -7801,7 +7728,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/members/list
+      summary: Dropbox groups/members/list
       description: >-
         [groups/members/list](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-list)
 
@@ -7818,8 +7745,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n       
-                \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
+                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
                 \n    \"limit\": 100\n}"
       parameters:
         - name: Content-Type
@@ -7851,7 +7777,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/members/list/continue
+      summary: Dropbox groups/members/list/continue
       description: >-
         [groups/members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-list-continue)
 
@@ -7901,7 +7827,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/members/remove
+      summary: Dropbox groups/members/remove
       description: >-
         [groups/members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-remove)
 
@@ -7925,8 +7851,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n       
-                \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
+                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
                 \n    \"users\": [\n        {\n            \".tag\":
                 \"team_member_id\", \n            \"team_member_id\":
                 \"dbmid:efgh5678\"\n        }\n    ], \n    \"return_members\":
@@ -7994,7 +7919,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/members/set_access_type
+      summary: Dropbox groups/members/set_access_type
       description: >-
         [groups/members/set_access_type](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-set_access_type)
 
@@ -8011,11 +7936,9 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n       
-                \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
+                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
                 \n    \"user\": {\n        \".tag\": \"team_member_id\",
-                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"access_type\": \"member\", \n    \"return_members\": true\n}"
+                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"access_type\": \"member\", \n    \"return_members\": true\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -8078,7 +8001,7 @@ paths:
     post:
       tags:
         - team > groups
-      summary: groups/update
+      summary: Dropbox groups/update
       description: >-
         [groups/update](https://www.dropbox.com/developers/documentation/http/teams#team-groups-update)
 
@@ -8095,8 +8018,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n       
-                \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
+                "{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    },
                 \n    \"return_members\": true, \n    \"new_group_name\":
                 \"Europe west sales\", \n    \"new_group_external_id\":
                 \"sales-234\", \n    \"new_group_management_type\":
@@ -8162,7 +8084,7 @@ paths:
     post:
       tags:
         - team > legal_holds
-      summary: legal_holds/create_policy
+      summary: Dropbox legal_holds/create_policy
       description: >-
         [legal_holds/create_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-create_policy)
 
@@ -8222,7 +8144,7 @@ paths:
     post:
       tags:
         - team > legal_holds
-      summary: legal_holds/get_policy
+      summary: Dropbox legal_holds/get_policy
       description: >-
         [legal_holds/get_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-get_policy)
 
@@ -8278,7 +8200,7 @@ paths:
     post:
       tags:
         - team > legal_holds
-      summary: legal_holds/list_held_revisions
+      summary: Dropbox legal_holds/list_held_revisions
       description: >-
         [legal_holds/list_held_revisions](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_held_revisions)
 
@@ -8337,7 +8259,7 @@ paths:
     post:
       tags:
         - team > legal_holds
-      summary: legal_holds/list_held_revisions_continue
+      summary: Dropbox legal_holds/list_held_revisions_continue
       description: >-
         [legal_holds/list_held_revisions_continue](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_held_revisions_continue)
 
@@ -8396,7 +8318,7 @@ paths:
     post:
       tags:
         - team > legal_holds
-      summary: legal_holds/list_policies
+      summary: Dropbox legal_holds/list_policies
       description: >-
         [legal_holds/list_policies](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_policies)
 
@@ -8453,7 +8375,7 @@ paths:
     post:
       tags:
         - team > legal_holds
-      summary: legal_holds/release_policy
+      summary: Dropbox legal_holds/release_policy
       description: >-
         [legal_holds/release_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-release_policy)
 
@@ -8486,7 +8408,7 @@ paths:
     post:
       tags:
         - team > legal_holds
-      summary: legal_holds/update_policy
+      summary: Dropbox legal_holds/update_policy
       description: >-
         [legal_holds/update_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-update_policy)
 
@@ -8544,7 +8466,7 @@ paths:
     post:
       tags:
         - team > linked_apps
-      summary: linked_apps/list_member_linked_apps
+      summary: Dropbox linked_apps/list_member_linked_apps
       description: >-
         [linked_apps/list_member_linked_apps](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-list_member_linked_apps)
 
@@ -8578,7 +8500,7 @@ paths:
     post:
       tags:
         - team > linked_apps
-      summary: linked_apps/list_members_linked_apps
+      summary: Dropbox linked_apps/list_members_linked_apps
       description: >-
         [linked_apps/list_members_linked_apps](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-list_members_linked_apps)
 
@@ -8610,7 +8532,7 @@ paths:
     post:
       tags:
         - team > linked_apps
-      summary: linked_apps/revoke_linked_app
+      summary: Dropbox linked_apps/revoke_linked_app
       description: >-
         [linked_apps/revoke_linked_app](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-revoke_linked_app)
 
@@ -8640,7 +8562,7 @@ paths:
     post:
       tags:
         - team > linked_apps
-      summary: linked_apps/revoke_linked_app_batch
+      summary: Dropbox linked_apps/revoke_linked_app_batch
       description: >-
         [linked_apps/revoke_linked_app_batch](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-revoke_linked_app_batch)
 
@@ -8670,7 +8592,7 @@ paths:
     post:
       tags:
         - team > member_space_limits
-      summary: member_space_limits/excluded_users/add
+      summary: Dropbox member_space_limits/excluded_users/add
       description: >-
         [member_space_limits/excluded_users/add](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-add)
 
@@ -8717,7 +8639,7 @@ paths:
     post:
       tags:
         - team > member_space_limits
-      summary: member_space_limits/excluded_users/list
+      summary: Dropbox member_space_limits/excluded_users/list
       description: >-
         [member_space_limits/excluded_users/list](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-list)
 
@@ -8762,7 +8684,7 @@ paths:
     post:
       tags:
         - team > member_space_limits
-      summary: member_space_limits/excluded_users/list/continue
+      summary: Dropbox member_space_limits/excluded_users/list/continue
       description: >-
         [member_space_limits/excluded_users/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-list-continue)
 
@@ -8809,7 +8731,7 @@ paths:
     post:
       tags:
         - team > member_space_limits
-      summary: member_space_limits/excluded_users/remove
+      summary: Dropbox member_space_limits/excluded_users/remove
       description: >-
         [member_space_limits/excluded_users/remove](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-remove)
 
@@ -8856,7 +8778,7 @@ paths:
     post:
       tags:
         - team > member_space_limits
-      summary: member_space_limits/get_custom_quota
+      summary: Dropbox member_space_limits/get_custom_quota
       description: >-
         [member_space_limits/get_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-get_custom_quota)
 
@@ -8903,7 +8825,7 @@ paths:
     post:
       tags:
         - team > member_space_limits
-      summary: member_space_limits/remove_custom_quota
+      summary: Dropbox member_space_limits/remove_custom_quota
       description: >-
         [member_space_limits/remove_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-remove_custom_quota)
 
@@ -8950,7 +8872,7 @@ paths:
     post:
       tags:
         - team > member_space_limits
-      summary: member_space_limits/set_custom_quota
+      summary: Dropbox member_space_limits/set_custom_quota
       description: >-
         [member_space_limits/set_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-set_custom_quota)
 
@@ -8966,8 +8888,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"users_and_quotas\": [\n        {\n           
-                \"user\": {\n                \".tag\": \"team_member_id\",
+                "{\n    \"users_and_quotas\": [\n        {\n            \"user\": {\n                \".tag\": \"team_member_id\",
                 \n                \"team_member_id\":
                 \"dbmid:efgh5678\"\n            }, \n            \"quota_gb\":
                 30\n        }\n    ]\n}"
@@ -8999,7 +8920,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/add
+      summary: Dropbox members/add
       description: >-
         [members/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-add)
 
@@ -9031,12 +8952,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"new_members\": [\n        {\n           
-                \"member_email\": \"tom.s@company.com\", \n           
-                \"member_given_name\": \"Tom\", \n           
-                \"member_surname\": \"Silverstone\", \n           
-                \"member_external_id\": \"company_id:342432\", \n           
-                \"send_welcome_email\": true, \n            \"role\":
+                "{\n    \"new_members\": [\n        {\n            \"member_email\": \"tom.s@company.com\", \n            \"member_given_name\": \"Tom\", \n            \"member_surname\": \"Silverstone\", \n            \"member_external_id\": \"company_id:342432\", \n            \"send_welcome_email\": true, \n            \"role\":
                 \"member_only\"\n        }\n    ], \n    \"force_async\":
                 false\n}"
       parameters:
@@ -9098,7 +9014,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/add/job_status/get
+      summary: Dropbox members/add/job_status/get
       description: >-
         [members/add/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-add-job_status-get)
 
@@ -9175,7 +9091,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/delete_profile_photo
+      summary: Dropbox members/delete_profile_photo
       description: >-
         [members/delete_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-delete_profile_photo)
 
@@ -9250,7 +9166,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/get_info
+      summary: Dropbox members/get_info
       description: >-
         [members/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-members-get_info)
 
@@ -9330,7 +9246,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/list
+      summary: Dropbox members/list
       description: >-
         [members/list](https://www.dropbox.com/developers/documentation/http/teams#team-members-list)
 
@@ -9406,7 +9322,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/list/continue
+      summary: Dropbox members/list/continue
       description: >-
         [members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-members-list-continue)
 
@@ -9485,7 +9401,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/move_former_member_files
+      summary: Dropbox members/move_former_member_files
       description: >-
         [members/move_former_member_files](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files)
 
@@ -9506,10 +9422,8 @@ paths:
               type: string
               example: >-
                 "{\n    \"user\": {\n        \".tag\": \"team_member_id\",
-                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"transfer_dest_id\": {\n        \".tag\": \"team_member_id\",
-                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"transfer_admin_id\": {\n        \".tag\": \"team_member_id\",
+                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"transfer_dest_id\": {\n        \".tag\": \"team_member_id\",
+                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"transfer_admin_id\": {\n        \".tag\": \"team_member_id\",
                 \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }\n}"
       parameters:
         - name: Content-Type
@@ -9539,7 +9453,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/move_former_member_files/job_status/check
+      summary: Dropbox members/move_former_member_files/job_status/check
       description: >-
         [members/move_former_member_files/job_status/check](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files-job_status-check)
 
@@ -9585,7 +9499,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/recover
+      summary: Dropbox members/recover
       description: >-
         [members/recover](https://www.dropbox.com/developers/documentation/http/teams#team-members-recover)
 
@@ -9622,7 +9536,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/remove
+      summary: Dropbox members/remove
       description: >-
         [members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove)
 
@@ -9657,13 +9571,9 @@ paths:
               type: string
               example: >-
                 "{\n    \"user\": {\n        \".tag\": \"team_member_id\",
-                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"wipe_data\": true, \n    \"transfer_dest_id\": {\n       
-                \".tag\": \"team_member_id\", \n        \"team_member_id\":
+                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"wipe_data\": true, \n    \"transfer_dest_id\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\":
                 \"dbmid:efgh5678\"\n    }, \n    \"transfer_admin_id\":
-                {\n        \".tag\": \"team_member_id\", \n       
-                \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"keep_account\": false, \n    \"retain_team_shares\": false\n}"
+                {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"keep_account\": false, \n    \"retain_team_shares\": false\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -9692,7 +9602,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/remove/job_status/get
+      summary: Dropbox members/remove/job_status/get
       description: >-
         [members/remove/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove-job_status-get)
 
@@ -9738,7 +9648,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/secondary_emails/add
+      summary: Dropbox members/secondary_emails/add
       description: >-
         [members/secondary_emails/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-add)
 
@@ -9759,13 +9669,10 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"new_secondary_emails\": [\n        {\n           
-                \"user\": {\n                \".tag\": \"team_member_id\",
+                "{\n    \"new_secondary_emails\": [\n        {\n            \"user\": {\n                \".tag\": \"team_member_id\",
                 \n                \"team_member_id\":
-                \"dbmid:efgh5678\"\n            }, \n           
-                \"secondary_emails\": [\n                \"bob2@hotmail.com\",
-                \n                \"bob@inst.gov\"\n            ]\n       
-                }\n    ]\n}"
+                \"dbmid:efgh5678\"\n            }, \n            \"secondary_emails\": [\n                \"bob2@hotmail.com\",
+                \n                \"bob@inst.gov\"\n            ]\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -9809,7 +9716,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/secondary_emails/delete
+      summary: Dropbox members/secondary_emails/delete
       description: >-
         [members/secondary_emails/delete](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-delete)
 
@@ -9829,13 +9736,10 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"emails_to_delete\": [\n        {\n           
-                \"user\": {\n                \".tag\": \"team_member_id\",
+                "{\n    \"emails_to_delete\": [\n        {\n            \"user\": {\n                \".tag\": \"team_member_id\",
                 \n                \"team_member_id\":
-                \"dbmid:efgh5678\"\n            }, \n           
-                \"secondary_emails\": [\n                \"bob2@hotmail.com\",
-                \n                \"bob@inst.gov\"\n            ]\n       
-                }\n    ]\n}"
+                \"dbmid:efgh5678\"\n            }, \n            \"secondary_emails\": [\n                \"bob2@hotmail.com\",
+                \n                \"bob@inst.gov\"\n            ]\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -9873,7 +9777,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/secondary_emails/resend_verification_emails
+      summary: Dropbox members/secondary_emails/resend_verification_emails
       description: >-
         [members/secondary_emails/resend_verification_emails](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-resend_verification_emails)
 
@@ -9890,13 +9794,10 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"emails_to_resend\": [\n        {\n           
-                \"user\": {\n                \".tag\": \"team_member_id\",
+                "{\n    \"emails_to_resend\": [\n        {\n            \"user\": {\n                \".tag\": \"team_member_id\",
                 \n                \"team_member_id\":
-                \"dbmid:efgh5678\"\n            }, \n           
-                \"secondary_emails\": [\n                \"bob2@hotmail.com\",
-                \n                \"bob@inst.gov\"\n            ]\n       
-                }\n    ]\n}"
+                \"dbmid:efgh5678\"\n            }, \n            \"secondary_emails\": [\n                \"bob2@hotmail.com\",
+                \n                \"bob@inst.gov\"\n            ]\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -9932,7 +9833,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/send_welcome_email
+      summary: Dropbox members/send_welcome_email
       description: >-
         [members/send_welcome_email](https://www.dropbox.com/developers/documentation/http/teams#team-members-send_welcome_email)
 
@@ -9971,7 +9872,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/set_admin_permissions
+      summary: Dropbox members/set_admin_permissions
       description: >-
         [members/set_admin_permissions](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_admin_permissions)
 
@@ -9989,8 +9890,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"user\": {\n        \".tag\": \"team_member_id\",
-                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"new_role\": \"member_only\"\n}"
+                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"new_role\": \"member_only\"\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -10021,7 +9921,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/set_profile
+      summary: Dropbox members/set_profile
       description: >-
         [members/set_profile](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile)
 
@@ -10039,8 +9939,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"user\": {\n        \".tag\": \"team_member_id\",
-                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"new_email\": \"t.smith@domain.com\", \n    \"new_surname\":
+                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"new_email\": \"t.smith@domain.com\", \n    \"new_surname\":
                 \"Smith\"\n}"
       parameters:
         - name: Content-Type
@@ -10098,7 +9997,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/set_profile_photo
+      summary: Dropbox members/set_profile_photo
       description: >-
         [members/set_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile_photo)
 
@@ -10116,11 +10015,8 @@ paths:
               type: string
               example: >-
                 "{\n    \"user\": {\n        \".tag\": \"team_member_id\",
-                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"photo\": {\n        \".tag\": \"base64_data\", \n       
-                \"base64_data\":
-                \"SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4=\"\n   
-                }\n}"
+                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"photo\": {\n        \".tag\": \"base64_data\", \n        \"base64_data\":
+                \"SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4=\"\n    }\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -10177,7 +10073,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/suspend
+      summary: Dropbox members/suspend
       description: >-
         [members/suspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-suspend)
 
@@ -10198,8 +10094,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"user\": {\n        \".tag\": \"team_member_id\",
-                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n   
-                \"wipe_data\": false\n}"
+                \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"wipe_data\": false\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -10215,7 +10110,7 @@ paths:
     post:
       tags:
         - team > members
-      summary: members/unsuspend
+      summary: Dropbox members/unsuspend
       description: >-
         [members/unsuspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-unsuspend)
 
@@ -10252,7 +10147,7 @@ paths:
     post:
       tags:
         - team > namespaces
-      summary: namespaces/list
+      summary: Dropbox namespaces/list
       description: >-
         [namespaces/list](https://www.dropbox.com/developers/documentation/http/teams#team-namespaces-list)
 
@@ -10311,7 +10206,7 @@ paths:
     post:
       tags:
         - team > namespaces
-      summary: namespaces/list/continue
+      summary: Dropbox namespaces/list/continue
       description: >-
         [namespaces/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-namespaces-list-continue)
 
@@ -10369,7 +10264,7 @@ paths:
     post:
       tags:
         - team > reports
-      summary: reports/get_activity
+      summary: Dropbox reports/get_activity
       description: >-
         [reports/get_activity](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_activity)
 
@@ -10399,7 +10294,7 @@ paths:
     post:
       tags:
         - team > reports
-      summary: reports/get_devices
+      summary: Dropbox reports/get_devices
       description: >-
         [reports/get_devices](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_devices)
 
@@ -10429,7 +10324,7 @@ paths:
     post:
       tags:
         - team > reports
-      summary: reports/get_membership
+      summary: Dropbox reports/get_membership
       description: >-
         [reports/get_membership](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_membership)
 
@@ -10459,7 +10354,7 @@ paths:
     post:
       tags:
         - team > reports
-      summary: reports/get_storage
+      summary: Dropbox reports/get_storage
       description: >-
         [reports/get_storage](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_storage)
 
@@ -10489,7 +10384,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/activate
+      summary: Dropbox team_folder/activate
       description: >-
         [team_folder/activate](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-activate)
 
@@ -10544,7 +10439,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/archive
+      summary: Dropbox team_folder/archive
       description: >-
         [team_folder/archive](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-archive)
 
@@ -10562,8 +10457,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"team_folder_id\": \"123456789\", \n   
-                \"force_async_off\": false\n}"
+                "{\n    \"team_folder_id\": \"123456789\", \n    \"force_async_off\": false\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -10603,7 +10497,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/archive/check
+      summary: Dropbox team_folder/archive/check
       description: >-
         [team_folder/archive/check](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-archive-check)
 
@@ -10659,7 +10553,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/create
+      summary: Dropbox team_folder/create
       description: >-
         [team_folder/create](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-create)
 
@@ -10716,7 +10610,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/get_info
+      summary: Dropbox team_folder/get_info
       description: >-
         [team_folder/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-get_info)
 
@@ -10733,8 +10627,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"team_folder_ids\": [\n        \"947182\", \n       
-                \"5819424\", \n        \"852307532\"\n    ]\n}"
+                "{\n    \"team_folder_ids\": [\n        \"947182\", \n        \"5819424\", \n        \"852307532\"\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -10750,7 +10643,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/list
+      summary: Dropbox team_folder/list
       description: >-
         [team_folder/list](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-list)
 
@@ -10808,7 +10701,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/list/continue
+      summary: Dropbox team_folder/list/continue
       description: >-
         [team_folder/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-list-continue)
 
@@ -10869,7 +10762,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/permanently_delete
+      summary: Dropbox team_folder/permanently_delete
       description: >-
         [team_folder/permanently_delete](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-permanently_delete)
 
@@ -10901,7 +10794,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/rename
+      summary: Dropbox team_folder/rename
       description: >-
         [team_folder/rename](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-rename)
 
@@ -10958,7 +10851,7 @@ paths:
     post:
       tags:
         - team > team_folder
-      summary: team_folder/update_sync_settings
+      summary: Dropbox team_folder/update_sync_settings
       description: >-
         [team_folder/update_sync_settings](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-update_sync_settings)
 
@@ -10974,9 +10867,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"team_folder_id\": \"123456789\", \n   
-                \"sync_setting\": \"not_synced\", \n   
-                \"content_sync_settings\": [\n        {\n            \"id\":
+                "{\n    \"team_folder_id\": \"123456789\", \n    \"sync_setting\": \"not_synced\", \n    \"content_sync_settings\": [\n        {\n            \"id\":
                 \"id:a4ayc_80_OEAAAAAAAAAXw\", \n            \"sync_setting\":
                 \"not_synced\"\n        }\n    ]\n}"
       parameters:
@@ -11017,7 +10908,7 @@ paths:
     post:
       tags:
         - team
-      summary: features/get_values
+      summary: Dropbox features/get_values
       description: >-
         [features/get_values](https://www.dropbox.com/developers/documentation/http/teams#team-features-get_values)
 
@@ -11037,8 +10928,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"features\": [\n        {\n            \".tag\":
-                \"upload_api_rate_limit\"\n        }, \n        {\n           
-                \".tag\": \"has_team_shared_dropbox\"\n        }\n    ]\n}"
+                \"upload_api_rate_limit\"\n        }, \n        {\n            \".tag\": \"has_team_shared_dropbox\"\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -11075,7 +10965,7 @@ paths:
     post:
       tags:
         - team
-      summary: get_info
+      summary: Dropbox get_info
       description: >-
         [get_info](https://www.dropbox.com/developers/documentation/http/teams#team-get_info)
 
@@ -11123,7 +11013,7 @@ paths:
     post:
       tags:
         - team
-      summary: token/get_authenticated_admin
+      summary: Dropbox token/get_authenticated_admin
       description: >-
         [token/get_authenticated_admin](https://www.dropbox.com/developers/documentation/http/teams#team-token-get_authenticated_admin)
 
@@ -11181,7 +11071,7 @@ paths:
     post:
       tags:
         - team_log
-      summary: get_events
+      summary: Dropbox get_events
       description: >-
         [get_events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events)
 
@@ -11314,7 +11204,7 @@ paths:
     post:
       tags:
         - team_log
-      summary: get_events/continue
+      summary: Dropbox get_events/continue
       description: >-
         [get_events/continue](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events-continue)
 
@@ -11438,7 +11328,7 @@ paths:
     post:
       tags:
         - users
-      summary: features/get_values
+      summary: Dropbox features/get_values
       description: >-
         [features/get_values](https://www.dropbox.com/developers/documentation/http/documentation#users-features-get_values)
 
@@ -11455,8 +11345,7 @@ paths:
               type: string
               example: >-
                 "{\n    \"features\": [\n        {\n            \".tag\":
-                \"paper_as_files\"\n        }, \n        {\n           
-                \".tag\": \"file_locking\"\n        }\n    ]\n}"
+                \"paper_as_files\"\n        }, \n        {\n            \".tag\": \"file_locking\"\n        }\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -11489,7 +11378,7 @@ paths:
     post:
       tags:
         - users
-      summary: get_account
+      summary: Dropbox get_account
       description: >-
         [get_account](https://www.dropbox.com/developers/documentation/http/documentation#users-get_account)
 
@@ -11546,7 +11435,7 @@ paths:
     post:
       tags:
         - users
-      summary: get_account_batch
+      summary: Dropbox get_account_batch
       description: >-
         [get_account_batch](https://www.dropbox.com/developers/documentation/http/documentation#users-get_account_batch)
 
@@ -11562,9 +11451,7 @@ paths:
             schema:
               type: string
               example: >-
-                "{\n    \"account_ids\": [\n       
-                \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\", \n       
-                \"dbid:AAH1Vcz-DVoRDeixtr_OA8oUGgiqhs4XPOQ\"\n    ]\n}"
+                "{\n    \"account_ids\": [\n        \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\", \n        \"dbid:AAH1Vcz-DVoRDeixtr_OA8oUGgiqhs4XPOQ\"\n    ]\n}"
       parameters:
         - name: Content-Type
           in: header
@@ -11605,7 +11492,7 @@ paths:
     post:
       tags:
         - users
-      summary: get_current_account
+      summary: Dropbox get_current_account
       description: >-
         [get_current_account](https://www.dropbox.com/developers/documentation/http/documentation#users-get_current_account)
 
@@ -11668,7 +11555,7 @@ paths:
     post:
       tags:
         - users
-      summary: get_space_usage
+      summary: Dropbox get_space_usage
       description: >-
         [get_space_usage](https://www.dropbox.com/developers/documentation/http/documentation#users-get_space_usage)
 
