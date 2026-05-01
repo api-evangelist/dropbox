@@ -1,14 +1,15 @@
 aid: dropbox
-url: >2-
-
-  https://raw.githubusercontent.com/api-search/documents/main/_apis/dropbox/apis.md
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/dropbox/refs/heads/main/apis.yml
 apis:
   - aid: dropbox:dropbox-api
     name: Dropbox API
-    tags: []
+    tags:
+      - Documents
+      - Storage
     image: 
       https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    baseURL: https://api.example.com
+    baseURL: https://api.dropboxapi.com
     humanURL: https://www.dropbox.com/developers/documentation/http/overview
     properties:
       - url: https://www.dropbox.com/developers/documentation/http/overview
@@ -21,7 +22,9 @@ apis:
       file synchronization, personal cloud, and client software.
   - aid: dropbox:dropbox-sign-api
     name: Dropbox Sign API
-    tags: []
+    tags:
+      - Signatures
+      - Documents
     image: 
       https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.hellosign.com
@@ -66,7 +69,7 @@ common:
   - url: https://blog.dropbox.com/
     type: Blog
 created: '2024-06-07T00:00:00.000Z'
-modified: '2026-03-16'
+modified: '2026-04-28'
 description: >-
   Dropbox is a file hosting service operated by the American company Dropbox, Inc.,
   headquartered in San Francisco, California, U.S. that offers cloud storage, file
@@ -75,7 +78,7 @@ maintainers:
   - FN: API Evangelist
     url: http://apievangelist.com
     email: kin@apievangelist.com
-specificationVersion: '0.18'
+specificationVersion: '0.19'
 type: Contract
 position: Consuming
 access: 3rd-Party

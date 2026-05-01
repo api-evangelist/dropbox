@@ -4,8 +4,7 @@ Dropbox is a file hosting service operated by the American company Dropbox,
 Inc., headquartered in San Francisco, California, U.S. that offers cloud
 storage, file synchronization, personal cloud, and client software. 
 
-**URL:** [Visit APIs.json URL](
-https://raw.githubusercontent.com/api-search/documents/main/_apis/dropbox/apis.md)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/dropbox/refs/heads/main/apis.yml)
 
 ## Scope
 
@@ -20,7 +19,7 @@ https://raw.githubusercontent.com/api-search/documents/main/_apis/dropbox/apis.m
 ## Timestamps
 
 - **Created:** 2024-06-07T00:00:00.000Z 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
@@ -32,6 +31,10 @@ offers cloud storage, file synchronization, personal cloud, and client
 software.
 
 **Human URL:** [https://www.dropbox.com/developers/documentation/http/overview](https://www.dropbox.com/developers/documentation/http/overview)
+
+#### Tags:
+
+ - Documents, Storage
 
 #### Properties
 
@@ -47,6 +50,10 @@ highly-configurable features, the Dropbox Sign API empowers you to build
 secure signing experiences and document workflows that delight your users.
 
 **Human URL:** [https://developers.hellosign.com/](https://developers.hellosign.com/)
+
+#### Tags:
+
+ - Signatures, Documents
 
 #### Properties
 
