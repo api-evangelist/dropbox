@@ -610,7 +610,7 @@ paths:
           in: header
           schema:
             type: string
-          example: ' Bearer IU571Pc9cGAAAAAAAAAAAQh57r-VTd7qBjZBUsVHLR6NRVTcd0FOThotVQmF9q9F'
+          example: 'Bearer YOUR_ACCESS_TOKEN'
       responses:
         '200':
           description: OK
