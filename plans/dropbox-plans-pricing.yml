@@ -1,0 +1,82 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Dropbox
+providerId: dropbox
+created: '2026-05-04'
+modified: '2026-05-04'
+reconciled: true
+tags:
+  - File Storage
+  - Sync
+  - Collaboration
+description: Dropbox business per-user-per-month plans.
+sources:
+  - https://www.dropbox.com/plans
+plans:
+  - id: dropbox-standard
+    name: Standard
+    type: paid
+    description: $15/user/mo. Starts at 3 TB pooled.
+    entries:
+      - label: Per user
+        name: seat
+        type: subscription
+        metric: user
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '15.00'
+        userMultiplied: true
+      - label: Pooled storage
+        name: storage
+        type: quota
+        metric: TB
+        limit: 3
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: 1+ users
+      - name: 180-day deleted-file recovery
+      - name: 100 GB transfer
+      - name: PDF editing/signatures
+      - name: Branding
+      - name: Admin control
+      - name: Team folders
+  - id: dropbox-advanced
+    name: Advanced
+    type: paid
+    description: $24/user/mo. Starts at 15 TB pooled.
+    entries:
+      - label: Per user
+        name: seat
+        type: subscription
+        metric: user
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '24.00'
+        userMultiplied: true
+      - label: Pooled storage
+        name: storage
+        type: quota
+        metric: TB
+        limit: 15
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: 3+ users
+      - name: 1-year deleted-file recovery
+      - name: End-to-end encryption
+      - name: Advanced key management
+      - name: Compliance tracking
+      - name: SSO
+      - name: Tiered admin

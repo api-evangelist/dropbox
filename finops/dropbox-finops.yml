@@ -1,0 +1,57 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Dropbox
+providerId: dropbox
+created: '2026-05-04'
+modified: '2026-05-04'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+  - File Storage
+description: FOCUS-aligned FinOps for Dropbox.
+sources:
+  - https://www.dropbox.com/plans
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Dropbox
+serviceCategory: File Storage
+billingModel:
+  pricingCategory: Per-Seat Subscription
+  billingFrequency: Monthly
+  billingCurrency: USD
+focusColumns:
+  ServiceName: Dropbox
+  ServiceCategory: File Storage
+  ProviderName: Dropbox
+  PublisherName: Dropbox
+  BillingCurrency: USD
+meters:
+  - name: user_seats
+    unit: seat-month
+    aggregation: max
+    dimensions:
+      - plan
+  - name: pooled_storage
+    unit: TB-month
+    aggregation: max
+  - name: transfer_volume
+    unit: GB
+    aggregation: sum
+  - name: sign_requests
+    unit: request
+    aggregation: sum
+principles:
+  - name: Visibility
+    description: Track Dropbox consumption monthly via admin/billing exports.
+  - name: Allocation
+    description: Tag seats/usage to teams or cost centers for chargeback.
+  - name: Optimization
+    description: Right-size tier and seat count quarterly; reclaim inactive seats.
+  - name: Accountability
+    description: Set spend alerts and renew at observed active utilization.
