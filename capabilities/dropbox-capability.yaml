@@ -1,0 +1,2119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox API Reference
+  description: 'The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically
+    and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints
+    in the Dropbox API. The Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations
+    that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that
+    would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints
+    fol'
+  tags:
+  - Dropbox
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: dropbox
+    baseUri: https://api.dropbox.com
+    description: Dropbox API Reference HTTP API.
+    authentication:
+      type: bearer
+      token: '{{DROPBOX_TOKEN}}'
+    resources:
+    - name: 2-account-set-profile-photo
+      path: /2/account/set_profile_photo
+      operations:
+      - name: post-2-account-set-profile-photo
+        method: POST
+        description: Dropbox set_profile_photo
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-auth-token-from-oauth1
+      path: /2/auth/token/from_oauth1
+      operations:
+      - name: post-2-auth-token-from-oauth1
+        method: POST
+        description: Dropbox token/from_oauth1
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-auth-token-revoke
+      path: /2/auth/token/revoke
+      operations:
+      - name: post-2-auth-token-revoke
+        method: POST
+        description: Dropbox token/revoke
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-check-app
+      path: /2/check/app
+      operations:
+      - name: post-2-check-app
+        method: POST
+        description: Dropbox app
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-check-user
+      path: /2/check/user
+      operations:
+      - name: post-2-check-user
+        method: POST
+        description: Dropbox user
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-contacts-delete-manual-contacts
+      path: /2/contacts/delete_manual_contacts
+      operations:
+      - name: post-2-contacts-delete-manual-contacts
+        method: POST
+        description: Dropbox delete_manual_contacts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-contacts-delete-manual-contacts-batch
+      path: /2/contacts/delete_manual_contacts_batch
+      operations:
+      - name: post-2-contacts-delete-manual-contacts-batch
+        method: POST
+        description: Dropbox delete_manual_contacts_batch
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-properties-add
+      path: /2/file_properties/properties/add
+      operations:
+      - name: post-2-file-properties-properties-add
+        method: POST
+        description: Dropbox properties/add
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-properties-overwrite
+      path: /2/file_properties/properties/overwrite
+      operations:
+      - name: post-2-file-properties-properties-overwrite
+        method: POST
+        description: Dropbox properties/overwrite
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-properties-remove
+      path: /2/file_properties/properties/remove
+      operations:
+      - name: post-2-file-properties-properties-remove
+        method: POST
+        description: Dropbox properties/remove
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-properties-search
+      path: /2/file_properties/properties/search
+      operations:
+      - name: post-2-file-properties-properties-search
+        method: POST
+        description: Dropbox properties/search
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-properties-search-continue
+      path: /2/file_properties/properties/search/continue
+      operations:
+      - name: post-2-file-properties-properties-search-continu
+        method: POST
+        description: Dropbox properties/search/continue
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-properties-update
+      path: /2/file_properties/properties/update
+      operations:
+      - name: post-2-file-properties-properties-update
+        method: POST
+        description: Dropbox properties/update
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-add-for-team
+      path: /2/file_properties/templates/add_for_team
+      operations:
+      - name: post-2-file-properties-templates-add-for-team
+        method: POST
+        description: Dropbox templates/add_for_team
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-add-for-user
+      path: /2/file_properties/templates/add_for_user
+      operations:
+      - name: post-2-file-properties-templates-add-for-user
+        method: POST
+        description: Dropbox templates/add_for_user
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-get-for-team
+      path: /2/file_properties/templates/get_for_team
+      operations:
+      - name: post-2-file-properties-templates-get-for-team
+        method: POST
+        description: Dropbox templates/get_for_team
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-get-for-user
+      path: /2/file_properties/templates/get_for_user
+      operations:
+      - name: post-2-file-properties-templates-get-for-user
+        method: POST
+        description: Dropbox templates/get_for_user
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-list-for-team
+      path: /2/file_properties/templates/list_for_team
+      operations:
+      - name: post-2-file-properties-templates-list-for-team
+        method: POST
+        description: Dropbox templates/list_for_team
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-list-for-user
+      path: /2/file_properties/templates/list_for_user
+      operations:
+      - name: post-2-file-properties-templates-list-for-user
+        method: POST
+        description: Dropbox templates/list_for_user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-remove-for-team
+      path: /2/file_properties/templates/remove_for_team
+      operations:
+      - name: post-2-file-properties-templates-remove-for-team
+        method: POST
+        description: Dropbox templates/remove_for_team
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-remove-for-user
+      path: /2/file_properties/templates/remove_for_user
+      operations:
+      - name: post-2-file-properties-templates-remove-for-user
+        method: POST
+        description: Dropbox templates/remove_for_user
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-update-for-team
+      path: /2/file_properties/templates/update_for_team
+      operations:
+      - name: post-2-file-properties-templates-update-for-team
+        method: POST
+        description: Dropbox templates/update_for_team
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-properties-templates-update-for-user
+      path: /2/file_properties/templates/update_for_user
+      operations:
+      - name: post-2-file-properties-templates-update-for-user
+        method: POST
+        description: Dropbox templates/update_for_user
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-requests-count
+      path: /2/file_requests/count
+      operations:
+      - name: post-2-file-requests-count
+        method: POST
+        description: Dropbox count
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-requests-create
+      path: /2/file_requests/create
+      operations:
+      - name: post-2-file-requests-create
+        method: POST
+        description: Dropbox create
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-requests-delete
+      path: /2/file_requests/delete
+      operations:
+      - name: post-2-file-requests-delete
+        method: POST
+        description: Dropbox delete
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-requests-delete-all-closed
+      path: /2/file_requests/delete_all_closed
+      operations:
+      - name: post-2-file-requests-delete-all-closed
+        method: POST
+        description: Dropbox delete_all_closed
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-requests-get
+      path: /2/file_requests/get
+      operations:
+      - name: post-2-file-requests-get
+        method: POST
+        description: Dropbox get
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-requests-list-v2
+      path: /2/file_requests/list_v2
+      operations:
+      - name: post-2-file-requests-list-v2
+        method: POST
+        description: Dropbox list
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-requests-list-continue
+      path: /2/file_requests/list/continue
+      operations:
+      - name: post-2-file-requests-list-continue
+        method: POST
+        description: Dropbox list/continue
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file-requests-update
+      path: /2/file_requests/update
+      operations:
+      - name: post-2-file-requests-update
+        method: POST
+        description: Dropbox update
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-copy-v2
+      path: /2/files/copy_v2
+      operations:
+      - name: post-2-files-copy-v2
+        method: POST
+        description: Dropbox copy
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-copy-batch-v2
+      path: /2/files/copy_batch_v2
+      operations:
+      - name: post-2-files-copy-batch-v2
+        method: POST
+        description: Dropbox copy_batch
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-copy-batch-check-v2
+      path: /2/files/copy_batch/check_v2
+      operations:
+      - name: post-2-files-copy-batch-check-v2
+        method: POST
+        description: Dropbox copy_batch/check
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-copy-reference-get
+      path: /2/files/copy_reference/get
+      operations:
+      - name: post-2-files-copy-reference-get
+        method: POST
+        description: Dropbox copy_reference/get
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-copy-reference-save
+      path: /2/files/copy_reference/save
+      operations:
+      - name: post-2-files-copy-reference-save
+        method: POST
+        description: Dropbox copy_reference/save
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-create-folder-v2
+      path: /2/files/create_folder_v2
+      operations:
+      - name: post-2-files-create-folder-v2
+        method: POST
+        description: Dropbox create_folder
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-create-folder-batch
+      path: /2/files/create_folder_batch
+      operations:
+      - name: post-2-files-create-folder-batch
+        method: POST
+        description: Dropbox create_folder_batch
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-create-folder-batch-check
+      path: /2/files/create_folder_batch/check
+      operations:
+      - name: post-2-files-create-folder-batch-check
+        method: POST
+        description: Dropbox create_folder_batch/check
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-delete-v2
+      path: /2/files/delete_v2
+      operations:
+      - name: post-2-files-delete-v2
+        method: POST
+        description: Dropbox delete
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-delete-batch
+      path: /2/files/delete_batch
+      operations:
+      - name: post-2-files-delete-batch
+        method: POST
+        description: Dropbox delete_batch
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-delete-batch-check
+      path: /2/files/delete_batch/check
+      operations:
+      - name: post-2-files-delete-batch-check
+        method: POST
+        description: Dropbox delete_batch/check
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-download
+      path: /2/files/download
+      operations:
+      - name: post-2-files-download
+        method: POST
+        description: Dropbox download
+        inputParameters:
+        - name: Dropbox-API-Arg
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-download-zip
+      path: /2/files/download_zip
+      operations:
+      - name: post-2-files-download-zip
+        method: POST
+        description: Dropbox download_zip
+        inputParameters:
+        - name: Dropbox-API-Arg
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-export
+      path: /2/files/export
+      operations:
+      - name: post-2-files-export
+        method: POST
+        description: Dropbox export
+        inputParameters:
+        - name: Dropbox-API-Arg
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-get-file-lock-batch
+      path: /2/files/get_file_lock_batch
+      operations:
+      - name: post-2-files-get-file-lock-batch
+        method: POST
+        description: Dropbox get_file_lock_batch
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-get-metadata
+      path: /2/files/get_metadata
+      operations:
+      - name: post-2-files-get-metadata
+        method: POST
+        description: Dropbox get_metadata
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-get-preview
+      path: /2/files/get_preview
+      operations:
+      - name: post-2-files-get-preview
+        method: POST
+        description: Dropbox get_preview
+        inputParameters:
+        - name: Dropbox-API-Arg
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-get-temporary-link
+      path: /2/files/get_temporary_link
+      operations:
+      - name: post-2-files-get-temporary-link
+        method: POST
+        description: Dropbox get_temporary_link
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-get-temporary-upload-link
+      path: /2/files/get_temporary_upload_link
+      operations:
+      - name: post-2-files-get-temporary-upload-link
+        method: POST
+        description: Dropbox get_temporary_upload_link
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-get-thumbnail-v2
+      path: /2/files/get_thumbnail_v2
+      operations:
+      - name: post-2-files-get-thumbnail-v2
+        method: POST
+        description: Dropbox get_thumbnail
+        inputParameters:
+        - name: Dropbox-API-Arg
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-get-thumbnail-batch
+      path: /2/files/get_thumbnail_batch
+      operations:
+      - name: post-2-files-get-thumbnail-batch
+        method: POST
+        description: Dropbox get_thumbnail_batch
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-list-folder
+      path: /2/files/list_folder
+      operations:
+      - name: post-2-files-list-folder
+        method: POST
+        description: Dropbox list_folder
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-list-folder-continue
+      path: /2/files/list_folder/continue
+      operations:
+      - name: post-2-files-list-folder-continue
+        method: POST
+        description: Dropbox list_folder/continue
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-list-folder-get-latest-cursor
+      path: /2/files/list_folder/get_latest_cursor
+      operations:
+      - name: post-2-files-list-folder-get-latest-cursor
+        method: POST
+        description: Dropbox list_folder/get_latest_cursor
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-list-folder-longpoll
+      path: /2/files/list_folder/longpoll
+      operations:
+      - name: post-2-files-list-folder-longpoll
+        method: POST
+        description: Dropbox list_folder/longpoll
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-list-revisions
+      path: /2/files/list_revisions
+      operations:
+      - name: post-2-files-list-revisions
+        method: POST
+        description: Dropbox list_revisions
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-lock-file-batch
+      path: /2/files/lock_file_batch
+      operations:
+      - name: post-2-files-lock-file-batch
+        method: POST
+        description: Dropbox lock_file_batch
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-move-v2
+      path: /2/files/move_v2
+      operations:
+      - name: post-2-files-move-v2
+        method: POST
+        description: Dropbox move
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-files-move-batch-v2
+      path: /2/files/move_batch_v2
+      operations:
+      - name: post-2-files-move-batch-v2
+        method: POST
+        description: Dropbox move_batch
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: dropbox-rest
+    description: REST adapter for Dropbox API Reference.
+    resources:
+    - path: /2/account/set_profile_photo
+      name: post-2-account-set-profile-photo
+      operations:
+      - method: POST
+        name: post-2-account-set-profile-photo
+        description: Dropbox set_profile_photo
+        call: dropbox.post-2-account-set-profile-photo
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/auth/token/from_oauth1
+      name: post-2-auth-token-from-oauth1
+      operations:
+      - method: POST
+        name: post-2-auth-token-from-oauth1
+        description: Dropbox token/from_oauth1
+        call: dropbox.post-2-auth-token-from-oauth1
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/auth/token/revoke
+      name: post-2-auth-token-revoke
+      operations:
+      - method: POST
+        name: post-2-auth-token-revoke
+        description: Dropbox token/revoke
+        call: dropbox.post-2-auth-token-revoke
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/check/app
+      name: post-2-check-app
+      operations:
+      - method: POST
+        name: post-2-check-app
+        description: Dropbox app
+        call: dropbox.post-2-check-app
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/check/user
+      name: post-2-check-user
+      operations:
+      - method: POST
+        name: post-2-check-user
+        description: Dropbox user
+        call: dropbox.post-2-check-user
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/contacts/delete_manual_contacts
+      name: post-2-contacts-delete-manual-contacts
+      operations:
+      - method: POST
+        name: post-2-contacts-delete-manual-contacts
+        description: Dropbox delete_manual_contacts
+        call: dropbox.post-2-contacts-delete-manual-contacts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/contacts/delete_manual_contacts_batch
+      name: post-2-contacts-delete-manual-contacts-batch
+      operations:
+      - method: POST
+        name: post-2-contacts-delete-manual-contacts-batch
+        description: Dropbox delete_manual_contacts_batch
+        call: dropbox.post-2-contacts-delete-manual-contacts-batch
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/properties/add
+      name: post-2-file-properties-properties-add
+      operations:
+      - method: POST
+        name: post-2-file-properties-properties-add
+        description: Dropbox properties/add
+        call: dropbox.post-2-file-properties-properties-add
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/properties/overwrite
+      name: post-2-file-properties-properties-overwrite
+      operations:
+      - method: POST
+        name: post-2-file-properties-properties-overwrite
+        description: Dropbox properties/overwrite
+        call: dropbox.post-2-file-properties-properties-overwrite
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/properties/remove
+      name: post-2-file-properties-properties-remove
+      operations:
+      - method: POST
+        name: post-2-file-properties-properties-remove
+        description: Dropbox properties/remove
+        call: dropbox.post-2-file-properties-properties-remove
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/properties/search
+      name: post-2-file-properties-properties-search
+      operations:
+      - method: POST
+        name: post-2-file-properties-properties-search
+        description: Dropbox properties/search
+        call: dropbox.post-2-file-properties-properties-search
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/properties/search/continue
+      name: post-2-file-properties-properties-search-continu
+      operations:
+      - method: POST
+        name: post-2-file-properties-properties-search-continu
+        description: Dropbox properties/search/continue
+        call: dropbox.post-2-file-properties-properties-search-continu
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/properties/update
+      name: post-2-file-properties-properties-update
+      operations:
+      - method: POST
+        name: post-2-file-properties-properties-update
+        description: Dropbox properties/update
+        call: dropbox.post-2-file-properties-properties-update
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/add_for_team
+      name: post-2-file-properties-templates-add-for-team
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-add-for-team
+        description: Dropbox templates/add_for_team
+        call: dropbox.post-2-file-properties-templates-add-for-team
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/add_for_user
+      name: post-2-file-properties-templates-add-for-user
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-add-for-user
+        description: Dropbox templates/add_for_user
+        call: dropbox.post-2-file-properties-templates-add-for-user
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/get_for_team
+      name: post-2-file-properties-templates-get-for-team
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-get-for-team
+        description: Dropbox templates/get_for_team
+        call: dropbox.post-2-file-properties-templates-get-for-team
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/get_for_user
+      name: post-2-file-properties-templates-get-for-user
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-get-for-user
+        description: Dropbox templates/get_for_user
+        call: dropbox.post-2-file-properties-templates-get-for-user
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/list_for_team
+      name: post-2-file-properties-templates-list-for-team
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-list-for-team
+        description: Dropbox templates/list_for_team
+        call: dropbox.post-2-file-properties-templates-list-for-team
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/list_for_user
+      name: post-2-file-properties-templates-list-for-user
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-list-for-user
+        description: Dropbox templates/list_for_user
+        call: dropbox.post-2-file-properties-templates-list-for-user
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/remove_for_team
+      name: post-2-file-properties-templates-remove-for-team
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-remove-for-team
+        description: Dropbox templates/remove_for_team
+        call: dropbox.post-2-file-properties-templates-remove-for-team
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/remove_for_user
+      name: post-2-file-properties-templates-remove-for-user
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-remove-for-user
+        description: Dropbox templates/remove_for_user
+        call: dropbox.post-2-file-properties-templates-remove-for-user
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/update_for_team
+      name: post-2-file-properties-templates-update-for-team
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-update-for-team
+        description: Dropbox templates/update_for_team
+        call: dropbox.post-2-file-properties-templates-update-for-team
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_properties/templates/update_for_user
+      name: post-2-file-properties-templates-update-for-user
+      operations:
+      - method: POST
+        name: post-2-file-properties-templates-update-for-user
+        description: Dropbox templates/update_for_user
+        call: dropbox.post-2-file-properties-templates-update-for-user
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_requests/count
+      name: post-2-file-requests-count
+      operations:
+      - method: POST
+        name: post-2-file-requests-count
+        description: Dropbox count
+        call: dropbox.post-2-file-requests-count
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_requests/create
+      name: post-2-file-requests-create
+      operations:
+      - method: POST
+        name: post-2-file-requests-create
+        description: Dropbox create
+        call: dropbox.post-2-file-requests-create
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_requests/delete
+      name: post-2-file-requests-delete
+      operations:
+      - method: POST
+        name: post-2-file-requests-delete
+        description: Dropbox delete
+        call: dropbox.post-2-file-requests-delete
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_requests/delete_all_closed
+      name: post-2-file-requests-delete-all-closed
+      operations:
+      - method: POST
+        name: post-2-file-requests-delete-all-closed
+        description: Dropbox delete_all_closed
+        call: dropbox.post-2-file-requests-delete-all-closed
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_requests/get
+      name: post-2-file-requests-get
+      operations:
+      - method: POST
+        name: post-2-file-requests-get
+        description: Dropbox get
+        call: dropbox.post-2-file-requests-get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_requests/list_v2
+      name: post-2-file-requests-list-v2
+      operations:
+      - method: POST
+        name: post-2-file-requests-list-v2
+        description: Dropbox list
+        call: dropbox.post-2-file-requests-list-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_requests/list/continue
+      name: post-2-file-requests-list-continue
+      operations:
+      - method: POST
+        name: post-2-file-requests-list-continue
+        description: Dropbox list/continue
+        call: dropbox.post-2-file-requests-list-continue
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/file_requests/update
+      name: post-2-file-requests-update
+      operations:
+      - method: POST
+        name: post-2-file-requests-update
+        description: Dropbox update
+        call: dropbox.post-2-file-requests-update
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/copy_v2
+      name: post-2-files-copy-v2
+      operations:
+      - method: POST
+        name: post-2-files-copy-v2
+        description: Dropbox copy
+        call: dropbox.post-2-files-copy-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/copy_batch_v2
+      name: post-2-files-copy-batch-v2
+      operations:
+      - method: POST
+        name: post-2-files-copy-batch-v2
+        description: Dropbox copy_batch
+        call: dropbox.post-2-files-copy-batch-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/copy_batch/check_v2
+      name: post-2-files-copy-batch-check-v2
+      operations:
+      - method: POST
+        name: post-2-files-copy-batch-check-v2
+        description: Dropbox copy_batch/check
+        call: dropbox.post-2-files-copy-batch-check-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/copy_reference/get
+      name: post-2-files-copy-reference-get
+      operations:
+      - method: POST
+        name: post-2-files-copy-reference-get
+        description: Dropbox copy_reference/get
+        call: dropbox.post-2-files-copy-reference-get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/copy_reference/save
+      name: post-2-files-copy-reference-save
+      operations:
+      - method: POST
+        name: post-2-files-copy-reference-save
+        description: Dropbox copy_reference/save
+        call: dropbox.post-2-files-copy-reference-save
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/create_folder_v2
+      name: post-2-files-create-folder-v2
+      operations:
+      - method: POST
+        name: post-2-files-create-folder-v2
+        description: Dropbox create_folder
+        call: dropbox.post-2-files-create-folder-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/create_folder_batch
+      name: post-2-files-create-folder-batch
+      operations:
+      - method: POST
+        name: post-2-files-create-folder-batch
+        description: Dropbox create_folder_batch
+        call: dropbox.post-2-files-create-folder-batch
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/create_folder_batch/check
+      name: post-2-files-create-folder-batch-check
+      operations:
+      - method: POST
+        name: post-2-files-create-folder-batch-check
+        description: Dropbox create_folder_batch/check
+        call: dropbox.post-2-files-create-folder-batch-check
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/delete_v2
+      name: post-2-files-delete-v2
+      operations:
+      - method: POST
+        name: post-2-files-delete-v2
+        description: Dropbox delete
+        call: dropbox.post-2-files-delete-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/delete_batch
+      name: post-2-files-delete-batch
+      operations:
+      - method: POST
+        name: post-2-files-delete-batch
+        description: Dropbox delete_batch
+        call: dropbox.post-2-files-delete-batch
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/delete_batch/check
+      name: post-2-files-delete-batch-check
+      operations:
+      - method: POST
+        name: post-2-files-delete-batch-check
+        description: Dropbox delete_batch/check
+        call: dropbox.post-2-files-delete-batch-check
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/download
+      name: post-2-files-download
+      operations:
+      - method: POST
+        name: post-2-files-download
+        description: Dropbox download
+        call: dropbox.post-2-files-download
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/download_zip
+      name: post-2-files-download-zip
+      operations:
+      - method: POST
+        name: post-2-files-download-zip
+        description: Dropbox download_zip
+        call: dropbox.post-2-files-download-zip
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/export
+      name: post-2-files-export
+      operations:
+      - method: POST
+        name: post-2-files-export
+        description: Dropbox export
+        call: dropbox.post-2-files-export
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/get_file_lock_batch
+      name: post-2-files-get-file-lock-batch
+      operations:
+      - method: POST
+        name: post-2-files-get-file-lock-batch
+        description: Dropbox get_file_lock_batch
+        call: dropbox.post-2-files-get-file-lock-batch
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/get_metadata
+      name: post-2-files-get-metadata
+      operations:
+      - method: POST
+        name: post-2-files-get-metadata
+        description: Dropbox get_metadata
+        call: dropbox.post-2-files-get-metadata
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/get_preview
+      name: post-2-files-get-preview
+      operations:
+      - method: POST
+        name: post-2-files-get-preview
+        description: Dropbox get_preview
+        call: dropbox.post-2-files-get-preview
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/get_temporary_link
+      name: post-2-files-get-temporary-link
+      operations:
+      - method: POST
+        name: post-2-files-get-temporary-link
+        description: Dropbox get_temporary_link
+        call: dropbox.post-2-files-get-temporary-link
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/get_temporary_upload_link
+      name: post-2-files-get-temporary-upload-link
+      operations:
+      - method: POST
+        name: post-2-files-get-temporary-upload-link
+        description: Dropbox get_temporary_upload_link
+        call: dropbox.post-2-files-get-temporary-upload-link
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/get_thumbnail_v2
+      name: post-2-files-get-thumbnail-v2
+      operations:
+      - method: POST
+        name: post-2-files-get-thumbnail-v2
+        description: Dropbox get_thumbnail
+        call: dropbox.post-2-files-get-thumbnail-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/get_thumbnail_batch
+      name: post-2-files-get-thumbnail-batch
+      operations:
+      - method: POST
+        name: post-2-files-get-thumbnail-batch
+        description: Dropbox get_thumbnail_batch
+        call: dropbox.post-2-files-get-thumbnail-batch
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/list_folder
+      name: post-2-files-list-folder
+      operations:
+      - method: POST
+        name: post-2-files-list-folder
+        description: Dropbox list_folder
+        call: dropbox.post-2-files-list-folder
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/list_folder/continue
+      name: post-2-files-list-folder-continue
+      operations:
+      - method: POST
+        name: post-2-files-list-folder-continue
+        description: Dropbox list_folder/continue
+        call: dropbox.post-2-files-list-folder-continue
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/list_folder/get_latest_cursor
+      name: post-2-files-list-folder-get-latest-cursor
+      operations:
+      - method: POST
+        name: post-2-files-list-folder-get-latest-cursor
+        description: Dropbox list_folder/get_latest_cursor
+        call: dropbox.post-2-files-list-folder-get-latest-cursor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/list_folder/longpoll
+      name: post-2-files-list-folder-longpoll
+      operations:
+      - method: POST
+        name: post-2-files-list-folder-longpoll
+        description: Dropbox list_folder/longpoll
+        call: dropbox.post-2-files-list-folder-longpoll
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/list_revisions
+      name: post-2-files-list-revisions
+      operations:
+      - method: POST
+        name: post-2-files-list-revisions
+        description: Dropbox list_revisions
+        call: dropbox.post-2-files-list-revisions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/lock_file_batch
+      name: post-2-files-lock-file-batch
+      operations:
+      - method: POST
+        name: post-2-files-lock-file-batch
+        description: Dropbox lock_file_batch
+        call: dropbox.post-2-files-lock-file-batch
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/move_v2
+      name: post-2-files-move-v2
+      operations:
+      - method: POST
+        name: post-2-files-move-v2
+        description: Dropbox move
+        call: dropbox.post-2-files-move-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /2/files/move_batch_v2
+      name: post-2-files-move-batch-v2
+      operations:
+      - method: POST
+        name: post-2-files-move-batch-v2
+        description: Dropbox move_batch
+        call: dropbox.post-2-files-move-batch-v2
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: dropbox-mcp
+    transport: http
+    description: MCP adapter for Dropbox API Reference for AI agent use.
+    tools:
+    - name: post-2-account-set-profile-photo
+      description: Dropbox set_profile_photo
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-account-set-profile-photo
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-auth-token-from-oauth1
+      description: Dropbox token/from_oauth1
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-auth-token-from-oauth1
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-auth-token-revoke
+      description: Dropbox token/revoke
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-auth-token-revoke
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-check-app
+      description: Dropbox app
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-check-app
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-check-user
+      description: Dropbox user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-check-user
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-contacts-delete-manual-contacts
+      description: Dropbox delete_manual_contacts
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-contacts-delete-manual-contacts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-contacts-delete-manual-contacts-batch
+      description: Dropbox delete_manual_contacts_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-contacts-delete-manual-contacts-batch
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-properties-add
+      description: Dropbox properties/add
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-properties-add
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-properties-overwrite
+      description: Dropbox properties/overwrite
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-properties-overwrite
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-properties-remove
+      description: Dropbox properties/remove
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-properties-remove
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-properties-search
+      description: Dropbox properties/search
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-properties-search
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-properties-search-continu
+      description: Dropbox properties/search/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-properties-search-continu
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-properties-update
+      description: Dropbox properties/update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-properties-update
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-add-for-team
+      description: Dropbox templates/add_for_team
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-add-for-team
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-add-for-user
+      description: Dropbox templates/add_for_user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-add-for-user
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-get-for-team
+      description: Dropbox templates/get_for_team
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-get-for-team
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-get-for-user
+      description: Dropbox templates/get_for_user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-get-for-user
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-list-for-team
+      description: Dropbox templates/list_for_team
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-list-for-team
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-list-for-user
+      description: Dropbox templates/list_for_user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-list-for-user
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-remove-for-team
+      description: Dropbox templates/remove_for_team
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-remove-for-team
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-remove-for-user
+      description: Dropbox templates/remove_for_user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-remove-for-user
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-update-for-team
+      description: Dropbox templates/update_for_team
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-update-for-team
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-properties-templates-update-for-user
+      description: Dropbox templates/update_for_user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-properties-templates-update-for-user
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-requests-count
+      description: Dropbox count
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-requests-count
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-requests-create
+      description: Dropbox create
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-requests-create
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-requests-delete
+      description: Dropbox delete
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-requests-delete
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-requests-delete-all-closed
+      description: Dropbox delete_all_closed
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-requests-delete-all-closed
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-requests-get
+      description: Dropbox get
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-requests-get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-requests-list-v2
+      description: Dropbox list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-requests-list-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-requests-list-continue
+      description: Dropbox list/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-requests-list-continue
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-file-requests-update
+      description: Dropbox update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-file-requests-update
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-copy-v2
+      description: Dropbox copy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-copy-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-copy-batch-v2
+      description: Dropbox copy_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-copy-batch-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-copy-batch-check-v2
+      description: Dropbox copy_batch/check
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-copy-batch-check-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-copy-reference-get
+      description: Dropbox copy_reference/get
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-copy-reference-get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-copy-reference-save
+      description: Dropbox copy_reference/save
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-copy-reference-save
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-create-folder-v2
+      description: Dropbox create_folder
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-create-folder-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-create-folder-batch
+      description: Dropbox create_folder_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-create-folder-batch
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-create-folder-batch-check
+      description: Dropbox create_folder_batch/check
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-create-folder-batch-check
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-delete-v2
+      description: Dropbox delete
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-delete-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-delete-batch
+      description: Dropbox delete_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-delete-batch
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-delete-batch-check
+      description: Dropbox delete_batch/check
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-delete-batch-check
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-download
+      description: Dropbox download
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-download
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-download-zip
+      description: Dropbox download_zip
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-download-zip
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-export
+      description: Dropbox export
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-export
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-get-file-lock-batch
+      description: Dropbox get_file_lock_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-get-file-lock-batch
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-get-metadata
+      description: Dropbox get_metadata
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-get-metadata
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-get-preview
+      description: Dropbox get_preview
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-get-preview
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-get-temporary-link
+      description: Dropbox get_temporary_link
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-get-temporary-link
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-get-temporary-upload-link
+      description: Dropbox get_temporary_upload_link
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-get-temporary-upload-link
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-get-thumbnail-v2
+      description: Dropbox get_thumbnail
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-get-thumbnail-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-get-thumbnail-batch
+      description: Dropbox get_thumbnail_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-get-thumbnail-batch
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-list-folder
+      description: Dropbox list_folder
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-list-folder
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-list-folder-continue
+      description: Dropbox list_folder/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-list-folder-continue
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-list-folder-get-latest-cursor
+      description: Dropbox list_folder/get_latest_cursor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-list-folder-get-latest-cursor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-list-folder-longpoll
+      description: Dropbox list_folder/longpoll
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-list-folder-longpoll
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-list-revisions
+      description: Dropbox list_revisions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-list-revisions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-lock-file-batch
+      description: Dropbox lock_file_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-lock-file-batch
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-move-v2
+      description: Dropbox move
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-move-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-2-files-move-batch-v2
+      description: Dropbox move_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox.post-2-files-move-batch-v2
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    DROPBOX_TOKEN: DROPBOX_TOKEN
