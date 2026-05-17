@@ -50,11 +50,11 @@ common:
   - url: https://www.dropbox.com/plans
     type: Plans
   - url: https://www.dropbox.com/register
-    type: Signup
+    type: SignUp
   - url: https://www.dropbox.com/developers/reference
     type: Guides
   - url: https://github.com/dropbox/dropbox-api-spec/commits/main
-    type: Change Log
+    type: ChangeLog
   - url: https://github.com/dropbox
     type: GitHub Org
   - url: https://www.dropbox.com/developers/documentation/communitysdks
@@ -92,6 +92,6 @@ maintainers:
     url: http://apievangelist.com
     email: kin@apievangelist.com
 specificationVersion: '0.19'
-type: Contract
+kind: contract
 position: Consuming
 access: 3rd-Party
