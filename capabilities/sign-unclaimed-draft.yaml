@@ -1,0 +1,213 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox Sign — Unclaimed Draft
+  description: 'Dropbox Sign — Unclaimed Draft. 4 operations. Lead operation: Dropbox _t__UnclaimedDraftCreate::SUMMARY. Self-contained
+    Naftiko capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Unclaimed Draft
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: sign-unclaimed-draft
+    baseUri: https://api.hellosign.com/v3
+    description: Dropbox Sign — Unclaimed Draft business capability. Self-contained, no shared references.
+    resources:
+    - name: unclaimed_draft-create
+      path: /unclaimed_draft/create
+      operations:
+      - name: unclaimeddraftcreate
+        method: POST
+        description: Dropbox _t__UnclaimedDraftCreate::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unclaimed_draft-create_embedded
+      path: /unclaimed_draft/create_embedded
+      operations:
+      - name: unclaimeddraftcreateembedded
+        method: POST
+        description: Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unclaimed_draft-create_embedded_with_template
+      path: /unclaimed_draft/create_embedded_with_template
+      operations:
+      - name: unclaimeddraftcreateembeddedwithtemplate
+        method: POST
+        description: Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unclaimed_draft-edit_and_resend-signature_request_id
+      path: /unclaimed_draft/edit_and_resend/{signature_request_id}
+      operations:
+      - name: unclaimeddrafteditandresend
+        method: POST
+        description: Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: signature_request_id
+          in: path
+          type: string
+          description: _t__UnclaimedDraftEditAndResend::SIGNATURE_REQUEST_ID
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: sign-unclaimed-draft-rest
+    port: 8080
+    description: REST adapter for Dropbox Sign — Unclaimed Draft. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/unclaimed-draft/create
+      name: unclaimed-draft-create
+      description: REST surface for unclaimed_draft-create.
+      operations:
+      - method: POST
+        name: unclaimeddraftcreate
+        description: Dropbox _t__UnclaimedDraftCreate::SUMMARY
+        call: sign-unclaimed-draft.unclaimeddraftcreate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unclaimed-draft/create-embedded
+      name: unclaimed-draft-create-embedded
+      description: REST surface for unclaimed_draft-create_embedded.
+      operations:
+      - method: POST
+        name: unclaimeddraftcreateembedded
+        description: Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY
+        call: sign-unclaimed-draft.unclaimeddraftcreateembedded
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unclaimed-draft/create-embedded-with-template
+      name: unclaimed-draft-create-embedded-with-template
+      description: REST surface for unclaimed_draft-create_embedded_with_template.
+      operations:
+      - method: POST
+        name: unclaimeddraftcreateembeddedwithtemplate
+        description: Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY
+        call: sign-unclaimed-draft.unclaimeddraftcreateembeddedwithtemplate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unclaimed-draft/edit-and-resend/{signature-request-id}
+      name: unclaimed-draft-edit-and-resend-signature-request-id
+      description: REST surface for unclaimed_draft-edit_and_resend-signature_request_id.
+      operations:
+      - method: POST
+        name: unclaimeddrafteditandresend
+        description: Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY
+        call: sign-unclaimed-draft.unclaimeddrafteditandresend
+        with:
+          signature_request_id: rest.signature_request_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: sign-unclaimed-draft-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox Sign — Unclaimed Draft. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: dropbox-t-unclaimeddraftcreate-summary
+      description: Dropbox _t__UnclaimedDraftCreate::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-unclaimed-draft.unclaimeddraftcreate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-unclaimeddraftcreateembedded-summary
+      description: Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-unclaimed-draft.unclaimeddraftcreateembedded
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-unclaimeddraftcreateembeddedwithtemplate-summary
+      description: Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-unclaimed-draft.unclaimeddraftcreateembeddedwithtemplate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-unclaimeddrafteditandresend-summary
+      description: Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-unclaimed-draft.unclaimeddrafteditandresend
+      with:
+        signature_request_id: tools.signature_request_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

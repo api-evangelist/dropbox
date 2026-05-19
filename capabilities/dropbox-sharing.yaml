@@ -1,0 +1,1770 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox API Reference — Sharing
+  description: 'Dropbox API Reference — Sharing. 37 operations. Lead operation: Dropbox add_file_member. Self-contained Naftiko
+    capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Sharing
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dropbox-sharing
+    baseUri: https://api.dropbox.com
+    description: Dropbox API Reference — Sharing business capability. Self-contained, no shared references.
+    resources:
+    - name: 2-sharing-add_file_member
+      path: /2/sharing/add_file_member
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox add_file_member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-add_folder_member
+      path: /2/sharing/add_folder_member
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox add_folder_member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-check_job_status
+      path: /2/sharing/check_job_status
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox check_job_status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-check_remove_member_job_status
+      path: /2/sharing/check_remove_member_job_status
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox check_remove_member_job_status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-check_share_job_status
+      path: /2/sharing/check_share_job_status
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox check_share_job_status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-get_file_metadata
+      path: /2/sharing/get_file_metadata
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_file_metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-get_file_metadata-batch
+      path: /2/sharing/get_file_metadata/batch
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_file_metadata/batch
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-get_folder_metadata
+      path: /2/sharing/get_folder_metadata
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_folder_metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-get_shared_link_file
+      path: /2/sharing/get_shared_link_file
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_shared_link_file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Dropbox-API-Arg
+          in: header
+          type: string
+    - name: 2-sharing-get_shared_link_metadata
+      path: /2/sharing/get_shared_link_metadata
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_shared_link_metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_file_members
+      path: /2/sharing/list_file_members
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_file_members
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_file_members-batch
+      path: /2/sharing/list_file_members/batch
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_file_members/batch
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_file_members-continue
+      path: /2/sharing/list_file_members/continue
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_file_members/continue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_folder_members-continue
+      path: /2/sharing/list_folder_members/continue
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_folder_members/continue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_folders
+      path: /2/sharing/list_folders
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_folders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_folders-continue
+      path: /2/sharing/list_folders/continue
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_folders/continue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_mountable_folders
+      path: /2/sharing/list_mountable_folders
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_mountable_folders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_mountable_folders-continue
+      path: /2/sharing/list_mountable_folders/continue
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_mountable_folders/continue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_received_files
+      path: /2/sharing/list_received_files
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_received_files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_received_files-continue
+      path: /2/sharing/list_received_files/continue
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_received_files/continue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-list_shared_links
+      path: /2/sharing/list_shared_links
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list_shared_links
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-modify_shared_link_settings
+      path: /2/sharing/modify_shared_link_settings
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox modify_shared_link_settings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-mount_folder
+      path: /2/sharing/mount_folder
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox mount_folder
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-relinquish_file_membership
+      path: /2/sharing/relinquish_file_membership
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox relinquish_file_membership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-relinquish_folder_membership
+      path: /2/sharing/relinquish_folder_membership
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox relinquish_folder_membership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-remove_file_member_2
+      path: /2/sharing/remove_file_member_2
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox remove_file_member_2
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-remove_folder_member
+      path: /2/sharing/remove_folder_member
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox remove_folder_member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-revoke_shared_link
+      path: /2/sharing/revoke_shared_link
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox revoke_shared_link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-set_access_inheritance
+      path: /2/sharing/set_access_inheritance
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox set_access_inheritance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-share_folder
+      path: /2/sharing/share_folder
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox share_folder
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-transfer_folder
+      path: /2/sharing/transfer_folder
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox transfer_folder
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-unmount_folder
+      path: /2/sharing/unmount_folder
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox unmount_folder
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-unshare_file
+      path: /2/sharing/unshare_file
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox unshare_file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-unshare_folder
+      path: /2/sharing/unshare_folder
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox unshare_folder
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-update_file_member
+      path: /2/sharing/update_file_member
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox update_file_member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-update_folder_member
+      path: /2/sharing/update_folder_member
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox update_folder_member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-sharing-update_folder_policy
+      path: /2/sharing/update_folder_policy
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox update_folder_policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dropbox-sharing-rest
+    port: 8080
+    description: REST adapter for Dropbox API Reference — Sharing. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/2/sharing/add-file-member
+      name: 2-sharing-add-file-member
+      description: REST surface for 2-sharing-add_file_member.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox add_file_member
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/add-folder-member
+      name: 2-sharing-add-folder-member
+      description: REST surface for 2-sharing-add_folder_member.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox add_folder_member
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/check-job-status
+      name: 2-sharing-check-job-status
+      description: REST surface for 2-sharing-check_job_status.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox check_job_status
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/check-remove-member-job-status
+      name: 2-sharing-check-remove-member-job-status
+      description: REST surface for 2-sharing-check_remove_member_job_status.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox check_remove_member_job_status
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/check-share-job-status
+      name: 2-sharing-check-share-job-status
+      description: REST surface for 2-sharing-check_share_job_status.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox check_share_job_status
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/get-file-metadata
+      name: 2-sharing-get-file-metadata
+      description: REST surface for 2-sharing-get_file_metadata.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_file_metadata
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/get-file-metadata/batch
+      name: 2-sharing-get-file-metadata-batch
+      description: REST surface for 2-sharing-get_file_metadata-batch.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_file_metadata/batch
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/get-folder-metadata
+      name: 2-sharing-get-folder-metadata
+      description: REST surface for 2-sharing-get_folder_metadata.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_folder_metadata
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/get-shared-link-file
+      name: 2-sharing-get-shared-link-file
+      description: REST surface for 2-sharing-get_shared_link_file.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_shared_link_file
+        call: dropbox-sharing.post
+        with:
+          Dropbox-API-Arg: rest.Dropbox-API-Arg
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/get-shared-link-metadata
+      name: 2-sharing-get-shared-link-metadata
+      description: REST surface for 2-sharing-get_shared_link_metadata.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_shared_link_metadata
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-file-members
+      name: 2-sharing-list-file-members
+      description: REST surface for 2-sharing-list_file_members.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_file_members
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-file-members/batch
+      name: 2-sharing-list-file-members-batch
+      description: REST surface for 2-sharing-list_file_members-batch.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_file_members/batch
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-file-members/continue
+      name: 2-sharing-list-file-members-continue
+      description: REST surface for 2-sharing-list_file_members-continue.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_file_members/continue
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-folder-members/continue
+      name: 2-sharing-list-folder-members-continue
+      description: REST surface for 2-sharing-list_folder_members-continue.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_folder_members/continue
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-folders
+      name: 2-sharing-list-folders
+      description: REST surface for 2-sharing-list_folders.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_folders
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-folders/continue
+      name: 2-sharing-list-folders-continue
+      description: REST surface for 2-sharing-list_folders-continue.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_folders/continue
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-mountable-folders
+      name: 2-sharing-list-mountable-folders
+      description: REST surface for 2-sharing-list_mountable_folders.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_mountable_folders
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-mountable-folders/continue
+      name: 2-sharing-list-mountable-folders-continue
+      description: REST surface for 2-sharing-list_mountable_folders-continue.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_mountable_folders/continue
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-received-files
+      name: 2-sharing-list-received-files
+      description: REST surface for 2-sharing-list_received_files.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_received_files
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-received-files/continue
+      name: 2-sharing-list-received-files-continue
+      description: REST surface for 2-sharing-list_received_files-continue.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_received_files/continue
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/list-shared-links
+      name: 2-sharing-list-shared-links
+      description: REST surface for 2-sharing-list_shared_links.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list_shared_links
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/modify-shared-link-settings
+      name: 2-sharing-modify-shared-link-settings
+      description: REST surface for 2-sharing-modify_shared_link_settings.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox modify_shared_link_settings
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/mount-folder
+      name: 2-sharing-mount-folder
+      description: REST surface for 2-sharing-mount_folder.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox mount_folder
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/relinquish-file-membership
+      name: 2-sharing-relinquish-file-membership
+      description: REST surface for 2-sharing-relinquish_file_membership.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox relinquish_file_membership
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/relinquish-folder-membership
+      name: 2-sharing-relinquish-folder-membership
+      description: REST surface for 2-sharing-relinquish_folder_membership.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox relinquish_folder_membership
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/remove-file-member-2
+      name: 2-sharing-remove-file-member-2
+      description: REST surface for 2-sharing-remove_file_member_2.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox remove_file_member_2
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/remove-folder-member
+      name: 2-sharing-remove-folder-member
+      description: REST surface for 2-sharing-remove_folder_member.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox remove_folder_member
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/revoke-shared-link
+      name: 2-sharing-revoke-shared-link
+      description: REST surface for 2-sharing-revoke_shared_link.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox revoke_shared_link
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/set-access-inheritance
+      name: 2-sharing-set-access-inheritance
+      description: REST surface for 2-sharing-set_access_inheritance.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox set_access_inheritance
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/share-folder
+      name: 2-sharing-share-folder
+      description: REST surface for 2-sharing-share_folder.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox share_folder
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/transfer-folder
+      name: 2-sharing-transfer-folder
+      description: REST surface for 2-sharing-transfer_folder.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox transfer_folder
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/unmount-folder
+      name: 2-sharing-unmount-folder
+      description: REST surface for 2-sharing-unmount_folder.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox unmount_folder
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/unshare-file
+      name: 2-sharing-unshare-file
+      description: REST surface for 2-sharing-unshare_file.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox unshare_file
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/unshare-folder
+      name: 2-sharing-unshare-folder
+      description: REST surface for 2-sharing-unshare_folder.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox unshare_folder
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/update-file-member
+      name: 2-sharing-update-file-member
+      description: REST surface for 2-sharing-update_file_member.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox update_file_member
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/update-folder-member
+      name: 2-sharing-update-folder-member
+      description: REST surface for 2-sharing-update_folder_member.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox update_folder_member
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/sharing/update-folder-policy
+      name: 2-sharing-update-folder-policy
+      description: REST surface for 2-sharing-update_folder_policy.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox update_folder_policy
+        call: dropbox-sharing.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dropbox-sharing-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox API Reference — Sharing. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: dropbox-add-file-member
+      description: Dropbox add_file_member
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-add-folder-member
+      description: Dropbox add_folder_member
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-check-job-status
+      description: Dropbox check_job_status
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-check-remove-member-job
+      description: Dropbox check_remove_member_job_status
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-check-share-job-status
+      description: Dropbox check_share_job_status
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-file-metadata
+      description: Dropbox get_file_metadata
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-file-metadata-batch
+      description: Dropbox get_file_metadata/batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-folder-metadata
+      description: Dropbox get_folder_metadata
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-shared-link-file
+      description: Dropbox get_shared_link_file
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Dropbox-API-Arg: tools.Dropbox-API-Arg
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-shared-link-metadata
+      description: Dropbox get_shared_link_metadata
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-file-members
+      description: Dropbox list_file_members
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-file-members-batch
+      description: Dropbox list_file_members/batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-file-members-continue
+      description: Dropbox list_file_members/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-folder-members-continue
+      description: Dropbox list_folder_members/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-folders
+      description: Dropbox list_folders
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-folders-continue
+      description: Dropbox list_folders/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-mountable-folders
+      description: Dropbox list_mountable_folders
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-mountable-folders-continue
+      description: Dropbox list_mountable_folders/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-received-files
+      description: Dropbox list_received_files
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-received-files-continue
+      description: Dropbox list_received_files/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-shared-links
+      description: Dropbox list_shared_links
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-modify-shared-link-settings
+      description: Dropbox modify_shared_link_settings
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-mount-folder
+      description: Dropbox mount_folder
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-relinquish-file-membership
+      description: Dropbox relinquish_file_membership
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-relinquish-folder-membership
+      description: Dropbox relinquish_folder_membership
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-remove-file-member-2
+      description: Dropbox remove_file_member_2
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-remove-folder-member
+      description: Dropbox remove_folder_member
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-revoke-shared-link
+      description: Dropbox revoke_shared_link
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-set-access-inheritance
+      description: Dropbox set_access_inheritance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-share-folder
+      description: Dropbox share_folder
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-transfer-folder
+      description: Dropbox transfer_folder
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-unmount-folder
+      description: Dropbox unmount_folder
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-unshare-file
+      description: Dropbox unshare_file
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-unshare-folder
+      description: Dropbox unshare_folder
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-update-file-member
+      description: Dropbox update_file_member
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-update-folder-member
+      description: Dropbox update_folder_member
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-update-folder-policy
+      description: Dropbox update_folder_policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-sharing.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

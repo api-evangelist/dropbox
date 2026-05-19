@@ -1,0 +1,384 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox API Reference — File_requests
+  description: 'Dropbox API Reference — File_requests. 8 operations. Lead operation: Dropbox count. Self-contained Naftiko
+    capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - File_requests
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dropbox-file-requests
+    baseUri: https://api.dropbox.com
+    description: Dropbox API Reference — File_requests business capability. Self-contained, no shared references.
+    resources:
+    - name: 2-file_requests-count
+      path: /2/file_requests/count
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox count
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file_requests-create
+      path: /2/file_requests/create
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox create
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-file_requests-delete
+      path: /2/file_requests/delete
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox delete
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-file_requests-delete_all_closed
+      path: /2/file_requests/delete_all_closed
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox delete_all_closed
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-file_requests-get
+      path: /2/file_requests/get
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-file_requests-list-continue
+      path: /2/file_requests/list/continue
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list/continue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-file_requests-list_v2
+      path: /2/file_requests/list_v2
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-file_requests-update
+      path: /2/file_requests/update
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox update
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dropbox-file-requests-rest
+    port: 8080
+    description: REST adapter for Dropbox API Reference — File_requests. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/2/file-requests/count
+      name: 2-file-requests-count
+      description: REST surface for 2-file_requests-count.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox count
+        call: dropbox-file-requests.post
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/file-requests/create
+      name: 2-file-requests-create
+      description: REST surface for 2-file_requests-create.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox create
+        call: dropbox-file-requests.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/file-requests/delete
+      name: 2-file-requests-delete
+      description: REST surface for 2-file_requests-delete.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox delete
+        call: dropbox-file-requests.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/file-requests/delete-all-closed
+      name: 2-file-requests-delete-all-closed
+      description: REST surface for 2-file_requests-delete_all_closed.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox delete_all_closed
+        call: dropbox-file-requests.post
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/file-requests/get
+      name: 2-file-requests-get
+      description: REST surface for 2-file_requests-get.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get
+        call: dropbox-file-requests.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/file-requests/list/continue
+      name: 2-file-requests-list-continue
+      description: REST surface for 2-file_requests-list-continue.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list/continue
+        call: dropbox-file-requests.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/file-requests/list-v2
+      name: 2-file-requests-list-v2
+      description: REST surface for 2-file_requests-list_v2.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox list
+        call: dropbox-file-requests.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/file-requests/update
+      name: 2-file-requests-update
+      description: REST surface for 2-file_requests-update.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox update
+        call: dropbox-file-requests.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dropbox-file-requests-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox API Reference — File_requests. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: dropbox-count
+      description: Dropbox count
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-file-requests.post
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-create
+      description: Dropbox create
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-file-requests.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-delete
+      description: Dropbox delete
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-file-requests.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-delete-all-closed
+      description: Dropbox delete_all_closed
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-file-requests.post
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get
+      description: Dropbox get
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-file-requests.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list-continue
+      description: Dropbox list/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-file-requests.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-list
+      description: Dropbox list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-file-requests.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-update
+      description: Dropbox update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-file-requests.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

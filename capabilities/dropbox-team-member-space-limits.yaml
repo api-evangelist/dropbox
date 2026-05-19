@@ -1,0 +1,367 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox API Reference — Team > Member_space_limits
+  description: 'Dropbox API Reference — Team > Member_space_limits. 7 operations. Lead operation: Dropbox member_space_limits/excluded_users/add.
+    Self-contained Naftiko capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Team > Member_space_limits
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dropbox-team-member-space-limits
+    baseUri: https://api.dropbox.com
+    description: Dropbox API Reference — Team > Member_space_limits business capability. Self-contained, no shared references.
+    resources:
+    - name: 2-team-member_space_limits-excluded_users-add
+      path: /2/team/member_space_limits/excluded_users/add
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox member_space_limits/excluded_users/add
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-member_space_limits-excluded_users-list
+      path: /2/team/member_space_limits/excluded_users/list
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox member_space_limits/excluded_users/list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-member_space_limits-excluded_users-list-continue
+      path: /2/team/member_space_limits/excluded_users/list/continue
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox member_space_limits/excluded_users/list/continue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-member_space_limits-excluded_users-remove
+      path: /2/team/member_space_limits/excluded_users/remove
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox member_space_limits/excluded_users/remove
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-member_space_limits-get_custom_quota
+      path: /2/team/member_space_limits/get_custom_quota
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox member_space_limits/get_custom_quota
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-member_space_limits-remove_custom_quota
+      path: /2/team/member_space_limits/remove_custom_quota
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox member_space_limits/remove_custom_quota
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-member_space_limits-set_custom_quota
+      path: /2/team/member_space_limits/set_custom_quota
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox member_space_limits/set_custom_quota
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dropbox-team-member-space-limits-rest
+    port: 8080
+    description: REST adapter for Dropbox API Reference — Team > Member_space_limits. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/2/team/member-space-limits/excluded-users/add
+      name: 2-team-member-space-limits-excluded-users-add
+      description: REST surface for 2-team-member_space_limits-excluded_users-add.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox member_space_limits/excluded_users/add
+        call: dropbox-team-member-space-limits.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/member-space-limits/excluded-users/list
+      name: 2-team-member-space-limits-excluded-users-list
+      description: REST surface for 2-team-member_space_limits-excluded_users-list.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox member_space_limits/excluded_users/list
+        call: dropbox-team-member-space-limits.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/member-space-limits/excluded-users/list/continue
+      name: 2-team-member-space-limits-excluded-users-list-continue
+      description: REST surface for 2-team-member_space_limits-excluded_users-list-continue.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox member_space_limits/excluded_users/list/continue
+        call: dropbox-team-member-space-limits.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/member-space-limits/excluded-users/remove
+      name: 2-team-member-space-limits-excluded-users-remove
+      description: REST surface for 2-team-member_space_limits-excluded_users-remove.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox member_space_limits/excluded_users/remove
+        call: dropbox-team-member-space-limits.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/member-space-limits/get-custom-quota
+      name: 2-team-member-space-limits-get-custom-quota
+      description: REST surface for 2-team-member_space_limits-get_custom_quota.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox member_space_limits/get_custom_quota
+        call: dropbox-team-member-space-limits.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/member-space-limits/remove-custom-quota
+      name: 2-team-member-space-limits-remove-custom-quota
+      description: REST surface for 2-team-member_space_limits-remove_custom_quota.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox member_space_limits/remove_custom_quota
+        call: dropbox-team-member-space-limits.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/member-space-limits/set-custom-quota
+      name: 2-team-member-space-limits-set-custom-quota
+      description: REST surface for 2-team-member_space_limits-set_custom_quota.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox member_space_limits/set_custom_quota
+        call: dropbox-team-member-space-limits.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dropbox-team-member-space-limits-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox API Reference — Team > Member_space_limits. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: dropbox-member-space-limits-excluded
+      description: Dropbox member_space_limits/excluded_users/add
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-member-space-limits.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-member-space-limits-excluded-2
+      description: Dropbox member_space_limits/excluded_users/list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-member-space-limits.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-member-space-limits-excluded-3
+      description: Dropbox member_space_limits/excluded_users/list/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-member-space-limits.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-member-space-limits-excluded-4
+      description: Dropbox member_space_limits/excluded_users/remove
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-member-space-limits.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-member-space-limits-get
+      description: Dropbox member_space_limits/get_custom_quota
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-member-space-limits.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-member-space-limits-remove
+      description: Dropbox member_space_limits/remove_custom_quota
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-member-space-limits.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-member-space-limits-set
+      description: Dropbox member_space_limits/set_custom_quota
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-member-space-limits.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

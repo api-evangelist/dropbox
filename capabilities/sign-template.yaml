@@ -1,0 +1,550 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox Sign — Template
+  description: 'Dropbox Sign — Template. 11 operations. Lead operation: Dropbox _t__TemplateAddUser::SUMMARY. Self-contained
+    Naftiko capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Template
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: sign-template
+    baseUri: https://api.hellosign.com/v3
+    description: Dropbox Sign — Template business capability. Self-contained, no shared references.
+    resources:
+    - name: template-add_user-template_id
+      path: /template/add_user/{template_id}
+      operations:
+      - name: templateadduser
+        method: POST
+        description: Dropbox _t__TemplateAddUser::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__TemplateAddUser::TEMPLATE_ID
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: template-create
+      path: /template/create
+      operations:
+      - name: templatecreate
+        method: POST
+        description: Dropbox _t__TemplateCreate::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: template-create_embedded_draft
+      path: /template/create_embedded_draft
+      operations:
+      - name: templatecreateembeddeddraft
+        method: POST
+        description: Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: template-delete-template_id
+      path: /template/delete/{template_id}
+      operations:
+      - name: templatedelete
+        method: POST
+        description: Dropbox _t__TemplateDelete::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__TemplateDelete::TEMPLATE_ID
+          required: true
+    - name: template-files-template_id
+      path: /template/files/{template_id}
+      operations:
+      - name: templatefiles
+        method: GET
+        description: Dropbox _t__TemplateFiles::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__TemplateFiles::TEMPLATE_ID
+          required: true
+        - name: file_type
+          in: query
+          type: string
+          description: _t__TemplateFiles::FILE_TYPE
+    - name: template-files_as_data_uri-template_id
+      path: /template/files_as_data_uri/{template_id}
+      operations:
+      - name: templatefilesasdatauri
+        method: GET
+        description: Dropbox _t__TemplateFilesAsDataUri::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__TemplateFiles::TEMPLATE_ID
+          required: true
+    - name: template-files_as_file_url-template_id
+      path: /template/files_as_file_url/{template_id}
+      operations:
+      - name: templatefilesasfileurl
+        method: GET
+        description: Dropbox _t__TemplateFilesAsFileUrl::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__TemplateFiles::TEMPLATE_ID
+          required: true
+        - name: force_download
+          in: query
+          type: integer
+          description: _t__TemplateFiles::FORCE_DOWNLOAD
+    - name: template-list
+      path: /template/list
+      operations:
+      - name: templatelist
+        method: GET
+        description: Dropbox _t__TemplateList::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: account_id
+          in: query
+          type: string
+          description: _t__TemplateList::ACCOUNT_ID
+        - name: page
+          in: query
+          type: integer
+          description: _t__TemplateList::PAGE
+        - name: page_size
+          in: query
+          type: integer
+          description: _t__TemplateList::PAGE_SIZE
+        - name: query
+          in: query
+          type: string
+          description: _t__TemplateList::QUERY
+    - name: template-remove_user-template_id
+      path: /template/remove_user/{template_id}
+      operations:
+      - name: templateremoveuser
+        method: POST
+        description: Dropbox _t__TemplateRemoveUser::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__TemplateRemoveUser::TEMPLATE_ID
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: template-update_files-template_id
+      path: /template/update_files/{template_id}
+      operations:
+      - name: templateupdatefiles
+        method: POST
+        description: Dropbox _t__TemplateUpdateFiles::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__TemplateUpdateFiles::TEMPLATE_ID
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: template-template_id
+      path: /template/{template_id}
+      operations:
+      - name: templateget
+        method: GET
+        description: Dropbox _t__TemplateGet::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__TemplateGet::TEMPLATE_ID
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: sign-template-rest
+    port: 8080
+    description: REST adapter for Dropbox Sign — Template. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/template/add-user/{template-id}
+      name: template-add-user-template-id
+      description: REST surface for template-add_user-template_id.
+      operations:
+      - method: POST
+        name: templateadduser
+        description: Dropbox _t__TemplateAddUser::SUMMARY
+        call: sign-template.templateadduser
+        with:
+          template_id: rest.template_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/create
+      name: template-create
+      description: REST surface for template-create.
+      operations:
+      - method: POST
+        name: templatecreate
+        description: Dropbox _t__TemplateCreate::SUMMARY
+        call: sign-template.templatecreate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/create-embedded-draft
+      name: template-create-embedded-draft
+      description: REST surface for template-create_embedded_draft.
+      operations:
+      - method: POST
+        name: templatecreateembeddeddraft
+        description: Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY
+        call: sign-template.templatecreateembeddeddraft
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/delete/{template-id}
+      name: template-delete-template-id
+      description: REST surface for template-delete-template_id.
+      operations:
+      - method: POST
+        name: templatedelete
+        description: Dropbox _t__TemplateDelete::SUMMARY
+        call: sign-template.templatedelete
+        with:
+          template_id: rest.template_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/files/{template-id}
+      name: template-files-template-id
+      description: REST surface for template-files-template_id.
+      operations:
+      - method: GET
+        name: templatefiles
+        description: Dropbox _t__TemplateFiles::SUMMARY
+        call: sign-template.templatefiles
+        with:
+          template_id: rest.template_id
+          file_type: rest.file_type
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/files-as-data-uri/{template-id}
+      name: template-files-as-data-uri-template-id
+      description: REST surface for template-files_as_data_uri-template_id.
+      operations:
+      - method: GET
+        name: templatefilesasdatauri
+        description: Dropbox _t__TemplateFilesAsDataUri::SUMMARY
+        call: sign-template.templatefilesasdatauri
+        with:
+          template_id: rest.template_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/files-as-file-url/{template-id}
+      name: template-files-as-file-url-template-id
+      description: REST surface for template-files_as_file_url-template_id.
+      operations:
+      - method: GET
+        name: templatefilesasfileurl
+        description: Dropbox _t__TemplateFilesAsFileUrl::SUMMARY
+        call: sign-template.templatefilesasfileurl
+        with:
+          template_id: rest.template_id
+          force_download: rest.force_download
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/list
+      name: template-list
+      description: REST surface for template-list.
+      operations:
+      - method: GET
+        name: templatelist
+        description: Dropbox _t__TemplateList::SUMMARY
+        call: sign-template.templatelist
+        with:
+          account_id: rest.account_id
+          page: rest.page
+          page_size: rest.page_size
+          query: rest.query
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/remove-user/{template-id}
+      name: template-remove-user-template-id
+      description: REST surface for template-remove_user-template_id.
+      operations:
+      - method: POST
+        name: templateremoveuser
+        description: Dropbox _t__TemplateRemoveUser::SUMMARY
+        call: sign-template.templateremoveuser
+        with:
+          template_id: rest.template_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/update-files/{template-id}
+      name: template-update-files-template-id
+      description: REST surface for template-update_files-template_id.
+      operations:
+      - method: POST
+        name: templateupdatefiles
+        description: Dropbox _t__TemplateUpdateFiles::SUMMARY
+        call: sign-template.templateupdatefiles
+        with:
+          template_id: rest.template_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/template/{template-id}
+      name: template-template-id
+      description: REST surface for template-template_id.
+      operations:
+      - method: GET
+        name: templateget
+        description: Dropbox _t__TemplateGet::SUMMARY
+        call: sign-template.templateget
+        with:
+          template_id: rest.template_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: sign-template-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox Sign — Template. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: dropbox-t-templateadduser-summary
+      description: Dropbox _t__TemplateAddUser::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-template.templateadduser
+      with:
+        template_id: tools.template_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templatecreate-summary
+      description: Dropbox _t__TemplateCreate::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-template.templatecreate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templatecreateembeddeddraft-summary
+      description: Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-template.templatecreateembeddeddraft
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templatedelete-summary
+      description: Dropbox _t__TemplateDelete::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-template.templatedelete
+      with:
+        template_id: tools.template_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templatefiles-summary
+      description: Dropbox _t__TemplateFiles::SUMMARY
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: sign-template.templatefiles
+      with:
+        template_id: tools.template_id
+        file_type: tools.file_type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templatefilesasdatauri-summary
+      description: Dropbox _t__TemplateFilesAsDataUri::SUMMARY
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: sign-template.templatefilesasdatauri
+      with:
+        template_id: tools.template_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templatefilesasfileurl-summary
+      description: Dropbox _t__TemplateFilesAsFileUrl::SUMMARY
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: sign-template.templatefilesasfileurl
+      with:
+        template_id: tools.template_id
+        force_download: tools.force_download
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templatelist-summary
+      description: Dropbox _t__TemplateList::SUMMARY
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: sign-template.templatelist
+      with:
+        account_id: tools.account_id
+        page: tools.page
+        page_size: tools.page_size
+        query: tools.query
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templateremoveuser-summary
+      description: Dropbox _t__TemplateRemoveUser::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-template.templateremoveuser
+      with:
+        template_id: tools.template_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templateupdatefiles-summary
+      description: Dropbox _t__TemplateUpdateFiles::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-template.templateupdatefiles
+      with:
+        template_id: tools.template_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-templateget-summary
+      description: Dropbox _t__TemplateGet::SUMMARY
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: sign-template.templateget
+      with:
+        template_id: tools.template_id
+      outputParameters:
+      - type: object
+        mapping: $.

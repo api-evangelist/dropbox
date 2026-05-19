@@ -1,0 +1,129 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox Sign — Embedded
+  description: 'Dropbox Sign — Embedded. 2 operations. Lead operation: Dropbox _t__EmbeddedEditUrl::SUMMARY. Self-contained
+    Naftiko capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Embedded
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: sign-embedded
+    baseUri: https://api.hellosign.com/v3
+    description: Dropbox Sign — Embedded business capability. Self-contained, no shared references.
+    resources:
+    - name: embedded-edit_url-template_id
+      path: /embedded/edit_url/{template_id}
+      operations:
+      - name: embeddedediturl
+        method: POST
+        description: Dropbox _t__EmbeddedEditUrl::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: template_id
+          in: path
+          type: string
+          description: _t__EmbeddedEditUrl::TEMPLATE_ID
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: embedded-sign_url-signature_id
+      path: /embedded/sign_url/{signature_id}
+      operations:
+      - name: embeddedsignurl
+        method: GET
+        description: Dropbox _t__EmbeddedSignUrl::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: signature_id
+          in: path
+          type: string
+          description: _t__EmbeddedSignUrl::SIGNATURE_ID
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: sign-embedded-rest
+    port: 8080
+    description: REST adapter for Dropbox Sign — Embedded. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/embedded/edit-url/{template-id}
+      name: embedded-edit-url-template-id
+      description: REST surface for embedded-edit_url-template_id.
+      operations:
+      - method: POST
+        name: embeddedediturl
+        description: Dropbox _t__EmbeddedEditUrl::SUMMARY
+        call: sign-embedded.embeddedediturl
+        with:
+          template_id: rest.template_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/embedded/sign-url/{signature-id}
+      name: embedded-sign-url-signature-id
+      description: REST surface for embedded-sign_url-signature_id.
+      operations:
+      - method: GET
+        name: embeddedsignurl
+        description: Dropbox _t__EmbeddedSignUrl::SUMMARY
+        call: sign-embedded.embeddedsignurl
+        with:
+          signature_id: rest.signature_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: sign-embedded-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox Sign — Embedded. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: dropbox-t-embeddedediturl-summary
+      description: Dropbox _t__EmbeddedEditUrl::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-embedded.embeddedediturl
+      with:
+        template_id: tools.template_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-embeddedsignurl-summary
+      description: Dropbox _t__EmbeddedSignUrl::SUMMARY
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: sign-embedded.embeddedsignurl
+      with:
+        signature_id: tools.signature_id
+      outputParameters:
+      - type: object
+        mapping: $.

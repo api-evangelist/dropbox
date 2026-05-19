@@ -1,0 +1,243 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox API Reference — Users
+  description: 'Dropbox API Reference — Users. 5 operations. Lead operation: Dropbox features/get_values. Self-contained Naftiko
+    capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dropbox-users
+    baseUri: https://api.dropbox.com
+    description: Dropbox API Reference — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: 2-users-features-get_values
+      path: /2/users/features/get_values
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox features/get_values
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-users-get_account
+      path: /2/users/get_account
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-users-get_account_batch
+      path: /2/users/get_account_batch
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_account_batch
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-users-get_current_account
+      path: /2/users/get_current_account
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_current_account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 2-users-get_space_usage
+      path: /2/users/get_space_usage
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox get_space_usage
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dropbox-users-rest
+    port: 8080
+    description: REST adapter for Dropbox API Reference — Users. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/2/users/features/get-values
+      name: 2-users-features-get-values
+      description: REST surface for 2-users-features-get_values.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox features/get_values
+        call: dropbox-users.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/users/get-account
+      name: 2-users-get-account
+      description: REST surface for 2-users-get_account.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_account
+        call: dropbox-users.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/users/get-account-batch
+      name: 2-users-get-account-batch
+      description: REST surface for 2-users-get_account_batch.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_account_batch
+        call: dropbox-users.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/users/get-current-account
+      name: 2-users-get-current-account
+      description: REST surface for 2-users-get_current_account.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_current_account
+        call: dropbox-users.post
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/users/get-space-usage
+      name: 2-users-get-space-usage
+      description: REST surface for 2-users-get_space_usage.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox get_space_usage
+        call: dropbox-users.post
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dropbox-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox API Reference — Users. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: dropbox-features-get-values
+      description: Dropbox features/get_values
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-users.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-account
+      description: Dropbox get_account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-users.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-account-batch
+      description: Dropbox get_account_batch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-users.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-current-account
+      description: Dropbox get_current_account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-users.post
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-get-space-usage
+      description: Dropbox get_space_usage
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-users.post
+      outputParameters:
+      - type: object
+        mapping: $.

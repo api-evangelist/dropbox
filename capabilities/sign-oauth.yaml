@@ -1,0 +1,122 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox Sign — OAuth
+  description: 'Dropbox Sign — OAuth. 2 operations. Lead operation: Dropbox _t__OAuthTokenGenerate::SUMMARY. Self-contained
+    Naftiko capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - OAuth
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: sign-oauth
+    baseUri: https://api.hellosign.com/v3
+    description: Dropbox Sign — OAuth business capability. Self-contained, no shared references.
+    resources:
+    - name: oauth-token
+      path: /oauth/token
+      operations:
+      - name: oauthtokengenerate
+        method: POST
+        description: Dropbox _t__OAuthTokenGenerate::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: oauth-token?refresh
+      path: /oauth/token?refresh
+      operations:
+      - name: oauthtokenrefresh
+        method: POST
+        description: Dropbox _t__OAuthTokenRefresh::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: sign-oauth-rest
+    port: 8080
+    description: REST adapter for Dropbox Sign — OAuth. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/oauth/token
+      name: oauth-token
+      description: REST surface for oauth-token.
+      operations:
+      - method: POST
+        name: oauthtokengenerate
+        description: Dropbox _t__OAuthTokenGenerate::SUMMARY
+        call: sign-oauth.oauthtokengenerate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/oauth/token-refresh
+      name: oauth-token-refresh
+      description: REST surface for oauth-token?refresh.
+      operations:
+      - method: POST
+        name: oauthtokenrefresh
+        description: Dropbox _t__OAuthTokenRefresh::SUMMARY
+        call: sign-oauth.oauthtokenrefresh
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: sign-oauth-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox Sign — OAuth. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: dropbox-t-oauthtokengenerate-summary
+      description: Dropbox _t__OAuthTokenGenerate::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-oauth.oauthtokengenerate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-oauthtokenrefresh-summary
+      description: Dropbox _t__OAuthTokenRefresh::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-oauth.oauthtokenrefresh
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

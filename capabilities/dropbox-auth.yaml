@@ -1,0 +1,117 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox API Reference — Auth
+  description: 'Dropbox API Reference — Auth. 2 operations. Lead operation: Dropbox token/from_oauth1. Self-contained Naftiko
+    capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Auth
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dropbox-auth
+    baseUri: https://api.dropbox.com
+    description: Dropbox API Reference — Auth business capability. Self-contained, no shared references.
+    resources:
+    - name: 2-auth-token-from_oauth1
+      path: /2/auth/token/from_oauth1
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox token/from_oauth1
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-auth-token-revoke
+      path: /2/auth/token/revoke
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox token/revoke
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dropbox-auth-rest
+    port: 8080
+    description: REST adapter for Dropbox API Reference — Auth. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/2/auth/token/from-oauth1
+      name: 2-auth-token-from-oauth1
+      description: REST surface for 2-auth-token-from_oauth1.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox token/from_oauth1
+        call: dropbox-auth.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/auth/token/revoke
+      name: 2-auth-token-revoke
+      description: REST surface for 2-auth-token-revoke.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox token/revoke
+        call: dropbox-auth.post
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dropbox-auth-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox API Reference — Auth. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: dropbox-token-oauth1
+      description: Dropbox token/from_oauth1
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-auth.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-token-revoke
+      description: Dropbox token/revoke
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-auth.post
+      outputParameters:
+      - type: object
+        mapping: $.

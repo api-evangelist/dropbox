@@ -1,0 +1,508 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox API Reference — Team > Team_folder
+  description: 'Dropbox API Reference — Team > Team_folder. 10 operations. Lead operation: Dropbox team_folder/activate. Self-contained
+    Naftiko capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Team > Team_folder
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dropbox-team-team-folder
+    baseUri: https://api.dropbox.com
+    description: Dropbox API Reference — Team > Team_folder business capability. Self-contained, no shared references.
+    resources:
+    - name: 2-team-team_folder-activate
+      path: /2/team/team_folder/activate
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/activate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-archive
+      path: /2/team/team_folder/archive
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/archive
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-archive-check
+      path: /2/team/team_folder/archive/check
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/archive/check
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-create
+      path: /2/team/team_folder/create
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/create
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-get_info
+      path: /2/team/team_folder/get_info
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/get_info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-list
+      path: /2/team/team_folder/list
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-list-continue
+      path: /2/team/team_folder/list/continue
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/list/continue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-permanently_delete
+      path: /2/team/team_folder/permanently_delete
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/permanently_delete
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-rename
+      path: /2/team/team_folder/rename
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/rename
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: 2-team-team_folder-update_sync_settings
+      path: /2/team/team_folder/update_sync_settings
+      operations:
+      - name: post
+        method: POST
+        description: Dropbox team_folder/update_sync_settings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dropbox-team-team-folder-rest
+    port: 8080
+    description: REST adapter for Dropbox API Reference — Team > Team_folder. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/2/team/team-folder/activate
+      name: 2-team-team-folder-activate
+      description: REST surface for 2-team-team_folder-activate.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/activate
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/archive
+      name: 2-team-team-folder-archive
+      description: REST surface for 2-team-team_folder-archive.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/archive
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/archive/check
+      name: 2-team-team-folder-archive-check
+      description: REST surface for 2-team-team_folder-archive-check.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/archive/check
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/create
+      name: 2-team-team-folder-create
+      description: REST surface for 2-team-team_folder-create.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/create
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/get-info
+      name: 2-team-team-folder-get-info
+      description: REST surface for 2-team-team_folder-get_info.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/get_info
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/list
+      name: 2-team-team-folder-list
+      description: REST surface for 2-team-team_folder-list.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/list
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/list/continue
+      name: 2-team-team-folder-list-continue
+      description: REST surface for 2-team-team_folder-list-continue.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/list/continue
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/permanently-delete
+      name: 2-team-team-folder-permanently-delete
+      description: REST surface for 2-team-team_folder-permanently_delete.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/permanently_delete
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/rename
+      name: 2-team-team-folder-rename
+      description: REST surface for 2-team-team_folder-rename.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/rename
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/2/team/team-folder/update-sync-settings
+      name: 2-team-team-folder-update-sync-settings
+      description: REST surface for 2-team-team_folder-update_sync_settings.
+      operations:
+      - method: POST
+        name: post
+        description: Dropbox team_folder/update_sync_settings
+        call: dropbox-team-team-folder.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dropbox-team-team-folder-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox API Reference — Team > Team_folder. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: dropbox-team-folder-activate
+      description: Dropbox team_folder/activate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-archive
+      description: Dropbox team_folder/archive
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-archive-check
+      description: Dropbox team_folder/archive/check
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-create
+      description: Dropbox team_folder/create
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-get-info
+      description: Dropbox team_folder/get_info
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-list
+      description: Dropbox team_folder/list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-list-continue
+      description: Dropbox team_folder/list/continue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-permanently-delete
+      description: Dropbox team_folder/permanently_delete
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-rename
+      description: Dropbox team_folder/rename
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-team-folder-update-sync
+      description: Dropbox team_folder/update_sync_settings
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dropbox-team-team-folder.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

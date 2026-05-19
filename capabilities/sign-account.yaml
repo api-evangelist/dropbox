@@ -1,0 +1,204 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dropbox Sign — Account
+  description: 'Dropbox Sign — Account. 4 operations. Lead operation: Dropbox _t__AccountGet::SUMMARY. Self-contained Naftiko
+    capability covering one Dropbox business surface.'
+  tags:
+  - Dropbox
+  - Account
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DROPBOX_API_KEY: DROPBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: sign-account
+    baseUri: https://api.hellosign.com/v3
+    description: Dropbox Sign — Account business capability. Self-contained, no shared references.
+    resources:
+    - name: account
+      path: /account
+      operations:
+      - name: accountget
+        method: GET
+        description: Dropbox _t__AccountGet::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: account_id
+          in: query
+          type: string
+          description: _t__AccountGet::ACCOUNT_ID
+        - name: email_address
+          in: query
+          type: string
+          description: _t__AccountGet::EMAIL_ADDRESS
+      - name: accountupdate
+        method: PUT
+        description: Dropbox _t__AccountUpdate::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: account-create
+      path: /account/create
+      operations:
+      - name: accountcreate
+        method: POST
+        description: Dropbox _t__AccountCreate::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: account-verify
+      path: /account/verify
+      operations:
+      - name: accountverify
+        method: POST
+        description: Dropbox _t__AccountVerify::SUMMARY
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.DROPBOX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: sign-account-rest
+    port: 8080
+    description: REST adapter for Dropbox Sign — Account. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/account
+      name: account
+      description: REST surface for account.
+      operations:
+      - method: GET
+        name: accountget
+        description: Dropbox _t__AccountGet::SUMMARY
+        call: sign-account.accountget
+        with:
+          account_id: rest.account_id
+          email_address: rest.email_address
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: accountupdate
+        description: Dropbox _t__AccountUpdate::SUMMARY
+        call: sign-account.accountupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/account/create
+      name: account-create
+      description: REST surface for account-create.
+      operations:
+      - method: POST
+        name: accountcreate
+        description: Dropbox _t__AccountCreate::SUMMARY
+        call: sign-account.accountcreate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/account/verify
+      name: account-verify
+      description: REST surface for account-verify.
+      operations:
+      - method: POST
+        name: accountverify
+        description: Dropbox _t__AccountVerify::SUMMARY
+        call: sign-account.accountverify
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: sign-account-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dropbox Sign — Account. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: dropbox-t-accountget-summary
+      description: Dropbox _t__AccountGet::SUMMARY
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: sign-account.accountget
+      with:
+        account_id: tools.account_id
+        email_address: tools.email_address
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-accountupdate-summary
+      description: Dropbox _t__AccountUpdate::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: sign-account.accountupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-accountcreate-summary
+      description: Dropbox _t__AccountCreate::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-account.accountcreate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dropbox-t-accountverify-summary
+      description: Dropbox _t__AccountVerify::SUMMARY
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sign-account.accountverify
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
