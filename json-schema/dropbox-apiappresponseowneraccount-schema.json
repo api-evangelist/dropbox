@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiAppResponseOwnerAccount",
+  "title": "ApiAppResponseOwnerAccount",
+  "description": "_t__ApiAppResponseOwnerAccount::DESCRIPTION",
+  "properties": {
+    "account_id": {
+      "description": "_t__ApiAppResponseOwnerAccount::ACCOUNT_ID",
+      "type": "string"
+    },
+    "email_address": {
+      "description": "_t__ApiAppResponseOwnerAccount::EMAIL_ADDRESS",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,1803 @@
+{
+  "provider": "Dropbox",
+  "providerId": "dropbox",
+  "kind": "json-structure",
+  "description": "Structural overview of the Dropbox API surface; extracted from openapi/.",
+  "schemaCount": 175,
+  "operationCount": 61,
+  "schemas": [
+    {
+      "name": "AccountCreateRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "email_address"
+      ]
+    },
+    {
+      "name": "AccountUpdateRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "AccountVerifyRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "email_address"
+      ]
+    },
+    {
+      "name": "ApiAppCreateRequest",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "name",
+        "domains"
+      ]
+    },
+    {
+      "name": "ApiAppUpdateRequest",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "EmbeddedEditUrlRequest",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "OAuthTokenGenerateRequest",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "client_id",
+        "client_secret",
+        "code",
+        "state",
+        "grant_type"
+      ]
+    },
+    {
+      "name": "OAuthTokenRefreshRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "grant_type",
+        "refresh_token"
+      ]
+    },
+    {
+      "name": "ReportCreateRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "start_date",
+        "end_date",
+        "report_type"
+      ]
+    },
+    {
+      "name": "SignatureRequestBulkCreateEmbeddedWithTemplateRequest",
+      "type": "object",
+      "propertyCount": 13,
+      "required": [
+        "client_id",
+        "template_ids"
+      ]
+    },
+    {
+      "name": "SignatureRequestBulkSendWithTemplateRequest",
+      "type": "object",
+      "propertyCount": 13,
+      "required": [
+        "template_ids"
+      ]
+    },
+    {
+      "name": "SignatureRequestCreateEmbeddedRequest",
+      "type": "object",
+      "propertyCount": 24,
+      "required": [
+        "client_id"
+      ]
+    },
+    {
+      "name": "SignatureRequestCreateEmbeddedWithTemplateRequest",
+      "type": "object",
+      "propertyCount": 15,
+      "required": [
+        "client_id",
+        "template_ids",
+        "signers"
+      ]
+    },
+    {
+      "name": "SignatureRequestEditRequest",
+      "type": "object",
+      "propertyCount": 26,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestEditEmbeddedRequest",
+      "type": "object",
+      "propertyCount": 24,
+      "required": [
+        "client_id"
+      ]
+    },
+    {
+      "name": "SignatureRequestEditEmbeddedWithTemplateRequest",
+      "type": "object",
+      "propertyCount": 15,
+      "required": [
+        "client_id",
+        "template_ids",
+        "signers"
+      ]
+    },
+    {
+      "name": "SignatureRequestEditWithTemplateRequest",
+      "type": "object",
+      "propertyCount": 17,
+      "required": [
+        "signers",
+        "template_ids"
+      ]
+    },
+    {
+      "name": "SignatureRequestRemindRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "email_address"
+      ]
+    },
+    {
+      "name": "SignatureRequestSendRequest",
+      "type": "object",
+      "propertyCount": 26,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestSendWithTemplateRequest",
+      "type": "object",
+      "propertyCount": 17,
+      "required": [
+        "signers",
+        "template_ids"
+      ]
+    },
+    {
+      "name": "SignatureRequestUpdateRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "signature_id"
+      ]
+    },
+    {
+      "name": "SubAttachment",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "name",
+        "signer_index"
+      ]
+    },
+    {
+      "name": "SubBulkSignerList",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "SubBulkSignerListCustomField",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "name",
+        "value"
+      ]
+    },
+    {
+      "name": "SubCC",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "role",
+        "email_address"
+      ]
+    },
+    {
+      "name": "SubCustomField",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "name": "SubEditorOptions",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "SubFieldOptions",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "date_format"
+      ]
+    },
+    {
+      "name": "SubFormFieldGroup",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "group_id",
+        "group_label",
+        "requirement"
+      ]
+    },
+    {
+      "name": "SubFormFieldRule",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id",
+        "trigger_operator",
+        "triggers",
+        "actions"
+      ]
+    },
+    {
+      "name": "SubFormFieldRuleAction",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "hidden",
+        "type"
+      ]
+    },
+    {
+      "name": "SubFormFieldRuleTrigger",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id",
+        "operator"
+      ]
+    },
+    {
+      "name": "SubFormFieldsPerDocumentCheckbox",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentCheckboxMerge",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentDateSigned",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentDropdown",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentHyperlink",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentInitials",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentRadio",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentSignature",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentText",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentTextMerge",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentTypeEnum",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentFontEnum",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SubFormFieldsPerDocumentBase",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "document_index",
+        "api_id",
+        "type",
+        "required",
+        "signer",
+        "width",
+        "height",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "name": "SubSignatureRequestGroupedSigners",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "group",
+        "signers"
+      ]
+    },
+    {
+      "name": "SubMergeField",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "name",
+        "type"
+      ]
+    },
+    {
+      "name": "SubOAuth",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "SubOptions",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "SubSignatureRequestSigner",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "name",
+        "email_address"
+      ]
+    },
+    {
+      "name": "SubSignatureRequestTemplateSigner",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "role",
+        "name",
+        "email_address"
+      ]
+    },
+    {
+      "name": "SubUnclaimedDraftSigner",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "name",
+        "email_address"
+      ]
+    },
+    {
+      "name": "SubUnclaimedDraftTemplateSigner",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "role",
+        "name",
+        "email_address"
+      ]
+    },
+    {
+      "name": "SubTemplateRole",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "SubSigningOptions",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "default_type"
+      ]
+    },
+    {
+      "name": "SubWhiteLabelingOptions",
+      "type": "object",
+      "propertyCount": 15,
+      "required": []
+    },
+    {
+      "name": "TeamAddMemberRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "TeamCreateRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "TeamRemoveMemberRequest",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "TeamUpdateRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "TemplateAddUserRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "TemplateCreateRequest",
+      "type": "object",
+      "propertyCount": 18,
+      "required": [
+        "signer_roles",
+        "form_fields_per_document"
+      ]
+    },
+    {
+      "name": "TemplateCreateEmbeddedDraftRequest",
+      "type": "object",
+      "propertyCount": 25,
+      "required": [
+        "client_id"
+      ]
+    },
+    {
+      "name": "TemplateRemoveUserRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateUpdateFilesRequest",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "UnclaimedDraftCreateRequest",
+      "type": "object",
+      "propertyCount": 24,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "UnclaimedDraftCreateEmbeddedRequest",
+      "type": "object",
+      "propertyCount": 36,
+      "required": [
+        "client_id",
+        "requester_email_address"
+      ]
+    },
+    {
+      "name": "UnclaimedDraftCreateEmbeddedWithTemplateRequest",
+      "type": "object",
+      "propertyCount": 30,
+      "required": [
+        "client_id",
+        "requester_email_address",
+        "template_ids"
+      ]
+    },
+    {
+      "name": "UnclaimedDraftEditAndResendRequest",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "client_id"
+      ]
+    },
+    {
+      "name": "AccountCreateResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "AccountGetResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "AccountVerifyResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "ApiAppGetResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "ApiAppListResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "BulkSendJobGetResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "BulkSendJobListResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "BulkSendJobSendResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "EmbeddedEditUrlResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "EmbeddedSignUrlResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "ErrorResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "error"
+      ]
+    },
+    {
+      "name": "FileResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "FileResponseDataUri",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "ReportCreateResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestGetResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestListResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "AccountResponse",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "OAuthTokenResponse",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "AccountResponseQuotas",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "AccountVerifyResponseAccount",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "ApiAppResponse",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "ApiAppResponseOAuth",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "ApiAppResponseOptions",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "ApiAppResponseOwnerAccount",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "ApiAppResponseWhiteLabelingOptions",
+      "type": "object",
+      "propertyCount": 14,
+      "required": []
+    },
+    {
+      "name": "BulkSendJobResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "BulkSendJobGetResponseSignatureRequests",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EmbeddedEditUrlResponseEmbedded",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "EmbeddedSignUrlResponseEmbedded",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "ErrorResponseError",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "error_msg",
+        "error_name"
+      ]
+    },
+    {
+      "name": "ListInfoResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "ReportResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponse",
+      "type": "object",
+      "propertyCount": 25,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseAttachment",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "signer",
+        "name",
+        "required"
+      ]
+    },
+    {
+      "name": "SignatureRequestResponseCustomFieldBase",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "name",
+        "type"
+      ]
+    },
+    {
+      "name": "SignatureRequestResponseCustomFieldCheckbox",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "SignatureRequestResponseCustomFieldText",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "SignatureRequestResponseCustomFieldTypeEnum",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataBase",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataTypeEnum",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueCheckbox",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueCheckboxMerge",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueDateSigned",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueDropdown",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueInitials",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueRadio",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueSignature",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueText",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseDataValueTextMerge",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SignatureRequestResponseSignatures",
+      "type": "object",
+      "propertyCount": 19,
+      "required": []
+    },
+    {
+      "name": "TeamResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "TeamInfoResponse",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "TeamInviteResponse",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "TeamMemberResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "TeamParentResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "SubTeamResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateResponse",
+      "type": "object",
+      "propertyCount": 15,
+      "required": []
+    },
+    {
+      "name": "TemplateResponseAccount",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "TemplateResponseAccountQuota",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "TemplateResponseCCRole",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "TemplateCreateEmbeddedDraftResponseTemplate",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "TemplateCreateResponseTemplate",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "TemplateResponseDocument",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "TemplateResponseDocumentCustomFieldBase",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentCustomFieldCheckbox",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentCustomFieldText",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFieldGroup",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateResponseDocumentFieldGroupRule",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldBase",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldCheckbox",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldDateSigned",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldDropdown",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldHyperlink",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldInitials",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldRadio",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type",
+        "group"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldSignature",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentFormFieldText",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldBase",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldCheckbox",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldDateSigned",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldDropdown",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldHyperlink",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldInitials",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldRadio",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldSignature",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseDocumentStaticFieldText",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "type"
+      ]
+    },
+    {
+      "name": "TemplateResponseFieldAvgTextLength",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateResponseSignerRole",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateUpdateFilesResponseTemplate",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "UnclaimedDraftResponse",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "WarningResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "warning_msg",
+        "warning_name"
+      ]
+    },
+    {
+      "name": "TeamGetResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TeamGetInfoResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TeamInvitesResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TeamMembersResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "TeamSubTeamsResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "TemplateCreateResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateCreateEmbeddedDraftResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateEditResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "TemplateGetResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "TemplateListResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "TemplateUpdateFilesResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "UnclaimedDraftCreateResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "EventCallbackRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "event"
+      ]
+    },
+    {
+      "name": "EventCallbackRequestEvent",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "event_time",
+        "event_type",
+        "event_hash"
+      ]
+    },
+    {
+      "name": "EventCallbackRequestEventMetadata",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "POST",
+      "path": "/account/create",
+      "operationId": "accountCreate",
+      "summary": "Dropbox _t__AccountCreate::SUMMARY",
+      "tags": [
+        "Account"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/account",
+      "operationId": "accountGet",
+      "summary": "Dropbox _t__AccountGet::SUMMARY",
+      "tags": [
+        "Account"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/account",
+      "operationId": "accountUpdate",
+      "summary": "Dropbox _t__AccountUpdate::SUMMARY",
+      "tags": [
+        "Account"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/account/verify",
+      "operationId": "accountVerify",
+      "summary": "Dropbox _t__AccountVerify::SUMMARY",
+      "tags": [
+        "Account"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api_app",
+      "operationId": "apiAppCreate",
+      "summary": "Dropbox _t__ApiAppCreate::SUMMARY",
+      "tags": [
+        "Api App"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api_app/{client_id}",
+      "operationId": "apiAppGet",
+      "summary": "Dropbox _t__ApiAppGet::SUMMARY",
+      "tags": [
+        "Api App"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api_app/{client_id}",
+      "operationId": "apiAppUpdate",
+      "summary": "Dropbox _t__ApiAppUpdate::SUMMARY",
+      "tags": [
+        "Api App"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api_app/{client_id}",
+      "operationId": "apiAppDelete",
+      "summary": "Dropbox _t__ApiAppDelete::SUMMARY",
+      "tags": [
+        "Api App"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api_app/list",
+      "operationId": "apiAppList",
+      "summary": "Dropbox _t__ApiAppList::SUMMARY",
+      "tags": [
+        "Api App"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/bulk_send_job/{bulk_send_job_id}",
+      "operationId": "bulkSendJobGet",
+      "summary": "Dropbox _t__BulkSendJobGet::SUMMARY",
+      "tags": [
+        "Bulk Send Job"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/bulk_send_job/list",
+      "operationId": "bulkSendJobList",
+      "summary": "Dropbox _t__BulkSendJobList::SUMMARY",
+      "tags": [
+        "Bulk Send Job"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/embedded/edit_url/{template_id}",
+      "operationId": "embeddedEditUrl",
+      "summary": "Dropbox _t__EmbeddedEditUrl::SUMMARY",
+      "tags": [
+        "Embedded"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/embedded/sign_url/{signature_id}",
+      "operationId": "embeddedSignUrl",
+      "summary": "Dropbox _t__EmbeddedSignUrl::SUMMARY",
+      "tags": [
+        "Embedded"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/oauth/token",
+      "operationId": "oauthTokenGenerate",
+      "summary": "Dropbox _t__OAuthTokenGenerate::SUMMARY",
+      "tags": [
+        "OAuth"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/oauth/token?refresh",
+      "operationId": "oauthTokenRefresh",
+      "summary": "Dropbox _t__OAuthTokenRefresh::SUMMARY",
+      "tags": [
+        "OAuth"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/report/create",
+      "operationId": "reportCreate",
+      "summary": "Dropbox _t__ReportCreate::SUMMARY",
+      "tags": [
+        "Report"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/bulk_create_embedded_with_template",
+      "operationId": "signatureRequestBulkCreateEmbeddedWithTemplate",
+      "summary": "Dropbox _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/bulk_send_with_template",
+      "operationId": "signatureRequestBulkSendWithTemplate",
+      "summary": "Dropbox _t__SignatureRequestBulkSendWithTemplate::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/cancel/{signature_request_id}",
+      "operationId": "signatureRequestCancel",
+      "summary": "Dropbox _t__SignatureRequestCancel::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/create_embedded",
+      "operationId": "signatureRequestCreateEmbedded",
+      "summary": "Dropbox _t__SignatureRequestCreateEmbedded::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/create_embedded_with_template",
+      "operationId": "signatureRequestCreateEmbeddedWithTemplate",
+      "summary": "Dropbox _t__SignatureRequestCreateEmbeddedWithTemplate::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/signature_request/edit/{signature_request_id}",
+      "operationId": "signatureRequestEdit",
+      "summary": "Dropbox _t__SignatureRequestEdit::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/signature_request/edit_embedded/{signature_request_id}",
+      "operationId": "signatureRequestEditEmbedded",
+      "summary": "Dropbox _t__SignatureRequestEditEmbedded::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/signature_request/edit_embedded_with_template/{signature_request_id}",
+      "operationId": "signatureRequestEditEmbeddedWithTemplate",
+      "summary": "Dropbox _t__SignatureRequestEditEmbeddedWithTemplate::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/signature_request/edit_with_template/{signature_request_id}",
+      "operationId": "signatureRequestEditWithTemplate",
+      "summary": "Dropbox _t__SignatureRequestEditWithTemplate::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/signature_request/files/{signature_request_id}",
+      "operationId": "signatureRequestFiles",
+      "summary": "Dropbox _t__SignatureRequestFiles::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/signature_request/files_as_data_uri/{signature_request_id}",
+      "operationId": "signatureRequestFilesAsDataUri",
+      "summary": "Dropbox _t__SignatureRequestFilesAsDataUri::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/signature_request/files_as_file_url/{signature_request_id}",
+      "operationId": "signatureRequestFilesAsFileUrl",
+      "summary": "Dropbox _t__SignatureRequestFilesAsFileUrl::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/signature_request/{signature_request_id}",
+      "operationId": "signatureRequestGet",
+      "summary": "Dropbox _t__SignatureRequestGet::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/signature_request/list",
+      "operationId": "signatureRequestList",
+      "summary": "Dropbox _t__SignatureRequestList::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/release_hold/{signature_request_id}",
+      "operationId": "signatureRequestReleaseHold",
+      "summary": "Dropbox _t__SignatureRequestReleaseHold::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/remind/{signature_request_id}",
+      "operationId": "signatureRequestRemind",
+      "summary": "Dropbox _t__SignatureRequestRemind::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/remove/{signature_request_id}",
+      "operationId": "signatureRequestRemove",
+      "summary": "Dropbox _t__SignatureRequestRemove::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/send",
+      "operationId": "signatureRequestSend",
+      "summary": "Dropbox _t__SignatureRequestSend::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/send_with_template",
+      "operationId": "signatureRequestSendWithTemplate",
+      "summary": "Dropbox _t__SignatureRequestSendWithTemplate::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/signature_request/update/{signature_request_id}",
+      "operationId": "signatureRequestUpdate",
+      "summary": "Dropbox _t__SignatureRequestUpdate::SUMMARY",
+      "tags": [
+        "Signature Request"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/team/add_member",
+      "operationId": "teamAddMember",
+      "summary": "Dropbox _t__TeamAddMember::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/team/create",
+      "operationId": "teamCreate",
+      "summary": "Dropbox _t__TeamCreate::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/team/destroy",
+      "operationId": "teamDelete",
+      "summary": "Dropbox _t__TeamDelete::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/team",
+      "operationId": "teamGet",
+      "summary": "Dropbox _t__TeamGet::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/team",
+      "operationId": "teamUpdate",
+      "summary": "Dropbox _t__TeamUpdate::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/team/info",
+      "operationId": "teamInfo",
+      "summary": "Dropbox _t__TeamInfo::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/team/invites",
+      "operationId": "teamInvites",
+      "summary": "Dropbox _t__TeamInvites::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/team/members/{team_id}",
+      "operationId": "teamMembers",
+      "summary": "Dropbox _t__TeamMembers::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/team/remove_member",
+      "operationId": "teamRemoveMember",
+      "summary": "Dropbox _t__TeamRemoveMember::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/team/sub_teams/{team_id}",
+      "operationId": "teamSubTeams",
+      "summary": "Dropbox _t__TeamSubTeams::SUMMARY",
+      "tags": [
+        "Team"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/template/add_user/{template_id}",
+      "operationId": "templateAddUser",
+      "summary": "Dropbox _t__TemplateAddUser::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/template/create",
+      "operationId": "templateCreate",
+      "summary": "Dropbox _t__TemplateCreate::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/template/create_embedded_draft",
+      "operationId": "templateCreateEmbeddedDraft",
+      "summary": "Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/template/delete/{template_id}",
+      "operationId": "templateDelete",
+      "summary": "Dropbox _t__TemplateDelete::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/template/files/{template_id}",
+      "operationId": "templateFiles",
+      "summary": "Dropbox _t__TemplateFiles::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/template/files_as_data_uri/{template_id}",
+      "operationId": "templateFilesAsDataUri",
+      "summary": "Dropbox _t__TemplateFilesAsDataUri::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/template/files_as_file_url/{template_id}",
+      "operationId": "templateFilesAsFileUrl",
+      "summary": "Dropbox _t__TemplateFilesAsFileUrl::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/template/{template_id}",
+      "operationId": "templateGet",
+      "summary": "Dropbox _t__TemplateGet::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/template/list",
+      "operationId": "templateList",
+      "summary": "Dropbox _t__TemplateList::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/template/remove_user/{template_id}",
+      "operationId": "templateRemoveUser",
+      "summary": "Dropbox _t__TemplateRemoveUser::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/template/update_files/{template_id}",
+      "operationId": "templateUpdateFiles",
+      "summary": "Dropbox _t__TemplateUpdateFiles::SUMMARY",
+      "tags": [
+        "Template"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unclaimed_draft/create",
+      "operationId": "unclaimedDraftCreate",
+      "summary": "Dropbox _t__UnclaimedDraftCreate::SUMMARY",
+      "tags": [
+        "Unclaimed Draft"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unclaimed_draft/create_embedded",
+      "operationId": "unclaimedDraftCreateEmbedded",
+      "summary": "Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY",
+      "tags": [
+        "Unclaimed Draft"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unclaimed_draft/create_embedded_with_template",
+      "operationId": "unclaimedDraftCreateEmbeddedWithTemplate",
+      "summary": "Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY",
+      "tags": [
+        "Unclaimed Draft"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unclaimed_draft/edit_and_resend/{signature_request_id}",
+      "operationId": "unclaimedDraftEditAndResend",
+      "summary": "Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY",
+      "tags": [
+        "Unclaimed Draft"
+      ]
+    }
+  ]
+}

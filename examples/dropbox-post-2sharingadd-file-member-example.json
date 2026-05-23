@@ -1,0 +1,24 @@
+{
+  "operationId": "post-2sharingadd-file-member",
+  "method": "POST",
+  "path": "/2/sharing/add_file_member",
+  "summary": "Dropbox add_file_member",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": [
+        {
+          "member": {
+            ".tag": "email",
+            "email": "justin@example.com"
+          },
+          "result": {
+            ".tag": "success"
+          }
+        }
+      ]
+    }
+  ]
+}

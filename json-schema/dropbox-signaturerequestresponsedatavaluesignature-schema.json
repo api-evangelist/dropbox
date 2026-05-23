@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseDataValueSignature",
+  "title": "SignatureRequestResponseDataValueSignature",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SignatureRequestResponseDataBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__SignatureRequestResponseDataValue::SIGNATURE_TYPE",
+          "type": "string",
+          "default": "signature"
+        },
+        "value": {
+          "description": "_t__SignatureRequestResponseDataValue::VALUE",
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

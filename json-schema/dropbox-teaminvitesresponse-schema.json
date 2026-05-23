@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamInvitesResponse",
+  "title": "TeamInvitesResponse",
+  "properties": {
+    "team_invites": {
+      "description": "_t__TeamInvitesResponse::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TeamInviteResponse"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UnclaimedDraftCreateEmbeddedWithTemplateRequest",
+  "title": "UnclaimedDraftCreateEmbeddedWithTemplateRequest",
+  "required": [
+    "client_id",
+    "requester_email_address",
+    "template_ids"
+  ],
+  "properties": {
+    "allow_decline": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_DECLINE",
+      "type": "boolean",
+      "default": false
+    },
+    "allow_reassign": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_REASSIGN",
+      "type": "boolean",
+      "default": false
+    },
+    "ccs": {
+      "description": "_t__Sub::CC::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCC"
+      }
+    },
+    "client_id": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::CLIENT_ID",
+      "type": "string"
+    },
+    "custom_fields": {
+      "description": "_t__Sub::CustomField::TEMPLATE",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCustomField"
+      }
+    },
+    "editor_options": {
+      "$ref": "#/components/schemas/SubEditorOptions"
+    },
+    "field_options": {
+      "$ref": "#/components/schemas/SubFieldOptions"
+    },
+    "files": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "force_signer_roles": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SIGNER_ROLES",
+      "type": "boolean",
+      "default": false
+    },
+    "force_subject_message": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SUBJECT_MESSAGE",
+      "type": "boolean",
+      "default": false
+    },
+    "hold_request": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::HOLD_REQUEST",
+      "type": "boolean",
+      "default": false
+    },
+    "is_for_embedded_signing": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::IS_FOR_EMBEDDED_SIGNING",
+      "type": "boolean",
+      "default": false
+    },
+    "message": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "preview_only": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::PREVIEW_ONLY",
+      "type": "boolean",
+      "default": false
+    },
+    "requester_email_address": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTER_EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "requesting_redirect_url": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTING_REDIRECT_URL",
+      "type": "string"
+    },
+    "show_preview": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PREVIEW",
+      "type": "boolean",
+      "default": false
+    },
+    "show_progress_stepper": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PROGRESS_STEPPER",
+      "type": "boolean",
+      "default": true
+    },
+    "signers": {
+      "description": "_t__Sub::UnclaimedDraftTemplateSigner::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubUnclaimedDraftTemplateSigner"
+      }
+    },
+    "signing_options": {
+      "$ref": "#/components/schemas/SubSigningOptions"
+    },
+    "signing_redirect_url": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL",
+      "type": "string"
+    },
+    "skip_me_now": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SKIP_ME_NOW",
+      "type": "boolean",
+      "default": false
+    },
+    "subject": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SUBJECT",
+      "type": "string",
+      "maxLength": 255
+    },
+    "template_ids": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TEMPLATE_IDS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "test_mode": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TITLE",
+      "type": "string",
+      "maxLength": 255
+    },
+    "populate_auto_fill_fields": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS",
+      "type": "boolean",
+      "default": false
+    },
+    "allow_ccs": {
+      "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_CCS",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

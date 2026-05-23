@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2sharingunshare-folder",
+  "method": "POST",
+  "path": "/2/sharing/unshare_folder",
+  "summary": "Dropbox unshare_folder",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "complete"
+      }
+    }
+  ]
+}

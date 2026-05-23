@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BulkSendJobResponse",
+  "title": "BulkSendJobResponse",
+  "description": "_t__BulkSendJobResponse::DESCRIPTION",
+  "properties": {
+    "bulk_send_job_id": {
+      "description": "_t__BulkSendJobResponse::BULK_SEND_JOB_ID",
+      "type": "string",
+      "nullable": true
+    },
+    "total": {
+      "description": "_t__BulkSendJobResponse::TOTAL",
+      "type": "integer"
+    },
+    "is_creator": {
+      "description": "_t__BulkSendJobResponse::IS_CREATOR",
+      "type": "boolean"
+    },
+    "created_at": {
+      "description": "_t__BulkSendJobResponse::CREATED_AT",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

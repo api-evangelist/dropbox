@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2teammembersmove-former-member-filesjob-statuscheck",
+  "method": "POST",
+  "path": "/2/team/members/move_former_member_files/job_status/check",
+  "summary": "Dropbox members/move_former_member_files/job_status/check",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "complete"
+      }
+    }
+  ]
+}

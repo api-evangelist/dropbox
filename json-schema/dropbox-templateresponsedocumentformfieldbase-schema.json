@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentFormFieldBase",
+  "title": "TemplateResponseDocumentFormFieldBase",
+  "description": "_t__TemplateResponseDocumentFormField::DESCRIPTION",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "api_id": {
+      "description": "_t__TemplateResponseDocumentFormField::API_ID",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__TemplateResponseDocumentFormField::NAME",
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "signer": {
+      "description": "_t__TemplateResponseDocumentFormField::SIGNER",
+      "type": "string"
+    },
+    "x": {
+      "description": "_t__TemplateResponseDocumentFormField::X",
+      "type": "integer"
+    },
+    "y": {
+      "description": "_t__TemplateResponseDocumentFormField::Y",
+      "type": "integer"
+    },
+    "width": {
+      "description": "_t__TemplateResponseDocumentFormField::WIDTH",
+      "type": "integer"
+    },
+    "height": {
+      "description": "_t__TemplateResponseDocumentFormField::HEIGHT",
+      "type": "integer"
+    },
+    "required": {
+      "description": "_t__TemplateResponseDocumentFormField::REQUIRED",
+      "type": "boolean"
+    },
+    "group": {
+      "description": "_t__TemplateResponseDocumentFormField::GROUP",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "discriminator": {
+    "propertyName": "type",
+    "mapping": {
+      "text": "#/components/schemas/TemplateResponseDocumentFormFieldText",
+      "dropdown": "#/components/schemas/TemplateResponseDocumentFormFieldDropdown",
+      "hyperlink": "#/components/schemas/TemplateResponseDocumentFormFieldHyperlink",
+      "checkbox": "#/components/schemas/TemplateResponseDocumentFormFieldCheckbox",
+      "radio": "#/components/schemas/TemplateResponseDocumentFormFieldRadio",
+      "signature": "#/components/schemas/TemplateResponseDocumentFormFieldSignature",
+      "date_signed": "#/components/schemas/TemplateResponseDocumentFormFieldDateSigned",
+      "initials": "#/components/schemas/TemplateResponseDocumentFormFieldInitials"
+    }
+  },
+  "x-internal": true,
+  "x-base-class": true
+}

@@ -1,0 +1,68 @@
+{
+  "operationId": "post-2sharinglist-folder-memberscontinue",
+  "method": "POST",
+  "path": "/2/sharing/list_folder_members/continue",
+  "summary": "Dropbox list_folder_members/continue",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "users": [
+          {
+            "access_type": {
+              ".tag": "owner"
+            },
+            "user": {
+              "account_id": "dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc",
+              "email": "bob@example.com",
+              "display_name": "Robert Smith",
+              "same_team": true,
+              "team_member_id": "dbmid:abcd1234"
+            },
+            "permissions": [],
+            "is_inherited": false
+          }
+        ],
+        "groups": [
+          {
+            "access_type": {
+              ".tag": "editor"
+            },
+            "group": {
+              "group_name": "Test group",
+              "group_id": "g:e2db7665347abcd600000000001a2b3c",
+              "group_management_type": {
+                ".tag": "user_managed"
+              },
+              "group_type": {
+                ".tag": "user_managed"
+              },
+              "is_member": false,
+              "is_owner": false,
+              "same_team": true,
+              "member_count": 10
+            },
+            "permissions": [],
+            "is_inherited": false
+          }
+        ],
+        "invitees": [
+          {
+            "access_type": {
+              ".tag": "viewer"
+            },
+            "invitee": {
+              ".tag": "email",
+              "email": "jessica@example.com"
+            },
+            "permissions": [],
+            "is_inherited": false
+          }
+        ],
+        "cursor": "ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu"
+      }
+    }
+  ]
+}

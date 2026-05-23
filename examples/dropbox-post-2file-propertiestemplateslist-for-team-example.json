@@ -1,0 +1,18 @@
+{
+  "operationId": "post-2file-propertiestemplateslist-for-team",
+  "method": "POST",
+  "path": "/2/file_properties/templates/list_for_team",
+  "summary": "Dropbox templates/list_for_team",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "template_ids": [
+          "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+        ]
+      }
+    }
+  ]
+}

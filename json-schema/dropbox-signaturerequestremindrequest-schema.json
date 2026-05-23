@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestRemindRequest",
+  "title": "SignatureRequestRemindRequest",
+  "required": [
+    "email_address"
+  ],
+  "properties": {
+    "email_address": {
+      "description": "_t__SignatureRequestRemind::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "name": {
+      "description": "_t__SignatureRequestRemind::NAME",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

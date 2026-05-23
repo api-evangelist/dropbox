@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamInfoResponse",
+  "title": "TeamInfoResponse",
+  "properties": {
+    "team_id": {
+      "description": "_t__TeamGeneral::TEAM_ID",
+      "type": "string"
+    },
+    "team_parent": {
+      "$ref": "#/components/schemas/TeamParentResponse"
+    },
+    "name": {
+      "description": "_t__TeamGeneral::NAME",
+      "type": "string"
+    },
+    "num_members": {
+      "description": "_t__TeamGeneral::NUM_MEMBERS",
+      "type": "integer"
+    },
+    "num_sub_teams": {
+      "description": "_t__TeamGeneral::NUM_SUB_TEAMS",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

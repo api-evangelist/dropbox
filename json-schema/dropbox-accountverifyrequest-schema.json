@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountVerifyRequest",
+  "title": "AccountVerifyRequest",
+  "required": [
+    "email_address"
+  ],
+  "properties": {
+    "email_address": {
+      "description": "_t__AccountVerify::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentFormFieldText",
+  "title": "TemplateResponseDocumentFormFieldText",
+  "description": "_t__TemplateResponseDocumentFormField::DESCRIPTION_EXTENDS",
+  "required": [
+    "type"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/TemplateResponseDocumentFormFieldBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__TemplateResponseDocumentFormField::TYPE",
+          "type": "string",
+          "default": "text"
+        },
+        "avg_text_length": {
+          "$ref": "#/components/schemas/TemplateResponseFieldAvgTextLength"
+        },
+        "isMultiline": {
+          "description": "_t__TemplateResponseDocumentFormField::IS_MULTILINE",
+          "type": "boolean"
+        },
+        "originalFontSize": {
+          "description": "_t__TemplateResponseDocumentFormField::ORIGINAL_FONT_SIZE",
+          "type": "integer"
+        },
+        "fontFamily": {
+          "description": "_t__TemplateResponseDocumentFormField::FONT_FAMILY",
+          "type": "string"
+        },
+        "validation_type": {
+          "description": "_t__TemplateResponseDocumentFormField::VALIDATION_TYPE",
+          "type": "string",
+          "enum": [
+            "numbers_only",
+            "letters_only",
+            "phone_number",
+            "bank_routing_number",
+            "bank_account_number",
+            "email_address",
+            "zip_code",
+            "social_security_number",
+            "employer_identification_number",
+            "custom_regex"
+          ],
+          "nullable": true
+        }
+      }
+    }
+  ]
+}

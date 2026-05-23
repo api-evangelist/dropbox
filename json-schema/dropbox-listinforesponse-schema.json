@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ListInfoResponse",
+  "title": "ListInfoResponse",
+  "description": "_t__ListInfoResponse::DESCRIPTION",
+  "properties": {
+    "num_pages": {
+      "description": "_t__ListInfoResponse::NUM_PAGES",
+      "type": "integer"
+    },
+    "num_results": {
+      "description": "_t__ListInfoResponse::NUM_RESULTS",
+      "type": "integer",
+      "nullable": true
+    },
+    "page": {
+      "description": "_t__ListInfoResponse::PAGE",
+      "type": "integer"
+    },
+    "page_size": {
+      "description": "_t__ListInfoResponse::PAGE_SIZE",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

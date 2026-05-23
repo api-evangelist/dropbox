@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubSignatureRequestGroupedSigners",
+  "title": "SubSignatureRequestGroupedSigners",
+  "required": [
+    "group",
+    "signers"
+  ],
+  "properties": {
+    "group": {
+      "description": "_t__Sub::SignatureRequestGroupedSigners::GROUP_NAME",
+      "type": "string"
+    },
+    "order": {
+      "description": "_t__Sub::SignatureRequestGroupedSigners::ORDER",
+      "type": "integer",
+      "nullable": true
+    },
+    "signers": {
+      "description": "_t__Sub::SignatureRequestGroupedSigners::SIGNERS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubSignatureRequestSigner"
+      }
+    }
+  },
+  "type": "object"
+}

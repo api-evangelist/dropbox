@@ -1,0 +1,38 @@
+{
+  "operationId": "post-2teamget-info",
+  "method": "POST",
+  "path": "/2/team/get_info",
+  "summary": "Dropbox get_info",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "name": "Dropbox Inc.",
+        "team_id": "dbtid:1234abcd",
+        "num_licensed_users": 5,
+        "num_provisioned_users": 2,
+        "policies": {
+          "sharing": {
+            "shared_folder_member_policy": {
+              ".tag": "team"
+            },
+            "shared_folder_join_policy": {
+              ".tag": "from_anyone"
+            },
+            "shared_link_create_policy": {
+              ".tag": "team_only"
+            }
+          },
+          "emm_state": {
+            ".tag": "disabled"
+          },
+          "office_addin": {
+            ".tag": "disabled"
+          }
+        }
+      }
+    }
+  ]
+}

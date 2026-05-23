@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountVerifyResponseAccount",
+  "title": "AccountVerifyResponseAccount",
+  "properties": {
+    "email_address": {
+      "description": "_t__Account::EMAIL_ADDRESS",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamInviteResponse",
+  "title": "TeamInviteResponse",
+  "properties": {
+    "email_address": {
+      "description": "_t__TeamInviteResponse::EMAIL_ADDRESS",
+      "type": "string"
+    },
+    "team_id": {
+      "description": "_t__TeamInviteResponse::TEAM_ID",
+      "type": "string"
+    },
+    "role": {
+      "description": "_t__TeamInviteResponse::ROLE",
+      "type": "string"
+    },
+    "sent_at": {
+      "description": "_t__TeamInviteResponse::SENT_AT",
+      "type": "integer"
+    },
+    "redeemed_at": {
+      "description": "_t__TeamInviteResponse::REDEEMED_AT",
+      "type": "integer"
+    },
+    "expires_at": {
+      "description": "_t__TeamInviteResponse::EXPIRES_AT",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

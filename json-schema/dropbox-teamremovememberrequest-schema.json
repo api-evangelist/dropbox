@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamRemoveMemberRequest",
+  "title": "TeamRemoveMemberRequest",
+  "properties": {
+    "account_id": {
+      "description": "_t__TeamRemoveMember::ACCOUNT_ID",
+      "type": "string"
+    },
+    "email_address": {
+      "description": "_t__TeamRemoveMember::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "new_owner_email_address": {
+      "description": "_t__TeamRemoveMember::NEW_OWNER_EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "new_team_id": {
+      "description": "_t__TeamRemoveMember::NEW_TEAM_ID",
+      "type": "string"
+    },
+    "new_role": {
+      "description": "_t__TeamRemoveMember::NEW_ROLE",
+      "type": "string",
+      "enum": [
+        "Member",
+        "Developer",
+        "Team Manager",
+        "Admin"
+      ]
+    }
+  },
+  "type": "object"
+}

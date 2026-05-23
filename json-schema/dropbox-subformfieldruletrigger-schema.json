@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldRuleTrigger",
+  "title": "SubFormFieldRuleTrigger",
+  "required": [
+    "id",
+    "operator"
+  ],
+  "properties": {
+    "id": {
+      "description": "_t__Sub::FormFieldRuleTrigger::ID",
+      "type": "string"
+    },
+    "operator": {
+      "description": "_t__Sub::FormFieldRuleTrigger::OPERATOR",
+      "type": "string",
+      "enum": [
+        "any",
+        "is",
+        "match",
+        "none",
+        "not"
+      ]
+    },
+    "value": {
+      "description": "_t__Sub::FormFieldRuleTrigger::VALUE_SINGLE",
+      "type": "string"
+    },
+    "values": {
+      "description": "_t__Sub::FormFieldRuleTrigger::VALUE_MULTI",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2filesget-temporary-upload-link",
+  "method": "POST",
+  "path": "/2/files/get_temporary_upload_link",
+  "summary": "Dropbox get_temporary_upload_link",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "link": "https://content.dropboxapi.com/apitul/1/bNi2uIYF51cVBND"
+      }
+    }
+  ]
+}

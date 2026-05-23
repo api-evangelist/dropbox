@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseSignerRole",
+  "title": "TemplateResponseSignerRole",
+  "properties": {
+    "name": {
+      "description": "_t__TemplateResponseSignerRole::NAME",
+      "type": "string"
+    },
+    "order": {
+      "description": "_t__TemplateResponseSignerRole::ORDER",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

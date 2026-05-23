@@ -1,0 +1,17 @@
+{
+  "operationId": "post-2sharingremove-folder-member",
+  "method": "POST",
+  "path": "/2/sharing/remove_folder_member",
+  "summary": "Dropbox remove_folder_member",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "async_job_id",
+        "async_job_id": "34g93hh34h04y384084"
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestBulkCreateEmbeddedWithTemplateRequest",
+  "title": "SignatureRequestBulkCreateEmbeddedWithTemplateRequest",
+  "required": [
+    "client_id",
+    "template_ids"
+  ],
+  "properties": {
+    "template_ids": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::TEMPLATE_IDS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signer_file": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNER_FILE",
+      "type": "string",
+      "format": "binary"
+    },
+    "signer_list": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNER_LIST",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubBulkSignerList"
+      }
+    },
+    "allow_decline": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::ALLOW_DECLINE",
+      "type": "boolean",
+      "default": false
+    },
+    "ccs": {
+      "description": "_t__Sub::CC::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCC"
+      }
+    },
+    "client_id": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::CLIENT_ID",
+      "type": "string"
+    },
+    "custom_fields": {
+      "description": "_t__Sub::CustomField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCustomField"
+      }
+    },
+    "message": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "signing_redirect_url": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL",
+      "type": "string"
+    },
+    "subject": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::SUBJECT",
+      "type": "string",
+      "maxLength": 255
+    },
+    "test_mode": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "description": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::TITLE",
+      "type": "string",
+      "maxLength": 255
+    }
+  },
+  "type": "object"
+}

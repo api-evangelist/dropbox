@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EventCallbackRequestEventMetadata",
+  "title": "EventCallbackRequestEventMetadata",
+  "description": "_t__EventCallbackRequestEventMetadata::DESCRIPTION",
+  "properties": {
+    "related_signature_id": {
+      "description": "_t__EventCallbackRequestEventMetadata::RELATED_SIGNATURE_ID",
+      "type": "string",
+      "nullable": true
+    },
+    "reported_for_account_id": {
+      "description": "_t__EventCallbackRequestEventMetadata::REPORTED_FOR_ACCOUNT_ID",
+      "type": "string",
+      "nullable": true
+    },
+    "reported_for_app_id": {
+      "description": "_t__EventCallbackRequestEventMetadata::REPORTED_FOR_APP_ID",
+      "type": "string",
+      "nullable": true
+    },
+    "event_message": {
+      "description": "_t__EventCallbackRequestEventMetadata::EVENT_MESSAGE",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "type": "object"
+}

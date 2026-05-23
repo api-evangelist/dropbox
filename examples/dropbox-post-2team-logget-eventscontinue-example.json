@@ -1,0 +1,120 @@
+{
+  "operationId": "post-2team-logget-eventscontinue",
+  "method": "POST",
+  "path": "/2/team_log/get_events/continue",
+  "summary": "Dropbox get_events/continue",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "events": [
+          {
+            "timestamp": "2017-01-25T15:51:30Z",
+            "event_category": {
+              ".tag": "tfa"
+            },
+            "event_type": {
+              ".tag": "shared_content_download",
+              "description": "(sharing) Downloaded shared file/folder"
+            },
+            "details": {
+              ".tag": "shared_content_download_details",
+              "shared_content_link": "abc",
+              "shared_content_access_level": {
+                ".tag": "viewer_no_comment"
+              },
+              "shared_content_owner": {
+                ".tag": "team_member",
+                "account_id": "dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho",
+                "display_name": "John Smith",
+                "email": "john_smith@acmecorp.com",
+                "team_member_id": "dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q",
+                "member_external_id": "ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224",
+                "team": {
+                  "display_name": "A Team"
+                }
+              }
+            },
+            "actor": {
+              ".tag": "user",
+              "user": {
+                ".tag": "team_member",
+                "account_id": "dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho",
+                "display_name": "John Smith",
+                "email": "john_smith@acmecorp.com",
+                "team_member_id": "dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q",
+                "member_external_id": "ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224",
+                "team": {
+                  "display_name": "A Team"
+                }
+              }
+            },
+            "origin": {
+              "access_method": {
+                ".tag": "end_user",
+                "end_user": {
+                  ".tag": "web",
+                  "session_id": "dbwsid:123456789012345678901234567890123456789"
+                }
+              },
+              "geo_location": {
+                "ip_address": "45.56.78.100",
+                "city": "San Francisco",
+                "region": "California",
+                "country": "US"
+              }
+            },
+            "involve_non_team_member": true,
+            "context": {
+              ".tag": "team_member",
+              "account_id": "dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho",
+              "display_name": "John Smith",
+              "email": "john_smith@acmecorp.com",
+              "team_member_id": "dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q",
+              "member_external_id": "ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224",
+              "team": {
+                "display_name": "A Team"
+              }
+            },
+            "participants": [
+              {
+                ".tag": "user",
+                "user": {
+                  ".tag": "team_member",
+                  "account_id": "dbid:AAGx4oiLtHdvRdNxUpvvJBXYgR4BS19c9kw",
+                  "display_name": "Jane Smith",
+                  "email": "jane_smith@acmecorp.com",
+                  "team_member_id": "dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q",
+                  "member_external_id": "ADSYNC S-1-5-21-1004296348-1135238915-682003432-1225",
+                  "team": {
+                    "display_name": "A Team"
+                  }
+                }
+              }
+            ],
+            "assets": [
+              {
+                ".tag": "file",
+                "path": {
+                  "namespace_relative": {
+                    "ns_id": "1234",
+                    "relative_path": "/Contract Work/Draft",
+                    "is_shared_namespace": false
+                  },
+                  "contextual": "/Contract Work/Draft"
+                },
+                "display_name": "reports.xls",
+                "file_id": "id:jQKLsZFQImAAAAAAEZAAQt",
+                "file_size": 4
+              }
+            ]
+          }
+        ],
+        "cursor": "ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu",
+        "has_more": false
+      }
+    }
+  ]
+}

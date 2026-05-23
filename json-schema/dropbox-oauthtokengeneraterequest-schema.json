@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OAuthTokenGenerateRequest",
+  "title": "OAuthTokenGenerateRequest",
+  "required": [
+    "client_id",
+    "client_secret",
+    "code",
+    "state",
+    "grant_type"
+  ],
+  "properties": {
+    "client_id": {
+      "description": "_t__OAuthTokenGenerate::CLIENT_ID",
+      "type": "string"
+    },
+    "client_secret": {
+      "description": "_t__OAuthTokenGenerate::CLIENT_SECRET",
+      "type": "string"
+    },
+    "code": {
+      "description": "_t__OAuthTokenGenerate::CODE",
+      "type": "string"
+    },
+    "grant_type": {
+      "description": "_t__OAuthTokenGenerate::GRANT_TYPE",
+      "type": "string",
+      "default": "authorization_code"
+    },
+    "state": {
+      "description": "_t__OAuthTokenGenerate::STATE",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

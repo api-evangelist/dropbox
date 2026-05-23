@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OAuthTokenResponse",
+  "title": "OAuthTokenResponse",
+  "properties": {
+    "access_token": {
+      "type": "string"
+    },
+    "token_type": {
+      "type": "string"
+    },
+    "refresh_token": {
+      "type": "string"
+    },
+    "expires_in": {
+      "description": "_t__OAuthTokenResponse::EXPIRES_IN",
+      "type": "integer"
+    },
+    "state": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

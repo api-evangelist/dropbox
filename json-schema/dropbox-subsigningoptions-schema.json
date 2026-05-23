@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubSigningOptions",
+  "title": "SubSigningOptions",
+  "description": "_t__Sub::SigningOptions::DESCRIPTION",
+  "required": [
+    "default_type"
+  ],
+  "properties": {
+    "default_type": {
+      "description": "_t__Sub::SigningOptions::DEFAULT",
+      "type": "string",
+      "enum": [
+        "draw",
+        "phone",
+        "type",
+        "upload"
+      ]
+    },
+    "draw": {
+      "description": "_t__Sub::SigningOptions::DRAW",
+      "type": "boolean",
+      "default": false
+    },
+    "phone": {
+      "description": "_t__Sub::SigningOptions::PHONE",
+      "type": "boolean",
+      "default": false
+    },
+    "type": {
+      "description": "_t__Sub::SigningOptions::TYPE",
+      "type": "boolean",
+      "default": false
+    },
+    "upload": {
+      "description": "_t__Sub::SigningOptions::UPLOAD",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

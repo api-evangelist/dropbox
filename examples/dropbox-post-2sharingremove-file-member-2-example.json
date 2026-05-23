@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2sharingremove-file-member-2",
+  "method": "POST",
+  "path": "/2/sharing/remove_file_member_2",
+  "summary": "Dropbox remove_file_member_2",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "other"
+      }
+    }
+  ]
+}

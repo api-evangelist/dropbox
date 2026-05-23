@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubTeamResponse",
+  "title": "SubTeamResponse",
+  "properties": {
+    "team_id": {
+      "description": "_t__TeamGeneral::TEAM_ID",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__TeamGeneral::NAME",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

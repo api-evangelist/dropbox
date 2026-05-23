@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldRule",
+  "title": "SubFormFieldRule",
+  "required": [
+    "id",
+    "trigger_operator",
+    "triggers",
+    "actions"
+  ],
+  "properties": {
+    "id": {
+      "description": "_t__Sub::FormFieldRule::ID",
+      "type": "string"
+    },
+    "trigger_operator": {
+      "description": "_t__Sub::FormFieldRule::TRIGGER_OPERATOR",
+      "type": "string",
+      "default": "AND"
+    },
+    "triggers": {
+      "description": "_t__Sub::FormFieldRuleTrigger::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldRuleTrigger"
+      },
+      "maxItems": 1,
+      "minItems": 1
+    },
+    "actions": {
+      "description": "_t__Sub::FormFieldRuleAction::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldRuleAction"
+      },
+      "minItems": 1
+    }
+  },
+  "type": "object"
+}

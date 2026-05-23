@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponse",
+  "title": "SignatureRequestResponse",
+  "description": "_t__SignatureRequestResponse::DESCRIPTION",
+  "properties": {
+    "test_mode": {
+      "description": "_t__SignatureRequestResponse::TEST_MODE",
+      "type": "boolean",
+      "default": false,
+      "nullable": true
+    },
+    "signature_request_id": {
+      "description": "_t__SignatureRequestResponse::SIGNATURE_REQUEST_ID",
+      "type": "string"
+    },
+    "requester_email_address": {
+      "description": "_t__SignatureRequestResponse::REQUESTER_EMAIL_ADDRESS",
+      "type": "string"
+    },
+    "title": {
+      "description": "_t__SignatureRequestResponse::TITLE",
+      "type": "string"
+    },
+    "original_title": {
+      "description": "_t__SignatureRequestResponse::ORIGINAL_TITLE",
+      "type": "string"
+    },
+    "subject": {
+      "description": "_t__SignatureRequestResponse::SUBJECT",
+      "type": "string",
+      "nullable": true
+    },
+    "message": {
+      "description": "_t__SignatureRequestResponse::MESSAGE",
+      "type": "string",
+      "nullable": true
+    },
+    "metadata": {
+      "description": "_t__SignatureRequestResponse::METADATA",
+      "type": "object"
+    },
+    "created_at": {
+      "description": "_t__SignatureRequestResponse::CREATED_AT",
+      "type": "integer"
+    },
+    "expires_at": {
+      "description": "_t__SignatureRequestResponse::EXPIRES_AT",
+      "type": "integer"
+    },
+    "is_complete": {
+      "description": "_t__SignatureRequestResponse::IS_COMPLETE",
+      "type": "boolean"
+    },
+    "is_declined": {
+      "description": "_t__SignatureRequestResponse::IS_DECLINED",
+      "type": "boolean"
+    },
+    "has_error": {
+      "description": "_t__SignatureRequestResponse::HAS_ERROR",
+      "type": "boolean"
+    },
+    "files_url": {
+      "description": "_t__SignatureRequestResponse::FILES_URL",
+      "type": "string"
+    },
+    "signing_url": {
+      "description": "_t__SignatureRequestResponse::SIGNING_URL",
+      "type": "string",
+      "nullable": true
+    },
+    "details_url": {
+      "description": "_t__SignatureRequestResponse::DETAILS_URL",
+      "type": "string"
+    },
+    "cc_email_addresses": {
+      "description": "_t__SignatureRequestResponse::CC_EMAIL_ADDRESSES",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signing_redirect_url": {
+      "description": "_t__SignatureRequestResponse::SIGNING_REDIRECT_URL",
+      "type": "string",
+      "nullable": true
+    },
+    "final_copy_uri": {
+      "description": "_t__SignatureRequestResponse::FINAL_COPY_URI",
+      "type": "string",
+      "nullable": true
+    },
+    "template_ids": {
+      "description": "_t__SignatureRequestResponse::TEMPLATE_IDS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "nullable": true
+    },
+    "custom_fields": {
+      "description": "_t__SignatureRequestResponseCustomField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SignatureRequestResponseCustomFieldBase"
+      },
+      "nullable": true
+    },
+    "attachments": {
+      "description": "_t__SignatureRequestResponseAttachment::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SignatureRequestResponseAttachment"
+      },
+      "nullable": true
+    },
+    "response_data": {
+      "description": "_t__SignatureRequestResponseData::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SignatureRequestResponseDataBase"
+      },
+      "nullable": true
+    },
+    "signatures": {
+      "description": "_t__SignatureRequestResponseSignatures::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SignatureRequestResponseSignatures"
+      }
+    },
+    "bulk_send_job_id": {
+      "description": "_t__SignatureRequestResponse::BULK_SEND_JOB_ID",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

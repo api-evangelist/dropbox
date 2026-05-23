@@ -1,0 +1,70 @@
+{
+  "operationId": "post-2sharingset-access-inheritance",
+  "method": "POST",
+  "path": "/2/sharing/set_access_inheritance",
+  "summary": "Dropbox set_access_inheritance",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "complete",
+        "access_type": {
+          ".tag": "owner"
+        },
+        "is_inside_team_folder": false,
+        "is_team_folder": false,
+        "name": "dir",
+        "policy": {
+          "acl_update_policy": {
+            ".tag": "owner"
+          },
+          "shared_link_policy": {
+            ".tag": "anyone"
+          },
+          "member_policy": {
+            ".tag": "anyone"
+          },
+          "resolved_member_policy": {
+            ".tag": "team"
+          }
+        },
+        "preview_url": "https://www.dropbox.com/scl/fo/fir9vjelf",
+        "shared_folder_id": "84528192421",
+        "time_invited": "2016-01-20T00:00:00Z",
+        "path_lower": "/dir",
+        "link_metadata": {
+          "audience_options": [
+            {
+              ".tag": "public"
+            },
+            {
+              ".tag": "team"
+            },
+            {
+              ".tag": "members"
+            }
+          ],
+          "current_audience": {
+            ".tag": "public"
+          },
+          "link_permissions": [
+            {
+              "action": {
+                ".tag": "change_audience"
+              },
+              "allow": true
+            }
+          ],
+          "password_protected": false,
+          "url": ""
+        },
+        "permissions": [],
+        "access_inheritance": {
+          ".tag": "inherit"
+        }
+      }
+    }
+  ]
+}

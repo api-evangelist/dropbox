@@ -1,0 +1,18 @@
+{
+  "operationId": "post-2teammember-space-limitsexcluded-usersremove",
+  "method": "POST",
+  "path": "/2/team/member_space_limits/excluded_users/remove",
+  "summary": "Dropbox member_space_limits/excluded_users/remove",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "status": {
+          ".tag": "success"
+        }
+      }
+    }
+  ]
+}

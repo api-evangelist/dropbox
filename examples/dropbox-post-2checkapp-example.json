@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2checkapp",
+  "method": "POST",
+  "path": "/2/check/app",
+  "summary": "Dropbox app",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "result": "foo"
+      }
+    }
+  ]
+}

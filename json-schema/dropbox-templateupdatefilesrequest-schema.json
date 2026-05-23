@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateUpdateFilesRequest",
+  "title": "TemplateUpdateFilesRequest",
+  "properties": {
+    "client_id": {
+      "description": "_t__TemplateUpdateFiles::CLIENT_ID",
+      "type": "string"
+    },
+    "files": {
+      "description": "_t__TemplateUpdateFiles::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__TemplateUpdateFiles::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "message": {
+      "description": "_t__TemplateUpdateFiles::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "subject": {
+      "description": "_t__TemplateUpdateFiles::SUBJECT",
+      "type": "string",
+      "maxLength": 100
+    },
+    "test_mode": {
+      "description": "_t__TemplateUpdateFiles::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

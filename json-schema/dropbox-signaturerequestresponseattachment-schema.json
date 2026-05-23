@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseAttachment",
+  "title": "SignatureRequestResponseAttachment",
+  "description": "_t__SignatureRequestResponseAttachment::DESCRIPTION",
+  "required": [
+    "id",
+    "signer",
+    "name",
+    "required"
+  ],
+  "properties": {
+    "id": {
+      "description": "_t__SignatureRequestResponseAttachment::ID",
+      "type": "string"
+    },
+    "signer": {
+      "description": "_t__SignatureRequestResponseAttachment::SIGNER",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__SignatureRequestResponseAttachment::NAME",
+      "type": "string"
+    },
+    "required": {
+      "description": "_t__SignatureRequestResponseAttachment::REQUIRED",
+      "type": "boolean"
+    },
+    "instructions": {
+      "description": "_t__SignatureRequestResponseAttachment::INSTRUCTIONS",
+      "type": "string",
+      "nullable": true
+    },
+    "uploaded_at": {
+      "description": "_t__SignatureRequestResponseAttachment::UPLOADED_AT",
+      "type": "integer",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

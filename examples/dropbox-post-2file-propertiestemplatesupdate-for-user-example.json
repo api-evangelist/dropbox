@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2file-propertiestemplatesupdate-for-user",
+  "method": "POST",
+  "path": "/2/file_properties/templates/update_for_user",
+  "summary": "Dropbox templates/update_for_user",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "template_id": "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "operationId": "post-2file-propertiespropertiessearchcontinue",
+  "method": "POST",
+  "path": "/2/file_properties/properties/search/continue",
+  "summary": "Dropbox properties/search/continue",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "matches": [
+          {
+            "id": "id:a4ayc_80_OEAAAAAAAAAXz",
+            "path": "/my_awesome/word.docx",
+            "is_deleted": false,
+            "property_groups": [
+              {
+                "template_id": "ptid:1a5n2i6d3OYEAAAAAAAAAYa",
+                "fields": [
+                  {
+                    "name": "Security Policy",
+                    "value": "Confidential"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

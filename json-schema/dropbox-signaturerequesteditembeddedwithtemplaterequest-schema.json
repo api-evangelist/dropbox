@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestEditEmbeddedWithTemplateRequest",
+  "title": "SignatureRequestEditEmbeddedWithTemplateRequest",
+  "required": [
+    "client_id",
+    "template_ids",
+    "signers"
+  ],
+  "properties": {
+    "template_ids": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::TEMPLATE_IDS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allow_decline": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::ALLOW_DECLINE",
+      "type": "boolean",
+      "default": false
+    },
+    "ccs": {
+      "description": "_t__Sub::CC::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCC"
+      }
+    },
+    "client_id": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::CLIENT_ID",
+      "type": "string"
+    },
+    "custom_fields": {
+      "description": "_t__Sub::CustomField::TEMPLATE",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCustomField"
+      }
+    },
+    "files": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "message": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "signers": {
+      "description": "_t__Sub::SignatureRequestTemplateSigner::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubSignatureRequestTemplateSigner"
+      }
+    },
+    "signing_options": {
+      "$ref": "#/components/schemas/SubSigningOptions"
+    },
+    "subject": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::SUBJECT",
+      "type": "string",
+      "maxLength": 255
+    },
+    "test_mode": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::TITLE",
+      "type": "string",
+      "maxLength": 255
+    },
+    "populate_auto_fill_fields": {
+      "description": "_t__SignatureRequestCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

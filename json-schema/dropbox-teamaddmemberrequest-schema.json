@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamAddMemberRequest",
+  "title": "TeamAddMemberRequest",
+  "properties": {
+    "account_id": {
+      "description": "_t__TeamAddMember::ACCOUNT_ID",
+      "type": "string"
+    },
+    "email_address": {
+      "description": "_t__TeamAddMember::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "role": {
+      "description": "_t__TeamAddMember::ROLE",
+      "type": "string",
+      "enum": [
+        "Member",
+        "Developer",
+        "Team Manager",
+        "Admin"
+      ]
+    }
+  },
+  "type": "object"
+}

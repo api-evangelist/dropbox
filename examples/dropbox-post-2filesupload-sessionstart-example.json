@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2filesupload-sessionstart",
+  "method": "POST",
+  "path": "/2/files/upload_session/start",
+  "summary": "Dropbox upload_session/start",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "session_id": "1234faaf0678bcde"
+      }
+    }
+  ]
+}

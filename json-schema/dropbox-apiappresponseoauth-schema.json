@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiAppResponseOAuth",
+  "title": "ApiAppResponseOAuth",
+  "description": "_t__ApiAppResponseOAuth::DESCRIPTION",
+  "properties": {
+    "callback_url": {
+      "description": "_t__ApiAppResponseOAuth::CALLBACK_URL",
+      "type": "string"
+    },
+    "secret": {
+      "description": "_t__ApiAppResponseOAuth::SECRET",
+      "type": "string"
+    },
+    "scopes": {
+      "description": "_t__ApiAppResponseOAuth::SCOPES",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "charges_users": {
+      "description": "_t__ApiAppResponseOAuth::CHARGES_USERS",
+      "type": "boolean"
+    }
+  },
+  "type": "object",
+  "nullable": true,
+  "x-internal": true
+}

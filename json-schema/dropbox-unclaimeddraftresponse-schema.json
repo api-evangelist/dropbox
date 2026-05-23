@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UnclaimedDraftResponse",
+  "title": "UnclaimedDraftResponse",
+  "description": "_t__UnclaimedDraftResponse::DESCRIPTION",
+  "properties": {
+    "signature_request_id": {
+      "description": "_t__UnclaimedDraft::SIGNATURE_REQUEST_ID",
+      "type": "string",
+      "nullable": true
+    },
+    "claim_url": {
+      "description": "_t__UnclaimedDraft::CLAIM_URL",
+      "type": "string"
+    },
+    "signing_redirect_url": {
+      "description": "_t__UnclaimedDraft::SIGNING_REDIRECT_URL",
+      "type": "string",
+      "nullable": true
+    },
+    "requesting_redirect_url": {
+      "description": "_t__UnclaimedDraft::REQUESTING_REDIRECT_URL",
+      "type": "string",
+      "nullable": true
+    },
+    "expires_at": {
+      "description": "_t__UnclaimedDraft::EXPIRES_AT",
+      "type": "integer",
+      "nullable": true
+    },
+    "test_mode": {
+      "description": "_t__UnclaimedDraft::TEST_MODE",
+      "type": "boolean"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

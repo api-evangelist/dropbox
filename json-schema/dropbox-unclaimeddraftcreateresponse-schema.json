@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UnclaimedDraftCreateResponse",
+  "title": "UnclaimedDraftCreateResponse",
+  "properties": {
+    "unclaimed_draft": {
+      "$ref": "#/components/schemas/UnclaimedDraftResponse"
+    },
+    "warnings": {
+      "description": "_t__WarningResponse::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

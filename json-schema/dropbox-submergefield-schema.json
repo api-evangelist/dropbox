@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubMergeField",
+  "title": "SubMergeField",
+  "required": [
+    "name",
+    "type"
+  ],
+  "properties": {
+    "name": {
+      "description": "_t__Sub::MergeField::NAME",
+      "type": "string"
+    },
+    "type": {
+      "description": "_t__Sub::MergeField::TYPE",
+      "type": "string",
+      "enum": [
+        "text",
+        "checkbox"
+      ],
+      "x-enumDescriptions": {
+        "text": "_t__Sub::MergeField::EnumDescriptions::TEXT",
+        "checkbox": "_t__Sub::MergeField::EnumDescriptions::CHECKBOX"
+      }
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldsPerDocumentText",
+  "title": "SubFormFieldsPerDocumentText",
+  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    },
+    {
+      "required": [
+        "type",
+        "options"
+      ],
+      "properties": {
+        "type": {
+          "description": "_t__Sub::FormFieldsPerDocument::TYPE_TEXT",
+          "type": "string",
+          "default": "text"
+        },
+        "placeholder": {
+          "description": "_t__Sub::FormFieldsPerDocument::PLACEHOLDER",
+          "type": "string"
+        },
+        "auto_fill_type": {
+          "description": "_t__Sub::FormFieldsPerDocument::AUTO_FILL_TYPE",
+          "type": "string"
+        },
+        "link_id": {
+          "description": "_t__Sub::FormFieldsPerDocument::LINK_ID",
+          "type": "string"
+        },
+        "masked": {
+          "description": "_t__Sub::FormFieldsPerDocument::MASKED",
+          "type": "boolean"
+        },
+        "validation_type": {
+          "description": "_t__Sub::FormFieldsPerDocument::VALIDATION_TYPE",
+          "type": "string",
+          "enum": [
+            "numbers_only",
+            "letters_only",
+            "phone_number",
+            "bank_routing_number",
+            "bank_account_number",
+            "email_address",
+            "zip_code",
+            "social_security_number",
+            "employer_identification_number",
+            "custom_regex"
+          ]
+        },
+        "validation_custom_regex": {
+          "type": "string"
+        },
+        "validation_custom_regex_format_label": {
+          "type": "string"
+        },
+        "content": {
+          "description": "_t__Sub::FormFieldsPerDocument::CONTENT_TEXT",
+          "type": "string"
+        },
+        "font_family": {
+          "description": "_t__Sub::FormFieldsPerDocument::FONT_FAMILY",
+          "type": "string",
+          "enum": [
+            "helvetica",
+            "arial",
+            "courier",
+            "calibri",
+            "cambria",
+            "georgia",
+            "times",
+            "trebuchet",
+            "verdana",
+            "roboto",
+            "robotoMono",
+            "notoSans",
+            "notoSerif",
+            "notoCJK-JP-Regular",
+            "notoHebrew-Regular",
+            "notoSanThaiMerged"
+          ]
+        },
+        "font_size": {
+          "description": "_t__Sub::FormFieldsPerDocument::FONT_SIZE",
+          "type": "integer",
+          "default": 12
+        }
+      },
+      "type": "object"
+    },
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    }
+  ]
+}

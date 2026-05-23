@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2filessave-urlcheck-job-status",
+  "method": "POST",
+  "path": "/2/files/save_url/check_job_status",
+  "summary": "Dropbox save_url/check_job_status",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "in_progress"
+      }
+    }
+  ]
+}

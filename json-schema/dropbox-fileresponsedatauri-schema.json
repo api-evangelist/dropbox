@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FileResponseDataUri",
+  "title": "FileResponseDataUri",
+  "properties": {
+    "data_uri": {
+      "description": "_t__FileResponse::DATA_URI",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldsPerDocumentRadio",
+  "title": "SubFormFieldsPerDocumentRadio",
+  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    },
+    {
+      "required": [
+        "type",
+        "group",
+        "is_checked"
+      ],
+      "properties": {
+        "type": {
+          "description": "_t__Sub::FormFieldsPerDocument::TYPE_RADIO",
+          "type": "string",
+          "default": "radio"
+        },
+        "group": {
+          "description": "_t__Sub::FormFieldsPerDocument::GROUP",
+          "type": "string"
+        },
+        "is_checked": {
+          "description": "_t__Sub::FormFieldsPerDocument::IS_CHECKED_RADIO",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    }
+  ]
+}

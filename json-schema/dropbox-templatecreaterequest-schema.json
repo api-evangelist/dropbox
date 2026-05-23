@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateCreateRequest",
+  "title": "TemplateCreateRequest",
+  "required": [
+    "signer_roles",
+    "form_fields_per_document"
+  ],
+  "properties": {
+    "files": {
+      "description": "_t__TemplateCreate::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__TemplateCreate::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allow_reassign": {
+      "description": "_t__TemplateCreate::ALLOW_REASSIGN",
+      "type": "boolean",
+      "default": false
+    },
+    "attachments": {
+      "description": "_t__SubAttachment::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubAttachment"
+      }
+    },
+    "cc_roles": {
+      "description": "_t__TemplateCreate::CC_ROLES",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "client_id": {
+      "description": "_t__TemplateCreate::CLIENT_ID",
+      "type": "string"
+    },
+    "field_options": {
+      "$ref": "#/components/schemas/SubFieldOptions"
+    },
+    "form_field_groups": {
+      "description": "_t__Sub::FormFieldGroup::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldGroup"
+      }
+    },
+    "form_field_rules": {
+      "description": "_t__Sub::FormFieldRule::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldRule"
+      }
+    },
+    "form_fields_per_document": {
+      "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+      }
+    },
+    "merge_fields": {
+      "description": "_t__TemplateCreate::MERGE_FIELDS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubMergeField"
+      }
+    },
+    "message": {
+      "description": "_t__TemplateCreate::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "signer_roles": {
+      "description": "_t__TemplateCreate::SIGNER_ROLES",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubTemplateRole"
+      }
+    },
+    "subject": {
+      "description": "_t__TemplateCreate::SUBJECT",
+      "type": "string",
+      "maxLength": 200
+    },
+    "test_mode": {
+      "description": "_t__TemplateCreate::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "description": "_t__TemplateCreate::TITLE",
+      "type": "string"
+    },
+    "use_preexisting_fields": {
+      "description": "_t__TemplateCreate::USE_PREEXISTING_FIELDS",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

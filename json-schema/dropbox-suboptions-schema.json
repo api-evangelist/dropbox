@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubOptions",
+  "title": "SubOptions",
+  "description": "_t__Sub::Options::DESCRIPTION",
+  "properties": {
+    "can_insert_everywhere": {
+      "description": "_t__Sub::Options::CAN_INSERT_EVERYWHERE",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

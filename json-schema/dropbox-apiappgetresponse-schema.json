@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiAppGetResponse",
+  "title": "ApiAppGetResponse",
+  "properties": {
+    "api_app": {
+      "$ref": "#/components/schemas/ApiAppResponse"
+    },
+    "warnings": {
+      "description": "_t__WarningResponse::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OAuthTokenRefreshRequest",
+  "title": "OAuthTokenRefreshRequest",
+  "required": [
+    "grant_type",
+    "refresh_token"
+  ],
+  "properties": {
+    "grant_type": {
+      "description": "_t__OAuthTokenRefresh::GRANT_TYPE",
+      "type": "string",
+      "default": "refresh_token"
+    },
+    "refresh_token": {
+      "description": "_t__OAuthTokenRefresh::REFRESH_TOKEN",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentStaticFieldRadio",
+  "title": "TemplateResponseDocumentStaticFieldRadio",
+  "description": "_t__TemplateResponseDocumentStaticField::DESCRIPTION_EXTENDS",
+  "required": [
+    "type"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/TemplateResponseDocumentStaticFieldBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__TemplateResponseDocumentStaticField::TYPE",
+          "type": "string",
+          "default": "radio"
+        }
+      }
+    }
+  ]
+}

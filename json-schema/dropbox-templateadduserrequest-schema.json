@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateAddUserRequest",
+  "title": "TemplateAddUserRequest",
+  "properties": {
+    "account_id": {
+      "description": "_t__TemplateAddUser::ACCOUNT_ID",
+      "type": "string"
+    },
+    "email_address": {
+      "description": "_t__TemplateAddUser::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "skip_notification": {
+      "description": "_t__TemplateAddUser::SKIP_NOTIFICATION",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

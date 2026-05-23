@@ -1,0 +1,34 @@
+{
+  "operationId": "post-2teamnamespaceslist",
+  "method": "POST",
+  "path": "/2/team/namespaces/list",
+  "summary": "Dropbox namespaces/list",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "namespaces": [
+          {
+            "name": "Marketing",
+            "namespace_id": "123456789",
+            "namespace_type": {
+              ".tag": "shared_folder"
+            }
+          },
+          {
+            "name": "Franz Ferdinand",
+            "namespace_id": "123456789",
+            "namespace_type": {
+              ".tag": "team_member_folder"
+            },
+            "team_member_id": "dbmid:1234567"
+          }
+        ],
+        "cursor": "ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu",
+        "has_more": false
+      }
+    }
+  ]
+}

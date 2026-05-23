@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentFormFieldHyperlink",
+  "title": "TemplateResponseDocumentFormFieldHyperlink",
+  "description": "_t__TemplateResponseDocumentFormField::DESCRIPTION_EXTENDS",
+  "required": [
+    "type"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/TemplateResponseDocumentFormFieldBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__TemplateResponseDocumentFormField::TYPE",
+          "type": "string",
+          "default": "hyperlink"
+        },
+        "avg_text_length": {
+          "$ref": "#/components/schemas/TemplateResponseFieldAvgTextLength"
+        },
+        "isMultiline": {
+          "description": "_t__TemplateResponseDocumentFormField::IS_MULTILINE",
+          "type": "boolean"
+        },
+        "originalFontSize": {
+          "description": "_t__TemplateResponseDocumentFormField::ORIGINAL_FONT_SIZE",
+          "type": "integer"
+        },
+        "fontFamily": {
+          "description": "_t__TemplateResponseDocumentFormField::FONT_FAMILY",
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

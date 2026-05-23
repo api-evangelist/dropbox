@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentFormFieldDateSigned",
+  "title": "TemplateResponseDocumentFormFieldDateSigned",
+  "description": "_t__TemplateResponseDocumentFormField::DESCRIPTION_EXTENDS",
+  "required": [
+    "type"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/TemplateResponseDocumentFormFieldBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__TemplateResponseDocumentFormField::TYPE",
+          "type": "string",
+          "default": "date_signed"
+        }
+      }
+    }
+  ]
+}

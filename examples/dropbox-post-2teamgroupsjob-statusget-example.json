@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2teamgroupsjob-statusget",
+  "method": "POST",
+  "path": "/2/team/groups/job_status/get",
+  "summary": "Dropbox groups/job_status/get",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "complete"
+      }
+    }
+  ]
+}

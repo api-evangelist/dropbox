@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldsPerDocumentBase",
+  "title": "SubFormFieldsPerDocumentBase",
+  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+  "required": [
+    "document_index",
+    "api_id",
+    "type",
+    "required",
+    "signer",
+    "width",
+    "height",
+    "x",
+    "y"
+  ],
+  "properties": {
+    "document_index": {
+      "description": "_t__Sub::FormFieldsPerDocument::DOCUMENT_INDEX",
+      "type": "integer"
+    },
+    "api_id": {
+      "description": "_t__Sub::FormFieldsPerDocument::API_ID",
+      "type": "string"
+    },
+    "height": {
+      "description": "_t__Sub::FormFieldsPerDocument::HEIGHT",
+      "type": "integer"
+    },
+    "name": {
+      "description": "_t__Sub::FormFieldsPerDocument::NAME",
+      "type": "string"
+    },
+    "page": {
+      "description": "_t__Sub::FormFieldsPerDocument::PAGE",
+      "type": "integer",
+      "nullable": true
+    },
+    "required": {
+      "description": "_t__Sub::FormFieldsPerDocument::REQUIRED",
+      "type": "boolean"
+    },
+    "signer": {
+      "description": "_t__Sub::FormFieldsPerDocument::SIGNER",
+      "type": "string",
+      "x-int-or-string": true
+    },
+    "type": {
+      "type": "string"
+    },
+    "width": {
+      "description": "_t__Sub::FormFieldsPerDocument::WIDTH",
+      "type": "integer"
+    },
+    "x": {
+      "description": "_t__Sub::FormFieldsPerDocument::X",
+      "type": "integer"
+    },
+    "y": {
+      "description": "_t__Sub::FormFieldsPerDocument::Y",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "discriminator": {
+    "propertyName": "type",
+    "mapping": {
+      "text": "#/components/schemas/SubFormFieldsPerDocumentText",
+      "dropdown": "#/components/schemas/SubFormFieldsPerDocumentDropdown",
+      "hyperlink": "#/components/schemas/SubFormFieldsPerDocumentHyperlink",
+      "checkbox": "#/components/schemas/SubFormFieldsPerDocumentCheckbox",
+      "radio": "#/components/schemas/SubFormFieldsPerDocumentRadio",
+      "signature": "#/components/schemas/SubFormFieldsPerDocumentSignature",
+      "date_signed": "#/components/schemas/SubFormFieldsPerDocumentDateSigned",
+      "initials": "#/components/schemas/SubFormFieldsPerDocumentInitials",
+      "text-merge": "#/components/schemas/SubFormFieldsPerDocumentTextMerge",
+      "checkbox-merge": "#/components/schemas/SubFormFieldsPerDocumentCheckboxMerge"
+    }
+  },
+  "x-internal": true,
+  "x-base-class": true
+}

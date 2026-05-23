@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UnclaimedDraftCreateEmbeddedRequest",
+  "title": "UnclaimedDraftCreateEmbeddedRequest",
+  "description": "",
+  "required": [
+    "client_id",
+    "requester_email_address"
+  ],
+  "properties": {
+    "files": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allow_ccs": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::ALLOW_CCS",
+      "type": "boolean",
+      "default": true
+    },
+    "allow_decline": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::ALLOW_DECLINE",
+      "type": "boolean",
+      "default": false
+    },
+    "allow_reassign": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::ALLOW_REASSIGN",
+      "type": "boolean",
+      "default": false
+    },
+    "attachments": {
+      "description": "_t__SubAttachment::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubAttachment"
+      }
+    },
+    "cc_email_addresses": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::CC_EMAIL_ADDRESSES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "client_id": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::CLIENT_ID",
+      "type": "string"
+    },
+    "custom_fields": {
+      "description": "_t__Sub::CustomField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCustomField"
+      }
+    },
+    "editor_options": {
+      "$ref": "#/components/schemas/SubEditorOptions"
+    },
+    "field_options": {
+      "$ref": "#/components/schemas/SubFieldOptions"
+    },
+    "force_signer_page": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::FORCE_SIGNER_PAGE",
+      "type": "boolean",
+      "default": false
+    },
+    "force_subject_message": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::FORCE_SUBJECT_MESSAGE",
+      "type": "boolean",
+      "default": false
+    },
+    "form_field_groups": {
+      "description": "_t__Sub::FormFieldGroup::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldGroup"
+      }
+    },
+    "form_field_rules": {
+      "description": "_t__Sub::FormFieldRule::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldRule"
+      }
+    },
+    "form_fields_per_document": {
+      "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+      }
+    },
+    "hide_text_tags": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::HIDE_TEXT_TAGS",
+      "type": "boolean",
+      "default": false
+    },
+    "hold_request": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::HOLD_REQUEST",
+      "type": "boolean",
+      "default": false
+    },
+    "is_for_embedded_signing": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::IS_FOR_EMBEDDED_SIGNING",
+      "type": "boolean",
+      "default": false
+    },
+    "message": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "requester_email_address": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::REQUESTER_EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "requesting_redirect_url": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::REQUESTING_REDIRECT_URL",
+      "type": "string"
+    },
+    "show_preview": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::SHOW_PREVIEW",
+      "type": "boolean"
+    },
+    "show_progress_stepper": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::SHOW_PROGRESS_STEPPER",
+      "type": "boolean",
+      "default": true
+    },
+    "signers": {
+      "description": "_t__Sub::UnclaimedDraftSigner::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubUnclaimedDraftSigner"
+      }
+    },
+    "signing_options": {
+      "$ref": "#/components/schemas/SubSigningOptions"
+    },
+    "signing_redirect_url": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::SIGNING_REDIRECT_URL",
+      "type": "string"
+    },
+    "skip_me_now": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::SKIP_ME_NOW",
+      "type": "boolean",
+      "default": false
+    },
+    "subject": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::SUBJECT",
+      "type": "string",
+      "maxLength": 200
+    },
+    "test_mode": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "type": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::TYPE",
+      "type": "string",
+      "default": "request_signature",
+      "enum": [
+        "send_document",
+        "request_signature"
+      ]
+    },
+    "use_preexisting_fields": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::USE_PREEXISTING_FIELDS",
+      "type": "boolean",
+      "default": false
+    },
+    "use_text_tags": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::USE_TEXT_TAGS",
+      "type": "boolean",
+      "default": false
+    },
+    "populate_auto_fill_fields": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::POPULATE_AUTO_FILL_FIELDS",
+      "type": "boolean",
+      "default": false
+    },
+    "expires_at": {
+      "description": "_t__UnclaimedDraftCreateEmbedded::EXPIRES_AT",
+      "type": "integer",
+      "nullable": true
+    }
+  },
+  "type": "object"
+}

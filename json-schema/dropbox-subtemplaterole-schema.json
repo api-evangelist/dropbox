@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubTemplateRole",
+  "title": "SubTemplateRole",
+  "properties": {
+    "name": {
+      "description": "_t__Sub::SignerRole::NAME",
+      "type": "string"
+    },
+    "order": {
+      "description": "_t__Sub::SignerRole::ORDER",
+      "type": "integer",
+      "nullable": true
+    }
+  },
+  "type": "object"
+}

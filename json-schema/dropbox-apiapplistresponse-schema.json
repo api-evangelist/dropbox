@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiAppListResponse",
+  "title": "ApiAppListResponse",
+  "properties": {
+    "api_apps": {
+      "description": "_t__ApiAppListResponse::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ApiAppResponse"
+      }
+    },
+    "list_info": {
+      "$ref": "#/components/schemas/ListInfoResponse"
+    },
+    "warnings": {
+      "description": "_t__WarningResponse::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

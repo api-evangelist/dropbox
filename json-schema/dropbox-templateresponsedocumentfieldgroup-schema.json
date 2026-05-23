@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentFieldGroup",
+  "title": "TemplateResponseDocumentFieldGroup",
+  "properties": {
+    "name": {
+      "description": "_t__TemplateResponseDocumentFieldGroup::NAME",
+      "type": "string"
+    },
+    "rule": {
+      "$ref": "#/components/schemas/TemplateResponseDocumentFieldGroupRule"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

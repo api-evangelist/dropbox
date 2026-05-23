@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2accountset-profile-photo",
+  "method": "POST",
+  "path": "/2/account/set_profile_photo",
+  "summary": "Dropbox set_profile_photo",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "profile_photo_url": "https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128"
+      }
+    }
+  ]
+}

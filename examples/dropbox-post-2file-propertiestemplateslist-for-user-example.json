@@ -1,0 +1,18 @@
+{
+  "operationId": "post-2file-propertiestemplateslist-for-user",
+  "method": "POST",
+  "path": "/2/file_properties/templates/list_for_user",
+  "summary": "Dropbox templates/list_for_user",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "template_ids": [
+          "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubBulkSignerList",
+  "title": "SubBulkSignerList",
+  "properties": {
+    "custom_fields": {
+      "description": "_t__Sub::BulkCustomField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubBulkSignerListCustomField"
+      }
+    },
+    "signers": {
+      "description": "_t__Sub::BulkSigner::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubSignatureRequestTemplateSigner"
+      }
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,24 @@
+{
+  "operationId": "post-2usersfeaturesget-values",
+  "method": "POST",
+  "path": "/2/users/features/get_values",
+  "summary": "Dropbox features/get_values",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "values": [
+          {
+            ".tag": "paper_as_files",
+            "paper_as_files": {
+              ".tag": "enabled",
+              "enabled": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

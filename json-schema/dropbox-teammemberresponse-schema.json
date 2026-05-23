@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamMemberResponse",
+  "title": "TeamMemberResponse",
+  "properties": {
+    "account_id": {
+      "description": "_t__TeamMemberResponse::ACCOUNT_ID",
+      "type": "string"
+    },
+    "email_address": {
+      "description": "_t__TeamMemberResponse::EMAIL_ADDRESS",
+      "type": "string"
+    },
+    "role": {
+      "description": "_t__TeamMemberResponse::MEMBER_ROLE",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,38 @@
+{
+  "operationId": "post-2teamteam-folderlistcontinue",
+  "method": "POST",
+  "path": "/2/team/team_folder/list/continue",
+  "summary": "Dropbox team_folder/list/continue",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "team_folders": [
+          {
+            "team_folder_id": "123456789",
+            "name": "Marketing",
+            "status": {
+              ".tag": "active"
+            },
+            "is_team_shared_dropbox": false,
+            "sync_setting": {
+              ".tag": "default"
+            },
+            "content_sync_settings": [
+              {
+                "id": "id:a4ayc_80_OEAAAAAAAAAXw",
+                "sync_setting": {
+                  ".tag": "default"
+                }
+              }
+            ]
+          }
+        ],
+        "cursor": "ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu",
+        "has_more": false
+      }
+    }
+  ]
+}

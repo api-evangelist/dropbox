@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseDataValueDropdown",
+  "title": "SignatureRequestResponseDataValueDropdown",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SignatureRequestResponseDataBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__SignatureRequestResponseDataValue::DROPDOWN_TYPE",
+          "type": "string",
+          "default": "dropdown"
+        },
+        "value": {
+          "description": "_t__SignatureRequestResponseDataValue::VALUE",
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

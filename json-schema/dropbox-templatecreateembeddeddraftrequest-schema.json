@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateCreateEmbeddedDraftRequest",
+  "title": "TemplateCreateEmbeddedDraftRequest",
+  "required": [
+    "client_id"
+  ],
+  "properties": {
+    "files": {
+      "description": "_t__TemplateCreateEmbeddedDraft::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__TemplateCreateEmbeddedDraft::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allow_ccs": {
+      "description": "_t__TemplateCreateEmbeddedDraft::ALLOW_CCS",
+      "type": "boolean",
+      "default": true
+    },
+    "allow_reassign": {
+      "description": "_t__TemplateCreateEmbeddedDraft::ALLOW_REASSIGN",
+      "type": "boolean",
+      "default": false
+    },
+    "attachments": {
+      "description": "_t__SubAttachment::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubAttachment"
+      }
+    },
+    "cc_roles": {
+      "description": "_t__TemplateCreateEmbeddedDraft::CC_ROLES",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "client_id": {
+      "description": "_t__TemplateCreateEmbeddedDraft::CLIENT_ID",
+      "type": "string"
+    },
+    "editor_options": {
+      "$ref": "#/components/schemas/SubEditorOptions"
+    },
+    "field_options": {
+      "$ref": "#/components/schemas/SubFieldOptions"
+    },
+    "force_signer_roles": {
+      "description": "_t__TemplateCreateEmbeddedDraft::FORCE_SIGNER_ROLES",
+      "type": "boolean",
+      "default": false
+    },
+    "force_subject_message": {
+      "description": "_t__TemplateCreateEmbeddedDraft::FORCE_SUBJECT_MESSAGE",
+      "type": "boolean",
+      "default": false
+    },
+    "form_field_groups": {
+      "description": "_t__Sub::FormFieldGroup::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldGroup"
+      }
+    },
+    "form_field_rules": {
+      "description": "_t__Sub::FormFieldRule::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldRule"
+      }
+    },
+    "form_fields_per_document": {
+      "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+      }
+    },
+    "merge_fields": {
+      "description": "_t__TemplateCreateEmbeddedDraft::MERGE_FIELDS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubMergeField"
+      }
+    },
+    "message": {
+      "description": "_t__TemplateCreateEmbeddedDraft::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "show_preview": {
+      "description": "_t__TemplateCreateEmbeddedDraft::SHOW_PREVIEW",
+      "type": "boolean",
+      "default": false
+    },
+    "show_progress_stepper": {
+      "description": "_t__TemplateCreateEmbeddedDraft::SHOW_PROGRESS_STEPPER",
+      "type": "boolean",
+      "default": true
+    },
+    "signer_roles": {
+      "description": "_t__TemplateCreateEmbeddedDraft::SIGNER_ROLES",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubTemplateRole"
+      }
+    },
+    "skip_me_now": {
+      "description": "_t__TemplateCreateEmbeddedDraft::SKIP_ME_NOW",
+      "type": "boolean",
+      "default": false
+    },
+    "subject": {
+      "description": "_t__TemplateCreateEmbeddedDraft::SUBJECT",
+      "type": "string",
+      "maxLength": 200
+    },
+    "test_mode": {
+      "description": "_t__TemplateCreateEmbeddedDraft::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "description": "_t__TemplateCreateEmbeddedDraft::TITLE",
+      "type": "string"
+    },
+    "use_preexisting_fields": {
+      "description": "_t__TemplateCreateEmbeddedDraft::USE_PREEXISTING_FIELDS",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

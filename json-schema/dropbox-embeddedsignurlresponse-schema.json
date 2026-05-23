@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EmbeddedSignUrlResponse",
+  "title": "EmbeddedSignUrlResponse",
+  "properties": {
+    "embedded": {
+      "$ref": "#/components/schemas/EmbeddedSignUrlResponseEmbedded"
+    },
+    "warnings": {
+      "description": "_t__WarningResponse::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

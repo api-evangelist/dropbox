@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubEditorOptions",
+  "title": "SubEditorOptions",
+  "description": "_t__Sub::EditorOptions::DESCRIPTION",
+  "properties": {
+    "allow_edit_signers": {
+      "description": "_t__Sub::EditorOptions::ALLOW_EDIT_SIGNERS",
+      "type": "boolean",
+      "default": false
+    },
+    "allow_edit_documents": {
+      "description": "_t__Sub::EditorOptions::ALLOW_EDIT_DOCUMENTS",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

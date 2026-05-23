@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2sharingrelinquish-folder-membership",
+  "method": "POST",
+  "path": "/2/sharing/relinquish_folder_membership",
+  "summary": "Dropbox relinquish_folder_membership",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "complete"
+      }
+    }
+  ]
+}

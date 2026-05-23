@@ -1,0 +1,28 @@
+{
+  "operationId": "post-2file-requestsupdate",
+  "method": "POST",
+  "path": "/2/file_requests/update",
+  "summary": "Dropbox update",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "id": "oaCAVmEyrqYnkZX9955Y",
+        "url": "https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y",
+        "title": "Homework submission",
+        "created": "2015-10-05T17:00:00Z",
+        "is_open": true,
+        "file_count": 3,
+        "destination": "/File Requests/Homework",
+        "deadline": {
+          "deadline": "2020-10-12T17:00:00Z",
+          "allow_late_uploads": {
+            ".tag": "seven_days"
+          }
+        }
+      }
+    }
+  ]
+}

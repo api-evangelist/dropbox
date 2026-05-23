@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BulkSendJobListResponse",
+  "title": "BulkSendJobListResponse",
+  "properties": {
+    "bulk_send_jobs": {
+      "description": "_t__BulkSendJobListResponse::BULK_SEND_JOBS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BulkSendJobResponse"
+      }
+    },
+    "list_info": {
+      "$ref": "#/components/schemas/ListInfoResponse"
+    },
+    "warnings": {
+      "description": "_t__WarningResponse::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

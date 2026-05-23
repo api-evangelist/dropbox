@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubCC",
+  "title": "SubCC",
+  "required": [
+    "role",
+    "email_address"
+  ],
+  "properties": {
+    "role": {
+      "description": "_t__Sub::CC::ROLE",
+      "type": "string"
+    },
+    "email_address": {
+      "description": "_t__Sub::CC::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    }
+  },
+  "type": "object"
+}

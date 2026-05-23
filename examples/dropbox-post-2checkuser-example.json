@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2checkuser",
+  "method": "POST",
+  "path": "/2/check/user",
+  "summary": "Dropbox user",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "result": "foo"
+      }
+    }
+  ]
+}

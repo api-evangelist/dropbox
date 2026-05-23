@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ErrorResponseError",
+  "title": "ErrorResponseError",
+  "description": "_t__ErrorResponseError::DESCRIPTION",
+  "required": [
+    "error_msg",
+    "error_name"
+  ],
+  "properties": {
+    "error_msg": {
+      "description": "_t__ErrorResponseError::ERROR_MSG",
+      "type": "string"
+    },
+    "error_path": {
+      "description": "_t__ErrorResponseError::ERROR_PATH",
+      "type": "string"
+    },
+    "error_name": {
+      "description": "_t__ErrorResponseError::ERROR_NAME",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldGroup",
+  "title": "SubFormFieldGroup",
+  "required": [
+    "group_id",
+    "group_label",
+    "requirement"
+  ],
+  "properties": {
+    "group_id": {
+      "description": "_t__Sub::FormFieldGroup::GROUP_ID_LABEL",
+      "type": "string"
+    },
+    "group_label": {
+      "description": "_t__Sub::FormFieldGroup::GROUP_LABEL",
+      "type": "string"
+    },
+    "requirement": {
+      "description": "_t__Sub::FormFieldGroup::REQUIREMENT",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

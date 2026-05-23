@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubOAuth",
+  "title": "SubOAuth",
+  "description": "_t__Sub::OAuth::DESCRIPTION",
+  "properties": {
+    "callback_url": {
+      "description": "_t__Sub::OAuth::CALLBACK_URL",
+      "type": "string"
+    },
+    "scopes": {
+      "description": "_t__Sub::OAuth::SCOPES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "request_signature",
+          "basic_account_info",
+          "account_access",
+          "signature_request_access",
+          "template_access",
+          "team_access",
+          "api_app_access",
+          ""
+        ]
+      }
+    }
+  },
+  "type": "object"
+}

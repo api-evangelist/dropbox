@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BulkSendJobGetResponseSignatureRequests",
+  "title": "BulkSendJobGetResponseSignatureRequests",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SignatureRequestResponse"
+    },
+    {
+      "properties": {
+        "bulk_send_job_id": {
+          "description": "_t__BulkSendJobGetResponseSignatureRequests::BULK_SEND_JOB_ID",
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "x-internal": true
+}

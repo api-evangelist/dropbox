@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldsPerDocumentInitials",
+  "title": "SubFormFieldsPerDocumentInitials",
+  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    },
+    {
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "description": "_t__Sub::FormFieldsPerDocument::TYPE_INITIALS",
+          "type": "string",
+          "default": "initials"
+        }
+      },
+      "type": "object"
+    },
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EmbeddedEditUrlRequest",
+  "title": "EmbeddedEditUrlRequest",
+  "properties": {
+    "allow_edit_ccs": {
+      "description": "_t__EmbeddedEditUrl::ALLOW_EDIT_CCS",
+      "type": "boolean",
+      "default": false
+    },
+    "cc_roles": {
+      "description": "_t__EmbeddedEditUrl::CC_ROLES",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "editor_options": {
+      "$ref": "#/components/schemas/SubEditorOptions"
+    },
+    "force_signer_roles": {
+      "description": "_t__EmbeddedEditUrl::FORCE_SIGNER_ROLES",
+      "type": "boolean",
+      "default": false
+    },
+    "force_subject_message": {
+      "description": "_t__EmbeddedEditUrl::FORCE_SUBJECT_MESSAGE",
+      "type": "boolean",
+      "default": false
+    },
+    "merge_fields": {
+      "description": "_t__EmbeddedEditUrl::MERGE_FIELDS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubMergeField"
+      }
+    },
+    "preview_only": {
+      "description": "_t__EmbeddedEditUrl::PREVIEW_ONLY",
+      "type": "boolean",
+      "default": false
+    },
+    "show_preview": {
+      "description": "_t__EmbeddedEditUrl::SHOW_PREVIEW",
+      "type": "boolean",
+      "default": false
+    },
+    "show_progress_stepper": {
+      "description": "_t__EmbeddedEditUrl::SHOW_PROGRESS_STEPPER",
+      "type": "boolean",
+      "default": true
+    },
+    "test_mode": {
+      "description": "_t__EmbeddedEditUrl::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

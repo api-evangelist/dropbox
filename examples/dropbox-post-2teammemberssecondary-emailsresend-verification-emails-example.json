@@ -1,0 +1,30 @@
+{
+  "operationId": "post-2teammemberssecondary-emailsresend-verification-emails",
+  "method": "POST",
+  "path": "/2/team/members/secondary_emails/resend_verification_emails",
+  "summary": "Dropbox members/secondary_emails/resend_verification_emails",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "results": [
+          {
+            ".tag": "success",
+            "user": {
+              ".tag": "team_member_id",
+              "team_member_id": "dbmid:efgh5678"
+            },
+            "results": [
+              {
+                ".tag": "success",
+                "success": "alice@example.com"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

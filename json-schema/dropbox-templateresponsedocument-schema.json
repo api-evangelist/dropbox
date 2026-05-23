@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocument",
+  "title": "TemplateResponseDocument",
+  "properties": {
+    "name": {
+      "description": "_t__TemplateResponseDocument::NAME",
+      "type": "string"
+    },
+    "index": {
+      "description": "_t__TemplateResponseDocument::INDEX",
+      "type": "integer"
+    },
+    "field_groups": {
+      "description": "_t__TemplateResponseDocument::FIELD_GROUPS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseDocumentFieldGroup"
+      }
+    },
+    "form_fields": {
+      "description": "_t__TemplateResponseDocumentFormField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseDocumentFormFieldBase"
+      }
+    },
+    "custom_fields": {
+      "description": "_t__TemplateResponseDocumentCustomField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseDocumentCustomFieldBase"
+      }
+    },
+    "static_fields": {
+      "description": "_t__TemplateResponseDocumentStaticField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseDocumentStaticFieldBase"
+      },
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

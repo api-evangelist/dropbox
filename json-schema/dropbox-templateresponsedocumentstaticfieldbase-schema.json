@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentStaticFieldBase",
+  "title": "TemplateResponseDocumentStaticFieldBase",
+  "description": "_t__TemplateResponseDocumentStaticField::DESCRIPTION",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "api_id": {
+      "description": "_t__TemplateResponseDocumentStaticField::API_ID",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__TemplateResponseDocumentStaticField::NAME",
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "signer": {
+      "description": "_t__TemplateResponseDocumentStaticField::SIGNER",
+      "type": "string",
+      "default": "me_now"
+    },
+    "x": {
+      "description": "_t__TemplateResponseDocumentStaticField::X",
+      "type": "integer"
+    },
+    "y": {
+      "description": "_t__TemplateResponseDocumentStaticField::Y",
+      "type": "integer"
+    },
+    "width": {
+      "description": "_t__TemplateResponseDocumentStaticField::WIDTH",
+      "type": "integer"
+    },
+    "height": {
+      "description": "_t__TemplateResponseDocumentStaticField::HEIGHT",
+      "type": "integer"
+    },
+    "required": {
+      "description": "_t__TemplateResponseDocumentStaticField::REQUIRED",
+      "type": "boolean"
+    },
+    "group": {
+      "description": "_t__TemplateResponseDocumentStaticField::GROUP",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "discriminator": {
+    "propertyName": "type",
+    "mapping": {
+      "text": "#/components/schemas/TemplateResponseDocumentStaticFieldText",
+      "dropdown": "#/components/schemas/TemplateResponseDocumentStaticFieldDropdown",
+      "hyperlink": "#/components/schemas/TemplateResponseDocumentStaticFieldHyperlink",
+      "checkbox": "#/components/schemas/TemplateResponseDocumentStaticFieldCheckbox",
+      "radio": "#/components/schemas/TemplateResponseDocumentStaticFieldRadio",
+      "signature": "#/components/schemas/TemplateResponseDocumentStaticFieldSignature",
+      "date_signed": "#/components/schemas/TemplateResponseDocumentStaticFieldDateSigned",
+      "initials": "#/components/schemas/TemplateResponseDocumentStaticFieldInitials"
+    }
+  },
+  "x-internal": true,
+  "x-base-class": true
+}

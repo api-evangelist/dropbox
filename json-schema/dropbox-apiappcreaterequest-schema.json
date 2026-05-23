@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiAppCreateRequest",
+  "title": "ApiAppCreateRequest",
+  "required": [
+    "name",
+    "domains"
+  ],
+  "properties": {
+    "callback_url": {
+      "description": "_t__ApiAppCreate::CALLBACK_URL",
+      "type": "string"
+    },
+    "custom_logo_file": {
+      "description": "_t__ApiAppCreate::CUSTOM_LOGO_FILE",
+      "type": "string",
+      "format": "binary"
+    },
+    "domains": {
+      "description": "_t__ApiAppCreate::DOMAINS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 2,
+      "minItems": 1
+    },
+    "name": {
+      "description": "_t__ApiAppCreate::NAME",
+      "type": "string"
+    },
+    "oauth": {
+      "$ref": "#/components/schemas/SubOAuth"
+    },
+    "options": {
+      "$ref": "#/components/schemas/SubOptions"
+    },
+    "white_labeling_options": {
+      "$ref": "#/components/schemas/SubWhiteLabelingOptions"
+    }
+  },
+  "type": "object"
+}

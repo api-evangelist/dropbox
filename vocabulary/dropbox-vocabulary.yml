@@ -1,0 +1,25 @@
+name: Dropbox Domain Vocabulary
+provider: Dropbox
+providerId: dropbox
+description: Tag-derived vocabulary for the Dropbox API surface; sourced from openapi/ tags.
+terms:
+- term: Account
+  description: _md__OpenApi::TAG::ACCOUNT::DESCRIPTION
+- term: Api App
+  description: _md__OpenApi::TAG::API_APP::DESCRIPTION
+- term: Bulk Send Job
+  description: _md__OpenApi::TAG::BULK_SEND_JOB::DESCRIPTION
+- term: Embedded
+  description: _md__OpenApi::TAG::EMBEDDED::DESCRIPTION
+- term: OAuth
+  description: _md__OpenApi::TAG::OAUTH::DESCRIPTION
+- term: Report
+  description: _md__OpenApi::TAG::REPORT::DESCRIPTION
+- term: Signature Request
+  description: _md__OpenApi::TAG::SIGNATURE_REQUEST::DESCRIPTION
+- term: Team
+  description: _md__OpenApi::TAG::TEAM::DESCRIPTION
+- term: Template
+  description: _md__OpenApi::TAG::TEMPLATE::DESCRIPTION
+- term: Unclaimed Draft
+  description: _md__OpenApi::TAG::UNCLAIMED_DRAFT::DESCRIPTION

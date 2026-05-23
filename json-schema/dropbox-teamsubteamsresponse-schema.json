@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamSubTeamsResponse",
+  "title": "TeamSubTeamsResponse",
+  "properties": {
+    "sub_teams": {
+      "description": "_t__SubTeamResponse::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubTeamResponse"
+      }
+    },
+    "list_info": {
+      "$ref": "#/components/schemas/ListInfoResponse"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

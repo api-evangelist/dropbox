@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubSignatureRequestTemplateSigner",
+  "title": "SubSignatureRequestTemplateSigner",
+  "required": [
+    "role",
+    "name",
+    "email_address"
+  ],
+  "properties": {
+    "role": {
+      "description": "_t__Sub::SignatureRequestTemplateSigner::ROLE",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__Sub::SignatureRequestTemplateSigner::NAME",
+      "type": "string"
+    },
+    "email_address": {
+      "description": "_t__Sub::SignatureRequestTemplateSigner::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "pin": {
+      "description": "_t__Sub::SignatureRequestTemplateSigner::PIN",
+      "type": "string",
+      "maxLength": 12,
+      "minLength": 4
+    },
+    "sms_phone_number": {
+      "description": "_t__Sub::SignatureRequestTemplateSigner::SMS_PHONE_NUMBER",
+      "type": "string"
+    },
+    "sms_phone_number_type": {
+      "description": "_t__Sub::SignatureRequestTemplateSigner::SIGNER_SMS_PHONE_NUMBER_TYPE",
+      "type": "string",
+      "enum": [
+        "authentication",
+        "delivery"
+      ]
+    }
+  },
+  "type": "object"
+}

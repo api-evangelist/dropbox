@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiAppResponseWhiteLabelingOptions",
+  "title": "ApiAppResponseWhiteLabelingOptions",
+  "description": "_t__ApiAppResponseWhiteLabelingOptions::DESCRIPTION",
+  "properties": {
+    "header_background_color": {
+      "type": "string"
+    },
+    "legal_version": {
+      "type": "string"
+    },
+    "link_color": {
+      "type": "string"
+    },
+    "page_background_color": {
+      "type": "string"
+    },
+    "primary_button_color": {
+      "type": "string"
+    },
+    "primary_button_color_hover": {
+      "type": "string"
+    },
+    "primary_button_text_color": {
+      "type": "string"
+    },
+    "primary_button_text_color_hover": {
+      "type": "string"
+    },
+    "secondary_button_color": {
+      "type": "string"
+    },
+    "secondary_button_color_hover": {
+      "type": "string"
+    },
+    "secondary_button_text_color": {
+      "type": "string"
+    },
+    "secondary_button_text_color_hover": {
+      "type": "string"
+    },
+    "text_color1": {
+      "type": "string"
+    },
+    "text_color2": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "nullable": true,
+  "x-internal": true
+}

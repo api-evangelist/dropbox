@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateUpdateFilesResponse",
+  "title": "TemplateUpdateFilesResponse",
+  "properties": {
+    "template": {
+      "$ref": "#/components/schemas/TemplateUpdateFilesResponseTemplate"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

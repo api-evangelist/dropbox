@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EventCallbackRequest",
+  "title": "EventCallbackRequest",
+  "required": [
+    "event"
+  ],
+  "properties": {
+    "event": {
+      "$ref": "#/components/schemas/EventCallbackRequestEvent"
+    },
+    "account": {
+      "$ref": "#/components/schemas/AccountResponse"
+    },
+    "signature_request": {
+      "$ref": "#/components/schemas/SignatureRequestResponse"
+    },
+    "template": {
+      "$ref": "#/components/schemas/TemplateResponse"
+    }
+  },
+  "type": "object"
+}

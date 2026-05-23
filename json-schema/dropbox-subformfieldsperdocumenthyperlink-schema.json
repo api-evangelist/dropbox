@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldsPerDocumentHyperlink",
+  "title": "SubFormFieldsPerDocumentHyperlink",
+  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    },
+    {
+      "required": [
+        "type",
+        "content",
+        "content_url"
+      ],
+      "properties": {
+        "type": {
+          "description": "_t__Sub::FormFieldsPerDocument::TYPE_HYPERLINK",
+          "type": "string",
+          "default": "hyperlink"
+        },
+        "content": {
+          "description": "_t__Sub::FormFieldsPerDocument::CONTENT_HYPERLINK",
+          "type": "string"
+        },
+        "content_url": {
+          "description": "_t__Sub::FormFieldsPerDocument::CONTENT_URL",
+          "type": "string"
+        },
+        "font_family": {
+          "description": "_t__Sub::FormFieldsPerDocument::FONT_FAMILY",
+          "type": "string",
+          "enum": [
+            "helvetica",
+            "arial",
+            "courier",
+            "calibri",
+            "cambria",
+            "georgia",
+            "times",
+            "trebuchet",
+            "verdana",
+            "roboto",
+            "robotoMono",
+            "notoSans",
+            "notoSerif",
+            "notoCJK-JP-Regular",
+            "notoHebrew-Regular",
+            "notoSanThaiMerged"
+          ]
+        },
+        "font_size": {
+          "description": "_t__Sub::FormFieldsPerDocument::FONT_SIZE",
+          "type": "integer",
+          "default": 12
+        }
+      },
+      "type": "object"
+    },
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    }
+  ]
+}

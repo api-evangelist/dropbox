@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentFieldGroupRule",
+  "title": "TemplateResponseDocumentFieldGroupRule",
+  "description": "_t__TemplateResponseDocumentFieldGroup::RULE",
+  "properties": {
+    "requirement": {
+      "description": "_t__TemplateResponseDocumentFieldGroupRule::REQUIREMENT",
+      "type": "string"
+    },
+    "groupLabel": {
+      "description": "_t__TemplateResponseDocumentFieldGroupRule::GROUP_LABEL",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

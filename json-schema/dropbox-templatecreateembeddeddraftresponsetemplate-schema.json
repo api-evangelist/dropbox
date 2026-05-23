@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateCreateEmbeddedDraftResponseTemplate",
+  "title": "TemplateCreateEmbeddedDraftResponseTemplate",
+  "description": "_t__TemplateCreateEmbeddedDraftResponseTemplate::DESCRIPTION",
+  "properties": {
+    "template_id": {
+      "description": "_t__TemplateResponse::TEMPLATE_ID",
+      "type": "string"
+    },
+    "edit_url": {
+      "description": "_t__TemplateCreateEmbeddedDraftResponseTemplate::EDIT_URL",
+      "type": "string"
+    },
+    "expires_at": {
+      "description": "_t__TemplateCreateEmbeddedDraftResponseTemplate::EXPIRES_AT",
+      "type": "integer"
+    },
+    "warnings": {
+      "description": "_t__WarningResponse::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      },
+      "deprecated": true
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

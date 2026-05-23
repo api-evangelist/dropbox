@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WarningResponse",
+  "title": "WarningResponse",
+  "description": "_t__WarningResponse::LIST_DESCRIPTION",
+  "required": [
+    "warning_msg",
+    "warning_name"
+  ],
+  "properties": {
+    "warning_msg": {
+      "description": "_t__WarningResponse::WARNING_MSG",
+      "type": "string"
+    },
+    "warning_name": {
+      "description": "_t__WarningResponse::WARNING_NAME",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

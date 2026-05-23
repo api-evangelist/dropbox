@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseDataBase",
+  "title": "SignatureRequestResponseDataBase",
+  "description": "_t__SignatureRequestResponseData::DESCRIPTION",
+  "properties": {
+    "api_id": {
+      "description": "_t__SignatureRequestResponseData::API_ID",
+      "type": "string"
+    },
+    "signature_id": {
+      "description": "_t__SignatureRequestResponseData::SIGNATURE_ID",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__SignatureRequestResponseData::NAME",
+      "type": "string"
+    },
+    "required": {
+      "description": "_t__SignatureRequestResponseData::REQUIRED",
+      "type": "boolean"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "discriminator": {
+    "propertyName": "type",
+    "mapping": {
+      "text": "#/components/schemas/SignatureRequestResponseDataValueText",
+      "checkbox": "#/components/schemas/SignatureRequestResponseDataValueCheckbox",
+      "dropdown": "#/components/schemas/SignatureRequestResponseDataValueDropdown",
+      "radio": "#/components/schemas/SignatureRequestResponseDataValueRadio",
+      "signature": "#/components/schemas/SignatureRequestResponseDataValueSignature",
+      "date_signed": "#/components/schemas/SignatureRequestResponseDataValueDateSigned",
+      "initials": "#/components/schemas/SignatureRequestResponseDataValueInitials",
+      "text-merge": "#/components/schemas/SignatureRequestResponseDataValueTextMerge",
+      "checkbox-merge": "#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge"
+    }
+  },
+  "x-internal": true,
+  "x-base-class": true
+}

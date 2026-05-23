@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldsPerDocumentCheckbox",
+  "title": "SubFormFieldsPerDocumentCheckbox",
+  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    },
+    {
+      "required": [
+        "type",
+        "is_checked"
+      ],
+      "properties": {
+        "type": {
+          "description": "_t__Sub::FormFieldsPerDocument::TYPE_CHECKBOX",
+          "type": "string",
+          "default": "checkbox"
+        },
+        "group": {
+          "description": "_t__Sub::FormFieldsPerDocument::GROUP",
+          "type": "string"
+        },
+        "is_checked": {
+          "description": "_t__Sub::FormFieldsPerDocument::IS_CHECKED_CHECKBOX",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    }
+  ]
+}

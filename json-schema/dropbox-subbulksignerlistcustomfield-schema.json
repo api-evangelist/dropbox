@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubBulkSignerListCustomField",
+  "title": "SubBulkSignerListCustomField",
+  "required": [
+    "name",
+    "value"
+  ],
+  "properties": {
+    "name": {
+      "description": "_t__Sub::BulkCustomField::NAME",
+      "type": "string"
+    },
+    "value": {
+      "description": "_t__Sub::BulkCustomField::VALUE",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

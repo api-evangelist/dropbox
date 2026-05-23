@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestUpdateRequest",
+  "title": "SignatureRequestUpdateRequest",
+  "required": [
+    "signature_id"
+  ],
+  "properties": {
+    "email_address": {
+      "description": "_t__SignatureRequestUpdate::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "name": {
+      "description": "_t__SignatureRequestUpdate::NAME",
+      "type": "string"
+    },
+    "signature_id": {
+      "description": "_t__SignatureRequestUpdate::SIGNATURE_ID",
+      "type": "string"
+    },
+    "expires_at": {
+      "description": "_t__SignatureRequestUpdate::EXPIRES_AT",
+      "type": "integer",
+      "nullable": true
+    }
+  },
+  "type": "object"
+}

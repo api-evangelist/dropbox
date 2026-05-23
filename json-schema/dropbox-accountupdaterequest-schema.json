@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountUpdateRequest",
+  "title": "AccountUpdateRequest",
+  "properties": {
+    "account_id": {
+      "description": "_t__AccountUpdate::ACCOUNT_ID",
+      "type": "string",
+      "nullable": true
+    },
+    "callback_url": {
+      "description": "_t__AccountUpdate::CALLBACK_URL",
+      "type": "string"
+    },
+    "locale": {
+      "description": "_t__AccountUpdate::LOCALE",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

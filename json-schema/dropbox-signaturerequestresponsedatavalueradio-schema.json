@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseDataValueRadio",
+  "title": "SignatureRequestResponseDataValueRadio",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SignatureRequestResponseDataBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__SignatureRequestResponseDataValue::RADIO_TYPE",
+          "type": "string",
+          "default": "radio"
+        },
+        "value": {
+          "description": "_t__SignatureRequestResponseDataValue::VALUE",
+          "type": "boolean"
+        }
+      }
+    }
+  ]
+}

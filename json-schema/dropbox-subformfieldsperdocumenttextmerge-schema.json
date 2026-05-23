@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldsPerDocumentTextMerge",
+  "title": "SubFormFieldsPerDocumentTextMerge",
+  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION_EXTENDS",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    },
+    {
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "description": "_t__Sub::FormFieldsPerDocument::TYPE_TEXT_MERGE",
+          "type": "string",
+          "default": "text-merge"
+        },
+        "font_family": {
+          "description": "_t__Sub::FormFieldsPerDocument::FONT_FAMILY",
+          "type": "string",
+          "enum": [
+            "helvetica",
+            "arial",
+            "courier",
+            "calibri",
+            "cambria",
+            "georgia",
+            "times",
+            "trebuchet",
+            "verdana",
+            "roboto",
+            "robotoMono",
+            "notoSans",
+            "notoSerif",
+            "notoCJK-JP-Regular",
+            "notoHebrew-Regular",
+            "notoSanThaiMerged"
+          ]
+        },
+        "font_size": {
+          "description": "_t__Sub::FormFieldsPerDocument::FONT_SIZE",
+          "type": "integer",
+          "default": 12
+        }
+      },
+      "type": "object"
+    },
+    {
+      "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+    }
+  ]
+}

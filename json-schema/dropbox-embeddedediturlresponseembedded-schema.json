@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EmbeddedEditUrlResponseEmbedded",
+  "title": "EmbeddedEditUrlResponseEmbedded",
+  "description": "_t__EmbeddedEditUrlResponseEmbedded::DESCRIPTION",
+  "properties": {
+    "edit_url": {
+      "description": "_t__EmbeddedEditUrlResponseEmbedded::EDIT_URL",
+      "type": "string"
+    },
+    "expires_at": {
+      "description": "_t__EmbeddedEditUrlResponseEmbedded::EXPIRES_AT",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

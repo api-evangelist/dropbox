@@ -1,0 +1,33 @@
+{
+  "operationId": "post-2teamlegal-holdslist-policies",
+  "method": "POST",
+  "path": "/2/team/legal_holds/list_policies",
+  "summary": "Dropbox legal_holds/list_policies",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "policies": [
+          {
+            "id": "pid_dbhid:abcd1234",
+            "name": "acme cfo policy",
+            "members": {
+              "team_member_ids": [
+                "dbmid:efgh5678"
+              ],
+              "permanently_deleted_users": 2
+            },
+            "status": {
+              ".tag": "active"
+            },
+            "start_date": "2016-01-01T00:00:00Z",
+            "activation_time": "2016-01-20T00:00:10Z",
+            "end_date": "2017-12-31T00:00:00Z"
+          }
+        ]
+      }
+    }
+  ]
+}

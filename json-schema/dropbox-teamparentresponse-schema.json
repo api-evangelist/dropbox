@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamParentResponse",
+  "title": "TeamParentResponse",
+  "description": "_t__TeamInfo::TEAM_PARENT",
+  "properties": {
+    "team_id": {
+      "description": "_t__TeamGeneral::TEAM_ID",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__TeamGeneral::NAME",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "nullable": true,
+  "x-internal": true
+}

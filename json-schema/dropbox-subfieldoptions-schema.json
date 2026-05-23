@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFieldOptions",
+  "title": "SubFieldOptions",
+  "description": "_t__Sub::FieldOptions::DESCRIPTION",
+  "required": [
+    "date_format"
+  ],
+  "properties": {
+    "date_format": {
+      "description": "_t__Sub::FieldOptions::DATE_FORMAT",
+      "type": "string",
+      "enum": [
+        "MM / DD / YYYY",
+        "MM - DD - YYYY",
+        "DD / MM / YYYY",
+        "DD - MM - YYYY",
+        "YYYY / MM / DD",
+        "YYYY - MM - DD"
+      ],
+      "x-enum-varnames": [
+        "MMDDYYYY",
+        "MM_DD_YYYY",
+        "DDMMYYYY",
+        "DD_MM_YYYY",
+        "YYYYMMDD",
+        "YYYY_MM_DD"
+      ]
+    }
+  },
+  "type": "object"
+}

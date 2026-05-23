@@ -1,0 +1,67 @@
+{
+  "operationId": "post-2teamgroupsmembersremove",
+  "method": "POST",
+  "path": "/2/team/groups/members/remove",
+  "summary": "Dropbox groups/members/remove",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "group_info": {
+          "group_name": "project launch",
+          "group_id": "g:e2db7665347abcd600000000001a2b3c",
+          "group_management_type": {
+            ".tag": "user_managed"
+          },
+          "created": 1447255518000,
+          "member_count": 5,
+          "members": [
+            {
+              "profile": {
+                "team_member_id": "dbmid:1234567",
+                "email": "mary@lamb.com",
+                "email_verified": true,
+                "status": {
+                  ".tag": "active"
+                },
+                "name": {
+                  "given_name": "Franz",
+                  "surname": "Ferdinand",
+                  "familiar_name": "Franz",
+                  "display_name": "Franz Ferdinand (Personal)",
+                  "abbreviated_name": "FF"
+                },
+                "membership_type": {
+                  ".tag": "full"
+                },
+                "account_id": "dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc",
+                "secondary_emails": [
+                  {
+                    "email": "apple@orange.com",
+                    "is_verified": true
+                  },
+                  {
+                    "email": "banana@honeydew.com",
+                    "is_verified": true
+                  },
+                  {
+                    "email": "grape@strawberry.com",
+                    "is_verified": false
+                  }
+                ],
+                "joined_on": "2015-05-12T15:50:38Z",
+                "profile_photo_url": "https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128"
+              },
+              "access_type": {
+                ".tag": "member"
+              }
+            }
+          ]
+        },
+        "async_job_id": "99988877733388"
+      }
+    }
+  ]
+}

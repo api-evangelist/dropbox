@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseFieldAvgTextLength",
+  "title": "TemplateResponseFieldAvgTextLength",
+  "description": "_t__TemplateResponseFieldAvgTextLength::DESCRIPTION",
+  "properties": {
+    "num_lines": {
+      "description": "_t__TemplateResponseFieldAvgTextLength::NUM_LINES",
+      "type": "integer"
+    },
+    "num_chars_per_line": {
+      "description": "_t__TemplateResponseFieldAvgTextLength::NUM_CHARS_PER_LINE",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

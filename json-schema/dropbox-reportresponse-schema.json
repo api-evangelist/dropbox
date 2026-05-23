@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReportResponse",
+  "title": "ReportResponse",
+  "description": "_t__ReportResponse::DESCRIPTION",
+  "properties": {
+    "success": {
+      "description": "_t__ReportResponse::SUCCESS",
+      "type": "string"
+    },
+    "start_date": {
+      "description": "_t__ReportResponse::START_DATE",
+      "type": "string"
+    },
+    "end_date": {
+      "description": "_t__ReportResponse::END_DATE",
+      "type": "string"
+    },
+    "report_type": {
+      "description": "_t__ReportResponse::REPORT_TYPE",
+      "type": "array",
+      "items": {
+        "enum": [
+          "user_activity",
+          "document_status"
+        ]
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

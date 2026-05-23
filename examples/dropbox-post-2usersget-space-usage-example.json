@@ -1,0 +1,20 @@
+{
+  "operationId": "post-2usersget-space-usage",
+  "method": "POST",
+  "path": "/2/users/get_space_usage",
+  "summary": "Dropbox get_space_usage",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "used": 314159265,
+        "allocation": {
+          ".tag": "individual",
+          "allocated": 10000000000
+        }
+      }
+    }
+  ]
+}

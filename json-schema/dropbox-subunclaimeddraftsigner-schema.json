@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubUnclaimedDraftSigner",
+  "title": "SubUnclaimedDraftSigner",
+  "required": [
+    "name",
+    "email_address"
+  ],
+  "properties": {
+    "email_address": {
+      "description": "_t__Sub::UnclaimedDraftSigner::EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "name": {
+      "description": "_t__Sub::UnclaimedDraftSigner::NAME",
+      "type": "string"
+    },
+    "order": {
+      "description": "_t__Sub::UnclaimedDraftSigner::ORDER",
+      "type": "integer",
+      "nullable": true
+    }
+  },
+  "type": "object"
+}

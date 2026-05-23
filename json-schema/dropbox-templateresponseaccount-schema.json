@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseAccount",
+  "title": "TemplateResponseAccount",
+  "properties": {
+    "account_id": {
+      "description": "_t__TemplateResponseAccount::ACCOUNT_ID",
+      "type": "string"
+    },
+    "email_address": {
+      "description": "_t__TemplateResponseAccount::EMAIL_ADDRESS",
+      "type": "string"
+    },
+    "is_locked": {
+      "description": "_t__TemplateResponseAccount::IS_LOCKED",
+      "type": "boolean"
+    },
+    "is_paid_hs": {
+      "description": "_t__TemplateResponseAccount::IS_PAID_HS",
+      "type": "boolean"
+    },
+    "is_paid_hf": {
+      "description": "_t__TemplateResponseAccount::IS_PAID_HF",
+      "type": "boolean"
+    },
+    "quotas": {
+      "$ref": "#/components/schemas/TemplateResponseAccountQuota"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,14 @@
+{
+  "operationId": "post-2sharingupdate-file-member",
+  "method": "POST",
+  "path": "/2/sharing/update_file_member",
+  "summary": "Dropbox update_file_member",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {}
+    }
+  ]
+}

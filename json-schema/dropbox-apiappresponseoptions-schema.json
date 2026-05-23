@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiAppResponseOptions",
+  "title": "ApiAppResponseOptions",
+  "description": "_t__ApiAppResponseOptions::DESCRIPTION",
+  "properties": {
+    "can_insert_everywhere": {
+      "description": "_t__ApiAppResponseOptions::CAN_INSERT_EVERYWHERE",
+      "type": "boolean"
+    }
+  },
+  "type": "object",
+  "nullable": true,
+  "x-internal": true
+}

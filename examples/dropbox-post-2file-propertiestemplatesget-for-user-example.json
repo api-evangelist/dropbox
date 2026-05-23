@@ -1,0 +1,26 @@
+{
+  "operationId": "post-2file-propertiestemplatesget-for-user",
+  "method": "POST",
+  "path": "/2/file_properties/templates/get_for_user",
+  "summary": "Dropbox templates/get_for_user",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "name": "Security",
+        "description": "These properties describe how confidential this file or folder is.",
+        "fields": [
+          {
+            "name": "Security Policy",
+            "description": "This is the security policy of the file or folder described.\nPolicies can be Confidential, Public or Internal.",
+            "type": {
+              ".tag": "string"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "operationId": "post-2teamfeaturesget-values",
+  "method": "POST",
+  "path": "/2/team/features/get_values",
+  "summary": "Dropbox features/get_values",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "values": [
+          {
+            ".tag": "upload_api_rate_limit",
+            "upload_api_rate_limit": {
+              ".tag": "limit",
+              "limit": 25000
+            }
+          },
+          {
+            ".tag": "has_team_shared_dropbox",
+            "has_team_shared_dropbox": {
+              ".tag": "has_team_shared_dropbox",
+              "has_team_shared_dropbox": false
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

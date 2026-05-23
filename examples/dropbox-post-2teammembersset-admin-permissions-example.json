@@ -1,0 +1,19 @@
+{
+  "operationId": "post-2teammembersset-admin-permissions",
+  "method": "POST",
+  "path": "/2/team/members/set_admin_permissions",
+  "summary": "Dropbox members/set_admin_permissions",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "team_member_id": "dbmid:9978889",
+        "role": {
+          ".tag": "member_only"
+        }
+      }
+    }
+  ]
+}

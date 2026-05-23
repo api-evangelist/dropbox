@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FileResponse",
+  "title": "FileResponse",
+  "properties": {
+    "file_url": {
+      "description": "_t__FileResponse::FILE_URL",
+      "type": "string"
+    },
+    "expires_at": {
+      "description": "_t__FileResponse::EXPIRES_AT",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountCreateResponse",
+  "title": "AccountCreateResponse",
+  "properties": {
+    "account": {
+      "$ref": "#/components/schemas/AccountResponse"
+    },
+    "oauth_data": {
+      "$ref": "#/components/schemas/OAuthTokenResponse"
+    },
+    "warnings": {
+      "description": "_t__WarningResponse::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

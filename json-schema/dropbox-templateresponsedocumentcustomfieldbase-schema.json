@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponseDocumentCustomFieldBase",
+  "title": "TemplateResponseDocumentCustomFieldBase",
+  "description": "_t__TemplateResponseDocumentCustomField::DESCRIPTION",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "api_id": {
+      "description": "_t__TemplateResponseDocumentCustomField::API_ID",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__TemplateResponseDocumentCustomField::NAME",
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "signer": {
+      "description": "_t__TemplateResponseDocumentCustomField::SIGNER",
+      "type": "string",
+      "nullable": true
+    },
+    "x": {
+      "description": "_t__TemplateResponseDocumentCustomField::X",
+      "type": "integer"
+    },
+    "y": {
+      "description": "_t__TemplateResponseDocumentCustomField::Y",
+      "type": "integer"
+    },
+    "width": {
+      "description": "_t__TemplateResponseDocumentCustomField::WIDTH",
+      "type": "integer"
+    },
+    "height": {
+      "description": "_t__TemplateResponseDocumentCustomField::HEIGHT",
+      "type": "integer"
+    },
+    "required": {
+      "description": "_t__TemplateResponseDocumentStaticField::REQUIRED",
+      "type": "boolean"
+    },
+    "group": {
+      "description": "_t__TemplateResponseDocumentCustomField::GROUP",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "discriminator": {
+    "propertyName": "type",
+    "mapping": {
+      "text": "#/components/schemas/TemplateResponseDocumentCustomFieldText",
+      "checkbox": "#/components/schemas/TemplateResponseDocumentCustomFieldCheckbox"
+    }
+  },
+  "x-internal": true,
+  "x-base-class": true
+}

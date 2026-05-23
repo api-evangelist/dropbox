@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UnclaimedDraftCreateRequest",
+  "title": "UnclaimedDraftCreateRequest",
+  "description": "",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "files": {
+      "description": "_t__UnclaimedDraftCreate::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__UnclaimedDraftCreate::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allow_decline": {
+      "description": "_t__UnclaimedDraftCreate::ALLOW_DECLINE",
+      "type": "boolean",
+      "default": false
+    },
+    "attachments": {
+      "description": "_t__SubAttachment::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubAttachment"
+      }
+    },
+    "cc_email_addresses": {
+      "description": "_t__UnclaimedDraftCreate::CC_EMAIL_ADDRESSES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "client_id": {
+      "description": "_t__UnclaimedDraftCreate::CLIENT_ID",
+      "type": "string"
+    },
+    "custom_fields": {
+      "description": "_t__Sub::CustomField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCustomField"
+      }
+    },
+    "field_options": {
+      "$ref": "#/components/schemas/SubFieldOptions"
+    },
+    "form_field_groups": {
+      "description": "_t__Sub::FormFieldGroup::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldGroup"
+      }
+    },
+    "form_field_rules": {
+      "description": "_t__Sub::FormFieldRule::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldRule"
+      }
+    },
+    "form_fields_per_document": {
+      "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+      }
+    },
+    "hide_text_tags": {
+      "description": "_t__UnclaimedDraftCreate::HIDE_TEXT_TAGS",
+      "type": "boolean",
+      "default": false
+    },
+    "message": {
+      "description": "_t__UnclaimedDraftCreate::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "show_progress_stepper": {
+      "description": "_t__UnclaimedDraftCreate::SHOW_PROGRESS_STEPPER",
+      "type": "boolean",
+      "default": true
+    },
+    "signers": {
+      "description": "_t__Sub::UnclaimedDraftSigner::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubUnclaimedDraftSigner"
+      }
+    },
+    "signing_options": {
+      "$ref": "#/components/schemas/SubSigningOptions"
+    },
+    "signing_redirect_url": {
+      "description": "_t__UnclaimedDraftCreate::SIGNING_REDIRECT_URL",
+      "type": "string"
+    },
+    "subject": {
+      "description": "_t__UnclaimedDraftCreate::SUBJECT",
+      "type": "string",
+      "maxLength": 200
+    },
+    "test_mode": {
+      "description": "_t__UnclaimedDraftCreate::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "type": {
+      "description": "_t__UnclaimedDraftCreate::TYPE",
+      "type": "string",
+      "enum": [
+        "send_document",
+        "request_signature"
+      ]
+    },
+    "use_preexisting_fields": {
+      "description": "_t__UnclaimedDraftCreate::USE_PREEXISTING_FIELDS",
+      "type": "boolean",
+      "default": false
+    },
+    "use_text_tags": {
+      "description": "_t__UnclaimedDraftCreate::USE_TEXT_TAGS",
+      "type": "boolean",
+      "default": false
+    },
+    "expires_at": {
+      "description": "_t__UnclaimedDraftCreate::EXPIRES_AT",
+      "type": "integer",
+      "nullable": true
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BulkSendJobGetResponse",
+  "title": "BulkSendJobGetResponse",
+  "properties": {
+    "bulk_send_job": {
+      "$ref": "#/components/schemas/BulkSendJobResponse"
+    },
+    "list_info": {
+      "$ref": "#/components/schemas/ListInfoResponse"
+    },
+    "signature_requests": {
+      "description": "_t__BulkSendJobGetResponse::SIGNATURE_REQUESTS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BulkSendJobGetResponseSignatureRequests"
+      }
+    },
+    "warnings": {
+      "description": "_t__WarningResponse::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

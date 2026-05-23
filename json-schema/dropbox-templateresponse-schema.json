@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResponse",
+  "title": "TemplateResponse",
+  "description": "_t__TemplateResponse::DESCRIPTION",
+  "properties": {
+    "template_id": {
+      "description": "_t__TemplateResponse::TEMPLATE_ID",
+      "type": "string"
+    },
+    "title": {
+      "description": "_t__TemplateResponse::TITLE",
+      "type": "string"
+    },
+    "message": {
+      "description": "_t__TemplateResponse::MESSAGE",
+      "type": "string"
+    },
+    "updated_at": {
+      "description": "_t__TemplateResponse::UPDATED_AT",
+      "type": "integer"
+    },
+    "is_embedded": {
+      "description": "_t__TemplateResponse::IS_EMBEDDED",
+      "type": "boolean",
+      "nullable": true
+    },
+    "is_creator": {
+      "description": "_t__TemplateResponse::IS_CREATOR",
+      "type": "boolean",
+      "nullable": true
+    },
+    "can_edit": {
+      "description": "_t__TemplateResponse::CAN_EDIT",
+      "type": "boolean",
+      "nullable": true
+    },
+    "is_locked": {
+      "description": "_t__TemplateResponse::IS_LOCKED",
+      "type": "boolean",
+      "nullable": true
+    },
+    "metadata": {
+      "description": "_t__TemplateResponse::METADATA",
+      "type": "object"
+    },
+    "signer_roles": {
+      "description": "_t__TemplateResponse::SIGNER_ROLES",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseSignerRole"
+      }
+    },
+    "cc_roles": {
+      "description": "_t__TemplateResponse::CC_ROLES",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseCCRole"
+      }
+    },
+    "documents": {
+      "description": "_t__TemplateResponse::DOCUMENTS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseDocument"
+      }
+    },
+    "custom_fields": {
+      "description": "_t__TemplateResponseCustomField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseDocumentCustomFieldBase"
+      },
+      "nullable": true,
+      "deprecated": true
+    },
+    "named_form_fields": {
+      "description": "_t__TemplateResponseNamedFormField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseDocumentFormFieldBase"
+      },
+      "nullable": true,
+      "deprecated": true
+    },
+    "accounts": {
+      "description": "_t__TemplateResponse::ACCOUNTS",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemplateResponseAccount"
+      },
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseDataTypeEnum",
+  "title": "SignatureRequestResponseDataTypeEnum",
+  "type": "string",
+  "enum": [
+    "text",
+    "checkbox",
+    "date_signed",
+    "dropdown",
+    "initials",
+    "radio",
+    "signature",
+    "text-merge",
+    "checkbox-merge"
+  ]
+}

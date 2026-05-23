@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TeamMembersResponse",
+  "title": "TeamMembersResponse",
+  "properties": {
+    "team_members": {
+      "description": "_t__TeamMembersResponse::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TeamMemberResponse"
+      }
+    },
+    "list_info": {
+      "$ref": "#/components/schemas/ListInfoResponse"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WarningResponse"
+      }
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

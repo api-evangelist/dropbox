@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateEditResponse",
+  "title": "TemplateEditResponse",
+  "properties": {
+    "template_id": {
+      "description": "_t__TemplateResponse::TEMPLATE_ID",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseCustomFieldText",
+  "title": "SignatureRequestResponseCustomFieldText",
+  "description": "_t__SignatureRequestResponseCustomField::DESCRIPTION_EXTENDS",
+  "required": [
+    "type"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SignatureRequestResponseCustomFieldBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__SignatureRequestResponseCustomField::TYPE",
+          "type": "string",
+          "default": "text"
+        },
+        "value": {
+          "description": "_t__SignatureRequestResponseCustomField::VALUE_TEXT",
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

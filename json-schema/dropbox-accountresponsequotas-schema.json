@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountResponseQuotas",
+  "title": "AccountResponseQuotas",
+  "description": "_t__Account::QUOTA",
+  "properties": {
+    "api_signature_requests_left": {
+      "description": "_t__AccountQuota::API_SIGNATURE_REQUESTS_LEFT",
+      "type": "integer",
+      "nullable": true
+    },
+    "documents_left": {
+      "description": "_t__AccountQuota::DOCUMENTS_LEFT",
+      "type": "integer",
+      "nullable": true
+    },
+    "templates_total": {
+      "description": "_t__AccountQuota::TEMPLATES_TOTAL",
+      "type": "integer",
+      "nullable": true
+    },
+    "templates_left": {
+      "description": "_t__AccountQuota::TEMPLATES_LEFT",
+      "type": "integer",
+      "nullable": true
+    },
+    "sms_verifications_left": {
+      "description": "_t__AccountQuota::SMS_VERIFICATIONS_LEFT",
+      "type": "integer",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

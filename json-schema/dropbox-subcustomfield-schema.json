@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubCustomField",
+  "title": "SubCustomField",
+  "description": "_t__Sub::CustomField::DESCRIPTION",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "editor": {
+      "description": "_t__Sub::CustomField::EDITOR",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__Sub::CustomField::NAME",
+      "type": "string"
+    },
+    "required": {
+      "description": "_t__Sub::CustomField::REQUIRED",
+      "type": "boolean",
+      "default": false
+    },
+    "value": {
+      "description": "_t__Sub::CustomField::VALUE",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

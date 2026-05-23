@@ -1,0 +1,54 @@
+{
+  "operationId": "post-2teammembersdelete-profile-photo",
+  "method": "POST",
+  "path": "/2/team/members/delete_profile_photo",
+  "summary": "Dropbox members/delete_profile_photo",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "profile": {
+          "team_member_id": "dbmid:FDFSVF-DFSDF",
+          "email": "tami@seagull.com",
+          "email_verified": false,
+          "status": {
+            ".tag": "active"
+          },
+          "name": {
+            "given_name": "Franz",
+            "surname": "Ferdinand",
+            "familiar_name": "Franz",
+            "display_name": "Franz Ferdinand (Personal)",
+            "abbreviated_name": "FF"
+          },
+          "membership_type": {
+            ".tag": "full"
+          },
+          "groups": [
+            "g:e2db7665347abcd600000000001a2b3c"
+          ],
+          "member_folder_id": "20",
+          "external_id": "244423",
+          "account_id": "dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc",
+          "secondary_emails": [
+            {
+              "email": "grape@strawberry.com",
+              "is_verified": false
+            },
+            {
+              "email": "apple@orange.com",
+              "is_verified": true
+            }
+          ],
+          "joined_on": "2015-05-12T15:50:38Z",
+          "profile_photo_url": "https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128"
+        },
+        "role": {
+          ".tag": "member_only"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubWhiteLabelingOptions",
+  "title": "SubWhiteLabelingOptions",
+  "description": "_t__Sub::WhiteLabelingOptions::DESCRIPTION",
+  "properties": {
+    "header_background_color": {
+      "type": "string",
+      "default": "#1A1A1A"
+    },
+    "legal_version": {
+      "type": "string",
+      "default": "terms1",
+      "enum": [
+        "terms1",
+        "terms2"
+      ]
+    },
+    "link_color": {
+      "type": "string",
+      "default": "#00B3E6"
+    },
+    "page_background_color": {
+      "type": "string",
+      "default": "#F7F8F9"
+    },
+    "primary_button_color": {
+      "type": "string",
+      "default": "#00B3E6"
+    },
+    "primary_button_color_hover": {
+      "type": "string",
+      "default": "#00B3E6"
+    },
+    "primary_button_text_color": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "primary_button_text_color_hover": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "secondary_button_color": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "secondary_button_color_hover": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "secondary_button_text_color": {
+      "type": "string",
+      "default": "#00B3E6"
+    },
+    "secondary_button_text_color_hover": {
+      "type": "string",
+      "default": "#00B3E6"
+    },
+    "text_color1": {
+      "type": "string",
+      "default": "#808080"
+    },
+    "text_color2": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "reset_to_default": {
+      "description": "_t__Sub::WhiteLabelingOptions::RESET_TO_DEFAULT",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

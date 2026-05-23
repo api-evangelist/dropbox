@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestSendWithTemplateRequest",
+  "title": "SignatureRequestSendWithTemplateRequest",
+  "description": "",
+  "required": [
+    "signers",
+    "template_ids"
+  ],
+  "properties": {
+    "template_ids": {
+      "description": "_t__SignatureRequestSendWithTemplate::TEMPLATE_IDS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allow_decline": {
+      "description": "_t__SignatureRequestSendWithTemplate::ALLOW_DECLINE",
+      "type": "boolean",
+      "default": false
+    },
+    "ccs": {
+      "description": "_t__Sub::CC::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCC"
+      }
+    },
+    "client_id": {
+      "description": "_t__SignatureRequestSendWithTemplate::CLIENT_ID",
+      "type": "string"
+    },
+    "custom_fields": {
+      "description": "_t__Sub::CustomField::TEMPLATE",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCustomField"
+      }
+    },
+    "files": {
+      "description": "_t__SignatureRequestSendWithTemplate::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__SignatureRequestSendWithTemplate::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_qualified_signature": {
+      "description": "_t__SignatureRequestSendWithTemplate::IS_QUALIFIED_SIGNATURE",
+      "type": "boolean",
+      "default": false,
+      "deprecated": true,
+      "x-hideOn": "doc"
+    },
+    "is_eid": {
+      "description": "_t__SignatureRequestSendWithTemplate::IS_EID",
+      "type": "boolean",
+      "default": false
+    },
+    "message": {
+      "description": "_t__SignatureRequestSendWithTemplate::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "signers": {
+      "description": "_t__Sub::SignatureRequestTemplateSigner::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubSignatureRequestTemplateSigner"
+      }
+    },
+    "signing_options": {
+      "$ref": "#/components/schemas/SubSigningOptions"
+    },
+    "signing_redirect_url": {
+      "description": "_t__SignatureRequestSendWithTemplate::SIGNING_REDIRECT_URL",
+      "type": "string"
+    },
+    "subject": {
+      "description": "_t__SignatureRequestSendWithTemplate::SUBJECT",
+      "type": "string",
+      "maxLength": 255
+    },
+    "test_mode": {
+      "description": "_t__SignatureRequestSendWithTemplate::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "description": "_t__SignatureRequestSendWithTemplate::TITLE",
+      "type": "string",
+      "maxLength": 255
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UnclaimedDraftEditAndResendRequest",
+  "title": "UnclaimedDraftEditAndResendRequest",
+  "required": [
+    "client_id"
+  ],
+  "properties": {
+    "client_id": {
+      "description": "_t__UnclaimedDraftEditAndResend::CLIENT_ID",
+      "type": "string"
+    },
+    "editor_options": {
+      "$ref": "#/components/schemas/SubEditorOptions"
+    },
+    "is_for_embedded_signing": {
+      "description": "_t__UnclaimedDraftEditAndResend::IS_FOR_EMBEDDED_SIGNING",
+      "type": "boolean"
+    },
+    "requester_email_address": {
+      "description": "_t__UnclaimedDraftEditAndResend::REQUESTER_EMAIL_ADDRESS",
+      "type": "string",
+      "format": "email"
+    },
+    "requesting_redirect_url": {
+      "description": "_t__UnclaimedDraftEditAndResend::REQUESTING_REDIRECT_URL",
+      "type": "string"
+    },
+    "show_progress_stepper": {
+      "description": "_t__UnclaimedDraftEditAndResend::SHOW_PROGRESS_STEPPER",
+      "type": "boolean",
+      "default": true
+    },
+    "signing_redirect_url": {
+      "description": "_t__UnclaimedDraftEditAndResend::SIGNING_REDIRECT_URL",
+      "type": "string"
+    },
+    "test_mode": {
+      "description": "_t__UnclaimedDraftEditAndResend::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "type": "object"
+}

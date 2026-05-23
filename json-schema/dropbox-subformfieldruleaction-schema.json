@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubFormFieldRuleAction",
+  "title": "SubFormFieldRuleAction",
+  "required": [
+    "hidden",
+    "type"
+  ],
+  "properties": {
+    "field_id": {
+      "description": "_t__Sub::FormFieldRuleAction::FIELD_ID",
+      "type": "string"
+    },
+    "group_id": {
+      "description": "_t__Sub::FormFieldRuleAction::GROUP_ID",
+      "type": "string"
+    },
+    "hidden": {
+      "description": "_t__Sub::FormFieldRuleAction::HIDDEN",
+      "type": "boolean"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "change-field-visibility",
+        "change-group-visibility"
+      ]
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,53 @@
+{
+  "operationId": "post-2file-requestsdelete",
+  "method": "POST",
+  "path": "/2/file_requests/delete",
+  "summary": "Dropbox delete",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "file_requests": [
+          {
+            "id": "oaCAVmEyrqYnkZX9955Y",
+            "url": "https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y",
+            "title": "Homework submission",
+            "created": "2015-10-05T17:00:00Z",
+            "is_open": true,
+            "file_count": 3,
+            "destination": "/File Requests/Homework",
+            "deadline": {
+              "deadline": "2020-10-12T17:00:00Z",
+              "allow_late_uploads": {
+                ".tag": "seven_days"
+              }
+            }
+          },
+          {
+            "id": "BAJ7IrRGicQKGToykQdB",
+            "url": "https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB",
+            "title": "Photo contest submission",
+            "created": "2015-11-02T04:00:00Z",
+            "is_open": true,
+            "file_count": 105,
+            "destination": "/Photo contest entries",
+            "deadline": {
+              "deadline": "2020-10-12T17:00:00Z"
+            }
+          },
+          {
+            "id": "rxwMPvK3ATTa0VxOJu5T",
+            "url": "https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T",
+            "title": "Wedding photo submission",
+            "created": "2015-12-15T13:02:00Z",
+            "is_open": true,
+            "file_count": 37,
+            "destination": "/Wedding photos"
+          }
+        ]
+      }
+    }
+  ]
+}

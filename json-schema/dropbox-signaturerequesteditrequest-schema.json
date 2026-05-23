@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestEditRequest",
+  "title": "SignatureRequestEditRequest",
+  "properties": {
+    "files": {
+      "description": "_t__SignatureRequestSend::FILES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "binary"
+      }
+    },
+    "file_urls": {
+      "description": "_t__SignatureRequestSend::FILE_URLS",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signers": {
+      "description": "_t__Sub::SignatureRequestSigner::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubSignatureRequestSigner"
+      }
+    },
+    "grouped_signers": {
+      "description": "_t__Sub::SignatureRequestGroupedSigners::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubSignatureRequestGroupedSigners"
+      }
+    },
+    "allow_decline": {
+      "description": "_t__SignatureRequestSend::ALLOW_DECLINE",
+      "type": "boolean",
+      "default": false
+    },
+    "allow_reassign": {
+      "description": "_t__SignatureRequestSend::ALLOW_REASSIGN",
+      "type": "boolean",
+      "default": false
+    },
+    "attachments": {
+      "description": "_t__SubAttachment::LIST_DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubAttachment"
+      }
+    },
+    "cc_email_addresses": {
+      "description": "_t__SignatureRequestSend::CC_EMAIL_ADDRESSES",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "client_id": {
+      "description": "_t__SignatureRequestSend::CLIENT_ID",
+      "type": "string"
+    },
+    "custom_fields": {
+      "description": "_t__Sub::CustomField::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubCustomField"
+      }
+    },
+    "field_options": {
+      "$ref": "#/components/schemas/SubFieldOptions"
+    },
+    "form_field_groups": {
+      "description": "_t__Sub::FormFieldGroup::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldGroup"
+      }
+    },
+    "form_field_rules": {
+      "description": "_t__Sub::FormFieldRule::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldRule"
+      }
+    },
+    "form_fields_per_document": {
+      "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SubFormFieldsPerDocumentBase"
+      }
+    },
+    "hide_text_tags": {
+      "description": "_t__SignatureRequestSend::HIDE_TEXT_TAGS",
+      "type": "boolean",
+      "default": false
+    },
+    "is_qualified_signature": {
+      "description": "_t__SignatureRequestSend::IS_QUALIFIED_SIGNATURE",
+      "type": "boolean",
+      "default": false,
+      "deprecated": true,
+      "x-hideOn": "doc"
+    },
+    "is_eid": {
+      "description": "_t__SignatureRequestSend::IS_EID",
+      "type": "boolean",
+      "default": false
+    },
+    "message": {
+      "description": "_t__SignatureRequestSend::MESSAGE",
+      "type": "string",
+      "maxLength": 5000
+    },
+    "metadata": {
+      "description": "_t__Sub::Metadata::DESCRIPTION",
+      "type": "object",
+      "maxItems": 10,
+      "additionalProperties": {}
+    },
+    "signing_options": {
+      "$ref": "#/components/schemas/SubSigningOptions"
+    },
+    "signing_redirect_url": {
+      "description": "_t__SignatureRequestSend::SIGNING_REDIRECT_URL",
+      "type": "string"
+    },
+    "subject": {
+      "description": "_t__SignatureRequestSend::SUBJECT",
+      "type": "string",
+      "maxLength": 255
+    },
+    "test_mode": {
+      "description": "_t__SignatureRequestSend::TEST_MODE",
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "description": "_t__SignatureRequestSend::TITLE",
+      "type": "string",
+      "maxLength": 255
+    },
+    "use_text_tags": {
+      "description": "_t__SignatureRequestSend::USE_PREEXISTING_FIELDS",
+      "type": "boolean",
+      "default": false
+    },
+    "expires_at": {
+      "description": "_t__SignatureRequestSend::EXPIRES_AT",
+      "type": "integer",
+      "nullable": true
+    }
+  },
+  "type": "object"
+}

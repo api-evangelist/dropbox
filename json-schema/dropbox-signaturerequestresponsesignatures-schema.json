@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseSignatures",
+  "title": "SignatureRequestResponseSignatures",
+  "description": "_t__SignatureRequestResponseSignatures::DESCRIPTION",
+  "properties": {
+    "signature_id": {
+      "description": "_t__SignatureRequestResponseSignatures::SIGNATURE_ID",
+      "type": "string"
+    },
+    "signer_group_guid": {
+      "description": "_t__SignatureRequestResponseSignatures::SIGNER_GROUP_GUID",
+      "type": "string",
+      "nullable": true
+    },
+    "signer_email_address": {
+      "description": "_t__SignatureRequestResponseSignatures::SIGNER_EMAIL_ADDRESS",
+      "type": "string"
+    },
+    "signer_name": {
+      "description": "_t__SignatureRequestResponseSignatures::SIGNER_NAME",
+      "type": "string",
+      "nullable": true
+    },
+    "signer_role": {
+      "description": "_t__SignatureRequestResponseSignatures::SIGNER_ROLE",
+      "type": "string",
+      "nullable": true
+    },
+    "order": {
+      "description": "_t__SignatureRequestResponseSignatures::ORDER",
+      "type": "integer",
+      "nullable": true
+    },
+    "status_code": {
+      "description": "_t__SignatureRequestResponseSignatures::STATUS_CODE",
+      "type": "string"
+    },
+    "decline_reason": {
+      "description": "_t__SignatureRequestResponseSignatures::DECLINE_REASON",
+      "type": "string",
+      "nullable": true
+    },
+    "signed_at": {
+      "description": "_t__SignatureRequestResponseSignatures::SIGNED_AT",
+      "type": "integer",
+      "nullable": true
+    },
+    "last_viewed_at": {
+      "description": "_t__SignatureRequestResponseSignatures::LAST_VIEWED_AT",
+      "type": "integer",
+      "nullable": true
+    },
+    "last_reminded_at": {
+      "description": "_t__SignatureRequestResponseSignatures::LAST_REMINDED_AT",
+      "type": "integer",
+      "nullable": true
+    },
+    "has_pin": {
+      "description": "_t__SignatureRequestResponseSignatures::HAS_PIN",
+      "type": "boolean"
+    },
+    "has_sms_auth": {
+      "description": "_t__SignatureRequestResponseSignatures::HAS_SMS_AUTH",
+      "type": "boolean",
+      "nullable": true
+    },
+    "has_sms_delivery": {
+      "description": "_t__SignatureRequestResponseSignatures::HAS_SMS_DELIVERY",
+      "type": "boolean",
+      "nullable": true
+    },
+    "sms_phone_number": {
+      "description": "_t__SignatureRequestResponseSignatures::SMS_PHONE_NUMBER",
+      "type": "string",
+      "nullable": true
+    },
+    "reassigned_by": {
+      "description": "_t__SignatureRequestResponseSignatures::REASSIGNED_BY",
+      "type": "string",
+      "nullable": true
+    },
+    "reassignment_reason": {
+      "description": "_t__SignatureRequestResponseSignatures::REASSIGNMENT_REASON",
+      "type": "string",
+      "nullable": true
+    },
+    "reassigned_from": {
+      "description": "_t__SignatureRequestResponseSignatures::REASSIGNED_FROM",
+      "type": "string",
+      "nullable": true
+    },
+    "error": {
+      "description": "_t__SignatureRequestResponseSignatures::ERROR",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "x-internal": true
+}

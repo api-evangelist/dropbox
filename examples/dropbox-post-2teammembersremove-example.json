@@ -1,0 +1,16 @@
+{
+  "operationId": "post-2teammembersremove",
+  "method": "POST",
+  "path": "/2/team/members/remove",
+  "summary": "Dropbox members/remove",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        ".tag": "complete"
+      }
+    }
+  ]
+}

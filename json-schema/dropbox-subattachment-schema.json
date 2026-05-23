@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubAttachment",
+  "title": "SubAttachment",
+  "required": [
+    "name",
+    "signer_index"
+  ],
+  "properties": {
+    "instructions": {
+      "description": "_t__Sub::Attachment::INSTRUCTIONS",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__Sub::Attachment::NAME",
+      "type": "string"
+    },
+    "required": {
+      "description": "_t__Sub::Attachment::REQUIRED",
+      "type": "boolean",
+      "default": false
+    },
+    "signer_index": {
+      "description": "_t__Sub::Attachment::SIGNER_INDEX",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge",
+  "title": "SignatureRequestResponseDataValueCheckboxMerge",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/SignatureRequestResponseDataBase"
+    },
+    {
+      "properties": {
+        "type": {
+          "description": "_t__SignatureRequestResponseDataValue::CHECKBOXMERGE_TYPE",
+          "type": "string",
+          "default": "checkbox-merge"
+        },
+        "value": {
+          "description": "_t__SignatureRequestResponseDataValue::VALUE",
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

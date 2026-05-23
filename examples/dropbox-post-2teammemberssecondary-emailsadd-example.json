@@ -1,0 +1,44 @@
+{
+  "operationId": "post-2teammemberssecondary-emailsadd",
+  "method": "POST",
+  "path": "/2/team/members/secondary_emails/add",
+  "summary": "Dropbox members/secondary_emails/add",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "results": [
+          {
+            ".tag": "success",
+            "user": {
+              ".tag": "team_member_id",
+              "team_member_id": "dbmid:efgh5678"
+            },
+            "results": [
+              {
+                ".tag": "success",
+                "success": {
+                  "email": "apple@orange.com",
+                  "is_verified": true
+                }
+              },
+              {
+                ".tag": "unavailable",
+                "unavailable": "alice@example.com"
+              }
+            ]
+          },
+          {
+            ".tag": "invalid_user",
+            "invalid_user": {
+              ".tag": "team_member_id",
+              "team_member_id": "dbmid:efgh5678"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

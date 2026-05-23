@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SignatureRequestResponseCustomFieldBase",
+  "title": "SignatureRequestResponseCustomFieldBase",
+  "description": "_t__SignatureRequestResponseCustomField::DESCRIPTION",
+  "required": [
+    "name",
+    "type"
+  ],
+  "properties": {
+    "type": {
+      "description": "_t__SignatureRequestResponseCustomField::TYPE",
+      "type": "string"
+    },
+    "name": {
+      "description": "_t__SignatureRequestResponseCustomField::NAME",
+      "type": "string"
+    },
+    "required": {
+      "description": "_t__SignatureRequestResponseCustomField::REQUIRED",
+      "type": "boolean"
+    },
+    "api_id": {
+      "description": "_t__SignatureRequestResponseCustomField::API_ID",
+      "type": "string"
+    },
+    "editor": {
+      "description": "_t__SignatureRequestResponseCustomField::EDITOR",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "discriminator": {
+    "propertyName": "type",
+    "mapping": {
+      "text": "#/components/schemas/SignatureRequestResponseCustomFieldText",
+      "checkbox": "#/components/schemas/SignatureRequestResponseCustomFieldCheckbox"
+    }
+  },
+  "x-internal": true,
+  "x-base-class": true
+}
