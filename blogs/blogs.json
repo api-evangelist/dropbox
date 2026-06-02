@@ -2,12 +2,20 @@
   "repo": "dropbox",
   "feeds": [
     {
+      "source": "https://blog.dropbox.com/feed/",
+      "feed_url": "https://blog.dropbox.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://blog.dropbox.com/",
       "feed_url": "https://blog.dropbox.com/feed/",
-      "title": "Work in Progress",
-      "saved": 3
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
     }
   ],
-  "post_count": 14,
-  "fetched": "2026-05-17T20:20:35Z"
+  "post_count": 15,
+  "fetched": "2026-06-01T23:35:02Z"
 }
