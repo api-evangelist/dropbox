@@ -54,8 +54,11 @@ apis:
     url: capabilities/dropbox-team-log.yaml
   - type: NaftikoCapability
     url: capabilities/dropbox-users.yaml
-  description: Dropbox is a file hosting service operated by the American company Dropbox, Inc., headquartered in San Francisco,
-    California, U.S. that offers cloud storage, file synchronization, personal cloud, and client software.
+  - url: graphql/dropbox-graphql.md
+    type: GraphQL
+  description: Dropbox is a file hosting service operated by the American company
+    Dropbox, Inc., headquartered in San Francisco, California, U.S. that offers cloud
+    storage, file synchronization, personal cloud, and client software.
 - aid: dropbox:dropbox-sign-api
   name: Dropbox Sign API
   tags:
@@ -93,10 +96,11 @@ apis:
     url: capabilities/sign-template.yaml
   - type: NaftikoCapability
     url: capabilities/sign-unclaimed-draft.yaml
-  description: The Dropbox Sign API offers a reliable, flexible set of eSignature tools that can be used to power digital
-    agreements and turn slow, outdated business processes into a competitive advantage. With a broad range of highly-configurable
-    features, the Dropbox Sign API empowers you to build secure signing experiences and document workflows that delight your
-    users.
+  description: The Dropbox Sign API offers a reliable, flexible set of eSignature
+    tools that can be used to power digital agreements and turn slow, outdated business
+    processes into a competitive advantage. With a broad range of highly-configurable
+    features, the Dropbox Sign API empowers you to build secure signing experiences
+    and document workflows that delight your users.
 name: Dropbox
 tags:
 - Documents
@@ -145,8 +149,9 @@ common:
   updated: '2026-05-04'
 created: '2024-06-07T00:00:00.000Z'
 modified: '2026-05-19'
-description: Dropbox is a file hosting service operated by the American company Dropbox, Inc., headquartered in San Francisco,
-  California, U.S. that offers cloud storage, file synchronization, personal cloud, and client software.
+description: Dropbox is a file hosting service operated by the American company Dropbox,
+  Inc., headquartered in San Francisco, California, U.S. that offers cloud storage,
+  file synchronization, personal cloud, and client software.
 maintainers:
 - FN: API Evangelist
   url: http://apievangelist.com

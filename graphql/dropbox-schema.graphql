@@ -1,0 +1,990 @@
+"""
+Conceptual GraphQL schema for the Dropbox API v2.
+Source: https://www.dropbox.com/developers/documentation/http/documentation
+GitHub: https://github.com/dropbox/dropbox-api-spec
+"""
+
+# ──────────────────────────────────────────────
+# Scalars
+# ──────────────────────────────────────────────
+
+scalar DateTime
+scalar JSON
+
+# ──────────────────────────────────────────────
+# Enums
+# ──────────────────────────────────────────────
+
+enum WriteMode {
+  ADD
+  OVERWRITE
+  UPDATE
+}
+
+enum SearchMode {
+  FILENAME
+  FILENAME_AND_CONTENT
+  DELETED_FILENAME
+}
+
+enum SearchMatchType {
+  FILENAME
+  CONTENT
+  BOTH
+}
+
+enum MemberPolicy {
+  TEAM
+  ANYONE
+}
+
+enum AclUpdatePolicy {
+  OWNER
+  EDITORS
+}
+
+enum ViewerInfoPolicy {
+  ENABLED
+  DISABLED
+}
+
+enum SyncSetting {
+  DEFAULT
+  NOT_SYNCED
+  NOT_SYNCED_INACTIVE
+}
+
+enum SharedLinkPolicy {
+  ANYONE
+  TEAM
+  NO_ONE
+}
+
+enum Visibility {
+  PUBLIC
+  TEAM_ONLY
+  PASSWORD
+  TEAM_AND_PASSWORD
+  SHARED_FOLDER_ONLY
+}
+
+enum AccessLevel {
+  OWNER
+  EDITOR
+  VIEWER
+  VIEWER_NO_COMMENT
+}
+
+enum TeamMemberStatus {
+  ACTIVE
+  INVITED
+  SUSPENDED
+  REMOVED
+}
+
+enum GroupAccessType {
+  MEMBER
+  OWNER
+}
+
+enum AdminTier {
+  TEAM_ADMIN
+  USER_MANAGEMENT_ADMIN
+  SUPPORT_ADMIN
+  MEMBER_ONLY
+}
+
+enum PaperDocPermissionLevel {
+  EDIT
+  VIEW_AND_COMMENT
+  VIEW_ONLY
+}
+
+# ──────────────────────────────────────────────
+# File & Folder Metadata
+# ──────────────────────────────────────────────
+
+"""Top-level union representing any entry in Dropbox (file, folder, or deleted)."""
+union File = FileMetadata | FolderMetadata | DeletedMetadata
+
+"""Metadata describing a file stored in Dropbox."""
+type FileMetadata {
+  id: ID!
+  name: String!
+  pathLower: String
+  pathDisplay: String
+  parentSharedFolderId: String
+  size: Int!
+  isDownloadable: Boolean
+  exportInfo: JSON
+  propertyGroups: [PropertyGroup!]
+  hasExplicitSharedMembers: Boolean
+  contentHash: String
+  symlinkInfo: JSON
+  sharingInfo: JSON
+  rev: String!
+  serverModified: DateTime!
+  clientModified: DateTime
+  mediaInfo: MediaInfo
+  tags: [Tag!]
+}
+
+"""Metadata describing a folder stored in Dropbox."""
+type FolderMetadata {
+  id: ID!
+  name: String!
+  pathLower: String
+  pathDisplay: String
+  parentSharedFolderId: String
+  sharedFolderId: String
+  sharingInfo: JSON
+  propertyGroups: [PropertyGroup!]
+  syncSettings: SyncSetting
+  tags: [Tag!]
+}
+
+"""Metadata for a file or folder that has been deleted from Dropbox."""
+type DeletedMetadata {
+  name: String!
+  pathLower: String
+  pathDisplay: String
+  parentSharedFolderId: String
+}
+
+# ──────────────────────────────────────────────
+# Media Metadata
+# ──────────────────────────────────────────────
+
+"""Pixel dimensions for an image or video."""
+type Dimensions {
+  width: Int!
+  height: Int!
+}
+
+"""GPS coordinates extracted from media EXIF data."""
+type GpsCoordinates {
+  latitude: Float!
+  longitude: Float!
+}
+
+"""Union of photo and video metadata attached to a file."""
+union MediaInfo = PhotoMetadata | VideoMetadata
+
+"""EXIF metadata extracted from a photo file."""
+type PhotoMetadata {
+  dimensions: Dimensions
+  location: GpsCoordinates
+  timeTaken: DateTime
+}
+
+"""Duration and dimension metadata for a video file."""
+type VideoMetadata {
+  dimensions: Dimensions
+  location: GpsCoordinates
+  timeTaken: DateTime
+  duration: Int
+}
+
+# ──────────────────────────────────────────────
+# Upload / Commit
+# ──────────────────────────────────────────────
+
+"""Parameters required to commit a file upload to a specific path."""
+type CommitInfo {
+  path: String!
+  mode: WriteMode!
+  autorename: Boolean
+  clientModified: DateTime
+  mute: Boolean
+  propertyGroups: [PropertyGroup!]
+  strictConflict: Boolean
+}
+
+"""Cursor used to track position within a chunked upload session."""
+type UploadSessionCursor {
+  sessionId: String!
+  offset: Int!
+}
+
+"""Arguments to finish a chunked upload session."""
+type UploadSessionFinishArg {
+  cursor: UploadSessionCursor!
+  commit: CommitInfo!
+}
+
+# ──────────────────────────────────────────────
+# File Properties
+# ──────────────────────────────────────────────
+
+"""A named collection of custom key-value metadata fields on a file or folder."""
+type PropertyGroup {
+  templateId: String!
+  fields: [PropertyField!]!
+}
+
+"""A single key-value pair within a property group."""
+type PropertyField {
+  name: String!
+  value: String!
+}
+
+"""Schema template defining the structure of a property group."""
+type PropertyGroupTemplate {
+  templateId: ID!
+  name: String!
+  description: String
+  fields: [PropertyFieldTemplate!]!
+}
+
+"""Schema definition for a single field within a property group template."""
+type PropertyFieldTemplate {
+  name: String!
+  description: String
+  type: String!
+}
+
+# ──────────────────────────────────────────────
+# Tags
+# ──────────────────────────────────────────────
+
+"""A user-defined string tag applied to a file or folder."""
+type Tag {
+  tagText: String!
+}
+
+# ──────────────────────────────────────────────
+# Search
+# ──────────────────────────────────────────────
+
+"""Paginated result set returned by a file search."""
+type SearchResult {
+  matches: [SearchResultMatch!]!
+  hasMore: Boolean!
+  cursor: String
+}
+
+"""A single result entry from a search query."""
+type SearchResultMatch {
+  matchType: SearchMatchType!
+  metadata: SearchResultMetadata!
+  highlightSpans: [JSON]
+}
+
+"""Metadata associated with a search result (file, folder, or deleted entry)."""
+union SearchResultMetadata = FileMetadata | FolderMetadata | DeletedMetadata
+
+"""Options to refine a search request."""
+type SearchOptions {
+  path: String
+  maxResults: Int
+  mode: SearchMode
+  fileStatus: String
+  filenameOnly: Boolean
+  fileExtensions: [String!]
+  fileCategories: [String!]
+  accountId: String
+}
+
+# ──────────────────────────────────────────────
+# Sharing — Shared Folders
+# ──────────────────────────────────────────────
+
+"""A Dropbox folder shared with other users or groups."""
+type SharedFolder {
+  sharedFolderId: ID!
+  name: String!
+  pathLower: String
+  policy: SharedFolderPolicy!
+  previewUrl: String
+  accessInheritance: String
+  accessType: AccessLevel
+  isInsideTeamFolder: Boolean
+  isTeamFolder: Boolean
+  ownerDisplayNames: [String!]
+  ownerTeam: TeamInfo
+  parentSharedFolderId: String
+  permissions: [Permission!]
+  timeInvited: DateTime
+}
+
+"""Access and membership policies governing a shared folder."""
+type SharedFolderPolicy {
+  acl: AclUpdatePolicyWrapper
+  memberPolicy: MemberPolicy
+  resolvedMemberPolicy: MemberPolicy
+  sharedLinkPolicy: SharedLinkPolicy
+  viewerInfoPolicy: ViewerInfoPolicy
+}
+
+type AclUpdatePolicyWrapper {
+  aclUpdatePolicy: AclUpdatePolicy
+}
+
+"""Team information for ownership records."""
+type TeamInfo {
+  id: ID!
+  name: String!
+}
+
+# ──────────────────────────────────────────────
+# Sharing — Shared Files
+# ──────────────────────────────────────────────
+
+"""A single file exposed via Dropbox sharing."""
+type SharedFile {
+  id: ID!
+  name: String!
+  policy: SharedFilePolicy!
+  previewUrl: String
+  accessType: AccessLevel
+  expectedLinkMetadata: FileLinkMetadata
+  linkMetadata: FileLinkMetadata
+  ownerDisplayNames: [String!]
+  ownerTeam: TeamInfo
+  parentSharedFolderId: String
+  pathDisplay: String
+  pathLower: String
+  permissions: [Permission!]
+  timeInvited: DateTime
+}
+
+"""Policy controlling access and comments on a shared file."""
+type SharedFilePolicy {
+  aclUpdatePolicy: AclUpdatePolicy
+  commentPolicy: String
+}
+
+# ──────────────────────────────────────────────
+# Shared Links
+# ──────────────────────────────────────────────
+
+"""Base metadata for any Dropbox shared link."""
+interface LinkMetadata {
+  url: String!
+  name: String!
+  linkPermissions: LinkPermissions!
+  clientModified: DateTime
+  serverModified: DateTime
+  rev: String
+  size: Int
+  id: ID
+  expires: DateTime
+  pathLower: String
+  teamMemberInfo: JSON
+  contentOwnerTeamInfo: TeamInfo
+}
+
+"""Shared link pointing to a single file."""
+type FileLinkMetadata implements LinkMetadata {
+  url: String!
+  name: String!
+  linkPermissions: LinkPermissions!
+  clientModified: DateTime
+  serverModified: DateTime
+  rev: String
+  size: Int
+  id: ID
+  expires: DateTime
+  pathLower: String
+  teamMemberInfo: JSON
+  contentOwnerTeamInfo: TeamInfo
+}
+
+"""Shared link pointing to a folder."""
+type FolderLinkMetadata implements LinkMetadata {
+  url: String!
+  name: String!
+  linkPermissions: LinkPermissions!
+  clientModified: DateTime
+  serverModified: DateTime
+  rev: String
+  size: Int
+  id: ID
+  expires: DateTime
+  pathLower: String
+  teamMemberInfo: JSON
+  contentOwnerTeamInfo: TeamInfo
+}
+
+"""Settings applied when creating or updating a shared link."""
+type SharedLinkSettings {
+  requestedVisibility: Visibility
+  linkPassword: String
+  expires: DateTime
+  audienceOptions: JSON
+  allowDownload: Boolean
+}
+
+"""Viewer permissions on a shared link."""
+type LinkPermissions {
+  canRevoke: Boolean!
+  resolvedVisibility: Visibility
+  requestedVisibility: Visibility
+  revokeFailureReason: String
+  effectiveAudience: String
+  linkAccessLevel: AccessLevel
+  visibilityPolicies: [JSON]
+  canSetExpiry: Boolean
+  canRemoveExpiry: Boolean
+  allowDownload: Boolean
+  canAllowDownload: Boolean
+  canDisallowDownload: Boolean
+  allowComments: Boolean
+  teamRestrictsComments: Boolean
+  canSetPassword: Boolean
+  canRemovePassword: Boolean
+  requirePassword: Boolean
+  canUseExtendedSharingControls: Boolean
+}
+
+# ──────────────────────────────────────────────
+# Permissions and Access
+# ──────────────────────────────────────────────
+
+"""An action-level permission record for a shared folder or file."""
+type Permission {
+  action: String!
+  allow: Boolean!
+  reason: String
+}
+
+"""Pairing of a member with their access level on a shared resource."""
+type MemberAccess {
+  member: Member!
+  accessLevel: AccessLevel!
+}
+
+# ──────────────────────────────────────────────
+# Paper
+# ──────────────────────────────────────────────
+
+"""A Dropbox Paper collaborative document."""
+type PaperDoc {
+  docId: ID!
+  owner: String
+  title: String
+  createdDate: DateTime
+  lastUpdatedDate: DateTime
+  isArchived: Boolean
+  isDeleted: Boolean
+  sourceDocId: String
+  revision: Int
+  lastEditor: String
+  permissionLevel: PaperDocPermissionLevel
+  folders: [PaperFolder!]
+}
+
+"""A folder organising Dropbox Paper documents."""
+type PaperFolder {
+  id: ID!
+  name: String!
+}
+
+# ──────────────────────────────────────────────
+# Users
+# ──────────────────────────────────────────────
+
+"""A Dropbox user account."""
+interface User {
+  accountId: ID!
+  name: Name!
+  email: String!
+  emailVerified: Boolean
+  disabled: Boolean
+  isTeammate: Boolean
+  profilePhotoUrl: String
+  abbreviatedName: String
+}
+
+"""Full account details returned for the currently-authenticated user."""
+type FullAccount implements User {
+  accountId: ID!
+  name: Name!
+  email: String!
+  emailVerified: Boolean
+  disabled: Boolean
+  isTeammate: Boolean
+  profilePhotoUrl: String
+  abbreviatedName: String
+  country: String
+  locale: String
+  referralLink: String
+  isPaired: Boolean
+  accountType: JSON
+  rootInfo: JSON
+  team: TeamInfo
+  teamMemberId: String
+}
+
+"""Minimal account information for any Dropbox user."""
+type BasicAccount implements User {
+  accountId: ID!
+  name: Name!
+  email: String!
+  emailVerified: Boolean
+  disabled: Boolean
+  isTeammate: Boolean
+  profilePhotoUrl: String
+  abbreviatedName: String
+}
+
+"""Structured name for a Dropbox user."""
+type Name {
+  givenName: String
+  surname: String
+  familiarName: String
+  displayName: String!
+  abbreviatedName: String
+}
+
+"""Storage usage figures for a user account."""
+type SpaceUsage {
+  used: Int!
+  allocation: SpaceAllocation!
+}
+
+"""Storage allocation for a user (individual or within a team)."""
+union SpaceAllocation = IndividualSpaceAllocation | TeamSpaceAllocation
+
+type IndividualSpaceAllocation {
+  allocated: Int!
+}
+
+type TeamSpaceAllocation {
+  used: Int!
+  allocated: Int!
+  userWithinTeamSpaceAllocated: Int
+  userWithinTeamSpaceUsedCached: Int
+  userWithinTeamSpaceLimitType: String
+}
+
+# ──────────────────────────────────────────────
+# Team
+# ──────────────────────────────────────────────
+
+"""Complete profile of a team member."""
+type TeamMemberProfile {
+  teamMemberId: ID!
+  externalId: String
+  accountId: String!
+  email: String!
+  emailVerified: Boolean
+  name: Name!
+  groups: [String!]
+  memberFolderId: String
+  profilePhotoUrl: String
+  status: TeamMemberStatus!
+  joinedOn: DateTime
+  suspendedOn: DateTime
+}
+
+"""A team member record including role and join metadata."""
+type TeamMember {
+  profile: TeamMemberProfile!
+  role: AdminTier!
+}
+
+"""A union of team members and external collaborators."""
+union Member = TeamMember | BasicAccount
+
+"""Metadata for a team-owned folder."""
+type TeamFolderMetadata {
+  teamFolderId: ID!
+  name: String!
+  status: String!
+  isTeamSharedDropbox: Boolean!
+  syncSetting: SyncSetting!
+  contentSyncSettings: [JSON]
+}
+
+"""Summary information about a Dropbox group."""
+type GroupInfo {
+  groupName: String!
+  groupId: ID!
+  groupManagementType: String!
+  groupType: String!
+  isMember: Boolean
+  isOwner: Boolean
+  sameTeam: Boolean
+  memberCount: Int
+}
+
+"""Record of a user's membership in a group."""
+type GroupMembership {
+  group: GroupInfo!
+  accessType: GroupAccessType!
+}
+
+"""The root namespace representing a Dropbox team's storage space."""
+type TeamSpace {
+  namespaceId: ID!
+  name: String!
+}
+
+"""A logical namespace within Dropbox (team folder, app folder, or shared folder)."""
+type Namespace {
+  namespaceId: ID!
+  name: String!
+  namespaceType: String!
+  teamMemberId: String
+}
+
+"""Usage and activity summary report for a team."""
+type TeamReport {
+  startDate: DateTime!
+  endDate: DateTime!
+  totalUsage: Int
+  sharedUsage: Int
+  unmountedUsage: Int
+  addedMembersCount: Int
+  removedMembersCount: Int
+}
+
+# ──────────────────────────────────────────────
+# Admin
+# ──────────────────────────────────────────────
+
+"""A team member with elevated administrative privileges."""
+type Admin {
+  teamMemberId: ID!
+  role: AdminTier!
+  profile: TeamMemberProfile!
+}
+
+# ──────────────────────────────────────────────
+# Authentication
+# ──────────────────────────────────────────────
+
+"""An active Dropbox API access token."""
+type AuthToken {
+  token: String!
+  tokenType: String!
+  appKey: String
+  createdAt: DateTime
+}
+
+"""OAuth 2.0 token response for Dropbox authorization."""
+type OAuthToken {
+  accessToken: String!
+  tokenType: String!
+  expiresIn: Int
+  scope: String
+  uid: String
+  accountId: String
+  teamId: String
+  refreshToken: String
+}
+
+"""Error returned when a required OAuth 2.0 scope is missing."""
+type TokenScopeError {
+  requiredScope: String!
+}
+
+# ──────────────────────────────────────────────
+# Legal Holds
+# ──────────────────────────────────────────────
+
+"""A legal hold applied to one or more team members' content."""
+type LegalHold {
+  id: ID!
+  name: String!
+  description: String
+  activationTime: DateTime
+  members: [TeamMember!]!
+  status: String!
+}
+
+"""Policy definition governing a legal hold."""
+type LegalHoldPolicy {
+  id: ID!
+  name: String!
+  description: String
+  activationTime: DateTime
+  members: [TeamMemberProfile!]
+  startDate: DateTime
+  endDate: DateTime
+}
+
+# ──────────────────────────────────────────────
+# Signatures (Dropbox Sign)
+# ──────────────────────────────────────────────
+
+"""A completed eSignature on a document."""
+type Signature {
+  signatureId: ID!
+  signerEmailAddress: String!
+  signerName: String
+  order: Int
+  statusCode: String!
+  signedAt: DateTime
+  lastViewedAt: DateTime
+  lastRemindedAt: DateTime
+  hasPin: Boolean
+  reassignedBy: String
+  originalSigner: String
+  error: String
+}
+
+"""A request for one or more parties to sign a document."""
+type SignatureRequest {
+  signatureRequestId: ID!
+  title: String
+  subject: String
+  message: String
+  isComplete: Boolean!
+  isDeclined: Boolean
+  hasError: Boolean
+  filesUrl: String
+  signingUrl: String
+  detailsUrl: String
+  ccEmailAddresses: [String!]
+  signingRedirectUrl: String
+  templateIds: [String!]
+  signatures: [Signature!]!
+  customFields: [JSON]
+  attachments: [JSON]
+  metadata: JSON
+  documents: [Document!]
+  createdAt: DateTime
+}
+
+"""A visual watermark overlay on a document page."""
+type Watermark {
+  type: String!
+  message: String
+  opacity: Float
+  offset: JSON
+}
+
+"""Cryptographic signature metadata for a digitally signed document."""
+type DigitalSignature {
+  algorithm: String!
+  hashAlgorithm: String
+  signedAt: DateTime
+  signerCertificate: String
+  valid: Boolean
+}
+
+"""A document submitted for signature or included in a signature request."""
+type Document {
+  name: String!
+  index: Int
+  isFormField: Boolean
+  watermark: Watermark
+  digitalSignature: DigitalSignature
+}
+
+# ──────────────────────────────────────────────
+# Root Query
+# ──────────────────────────────────────────────
+
+type Query {
+  """Retrieve metadata for a file or folder at the given path."""
+  file(path: String!): File
+
+  """List the contents of a folder."""
+  listFolder(path: String!, recursive: Boolean, includeDeleted: Boolean, limit: Int): [File!]!
+
+  """Continue listing a folder using a cursor."""
+  listFolderContinue(cursor: String!): [File!]!
+
+  """Retrieve the current user's full account information."""
+  currentAccount: FullAccount
+
+  """Get account details for a specific Dropbox user."""
+  account(accountId: ID!): BasicAccount
+
+  """Get storage space usage for the current user."""
+  spaceUsage: SpaceUsage
+
+  """Search for files and folders matching a query."""
+  search(query: String!, options: SearchOptionsInput): SearchResult
+
+  """List shared folders accessible to the current user."""
+  sharedFolders(actions: [String], limit: Int, cursor: String): [SharedFolder!]!
+
+  """Get metadata for a specific shared folder."""
+  sharedFolder(sharedFolderId: ID!): SharedFolder
+
+  """List files shared with the current user."""
+  sharedFiles(actions: [String], limit: Int, cursor: String): [SharedFile!]!
+
+  """Get metadata for a specific shared file."""
+  sharedFile(fileId: ID!): SharedFile
+
+  """List all team members."""
+  teamMembers(limit: Int, cursor: String): [TeamMember!]!
+
+  """Get a specific team member by ID."""
+  teamMember(teamMemberId: ID!): TeamMember
+
+  """List all team folders."""
+  teamFolders(limit: Int, cursor: String): [TeamFolderMetadata!]!
+
+  """List all groups in the team."""
+  groups(limit: Int, cursor: String): [GroupInfo!]!
+
+  """Get members of a specific group."""
+  groupMembers(groupId: ID!, limit: Int, cursor: String): [GroupMembership!]!
+
+  """List namespaces visible to the team."""
+  namespaces(limit: Int, cursor: String): [Namespace!]!
+
+  """List Paper docs for the current user."""
+  paperDocs(filterBy: String, sortBy: String, sortOrder: String, limit: Int, cursor: String): [PaperDoc!]!
+
+  """Get a specific Paper doc."""
+  paperDoc(docId: ID!): PaperDoc
+
+  """List property group templates available in the team."""
+  propertyTemplates: [PropertyGroupTemplate!]!
+
+  """Get a specific property group template."""
+  propertyTemplate(templateId: ID!): PropertyGroupTemplate
+
+  """List legal hold policies for the team."""
+  legalHoldPolicies: [LegalHoldPolicy!]!
+
+  """Get a specific legal hold policy."""
+  legalHoldPolicy(id: ID!): LegalHoldPolicy
+
+  """List signature requests for the authenticated user."""
+  signatureRequests(accountId: String, page: Int, pageSize: Int): [SignatureRequest!]!
+
+  """Get a specific signature request."""
+  signatureRequest(signatureRequestId: ID!): SignatureRequest
+}
+
+# ──────────────────────────────────────────────
+# Root Mutation
+# ──────────────────────────────────────────────
+
+type Mutation {
+  """Upload a file to Dropbox."""
+  uploadFile(path: String!, mode: WriteMode, autorename: Boolean, mute: Boolean): FileMetadata
+
+  """Copy a file or folder to a new location."""
+  copy(fromPath: String!, toPath: String!, autorename: Boolean): File
+
+  """Move a file or folder to a new location."""
+  move(fromPath: String!, toPath: String!, autorename: Boolean): File
+
+  """Delete a file or folder."""
+  delete(path: String!): File
+
+  """Create a new folder."""
+  createFolder(path: String!, autorename: Boolean): FolderMetadata
+
+  """Restore a file to a previous revision."""
+  restore(path: String!, rev: String!): FileMetadata
+
+  """Add a tag to a file or folder."""
+  addTag(path: String!, tagText: String!): Tag
+
+  """Remove a tag from a file or folder."""
+  removeTag(path: String!, tagText: String!): Boolean
+
+  """Share a folder with other users."""
+  shareFolder(path: String!, memberPolicy: MemberPolicy, aclUpdatePolicy: AclUpdatePolicy): SharedFolder
+
+  """Add a member to a shared folder."""
+  addFolderMember(sharedFolderId: ID!, members: [MemberAccessInput!]!): Boolean
+
+  """Remove a member from a shared folder."""
+  removeFolderMember(sharedFolderId: ID!, member: MemberInput!, leaveACopy: Boolean): String
+
+  """Create a shared link for a file or folder."""
+  createSharedLink(path: String!, settings: SharedLinkSettingsInput): FileLinkMetadata
+
+  """Revoke a shared link."""
+  revokeSharedLink(url: String!): Boolean
+
+  """Create a new Paper doc."""
+  createPaperDoc(importFormat: String!, parentFolderId: String): PaperDoc
+
+  """Archive a Paper doc."""
+  archivePaperDoc(docId: ID!): Boolean
+
+  """Permanently delete a Paper doc."""
+  deletePaperDoc(docId: ID!): Boolean
+
+  """Invite a member to join the team."""
+  inviteTeamMember(email: String!, role: AdminTier): TeamMember
+
+  """Suspend a team member."""
+  suspendTeamMember(teamMemberId: ID!, wipeData: Boolean): Boolean
+
+  """Unsuspend a team member."""
+  unsuspendTeamMember(teamMemberId: ID!): Boolean
+
+  """Remove a team member."""
+  removeTeamMember(teamMemberId: ID!, keepAccount: Boolean, retainTeamShares: Boolean): Boolean
+
+  """Create a new team folder."""
+  createTeamFolder(name: String!): TeamFolderMetadata
+
+  """Archive a team folder."""
+  archiveTeamFolder(teamFolderId: ID!, forceAsyncOff: Boolean): Boolean
+
+  """Create a group in the team."""
+  createGroup(groupName: String!, groupExternalId: String): GroupInfo
+
+  """Add members to a group."""
+  addGroupMembers(groupId: ID!, members: [MemberAccessInput!]!): GroupInfo
+
+  """Remove members from a group."""
+  removeGroupMembers(groupId: ID!, members: [MemberInput!]!): GroupInfo
+
+  """Delete a group."""
+  deleteGroup(groupId: ID!): Boolean
+
+  """Send a signature request."""
+  sendSignatureRequest(
+    title: String
+    subject: String
+    message: String
+    signers: [SignerInput!]!
+    fileUrls: [String!]
+    ccEmailAddresses: [String!]
+  ): SignatureRequest
+
+  """Cancel an in-progress signature request."""
+  cancelSignatureRequest(signatureRequestId: ID!): Boolean
+}
+
+# ──────────────────────────────────────────────
+# Input Types
+# ──────────────────────────────────────────────
+
+input SearchOptionsInput {
+  path: String
+  maxResults: Int
+  mode: SearchMode
+  filenameOnly: Boolean
+  fileExtensions: [String!]
+  fileCategories: [String!]
+}
+
+input SharedLinkSettingsInput {
+  requestedVisibility: Visibility
+  linkPassword: String
+  expires: DateTime
+  allowDownload: Boolean
+}
+
+input MemberAccessInput {
+  member: MemberInput!
+  accessLevel: AccessLevel!
+}
+
+input MemberInput {
+  email: String
+  dropboxId: String
+}
+
+input SignerInput {
+  name: String!
+  emailAddress: String!
+  order: Int
+  pin: String
+}
