@@ -14,45 +14,45 @@ apis:
     type: Documentation
   - url: openapi/dropbox-openapi-original.yml
     type: OpenAPI
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-account.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-auth.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-check.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-contacts.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-file-properties.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-file-requests.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-files.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-sharing.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-devices.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-groups.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-legal-holds.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-linked-apps.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-member-space-limits.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-members.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-namespaces.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-reports.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-team-folder.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-team-log.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/dropbox-users.yaml
   - url: graphql/dropbox-graphql.md
     type: GraphQL
@@ -73,28 +73,28 @@ apis:
   - url: https://developers.hellosign.com/docs/sdks/overview/
     type: SDKs
   - url: https://developers.hellosign.com/api/quickstart/
-    type: Quickstart
+    type: GettingStarted
   - url: openapi/dropbox-sign-openapi-original.yml
     type: OpenAPI
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-account.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-api-app.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-bulk-send-job.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-embedded.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-oauth.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-report.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-signature-request.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-team.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-template.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sign-unclaimed-draft.yaml
   description: The Dropbox Sign API offers a reliable, flexible set of eSignature
     tools that can be used to power digital agreements and turn slow, outdated business
@@ -115,13 +115,13 @@ common:
 - url: https://www.dropbox.com/plans
   type: Plans
 - url: https://www.dropbox.com/register
-  type: SignUp
+  type: Signup
 - url: https://www.dropbox.com/developers/reference
   type: Guides
 - url: https://github.com/dropbox/dropbox-api-spec/commits/main
   type: ChangeLog
 - url: https://github.com/dropbox
-  type: GitHub Org
+  type: GitHubOrg
 - url: https://www.dropbox.com/developers/documentation/communitysdks
   type: Community SDKs
 - url: https://blog.dropbox.com/
