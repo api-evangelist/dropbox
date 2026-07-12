@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/dropbox-openapi-original.yml, openapi/dropbox-sign-openapi-original.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/dropbox-openapi-original.yml
+  - openapi/dropbox-sign-openapi-original.yml
+- name: api_key
+  type: http
+  scheme: basic
+  description: _t__OpenApi::AUTH::API_KEY
+  sources:
+  - openapi/dropbox-sign-openapi-original.yml

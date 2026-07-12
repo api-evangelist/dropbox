@@ -106,6 +106,12 @@ tags:
 - Documents
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 common:
+- type: TrustCenter
+  url: security/dropbox-trust-center.yml
+- type: DomainSecurity
+  url: security/dropbox-domain-security.yml
+- type: Authentication
+  url: authentication/dropbox-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/dropbox
 - url: https://www.dropbox.com/developers
