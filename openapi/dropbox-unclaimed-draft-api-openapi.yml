@@ -1,0 +1,1342 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account Unclaimed Draft API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: Unclaimed Draft
+  description: _md__OpenApi::TAG::UNCLAIMED_DRAFT::DESCRIPTION
+paths:
+  /unclaimed_draft/create:
+    post:
+      tags:
+      - Unclaimed Draft
+      summary: Dropbox _t__UnclaimedDraftCreate::SUMMARY
+      description: _t__UnclaimedDraftCreate::DESCRIPTION
+      operationId: unclaimedDraftCreate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnclaimedDraftCreateRequest'
+            examples:
+              default_example:
+                $ref: '#/components/examples/UnclaimedDraftCreateRequestDefaultExample'
+              form_fields_per_document:
+                $ref: '#/components/examples/UnclaimedDraftCreateRequestFormFieldsPerDocumentExample'
+              form_field_groups:
+                $ref: '#/components/examples/UnclaimedDraftCreateRequestFormFieldGroupsExample'
+              form_field_rules:
+                $ref: '#/components/examples/UnclaimedDraftCreateRequestFormFieldRulesExample'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UnclaimedDraftCreateRequest'
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnclaimedDraftCreateResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/UnclaimedDraftCreateResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+      - api_key: []
+      - oauth2:
+        - signature_request_access
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/UnclaimedDraftCreate.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/UnclaimedDraftCreate.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/UnclaimedDraftCreate.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/UnclaimedDraftCreate.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/UnclaimedDraftCreate.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/UnclaimedDraftCreate.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/UnclaimedDraftCreate.py
+      - lang: cURL
+        label: cURL
+        source:
+          $ref: examples/UnclaimedDraftCreate.sh
+      x-meta:
+        seo:
+          title: _t__UnclaimedDraftCreate::SEO::TITLE
+          description: _t__UnclaimedDraftCreate::SEO::DESCRIPTION
+  /unclaimed_draft/create_embedded:
+    post:
+      tags:
+      - Unclaimed Draft
+      summary: Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY
+      description: _t__UnclaimedDraftCreateEmbedded::DESCRIPTION
+      operationId: unclaimedDraftCreateEmbedded
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnclaimedDraftCreateEmbeddedRequest'
+            examples:
+              default_example:
+                $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedRequestDefaultExample'
+              form_fields_per_document:
+                $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedRequestFormFieldsPerDocumentExample'
+              form_field_groups:
+                $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedRequestFormFieldGroupsExample'
+              form_field_rules:
+                $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedRequestFormFieldRulesExample'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UnclaimedDraftCreateEmbeddedRequest'
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnclaimedDraftCreateResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                404_example:
+                  $ref: '#/components/examples/Error404ResponseExample'
+                409_example:
+                  $ref: '#/components/examples/Error409ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+      - api_key: []
+      - oauth2:
+        - request_signature
+        - signature_request_access
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbedded.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbedded.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbedded.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbedded.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbedded.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbedded.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbedded.py
+      - lang: cURL
+        label: cURL
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbedded.sh
+      x-meta:
+        seo:
+          title: _t__UnclaimedDraftCreateEmbedded::SEO::TITLE
+          description: _t__UnclaimedDraftCreateEmbedded::SEO::DESCRIPTION
+  /unclaimed_draft/create_embedded_with_template:
+    post:
+      tags:
+      - Unclaimed Draft
+      summary: Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY
+      description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::DESCRIPTION
+      operationId: unclaimedDraftCreateEmbeddedWithTemplate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnclaimedDraftCreateEmbeddedWithTemplateRequest'
+            examples:
+              default_example:
+                $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedWithTemplateRequestDefaultExample'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UnclaimedDraftCreateEmbeddedWithTemplateRequest'
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnclaimedDraftCreateResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedWithTemplateResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                404_example:
+                  $ref: '#/components/examples/Error404ResponseExample'
+                409_example:
+                  $ref: '#/components/examples/Error409ResponseExample'
+                429_example:
+                  $ref: '#/components/examples/Error429ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+      - api_key: []
+      - oauth2:
+        - signature_request_access
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.py
+      - lang: cURL
+        label: cURL
+        source:
+          $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.sh
+      x-meta:
+        seo:
+          title: _t__UnclaimedDraftCreateEmbeddedWithTemplate::SEO::TITLE
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::SEO::DESCRIPTION
+  /unclaimed_draft/edit_and_resend/{signature_request_id}:
+    post:
+      tags:
+      - Unclaimed Draft
+      summary: Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY
+      description: _t__UnclaimedDraftEditAndResend::DESCRIPTION
+      operationId: unclaimedDraftEditAndResend
+      parameters:
+      - name: signature_request_id
+        in: path
+        description: _t__UnclaimedDraftEditAndResend::SIGNATURE_REQUEST_ID
+        required: true
+        schema:
+          type: string
+        example: fa5c8a0b0f492d768749333ad6fcc214c111e967
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnclaimedDraftEditAndResendRequest'
+            examples:
+              default_example:
+                $ref: '#/components/examples/UnclaimedDraftEditAndResendRequestDefaultExample'
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnclaimedDraftCreateResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/UnclaimedDraftEditAndResendExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                404_example:
+                  $ref: '#/components/examples/Error404ResponseExample'
+                409_example:
+                  $ref: '#/components/examples/Error409ResponseExample'
+                410_example:
+                  $ref: '#/components/examples/Error410ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+      - api_key: []
+      - oauth2:
+        - request_signature
+        - signature_request_access
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/UnclaimedDraftEditAndResend.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/UnclaimedDraftEditAndResend.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/UnclaimedDraftEditAndResend.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/UnclaimedDraftEditAndResend.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/UnclaimedDraftEditAndResend.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/UnclaimedDraftEditAndResend.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/UnclaimedDraftEditAndResend.py
+      - lang: cURL
+        label: cURL
+        source:
+          $ref: examples/UnclaimedDraftEditAndResend.sh
+      x-meta:
+        seo:
+          title: _t__UnclaimedDraftEditAndResend::SEO::TITLE
+          description: _t__UnclaimedDraftEditAndResend::SEO::DESCRIPTION
+components:
+  schemas:
+    SubFormFieldGroup:
+      required:
+      - group_id
+      - group_label
+      - requirement
+      properties:
+        group_id:
+          description: _t__Sub::FormFieldGroup::GROUP_ID_LABEL
+          type: string
+        group_label:
+          description: _t__Sub::FormFieldGroup::GROUP_LABEL
+          type: string
+        requirement:
+          description: _t__Sub::FormFieldGroup::REQUIREMENT
+          type: string
+      type: object
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    SubFormFieldRuleTrigger:
+      required:
+      - id
+      - operator
+      properties:
+        id:
+          description: _t__Sub::FormFieldRuleTrigger::ID
+          type: string
+        operator:
+          description: _t__Sub::FormFieldRuleTrigger::OPERATOR
+          type: string
+          enum:
+          - any
+          - is
+          - match
+          - none
+          - not
+        value:
+          description: _t__Sub::FormFieldRuleTrigger::VALUE_SINGLE
+          type: string
+        values:
+          description: _t__Sub::FormFieldRuleTrigger::VALUE_MULTI
+          type: array
+          items:
+            type: string
+      type: object
+    SubFormFieldRuleAction:
+      required:
+      - hidden
+      - type
+      properties:
+        field_id:
+          description: _t__Sub::FormFieldRuleAction::FIELD_ID
+          type: string
+        group_id:
+          description: _t__Sub::FormFieldRuleAction::GROUP_ID
+          type: string
+        hidden:
+          description: _t__Sub::FormFieldRuleAction::HIDDEN
+          type: boolean
+        type:
+          type: string
+          enum:
+          - change-field-visibility
+          - change-group-visibility
+      type: object
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
+      required:
+      - warning_msg
+      - warning_name
+      properties:
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
+      type: object
+    SubEditorOptions:
+      description: _t__Sub::EditorOptions::DESCRIPTION
+      properties:
+        allow_edit_signers:
+          description: _t__Sub::EditorOptions::ALLOW_EDIT_SIGNERS
+          type: boolean
+          default: false
+        allow_edit_documents:
+          description: _t__Sub::EditorOptions::ALLOW_EDIT_DOCUMENTS
+          type: boolean
+          default: false
+      type: object
+    SubFormFieldRule:
+      required:
+      - id
+      - trigger_operator
+      - triggers
+      - actions
+      properties:
+        id:
+          description: _t__Sub::FormFieldRule::ID
+          type: string
+        trigger_operator:
+          description: _t__Sub::FormFieldRule::TRIGGER_OPERATOR
+          type: string
+          default: AND
+        triggers:
+          description: _t__Sub::FormFieldRuleTrigger::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRuleTrigger'
+          maxItems: 1
+          minItems: 1
+        actions:
+          description: _t__Sub::FormFieldRuleAction::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRuleAction'
+          minItems: 1
+      type: object
+    SubFieldOptions:
+      description: _t__Sub::FieldOptions::DESCRIPTION
+      required:
+      - date_format
+      properties:
+        date_format:
+          description: _t__Sub::FieldOptions::DATE_FORMAT
+          type: string
+          enum:
+          - MM / DD / YYYY
+          - MM - DD - YYYY
+          - DD / MM / YYYY
+          - DD - MM - YYYY
+          - YYYY / MM / DD
+          - YYYY - MM - DD
+          x-enum-varnames:
+          - MMDDYYYY
+          - MM_DD_YYYY
+          - DDMMYYYY
+          - DD_MM_YYYY
+          - YYYYMMDD
+          - YYYY_MM_DD
+      type: object
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
+      required:
+      - error_msg
+      - error_name
+      properties:
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
+          type: string
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
+          type: string
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
+          type: string
+      type: object
+    SubAttachment:
+      required:
+      - name
+      - signer_index
+      properties:
+        instructions:
+          description: _t__Sub::Attachment::INSTRUCTIONS
+          type: string
+        name:
+          description: _t__Sub::Attachment::NAME
+          type: string
+        required:
+          description: _t__Sub::Attachment::REQUIRED
+          type: boolean
+          default: false
+        signer_index:
+          description: _t__Sub::Attachment::SIGNER_INDEX
+          type: integer
+      type: object
+    SubUnclaimedDraftSigner:
+      required:
+      - name
+      - email_address
+      properties:
+        email_address:
+          description: _t__Sub::UnclaimedDraftSigner::EMAIL_ADDRESS
+          type: string
+          format: email
+        name:
+          description: _t__Sub::UnclaimedDraftSigner::NAME
+          type: string
+        order:
+          description: _t__Sub::UnclaimedDraftSigner::ORDER
+          type: integer
+          nullable: true
+      type: object
+    UnclaimedDraftResponse:
+      description: _t__UnclaimedDraftResponse::DESCRIPTION
+      properties:
+        signature_request_id:
+          description: _t__UnclaimedDraft::SIGNATURE_REQUEST_ID
+          type: string
+          nullable: true
+        claim_url:
+          description: _t__UnclaimedDraft::CLAIM_URL
+          type: string
+        signing_redirect_url:
+          description: _t__UnclaimedDraft::SIGNING_REDIRECT_URL
+          type: string
+          nullable: true
+        requesting_redirect_url:
+          description: _t__UnclaimedDraft::REQUESTING_REDIRECT_URL
+          type: string
+          nullable: true
+        expires_at:
+          description: _t__UnclaimedDraft::EXPIRES_AT
+          type: integer
+          nullable: true
+        test_mode:
+          description: _t__UnclaimedDraft::TEST_MODE
+          type: boolean
+      type: object
+      x-internal: true
+    SubCustomField:
+      description: _t__Sub::CustomField::DESCRIPTION
+      required:
+      - name
+      properties:
+        editor:
+          description: _t__Sub::CustomField::EDITOR
+          type: string
+        name:
+          description: _t__Sub::CustomField::NAME
+          type: string
+        required:
+          description: _t__Sub::CustomField::REQUIRED
+          type: boolean
+          default: false
+        value:
+          description: _t__Sub::CustomField::VALUE
+          type: string
+      type: object
+    SubUnclaimedDraftTemplateSigner:
+      required:
+      - role
+      - name
+      - email_address
+      properties:
+        role:
+          description: _t__Sub::UnclaimedDraftTemplateSigner::ROLE
+          type: string
+        name:
+          description: _t__Sub::UnclaimedDraftTemplateSigner::NAME
+          type: string
+        email_address:
+          description: _t__Sub::UnclaimedDraftTemplateSigner::EMAIL_ADDRESS
+          type: string
+          format: email
+      type: object
+    SubSigningOptions:
+      description: _t__Sub::SigningOptions::DESCRIPTION
+      required:
+      - default_type
+      properties:
+        default_type:
+          description: _t__Sub::SigningOptions::DEFAULT
+          type: string
+          enum:
+          - draw
+          - phone
+          - type
+          - upload
+        draw:
+          description: _t__Sub::SigningOptions::DRAW
+          type: boolean
+          default: false
+        phone:
+          description: _t__Sub::SigningOptions::PHONE
+          type: boolean
+          default: false
+        type:
+          description: _t__Sub::SigningOptions::TYPE
+          type: boolean
+          default: false
+        upload:
+          description: _t__Sub::SigningOptions::UPLOAD
+          type: boolean
+          default: false
+      type: object
+    SubCC:
+      required:
+      - role
+      - email_address
+      properties:
+        role:
+          description: _t__Sub::CC::ROLE
+          type: string
+        email_address:
+          description: _t__Sub::CC::EMAIL_ADDRESS
+          type: string
+          format: email
+      type: object
+    UnclaimedDraftCreateEmbeddedWithTemplateRequest:
+      required:
+      - client_id
+      - requester_email_address
+      - template_ids
+      properties:
+        allow_decline:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_DECLINE
+          type: boolean
+          default: false
+        allow_reassign:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_REASSIGN
+          type: boolean
+          default: false
+        ccs:
+          description: _t__Sub::CC::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCC'
+        client_id:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::TEMPLATE
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        editor_options:
+          $ref: '#/components/schemas/SubEditorOptions'
+        field_options:
+          $ref: '#/components/schemas/SubFieldOptions'
+        files:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::FILES
+          type: array
+          items:
+            type: string
+            format: binary
+        file_urls:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::FILE_URLS
+          type: array
+          items:
+            type: string
+        force_signer_roles:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SIGNER_ROLES
+          type: boolean
+          default: false
+        force_subject_message:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SUBJECT_MESSAGE
+          type: boolean
+          default: false
+        hold_request:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::HOLD_REQUEST
+          type: boolean
+          default: false
+        is_for_embedded_signing:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::IS_FOR_EMBEDDED_SIGNING
+          type: boolean
+          default: false
+        message:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        preview_only:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::PREVIEW_ONLY
+          type: boolean
+          default: false
+        requester_email_address:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTER_EMAIL_ADDRESS
+          type: string
+          format: email
+        requesting_redirect_url:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTING_REDIRECT_URL
+          type: string
+        show_preview:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PREVIEW
+          type: boolean
+          default: false
+        show_progress_stepper:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PROGRESS_STEPPER
+          type: boolean
+          default: true
+        signers:
+          description: _t__Sub::UnclaimedDraftTemplateSigner::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubUnclaimedDraftTemplateSigner'
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
+        signing_redirect_url:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL
+          type: string
+        skip_me_now:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::SKIP_ME_NOW
+          type: boolean
+          default: false
+        subject:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUBJECT
+          type: string
+          maxLength: 255
+        template_ids:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::TEMPLATE_IDS
+          type: array
+          items:
+            type: string
+        test_mode:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::TEST_MODE
+          type: boolean
+          default: false
+        title:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::TITLE
+          type: string
+          maxLength: 255
+        populate_auto_fill_fields:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS
+          type: boolean
+          default: false
+        allow_ccs:
+          description: _t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_CCS
+          type: boolean
+          default: false
+      type: object
+    UnclaimedDraftCreateResponse:
+      properties:
+        unclaimed_draft:
+          $ref: '#/components/schemas/UnclaimedDraftResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    SubFormFieldsPerDocumentBase:
+      description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
+      required:
+      - document_index
+      - api_id
+      - type
+      - required
+      - signer
+      - width
+      - height
+      - x
+      - y
+      properties:
+        document_index:
+          description: _t__Sub::FormFieldsPerDocument::DOCUMENT_INDEX
+          type: integer
+        api_id:
+          description: _t__Sub::FormFieldsPerDocument::API_ID
+          type: string
+        height:
+          description: _t__Sub::FormFieldsPerDocument::HEIGHT
+          type: integer
+        name:
+          description: _t__Sub::FormFieldsPerDocument::NAME
+          type: string
+        page:
+          description: _t__Sub::FormFieldsPerDocument::PAGE
+          type: integer
+          nullable: true
+        required:
+          description: _t__Sub::FormFieldsPerDocument::REQUIRED
+          type: boolean
+        signer:
+          description: _t__Sub::FormFieldsPerDocument::SIGNER
+          type: string
+          x-int-or-string: true
+        type:
+          type: string
+        width:
+          description: _t__Sub::FormFieldsPerDocument::WIDTH
+          type: integer
+        x:
+          description: _t__Sub::FormFieldsPerDocument::X
+          type: integer
+        y:
+          description: _t__Sub::FormFieldsPerDocument::Y
+          type: integer
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SubFormFieldsPerDocumentText'
+          dropdown: '#/components/schemas/SubFormFieldsPerDocumentDropdown'
+          hyperlink: '#/components/schemas/SubFormFieldsPerDocumentHyperlink'
+          checkbox: '#/components/schemas/SubFormFieldsPerDocumentCheckbox'
+          radio: '#/components/schemas/SubFormFieldsPerDocumentRadio'
+          signature: '#/components/schemas/SubFormFieldsPerDocumentSignature'
+          date_signed: '#/components/schemas/SubFormFieldsPerDocumentDateSigned'
+          initials: '#/components/schemas/SubFormFieldsPerDocumentInitials'
+          text-merge: '#/components/schemas/SubFormFieldsPerDocumentTextMerge'
+          checkbox-merge: '#/components/schemas/SubFormFieldsPerDocumentCheckboxMerge'
+      x-internal: true
+      x-base-class: true
+    UnclaimedDraftEditAndResendRequest:
+      required:
+      - client_id
+      properties:
+        client_id:
+          description: _t__UnclaimedDraftEditAndResend::CLIENT_ID
+          type: string
+        editor_options:
+          $ref: '#/components/schemas/SubEditorOptions'
+        is_for_embedded_signing:
+          description: _t__UnclaimedDraftEditAndResend::IS_FOR_EMBEDDED_SIGNING
+          type: boolean
+        requester_email_address:
+          description: _t__UnclaimedDraftEditAndResend::REQUESTER_EMAIL_ADDRESS
+          type: string
+          format: email
+        requesting_redirect_url:
+          description: _t__UnclaimedDraftEditAndResend::REQUESTING_REDIRECT_URL
+          type: string
+        show_progress_stepper:
+          description: _t__UnclaimedDraftEditAndResend::SHOW_PROGRESS_STEPPER
+          type: boolean
+          default: true
+        signing_redirect_url:
+          description: _t__UnclaimedDraftEditAndResend::SIGNING_REDIRECT_URL
+          type: string
+        test_mode:
+          description: _t__UnclaimedDraftEditAndResend::TEST_MODE
+          type: boolean
+          default: false
+      type: object
+    UnclaimedDraftCreateRequest:
+      description: ''
+      required:
+      - type
+      properties:
+        files:
+          description: _t__UnclaimedDraftCreate::FILES
+          type: array
+          items:
+            type: string
+            format: binary
+        file_urls:
+          description: _t__UnclaimedDraftCreate::FILE_URLS
+          type: array
+          items:
+            type: string
+        allow_decline:
+          description: _t__UnclaimedDraftCreate::ALLOW_DECLINE
+          type: boolean
+          default: false
+        attachments:
+          description: _t__SubAttachment::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubAttachment'
+        cc_email_addresses:
+          description: _t__UnclaimedDraftCreate::CC_EMAIL_ADDRESSES
+          type: array
+          items:
+            type: string
+            format: email
+        client_id:
+          description: _t__UnclaimedDraftCreate::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        field_options:
+          $ref: '#/components/schemas/SubFieldOptions'
+        form_field_groups:
+          description: _t__Sub::FormFieldGroup::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldGroup'
+        form_field_rules:
+          description: _t__Sub::FormFieldRule::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRule'
+        form_fields_per_document:
+          description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        hide_text_tags:
+          description: _t__UnclaimedDraftCreate::HIDE_TEXT_TAGS
+          type: boolean
+          default: false
+        message:
+          description: _t__UnclaimedDraftCreate::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        show_progress_stepper:
+          description: _t__UnclaimedDraftCreate::SHOW_PROGRESS_STEPPER
+          type: boolean
+          default: true
+        signers:
+          description: _t__Sub::UnclaimedDraftSigner::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubUnclaimedDraftSigner'
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
+        signing_redirect_url:
+          description: _t__UnclaimedDraftCreate::SIGNING_REDIRECT_URL
+          type: string
+        subject:
+          description: _t__UnclaimedDraftCreate::SUBJECT
+          type: string
+          maxLength: 200
+        test_mode:
+          description: _t__UnclaimedDraftCreate::TEST_MODE
+          type: boolean
+          default: false
+        type:
+          description: _t__UnclaimedDraftCreate::TYPE
+          type: string
+          enum:
+          - send_document
+          - request_signature
+        use_preexisting_fields:
+          description: _t__UnclaimedDraftCreate::USE_PREEXISTING_FIELDS
+          type: boolean
+          default: false
+        use_text_tags:
+          description: _t__UnclaimedDraftCreate::USE_TEXT_TAGS
+          type: boolean
+          default: false
+        expires_at:
+          description: _t__UnclaimedDraftCreate::EXPIRES_AT
+          type: integer
+          nullable: true
+      type: object
+    UnclaimedDraftCreateEmbeddedRequest:
+      description: ''
+      required:
+      - client_id
+      - requester_email_address
+      properties:
+        files:
+          description: _t__UnclaimedDraftCreateEmbedded::FILES
+          type: array
+          items:
+            type: string
+            format: binary
+        file_urls:
+          description: _t__UnclaimedDraftCreateEmbedded::FILE_URLS
+          type: array
+          items:
+            type: string
+        allow_ccs:
+          description: _t__UnclaimedDraftCreateEmbedded::ALLOW_CCS
+          type: boolean
+          default: true
+        allow_decline:
+          description: _t__UnclaimedDraftCreateEmbedded::ALLOW_DECLINE
+          type: boolean
+          default: false
+        allow_reassign:
+          description: _t__UnclaimedDraftCreateEmbedded::ALLOW_REASSIGN
+          type: boolean
+          default: false
+        attachments:
+          description: _t__SubAttachment::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubAttachment'
+        cc_email_addresses:
+          description: _t__UnclaimedDraftCreateEmbedded::CC_EMAIL_ADDRESSES
+          type: array
+          items:
+            type: string
+            format: email
+        client_id:
+          description: _t__UnclaimedDraftCreateEmbedded::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        editor_options:
+          $ref: '#/components/schemas/SubEditorOptions'
+        field_options:
+          $ref: '#/components/schemas/SubFieldOptions'
+        force_signer_page:
+          description: _t__UnclaimedDraftCreateEmbedded::FORCE_SIGNER_PAGE
+          type: boolean
+          default: false
+        force_subject_message:
+          description: _t__UnclaimedDraftCreateEmbedded::FORCE_SUBJECT_MESSAGE
+          type: boolean
+          default: false
+        form_field_groups:
+          description: _t__Sub::FormFieldGroup::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldGroup'
+        form_field_rules:
+          description: _t__Sub::FormFieldRule::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRule'
+        form_fields_per_document:
+          description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        hide_text_tags:
+          description: _t__UnclaimedDraftCreateEmbedded::HIDE_TEXT_TAGS
+          type: boolean
+          default: false
+        hold_request:
+          description: _t__UnclaimedDraftCreateEmbedded::HOLD_REQUEST
+          type: boolean
+          default: false
+        is_for_embedded_signing:
+          description: _t__UnclaimedDraftCreateEmbedded::IS_FOR_EMBEDDED_SIGNING
+          type: boolean
+          default: false
+        message:
+          description: _t__UnclaimedDraftCreateEmbedded::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        requester_email_address:
+          description: _t__UnclaimedDraftCreateEmbedded::REQUESTER_EMAIL_ADDRESS
+          type: string
+          format: email
+        requesting_redirect_url:
+          description: _t__UnclaimedDraftCreateEmbedded::REQUESTING_REDIRECT_URL
+          type: string
+        show_preview:
+          description: _t__UnclaimedDraftCreateEmbedded::SHOW_PREVIEW
+          type: boolean
+        show_progress_stepper:
+          description: _t__UnclaimedDraftCreateEmbedded::SHOW_PROGRESS_STEPPER
+          type: boolean
+          default: true
+        signers:
+          description: _t__Sub::UnclaimedDraftSigner::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubUnclaimedDraftSigner'
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
+        signing_redirect_url:
+          description: _t__UnclaimedDraftCreateEmbedded::SIGNING_REDIRECT_URL
+          type: string
+        skip_me_now:
+          description: _t__UnclaimedDraftCreateEmbedded::SKIP_ME_NOW
+          type: boolean
+          default: false
+        subject:
+          description: _t__UnclaimedDraftCreateEmbedded::SUBJECT
+          type: string
+          maxLength: 200
+        test_mode:
+          description: _t__UnclaimedDraftCreateEmbedded::TEST_MODE
+          type: boolean
+          default: false
+        type:
+          description: _t__UnclaimedDraftCreateEmbedded::TYPE
+          type: string
+          default: request_signature
+          enum:
+          - send_document
+          - request_signature
+        use_preexisting_fields:
+          description: _t__UnclaimedDraftCreateEmbedded::USE_PREEXISTING_FIELDS
+          type: boolean
+          default: false
+        use_text_tags:
+          description: _t__UnclaimedDraftCreateEmbedded::USE_TEXT_TAGS
+          type: boolean
+          default: false
+        populate_auto_fill_fields:
+          description: _t__UnclaimedDraftCreateEmbedded::POPULATE_AUTO_FILL_FIELDS
+          type: boolean
+          default: false
+        expires_at:
+          description: _t__UnclaimedDraftCreateEmbedded::EXPIRES_AT
+          type: integer
+          nullable: true
+      type: object
+  examples:
+    UnclaimedDraftEditAndResendExample:
+      summary: _t__UnclaimedDraftEditAndResendExample::SUMMARY
+      value:
+        $ref: examples/json/UnclaimedDraftEditAndResendExample.json
+    UnclaimedDraftCreateEmbeddedRequestFormFieldsPerDocumentExample:
+      summary: Form Fields Per Document Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateEmbeddedRequestFormFieldsPerDocumentExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    UnclaimedDraftCreateResponseExample:
+      summary: _t__UnclaimedDraftCreateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/UnclaimedDraftCreateResponseExample.json
+    UnclaimedDraftCreateEmbeddedRequestFormFieldRulesExample:
+      summary: Form Fields Per Document and Rules Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateEmbeddedRequestFormFieldRulesExample.json
+    UnclaimedDraftCreateEmbeddedWithTemplateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateEmbeddedWithTemplateRequestDefaultExample.json
+    UnclaimedDraftCreateEmbeddedResponseExample:
+      summary: _t__UnclaimedDraftCreateEmbeddedResponseExample::SUMMARY
+      value:
+        $ref: examples/json/UnclaimedDraftCreateEmbeddedResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    UnclaimedDraftCreateEmbeddedRequestFormFieldGroupsExample:
+      summary: Form Fields Per Document and Groups Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateEmbeddedRequestFormFieldGroupsExample.json
+    UnclaimedDraftCreateEmbeddedRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateEmbeddedRequestDefaultExample.json
+    Error429ResponseExample:
+      summary: _t__Error::429
+      value:
+        $ref: examples/json/Error429ResponseExample.json
+    Error409ResponseExample:
+      summary: _t__Error::409
+      value:
+        $ref: examples/json/Error409ResponseExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    UnclaimedDraftCreateRequestFormFieldRulesExample:
+      summary: Form Fields Per Document and Rules Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateRequestFormFieldRulesExample.json
+    UnclaimedDraftCreateRequestFormFieldsPerDocumentExample:
+      summary: Form Fields Per Document Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateRequestFormFieldsPerDocumentExample.json
+    UnclaimedDraftCreateEmbeddedWithTemplateResponseExample:
+      summary: _t__UnclaimedDraftCreateEmbeddedWithTemplateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/UnclaimedDraftCreateEmbeddedWithTemplateResponseExample.json
+    Error410ResponseExample:
+      summary: _t__Error::410
+      value:
+        $ref: examples/json/Error410ResponseExample.json
+    UnclaimedDraftCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateRequestDefaultExample.json
+    UnclaimedDraftEditAndResendRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/UnclaimedDraftEditAndResendRequestDefaultExample.json
+    Error404ResponseExample:
+      summary: _t__Error::404
+      value:
+        $ref: examples/json/Error404ResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    UnclaimedDraftCreateRequestFormFieldGroupsExample:
+      summary: Form Fields Per Document and Groups Example
+      value:
+        $ref: examples/json/UnclaimedDraftCreateRequestFormFieldGroupsExample.json
+  headers:
+    X-Ratelimit-Reset:
+      description: _t__Common::RateLimiting::RESET
+      schema:
+        type: integer
+        format: int64
+        example: 1430170900
+    X-RateLimit-Limit:
+      description: _t__Common::RateLimiting::LIMIT
+      schema:
+        type: integer
+        format: int32
+        example: 100
+    X-RateLimit-Remaining:
+      description: _t__Common::RateLimiting::REMAINING
+      schema:
+        type: integer
+        format: int32
+        example: 99
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

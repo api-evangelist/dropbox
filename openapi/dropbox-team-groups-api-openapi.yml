@@ -1,0 +1,769 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account Team > Groups API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: Team > Groups
+paths:
+  /2/team/groups/create:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/create
+      description: '[groups/create](https://www.dropbox.com/developers/documentation/http/teams#team-groups-create)
+
+
+        scope: `groups.write`
+
+
+        Creates a new, empty group, with a requested name.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"group_name\": \"Europe sales\", \n    \"add_creator_as_owner\": false, \n    \"group_external_id\": \"group-134\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                group_name: project launch
+                group_id: g:e2db7665347abcd600000000001a2b3c
+                group_management_type:
+                  .tag: user_managed
+                created: 1447255518000
+                member_count: 5
+                members:
+                - profile:
+                    team_member_id: dbmid:1234567
+                    email: mary@lamb.com
+                    email_verified: true
+                    status:
+                      .tag: active
+                    name:
+                      given_name: Franz
+                      surname: Ferdinand
+                      familiar_name: Franz
+                      display_name: Franz Ferdinand (Personal)
+                      abbreviated_name: FF
+                    membership_type:
+                      .tag: full
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    secondary_emails:
+                    - email: apple@orange.com
+                      is_verified: true
+                    - email: banana@honeydew.com
+                      is_verified: true
+                    - email: grape@strawberry.com
+                      is_verified: false
+                    joined_on: '2015-05-12T15:50:38Z'
+                    profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                  access_type:
+                    .tag: member
+  /2/team/groups/delete:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/delete
+      description: '[groups/delete](https://www.dropbox.com/developers/documentation/http/teams#team-groups-delete)
+
+
+        scope: `groups.write`
+
+
+        Deletes a group.
+
+        The group is deleted immediately. However the revoking of group-owned resources may take additional time. Use the `groups/job_status/get` to determine whether this process has completed.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \".tag\": \"group_id\", \n    \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/team/groups/get_info:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/get_info
+      description: '[groups/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-groups-get_info)
+
+
+        scope: `groups.read`
+
+
+        Retrieves information about one or more groups. Note that the optional field  `GroupFullInfo.members` is not returned for system-managed groups.
+
+        Permission : Team Information.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \".tag\": \"group_ids\", \n    \"group_ids\": [\n        \"g:e2db7665347abcd600000000001a2b3c\", \n        \"g:111111147abcd6000000000222222c\"\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+              - .tag: group_info
+                group_name: project launch
+                group_id: g:e2db7665347abcd600000000001a2b3c
+                group_management_type:
+                  .tag: user_managed
+                created: 1447255518000
+                member_count: 5
+                members:
+                - profile:
+                    team_member_id: dbmid:1234567
+                    email: mary@lamb.com
+                    email_verified: true
+                    status:
+                      .tag: active
+                    name:
+                      given_name: Franz
+                      surname: Ferdinand
+                      familiar_name: Franz
+                      display_name: Franz Ferdinand (Personal)
+                      abbreviated_name: FF
+                    membership_type:
+                      .tag: full
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    secondary_emails:
+                    - email: apple@orange.com
+                      is_verified: true
+                    - email: banana@honeydew.com
+                      is_verified: true
+                    - email: grape@strawberry.com
+                      is_verified: false
+                    joined_on: '2015-05-12T15:50:38Z'
+                    profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                  access_type:
+                    .tag: member
+  /2/team/groups/job_status/get:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/job_status/get
+      description: '[groups/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-groups-job_status-get)
+
+
+        scope: `groups.write`
+
+
+        Once an async_job_id is returned from `groups/delete`, `groups/members/add` , or `groups/members/remove` use this method to poll the status of granting/revoking group members'' access to group-owned resources.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/team/groups/list:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/list
+      description: '[groups/list](https://www.dropbox.com/developers/documentation/http/teams#team-groups-list)
+
+
+        scope: `groups.read`
+
+
+        Lists groups on a team.
+
+        Permission : Team Information.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"limit\": 100\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                groups:
+                - group_name: Test group
+                  group_id: g:e2db7665347abcd600000000001a2b3c
+                  group_management_type:
+                    .tag: user_managed
+                  member_count: 10
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: false
+  /2/team/groups/list/continue:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/list/continue
+      description: '[groups/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-groups-list-continue)
+
+
+        scope: `groups.read`
+
+
+        Once a cursor has been retrieved from `groups/list`, use this to paginate through all groups.
+
+        Permission : Team Information.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                groups:
+                - group_name: Test group
+                  group_id: g:e2db7665347abcd600000000001a2b3c
+                  group_management_type:
+                    .tag: user_managed
+                  member_count: 10
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: false
+  /2/team/groups/members/add:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/members/add
+      description: '[groups/members/add](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-add)
+
+
+        scope: `groups.write`
+
+
+        Adds members to a group.
+
+        The members are added immediately. However the granting of group-owned resources may take additional time. Use the `groups/job_status/get` to determine whether this process has completed.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    }, \n    \"members\": [\n        {\n            \"user\": {\n                \".tag\": \"team_member_id\", \n                \"team_member_id\": \"dbmid:efgh5678\"\n            }, \n            \"access_type\": \"member\"\n        }\n    ], \n    \"return_members\": true\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                group_info:
+                  group_name: project launch
+                  group_id: g:e2db7665347abcd600000000001a2b3c
+                  group_management_type:
+                    .tag: user_managed
+                  created: 1447255518000
+                  member_count: 5
+                  members:
+                  - profile:
+                      team_member_id: dbmid:1234567
+                      email: mary@lamb.com
+                      email_verified: true
+                      status:
+                        .tag: active
+                      name:
+                        given_name: Franz
+                        surname: Ferdinand
+                        familiar_name: Franz
+                        display_name: Franz Ferdinand (Personal)
+                        abbreviated_name: FF
+                      membership_type:
+                        .tag: full
+                      account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                      secondary_emails:
+                      - email: apple@orange.com
+                        is_verified: true
+                      - email: banana@honeydew.com
+                        is_verified: true
+                      - email: grape@strawberry.com
+                        is_verified: false
+                      joined_on: '2015-05-12T15:50:38Z'
+                      profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                    access_type:
+                      .tag: member
+                async_job_id: '99988877733388'
+  /2/team/groups/members/list:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/members/list
+      description: '[groups/members/list](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-list)
+
+
+        scope: `groups.read`
+
+
+        Lists members of a group.
+
+        Permission : Team Information.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    }, \n    \"limit\": 100\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                members: []
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: false
+  /2/team/groups/members/list/continue:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/members/list/continue
+      description: '[groups/members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-list-continue)
+
+
+        scope: `groups.read`
+
+
+        Once a cursor has been retrieved from `groups/members/list`, use this to paginate through all members of the group.
+
+        Permission : Team information.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                members: []
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: false
+  /2/team/groups/members/remove:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/members/remove
+      description: '[groups/members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-remove)
+
+
+        scope: `groups.write`
+
+
+        Removes members from a group.
+
+        The members are removed immediately. However the revoking of group-owned resources may take additional time. Use the `groups/job_status/get` to determine whether this process has completed.
+
+        This method permits removing the only owner of a group, even in cases where this is not possible via the web client.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    }, \n    \"users\": [\n        {\n            \".tag\": \"team_member_id\", \n            \"team_member_id\": \"dbmid:efgh5678\"\n        }\n    ], \n    \"return_members\": true\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                group_info:
+                  group_name: project launch
+                  group_id: g:e2db7665347abcd600000000001a2b3c
+                  group_management_type:
+                    .tag: user_managed
+                  created: 1447255518000
+                  member_count: 5
+                  members:
+                  - profile:
+                      team_member_id: dbmid:1234567
+                      email: mary@lamb.com
+                      email_verified: true
+                      status:
+                        .tag: active
+                      name:
+                        given_name: Franz
+                        surname: Ferdinand
+                        familiar_name: Franz
+                        display_name: Franz Ferdinand (Personal)
+                        abbreviated_name: FF
+                      membership_type:
+                        .tag: full
+                      account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                      secondary_emails:
+                      - email: apple@orange.com
+                        is_verified: true
+                      - email: banana@honeydew.com
+                        is_verified: true
+                      - email: grape@strawberry.com
+                        is_verified: false
+                      joined_on: '2015-05-12T15:50:38Z'
+                      profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                    access_type:
+                      .tag: member
+                async_job_id: '99988877733388'
+  /2/team/groups/members/set_access_type:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/members/set_access_type
+      description: '[groups/members/set_access_type](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-set_access_type)
+
+
+        scope: `groups.write`
+
+
+        Sets a member''s access type in a group.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    }, \n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"access_type\": \"member\", \n    \"return_members\": true\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+              - .tag: group_info
+                group_name: project launch
+                group_id: g:e2db7665347abcd600000000001a2b3c
+                group_management_type:
+                  .tag: user_managed
+                created: 1447255518000
+                member_count: 5
+                members:
+                - profile:
+                    team_member_id: dbmid:1234567
+                    email: mary@lamb.com
+                    email_verified: true
+                    status:
+                      .tag: active
+                    name:
+                      given_name: Franz
+                      surname: Ferdinand
+                      familiar_name: Franz
+                      display_name: Franz Ferdinand (Personal)
+                      abbreviated_name: FF
+                    membership_type:
+                      .tag: full
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    secondary_emails:
+                    - email: apple@orange.com
+                      is_verified: true
+                    - email: banana@honeydew.com
+                      is_verified: true
+                    - email: grape@strawberry.com
+                      is_verified: false
+                    joined_on: '2015-05-12T15:50:38Z'
+                    profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                  access_type:
+                    .tag: member
+  /2/team/groups/update:
+    post:
+      tags:
+      - Team > Groups
+      summary: Dropbox groups/update
+      description: '[groups/update](https://www.dropbox.com/developers/documentation/http/teams#team-groups-update)
+
+
+        scope: `groups.write`
+
+
+        Updates a group''s name and/or external ID.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"group\": {\n        \".tag\": \"group_id\", \n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\"\n    }, \n    \"return_members\": true, \n    \"new_group_name\": \"Europe west sales\", \n    \"new_group_external_id\": \"sales-234\", \n    \"new_group_management_type\": \"company_managed\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                group_name: project launch
+                group_id: g:e2db7665347abcd600000000001a2b3c
+                group_management_type:
+                  .tag: user_managed
+                created: 1447255518000
+                member_count: 5
+                members:
+                - profile:
+                    team_member_id: dbmid:1234567
+                    email: mary@lamb.com
+                    email_verified: true
+                    status:
+                      .tag: active
+                    name:
+                      given_name: Franz
+                      surname: Ferdinand
+                      familiar_name: Franz
+                      display_name: Franz Ferdinand (Personal)
+                      abbreviated_name: FF
+                    membership_type:
+                      .tag: full
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    secondary_emails:
+                    - email: apple@orange.com
+                      is_verified: true
+                    - email: banana@honeydew.com
+                      is_verified: true
+                    - email: grape@strawberry.com
+                      is_verified: false
+                    joined_on: '2015-05-12T15:50:38Z'
+                    profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                  access_type:
+                    .tag: member
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

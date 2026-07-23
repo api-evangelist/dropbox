@@ -1,0 +1,2813 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account Files API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: Files
+  description: 'This namespace contains endpoints and data types for basic file operations.
+
+    '
+paths:
+  /2/files/copy_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox copy
+      description: '[copy](https://www.dropbox.com/developers/documentation/http/documentation#files-copy)
+
+
+        scope: `files.content.write`
+
+
+        Copy a file or folder to a different location in the user''s Dropbox.
+
+        If the source path is a folder all its contents will be copied.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"from_path\": \"/Homework/math\", \n    \"to_path\": \"/Homework/algebra\", \n    \"allow_shared_folder\": false, \n    \"autorename\": false, \n    \"allow_ownership_transfer\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                metadata:
+                  .tag: file
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/copy_batch_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox copy_batch
+      description: '[copy_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch)
+
+
+        scope: `files.content.write`
+
+
+        Copy multiple files or folders to different locations at once in the user''s Dropbox.
+
+        This route will replace `copy_batch:1`. The main difference is this route will return status for each entry, while `copy_batch:1` raises failure if any entry fails.
+
+        This route will either finish synchronously, or return a job ID and do the async copy job in background. Please use `copy_batch/check:2` to check the job status.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"entries\": [\n        {\n            \"from_path\": \"/Homework/math\", \n            \"to_path\": \"/Homework/algebra\"\n        }\n    ], \n    \"autorename\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  success:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+  /2/files/copy_batch/check_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox copy_batch/check
+      description: '[copy_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch-check)
+
+
+        scope: `files.content.write`
+
+
+        Returns the status of an asynchronous job for `copy_batch:2`. It returns list of results for each entry.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  success:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+  /2/files/copy_reference/get:
+    post:
+      tags:
+      - Files
+      summary: Dropbox copy_reference/get
+      description: '[copy_reference/get](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-get)
+
+
+        scope: `files.content.write`
+
+
+        Get a copy reference to a file or folder. This reference string can be used to save that file or folder to another user''s Dropbox by passing it to `copy_reference/save`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/video.mp4\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                metadata:
+                  .tag: file
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+                copy_reference: z1X6ATl6aWtzOGq0c3g5Ng
+                expires: '2045-05-12T15:50:38Z'
+  /2/files/copy_reference/save:
+    post:
+      tags:
+      - Files
+      summary: Dropbox copy_reference/save
+      description: '[copy_reference/save](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-save)
+
+
+        scope: `files.content.write`
+
+
+        Save a copy reference returned by `copy_reference/get` to the user''s Dropbox.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"copy_reference\": \"z1X6ATl6aWtzOGq0c3g5Ng\", \n    \"path\": \"/video.mp4\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                metadata:
+                  .tag: file
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/create_folder_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox create_folder
+      description: '[create_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder)
+
+
+        scope: `files.content.write`
+
+
+        Create a folder at a given path.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/Homework/math\", \n    \"autorename\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                metadata:
+                  name: math
+                  id: id:a4ayc_80_OEAAAAAAAAAXz
+                  path_lower: /homework/math
+                  path_display: /Homework/math
+                  sharing_info:
+                    read_only: false
+                    parent_shared_folder_id: '84528192421'
+                    traverse_only: false
+                    no_access: false
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+  /2/files/create_folder_batch:
+    post:
+      tags:
+      - Files
+      summary: Dropbox create_folder_batch
+      description: '[create_folder_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch)
+
+
+        scope: `files.content.write`
+
+
+        Create multiple folders at once.
+
+        This route is asynchronous for large batches, which returns a job ID immediately and runs the create folder batch asynchronously. Otherwise, creates the folders and returns the result synchronously for smaller inputs. You can force asynchronous behaviour by using the `CreateFolderBatchArg.force_async` flag.  Use `create_folder_batch/check` to check the job status.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"paths\": [\n        \"/Homework/math\"\n    ], \n    \"autorename\": false, \n    \"force_async\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  metadata:
+                    name: math
+                    id: id:a4ayc_80_OEAAAAAAAAAXz
+                    path_lower: /homework/math
+                    path_display: /Homework/math
+                    sharing_info:
+                      read_only: false
+                      parent_shared_folder_id: '84528192421'
+                      traverse_only: false
+                      no_access: false
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+  /2/files/create_folder_batch/check:
+    post:
+      tags:
+      - Files
+      summary: Dropbox create_folder_batch/check
+      description: '[create_folder_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch-check)
+
+
+        scope: `files.content.write`
+
+
+        Returns the status of an asynchronous job for `create_folder_batch`. If success, it returns list of result for each entry.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  metadata:
+                    name: math
+                    id: id:a4ayc_80_OEAAAAAAAAAXz
+                    path_lower: /homework/math
+                    path_display: /Homework/math
+                    sharing_info:
+                      read_only: false
+                      parent_shared_folder_id: '84528192421'
+                      traverse_only: false
+                      no_access: false
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+  /2/files/delete_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox delete
+      description: '[delete](https://www.dropbox.com/developers/documentation/http/documentation#files-delete)
+
+
+        scope: `files.content.write`
+
+
+        Delete the file or folder at a given path.
+
+        If the path is a folder, all its contents will be deleted too.
+
+        A successful response indicates that the file or folder was deleted. The returned metadata will be the corresponding `FileMetadata` or `FolderMetadata` for the item at time of deletion, and not a `DeletedMetadata` object.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/Homework/math/Prime_Numbers.txt\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                metadata:
+                  .tag: file
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/delete_batch:
+    post:
+      tags:
+      - Files
+      summary: Dropbox delete_batch
+      description: '[delete_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch)
+
+
+        scope: `files.content.write`
+
+
+        Delete multiple files/folders at once.
+
+        This route is asynchronous, which returns a job ID immediately and runs the delete batch asynchronously. Use `delete_batch/check` to check the job status.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"entries\": [\n        {\n            \"path\": \"/Homework/math/Prime_Numbers.txt\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  metadata:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+  /2/files/delete_batch/check:
+    post:
+      tags:
+      - Files
+      summary: Dropbox delete_batch/check
+      description: '[delete_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch-check)
+
+
+        scope: `files.content.write`
+
+
+        Returns the status of an asynchronous job for `delete_batch`. If success, it returns list of result for each entry.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  metadata:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+  /2/files/download:
+    post:
+      tags:
+      - Files
+      summary: Dropbox download
+      description: '[download](https://www.dropbox.com/developers/documentation/http/documentation#files-download)
+
+
+        scope: `files.content.read`
+
+
+        Download a file from a user''s Dropbox.      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"path\": \"/Homework/math/Prime_Numbers.txt\"\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Prime_Numbers.txt
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                path_lower: /homework/math/prime_numbers.txt
+                path_display: /Homework/math/Prime_Numbers.txt
+                sharing_info:
+                  read_only: true
+                  parent_shared_folder_id: '84528192421'
+                  modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                is_downloadable: true
+                property_groups:
+                - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                  fields:
+                  - name: Security Policy
+                    value: Confidential
+                has_explicit_shared_members: false
+                content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                file_lock_info:
+                  is_lockholder: true
+                  lockholder_name: Imaginary User
+                  created: '2015-05-12T15:50:38Z'
+  /2/files/download_zip:
+    post:
+      tags:
+      - Files
+      summary: Dropbox download_zip
+      description: '[download_zip](https://www.dropbox.com/developers/documentation/http/documentation#files-download_zip)
+
+
+        scope: `files.content.read`
+
+
+        Download a folder from the user''s Dropbox, as a zip file. The folder must be less than 20 GB in size and have fewer than 10,000 total files. The input cannot be a single file. Any single file must be less than 4GB in size.      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"path\": \"/Homework/math\"\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                metadata:
+                  name: math
+                  id: id:a4ayc_80_OEAAAAAAAAAXz
+                  path_lower: /homework/math
+                  path_display: /Homework/math
+                  sharing_info:
+                    read_only: false
+                    parent_shared_folder_id: '84528192421'
+                    traverse_only: false
+                    no_access: false
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+  /2/files/export:
+    post:
+      tags:
+      - Files
+      summary: Dropbox export
+      description: '[export](https://www.dropbox.com/developers/documentation/http/documentation#files-export)
+
+
+        scope: `files.content.read`
+
+
+        Export a file from a user''s Dropbox. This route only supports exporting files that cannot be downloaded directly  and whose `ExportResult.file_metadata` has `ExportInfo.export_as` populated.      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"path\": \"/Homework/math/Prime_Numbers.gsheet\"\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                export_metadata:
+                  name: Prime_Numbers.xlsx
+                  size: 7189
+                  export_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                file_metadata:
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/get_file_lock_batch:
+    post:
+      tags:
+      - Files
+      summary: Dropbox get_file_lock_batch
+      description: '[get_file_lock_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_file_lock_batch)
+
+
+        scope: `files.content.read`
+
+
+        Return the lock metadata for the given list of paths.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"entries\": [\n        {\n            \"path\": \"/John Doe/sample/test.pdf\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - .tag: success
+                  metadata:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+                  lock:
+                    content:
+                      .tag: single_user
+                      created: '2015-05-12T15:50:38Z'
+                      lock_holder_account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                      lock_holder_team_id: dbtid:1234abcd
+  /2/files/get_metadata:
+    post:
+      tags:
+      - Files
+      summary: Dropbox get_metadata
+      description: '[get_metadata](https://www.dropbox.com/developers/documentation/http/documentation#files-get_metadata)
+
+
+        scope: `files.metadata.read`
+
+
+        Returns the metadata for a file or folder.
+
+        Note: Metadata for the root folder is unsupported.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/Homework/math\", \n    \"include_media_info\": false, \n    \"include_deleted\": false, \n    \"include_has_explicit_shared_members\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: file
+                name: Prime_Numbers.txt
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                path_lower: /homework/math/prime_numbers.txt
+                path_display: /Homework/math/Prime_Numbers.txt
+                sharing_info:
+                  read_only: true
+                  parent_shared_folder_id: '84528192421'
+                  modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                is_downloadable: true
+                property_groups:
+                - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                  fields:
+                  - name: Security Policy
+                    value: Confidential
+                has_explicit_shared_members: false
+                content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                file_lock_info:
+                  is_lockholder: true
+                  lockholder_name: Imaginary User
+                  created: '2015-05-12T15:50:38Z'
+  /2/files/get_preview:
+    post:
+      tags:
+      - Files
+      summary: Dropbox get_preview
+      description: '[get_preview](https://www.dropbox.com/developers/documentation/http/documentation#files-get_preview)
+
+
+        scope: `files.content.read`
+
+
+        Get a preview for a file.
+
+        Currently, PDF previews are generated for files with the following extensions: .ai, .doc, .docm, .docx, .eps, .gdoc, .gslides, .odp, .odt, .pps, .ppsm, .ppsx, .ppt, .pptm, .pptx, .rtf.
+
+        HTML previews are generated for files with the following extensions: .csv, .ods, .xls, .xlsm, .gsheet, .xlsx.
+
+        Other formats will return an unsupported extension error.      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"path\": \"/word.docx\"\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Prime_Numbers.txt
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                path_lower: /homework/math/prime_numbers.txt
+                path_display: /Homework/math/Prime_Numbers.txt
+                sharing_info:
+                  read_only: true
+                  parent_shared_folder_id: '84528192421'
+                  modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                is_downloadable: true
+                property_groups:
+                - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                  fields:
+                  - name: Security Policy
+                    value: Confidential
+                has_explicit_shared_members: false
+                content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                file_lock_info:
+                  is_lockholder: true
+                  lockholder_name: Imaginary User
+                  created: '2015-05-12T15:50:38Z'
+  /2/files/get_temporary_link:
+    post:
+      tags:
+      - Files
+      summary: Dropbox get_temporary_link
+      description: '[get_temporary_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_link)
+
+
+        scope: `files.content.read`
+
+
+        Get a temporary link to stream content of a file. This link will expire in four hours and afterwards you will get 410 Gone. This URL should not be used to display content directly in the browser. The Content-Type of the link is determined automatically by the file''s mime type.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/video.mp4\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                metadata:
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+                link: https://dl.dropboxusercontent.com/apitl/1/YXNkZmFzZGcyMzQyMzI0NjU2NDU2NDU2
+  /2/files/get_temporary_upload_link:
+    post:
+      tags:
+      - Files
+      summary: Dropbox get_temporary_upload_link
+      description: '[get_temporary_upload_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_upload_link)
+
+
+        scope: `files.content.write`
+
+
+        Get a one-time use temporary upload link to upload a file to a Dropbox location.
+
+
+        This endpoint acts as a delayed `upload`. The returned temporary upload link may be used to make a POST request with the data to be uploaded. The upload will then be perfomed with the `CommitInfo` previously provided to `get_temporary_upload_link` but evaluated only upon consumption. Hence, errors stemming from invalid `CommitInfo` with respect to the state of the user''s Dropbox will only be communicated at consumption time. Additionally, these errors are surfaced as generic HTTP 409 Conflict responses, potentially hiding issue details. The maximum temporary upload link duration is 4 hours. Upon consumption or expiration, a new link will have to be generated. Multiple links may exist for a specific upload path at any given time.
+
+
+        The POST request on the temporary upload link must have its Content-Type set to "application/octet-stream".
+
+
+        Example temporary upload link consumption request:
+
+
+        curl -X POST https://content.dropboxapi.com/apitul/1/bNi2uIYF51cVBND
+
+        --header "Content-Type: application/octet-stream"
+
+        --data-binary @local_file.txt
+
+
+        A successful temporary upload link consumption request returns the content hash of the uploaded data in JSON format.
+
+
+        Example succesful temporary upload link consumption response:
+
+        {"content-hash": "599d71033d700ac892a0e48fa61b125d2f5994"}
+
+
+        An unsuccessful temporary upload link consumption request returns any of the following status codes:
+
+
+        HTTP 400 Bad Request: Content-Type is not one of application/octet-stream and text/plain or request is invalid.
+
+        HTTP 409 Conflict: The temporary upload link does not exist or is currently unavailable, the upload failed, or another error happened.
+
+        HTTP 410 Gone: The temporary upload link is expired or consumed.
+
+
+        Example unsuccessful temporary upload link consumption response:
+
+        Temporary upload link has been recently consumed.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"commit_info\": {\n        \"path\": \"/Homework/math/Matrices.txt\", \n        \"mode\": \"add\", \n        \"autorename\": true, \n        \"mute\": false, \n        \"strict_conflict\": false\n    }, \n    \"duration\": 3600\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                link: https://content.dropboxapi.com/apitul/1/bNi2uIYF51cVBND
+  /2/files/get_thumbnail_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox get_thumbnail
+      description: '[get_thumbnail](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail)
+
+
+        scope: `files.content.read`
+
+
+        Get a thumbnail for a file.'
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"resource\": {\n        \".tag\": \"path\", \n        \"path\": \"/a.docx\"\n    }, \n    \"format\": \"jpeg\", \n    \"size\": \"w64h64\", \n    \"mode\": \"strict\"\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                file_metadata:
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/get_thumbnail_batch:
+    post:
+      tags:
+      - Files
+      summary: Dropbox get_thumbnail_batch
+      description: '[get_thumbnail_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail_batch)
+
+
+        scope: `files.content.read`
+
+
+        Get thumbnails for a list of images. We allow up to 25 thumbnails in a single batch.
+
+        This method currently supports files with the following file extensions: jpg, jpeg, png, tiff, tif, gif and bmp. Photos that are larger than 20MB in size won''t be converted to a thumbnail.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"entries\": [\n        {\n            \"path\": \"/image.jpg\", \n            \"format\": \"jpeg\", \n            \"size\": \"w64h64\", \n            \"mode\": \"strict\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - .tag: success
+                  metadata:
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+                  thumbnail: iVBORw0KGgoAAAANSUhEUgAAAdcAAABrCAMAAAI=
+  /2/files/list_folder:
+    post:
+      tags:
+      - Files
+      summary: Dropbox list_folder
+      description: '[list_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder)
+
+
+        scope: `files.metadata.read`
+
+
+        Starts returning the contents of a folder. If the result''s `ListFolderResult.has_more` field is `true`, call `list_folder/continue` with the returned `ListFolderResult.cursor` to retrieve more entries.
+
+        If you''re using `ListFolderArg.recursive` set to `true` to keep a local cache of the contents of a Dropbox account, iterate through each entry in order and process them as follows to keep your local state in sync:
+
+        For each `FileMetadata`, store the new entry at the given path in your local state. If the required parent folders don''t exist yet, create them. If there''s already something else at the given path, replace it and remove all its children.
+
+        For each `FolderMetadata`, store the new entry at the given path in your local state. If the required parent folders don''t exist yet, create them. If there''s already something else at the given path, replace it but leave the children as they are. Check the new entry''s `FolderSharingInfo.read_only` and set all its children''s read-only statuses to match.
+
+        For each `DeletedMetadata`, if your local state has something at the given path, remove it and all its children. If there''s nothing at the given path, ignore this entry.
+
+        Note: `auth.RateLimitError` may be returned if multiple `list_folder` or `list_folder/continue` calls with same parameters are made simultaneously by same API app for same user. If your app implements retry logic, please hold off the retry until the previous request finishes.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/Homework/math\", \n    \"recursive\": false, \n    \"include_media_info\": false, \n    \"include_deleted\": false, \n    \"include_has_explicit_shared_members\": false, \n    \"include_mounted_folders\": true, \n    \"include_non_downloadable_files\": true\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - .tag: file
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+                - .tag: folder
+                  name: math
+                  id: id:a4ayc_80_OEAAAAAAAAAXz
+                  path_lower: /homework/math
+                  path_display: /Homework/math
+                  sharing_info:
+                    read_only: false
+                    parent_shared_folder_id: '84528192421'
+                    traverse_only: false
+                    no_access: false
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: false
+  /2/files/list_folder/continue:
+    post:
+      tags:
+      - Files
+      summary: Dropbox list_folder/continue
+      description: '[list_folder/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-continue)
+
+
+        scope: `files.metadata.read`
+
+
+        Once a cursor has been retrieved from `list_folder`, use this to paginate through all files and retrieve updates to the folder, following the same rules as documented for `list_folder`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - .tag: file
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+                - .tag: folder
+                  name: math
+                  id: id:a4ayc_80_OEAAAAAAAAAXz
+                  path_lower: /homework/math
+                  path_display: /Homework/math
+                  sharing_info:
+                    read_only: false
+                    parent_shared_folder_id: '84528192421'
+                    traverse_only: false
+                    no_access: false
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: false
+  /2/files/list_folder/get_latest_cursor:
+    post:
+      tags:
+      - Files
+      summary: Dropbox list_folder/get_latest_cursor
+      description: '[list_folder/get_latest_cursor](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-get_latest_cursor)
+
+
+        scope: `files.metadata.read`
+
+
+        A way to quickly get a cursor for the folder''s state. Unlike `list_folder`, `list_folder/get_latest_cursor` doesn''t return any entries. This endpoint is for app which only needs to know about new files and modifications and doesn''t need to know about files that already exist in Dropbox.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/Homework/math\", \n    \"recursive\": false, \n    \"include_media_info\": false, \n    \"include_deleted\": false, \n    \"include_has_explicit_shared_members\": false, \n    \"include_mounted_folders\": true, \n    \"include_non_downloadable_files\": true\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+  /2/files/list_folder/longpoll:
+    post:
+      tags:
+      - Files
+      summary: Dropbox list_folder/longpoll
+      description: '[list_folder/longpoll](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-longpoll)
+
+
+        scope: `files.metadata.read`
+
+
+        A longpoll endpoint to wait for changes on an account. In conjunction with `list_folder/continue`, this call gives you a low-latency way to monitor an account for file changes. The connection will block until there are changes available or a timeout occurs. This endpoint is useful mostly for client-side apps. If you''re looking for server-side notifications, check out our [webhooks documentation](https://www.dropbox.com/developers/reference/webhooks).'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\", \n    \"timeout\": 30\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                changes: true
+  /2/files/list_revisions:
+    post:
+      tags:
+      - Files
+      summary: Dropbox list_revisions
+      description: '[list_revisions](https://www.dropbox.com/developers/documentation/http/documentation#files-list_revisions)
+
+
+        scope: `files.metadata.read`
+
+
+        Returns revisions for files based on a file path or a file id. The file path or file id is identified from the latest file entry at the given file path or id. This end point allows your app to query either by file path or file id by setting the mode parameter appropriately.
+
+        In the `ListRevisionsMode.path` (default) mode, all revisions at the same file path as the latest file entry are returned. If revisions with the same file id are desired, then mode must be set to `ListRevisionsMode.id`. The `ListRevisionsMode.id` mode is useful to retrieve revisions for a given file across moves or renames.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/root/word.docx\", \n    \"mode\": \"path\", \n    \"limit\": 10\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                is_deleted: false
+                entries:
+                - name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/lock_file_batch:
+    post:
+      tags:
+      - Files
+      summary: Dropbox lock_file_batch
+      description: '[lock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-lock_file_batch)
+
+
+        scope: `files.content.write`
+
+
+        Lock the files at the given paths. A locked file will be writable only by the lock holder. A successful response indicates that the file has been locked. Returns a list of the locked file paths and their metadata after this operation.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"entries\": [\n        {\n            \"path\": \"/John Doe/sample/test.pdf\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - .tag: success
+                  metadata:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+                  lock:
+                    content:
+                      .tag: single_user
+                      created: '2015-05-12T15:50:38Z'
+                      lock_holder_account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                      lock_holder_team_id: dbtid:1234abcd
+  /2/files/move_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox move
+      description: '[move](https://www.dropbox.com/developers/documentation/http/documentation#files-move)
+
+
+        scope: `files.content.write`
+
+
+        Move a file or folder to a different location in the user''s Dropbox.
+
+        If the source path is a folder all its contents will be moved.
+
+        Note that we do not currently support case-only renaming.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"from_path\": \"/Homework/math\", \n    \"to_path\": \"/Homework/algebra\", \n    \"allow_shared_folder\": false, \n    \"autorename\": false, \n    \"allow_ownership_transfer\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                metadata:
+                  .tag: file
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/move_batch_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox move_batch
+      description: '[move_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch)
+
+
+        scope: `files.content.write`
+
+
+        Move multiple files or folders to different locations at once in the user''s Dropbox. Note that we do not currently support case-only renaming.
+
+        This route will replace `move_batch:1`. The main difference is this route will return status for each entry, while `move_batch:1` raises failure if any entry fails.
+
+        This route will either finish synchronously, or return a job ID and do the async move job in background. Please use `move_batch/check:2` to check the job status.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"entries\": [\n        {\n            \"from_path\": \"/Homework/math\", \n            \"to_path\": \"/Homework/algebra\"\n        }\n    ], \n    \"autorename\": false, \n    \"allow_ownership_transfer\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  success:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+  /2/files/move_batch/check_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox move_batch/check
+      description: '[move_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch-check)
+
+
+        scope: `files.content.write`
+
+
+        Returns the status of an asynchronous job for `move_batch:2`. It returns list of results for each entry.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  success:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+  /2/files/permanently_delete:
+    post:
+      tags:
+      - Files
+      summary: Dropbox permanently_delete
+      description: '[permanently_delete](https://www.dropbox.com/developers/documentation/http/documentation#files-permanently_delete)
+
+
+        scope: `files.permanent_delete`
+
+
+        Permanently delete the file or folder at a given path (see https://www.dropbox.com/en/help/40).
+
+        Note: This endpoint is only available for Dropbox Business apps.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/Homework/math/Prime_Numbers.txt\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/files/restore:
+    post:
+      tags:
+      - Files
+      summary: Dropbox restore
+      description: '[restore](https://www.dropbox.com/developers/documentation/http/documentation#files-restore)
+
+
+        scope: `files.content.write`
+
+
+        Restore a specific revision of a file to the given path.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/root/word.docx\", \n    \"rev\": \"a1c10ce0dd78\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Prime_Numbers.txt
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                path_lower: /homework/math/prime_numbers.txt
+                path_display: /Homework/math/Prime_Numbers.txt
+                sharing_info:
+                  read_only: true
+                  parent_shared_folder_id: '84528192421'
+                  modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                is_downloadable: true
+                property_groups:
+                - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                  fields:
+                  - name: Security Policy
+                    value: Confidential
+                has_explicit_shared_members: false
+                content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                file_lock_info:
+                  is_lockholder: true
+                  lockholder_name: Imaginary User
+                  created: '2015-05-12T15:50:38Z'
+  /2/files/save_url:
+    post:
+      tags:
+      - Files
+      summary: Dropbox save_url
+      description: '[save_url](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url)
+
+
+        scope: `files.content.write`
+
+
+        Save the data from a specified URL into a file in user''s Dropbox.
+
+        Note that the transfer from the URL must complete within 5 minutes, or the operation will time out and the job will fail.
+
+        If the given path already exists, the file will be renamed to avoid the conflict (e.g. myfile (1).txt).'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/a.txt\", \n    \"url\": \"http://example.com/a.txt\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                name: Prime_Numbers.txt
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                path_lower: /homework/math/prime_numbers.txt
+                path_display: /Homework/math/Prime_Numbers.txt
+                sharing_info:
+                  read_only: true
+                  parent_shared_folder_id: '84528192421'
+                  modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                is_downloadable: true
+                property_groups:
+                - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                  fields:
+                  - name: Security Policy
+                    value: Confidential
+                has_explicit_shared_members: false
+                content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                file_lock_info:
+                  is_lockholder: true
+                  lockholder_name: Imaginary User
+                  created: '2015-05-12T15:50:38Z'
+  /2/files/save_url/check_job_status:
+    post:
+      tags:
+      - Files
+      summary: Dropbox save_url/check_job_status
+      description: '[save_url/check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url-check_job_status)
+
+
+        scope: `files.content.write`
+
+
+        Check the status of a `save_url` job.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: in_progress
+  /2/files/search_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox search
+      description: '[search](https://www.dropbox.com/developers/documentation/http/documentation#files-search)
+
+
+        scope: `files.metadata.read`
+
+
+        Searches for files and folders.
+
+        Note: `search:2` along with `search/continue:2` can only be used to retrieve a maximum of 10,000 matches.
+
+        Recent changes may not immediately be reflected in search results due to a short delay in indexing. Duplicate results may be returned across pages. Some results may not be returned.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"query\": \"cat\", \n    \"include_highlights\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                matches:
+                - metadata:
+                    .tag: metadata
+                    metadata:
+                      .tag: file
+                      name: Prime_Numbers.txt
+                      id: id:a4ayc_80_OEAAAAAAAAAXw
+                      client_modified: '2015-05-12T15:50:38Z'
+                      server_modified: '2015-05-12T15:50:38Z'
+                      rev: a1c10ce0dd78
+                      size: 7212
+                      path_lower: /homework/math/prime_numbers.txt
+                      path_display: /Homework/math/Prime_Numbers.txt
+                      sharing_info:
+                        read_only: true
+                        parent_shared_folder_id: '84528192421'
+                        modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                      is_downloadable: true
+                      property_groups:
+                      - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                        fields:
+                        - name: Security Policy
+                          value: Confidential
+                      has_explicit_shared_members: false
+                      content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                      file_lock_info:
+                        is_lockholder: true
+                        lockholder_name: Imaginary User
+                        created: '2015-05-12T15:50:38Z'
+                has_more: false
+  /2/files/search/continue_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox search/continue
+      description: '[search/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-search-continue)
+
+
+        scope: `files.metadata.read`
+
+
+        Fetches the next page of search results returned from `search:2`.
+
+        Note: `search:2` along with `search/continue:2` can only be used to retrieve a maximum of 10,000 matches.
+
+        Recent changes may not immediately be reflected in search results due to a short delay in indexing. Duplicate results may be returned across pages. Some results may not be returned.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                matches:
+                - metadata:
+                    .tag: metadata
+                    metadata:
+                      .tag: file
+                      name: Prime_Numbers.txt
+                      id: id:a4ayc_80_OEAAAAAAAAAXw
+                      client_modified: '2015-05-12T15:50:38Z'
+                      server_modified: '2015-05-12T15:50:38Z'
+                      rev: a1c10ce0dd78
+                      size: 7212
+                      path_lower: /homework/math/prime_numbers.txt
+                      path_display: /Homework/math/Prime_Numbers.txt
+                      sharing_info:
+                        read_only: true
+                        parent_shared_folder_id: '84528192421'
+                        modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                      is_downloadable: true
+                      property_groups:
+                      - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                        fields:
+                        - name: Security Policy
+                          value: Confidential
+                      has_explicit_shared_members: false
+                      content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                      file_lock_info:
+                        is_lockholder: true
+                        lockholder_name: Imaginary User
+                        created: '2015-05-12T15:50:38Z'
+                has_more: false
+  /2/files/unlock_file_batch:
+    post:
+      tags:
+      - Files
+      summary: Dropbox unlock_file_batch
+      description: '[unlock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-unlock_file_batch)
+
+
+        scope: `files.content.write`
+
+
+        Unlock the files at the given paths. A locked file can only be unlocked by the lock holder or, if a business account, a team admin. A successful response indicates that the file has been unlocked. Returns a list of the unlocked file paths and their metadata after this operation.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"entries\": [\n        {\n            \"path\": \"/John Doe/sample/test.pdf\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - .tag: success
+                  metadata:
+                    .tag: file
+                    name: Prime_Numbers.txt
+                    id: id:a4ayc_80_OEAAAAAAAAAXw
+                    client_modified: '2015-05-12T15:50:38Z'
+                    server_modified: '2015-05-12T15:50:38Z'
+                    rev: a1c10ce0dd78
+                    size: 7212
+                    path_lower: /homework/math/prime_numbers.txt
+                    path_display: /Homework/math/Prime_Numbers.txt
+                    sharing_info:
+                      read_only: true
+                      parent_shared_folder_id: '84528192421'
+                      modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    is_downloadable: true
+                    property_groups:
+                    - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                      fields:
+                      - name: Security Policy
+                        value: Confidential
+                    has_explicit_shared_members: false
+                    content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                    file_lock_info:
+                      is_lockholder: true
+                      lockholder_name: Imaginary User
+                      created: '2015-05-12T15:50:38Z'
+                  lock:
+                    content:
+                      .tag: single_user
+                      created: '2015-05-12T15:50:38Z'
+                      lock_holder_account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                      lock_holder_team_id: dbtid:1234abcd
+  /2/files/upload:
+    post:
+      tags:
+      - Files
+      summary: Dropbox upload
+      description: '[upload](https://www.dropbox.com/developers/documentation/http/documentation#files-upload)
+
+
+        scope: `files.content.write`
+
+
+        Create a new file with the contents provided in the request.
+
+        Do not use this to upload a file larger than 150 MB. Instead, create an upload session with `upload_session/start`.
+
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit).      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"path\": \"/Homework/math/Matrices.txt\", \n    \"mode\": \"add\", \n    \"autorename\": true, \n    \"mute\": false, \n    \"strict_conflict\": false\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Prime_Numbers.txt
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                path_lower: /homework/math/prime_numbers.txt
+                path_display: /Homework/math/Prime_Numbers.txt
+                sharing_info:
+                  read_only: true
+                  parent_shared_folder_id: '84528192421'
+                  modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                is_downloadable: true
+                property_groups:
+                - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                  fields:
+                  - name: Security Policy
+                    value: Confidential
+                has_explicit_shared_members: false
+                content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                file_lock_info:
+                  is_lockholder: true
+                  lockholder_name: Imaginary User
+                  created: '2015-05-12T15:50:38Z'
+  /2/files/upload_session/append_v2:
+    post:
+      tags:
+      - Files
+      summary: Dropbox upload_session/append
+      description: '[upload_session/append](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-append)
+
+
+        scope: `files.content.write`
+
+
+        Append more data to an upload session.
+
+        When the parameter close is set, this call will close the session.
+
+        A single request should not upload more than 150 MB. The maximum size of a file one can upload to an upload session is 350 GB.
+
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit).      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"cursor\": {\n        \"session_id\": \"1234faaf0678bcde\", \n        \"offset\": 0\n    }, \n    \"close\": false\n}"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/files/upload_session/finish:
+    post:
+      tags:
+      - Files
+      summary: Dropbox upload_session/finish
+      description: '[upload_session/finish](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish)
+
+
+        scope: `files.content.write`
+
+
+        Finish an upload session and save the uploaded data to the given file path.
+
+        A single request should not upload more than 150 MB. The maximum size of a file one can upload to an upload session is 350 GB.
+
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit).      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"cursor\": {\n        \"session_id\": \"1234faaf0678bcde\", \n        \"offset\": 0\n    }, \n    \"commit\": {\n        \"path\": \"/Homework/math/Matrices.txt\", \n        \"mode\": \"add\", \n        \"autorename\": true, \n        \"mute\": false, \n        \"strict_conflict\": false\n    }\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Prime_Numbers.txt
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                path_lower: /homework/math/prime_numbers.txt
+                path_display: /Homework/math/Prime_Numbers.txt
+                sharing_info:
+                  read_only: true
+                  parent_shared_folder_id: '84528192421'
+                  modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                is_downloadable: true
+                property_groups:
+                - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                  fields:
+                  - name: Security Policy
+                    value: Confidential
+                has_explicit_shared_members: false
+                content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                file_lock_info:
+                  is_lockholder: true
+                  lockholder_name: Imaginary User
+                  created: '2015-05-12T15:50:38Z'
+  /2/files/upload_session/finish_batch:
+    post:
+      tags:
+      - Files
+      summary: Dropbox upload_session/finish_batch
+      description: '[upload_session/finish_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch)
+
+
+        scope: `files.content.write`
+
+
+        This route helps you commit many files at once into a user''s Dropbox. Use `upload_session/start` and `upload_session/append:2` to upload file contents. We recommend uploading many files in parallel to increase throughput. Once the file contents have been uploaded, rather than calling `upload_session/finish`, use this route to finish all your upload sessions in a single request.
+
+        `UploadSessionStartArg.close` or `UploadSessionAppendArg.close` needs to be true for the last `upload_session/start` or `upload_session/append:2` call. The maximum size of a file one can upload to an upload session is 350 GB.
+
+        This route will return a job_id immediately and do the async commit job in background. Use `upload_session/finish_batch/check` to check the job status.
+
+        For the same account, this route should be executed serially. That means you should not start the next job before current job finishes. We allow up to 1000 entries in a single request.
+
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit).'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"entries\": [\n        {\n            \"cursor\": {\n                \"session_id\": \"1234faaf0678bcde\", \n                \"offset\": 0\n            }, \n            \"commit\": {\n                \"path\": \"/Homework/math/Matrices.txt\", \n                \"mode\": \"add\", \n                \"autorename\": true, \n                \"mute\": false, \n                \"strict_conflict\": false\n            }\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/upload_session/finish_batch/check:
+    post:
+      tags:
+      - Files
+      summary: Dropbox upload_session/finish_batch/check
+      description: '[upload_session/finish_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch-check)
+
+
+        scope: `files.content.write`
+
+
+        Returns the status of an asynchronous job for `upload_session/finish_batch`. If success, it returns list of result for each entry.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                entries:
+                - .tag: success
+                  name: Prime_Numbers.txt
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  path_lower: /homework/math/prime_numbers.txt
+                  path_display: /Homework/math/Prime_Numbers.txt
+                  sharing_info:
+                    read_only: true
+                    parent_shared_folder_id: '84528192421'
+                    modified_by: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  is_downloadable: true
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+                  has_explicit_shared_members: false
+                  content_hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                  file_lock_info:
+                    is_lockholder: true
+                    lockholder_name: Imaginary User
+                    created: '2015-05-12T15:50:38Z'
+  /2/files/upload_session/start:
+    post:
+      tags:
+      - Files
+      summary: Dropbox upload_session/start
+      description: '[upload_session/start](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-start)
+
+
+        scope: `files.content.write`
+
+
+        Upload sessions allow you to upload a single file in one or more requests, for example where the size of the file is greater than 150 MB.  This call starts a new upload session with the given data. You can then use `upload_session/append:2` to add more data and `upload_session/finish` to save all the data to a file in Dropbox.
+
+        A single request should not upload more than 150 MB. The maximum size of a file one can upload to an upload session is 350 GB.
+
+        An upload session can be used for a maximum of 48 hours. Attempting to use an `UploadSessionStartResult.session_id` with `upload_session/append:2` or `upload_session/finish` more than 48 hours after its creation will return a `UploadSessionLookupError.not_found`.
+
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit)      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"close\": false\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                session_id: 1234faaf0678bcde
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,665 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account File_properties API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: File_properties
+  description: 'This namespace contains helpers for property and template metadata endpoints.
+
+
+    These endpoints enable you to tag arbitrary key/value data to Dropbox files.
+
+
+    The most basic unit in this namespace is the :type:`PropertyField`. These fields encapsulate the actual key/value data.
+
+
+    Fields are added to a Dropbox file using a :type:`PropertyGroup`. Property groups contain a reference to a Dropbox file and a :type:`PropertyGroupTemplate`. Property groups are uniquely identified by the combination of their associated Dropbox file and template.
+
+
+    The :type:`PropertyGroupTemplate` is a way of restricting the possible key names and value types of the data within a property group. The possible key names and value types are explicitly enumerated using :type:`PropertyFieldTemplate` objects.
+
+
+    You can think of a property group template as a class definition for a particular key/value metadata object, and the property groups themselves as the instantiations of these objects.
+
+
+    Templates are owned either by a user/app pair or team/app pair. Templates and their associated properties can''t be accessed by any app other than the app that created them, and even then, only when the app is linked with the owner of the template (either a user or team).
+
+
+    User-owned templates are accessed via the user-auth file_properties/templates/*_for_user endpoints, while team-owned templates are accessed via the team-auth file_properties/templates/*_for_team endpoints. Properties associated with either type of template can be accessed via the user-auth properties/* endpoints.
+
+
+    Finally, properties can be accessed from a number of endpoints that return metadata, including `files/get_metadata`, and `files/list_folder`. Properties can also be added during upload, using `files/upload`.
+
+    '
+paths:
+  /2/file_properties/properties/add:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox properties/add
+      description: '[properties/add](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-add)
+
+
+        scope: `files.metadata.write`
+
+
+        Add property groups to a Dropbox file. See `templates/add_for_user` or `templates/add_for_team` to create new templates.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/my_awesome/word.docx\", \n    \"property_groups\": [\n        {\n            \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n            \"fields\": [\n                {\n                    \"name\": \"Security Policy\", \n                    \"value\": \"Confidential\"\n                }\n            ]\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/file_properties/properties/overwrite:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox properties/overwrite
+      description: '[properties/overwrite](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-overwrite)
+
+
+        scope: `files.metadata.write`
+
+
+        Overwrite property groups associated with a file. This endpoint should be used instead of `properties/update` when property groups are being updated via a "snapshot" instead of via a "delta". In other words, this endpoint will delete all omitted fields from a property group, whereas `properties/update` will only delete fields that are explicitly marked for deletion.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/my_awesome/word.docx\", \n    \"property_groups\": [\n        {\n            \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n            \"fields\": [\n                {\n                    \"name\": \"Security Policy\", \n                    \"value\": \"Confidential\"\n                }\n            ]\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/file_properties/properties/remove:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox properties/remove
+      description: '[properties/remove](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-remove)
+
+
+        scope: `files.metadata.write`
+
+
+        Permanently removes the specified property group from the file. To remove specific property field key value pairs, see `properties/update`. To update a template, see `templates/update_for_user` or `templates/update_for_team`. To remove a template, see `templates/remove_for_user` or `templates/remove_for_team`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/my_awesome/word.docx\", \n    \"property_template_ids\": [\n        \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/file_properties/properties/search:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox properties/search
+      description: '[properties/search](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search)
+
+
+        scope: `files.metadata.read`
+
+
+        Search across property templates for particular property field values.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"queries\": [\n        {\n            \"query\": \"Compliance Bot - Beta\", \n            \"mode\": {\n                \".tag\": \"field_name\", \n                \"field_name\": \"Security\"\n            }, \n            \"logical_operator\": \"or_operator\"\n        }\n    ], \n    \"template_filter\": \"filter_none\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer YOUR_ACCESS_TOKEN
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                matches:
+                - id: id:a4ayc_80_OEAAAAAAAAAXz
+                  path: /my_awesome/word.docx
+                  is_deleted: false
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+  /2/file_properties/properties/search/continue:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox properties/search/continue
+      description: '[properties/search/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search-continue)
+
+
+        scope: `files.metadata.read`
+
+
+        Once a cursor has been retrieved from `properties/search`, use this to paginate through all search results.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                matches:
+                - id: id:a4ayc_80_OEAAAAAAAAAXz
+                  path: /my_awesome/word.docx
+                  is_deleted: false
+                  property_groups:
+                  - template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+                    fields:
+                    - name: Security Policy
+                      value: Confidential
+  /2/file_properties/properties/update:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox properties/update
+      description: '[properties/update](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-update)
+
+
+        scope: `files.metadata.write`
+
+
+        Add, update or remove properties associated with the supplied file and templates. This endpoint should be used instead of `properties/overwrite` when property groups are being updated via a "delta" instead of via a "snapshot" . In other words, this endpoint will not delete any omitted fields from a property group, whereas `properties/overwrite` will delete any fields that are omitted from a property group.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/my_awesome/word.docx\", \n    \"update_property_groups\": [\n        {\n            \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n            \"add_or_update_fields\": [\n                {\n                    \"name\": \"Security Policy\", \n                    \"value\": \"Confidential\"\n                }\n            ], \n            \"remove_fields\": []\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/file_properties/templates/add_for_team:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/add_for_team
+      description: '[templates/add_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-add_for_team)
+
+
+        scope: `files.team_metadata.write`
+
+
+        Add a template associated with a team. See `properties/add` to add properties to a file or folder.
+
+        Note: this endpoint will create team-owned templates.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"name\": \"Security\", \n    \"description\": \"These properties describe how confidential this file or folder is.\", \n    \"fields\": [\n        {\n            \"name\": \"Security Policy\", \n            \"description\": \"This is the security policy of the file or folder described.\\nPolicies can be Confidential, Public or Internal.\", \n            \"type\": \"string\"\n        }\n    ]\n}"'
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+  /2/file_properties/templates/add_for_user:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/add_for_user
+      description: '[templates/add_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-add_for_user)
+
+
+        scope: `files.metadata.write`
+
+
+        Add a template associated with a user. See `properties/add` to add properties to a file. This endpoint can''t be called on a team member or admin''s behalf.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"name\": \"Security\", \n    \"description\": \"These properties describe how confidential this file or folder is.\", \n    \"fields\": [\n        {\n            \"name\": \"Security Policy\", \n            \"description\": \"This is the security policy of the file or folder described.\\nPolicies can be Confidential, Public or Internal.\", \n            \"type\": \"string\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+  /2/file_properties/templates/get_for_team:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/get_for_team
+      description: '[templates/get_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-get_for_team)
+
+
+        scope: `files.team_metadata.write`
+
+
+        Get the schema for a specified template.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n}"'
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Security
+                description: These properties describe how confidential this file or folder is.
+                fields:
+                - name: Security Policy
+                  description: 'This is the security policy of the file or folder described.
+
+                    Policies can be Confidential, Public or Internal.'
+                  type:
+                    .tag: string
+  /2/file_properties/templates/get_for_user:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/get_for_user
+      description: '[templates/get_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-get_for_user)
+
+
+        scope: `files.metadata.read`
+
+
+        Get the schema for a specified template. This endpoint can''t be called on a team member or admin''s behalf.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Security
+                description: These properties describe how confidential this file or folder is.
+                fields:
+                - name: Security Policy
+                  description: 'This is the security policy of the file or folder described.
+
+                    Policies can be Confidential, Public or Internal.'
+                  type:
+                    .tag: string
+  /2/file_properties/templates/list_for_team:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/list_for_team
+      description: '[templates/list_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-list_for_team)
+
+
+        scope: `files.team_metadata.write`
+
+
+        Get the template identifiers for a team. To get the schema of each template use `templates/get_for_team`.      '
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                template_ids:
+                - ptid:1a5n2i6d3OYEAAAAAAAAAYa
+  /2/file_properties/templates/list_for_user:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/list_for_user
+      description: '[templates/list_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-list_for_user)
+
+
+        scope: `files.metadata.read`
+
+
+        Get the template identifiers for a team. To get the schema of each template use `templates/get_for_user`. This endpoint can''t be called on a team member or admin''s behalf.      '
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                template_ids:
+                - ptid:1a5n2i6d3OYEAAAAAAAAAYa
+  /2/file_properties/templates/remove_for_team:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/remove_for_team
+      description: '[templates/remove_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-remove_for_team)
+
+
+        scope: `files.team_metadata.write`
+
+
+        Permanently removes the specified template created from `templates/add_for_user`. All properties associated with the template will also be removed. This action cannot be undone.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n}"'
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/file_properties/templates/remove_for_user:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/remove_for_user
+      description: '[templates/remove_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-remove_for_user)
+
+
+        scope: `files.metadata.write`
+
+
+        Permanently removes the specified template created from `templates/add_for_user`. All properties associated with the template will also be removed. This action cannot be undone.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/file_properties/templates/update_for_team:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/update_for_team
+      description: '[templates/update_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-update_for_team)
+
+
+        scope: `files.team_metadata.write`
+
+
+        Update a template associated with a team. This route can update the template name, the template description and add optional properties to templates.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n    \"name\": \"New Security Template Name\", \n    \"description\": \"These properties will describe how confidential this file or folder is.\", \n    \"add_fields\": [\n        {\n            \"name\": \"Security Policy\", \n            \"description\": \"This is the security policy of the file or folder described.\\nPolicies can be Confidential, Public or Internal.\", \n            \"type\": \"string\"\n        }\n    ]\n}"'
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+  /2/file_properties/templates/update_for_user:
+    post:
+      tags:
+      - File_properties
+      summary: Dropbox templates/update_for_user
+      description: '[templates/update_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-update_for_user)
+
+
+        scope: `files.metadata.write`
+
+
+        Update a template associated with a user. This route can update the template name, the template description and add optional properties to templates. This endpoint can''t be called on a team member or admin''s behalf.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\", \n    \"name\": \"New Security Template Name\", \n    \"description\": \"These properties will describe how confidential this file or folder is.\", \n    \"add_fields\": [\n        {\n            \"name\": \"Security Policy\", \n            \"description\": \"This is the security policy of the file or folder described.\\nPolicies can be Confidential, Public or Internal.\", \n            \"type\": \"string\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,716 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: Account
+paths:
+  /2/account/set_profile_photo:
+    post:
+      tags:
+      - Account
+      summary: Dropbox set_profile_photo
+      description: '[set_profile_photo](https://www.dropbox.com/developers/documentation/http/documentation#account-set_profile_photo)
+
+
+        scope: `account_info.write`
+
+
+        Sets a user''s profile photo.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"photo\": {\n        \".tag\": \"base64_data\", \n        \"base64_data\": \"SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4=\"\n    }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+  /account/create:
+    post:
+      tags:
+      - Account
+      summary: Dropbox _t__AccountCreate::SUMMARY
+      description: _t__AccountCreate::DESCRIPTION
+      operationId: accountCreate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountCreateRequest'
+            examples:
+              default_example:
+                $ref: '#/components/examples/AccountCreateRequestDefaultExample'
+              oauth:
+                $ref: '#/components/examples/AccountCreateRequestOAuthExample'
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountCreateResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/AccountCreateResponseExample'
+                oauth:
+                  $ref: '#/components/examples/AccountCreateOAuthResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+      - api_key: []
+      - oauth2:
+        - account_access
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/AccountCreate.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/AccountCreate.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/AccountCreate.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/AccountCreate.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/AccountCreate.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/AccountCreate.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/AccountCreate.py
+      - lang: cURL
+        label: cURL
+        source:
+          $ref: examples/AccountCreate.sh
+      x-meta:
+        seo:
+          title: _t__AccountCreate::SEO::TITLE
+          description: _t__AccountCreate::SEO::DESCRIPTION
+  /account:
+    get:
+      tags:
+      - Account
+      summary: Dropbox _t__AccountGet::SUMMARY
+      description: _t__AccountGet::DESCRIPTION
+      operationId: accountGet
+      parameters:
+      - name: account_id
+        in: query
+        description: _t__AccountGet::ACCOUNT_ID
+        required: false
+        schema:
+          type: string
+      - name: email_address
+        in: query
+        description: _t__AccountGet::EMAIL_ADDRESS
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountGetResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/AccountGetResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+      - api_key: []
+      - oauth2:
+        - account_access
+        - basic_account_info
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/AccountGet.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/AccountGet.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/AccountGet.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/AccountGet.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/AccountGet.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/AccountGet.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/AccountGet.py
+      - lang: cURL
+        label: cURL
+        source:
+          $ref: examples/AccountGet.sh
+      x-meta:
+        seo:
+          title: _t__AccountGet::SEO::TITLE
+          description: _t__AccountGet::SEO::DESCRIPTION
+    put:
+      tags:
+      - Account
+      summary: Dropbox _t__AccountUpdate::SUMMARY
+      description: _t__AccountUpdate::DESCRIPTION
+      operationId: accountUpdate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountUpdateRequest'
+            examples:
+              default_example:
+                $ref: '#/components/examples/AccountUpdateRequestDefaultExample'
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountGetResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/AccountUpdateResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                409_example:
+                  $ref: '#/components/examples/Error409ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+      - api_key: []
+      - oauth2:
+        - account_access
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/AccountUpdate.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/AccountUpdate.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/AccountUpdate.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/AccountUpdate.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/AccountUpdate.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/AccountUpdate.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/AccountUpdate.py
+      - lang: cURL
+        label: cURL
+        source:
+          $ref: examples/AccountUpdate.sh
+      x-meta:
+        seo:
+          title: _t__AccountUpdate::SEO::TITLE
+          description: _t__AccountUpdate::SEO::DESCRIPTION
+  /account/verify:
+    post:
+      tags:
+      - Account
+      summary: Dropbox _t__AccountVerify::SUMMARY
+      description: _t__AccountVerify::DESCRIPTION
+      operationId: accountVerify
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountVerifyRequest'
+            examples:
+              default_example:
+                $ref: '#/components/examples/AccountVerifyRequestDefaultExample'
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountVerifyResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/AccountVerifyFoundResponseExample'
+                not_found:
+                  $ref: '#/components/examples/AccountVerifyNotFoundResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+      - api_key: []
+      - oauth2:
+        - account_access
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/AccountVerify.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/AccountVerify.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/AccountVerify.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/AccountVerify.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/AccountVerify.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/AccountVerify.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/AccountVerify.py
+      - lang: cURL
+        label: cURL
+        source:
+          $ref: examples/AccountVerify.sh
+      x-meta:
+        seo:
+          title: _t__AccountVerify::SEO::TITLE
+          description: _t__AccountVerify::SEO::DESCRIPTION
+components:
+  examples:
+    AccountVerifyRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/AccountVerifyRequestDefaultExample.json
+    AccountUpdateResponseExample:
+      summary: _t__AccountUpdateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountUpdateResponseExample.json
+    AccountCreateResponseExample:
+      summary: _t__AccountCreateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountCreateResponseExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    AccountUpdateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/AccountUpdateRequestDefaultExample.json
+    AccountVerifyFoundResponseExample:
+      summary: _t__AccountVerifyFoundResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountVerifyFoundResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    AccountCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/AccountCreateRequestDefaultExample.json
+    AccountGetResponseExample:
+      summary: _t__AccountGetResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountGetResponseExample.json
+    Error409ResponseExample:
+      summary: _t__Error::409
+      value:
+        $ref: examples/json/Error409ResponseExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    AccountCreateOAuthResponseExample:
+      summary: _t__AccountCreateOAuthResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountCreateOAuthResponseExample.json
+    AccountCreateRequestOAuthExample:
+      summary: OAuth Example
+      value:
+        $ref: examples/json/AccountCreateRequestOAuthExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    AccountVerifyNotFoundResponseExample:
+      summary: _t__AccountVerifyNotFoundResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountVerifyNotFoundResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+  schemas:
+    AccountResponse:
+      properties:
+        account_id:
+          description: _t__Account::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__Account::EMAIL_ADDRESS
+          type: string
+        is_locked:
+          description: _t__Account::IS_LOCKED
+          type: boolean
+        is_paid_hs:
+          description: _t__Account::IS_PAID_HS
+          type: boolean
+        is_paid_hf:
+          description: _t__Account::IS_PAID_HF
+          type: boolean
+        quotas:
+          $ref: '#/components/schemas/AccountResponseQuotas'
+        callback_url:
+          description: _t__Account::CALLBACK_URL
+          type: string
+          nullable: true
+        role_code:
+          description: _t__Account::ROLE_CODE
+          type: string
+          nullable: true
+        team_id:
+          description: _t__Account::TEAM_ID
+          type: string
+          nullable: true
+        locale:
+          description: _t__Account::LOCALE
+          type: string
+          nullable: true
+      type: object
+      x-internal: true
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    AccountVerifyResponse:
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountVerifyResponseAccount'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
+      required:
+      - warning_msg
+      - warning_name
+      properties:
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
+      type: object
+    AccountCreateResponse:
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountResponse'
+        oauth_data:
+          $ref: '#/components/schemas/OAuthTokenResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    AccountVerifyResponseAccount:
+      properties:
+        email_address:
+          description: _t__Account::EMAIL_ADDRESS
+          type: string
+      type: object
+      x-internal: true
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
+      required:
+      - error_msg
+      - error_name
+      properties:
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
+          type: string
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
+          type: string
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
+          type: string
+      type: object
+    AccountGetResponse:
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    AccountVerifyRequest:
+      required:
+      - email_address
+      properties:
+        email_address:
+          description: _t__AccountVerify::EMAIL_ADDRESS
+          type: string
+          format: email
+      type: object
+    AccountResponseQuotas:
+      description: _t__Account::QUOTA
+      properties:
+        api_signature_requests_left:
+          description: _t__AccountQuota::API_SIGNATURE_REQUESTS_LEFT
+          type: integer
+          nullable: true
+        documents_left:
+          description: _t__AccountQuota::DOCUMENTS_LEFT
+          type: integer
+          nullable: true
+        templates_total:
+          description: _t__AccountQuota::TEMPLATES_TOTAL
+          type: integer
+          nullable: true
+        templates_left:
+          description: _t__AccountQuota::TEMPLATES_LEFT
+          type: integer
+          nullable: true
+        sms_verifications_left:
+          description: _t__AccountQuota::SMS_VERIFICATIONS_LEFT
+          type: integer
+          nullable: true
+      type: object
+      x-internal: true
+    AccountCreateRequest:
+      required:
+      - email_address
+      properties:
+        client_id:
+          description: _t__AccountCreate::CLIENT_ID
+          type: string
+        client_secret:
+          description: _t__AccountCreate::CLIENT_SECRET
+          type: string
+        email_address:
+          description: _t__AccountCreate::EMAIL_ADDRESS
+          type: string
+          format: email
+        locale:
+          description: _t__AccountCreate::LOCALE
+          type: string
+      type: object
+    AccountUpdateRequest:
+      properties:
+        account_id:
+          description: _t__AccountUpdate::ACCOUNT_ID
+          type: string
+          nullable: true
+        callback_url:
+          description: _t__AccountUpdate::CALLBACK_URL
+          type: string
+        locale:
+          description: _t__AccountUpdate::LOCALE
+          type: string
+      type: object
+    OAuthTokenResponse:
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        refresh_token:
+          type: string
+        expires_in:
+          description: _t__OAuthTokenResponse::EXPIRES_IN
+          type: integer
+        state:
+          type: string
+          nullable: true
+      type: object
+      x-internal: true
+  headers:
+    X-Ratelimit-Reset:
+      description: _t__Common::RateLimiting::RESET
+      schema:
+        type: integer
+        format: int64
+        example: 1430170900
+    X-RateLimit-Limit:
+      description: _t__Common::RateLimiting::LIMIT
+      schema:
+        type: integer
+        format: int32
+        example: 100
+    X-RateLimit-Remaining:
+      description: _t__Common::RateLimiting::REMAINING
+      schema:
+        type: integer
+        format: int32
+        example: 99
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

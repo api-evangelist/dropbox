@@ -1,0 +1,2185 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account Sharing API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: Sharing
+  description: 'This namespace contains endpoints and data types for creating and managing shared links and shared folders.
+
+    '
+paths:
+  /2/sharing/add_file_member:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox add_file_member
+      description: '[add_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_file_member)
+
+
+        scope: `sharing.write`
+
+
+        Adds specified members to a file.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"members\": [\n        {\n            \".tag\": \"email\", \n            \"email\": \"justin@example.com\"\n        }\n    ], \n    \"custom_message\": \"This is a custom message about ACME.doc\", \n    \"quiet\": false, \n    \"access_level\": \"viewer\", \n    \"add_message_as_comment\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+              - member:
+                  .tag: email
+                  email: justin@example.com
+                result:
+                  .tag: success
+  /2/sharing/add_folder_member:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox add_folder_member
+      description: '[add_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_folder_member)
+
+
+        scope: `sharing.write`
+
+
+        Allows an owner or editor (if the ACL update policy allows) of a shared folder to add another member.
+
+        For the new member to get access to all the functionality for this folder, you will need to call `mount_folder` on their behalf.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"members\": [\n        {\n            \"member\": {\n                \".tag\": \"email\", \n                \"email\": \"justin@example.com\"\n            }, \n            \"access_level\": \"editor\"\n        }, \n        {\n            \"member\": {\n                \".tag\": \"dropbox_id\", \n                \"dropbox_id\": \"dbid:AAEufNrMPSPe0dMQijRP0N_aZtBJRm26W4Q\"\n            }, \n            \"access_level\": \"viewer\"\n        }\n    ], \n    \"quiet\": false, \n    \"custom_message\": \"Documentation for launch day\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/sharing/check_job_status:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox check_job_status
+      description: '[check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_job_status)
+
+
+        scope: `sharing.write`
+
+
+        Returns the status of an asynchronous job.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: in_progress
+  /2/sharing/check_remove_member_job_status:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox check_remove_member_job_status
+      description: '[check_remove_member_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_remove_member_job_status)
+
+
+        scope: `sharing.write`
+
+
+        Returns the status of an asynchronous job for sharing a folder.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/sharing/check_share_job_status:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox check_share_job_status
+      description: '[check_share_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_share_job_status)
+
+
+        scope: `sharing.write`
+
+
+        Returns the status of an asynchronous job for sharing a folder.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                access_type:
+                  .tag: owner
+                is_inside_team_folder: false
+                is_team_folder: false
+                name: dir
+                policy:
+                  acl_update_policy:
+                    .tag: owner
+                  shared_link_policy:
+                    .tag: anyone
+                  member_policy:
+                    .tag: anyone
+                  resolved_member_policy:
+                    .tag: team
+                preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                shared_folder_id: '84528192421'
+                time_invited: '2016-01-20T00:00:00Z'
+                path_lower: /dir
+                link_metadata:
+                  audience_options:
+                  - .tag: public
+                  - .tag: team
+                  - .tag: members
+                  current_audience:
+                    .tag: public
+                  link_permissions:
+                  - action:
+                      .tag: change_audience
+                    allow: true
+                  password_protected: false
+                  url: ''
+                permissions: []
+                access_inheritance:
+                  .tag: inherit
+  /2/sharing/get_file_metadata:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox get_file_metadata
+      description: '[get_file_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata)
+
+
+        scope: `sharing.read`
+
+
+        Returns shared file metadata.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"actions\": []\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: id:3kmLmQFnf1AAAAAAAAAAAw
+                name: file.txt
+                policy:
+                  acl_update_policy:
+                    .tag: owner
+                  shared_link_policy:
+                    .tag: anyone
+                  member_policy:
+                    .tag: anyone
+                  resolved_member_policy:
+                    .tag: team
+                preview_url: https://www.dropbox.com/scl/fi/fir9vjelf
+                access_type:
+                  .tag: viewer
+                owner_display_names:
+                - Jane Doe
+                owner_team:
+                  id: dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
+                  name: Acme, Inc.
+                path_display: /dir/file.txt
+                path_lower: /dir/file.txt
+                permissions: []
+                time_invited: '2016-01-20T00:00:00Z'
+  /2/sharing/get_file_metadata/batch:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox get_file_metadata/batch
+      description: '[get_file_metadata/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata-batch)
+
+
+        scope: `sharing.read`
+
+
+        Returns shared file metadata.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"files\": [\n        \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n        \"id:VvTaJu2VZzAAAAAAAAAADQ\"\n    ], \n    \"actions\": []\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+              - file: id:3kmLmQFnf1AAAAAAAAAAAw
+                result:
+                  .tag: metadata
+                  id: id:3kmLmQFnf1AAAAAAAAAAAw
+                  name: file.txt
+                  policy:
+                    acl_update_policy:
+                      .tag: owner
+                    shared_link_policy:
+                      .tag: anyone
+                    member_policy:
+                      .tag: anyone
+                    resolved_member_policy:
+                      .tag: team
+                  preview_url: https://www.dropbox.com/scl/fi/fir9vjelf
+                  access_type:
+                    .tag: viewer
+                  owner_display_names:
+                  - Jane Doe
+                  owner_team:
+                    id: dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
+                    name: Acme, Inc.
+                  path_display: /dir/file.txt
+                  path_lower: /dir/file.txt
+                  permissions: []
+                  time_invited: '2016-01-20T00:00:00Z'
+  /2/sharing/get_folder_metadata:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox get_folder_metadata
+      description: '[get_folder_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_folder_metadata)
+
+
+        scope: `sharing.read`
+
+
+        Returns shared folder metadata by its folder ID.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"actions\": []\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                access_type:
+                  .tag: owner
+                is_inside_team_folder: false
+                is_team_folder: false
+                name: dir
+                policy:
+                  acl_update_policy:
+                    .tag: owner
+                  shared_link_policy:
+                    .tag: anyone
+                  member_policy:
+                    .tag: anyone
+                  resolved_member_policy:
+                    .tag: team
+                preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                shared_folder_id: '84528192421'
+                time_invited: '2016-01-20T00:00:00Z'
+                path_lower: /dir
+                link_metadata:
+                  audience_options:
+                  - .tag: public
+                  - .tag: team
+                  - .tag: members
+                  current_audience:
+                    .tag: public
+                  link_permissions:
+                  - action:
+                      .tag: change_audience
+                    allow: true
+                  password_protected: false
+                  url: ''
+                permissions: []
+                access_inheritance:
+                  .tag: inherit
+  /2/sharing/get_shared_link_file:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox get_shared_link_file
+      description: '[get_shared_link_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_file)
+
+
+        scope: `sharing.read`
+
+
+        Download the shared link''s file from a user''s Dropbox.      '
+      parameters:
+      - name: Dropbox-API-Arg
+        in: header
+        schema:
+          type: string
+        example: "{\n    \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\", \n    \"path\": \"/Prime_Numbers.txt\"\n}"
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: file
+                url: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
+                name: Prime_Numbers.txt
+                link_permissions:
+                  can_revoke: false
+                  resolved_visibility:
+                    .tag: public
+                  revoke_failure_reason:
+                    .tag: owner_only
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                path_lower: /homework/math/prime_numbers.txt
+                team_member_info:
+                  team_info:
+                    id: dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
+                    name: Acme, Inc.
+                  display_name: Roger Rabbit
+                  member_id: dbmid:abcd1234
+  /2/sharing/get_shared_link_metadata:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox get_shared_link_metadata
+      description: '[get_shared_link_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_metadata)
+
+
+        scope: `sharing.read`
+
+
+        Get the shared link''s metadata.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\", \n    \"path\": \"/Prime_Numbers.txt\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: file
+                url: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
+                name: Prime_Numbers.txt
+                link_permissions:
+                  can_revoke: false
+                  resolved_visibility:
+                    .tag: public
+                  revoke_failure_reason:
+                    .tag: owner_only
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                path_lower: /homework/math/prime_numbers.txt
+                team_member_info:
+                  team_info:
+                    id: dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
+                    name: Acme, Inc.
+                  display_name: Roger Rabbit
+                  member_id: dbmid:abcd1234
+  /2/sharing/list_file_members:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_file_members
+      description: '[list_file_members](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members)
+
+
+        scope: `sharing.read`
+
+
+        Use to obtain the members who have been invited to a file, both inherited and uninherited members.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"include_inherited\": true, \n    \"limit\": 100\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                users:
+                - access_type:
+                    .tag: owner
+                  user:
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    email: bob@example.com
+                    display_name: Robert Smith
+                    same_team: true
+                    team_member_id: dbmid:abcd1234
+                  permissions: []
+                  is_inherited: false
+                  time_last_seen: '2016-01-20T00:00:00Z'
+                  platform_type:
+                    .tag: unknown
+                groups:
+                - access_type:
+                    .tag: editor
+                  group:
+                    group_name: Test group
+                    group_id: g:e2db7665347abcd600000000001a2b3c
+                    group_management_type:
+                      .tag: user_managed
+                    group_type:
+                      .tag: user_managed
+                    is_member: false
+                    is_owner: false
+                    same_team: true
+                    member_count: 10
+                  permissions: []
+                  is_inherited: false
+                invitees:
+                - access_type:
+                    .tag: viewer
+                  invitee:
+                    .tag: email
+                    email: jessica@example.com
+                  permissions: []
+                  is_inherited: false
+  /2/sharing/list_file_members/batch:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_file_members/batch
+      description: '[list_file_members/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-batch)
+
+
+        scope: `sharing.read`
+
+
+        Get members of multiple files at once. The arguments to this route are more limited, and the limit on query result size per file is more strict. To customize the results more, use the individual file endpoint.
+
+        Inherited users and groups are not included in the result, and permissions are not returned for this endpoint.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"files\": [\n        \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n        \"id:VvTaJu2VZzAAAAAAAAAADQ\"\n    ], \n    \"limit\": 10\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+              - file: id:3kmLmQFnf1AAAAAAAAAAAw
+                result:
+                  .tag: result
+                  members:
+                    users:
+                    - access_type:
+                        .tag: owner
+                      user:
+                        account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                        email: bob@example.com
+                        display_name: Robert Smith
+                        same_team: true
+                        team_member_id: dbmid:abcd1234
+                      permissions: []
+                      is_inherited: false
+                      time_last_seen: '2016-01-20T00:00:00Z'
+                      platform_type:
+                        .tag: unknown
+                    groups:
+                    - access_type:
+                        .tag: editor
+                      group:
+                        group_name: Test group
+                        group_id: g:e2db7665347abcd600000000001a2b3c
+                        group_management_type:
+                          .tag: user_managed
+                        group_type:
+                          .tag: user_managed
+                        is_member: false
+                        is_owner: false
+                        same_team: true
+                        member_count: 10
+                      permissions: []
+                      is_inherited: false
+                    invitees:
+                    - access_type:
+                        .tag: viewer
+                      invitee:
+                        .tag: email
+                        email: jessica@example.com
+                      permissions: []
+                      is_inherited: false
+                  member_count: 3
+  /2/sharing/list_file_members/continue:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_file_members/continue
+      description: '[list_file_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-continue)
+
+
+        scope: `sharing.read`
+
+
+        Once a cursor has been retrieved from `list_file_members` or `list_file_members/batch`, use this to paginate through all shared file members.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                users:
+                - access_type:
+                    .tag: owner
+                  user:
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    email: bob@example.com
+                    display_name: Robert Smith
+                    same_team: true
+                    team_member_id: dbmid:abcd1234
+                  permissions: []
+                  is_inherited: false
+                  time_last_seen: '2016-01-20T00:00:00Z'
+                  platform_type:
+                    .tag: unknown
+                groups:
+                - access_type:
+                    .tag: editor
+                  group:
+                    group_name: Test group
+                    group_id: g:e2db7665347abcd600000000001a2b3c
+                    group_management_type:
+                      .tag: user_managed
+                    group_type:
+                      .tag: user_managed
+                    is_member: false
+                    is_owner: false
+                    same_team: true
+                    member_count: 10
+                  permissions: []
+                  is_inherited: false
+                invitees:
+                - access_type:
+                    .tag: viewer
+                  invitee:
+                    .tag: email
+                    email: jessica@example.com
+                  permissions: []
+                  is_inherited: false
+  /2/sharing/list_folder_members/continue:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_folder_members/continue
+      description: '[list_folder_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folder_members-continue)
+
+
+        scope: `sharing.read`
+
+
+        Once a cursor has been retrieved from `list_folder_members`, use this to paginate through all shared folder members.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                users:
+                - access_type:
+                    .tag: owner
+                  user:
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    email: bob@example.com
+                    display_name: Robert Smith
+                    same_team: true
+                    team_member_id: dbmid:abcd1234
+                  permissions: []
+                  is_inherited: false
+                groups:
+                - access_type:
+                    .tag: editor
+                  group:
+                    group_name: Test group
+                    group_id: g:e2db7665347abcd600000000001a2b3c
+                    group_management_type:
+                      .tag: user_managed
+                    group_type:
+                      .tag: user_managed
+                    is_member: false
+                    is_owner: false
+                    same_team: true
+                    member_count: 10
+                  permissions: []
+                  is_inherited: false
+                invitees:
+                - access_type:
+                    .tag: viewer
+                  invitee:
+                    .tag: email
+                    email: jessica@example.com
+                  permissions: []
+                  is_inherited: false
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+  /2/sharing/list_folders:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_folders
+      description: '[list_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders)
+
+
+        scope: `sharing.read`
+
+
+        Return the list of all shared folders the current user has access to.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"limit\": 100, \n    \"actions\": []\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - access_type:
+                    .tag: owner
+                  is_inside_team_folder: false
+                  is_team_folder: false
+                  name: dir
+                  policy:
+                    acl_update_policy:
+                      .tag: owner
+                    shared_link_policy:
+                      .tag: anyone
+                    member_policy:
+                      .tag: anyone
+                    resolved_member_policy:
+                      .tag: team
+                  preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                  shared_folder_id: '84528192421'
+                  time_invited: '2016-01-20T00:00:00Z'
+                  path_lower: /dir
+                  link_metadata:
+                    audience_options:
+                    - .tag: public
+                    - .tag: team
+                    - .tag: members
+                    current_audience:
+                      .tag: public
+                    link_permissions:
+                    - action:
+                        .tag: change_audience
+                      allow: true
+                    password_protected: false
+                    url: ''
+                  permissions: []
+                  access_inheritance:
+                    .tag: inherit
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+  /2/sharing/list_folders/continue:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_folders/continue
+      description: '[list_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders-continue)
+
+
+        scope: `sharing.read`
+
+
+        Once a cursor has been retrieved from `list_folders`, use this to paginate through all shared folders. The cursor must come from a previous call to `list_folders` or `list_folders/continue`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - access_type:
+                    .tag: owner
+                  is_inside_team_folder: false
+                  is_team_folder: false
+                  name: dir
+                  policy:
+                    acl_update_policy:
+                      .tag: owner
+                    shared_link_policy:
+                      .tag: anyone
+                    member_policy:
+                      .tag: anyone
+                    resolved_member_policy:
+                      .tag: team
+                  preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                  shared_folder_id: '84528192421'
+                  time_invited: '2016-01-20T00:00:00Z'
+                  path_lower: /dir
+                  link_metadata:
+                    audience_options:
+                    - .tag: public
+                    - .tag: team
+                    - .tag: members
+                    current_audience:
+                      .tag: public
+                    link_permissions:
+                    - action:
+                        .tag: change_audience
+                      allow: true
+                    password_protected: false
+                    url: ''
+                  permissions: []
+                  access_inheritance:
+                    .tag: inherit
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+  /2/sharing/list_mountable_folders:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_mountable_folders
+      description: '[list_mountable_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders)
+
+
+        scope: `sharing.read`
+
+
+        Return the list of all shared folders the current user can mount or unmount.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"limit\": 100, \n    \"actions\": []\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - access_type:
+                    .tag: owner
+                  is_inside_team_folder: false
+                  is_team_folder: false
+                  name: dir
+                  policy:
+                    acl_update_policy:
+                      .tag: owner
+                    shared_link_policy:
+                      .tag: anyone
+                    member_policy:
+                      .tag: anyone
+                    resolved_member_policy:
+                      .tag: team
+                  preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                  shared_folder_id: '84528192421'
+                  time_invited: '2016-01-20T00:00:00Z'
+                  path_lower: /dir
+                  link_metadata:
+                    audience_options:
+                    - .tag: public
+                    - .tag: team
+                    - .tag: members
+                    current_audience:
+                      .tag: public
+                    link_permissions:
+                    - action:
+                        .tag: change_audience
+                      allow: true
+                    password_protected: false
+                    url: ''
+                  permissions: []
+                  access_inheritance:
+                    .tag: inherit
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+  /2/sharing/list_mountable_folders/continue:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_mountable_folders/continue
+      description: '[list_mountable_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders-continue)
+
+
+        scope: `sharing.read`
+
+
+        Once a cursor has been retrieved from `list_mountable_folders`, use this to paginate through all mountable shared folders. The cursor must come from a previous call to `list_mountable_folders` or `list_mountable_folders/continue`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - access_type:
+                    .tag: owner
+                  is_inside_team_folder: false
+                  is_team_folder: false
+                  name: dir
+                  policy:
+                    acl_update_policy:
+                      .tag: owner
+                    shared_link_policy:
+                      .tag: anyone
+                    member_policy:
+                      .tag: anyone
+                    resolved_member_policy:
+                      .tag: team
+                  preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                  shared_folder_id: '84528192421'
+                  time_invited: '2016-01-20T00:00:00Z'
+                  path_lower: /dir
+                  link_metadata:
+                    audience_options:
+                    - .tag: public
+                    - .tag: team
+                    - .tag: members
+                    current_audience:
+                      .tag: public
+                    link_permissions:
+                    - action:
+                        .tag: change_audience
+                      allow: true
+                    password_protected: false
+                    url: ''
+                  permissions: []
+                  access_inheritance:
+                    .tag: inherit
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+  /2/sharing/list_received_files:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_received_files
+      description: "[list_received_files](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files)\n\nscope: `sharing.read`\n\nReturns a list of all files shared with current user.\n Does not include files the user has received via shared folders, and does  not include unclaimed invitations."
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"limit\": 100, \n    \"actions\": []\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - id: id:3kmLmQFnf1AAAAAAAAAAAw
+                  name: file.txt
+                  policy:
+                    acl_update_policy:
+                      .tag: owner
+                    shared_link_policy:
+                      .tag: anyone
+                    member_policy:
+                      .tag: anyone
+                    resolved_member_policy:
+                      .tag: team
+                  preview_url: https://www.dropbox.com/scl/fi/fir9vjelf
+                  access_type:
+                    .tag: viewer
+                  owner_display_names:
+                  - Jane Doe
+                  owner_team:
+                    id: dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
+                    name: Acme, Inc.
+                  path_display: /dir/file.txt
+                  path_lower: /dir/file.txt
+                  permissions: []
+                  time_invited: '2016-01-20T00:00:00Z'
+                cursor: AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9cmV2aXNpb24H3Qf6o1fkHxQ
+  /2/sharing/list_received_files/continue:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_received_files/continue
+      description: '[list_received_files/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files-continue)
+
+
+        scope: `sharing.read`
+
+
+        Get more results with a cursor from `list_received_files`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9emfGRlc2MCRWxpbWl0BGRId\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                entries:
+                - id: id:3kmLmQFnf1AAAAAAAAAAAw
+                  name: file.txt
+                  policy:
+                    acl_update_policy:
+                      .tag: owner
+                    shared_link_policy:
+                      .tag: anyone
+                    member_policy:
+                      .tag: anyone
+                    resolved_member_policy:
+                      .tag: team
+                  preview_url: https://www.dropbox.com/scl/fi/fir9vjelf
+                  access_type:
+                    .tag: viewer
+                  owner_display_names:
+                  - Jane Doe
+                  owner_team:
+                    id: dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
+                    name: Acme, Inc.
+                  path_display: /dir/file.txt
+                  path_lower: /dir/file.txt
+                  permissions: []
+                  time_invited: '2016-01-20T00:00:00Z'
+                cursor: AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9cmV2aXNpb24H3Qf6o1fkHxQ
+  /2/sharing/list_shared_links:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox list_shared_links
+      description: '[list_shared_links](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_shared_links)
+
+
+        scope: `sharing.read`
+
+
+        List shared links of this user.
+
+        If no path is given, returns a list of all shared links for the current user.
+
+        If a non-empty path is given, returns a list of all shared links that allow access to the given path - direct links to the given path and links to parent folders of the given path. Links to parent folders can be suppressed by setting direct_only to true.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                links:
+                - .tag: file
+                  url: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
+                  name: Prime_Numbers.txt
+                  link_permissions:
+                    can_revoke: false
+                    resolved_visibility:
+                      .tag: public
+                    revoke_failure_reason:
+                      .tag: owner_only
+                  client_modified: '2015-05-12T15:50:38Z'
+                  server_modified: '2015-05-12T15:50:38Z'
+                  rev: a1c10ce0dd78
+                  size: 7212
+                  id: id:a4ayc_80_OEAAAAAAAAAXw
+                  path_lower: /homework/math/prime_numbers.txt
+                  team_member_info:
+                    team_info:
+                      id: dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
+                      name: Acme, Inc.
+                    display_name: Roger Rabbit
+                    member_id: dbmid:abcd1234
+                has_more: true
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+  /2/sharing/modify_shared_link_settings:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox modify_shared_link_settings
+      description: '[modify_shared_link_settings](https://www.dropbox.com/developers/documentation/http/documentation#sharing-modify_shared_link_settings)
+
+
+        scope: `sharing.write`
+
+
+        Modify the shared link''s settings.
+
+        If the requested visibility conflict with the shared links policy of the team or the shared folder (in case the linked file is part of a shared folder) then the `LinkPermissions.resolved_visibility` of the returned `SharedLinkMetadata` will reflect the actual visibility of the shared link and the `LinkPermissions.requested_visibility` will reflect the requested visibility.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\", \n    \"settings\": {\n        \"requested_visibility\": \"public\", \n        \"audience\": \"public\", \n        \"access\": \"viewer\"\n    }, \n    \"remove_expiration\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: file
+                url: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
+                name: Prime_Numbers.txt
+                link_permissions:
+                  can_revoke: false
+                  resolved_visibility:
+                    .tag: public
+                  revoke_failure_reason:
+                    .tag: owner_only
+                client_modified: '2015-05-12T15:50:38Z'
+                server_modified: '2015-05-12T15:50:38Z'
+                rev: a1c10ce0dd78
+                size: 7212
+                id: id:a4ayc_80_OEAAAAAAAAAXw
+                path_lower: /homework/math/prime_numbers.txt
+                team_member_info:
+                  team_info:
+                    id: dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
+                    name: Acme, Inc.
+                  display_name: Roger Rabbit
+                  member_id: dbmid:abcd1234
+  /2/sharing/mount_folder:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox mount_folder
+      description: '[mount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-mount_folder)
+
+
+        scope: `sharing.write`
+
+
+        The current user mounts the designated folder.
+
+        Mount a shared folder for a user after they have been added as a member. Once mounted, the shared folder will appear in their Dropbox.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                access_type:
+                  .tag: owner
+                is_inside_team_folder: false
+                is_team_folder: false
+                name: dir
+                policy:
+                  acl_update_policy:
+                    .tag: owner
+                  shared_link_policy:
+                    .tag: anyone
+                  member_policy:
+                    .tag: anyone
+                  resolved_member_policy:
+                    .tag: team
+                preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                shared_folder_id: '84528192421'
+                time_invited: '2016-01-20T00:00:00Z'
+                path_lower: /dir
+                link_metadata:
+                  audience_options:
+                  - .tag: public
+                  - .tag: team
+                  - .tag: members
+                  current_audience:
+                    .tag: public
+                  link_permissions:
+                  - action:
+                      .tag: change_audience
+                    allow: true
+                  password_protected: false
+                  url: ''
+                permissions: []
+                access_inheritance:
+                  .tag: inherit
+  /2/sharing/relinquish_file_membership:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox relinquish_file_membership
+      description: '[relinquish_file_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_file_membership)
+
+
+        scope: `sharing.write`
+
+
+        The current user relinquishes their membership in the designated file. Note that the current user may still have inherited access to this file through the parent folder.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/sharing/relinquish_folder_membership:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox relinquish_folder_membership
+      description: '[relinquish_folder_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_folder_membership)
+
+
+        scope: `sharing.write`
+
+
+        The current user relinquishes their membership in the designated shared folder and will no longer have access to the folder.  A folder owner cannot relinquish membership in their own folder.
+
+        This will run synchronously if leave_a_copy is false, and asynchronously if leave_a_copy is true.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"leave_a_copy\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/sharing/remove_file_member_2:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox remove_file_member_2
+      description: '[remove_file_member_2](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_file_member_2)
+
+
+        scope: `sharing.write`
+
+
+        Removes a specified member from the file.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"member\": {\n        \".tag\": \"email\", \n        \"email\": \"justin@example.com\"\n    }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: other
+  /2/sharing/remove_folder_member:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox remove_folder_member
+      description: '[remove_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_folder_member)
+
+
+        scope: `sharing.write`
+
+
+        Allows an owner or editor (if the ACL update policy allows) of a shared folder to remove another member.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"member\": {\n        \".tag\": \"email\", \n        \"email\": \"justin@example.com\"\n    }, \n    \"leave_a_copy\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: async_job_id
+                async_job_id: 34g93hh34h04y384084
+  /2/sharing/revoke_shared_link:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox revoke_shared_link
+      description: '[revoke_shared_link](https://www.dropbox.com/developers/documentation/http/documentation#sharing-revoke_shared_link)
+
+
+        scope: `sharing.write`
+
+
+        Revoke a shared link.
+
+        Note that even after revoking a shared link to a file, the file may be accessible if there are shared links leading to any of the file parent folders. To list all shared links that enable access to a specific file, you can use the `list_shared_links` with the file as the `ListSharedLinksArg.path` argument.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/sharing/set_access_inheritance:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox set_access_inheritance
+      description: '[set_access_inheritance](https://www.dropbox.com/developers/documentation/http/documentation#sharing-set_access_inheritance)
+
+
+        scope: `sharing.write`
+
+
+        Change the inheritance policy of an existing Shared Folder. Only permitted for shared folders in a shared team root.
+
+        If a `ShareFolderLaunch.async_job_id` is returned, you''ll need to call `check_share_job_status` until the action completes to get the metadata for the folder.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"access_inheritance\": \"inherit\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                access_type:
+                  .tag: owner
+                is_inside_team_folder: false
+                is_team_folder: false
+                name: dir
+                policy:
+                  acl_update_policy:
+                    .tag: owner
+                  shared_link_policy:
+                    .tag: anyone
+                  member_policy:
+                    .tag: anyone
+                  resolved_member_policy:
+                    .tag: team
+                preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                shared_folder_id: '84528192421'
+                time_invited: '2016-01-20T00:00:00Z'
+                path_lower: /dir
+                link_metadata:
+                  audience_options:
+                  - .tag: public
+                  - .tag: team
+                  - .tag: members
+                  current_audience:
+                    .tag: public
+                  link_permissions:
+                  - action:
+                      .tag: change_audience
+                    allow: true
+                  password_protected: false
+                  url: ''
+                permissions: []
+                access_inheritance:
+                  .tag: inherit
+  /2/sharing/share_folder:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox share_folder
+      description: '[share_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-share_folder)
+
+
+        scope: `sharing.write`
+
+
+        Share a folder with collaborators.
+
+        Most sharing will be completed synchronously. Large folders will be completed asynchronously. To make testing the async case repeatable, set `ShareFolderArg.force_async`.
+
+        If a `ShareFolderLaunch.async_job_id` is returned, you''ll need to call `check_share_job_status` until the action completes to get the metadata for the folder.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"path\": \"/example/workspace\", \n    \"acl_update_policy\": \"editors\", \n    \"force_async\": false, \n    \"member_policy\": \"team\", \n    \"shared_link_policy\": \"members\", \n    \"access_inheritance\": \"inherit\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                access_type:
+                  .tag: owner
+                is_inside_team_folder: false
+                is_team_folder: false
+                name: dir
+                policy:
+                  acl_update_policy:
+                    .tag: owner
+                  shared_link_policy:
+                    .tag: anyone
+                  member_policy:
+                    .tag: anyone
+                  resolved_member_policy:
+                    .tag: team
+                preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                shared_folder_id: '84528192421'
+                time_invited: '2016-01-20T00:00:00Z'
+                path_lower: /dir
+                link_metadata:
+                  audience_options:
+                  - .tag: public
+                  - .tag: team
+                  - .tag: members
+                  current_audience:
+                    .tag: public
+                  link_permissions:
+                  - action:
+                      .tag: change_audience
+                    allow: true
+                  password_protected: false
+                  url: ''
+                permissions: []
+                access_inheritance:
+                  .tag: inherit
+  /2/sharing/transfer_folder:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox transfer_folder
+      description: '[transfer_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-transfer_folder)
+
+
+        scope: `sharing.write`
+
+
+        Transfer ownership of a shared folder to a member of the shared folder.
+
+        User must have `AccessLevel.owner` access to the shared folder to perform a transfer.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"to_dropbox_id\": \"dbid:AAEufNrMPSPe0dMQijRP0N_aZtBJRm26W4Q\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/sharing/unmount_folder:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox unmount_folder
+      description: '[unmount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unmount_folder)
+
+
+        scope: `sharing.write`
+
+
+        The current user unmounts the designated folder. They can re-mount the folder at a later time using `mount_folder`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/sharing/unshare_file:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox unshare_file
+      description: '[unshare_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_file)
+
+
+        scope: `sharing.write`
+
+
+        Remove all members from this file. Does not remove inherited members.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/sharing/unshare_folder:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox unshare_folder
+      description: '[unshare_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_folder)
+
+
+        scope: `sharing.write`
+
+
+        Allows a shared folder owner to unshare the folder.
+
+        You''ll need to call `check_job_status` to determine if the action has completed successfully.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"leave_a_copy\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/sharing/update_file_member:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox update_file_member
+      description: '[update_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_file_member)
+
+
+        scope: `sharing.write`
+
+
+        Changes a member''s access on a shared file.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\", \n    \"member\": {\n        \".tag\": \"email\", \n        \"email\": \"justin@example.com\"\n    }, \n    \"access_level\": \"viewer\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example: {}
+  /2/sharing/update_folder_member:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox update_folder_member
+      description: '[update_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_member)
+
+
+        scope: `sharing.write`
+
+
+        Allows an owner or editor of a shared folder to update another member''s permissions.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"member\": {\n        \".tag\": \"email\", \n        \"email\": \"justin@example.com\"\n    }, \n    \"access_level\": \"editor\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example: {}
+  /2/sharing/update_folder_policy:
+    post:
+      tags:
+      - Sharing
+      summary: Dropbox update_folder_policy
+      description: '[update_folder_policy](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_policy)
+
+
+        scope: `sharing.write`
+
+
+        Update the sharing policies for a shared folder.
+
+        User must have `AccessLevel.owner` access to the shared folder to update its policies.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"shared_folder_id\": \"84528192421\", \n    \"member_policy\": \"team\", \n    \"acl_update_policy\": \"owner\", \n    \"shared_link_policy\": \"members\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                access_type:
+                  .tag: owner
+                is_inside_team_folder: false
+                is_team_folder: false
+                name: dir
+                policy:
+                  acl_update_policy:
+                    .tag: owner
+                  shared_link_policy:
+                    .tag: anyone
+                  member_policy:
+                    .tag: anyone
+                  resolved_member_policy:
+                    .tag: team
+                preview_url: https://www.dropbox.com/scl/fo/fir9vjelf
+                shared_folder_id: '84528192421'
+                time_invited: '2016-01-20T00:00:00Z'
+                path_lower: /dir
+                link_metadata:
+                  audience_options:
+                  - .tag: public
+                  - .tag: team
+                  - .tag: members
+                  current_audience:
+                    .tag: public
+                  link_permissions:
+                  - action:
+                      .tag: change_audience
+                    allow: true
+                  password_protected: false
+                  url: ''
+                permissions: []
+                access_inheritance:
+                  .tag: inherit
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

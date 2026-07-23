@@ -1,0 +1,474 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account File_requests API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: File_requests
+  description: 'This namespace contains endpoints and data types for file request operations.
+
+    '
+paths:
+  /2/file_requests/count:
+    post:
+      tags:
+      - File_requests
+      summary: Dropbox count
+      description: '[count](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-count)
+
+
+        scope: `file_requests.read`
+
+
+        Returns the total number of file requests owned by this user. Includes both open and closed file requests.      '
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                file_request_count: 15
+  /2/file_requests/create:
+    post:
+      tags:
+      - File_requests
+      summary: Dropbox create
+      description: '[create](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-create)
+
+
+        scope: `file_requests.write`
+
+
+        Creates a file request for this user.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"title\": \"Homework submission\", \n    \"destination\": \"/File Requests/Homework\", \n    \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\", \n        \"allow_late_uploads\": \"seven_days\"\n    }, \n    \"open\": true\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: oaCAVmEyrqYnkZX9955Y
+                url: https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y
+                title: Homework submission
+                created: '2015-10-05T17:00:00Z'
+                is_open: true
+                file_count: 3
+                destination: /File Requests/Homework
+                deadline:
+                  deadline: '2020-10-12T17:00:00Z'
+                  allow_late_uploads:
+                    .tag: seven_days
+  /2/file_requests/delete:
+    post:
+      tags:
+      - File_requests
+      summary: Dropbox delete
+      description: '[delete](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete)
+
+
+        scope: `file_requests.write`
+
+
+        Delete a batch of closed file requests.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"ids\": [\n        \"oaCAVmEyrqYnkZX9955Y\", \n        \"BaZmehYoXMPtaRmfTbSG\"\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                file_requests:
+                - id: oaCAVmEyrqYnkZX9955Y
+                  url: https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y
+                  title: Homework submission
+                  created: '2015-10-05T17:00:00Z'
+                  is_open: true
+                  file_count: 3
+                  destination: /File Requests/Homework
+                  deadline:
+                    deadline: '2020-10-12T17:00:00Z'
+                    allow_late_uploads:
+                      .tag: seven_days
+                - id: BAJ7IrRGicQKGToykQdB
+                  url: https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB
+                  title: Photo contest submission
+                  created: '2015-11-02T04:00:00Z'
+                  is_open: true
+                  file_count: 105
+                  destination: /Photo contest entries
+                  deadline:
+                    deadline: '2020-10-12T17:00:00Z'
+                - id: rxwMPvK3ATTa0VxOJu5T
+                  url: https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T
+                  title: Wedding photo submission
+                  created: '2015-12-15T13:02:00Z'
+                  is_open: true
+                  file_count: 37
+                  destination: /Wedding photos
+  /2/file_requests/delete_all_closed:
+    post:
+      tags:
+      - File_requests
+      summary: Dropbox delete_all_closed
+      description: '[delete_all_closed](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete_all_closed)
+
+
+        scope: `file_requests.write`
+
+
+        Delete all closed file requests owned by this user.      '
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                file_requests:
+                - id: oaCAVmEyrqYnkZX9955Y
+                  url: https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y
+                  title: Homework submission
+                  created: '2015-10-05T17:00:00Z'
+                  is_open: true
+                  file_count: 3
+                  destination: /File Requests/Homework
+                  deadline:
+                    deadline: '2020-10-12T17:00:00Z'
+                    allow_late_uploads:
+                      .tag: seven_days
+                - id: BAJ7IrRGicQKGToykQdB
+                  url: https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB
+                  title: Photo contest submission
+                  created: '2015-11-02T04:00:00Z'
+                  is_open: true
+                  file_count: 105
+                  destination: /Photo contest entries
+                  deadline:
+                    deadline: '2020-10-12T17:00:00Z'
+                - id: rxwMPvK3ATTa0VxOJu5T
+                  url: https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T
+                  title: Wedding photo submission
+                  created: '2015-12-15T13:02:00Z'
+                  is_open: true
+                  file_count: 37
+                  destination: /Wedding photos
+  /2/file_requests/get:
+    post:
+      tags:
+      - File_requests
+      summary: Dropbox get
+      description: '[get](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-get)
+
+
+        scope: `file_requests.read`
+
+
+        Returns the specified file request.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"id\": \"oaCAVmEyrqYnkZX9955Y\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: oaCAVmEyrqYnkZX9955Y
+                url: https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y
+                title: Homework submission
+                created: '2015-10-05T17:00:00Z'
+                is_open: true
+                file_count: 3
+                destination: /File Requests/Homework
+                deadline:
+                  deadline: '2020-10-12T17:00:00Z'
+                  allow_late_uploads:
+                    .tag: seven_days
+  /2/file_requests/list_v2:
+    post:
+      tags:
+      - File_requests
+      summary: Dropbox list
+      description: '[list](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list)
+
+
+        scope: `file_requests.read`
+
+
+        Returns a list of file requests owned by this user. For apps with the app folder permission, this will only return file requests with destinations in the app folder.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"limit\": 1000\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                file_requests:
+                - id: oaCAVmEyrqYnkZX9955Y
+                  url: https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y
+                  title: Homework submission
+                  created: '2015-10-05T17:00:00Z'
+                  is_open: true
+                  file_count: 3
+                  destination: /File Requests/Homework
+                  deadline:
+                    deadline: '2020-10-12T17:00:00Z'
+                    allow_late_uploads:
+                      .tag: seven_days
+                - id: BAJ7IrRGicQKGToykQdB
+                  url: https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB
+                  title: Photo contest submission
+                  created: '2015-11-02T04:00:00Z'
+                  is_open: true
+                  file_count: 105
+                  destination: /Photo contest entries
+                  deadline:
+                    deadline: '2020-10-12T17:00:00Z'
+                - id: rxwMPvK3ATTa0VxOJu5T
+                  url: https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T
+                  title: Wedding photo submission
+                  created: '2015-12-15T13:02:00Z'
+                  is_open: true
+                  file_count: 37
+                  destination: /Wedding photos
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: true
+  /2/file_requests/list/continue:
+    post:
+      tags:
+      - File_requests
+      summary: Dropbox list/continue
+      description: '[list/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list-continue)
+
+
+        scope: `file_requests.read`
+
+
+        Once a cursor has been retrieved from `list:2`, use this to paginate through all file requests. The cursor must come from a previous call to `list:2` or `list/continue`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                file_requests:
+                - id: oaCAVmEyrqYnkZX9955Y
+                  url: https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y
+                  title: Homework submission
+                  created: '2015-10-05T17:00:00Z'
+                  is_open: true
+                  file_count: 3
+                  destination: /File Requests/Homework
+                  deadline:
+                    deadline: '2020-10-12T17:00:00Z'
+                    allow_late_uploads:
+                      .tag: seven_days
+                - id: BAJ7IrRGicQKGToykQdB
+                  url: https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB
+                  title: Photo contest submission
+                  created: '2015-11-02T04:00:00Z'
+                  is_open: true
+                  file_count: 105
+                  destination: /Photo contest entries
+                  deadline:
+                    deadline: '2020-10-12T17:00:00Z'
+                - id: rxwMPvK3ATTa0VxOJu5T
+                  url: https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T
+                  title: Wedding photo submission
+                  created: '2015-12-15T13:02:00Z'
+                  is_open: true
+                  file_count: 37
+                  destination: /Wedding photos
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: true
+  /2/file_requests/update:
+    post:
+      tags:
+      - File_requests
+      summary: Dropbox update
+      description: '[update](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-update)
+
+
+        scope: `file_requests.write`
+
+
+        Update a file request.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"id\": \"oaCAVmEyrqYnkZX9955Y\", \n    \"title\": \"Homework submission\", \n    \"destination\": \"/File Requests/Homework\", \n    \"deadline\": {\n        \".tag\": \"update\", \n        \"deadline\": \"2020-10-12T17:00:00Z\", \n        \"allow_late_uploads\": \"seven_days\"\n    }, \n    \"open\": true\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: oaCAVmEyrqYnkZX9955Y
+                url: https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y
+                title: Homework submission
+                created: '2015-10-05T17:00:00Z'
+                is_open: true
+                file_count: 3
+                destination: /File Requests/Homework
+                deadline:
+                  deadline: '2020-10-12T17:00:00Z'
+                  allow_late_uploads:
+                    .tag: seven_days
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

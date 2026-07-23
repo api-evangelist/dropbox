@@ -1,0 +1,1139 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account Team > Members API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: Team > Members
+paths:
+  /2/team/members/add:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/add
+      description: '[members/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-add)
+
+
+        scope: `members.write`
+
+
+        Adds members to a team.
+
+        Permission : Team member management
+
+        A maximum of 20 members can be specified in a single call.
+
+        If no Dropbox account exists with the email address specified, a new Dropbox account will be created with the given email address, and that account will be invited to the team.
+
+        If a personal Dropbox account exists with the email address specified in the call, this call will create a placeholder Dropbox account for the user on the team and send an email inviting the user to migrate their existing personal account onto the team.
+
+        Team member management apps are required to set an initial given_name and surname for a user to use in the team invitation and for ''Perform as team member'' actions taken on the user before they become ''active''.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"new_members\": [\n        {\n            \"member_email\": \"tom.s@company.com\", \n            \"member_given_name\": \"Tom\", \n            \"member_surname\": \"Silverstone\", \n            \"member_external_id\": \"company_id:342432\", \n            \"send_welcome_email\": true, \n            \"role\": \"member_only\"\n        }\n    ], \n    \"force_async\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                complete:
+                - .tag: success
+                  profile:
+                    team_member_id: dbmid:FDFSVF-DFSDF
+                    email: tami@seagull.com
+                    email_verified: false
+                    status:
+                      .tag: active
+                    name:
+                      given_name: Franz
+                      surname: Ferdinand
+                      familiar_name: Franz
+                      display_name: Franz Ferdinand (Personal)
+                      abbreviated_name: FF
+                    membership_type:
+                      .tag: full
+                    groups:
+                    - g:e2db7665347abcd600000000001a2b3c
+                    member_folder_id: '20'
+                    external_id: '244423'
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    secondary_emails:
+                    - email: grape@strawberry.com
+                      is_verified: false
+                    - email: apple@orange.com
+                      is_verified: true
+                    joined_on: '2015-05-12T15:50:38Z'
+                    profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                  role:
+                    .tag: member_only
+  /2/team/members/add/job_status/get:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/add/job_status/get
+      description: '[members/add/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-add-job_status-get)
+
+
+        scope: `members.write`
+
+
+        Once an async_job_id is returned from `members/add` , use this to poll the status of the asynchronous request.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                complete:
+                - .tag: success
+                  profile:
+                    team_member_id: dbmid:FDFSVF-DFSDF
+                    email: tami@seagull.com
+                    email_verified: false
+                    status:
+                      .tag: active
+                    name:
+                      given_name: Franz
+                      surname: Ferdinand
+                      familiar_name: Franz
+                      display_name: Franz Ferdinand (Personal)
+                      abbreviated_name: FF
+                    membership_type:
+                      .tag: full
+                    groups:
+                    - g:e2db7665347abcd600000000001a2b3c
+                    member_folder_id: '20'
+                    external_id: '244423'
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    secondary_emails:
+                    - email: grape@strawberry.com
+                      is_verified: false
+                    - email: apple@orange.com
+                      is_verified: true
+                    joined_on: '2015-05-12T15:50:38Z'
+                    profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                  role:
+                    .tag: member_only
+  /2/team/members/delete_profile_photo:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/delete_profile_photo
+      description: '[members/delete_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-delete_profile_photo)
+
+
+        scope: `members.write`
+
+
+        Deletes a team member''s profile photo.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                profile:
+                  team_member_id: dbmid:FDFSVF-DFSDF
+                  email: tami@seagull.com
+                  email_verified: false
+                  status:
+                    .tag: active
+                  name:
+                    given_name: Franz
+                    surname: Ferdinand
+                    familiar_name: Franz
+                    display_name: Franz Ferdinand (Personal)
+                    abbreviated_name: FF
+                  membership_type:
+                    .tag: full
+                  groups:
+                  - g:e2db7665347abcd600000000001a2b3c
+                  member_folder_id: '20'
+                  external_id: '244423'
+                  account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  secondary_emails:
+                  - email: grape@strawberry.com
+                    is_verified: false
+                  - email: apple@orange.com
+                    is_verified: true
+                  joined_on: '2015-05-12T15:50:38Z'
+                  profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                role:
+                  .tag: member_only
+  /2/team/members/get_info:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/get_info
+      description: '[members/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-members-get_info)
+
+
+        scope: `members.read`
+
+
+        Returns information about multiple team members.
+
+        Permission : Team information
+
+        This endpoint will return `MembersGetInfoItem.id_not_found`, for IDs (or emails) that cannot be matched to a valid team member.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"members\": [\n        {\n            \".tag\": \"team_member_id\", \n            \"team_member_id\": \"dbmid:efgh5678\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+              - .tag: member_info
+                profile:
+                  team_member_id: dbmid:FDFSVF-DFSDF
+                  email: tami@seagull.com
+                  email_verified: false
+                  status:
+                    .tag: active
+                  name:
+                    given_name: Franz
+                    surname: Ferdinand
+                    familiar_name: Franz
+                    display_name: Franz Ferdinand (Personal)
+                    abbreviated_name: FF
+                  membership_type:
+                    .tag: full
+                  groups:
+                  - g:e2db7665347abcd600000000001a2b3c
+                  member_folder_id: '20'
+                  external_id: '244423'
+                  account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  secondary_emails:
+                  - email: grape@strawberry.com
+                    is_verified: false
+                  - email: apple@orange.com
+                    is_verified: true
+                  joined_on: '2015-05-12T15:50:38Z'
+                  profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                role:
+                  .tag: member_only
+  /2/team/members/list:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/list
+      description: '[members/list](https://www.dropbox.com/developers/documentation/http/teams#team-members-list)
+
+
+        scope: `members.read`
+
+
+        Lists members of a team.
+
+        Permission : Team information.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"limit\": 100, \n    \"include_removed\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                members:
+                - profile:
+                    team_member_id: dbmid:FDFSVF-DFSDF
+                    email: tami@seagull.com
+                    email_verified: false
+                    status:
+                      .tag: active
+                    name:
+                      given_name: Franz
+                      surname: Ferdinand
+                      familiar_name: Franz
+                      display_name: Franz Ferdinand (Personal)
+                      abbreviated_name: FF
+                    membership_type:
+                      .tag: full
+                    groups:
+                    - g:e2db7665347abcd600000000001a2b3c
+                    member_folder_id: '20'
+                    external_id: '244423'
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    secondary_emails:
+                    - email: grape@strawberry.com
+                      is_verified: false
+                    - email: apple@orange.com
+                      is_verified: true
+                    joined_on: '2015-05-12T15:50:38Z'
+                    profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                  role:
+                    .tag: member_only
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: true
+  /2/team/members/list/continue:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/list/continue
+      description: '[members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-members-list-continue)
+
+
+        scope: `members.read`
+
+
+        Once a cursor has been retrieved from `members/list`, use this to paginate through all team members.
+
+        Permission : Team information.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                members:
+                - profile:
+                    team_member_id: dbmid:FDFSVF-DFSDF
+                    email: tami@seagull.com
+                    email_verified: false
+                    status:
+                      .tag: active
+                    name:
+                      given_name: Franz
+                      surname: Ferdinand
+                      familiar_name: Franz
+                      display_name: Franz Ferdinand (Personal)
+                      abbreviated_name: FF
+                    membership_type:
+                      .tag: full
+                    groups:
+                    - g:e2db7665347abcd600000000001a2b3c
+                    member_folder_id: '20'
+                    external_id: '244423'
+                    account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                    secondary_emails:
+                    - email: grape@strawberry.com
+                      is_verified: false
+                    - email: apple@orange.com
+                      is_verified: true
+                    joined_on: '2015-05-12T15:50:38Z'
+                    profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                  role:
+                    .tag: member_only
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: true
+  /2/team/members/move_former_member_files:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/move_former_member_files
+      description: '[members/move_former_member_files](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files)
+
+
+        scope: `members.write`
+
+
+        Moves removed member''s files to a different member. This endpoint initiates an asynchronous job. To obtain the final result of the job, the client should periodically poll `members/move_former_member_files/job_status/check`.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"transfer_dest_id\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"transfer_admin_id\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/team/members/move_former_member_files/job_status/check:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/move_former_member_files/job_status/check
+      description: '[members/move_former_member_files/job_status/check](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files-job_status-check)
+
+
+        scope: `members.write`
+
+
+        Once an async_job_id is returned from `members/move_former_member_files` , use this to poll the status of the asynchronous request.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/team/members/recover:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/recover
+      description: '[members/recover](https://www.dropbox.com/developers/documentation/http/teams#team-members-recover)
+
+
+        scope: `members.delete`
+
+
+        Recover a deleted member.
+
+        Permission : Team member management
+
+        Exactly one of team_member_id, email, or external_id must be provided to identify the user account.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/team/members/remove:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/remove
+      description: '[members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove)
+
+
+        scope: `members.delete`
+
+
+        Removes a member from a team.
+
+        Permission : Team member management
+
+        Exactly one of team_member_id, email, or external_id must be provided to identify the user account.
+
+        Accounts can be recovered via `members/recover` for a 7 day period or until the account has been permanently deleted or transferred to another account (whichever comes first). Calling `members/add` while a user is still recoverable on your team will return with `MemberAddResult.user_already_on_team`.
+
+        Accounts can have their files transferred via the admin console for a limited time, based on the version history length associated with the team (180 days for most teams).
+
+        This endpoint may initiate an asynchronous job. To obtain the final result of the job, the client should periodically poll `members/remove/job_status/get`.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"wipe_data\": true, \n    \"transfer_dest_id\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"transfer_admin_id\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"keep_account\": false, \n    \"retain_team_shares\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/team/members/remove/job_status/get:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/remove/job_status/get
+      description: '[members/remove/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove-job_status-get)
+
+
+        scope: `members.delete`
+
+
+        Once an async_job_id is returned from `members/remove` , use this to poll the status of the asynchronous request.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+  /2/team/members/secondary_emails/add:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/secondary_emails/add
+      description: '[members/secondary_emails/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-add)
+
+
+        scope: `members.write`
+
+
+        Add secondary emails to users.
+
+        Permission : Team member management.
+
+        Emails that are on verified domains will be verified automatically. For each email address not on a verified domain a verification email will be sent.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"new_secondary_emails\": [\n        {\n            \"user\": {\n                \".tag\": \"team_member_id\", \n                \"team_member_id\": \"dbmid:efgh5678\"\n            }, \n            \"secondary_emails\": [\n                \"bob2@hotmail.com\", \n                \"bob@inst.gov\"\n            ]\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                results:
+                - .tag: success
+                  user:
+                    .tag: team_member_id
+                    team_member_id: dbmid:efgh5678
+                  results:
+                  - .tag: success
+                    success:
+                      email: apple@orange.com
+                      is_verified: true
+                  - .tag: unavailable
+                    unavailable: alice@example.com
+                - .tag: invalid_user
+                  invalid_user:
+                    .tag: team_member_id
+                    team_member_id: dbmid:efgh5678
+  /2/team/members/secondary_emails/delete:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/secondary_emails/delete
+      description: '[members/secondary_emails/delete](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-delete)
+
+
+        scope: `members.write`
+
+
+        Delete secondary emails from users
+
+        Permission : Team member management.
+
+        Users will be notified of deletions of verified secondary emails at both the secondary email and their primary email.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"emails_to_delete\": [\n        {\n            \"user\": {\n                \".tag\": \"team_member_id\", \n                \"team_member_id\": \"dbmid:efgh5678\"\n            }, \n            \"secondary_emails\": [\n                \"bob2@hotmail.com\", \n                \"bob@inst.gov\"\n            ]\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                results:
+                - .tag: success
+                  user:
+                    .tag: team_member_id
+                    team_member_id: dbmid:efgh5678
+                  results:
+                  - .tag: success
+                    success: alice@example.com
+                  - .tag: not_found
+                    not_found: alic@example.com
+  /2/team/members/secondary_emails/resend_verification_emails:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/secondary_emails/resend_verification_emails
+      description: '[members/secondary_emails/resend_verification_emails](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-resend_verification_emails)
+
+
+        scope: `members.write`
+
+
+        Resend secondary email verification emails.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"emails_to_resend\": [\n        {\n            \"user\": {\n                \".tag\": \"team_member_id\", \n                \"team_member_id\": \"dbmid:efgh5678\"\n            }, \n            \"secondary_emails\": [\n                \"bob2@hotmail.com\", \n                \"bob@inst.gov\"\n            ]\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                results:
+                - .tag: success
+                  user:
+                    .tag: team_member_id
+                    team_member_id: dbmid:efgh5678
+                  results:
+                  - .tag: success
+                    success: alice@example.com
+  /2/team/members/send_welcome_email:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/send_welcome_email
+      description: '[members/send_welcome_email](https://www.dropbox.com/developers/documentation/http/teams#team-members-send_welcome_email)
+
+
+        scope: `members.write`
+
+
+        Sends welcome email to pending team member.
+
+        Permission : Team member management
+
+        Exactly one of team_member_id, email, or external_id must be provided to identify the user account.
+
+        No-op if team member is not pending.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \".tag\": \"team_member_id\", \n    \"team_member_id\": \"dbmid:efgh5678\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/team/members/set_admin_permissions:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/set_admin_permissions
+      description: '[members/set_admin_permissions](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_admin_permissions)
+
+
+        scope: `members.write`
+
+
+        Updates a team member''s permissions.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"new_role\": \"member_only\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                team_member_id: dbmid:9978889
+                role:
+                  .tag: member_only
+  /2/team/members/set_profile:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/set_profile
+      description: '[members/set_profile](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile)
+
+
+        scope: `members.write`
+
+
+        Updates a team member''s profile.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"new_email\": \"t.smith@domain.com\", \n    \"new_surname\": \"Smith\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                profile:
+                  team_member_id: dbmid:FDFSVF-DFSDF
+                  email: tami@seagull.com
+                  email_verified: false
+                  status:
+                    .tag: active
+                  name:
+                    given_name: Franz
+                    surname: Ferdinand
+                    familiar_name: Franz
+                    display_name: Franz Ferdinand (Personal)
+                    abbreviated_name: FF
+                  membership_type:
+                    .tag: full
+                  groups:
+                  - g:e2db7665347abcd600000000001a2b3c
+                  member_folder_id: '20'
+                  external_id: '244423'
+                  account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  secondary_emails:
+                  - email: grape@strawberry.com
+                    is_verified: false
+                  - email: apple@orange.com
+                    is_verified: true
+                  joined_on: '2015-05-12T15:50:38Z'
+                  profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                role:
+                  .tag: member_only
+  /2/team/members/set_profile_photo:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/set_profile_photo
+      description: '[members/set_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile_photo)
+
+
+        scope: `members.write`
+
+
+        Updates a team member''s profile photo.
+
+        Permission : Team member management.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"photo\": {\n        \".tag\": \"base64_data\", \n        \"base64_data\": \"SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4=\"\n    }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                profile:
+                  team_member_id: dbmid:FDFSVF-DFSDF
+                  email: tami@seagull.com
+                  email_verified: false
+                  status:
+                    .tag: active
+                  name:
+                    given_name: Franz
+                    surname: Ferdinand
+                    familiar_name: Franz
+                    display_name: Franz Ferdinand (Personal)
+                    abbreviated_name: FF
+                  membership_type:
+                    .tag: full
+                  groups:
+                  - g:e2db7665347abcd600000000001a2b3c
+                  member_folder_id: '20'
+                  external_id: '244423'
+                  account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+                  secondary_emails:
+                  - email: grape@strawberry.com
+                    is_verified: false
+                  - email: apple@orange.com
+                    is_verified: true
+                  joined_on: '2015-05-12T15:50:38Z'
+                  profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+                role:
+                  .tag: member_only
+  /2/team/members/suspend:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/suspend
+      description: '[members/suspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-suspend)
+
+
+        scope: `members.write`
+
+
+        Suspend a member from a team.
+
+        Permission : Team member management
+
+        Exactly one of team_member_id, email, or external_id must be provided to identify the user account.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }, \n    \"wipe_data\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/team/members/unsuspend:
+    post:
+      tags:
+      - Team > Members
+      summary: Dropbox members/unsuspend
+      description: '[members/unsuspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-unsuspend)
+
+
+        scope: `members.write`
+
+
+        Unsuspend a member from a team.
+
+        Permission : Team member management
+
+        Exactly one of team_member_id, email, or external_id must be provided to identify the user account.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"user\": {\n        \".tag\": \"team_member_id\", \n        \"team_member_id\": \"dbmid:efgh5678\"\n    }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

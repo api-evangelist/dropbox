@@ -1,0 +1,517 @@
+openapi: 3.0.0
+info:
+  title: Dropbox API Reference Account Team > Team_folder API
+  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  version: 1.0.0
+servers:
+- url: https://api.dropbox.com
+security:
+- bearerAuth: []
+tags:
+- name: Team > Team_folder
+paths:
+  /2/team/team_folder/activate:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/activate
+      description: '[team_folder/activate](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-activate)
+
+
+        scope: `team_data.team_space`
+
+
+        Sets an archived team folder''s status to active.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"team_folder_id\": \"123456789\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                team_folder_id: '123456789'
+                name: Marketing
+                status:
+                  .tag: active
+                is_team_shared_dropbox: false
+                sync_setting:
+                  .tag: default
+                content_sync_settings:
+                - id: id:a4ayc_80_OEAAAAAAAAAXw
+                  sync_setting:
+                    .tag: default
+  /2/team/team_folder/archive:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/archive
+      description: '[team_folder/archive](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-archive)
+
+
+        scope: `team_data.team_space`
+
+
+        Sets an active team folder''s status to archived and removes all folder and file members.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"team_folder_id\": \"123456789\", \n    \"force_async_off\": false\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                team_folder_id: '123456789'
+                name: Marketing
+                status:
+                  .tag: active
+                is_team_shared_dropbox: false
+                sync_setting:
+                  .tag: default
+                content_sync_settings:
+                - id: id:a4ayc_80_OEAAAAAAAAAXw
+                  sync_setting:
+                    .tag: default
+  /2/team/team_folder/archive/check:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/archive/check
+      description: '[team_folder/archive/check](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-archive-check)
+
+
+        scope: `team_data.team_space`
+
+
+        Returns the status of an asynchronous job for archiving a team folder.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"async_job_id\": \"34g93hh34h04y384084\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                .tag: complete
+                team_folder_id: '123456789'
+                name: Marketing
+                status:
+                  .tag: active
+                is_team_shared_dropbox: false
+                sync_setting:
+                  .tag: default
+                content_sync_settings:
+                - id: id:a4ayc_80_OEAAAAAAAAAXw
+                  sync_setting:
+                    .tag: default
+  /2/team/team_folder/create:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/create
+      description: '[team_folder/create](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-create)
+
+
+        scope: `team_data.team_space`
+
+
+        Creates a new, active, team folder with no members.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"name\": \"Marketing\", \n    \"sync_setting\": \"not_synced\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                team_folder_id: '123456789'
+                name: Marketing
+                status:
+                  .tag: active
+                is_team_shared_dropbox: false
+                sync_setting:
+                  .tag: default
+                content_sync_settings:
+                - id: id:a4ayc_80_OEAAAAAAAAAXw
+                  sync_setting:
+                    .tag: default
+  /2/team/team_folder/get_info:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/get_info
+      description: '[team_folder/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-get_info)
+
+
+        scope: `team_data.team_space`
+
+
+        Retrieves metadata for team folders.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"team_folder_ids\": [\n        \"947182\", \n        \"5819424\", \n        \"852307532\"\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/team/team_folder/list:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/list
+      description: '[team_folder/list](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-list)
+
+
+        scope: `team_data.team_space`
+
+
+        Lists all team folders.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"limit\": 100\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                team_folders:
+                - team_folder_id: '123456789'
+                  name: Marketing
+                  status:
+                    .tag: active
+                  is_team_shared_dropbox: false
+                  sync_setting:
+                    .tag: default
+                  content_sync_settings:
+                  - id: id:a4ayc_80_OEAAAAAAAAAXw
+                    sync_setting:
+                      .tag: default
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: false
+  /2/team/team_folder/list/continue:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/list/continue
+      description: '[team_folder/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-list-continue)
+
+
+        scope: `team_data.team_space`
+
+
+        Once a cursor has been retrieved from `team_folder/list`, use this to paginate through all team folders.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                team_folders:
+                - team_folder_id: '123456789'
+                  name: Marketing
+                  status:
+                    .tag: active
+                  is_team_shared_dropbox: false
+                  sync_setting:
+                    .tag: default
+                  content_sync_settings:
+                  - id: id:a4ayc_80_OEAAAAAAAAAXw
+                    sync_setting:
+                      .tag: default
+                cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+                has_more: false
+  /2/team/team_folder/permanently_delete:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/permanently_delete
+      description: '[team_folder/permanently_delete](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-permanently_delete)
+
+
+        scope: `team_data.team_space`
+
+
+        Permanently deletes an archived team folder.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"team_folder_id\": \"123456789\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /2/team/team_folder/rename:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/rename
+      description: '[team_folder/rename](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-rename)
+
+
+        scope: `team_data.team_space`
+
+
+        Changes an active team folder''s name.
+
+        Permission : Team member file access.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"team_folder_id\": \"123456789\", \n    \"name\": \"Sales\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                team_folder_id: '123456789'
+                name: Marketing
+                status:
+                  .tag: active
+                is_team_shared_dropbox: false
+                sync_setting:
+                  .tag: default
+                content_sync_settings:
+                - id: id:a4ayc_80_OEAAAAAAAAAXw
+                  sync_setting:
+                    .tag: default
+  /2/team/team_folder/update_sync_settings:
+    post:
+      tags:
+      - Team > Team_folder
+      summary: Dropbox team_folder/update_sync_settings
+      description: '[team_folder/update_sync_settings](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-update_sync_settings)
+
+
+        scope: `team_data.team_space`
+
+
+        Updates the sync settings on a team folder or its contents.  Use of this endpoint requires that the team has team selective sync enabled.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"team_folder_id\": \"123456789\", \n    \"sync_setting\": \"not_synced\", \n    \"content_sync_settings\": [\n        {\n            \"id\": \"id:a4ayc_80_OEAAAAAAAAAXw\", \n            \"sync_setting\": \"not_synced\"\n        }\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Dropbox-Request-Id:
+              schema:
+                type: integer
+                example: '1234'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                team_folder_id: '123456789'
+                name: Marketing
+                status:
+                  .tag: active
+                is_team_shared_dropbox: false
+                sync_setting:
+                  .tag: default
+                content_sync_settings:
+                - id: id:a4ayc_80_OEAAAAAAAAAXw
+                  sync_setting:
+                    .tag: default
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
