@@ -1,19 +1,18 @@
 aid: dropbox
 url: https://raw.githubusercontent.com/api-evangelist/dropbox/refs/heads/main/apis.yml
 apis:
-- aid: dropbox:dropbox-api
-  name: Dropbox API
-  tags:
-  - Documents
-  - Storage
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  baseURL: https://api.dropboxapi.com
+- aid: dropbox:dropbox-account-api
+  name: Dropbox Account API
+  description: The Account API from Dropbox — 4 operation(s) for account.
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Account
   properties:
-  - url: https://www.dropbox.com/developers/documentation/http/overview
-    type: Documentation
-  - url: openapi/dropbox-openapi-original.yml
-    type: OpenAPI
+  - type: OpenAPI
+    url: openapi/dropbox-account-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
   - type: X-NaftikoCapability
     url: capabilities/dropbox-account.yaml
   - type: X-NaftikoCapability
@@ -54,28 +53,14 @@ apis:
     url: capabilities/dropbox-team-log.yaml
   - type: X-NaftikoCapability
     url: capabilities/dropbox-users.yaml
-  - url: graphql/dropbox-graphql.md
-    type: GraphQL
-  description: Dropbox is a file hosting service operated by the American company
-    Dropbox, Inc., headquartered in San Francisco, California, U.S. that offers cloud
-    storage, file synchronization, personal cloud, and client software.
-- aid: dropbox:dropbox-sign-api
-  name: Dropbox Sign API
-  tags:
-  - Signatures
-  - Documents
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  baseURL: https://api.hellosign.com
-  humanURL: https://developers.hellosign.com/
-  properties:
-  - url: https://developers.hellosign.com/
-    type: Documentation
-  - url: https://developers.hellosign.com/docs/sdks/overview/
-    type: SDKs
-  - url: https://developers.hellosign.com/api/quickstart/
-    type: GettingStarted
-  - url: openapi/dropbox-sign-openapi-original.yml
-    type: OpenAPI
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
   - type: X-NaftikoCapability
     url: capabilities/sign-account.yaml
   - type: X-NaftikoCapability
@@ -96,15 +81,2223 @@ apis:
     url: capabilities/sign-template.yaml
   - type: X-NaftikoCapability
     url: capabilities/sign-unclaimed-draft.yaml
-  description: The Dropbox Sign API offers a reliable, flexible set of eSignature
-    tools that can be used to power digital agreements and turn slow, outdated business
-    processes into a competitive advantage. With a broad range of highly-configurable
-    features, the Dropbox Sign API empowers you to build secure signing experiences
-    and document workflows that delight your users.
+- aid: dropbox:dropbox-api-app-api
+  name: Dropbox Api App API
+  description: _md__OpenApi::TAG::API_APP::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Api App
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-api-app-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-auth-api
+  name: Dropbox Auth API
+  description: The Auth API from Dropbox — 2 operation(s) for auth.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-auth-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-bulk-send-job-api
+  name: Dropbox Bulk Send Job API
+  description: _md__OpenApi::TAG::BULK_SEND_JOB::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Bulk Send Job
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-bulk-send-job-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-check-api
+  name: Dropbox Check API
+  description: The Check API from Dropbox — 2 operation(s) for check.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Check
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-check-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-contacts-api
+  name: Dropbox Contacts API
+  description: The Contacts API from Dropbox — 2 operation(s) for contacts.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-embedded-api
+  name: Dropbox Embedded API
+  description: _md__OpenApi::TAG::EMBEDDED::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Embedded
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-embedded-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-file-properties-api
+  name: Dropbox File_properties API
+  description: >-
+    This namespace contains helpers for property and template metadata endpoints.
+
+
+    These endpoints enable you to tag arbitrary key/value data to Dropbox files.
+
+
+    The most basic unit in this namespace is the :type:`PropertyField`. These fields encapsulate the actual
+    key/value data.
+
+
+    Fields are added to a Dropbox file using a :type:`PropertyGroup`. Property groups contain a reference
+    to a Dropbox file and a :type:`PropertyGroupTemplate`. Property groups are uniquely identified by
+    the combination of their associated Dropbox file and template.
+
+
+    The :type:`PropertyGroupTemplate` is a way of restricting the possible key names and value types of
+    the data within a property group. The possible key names and value types are explicitly enumerated
+    using :type:`PropertyFieldTemplate` objects.
+
+
+    You can think of a property group template as a class definition for a particular key/value metadata
+    object, and the property groups themselves as the instantiations of these objects.
+
+
+    Templates are owned either by a user/app pair or team/app pair. Templates and their associated properties
+    can't be accessed by any app other than the app that created them, and even then, only when the app
+    is linked with the owner of the template (either a user or team).
+
+
+    User-owned templates are accessed via the user-auth file_properties/templates/*_for_user endpoints,
+    while team-owned templates are accessed via the team-auth file_properties/templates/*_for_team endpoints.
+    Properties associated with either type of template can be accessed via the user-auth properties/*
+    endpoints.
+
+
+    Finally, properties can be accessed from a number of endpoints that return metadata, including `files/get_metadata`,
+    and `files/list_folder`. Properties can also be added during upload, using `files/upload`.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - File_properties
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-file-properties-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-file-requests-api
+  name: Dropbox File_requests API
+  description: This namespace contains endpoints and data types for file request operations.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - File_requests
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-file-requests-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-files-api
+  name: Dropbox Files API
+  description: This namespace contains endpoints and data types for basic file operations.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-files-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-oauth-api
+  name: Dropbox OAuth API
+  description: _md__OpenApi::TAG::OAUTH::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - OAuth
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-oauth-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-report-api
+  name: Dropbox Report API
+  description: _md__OpenApi::TAG::REPORT::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Report
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-report-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-sharing-api
+  name: Dropbox Sharing API
+  description: >-
+    This namespace contains endpoints and data types for creating and managing shared links and shared
+    folders.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Sharing
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-sharing-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-signature-request-api
+  name: Dropbox Signature Request API
+  description: _md__OpenApi::TAG::SIGNATURE_REQUEST::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Signature Request
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-signature-request-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-api
+  name: Dropbox Team API
+  description: The Team API from Dropbox — 12 operation(s) for team.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-devices-api
+  name: Dropbox Team > Devices API
+  description: The Team > Devices API from Dropbox — 4 operation(s) for team > devices.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Devices
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-devices-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-groups-api
+  name: Dropbox Team > Groups API
+  description: The Team > Groups API from Dropbox — 12 operation(s) for team > groups.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-groups-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-legal-holds-api
+  name: Dropbox Team > Legal_holds API
+  description: The Team > Legal_holds API from Dropbox — 7 operation(s) for team > legal_holds.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Legal_holds
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-legal-holds-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-linked-apps-api
+  name: Dropbox Team > Linked_apps API
+  description: The Team > Linked_apps API from Dropbox — 4 operation(s) for team > linked_apps.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Linked_apps
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-linked-apps-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-log-api
+  name: Dropbox Team_log API
+  description: The Team_log API from Dropbox — 2 operation(s) for team_log.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team_log
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-log-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-member-space-limits-api
+  name: Dropbox Team > Member_space_limits API
+  description: >-
+    The Team > Member_space_limits API from Dropbox — 7 operation(s) for team > member_space_limits.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Member_space_limits
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-member-space-limits-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-members-api
+  name: Dropbox Team > Members API
+  description: The Team > Members API from Dropbox — 20 operation(s) for team > members.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Members
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-members-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-namespaces-api
+  name: Dropbox Team > Namespaces API
+  description: The Team > Namespaces API from Dropbox — 2 operation(s) for team > namespaces.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Namespaces
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-namespaces-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-reports-api
+  name: Dropbox Team > Reports API
+  description: The Team > Reports API from Dropbox — 4 operation(s) for team > reports.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-reports-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-team-team-folder-api
+  name: Dropbox Team > Team_folder API
+  description: The Team > Team_folder API from Dropbox — 10 operation(s) for team > team_folder.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Team > Team_folder
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-team-team-folder-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-template-api
+  name: Dropbox Template API
+  description: _md__OpenApi::TAG::TEMPLATE::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Template
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-template-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-unclaimed-draft-api
+  name: Dropbox Unclaimed Draft API
+  description: _md__OpenApi::TAG::UNCLAIMED_DRAFT::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Unclaimed Draft
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-unclaimed-draft-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
+- aid: dropbox:dropbox-users-api
+  name: Dropbox Users API
+  description: This namespace contains endpoints and data types for user management.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-users-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-auth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-check.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-contacts.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-properties.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-file-requests.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-files.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-sharing.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-devices.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-legal-holds.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-linked-apps.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-member-space-limits.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-members.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-namespaces.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-reports.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-team-folder.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-team-log.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/dropbox-users.yaml
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+  - type: X-NaftikoCapability
+    url: capabilities/sign-account.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-api-app.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-bulk-send-job.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-embedded.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-oauth.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-report.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-signature-request.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-team.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-template.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/sign-unclaimed-draft.yaml
 name: Dropbox
 tags:
 - Documents
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dropbox.png
 common:
 - type: AgenticAccess
   url: agentic-access/dropbox-agentic-access.yml
