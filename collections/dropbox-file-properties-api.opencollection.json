@@ -1,0 +1,308 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account File_properties API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "File_properties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox properties/add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/properties/add",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[properties/add](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-add)\n\nscope: `files.metadata.write`\n\nAdd property groups to a Dropbox file. See `templates/add_for_user` or `templates/add_for_team` to create new templates."
+        },
+        {
+          "info": {
+            "name": "Dropbox properties/overwrite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/properties/overwrite",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[properties/overwrite](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-overwrite)\n\nscope: `files.metadata.write`\n\nOverwrite property groups associated with a file. This endpoint should be used instead of `properties/update` when property groups are being updated via a \"snapshot\" instead of via a \"delta\". In other words, this endpoint will delete all omitted fields from a property group, whereas `properties/update` will only delete fields that are ex"
+        },
+        {
+          "info": {
+            "name": "Dropbox properties/remove",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/properties/remove",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[properties/remove](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-remove)\n\nscope: `files.metadata.write`\n\nPermanently removes the specified property group from the file. To remove specific property field key value pairs, see `properties/update`. To update a template, see `templates/update_for_user` or `templates/update_for_team`. To remove a template, see `templates/remove_for_user` or `templates/remove_for_team`."
+        },
+        {
+          "info": {
+            "name": "Dropbox properties/search",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/properties/search",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer YOUR_ACCESS_TOKEN"
+              }
+            ]
+          },
+          "docs": "[properties/search](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search)\n\nscope: `files.metadata.read`\n\nSearch across property templates for particular property field values."
+        },
+        {
+          "info": {
+            "name": "Dropbox properties/search/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/properties/search/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[properties/search/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search-continue)\n\nscope: `files.metadata.read`\n\nOnce a cursor has been retrieved from `properties/search`, use this to paginate through all search results."
+        },
+        {
+          "info": {
+            "name": "Dropbox properties/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/properties/update",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[properties/update](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-update)\n\nscope: `files.metadata.write`\n\nAdd, update or remove properties associated with the supplied file and templates. This endpoint should be used instead of `properties/overwrite` when property groups are being updated via a \"delta\" instead of via a \"snapshot\" . In other words, this endpoint will not delete any omitted fields from a property group, whereas `properties/overwrite"
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/add_for_team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/add_for_team",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "[templates/add_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-add_for_team)\n\nscope: `files.team_metadata.write`\n\nAdd a template associated with a team. See `properties/add` to add properties to a file or folder.\nNote: this endpoint will create team-owned templates."
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/add_for_user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/add_for_user",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[templates/add_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-add_for_user)\n\nscope: `files.metadata.write`\n\nAdd a template associated with a user. See `properties/add` to add properties to a file. This endpoint can't be called on a team member or admin's behalf."
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/get_for_team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/get_for_team",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "[templates/get_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-get_for_team)\n\nscope: `files.team_metadata.write`\n\nGet the schema for a specified template."
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/get_for_user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/get_for_user",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[templates/get_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-get_for_user)\n\nscope: `files.metadata.read`\n\nGet the schema for a specified template. This endpoint can't be called on a team member or admin's behalf."
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/list_for_team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/list_for_team",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "[templates/list_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-list_for_team)\n\nscope: `files.team_metadata.write`\n\nGet the template identifiers for a team. To get the schema of each template use `templates/get_for_team`.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/list_for_user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/list_for_user"
+          },
+          "docs": "[templates/list_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-list_for_user)\n\nscope: `files.metadata.read`\n\nGet the template identifiers for a team. To get the schema of each template use `templates/get_for_user`. This endpoint can't be called on a team member or admin's behalf.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/remove_for_team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/remove_for_team",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "[templates/remove_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-remove_for_team)\n\nscope: `files.team_metadata.write`\n\nPermanently removes the specified template created from `templates/add_for_user`. All properties associated with the template will also be removed. This action cannot be undone."
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/remove_for_user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/remove_for_user",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[templates/remove_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-remove_for_user)\n\nscope: `files.metadata.write`\n\nPermanently removes the specified template created from `templates/add_for_user`. All properties associated with the template will also be removed. This action cannot be undone."
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/update_for_team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/update_for_team",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "[templates/update_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-update_for_team)\n\nscope: `files.team_metadata.write`\n\nUpdate a template associated with a team. This route can update the template name, the template description and add optional properties to templates."
+        },
+        {
+          "info": {
+            "name": "Dropbox templates/update_for_user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_properties/templates/update_for_user",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[templates/update_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-update_for_user)\n\nscope: `files.metadata.write`\n\nUpdate a template associated with a user. This route can update the template name, the template description and add optional properties to templates. This endpoint can't be called on a team member or admin's behalf."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1731 @@
+{
+  "item": [
+    {
+      "id": "d581bf7b-895e-43c8-9e93-a973cfad26df",
+      "name": "File_properties",
+      "description": {
+        "content": "This namespace contains helpers for property and template metadata endpoints.\n\nThese endpoints enable you to tag arbitrary key/value data to Dropbox files.\n\nThe most basic unit in this namespace is the :type:`PropertyField`. These fields encapsulate the actual key/value data.\n\nFields are added to a Dropbox file using a :type:`PropertyGroup`. Property groups contain a reference to a Dropbox file and a :type:`PropertyGroupTemplate`. Property groups are uniquely identified by the combination of their associated Dropbox file and template.\n\nThe :type:`PropertyGroupTemplate` is a way of restricting the possible key names and value types of the data within a property group. The possible key names and value types are explicitly enumerated using :type:`PropertyFieldTemplate` objects.\n\nYou can think of a property group template as a class definition for a particular key/value metadata object, and the property groups themselves as the instantiations of these objects.\n\nTemplates are owned either by a user/app pair or team/app pair. Templates and their associated properties can't be accessed by any app other than the app that created them, and even then, only when the app is linked with the owner of the template (either a user or team).\n\nUser-owned templates are accessed via the user-auth file_properties/templates/*_for_user endpoints, while team-owned templates are accessed via the team-auth file_properties/templates/*_for_team endpoints. Properties associated with either type of template can be accessed via the user-auth properties/* endpoints.\n\nFinally, properties can be accessed from a number of endpoints that return metadata, including `files/get_metadata`, and `files/list_folder`. Properties can also be added during upload, using `files/upload`.\n",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dbe89fd1-4023-432b-b7ef-1d9413c328ba",
+          "name": "Dropbox properties/add",
+          "request": {
+            "name": "Dropbox properties/add",
+            "description": {
+              "content": "[properties/add](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-add)\n\nscope: `files.metadata.write`\n\nAdd property groups to a Dropbox file. See `templates/add_for_user` or `templates/add_for_team` to create new templates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "properties",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "72c72dbf-a512-4276-a8ec-e8d4fb2694b4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "properties",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"path\\\": \\\"/my_awesome/word.docx\\\", \\n    \\\"property_groups\\\": [\\n        {\\n            \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\", \\n            \\\"fields\\\": [\\n                {\\n                    \\\"name\\\": \\\"Security Policy\\\", \\n                    \\\"value\\\": \\\"Confidential\\\"\\n                }\\n            ]\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "866f0208-073d-4239-b785-d54c3b12427c",
+          "name": "Dropbox properties/overwrite",
+          "request": {
+            "name": "Dropbox properties/overwrite",
+            "description": {
+              "content": "[properties/overwrite](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-overwrite)\n\nscope: `files.metadata.write`\n\nOverwrite property groups associated with a file. This endpoint should be used instead of `properties/update` when property groups are being updated via a \"snapshot\" instead of via a \"delta\". In other words, this endpoint will delete all omitted fields from a property group, whereas `properties/update` will only delete fields that are explicitly marked for deletion.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "properties",
+                "overwrite"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "f4e48d6b-ace1-4962-ae74-d05aef3aaa04",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "properties",
+                    "overwrite"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"path\\\": \\\"/my_awesome/word.docx\\\", \\n    \\\"property_groups\\\": [\\n        {\\n            \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\", \\n            \\\"fields\\\": [\\n                {\\n                    \\\"name\\\": \\\"Security Policy\\\", \\n                    \\\"value\\\": \\\"Confidential\\\"\\n                }\\n            ]\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a00bc5c4-7bf4-4840-b36d-5d2e3c97bf03",
+          "name": "Dropbox properties/remove",
+          "request": {
+            "name": "Dropbox properties/remove",
+            "description": {
+              "content": "[properties/remove](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-remove)\n\nscope: `files.metadata.write`\n\nPermanently removes the specified property group from the file. To remove specific property field key value pairs, see `properties/update`. To update a template, see `templates/update_for_user` or `templates/update_for_team`. To remove a template, see `templates/remove_for_user` or `templates/remove_for_team`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "properties",
+                "remove"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "70ff3a27-847f-4564-a384-0e783051e4a2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "properties",
+                    "remove"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"path\\\": \\\"/my_awesome/word.docx\\\", \\n    \\\"property_template_ids\\\": [\\n        \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\"\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "661c42f3-984b-4cea-80ce-b4c2b5ace9b1",
+          "name": "Dropbox properties/search",
+          "request": {
+            "name": "Dropbox properties/search",
+            "description": {
+              "content": "[properties/search](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search)\n\nscope: `files.metadata.read`\n\nSearch across property templates for particular property field values.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "properties",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "926e462f-f854-4867-8fd4-b4d9cda81241",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "properties",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer YOUR_ACCESS_TOKEN",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"queries\\\": [\\n        {\\n            \\\"query\\\": \\\"Compliance Bot - Beta\\\", \\n            \\\"mode\\\": {\\n                \\\".tag\\\": \\\"field_name\\\", \\n                \\\"field_name\\\": \\\"Security\\\"\\n            }, \\n            \\\"logical_operator\\\": \\\"or_operator\\\"\\n        }\\n    ], \\n    \\\"template_filter\\\": \\\"filter_none\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"matches\": [\n    {\n      \"id\": \"id:a4ayc_80_OEAAAAAAAAAXz\",\n      \"path\": \"/my_awesome/word.docx\",\n      \"is_deleted\": false,\n      \"property_groups\": [\n        {\n          \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\",\n          \"fields\": [\n            {\n              \"name\": \"Security Policy\",\n              \"value\": \"Confidential\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea41d8db-5b9b-410d-8624-68cfccc54ab2",
+          "name": "Dropbox properties/search/continue",
+          "request": {
+            "name": "Dropbox properties/search/continue",
+            "description": {
+              "content": "[properties/search/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-search-continue)\n\nscope: `files.metadata.read`\n\nOnce a cursor has been retrieved from `properties/search`, use this to paginate through all search results.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "properties",
+                "search",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "fb9de73e-30e3-42b2-ba7a-3dca95f886ed",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "properties",
+                    "search",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"matches\": [\n    {\n      \"id\": \"id:a4ayc_80_OEAAAAAAAAAXz\",\n      \"path\": \"/my_awesome/word.docx\",\n      \"is_deleted\": false,\n      \"property_groups\": [\n        {\n          \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\",\n          \"fields\": [\n            {\n              \"name\": \"Security Policy\",\n              \"value\": \"Confidential\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b99b4b7a-e23d-467a-8df7-afeb79aeb884",
+          "name": "Dropbox properties/update",
+          "request": {
+            "name": "Dropbox properties/update",
+            "description": {
+              "content": "[properties/update](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-properties-update)\n\nscope: `files.metadata.write`\n\nAdd, update or remove properties associated with the supplied file and templates. This endpoint should be used instead of `properties/overwrite` when property groups are being updated via a \"delta\" instead of via a \"snapshot\" . In other words, this endpoint will not delete any omitted fields from a property group, whereas `properties/overwrite` will delete any fields that are omitted from a property group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "properties",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "36ae0d8d-5de5-4205-b09f-0c026b7d733e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "properties",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"path\\\": \\\"/my_awesome/word.docx\\\", \\n    \\\"update_property_groups\\\": [\\n        {\\n            \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\", \\n            \\\"add_or_update_fields\\\": [\\n                {\\n                    \\\"name\\\": \\\"Security Policy\\\", \\n                    \\\"value\\\": \\\"Confidential\\\"\\n                }\\n            ], \\n            \\\"remove_fields\\\": []\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a51de889-df9c-491a-b708-8fb2b54417c9",
+          "name": "Dropbox templates/add_for_team",
+          "request": {
+            "name": "Dropbox templates/add_for_team",
+            "description": {
+              "content": "[templates/add_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-add_for_team)\n\nscope: `files.team_metadata.write`\n\nAdd a template associated with a team. See `properties/add` to add properties to a file or folder.\nNote: this endpoint will create team-owned templates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "add_for_team"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "2f75f2b5-aeb1-46c9-9703-d39e08af0ab4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "add_for_team"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"name\\\": \\\"Security\\\", \\n    \\\"description\\\": \\\"These properties describe how confidential this file or folder is.\\\", \\n    \\\"fields\\\": [\\n        {\\n            \\\"name\\\": \\\"Security Policy\\\", \\n            \\\"description\\\": \\\"This is the security policy of the file or folder described.\\\\nPolicies can be Confidential, Public or Internal.\\\", \\n            \\\"type\\\": \\\"string\\\"\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "163c3c0d-d0cf-47ff-aefa-ad17dc4c97e0",
+          "name": "Dropbox templates/add_for_user",
+          "request": {
+            "name": "Dropbox templates/add_for_user",
+            "description": {
+              "content": "[templates/add_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-add_for_user)\n\nscope: `files.metadata.write`\n\nAdd a template associated with a user. See `properties/add` to add properties to a file. This endpoint can't be called on a team member or admin's behalf.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "add_for_user"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "70d49f99-c363-4cde-97ef-1f092fd83d61",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "add_for_user"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"name\\\": \\\"Security\\\", \\n    \\\"description\\\": \\\"These properties describe how confidential this file or folder is.\\\", \\n    \\\"fields\\\": [\\n        {\\n            \\\"name\\\": \\\"Security Policy\\\", \\n            \\\"description\\\": \\\"This is the security policy of the file or folder described.\\\\nPolicies can be Confidential, Public or Internal.\\\", \\n            \\\"type\\\": \\\"string\\\"\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b42857a9-b52b-4ba1-b379-37fdf9c6bff3",
+          "name": "Dropbox templates/get_for_team",
+          "request": {
+            "name": "Dropbox templates/get_for_team",
+            "description": {
+              "content": "[templates/get_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-get_for_team)\n\nscope: `files.team_metadata.write`\n\nGet the schema for a specified template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "get_for_team"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "697d4a37-4d72-4b6e-86e6-79402c76d7aa",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "get_for_team"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Security\",\n  \"description\": \"These properties describe how confidential this file or folder is.\",\n  \"fields\": [\n    {\n      \"name\": \"Security Policy\",\n      \"description\": \"This is the security policy of the file or folder described.\\nPolicies can be Confidential, Public or Internal.\",\n      \"type\": {\n        \".tag\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d698c01-f347-46fe-831a-d95c154b0487",
+          "name": "Dropbox templates/get_for_user",
+          "request": {
+            "name": "Dropbox templates/get_for_user",
+            "description": {
+              "content": "[templates/get_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-get_for_user)\n\nscope: `files.metadata.read`\n\nGet the schema for a specified template. This endpoint can't be called on a team member or admin's behalf.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "get_for_user"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "ccd0e023-9b54-47b4-960c-6970678eb905",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "get_for_user"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Security\",\n  \"description\": \"These properties describe how confidential this file or folder is.\",\n  \"fields\": [\n    {\n      \"name\": \"Security Policy\",\n      \"description\": \"This is the security policy of the file or folder described.\\nPolicies can be Confidential, Public or Internal.\",\n      \"type\": {\n        \".tag\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94522a5c-160a-4a27-a2a2-ed5c052319d0",
+          "name": "Dropbox templates/list_for_team",
+          "request": {
+            "name": "Dropbox templates/list_for_team",
+            "description": {
+              "content": "[templates/list_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-list_for_team)\n\nscope: `files.team_metadata.write`\n\nGet the template identifiers for a team. To get the schema of each template use `templates/get_for_team`.      ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "list_for_team"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bf699068-48b5-479b-9661-691b6d02c46f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "list_for_team"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template_ids\": [\n    \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5549b86f-3d26-4ebe-91de-03a1ec39ffd1",
+          "name": "Dropbox templates/list_for_user",
+          "request": {
+            "name": "Dropbox templates/list_for_user",
+            "description": {
+              "content": "[templates/list_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-list_for_user)\n\nscope: `files.metadata.read`\n\nGet the template identifiers for a team. To get the schema of each template use `templates/get_for_user`. This endpoint can't be called on a team member or admin's behalf.      ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "list_for_user"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b409928-e23e-43f5-9e19-3a8bd86738eb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "list_for_user"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template_ids\": [\n    \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e06f0d5-89d7-4bc7-ba63-c4b77a2fb92f",
+          "name": "Dropbox templates/remove_for_team",
+          "request": {
+            "name": "Dropbox templates/remove_for_team",
+            "description": {
+              "content": "[templates/remove_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-remove_for_team)\n\nscope: `files.team_metadata.write`\n\nPermanently removes the specified template created from `templates/add_for_user`. All properties associated with the template will also be removed. This action cannot be undone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "remove_for_team"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "b430ced3-18e0-4684-a993-61fd5625acf7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "remove_for_team"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b80e63f-651a-4b28-83eb-e396751412e9",
+          "name": "Dropbox templates/remove_for_user",
+          "request": {
+            "name": "Dropbox templates/remove_for_user",
+            "description": {
+              "content": "[templates/remove_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-remove_for_user)\n\nscope: `files.metadata.write`\n\nPermanently removes the specified template created from `templates/add_for_user`. All properties associated with the template will also be removed. This action cannot be undone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "remove_for_user"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "ba07dbde-3adc-420f-9dcd-5aafeac4eedd",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "remove_for_user"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6925c2e5-4d0a-4fd0-8d29-6401d67b53c2",
+          "name": "Dropbox templates/update_for_team",
+          "request": {
+            "name": "Dropbox templates/update_for_team",
+            "description": {
+              "content": "[templates/update_for_team](https://www.dropbox.com/developers/documentation/http/teams#file_properties-templates-update_for_team)\n\nscope: `files.team_metadata.write`\n\nUpdate a template associated with a team. This route can update the template name, the template description and add optional properties to templates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "update_for_team"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "d9f9487e-01b3-4333-9f63-5f8193d36d24",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "update_for_team"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\", \\n    \\\"name\\\": \\\"New Security Template Name\\\", \\n    \\\"description\\\": \\\"These properties will describe how confidential this file or folder is.\\\", \\n    \\\"add_fields\\\": [\\n        {\\n            \\\"name\\\": \\\"Security Policy\\\", \\n            \\\"description\\\": \\\"This is the security policy of the file or folder described.\\\\nPolicies can be Confidential, Public or Internal.\\\", \\n            \\\"type\\\": \\\"string\\\"\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f29e082c-62aa-46e1-a659-401ff20b330a",
+          "name": "Dropbox templates/update_for_user",
+          "request": {
+            "name": "Dropbox templates/update_for_user",
+            "description": {
+              "content": "[templates/update_for_user](https://www.dropbox.com/developers/documentation/http/documentation#file_properties-templates-update_for_user)\n\nscope: `files.metadata.write`\n\nUpdate a template associated with a user. This route can update the template name, the template description and add optional properties to templates. This endpoint can't be called on a team member or admin's behalf.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_properties",
+                "templates",
+                "update_for_user"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "2d29f3f1-7ffd-482d-8f73-c44182300534",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_properties",
+                    "templates",
+                    "update_for_user"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"template_id\\\": \\\"ptid:1a5n2i6d3OYEAAAAAAAAAYa\\\", \\n    \\\"name\\\": \\\"New Security Template Name\\\", \\n    \\\"description\\\": \\\"These properties will describe how confidential this file or folder is.\\\", \\n    \\\"add_fields\\\": [\\n        {\\n            \\\"name\\\": \\\"Security Policy\\\", \\n            \\\"description\\\": \\\"This is the security policy of the file or folder described.\\\\nPolicies can be Confidential, Public or Internal.\\\", \\n            \\\"type\\\": \\\"string\\\"\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "2465",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template_id\": \"ptid:1a5n2i6d3OYEAAAAAAAAAYa\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2d1f11c6-9701-44cb-ab06-665750cc1263",
+    "name": "Dropbox API Reference Account File_properties API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

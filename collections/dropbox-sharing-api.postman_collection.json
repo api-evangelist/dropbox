@@ -1,0 +1,3899 @@
+{
+  "item": [
+    {
+      "id": "670c9f40-ddac-4591-8e14-45e0a77bd051",
+      "name": "Sharing",
+      "description": {
+        "content": "This namespace contains endpoints and data types for creating and managing shared links and shared folders.\n",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b1176ce8-1dd1-4a6a-91be-b0709841eadc",
+          "name": "Dropbox add_file_member",
+          "request": {
+            "name": "Dropbox add_file_member",
+            "description": {
+              "content": "[add_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_file_member)\n\nscope: `sharing.write`\n\nAdds specified members to a file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "add_file_member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "ab3529d9-b9a8-4c0f-96e5-a68183e944b9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "add_file_member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"file\\\": \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\", \\n    \\\"members\\\": [\\n        {\\n            \\\".tag\\\": \\\"email\\\", \\n            \\\"email\\\": \\\"justin@example.com\\\"\\n        }\\n    ], \\n    \\\"custom_message\\\": \\\"This is a custom message about ACME.doc\\\", \\n    \\\"quiet\\\": false, \\n    \\\"access_level\\\": \\\"viewer\\\", \\n    \\\"add_message_as_comment\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"member\": {\n      \".tag\": \"email\",\n      \"email\": \"justin@example.com\"\n    },\n    \"result\": {\n      \".tag\": \"success\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "509b0d6c-c6bc-4afa-91bd-9d96fa6b8c77",
+          "name": "Dropbox add_folder_member",
+          "request": {
+            "name": "Dropbox add_folder_member",
+            "description": {
+              "content": "[add_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_folder_member)\n\nscope: `sharing.write`\n\nAllows an owner or editor (if the ACL update policy allows) of a shared folder to add another member.\nFor the new member to get access to all the functionality for this folder, you will need to call `mount_folder` on their behalf.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "add_folder_member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "2b164b1f-844b-4c20-900a-2b7183828bb4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "add_folder_member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"members\\\": [\\n        {\\n            \\\"member\\\": {\\n                \\\".tag\\\": \\\"email\\\", \\n                \\\"email\\\": \\\"justin@example.com\\\"\\n            }, \\n            \\\"access_level\\\": \\\"editor\\\"\\n        }, \\n        {\\n            \\\"member\\\": {\\n                \\\".tag\\\": \\\"dropbox_id\\\", \\n                \\\"dropbox_id\\\": \\\"dbid:AAEufNrMPSPe0dMQijRP0N_aZtBJRm26W4Q\\\"\\n            }, \\n            \\\"access_level\\\": \\\"viewer\\\"\\n        }\\n    ], \\n    \\\"quiet\\\": false, \\n    \\\"custom_message\\\": \\\"Documentation for launch day\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7bde365-8c9a-4802-8926-e39081413014",
+          "name": "Dropbox check_job_status",
+          "request": {
+            "name": "Dropbox check_job_status",
+            "description": {
+              "content": "[check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_job_status)\n\nscope: `sharing.write`\n\nReturns the status of an asynchronous job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "check_job_status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "82127038-80c8-4a73-bc9a-81f08b1ef292",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "check_job_status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"async_job_id\\\": \\\"34g93hh34h04y384084\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"in_progress\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1dbdb7c0-2014-4a65-be1b-0e96ea9c4f21",
+          "name": "Dropbox check_remove_member_job_status",
+          "request": {
+            "name": "Dropbox check_remove_member_job_status",
+            "description": {
+              "content": "[check_remove_member_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_remove_member_job_status)\n\nscope: `sharing.write`\n\nReturns the status of an asynchronous job for sharing a folder.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "check_remove_member_job_status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "64740282-f29f-4cc0-b975-694912fccb31",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "check_remove_member_job_status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"async_job_id\\\": \\\"34g93hh34h04y384084\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a56e288a-33c2-41c3-90bb-bece936484d4",
+          "name": "Dropbox check_share_job_status",
+          "request": {
+            "name": "Dropbox check_share_job_status",
+            "description": {
+              "content": "[check_share_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_share_job_status)\n\nscope: `sharing.write`\n\nReturns the status of an asynchronous job for sharing a folder.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "check_share_job_status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "9fda917d-9ad3-43f7-ad9b-754a43bfd191",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "check_share_job_status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"async_job_id\\\": \\\"34g93hh34h04y384084\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\",\n  \"access_type\": {\n    \".tag\": \"owner\"\n  },\n  \"is_inside_team_folder\": false,\n  \"is_team_folder\": false,\n  \"name\": \"dir\",\n  \"policy\": {\n    \"acl_update_policy\": {\n      \".tag\": \"owner\"\n    },\n    \"shared_link_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"member_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"resolved_member_policy\": {\n      \".tag\": \"team\"\n    }\n  },\n  \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n  \"shared_folder_id\": \"84528192421\",\n  \"time_invited\": \"2016-01-20T00:00:00Z\",\n  \"path_lower\": \"/dir\",\n  \"link_metadata\": {\n    \"audience_options\": [\n      {\n        \".tag\": \"public\"\n      },\n      {\n        \".tag\": \"team\"\n      },\n      {\n        \".tag\": \"members\"\n      }\n    ],\n    \"current_audience\": {\n      \".tag\": \"public\"\n    },\n    \"link_permissions\": [\n      {\n        \"action\": {\n          \".tag\": \"change_audience\"\n        },\n        \"allow\": true\n      }\n    ],\n    \"password_protected\": false,\n    \"url\": \"\"\n  },\n  \"permissions\": [],\n  \"access_inheritance\": {\n    \".tag\": \"inherit\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6889cbb2-5b9d-481f-b916-8c30228d815a",
+          "name": "Dropbox get_file_metadata",
+          "request": {
+            "name": "Dropbox get_file_metadata",
+            "description": {
+              "content": "[get_file_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata)\n\nscope: `sharing.read`\n\nReturns shared file metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "get_file_metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "e3b5167c-a8f1-476f-8495-6e3fba17c211",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "get_file_metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"file\\\": \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\", \\n    \\\"actions\\\": []\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"id:3kmLmQFnf1AAAAAAAAAAAw\",\n  \"name\": \"file.txt\",\n  \"policy\": {\n    \"acl_update_policy\": {\n      \".tag\": \"owner\"\n    },\n    \"shared_link_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"member_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"resolved_member_policy\": {\n      \".tag\": \"team\"\n    }\n  },\n  \"preview_url\": \"https://www.dropbox.com/scl/fi/fir9vjelf\",\n  \"access_type\": {\n    \".tag\": \"viewer\"\n  },\n  \"owner_display_names\": [\n    \"Jane Doe\"\n  ],\n  \"owner_team\": {\n    \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n    \"name\": \"Acme, Inc.\"\n  },\n  \"path_display\": \"/dir/file.txt\",\n  \"path_lower\": \"/dir/file.txt\",\n  \"permissions\": [],\n  \"time_invited\": \"2016-01-20T00:00:00Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89239795-fa33-4337-aa9f-7cf8397df8de",
+          "name": "Dropbox get_file_metadata/batch",
+          "request": {
+            "name": "Dropbox get_file_metadata/batch",
+            "description": {
+              "content": "[get_file_metadata/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata-batch)\n\nscope: `sharing.read`\n\nReturns shared file metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "get_file_metadata",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "31dfe7a6-f3c4-4b23-b7f6-6746f08e4189",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "get_file_metadata",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"files\\\": [\\n        \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\", \\n        \\\"id:VvTaJu2VZzAAAAAAAAAADQ\\\"\\n    ], \\n    \\\"actions\\\": []\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\",\n    \"result\": {\n      \".tag\": \"metadata\",\n      \"id\": \"id:3kmLmQFnf1AAAAAAAAAAAw\",\n      \"name\": \"file.txt\",\n      \"policy\": {\n        \"acl_update_policy\": {\n          \".tag\": \"owner\"\n        },\n        \"shared_link_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"member_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"resolved_member_policy\": {\n          \".tag\": \"team\"\n        }\n      },\n      \"preview_url\": \"https://www.dropbox.com/scl/fi/fir9vjelf\",\n      \"access_type\": {\n        \".tag\": \"viewer\"\n      },\n      \"owner_display_names\": [\n        \"Jane Doe\"\n      ],\n      \"owner_team\": {\n        \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n        \"name\": \"Acme, Inc.\"\n      },\n      \"path_display\": \"/dir/file.txt\",\n      \"path_lower\": \"/dir/file.txt\",\n      \"permissions\": [],\n      \"time_invited\": \"2016-01-20T00:00:00Z\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6e598b0-89fb-46dd-a3f6-dee67349eedb",
+          "name": "Dropbox get_folder_metadata",
+          "request": {
+            "name": "Dropbox get_folder_metadata",
+            "description": {
+              "content": "[get_folder_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_folder_metadata)\n\nscope: `sharing.read`\n\nReturns shared folder metadata by its folder ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "get_folder_metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "adff32ed-df73-4b06-bf1d-eafb91bdd298",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "get_folder_metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"actions\\\": []\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_type\": {\n    \".tag\": \"owner\"\n  },\n  \"is_inside_team_folder\": false,\n  \"is_team_folder\": false,\n  \"name\": \"dir\",\n  \"policy\": {\n    \"acl_update_policy\": {\n      \".tag\": \"owner\"\n    },\n    \"shared_link_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"member_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"resolved_member_policy\": {\n      \".tag\": \"team\"\n    }\n  },\n  \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n  \"shared_folder_id\": \"84528192421\",\n  \"time_invited\": \"2016-01-20T00:00:00Z\",\n  \"path_lower\": \"/dir\",\n  \"link_metadata\": {\n    \"audience_options\": [\n      {\n        \".tag\": \"public\"\n      },\n      {\n        \".tag\": \"team\"\n      },\n      {\n        \".tag\": \"members\"\n      }\n    ],\n    \"current_audience\": {\n      \".tag\": \"public\"\n    },\n    \"link_permissions\": [\n      {\n        \"action\": {\n          \".tag\": \"change_audience\"\n        },\n        \"allow\": true\n      }\n    ],\n    \"password_protected\": false,\n    \"url\": \"\"\n  },\n  \"permissions\": [],\n  \"access_inheritance\": {\n    \".tag\": \"inherit\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7831ba23-4a2f-4868-9a0b-b869f8a6f4db",
+          "name": "Dropbox get_shared_link_file",
+          "request": {
+            "name": "Dropbox get_shared_link_file",
+            "description": {
+              "content": "[get_shared_link_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_file)\n\nscope: `sharing.read`\n\nDownload the shared link's file from a user's Dropbox.      ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "get_shared_link_file"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Dropbox-API-Arg",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28bee0bd-1218-4e8a-9c66-b35ee2749f7c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "get_shared_link_file"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Dropbox-API-Arg",
+                    "value": "{\n    \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\", \n    \"path\": \"/Prime_Numbers.txt\"\n}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"file\",\n  \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\",\n  \"name\": \"Prime_Numbers.txt\",\n  \"link_permissions\": {\n    \"can_revoke\": false,\n    \"resolved_visibility\": {\n      \".tag\": \"public\"\n    },\n    \"revoke_failure_reason\": {\n      \".tag\": \"owner_only\"\n    }\n  },\n  \"client_modified\": \"2015-05-12T15:50:38Z\",\n  \"server_modified\": \"2015-05-12T15:50:38Z\",\n  \"rev\": \"a1c10ce0dd78\",\n  \"size\": 7212,\n  \"id\": \"id:a4ayc_80_OEAAAAAAAAAXw\",\n  \"path_lower\": \"/homework/math/prime_numbers.txt\",\n  \"team_member_info\": {\n    \"team_info\": {\n      \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n      \"name\": \"Acme, Inc.\"\n    },\n    \"display_name\": \"Roger Rabbit\",\n    \"member_id\": \"dbmid:abcd1234\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbe0d1f7-3be5-41cd-b090-e48af31a7fdb",
+          "name": "Dropbox get_shared_link_metadata",
+          "request": {
+            "name": "Dropbox get_shared_link_metadata",
+            "description": {
+              "content": "[get_shared_link_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_metadata)\n\nscope: `sharing.read`\n\nGet the shared link's metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "get_shared_link_metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "19857765-2d81-4a8b-a381-16e56bd6942b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "get_shared_link_metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"url\\\": \\\"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\\\", \\n    \\\"path\\\": \\\"/Prime_Numbers.txt\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"file\",\n  \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\",\n  \"name\": \"Prime_Numbers.txt\",\n  \"link_permissions\": {\n    \"can_revoke\": false,\n    \"resolved_visibility\": {\n      \".tag\": \"public\"\n    },\n    \"revoke_failure_reason\": {\n      \".tag\": \"owner_only\"\n    }\n  },\n  \"client_modified\": \"2015-05-12T15:50:38Z\",\n  \"server_modified\": \"2015-05-12T15:50:38Z\",\n  \"rev\": \"a1c10ce0dd78\",\n  \"size\": 7212,\n  \"id\": \"id:a4ayc_80_OEAAAAAAAAAXw\",\n  \"path_lower\": \"/homework/math/prime_numbers.txt\",\n  \"team_member_info\": {\n    \"team_info\": {\n      \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n      \"name\": \"Acme, Inc.\"\n    },\n    \"display_name\": \"Roger Rabbit\",\n    \"member_id\": \"dbmid:abcd1234\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfe65541-ccd0-4719-855c-75aa6e3e53d3",
+          "name": "Dropbox list_file_members",
+          "request": {
+            "name": "Dropbox list_file_members",
+            "description": {
+              "content": "[list_file_members](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members)\n\nscope: `sharing.read`\n\nUse to obtain the members who have been invited to a file, both inherited and uninherited members.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_file_members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "b073acd2-3698-4b3e-bbfe-832a5e8e6834",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_file_members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"file\\\": \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\", \\n    \\\"include_inherited\\\": true, \\n    \\\"limit\\\": 100\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": [\n    {\n      \"access_type\": {\n        \".tag\": \"owner\"\n      },\n      \"user\": {\n        \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n        \"email\": \"bob@example.com\",\n        \"display_name\": \"Robert Smith\",\n        \"same_team\": true,\n        \"team_member_id\": \"dbmid:abcd1234\"\n      },\n      \"permissions\": [],\n      \"is_inherited\": false,\n      \"time_last_seen\": \"2016-01-20T00:00:00Z\",\n      \"platform_type\": {\n        \".tag\": \"unknown\"\n      }\n    }\n  ],\n  \"groups\": [\n    {\n      \"access_type\": {\n        \".tag\": \"editor\"\n      },\n      \"group\": {\n        \"group_name\": \"Test group\",\n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\",\n        \"group_management_type\": {\n          \".tag\": \"user_managed\"\n        },\n        \"group_type\": {\n          \".tag\": \"user_managed\"\n        },\n        \"is_member\": false,\n        \"is_owner\": false,\n        \"same_team\": true,\n        \"member_count\": 10\n      },\n      \"permissions\": [],\n      \"is_inherited\": false\n    }\n  ],\n  \"invitees\": [\n    {\n      \"access_type\": {\n        \".tag\": \"viewer\"\n      },\n      \"invitee\": {\n        \".tag\": \"email\",\n        \"email\": \"jessica@example.com\"\n      },\n      \"permissions\": [],\n      \"is_inherited\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc46e0c5-56ff-43fc-ab65-349e120150dd",
+          "name": "Dropbox list_file_members/batch",
+          "request": {
+            "name": "Dropbox list_file_members/batch",
+            "description": {
+              "content": "[list_file_members/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-batch)\n\nscope: `sharing.read`\n\nGet members of multiple files at once. The arguments to this route are more limited, and the limit on query result size per file is more strict. To customize the results more, use the individual file endpoint.\nInherited users and groups are not included in the result, and permissions are not returned for this endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_file_members",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "2bca5721-6e14-46d1-8ffe-618c4d987f11",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_file_members",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"files\\\": [\\n        \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\", \\n        \\\"id:VvTaJu2VZzAAAAAAAAAADQ\\\"\\n    ], \\n    \\\"limit\\\": 10\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"file\": \"id:3kmLmQFnf1AAAAAAAAAAAw\",\n    \"result\": {\n      \".tag\": \"result\",\n      \"members\": {\n        \"users\": [\n          {\n            \"access_type\": {\n              \".tag\": \"owner\"\n            },\n            \"user\": {\n              \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n              \"email\": \"bob@example.com\",\n              \"display_name\": \"Robert Smith\",\n              \"same_team\": true,\n              \"team_member_id\": \"dbmid:abcd1234\"\n            },\n            \"permissions\": [],\n            \"is_inherited\": false,\n            \"time_last_seen\": \"2016-01-20T00:00:00Z\",\n            \"platform_type\": {\n              \".tag\": \"unknown\"\n            }\n          }\n        ],\n        \"groups\": [\n          {\n            \"access_type\": {\n              \".tag\": \"editor\"\n            },\n            \"group\": {\n              \"group_name\": \"Test group\",\n              \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\",\n              \"group_management_type\": {\n                \".tag\": \"user_managed\"\n              },\n              \"group_type\": {\n                \".tag\": \"user_managed\"\n              },\n              \"is_member\": false,\n              \"is_owner\": false,\n              \"same_team\": true,\n              \"member_count\": 10\n            },\n            \"permissions\": [],\n            \"is_inherited\": false\n          }\n        ],\n        \"invitees\": [\n          {\n            \"access_type\": {\n              \".tag\": \"viewer\"\n            },\n            \"invitee\": {\n              \".tag\": \"email\",\n              \"email\": \"jessica@example.com\"\n            },\n            \"permissions\": [],\n            \"is_inherited\": false\n          }\n        ]\n      },\n      \"member_count\": 3\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d545a12-eb89-43f2-a82a-6addc818024a",
+          "name": "Dropbox list_file_members/continue",
+          "request": {
+            "name": "Dropbox list_file_members/continue",
+            "description": {
+              "content": "[list_file_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-continue)\n\nscope: `sharing.read`\n\nOnce a cursor has been retrieved from `list_file_members` or `list_file_members/batch`, use this to paginate through all shared file members.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_file_members",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "accc7481-1ef3-49ce-8fbb-f18a54104059",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_file_members",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": [\n    {\n      \"access_type\": {\n        \".tag\": \"owner\"\n      },\n      \"user\": {\n        \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n        \"email\": \"bob@example.com\",\n        \"display_name\": \"Robert Smith\",\n        \"same_team\": true,\n        \"team_member_id\": \"dbmid:abcd1234\"\n      },\n      \"permissions\": [],\n      \"is_inherited\": false,\n      \"time_last_seen\": \"2016-01-20T00:00:00Z\",\n      \"platform_type\": {\n        \".tag\": \"unknown\"\n      }\n    }\n  ],\n  \"groups\": [\n    {\n      \"access_type\": {\n        \".tag\": \"editor\"\n      },\n      \"group\": {\n        \"group_name\": \"Test group\",\n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\",\n        \"group_management_type\": {\n          \".tag\": \"user_managed\"\n        },\n        \"group_type\": {\n          \".tag\": \"user_managed\"\n        },\n        \"is_member\": false,\n        \"is_owner\": false,\n        \"same_team\": true,\n        \"member_count\": 10\n      },\n      \"permissions\": [],\n      \"is_inherited\": false\n    }\n  ],\n  \"invitees\": [\n    {\n      \"access_type\": {\n        \".tag\": \"viewer\"\n      },\n      \"invitee\": {\n        \".tag\": \"email\",\n        \"email\": \"jessica@example.com\"\n      },\n      \"permissions\": [],\n      \"is_inherited\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8439fd52-ae18-4ba7-a6ba-fc644cefa389",
+          "name": "Dropbox list_folder_members/continue",
+          "request": {
+            "name": "Dropbox list_folder_members/continue",
+            "description": {
+              "content": "[list_folder_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folder_members-continue)\n\nscope: `sharing.read`\n\nOnce a cursor has been retrieved from `list_folder_members`, use this to paginate through all shared folder members.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_folder_members",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "5a1b2ddc-b997-4d75-b107-fab03e5921ad",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_folder_members",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": [\n    {\n      \"access_type\": {\n        \".tag\": \"owner\"\n      },\n      \"user\": {\n        \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n        \"email\": \"bob@example.com\",\n        \"display_name\": \"Robert Smith\",\n        \"same_team\": true,\n        \"team_member_id\": \"dbmid:abcd1234\"\n      },\n      \"permissions\": [],\n      \"is_inherited\": false\n    }\n  ],\n  \"groups\": [\n    {\n      \"access_type\": {\n        \".tag\": \"editor\"\n      },\n      \"group\": {\n        \"group_name\": \"Test group\",\n        \"group_id\": \"g:e2db7665347abcd600000000001a2b3c\",\n        \"group_management_type\": {\n          \".tag\": \"user_managed\"\n        },\n        \"group_type\": {\n          \".tag\": \"user_managed\"\n        },\n        \"is_member\": false,\n        \"is_owner\": false,\n        \"same_team\": true,\n        \"member_count\": 10\n      },\n      \"permissions\": [],\n      \"is_inherited\": false\n    }\n  ],\n  \"invitees\": [\n    {\n      \"access_type\": {\n        \".tag\": \"viewer\"\n      },\n      \"invitee\": {\n        \".tag\": \"email\",\n        \"email\": \"jessica@example.com\"\n      },\n      \"permissions\": [],\n      \"is_inherited\": false\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3752c4cc-2025-43c1-b48a-add2eff5ee31",
+          "name": "Dropbox list_folders",
+          "request": {
+            "name": "Dropbox list_folders",
+            "description": {
+              "content": "[list_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders)\n\nscope: `sharing.read`\n\nReturn the list of all shared folders the current user has access to.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_folders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "21967cad-0673-4e22-8b04-a289c034cce6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_folders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"limit\\\": 100, \\n    \\\"actions\\\": []\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"access_type\": {\n        \".tag\": \"owner\"\n      },\n      \"is_inside_team_folder\": false,\n      \"is_team_folder\": false,\n      \"name\": \"dir\",\n      \"policy\": {\n        \"acl_update_policy\": {\n          \".tag\": \"owner\"\n        },\n        \"shared_link_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"member_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"resolved_member_policy\": {\n          \".tag\": \"team\"\n        }\n      },\n      \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n      \"shared_folder_id\": \"84528192421\",\n      \"time_invited\": \"2016-01-20T00:00:00Z\",\n      \"path_lower\": \"/dir\",\n      \"link_metadata\": {\n        \"audience_options\": [\n          {\n            \".tag\": \"public\"\n          },\n          {\n            \".tag\": \"team\"\n          },\n          {\n            \".tag\": \"members\"\n          }\n        ],\n        \"current_audience\": {\n          \".tag\": \"public\"\n        },\n        \"link_permissions\": [\n          {\n            \"action\": {\n              \".tag\": \"change_audience\"\n            },\n            \"allow\": true\n          }\n        ],\n        \"password_protected\": false,\n        \"url\": \"\"\n      },\n      \"permissions\": [],\n      \"access_inheritance\": {\n        \".tag\": \"inherit\"\n      }\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1980daff-7e47-432b-8fd6-86598a9e1da4",
+          "name": "Dropbox list_folders/continue",
+          "request": {
+            "name": "Dropbox list_folders/continue",
+            "description": {
+              "content": "[list_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders-continue)\n\nscope: `sharing.read`\n\nOnce a cursor has been retrieved from `list_folders`, use this to paginate through all shared folders. The cursor must come from a previous call to `list_folders` or `list_folders/continue`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_folders",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "a9b20a2c-fa8d-482d-b227-8b52a79110b2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_folders",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"access_type\": {\n        \".tag\": \"owner\"\n      },\n      \"is_inside_team_folder\": false,\n      \"is_team_folder\": false,\n      \"name\": \"dir\",\n      \"policy\": {\n        \"acl_update_policy\": {\n          \".tag\": \"owner\"\n        },\n        \"shared_link_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"member_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"resolved_member_policy\": {\n          \".tag\": \"team\"\n        }\n      },\n      \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n      \"shared_folder_id\": \"84528192421\",\n      \"time_invited\": \"2016-01-20T00:00:00Z\",\n      \"path_lower\": \"/dir\",\n      \"link_metadata\": {\n        \"audience_options\": [\n          {\n            \".tag\": \"public\"\n          },\n          {\n            \".tag\": \"team\"\n          },\n          {\n            \".tag\": \"members\"\n          }\n        ],\n        \"current_audience\": {\n          \".tag\": \"public\"\n        },\n        \"link_permissions\": [\n          {\n            \"action\": {\n              \".tag\": \"change_audience\"\n            },\n            \"allow\": true\n          }\n        ],\n        \"password_protected\": false,\n        \"url\": \"\"\n      },\n      \"permissions\": [],\n      \"access_inheritance\": {\n        \".tag\": \"inherit\"\n      }\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5a786f2-1265-4d28-bbbc-4dcb98626d85",
+          "name": "Dropbox list_mountable_folders",
+          "request": {
+            "name": "Dropbox list_mountable_folders",
+            "description": {
+              "content": "[list_mountable_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders)\n\nscope: `sharing.read`\n\nReturn the list of all shared folders the current user can mount or unmount.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_mountable_folders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "37abf190-692f-47aa-8fcf-4bf378ccea0e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_mountable_folders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"limit\\\": 100, \\n    \\\"actions\\\": []\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"access_type\": {\n        \".tag\": \"owner\"\n      },\n      \"is_inside_team_folder\": false,\n      \"is_team_folder\": false,\n      \"name\": \"dir\",\n      \"policy\": {\n        \"acl_update_policy\": {\n          \".tag\": \"owner\"\n        },\n        \"shared_link_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"member_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"resolved_member_policy\": {\n          \".tag\": \"team\"\n        }\n      },\n      \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n      \"shared_folder_id\": \"84528192421\",\n      \"time_invited\": \"2016-01-20T00:00:00Z\",\n      \"path_lower\": \"/dir\",\n      \"link_metadata\": {\n        \"audience_options\": [\n          {\n            \".tag\": \"public\"\n          },\n          {\n            \".tag\": \"team\"\n          },\n          {\n            \".tag\": \"members\"\n          }\n        ],\n        \"current_audience\": {\n          \".tag\": \"public\"\n        },\n        \"link_permissions\": [\n          {\n            \"action\": {\n              \".tag\": \"change_audience\"\n            },\n            \"allow\": true\n          }\n        ],\n        \"password_protected\": false,\n        \"url\": \"\"\n      },\n      \"permissions\": [],\n      \"access_inheritance\": {\n        \".tag\": \"inherit\"\n      }\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7332a08e-ded3-40a5-bd29-58eba2756797",
+          "name": "Dropbox list_mountable_folders/continue",
+          "request": {
+            "name": "Dropbox list_mountable_folders/continue",
+            "description": {
+              "content": "[list_mountable_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders-continue)\n\nscope: `sharing.read`\n\nOnce a cursor has been retrieved from `list_mountable_folders`, use this to paginate through all mountable shared folders. The cursor must come from a previous call to `list_mountable_folders` or `list_mountable_folders/continue`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_mountable_folders",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "e9173eeb-7cd8-4ef6-bd69-9df9f0c5935f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_mountable_folders",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"access_type\": {\n        \".tag\": \"owner\"\n      },\n      \"is_inside_team_folder\": false,\n      \"is_team_folder\": false,\n      \"name\": \"dir\",\n      \"policy\": {\n        \"acl_update_policy\": {\n          \".tag\": \"owner\"\n        },\n        \"shared_link_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"member_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"resolved_member_policy\": {\n          \".tag\": \"team\"\n        }\n      },\n      \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n      \"shared_folder_id\": \"84528192421\",\n      \"time_invited\": \"2016-01-20T00:00:00Z\",\n      \"path_lower\": \"/dir\",\n      \"link_metadata\": {\n        \"audience_options\": [\n          {\n            \".tag\": \"public\"\n          },\n          {\n            \".tag\": \"team\"\n          },\n          {\n            \".tag\": \"members\"\n          }\n        ],\n        \"current_audience\": {\n          \".tag\": \"public\"\n        },\n        \"link_permissions\": [\n          {\n            \"action\": {\n              \".tag\": \"change_audience\"\n            },\n            \"allow\": true\n          }\n        ],\n        \"password_protected\": false,\n        \"url\": \"\"\n      },\n      \"permissions\": [],\n      \"access_inheritance\": {\n        \".tag\": \"inherit\"\n      }\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5cf2daab-8f2f-4d89-8b75-a8f1012b6e38",
+          "name": "Dropbox list_received_files",
+          "request": {
+            "name": "Dropbox list_received_files",
+            "description": {
+              "content": "[list_received_files](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files)\n\nscope: `sharing.read`\n\nReturns a list of all files shared with current user.\n Does not include files the user has received via shared folders, and does  not include unclaimed invitations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_received_files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "3f50522f-4a81-4b25-a0b9-e250afd4b556",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_received_files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"limit\\\": 100, \\n    \\\"actions\\\": []\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"id\": \"id:3kmLmQFnf1AAAAAAAAAAAw\",\n      \"name\": \"file.txt\",\n      \"policy\": {\n        \"acl_update_policy\": {\n          \".tag\": \"owner\"\n        },\n        \"shared_link_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"member_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"resolved_member_policy\": {\n          \".tag\": \"team\"\n        }\n      },\n      \"preview_url\": \"https://www.dropbox.com/scl/fi/fir9vjelf\",\n      \"access_type\": {\n        \".tag\": \"viewer\"\n      },\n      \"owner_display_names\": [\n        \"Jane Doe\"\n      ],\n      \"owner_team\": {\n        \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n        \"name\": \"Acme, Inc.\"\n      },\n      \"path_display\": \"/dir/file.txt\",\n      \"path_lower\": \"/dir/file.txt\",\n      \"permissions\": [],\n      \"time_invited\": \"2016-01-20T00:00:00Z\"\n    }\n  ],\n  \"cursor\": \"AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9cmV2aXNpb24H3Qf6o1fkHxQ\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ed5c61e-52b0-4d37-b506-d3d79485d492",
+          "name": "Dropbox list_received_files/continue",
+          "request": {
+            "name": "Dropbox list_received_files/continue",
+            "description": {
+              "content": "[list_received_files/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files-continue)\n\nscope: `sharing.read`\n\nGet more results with a cursor from `list_received_files`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_received_files",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "74d7760b-6cac-46b3-b40d-4c4a4a713c80",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_received_files",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9emfGRlc2MCRWxpbWl0BGRId\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"id\": \"id:3kmLmQFnf1AAAAAAAAAAAw\",\n      \"name\": \"file.txt\",\n      \"policy\": {\n        \"acl_update_policy\": {\n          \".tag\": \"owner\"\n        },\n        \"shared_link_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"member_policy\": {\n          \".tag\": \"anyone\"\n        },\n        \"resolved_member_policy\": {\n          \".tag\": \"team\"\n        }\n      },\n      \"preview_url\": \"https://www.dropbox.com/scl/fi/fir9vjelf\",\n      \"access_type\": {\n        \".tag\": \"viewer\"\n      },\n      \"owner_display_names\": [\n        \"Jane Doe\"\n      ],\n      \"owner_team\": {\n        \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n        \"name\": \"Acme, Inc.\"\n      },\n      \"path_display\": \"/dir/file.txt\",\n      \"path_lower\": \"/dir/file.txt\",\n      \"permissions\": [],\n      \"time_invited\": \"2016-01-20T00:00:00Z\"\n    }\n  ],\n  \"cursor\": \"AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9cmV2aXNpb24H3Qf6o1fkHxQ\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc832d7a-d541-41e2-87f3-1fdfa801db09",
+          "name": "Dropbox list_shared_links",
+          "request": {
+            "name": "Dropbox list_shared_links",
+            "description": {
+              "content": "[list_shared_links](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_shared_links)\n\nscope: `sharing.read`\n\nList shared links of this user.\nIf no path is given, returns a list of all shared links for the current user.\nIf a non-empty path is given, returns a list of all shared links that allow access to the given path - direct links to the given path and links to parent folders of the given path. Links to parent folders can be suppressed by setting direct_only to true.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "list_shared_links"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "da4016be-82bf-433c-ac04-1e69b9a610ae",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "list_shared_links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"links\": [\n    {\n      \".tag\": \"file\",\n      \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\",\n      \"name\": \"Prime_Numbers.txt\",\n      \"link_permissions\": {\n        \"can_revoke\": false,\n        \"resolved_visibility\": {\n          \".tag\": \"public\"\n        },\n        \"revoke_failure_reason\": {\n          \".tag\": \"owner_only\"\n        }\n      },\n      \"client_modified\": \"2015-05-12T15:50:38Z\",\n      \"server_modified\": \"2015-05-12T15:50:38Z\",\n      \"rev\": \"a1c10ce0dd78\",\n      \"size\": 7212,\n      \"id\": \"id:a4ayc_80_OEAAAAAAAAAXw\",\n      \"path_lower\": \"/homework/math/prime_numbers.txt\",\n      \"team_member_info\": {\n        \"team_info\": {\n          \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n          \"name\": \"Acme, Inc.\"\n        },\n        \"display_name\": \"Roger Rabbit\",\n        \"member_id\": \"dbmid:abcd1234\"\n      }\n    }\n  ],\n  \"has_more\": true,\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "394b49fa-d509-409c-95eb-2d08d13410e6",
+          "name": "Dropbox modify_shared_link_settings",
+          "request": {
+            "name": "Dropbox modify_shared_link_settings",
+            "description": {
+              "content": "[modify_shared_link_settings](https://www.dropbox.com/developers/documentation/http/documentation#sharing-modify_shared_link_settings)\n\nscope: `sharing.write`\n\nModify the shared link's settings.\nIf the requested visibility conflict with the shared links policy of the team or the shared folder (in case the linked file is part of a shared folder) then the `LinkPermissions.resolved_visibility` of the returned `SharedLinkMetadata` will reflect the actual visibility of the shared link and the `LinkPermissions.requested_visibility` will reflect the requested visibility.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "modify_shared_link_settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "cdfc613c-da68-4e3e-aa43-53eda29bea1d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "modify_shared_link_settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"url\\\": \\\"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\\\", \\n    \\\"settings\\\": {\\n        \\\"requested_visibility\\\": \\\"public\\\", \\n        \\\"audience\\\": \\\"public\\\", \\n        \\\"access\\\": \\\"viewer\\\"\\n    }, \\n    \\\"remove_expiration\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"file\",\n  \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\",\n  \"name\": \"Prime_Numbers.txt\",\n  \"link_permissions\": {\n    \"can_revoke\": false,\n    \"resolved_visibility\": {\n      \".tag\": \"public\"\n    },\n    \"revoke_failure_reason\": {\n      \".tag\": \"owner_only\"\n    }\n  },\n  \"client_modified\": \"2015-05-12T15:50:38Z\",\n  \"server_modified\": \"2015-05-12T15:50:38Z\",\n  \"rev\": \"a1c10ce0dd78\",\n  \"size\": 7212,\n  \"id\": \"id:a4ayc_80_OEAAAAAAAAAXw\",\n  \"path_lower\": \"/homework/math/prime_numbers.txt\",\n  \"team_member_info\": {\n    \"team_info\": {\n      \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n      \"name\": \"Acme, Inc.\"\n    },\n    \"display_name\": \"Roger Rabbit\",\n    \"member_id\": \"dbmid:abcd1234\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0c16c8c-0952-4774-a35e-b56ad7173c27",
+          "name": "Dropbox mount_folder",
+          "request": {
+            "name": "Dropbox mount_folder",
+            "description": {
+              "content": "[mount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-mount_folder)\n\nscope: `sharing.write`\n\nThe current user mounts the designated folder.\nMount a shared folder for a user after they have been added as a member. Once mounted, the shared folder will appear in their Dropbox.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "mount_folder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "a89aa358-c969-42ad-87d0-668c85c6d062",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "mount_folder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_type\": {\n    \".tag\": \"owner\"\n  },\n  \"is_inside_team_folder\": false,\n  \"is_team_folder\": false,\n  \"name\": \"dir\",\n  \"policy\": {\n    \"acl_update_policy\": {\n      \".tag\": \"owner\"\n    },\n    \"shared_link_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"member_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"resolved_member_policy\": {\n      \".tag\": \"team\"\n    }\n  },\n  \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n  \"shared_folder_id\": \"84528192421\",\n  \"time_invited\": \"2016-01-20T00:00:00Z\",\n  \"path_lower\": \"/dir\",\n  \"link_metadata\": {\n    \"audience_options\": [\n      {\n        \".tag\": \"public\"\n      },\n      {\n        \".tag\": \"team\"\n      },\n      {\n        \".tag\": \"members\"\n      }\n    ],\n    \"current_audience\": {\n      \".tag\": \"public\"\n    },\n    \"link_permissions\": [\n      {\n        \"action\": {\n          \".tag\": \"change_audience\"\n        },\n        \"allow\": true\n      }\n    ],\n    \"password_protected\": false,\n    \"url\": \"\"\n  },\n  \"permissions\": [],\n  \"access_inheritance\": {\n    \".tag\": \"inherit\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02e884d3-bde0-4968-a6d2-2c68199a9991",
+          "name": "Dropbox relinquish_file_membership",
+          "request": {
+            "name": "Dropbox relinquish_file_membership",
+            "description": {
+              "content": "[relinquish_file_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_file_membership)\n\nscope: `sharing.write`\n\nThe current user relinquishes their membership in the designated file. Note that the current user may still have inherited access to this file through the parent folder.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "relinquish_file_membership"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "0b970952-a982-484c-bb6c-ae9b5f266214",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "relinquish_file_membership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"file\\\": \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8af53e5d-fa7d-4217-89e5-b576ccef3483",
+          "name": "Dropbox relinquish_folder_membership",
+          "request": {
+            "name": "Dropbox relinquish_folder_membership",
+            "description": {
+              "content": "[relinquish_folder_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_folder_membership)\n\nscope: `sharing.write`\n\nThe current user relinquishes their membership in the designated shared folder and will no longer have access to the folder.  A folder owner cannot relinquish membership in their own folder.\nThis will run synchronously if leave_a_copy is false, and asynchronously if leave_a_copy is true.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "relinquish_folder_membership"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "8c526ab8-7386-4559-880d-40b067aba670",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "relinquish_folder_membership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"leave_a_copy\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d92a03f-ec59-4ccc-8198-ba18571a38a7",
+          "name": "Dropbox remove_file_member_2",
+          "request": {
+            "name": "Dropbox remove_file_member_2",
+            "description": {
+              "content": "[remove_file_member_2](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_file_member_2)\n\nscope: `sharing.write`\n\nRemoves a specified member from the file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "remove_file_member_2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "6534dad4-3fcf-4748-b165-1c803ebcf31c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "remove_file_member_2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"file\\\": \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\", \\n    \\\"member\\\": {\\n        \\\".tag\\\": \\\"email\\\", \\n        \\\"email\\\": \\\"justin@example.com\\\"\\n    }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"other\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35b81796-bc72-4c77-9fc2-a288e7eccb06",
+          "name": "Dropbox remove_folder_member",
+          "request": {
+            "name": "Dropbox remove_folder_member",
+            "description": {
+              "content": "[remove_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_folder_member)\n\nscope: `sharing.write`\n\nAllows an owner or editor (if the ACL update policy allows) of a shared folder to remove another member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "remove_folder_member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "9e9f2c0d-d085-4547-85de-41b74c53a54d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "remove_folder_member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"member\\\": {\\n        \\\".tag\\\": \\\"email\\\", \\n        \\\"email\\\": \\\"justin@example.com\\\"\\n    }, \\n    \\\"leave_a_copy\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"async_job_id\",\n  \"async_job_id\": \"34g93hh34h04y384084\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b00ec89-52af-4367-8566-151d38c4fc5f",
+          "name": "Dropbox revoke_shared_link",
+          "request": {
+            "name": "Dropbox revoke_shared_link",
+            "description": {
+              "content": "[revoke_shared_link](https://www.dropbox.com/developers/documentation/http/documentation#sharing-revoke_shared_link)\n\nscope: `sharing.write`\n\nRevoke a shared link.\nNote that even after revoking a shared link to a file, the file may be accessible if there are shared links leading to any of the file parent folders. To list all shared links that enable access to a specific file, you can use the `list_shared_links` with the file as the `ListSharedLinksArg.path` argument.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "revoke_shared_link"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "b7a99786-c954-4a25-a7b5-7a04a73449e7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "revoke_shared_link"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"url\\\": \\\"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c42a492a-ef35-4ce2-bff3-0ca19a473a62",
+          "name": "Dropbox set_access_inheritance",
+          "request": {
+            "name": "Dropbox set_access_inheritance",
+            "description": {
+              "content": "[set_access_inheritance](https://www.dropbox.com/developers/documentation/http/documentation#sharing-set_access_inheritance)\n\nscope: `sharing.write`\n\nChange the inheritance policy of an existing Shared Folder. Only permitted for shared folders in a shared team root.\nIf a `ShareFolderLaunch.async_job_id` is returned, you'll need to call `check_share_job_status` until the action completes to get the metadata for the folder.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "set_access_inheritance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "68fcc181-ece2-44d2-8e9c-aebf2b2d8c38",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "set_access_inheritance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"access_inheritance\\\": \\\"inherit\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\",\n  \"access_type\": {\n    \".tag\": \"owner\"\n  },\n  \"is_inside_team_folder\": false,\n  \"is_team_folder\": false,\n  \"name\": \"dir\",\n  \"policy\": {\n    \"acl_update_policy\": {\n      \".tag\": \"owner\"\n    },\n    \"shared_link_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"member_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"resolved_member_policy\": {\n      \".tag\": \"team\"\n    }\n  },\n  \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n  \"shared_folder_id\": \"84528192421\",\n  \"time_invited\": \"2016-01-20T00:00:00Z\",\n  \"path_lower\": \"/dir\",\n  \"link_metadata\": {\n    \"audience_options\": [\n      {\n        \".tag\": \"public\"\n      },\n      {\n        \".tag\": \"team\"\n      },\n      {\n        \".tag\": \"members\"\n      }\n    ],\n    \"current_audience\": {\n      \".tag\": \"public\"\n    },\n    \"link_permissions\": [\n      {\n        \"action\": {\n          \".tag\": \"change_audience\"\n        },\n        \"allow\": true\n      }\n    ],\n    \"password_protected\": false,\n    \"url\": \"\"\n  },\n  \"permissions\": [],\n  \"access_inheritance\": {\n    \".tag\": \"inherit\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf8a9f0e-e955-436b-9742-74b0b75f2e65",
+          "name": "Dropbox share_folder",
+          "request": {
+            "name": "Dropbox share_folder",
+            "description": {
+              "content": "[share_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-share_folder)\n\nscope: `sharing.write`\n\nShare a folder with collaborators.\nMost sharing will be completed synchronously. Large folders will be completed asynchronously. To make testing the async case repeatable, set `ShareFolderArg.force_async`.\nIf a `ShareFolderLaunch.async_job_id` is returned, you'll need to call `check_share_job_status` until the action completes to get the metadata for the folder.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "share_folder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "6c33974f-1fad-4431-a7a1-664c261f2c45",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "share_folder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"path\\\": \\\"/example/workspace\\\", \\n    \\\"acl_update_policy\\\": \\\"editors\\\", \\n    \\\"force_async\\\": false, \\n    \\\"member_policy\\\": \\\"team\\\", \\n    \\\"shared_link_policy\\\": \\\"members\\\", \\n    \\\"access_inheritance\\\": \\\"inherit\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\",\n  \"access_type\": {\n    \".tag\": \"owner\"\n  },\n  \"is_inside_team_folder\": false,\n  \"is_team_folder\": false,\n  \"name\": \"dir\",\n  \"policy\": {\n    \"acl_update_policy\": {\n      \".tag\": \"owner\"\n    },\n    \"shared_link_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"member_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"resolved_member_policy\": {\n      \".tag\": \"team\"\n    }\n  },\n  \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n  \"shared_folder_id\": \"84528192421\",\n  \"time_invited\": \"2016-01-20T00:00:00Z\",\n  \"path_lower\": \"/dir\",\n  \"link_metadata\": {\n    \"audience_options\": [\n      {\n        \".tag\": \"public\"\n      },\n      {\n        \".tag\": \"team\"\n      },\n      {\n        \".tag\": \"members\"\n      }\n    ],\n    \"current_audience\": {\n      \".tag\": \"public\"\n    },\n    \"link_permissions\": [\n      {\n        \"action\": {\n          \".tag\": \"change_audience\"\n        },\n        \"allow\": true\n      }\n    ],\n    \"password_protected\": false,\n    \"url\": \"\"\n  },\n  \"permissions\": [],\n  \"access_inheritance\": {\n    \".tag\": \"inherit\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18a0ae1b-4d80-48a3-9901-492f9d65d2c0",
+          "name": "Dropbox transfer_folder",
+          "request": {
+            "name": "Dropbox transfer_folder",
+            "description": {
+              "content": "[transfer_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-transfer_folder)\n\nscope: `sharing.write`\n\nTransfer ownership of a shared folder to a member of the shared folder.\nUser must have `AccessLevel.owner` access to the shared folder to perform a transfer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "transfer_folder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "482f1a48-21e8-46eb-a484-39da8b40539b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "transfer_folder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"to_dropbox_id\\\": \\\"dbid:AAEufNrMPSPe0dMQijRP0N_aZtBJRm26W4Q\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8e5129d-6dbc-4a1e-9fe5-0c6bf931a6ea",
+          "name": "Dropbox unmount_folder",
+          "request": {
+            "name": "Dropbox unmount_folder",
+            "description": {
+              "content": "[unmount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unmount_folder)\n\nscope: `sharing.write`\n\nThe current user unmounts the designated folder. They can re-mount the folder at a later time using `mount_folder`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "unmount_folder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "fd2e7cf7-be1e-42de-8be0-4b7cd52864e2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "unmount_folder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c92f044d-d71a-4a41-95f1-dadaceb699b6",
+          "name": "Dropbox unshare_file",
+          "request": {
+            "name": "Dropbox unshare_file",
+            "description": {
+              "content": "[unshare_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_file)\n\nscope: `sharing.write`\n\nRemove all members from this file. Does not remove inherited members.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "unshare_file"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "4f75ba40-79d4-4db9-afe4-0ff155addd5f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "unshare_file"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"file\\\": \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1545317-dbb1-4a32-9b22-86d5a4edac75",
+          "name": "Dropbox unshare_folder",
+          "request": {
+            "name": "Dropbox unshare_folder",
+            "description": {
+              "content": "[unshare_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_folder)\n\nscope: `sharing.write`\n\nAllows a shared folder owner to unshare the folder.\nYou'll need to call `check_job_status` to determine if the action has completed successfully.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "unshare_folder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "778862ce-c8b0-465b-8256-18f114b7d367",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "unshare_folder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"leave_a_copy\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f535b1b4-4aba-4214-9b0d-7ee9c67fd726",
+          "name": "Dropbox update_file_member",
+          "request": {
+            "name": "Dropbox update_file_member",
+            "description": {
+              "content": "[update_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_file_member)\n\nscope: `sharing.write`\n\nChanges a member's access on a shared file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "update_file_member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "b725b33d-3c64-45bf-be93-0d3c18f87396",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "update_file_member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"file\\\": \\\"id:3kmLmQFnf1AAAAAAAAAAAw\\\", \\n    \\\"member\\\": {\\n        \\\".tag\\\": \\\"email\\\", \\n        \\\"email\\\": \\\"justin@example.com\\\"\\n    }, \\n    \\\"access_level\\\": \\\"viewer\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "981708b7-1b4a-4c55-b503-76ec78dc5d0b",
+          "name": "Dropbox update_folder_member",
+          "request": {
+            "name": "Dropbox update_folder_member",
+            "description": {
+              "content": "[update_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_member)\n\nscope: `sharing.write`\n\nAllows an owner or editor of a shared folder to update another member's permissions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "update_folder_member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "9fb8ed3e-aea5-41a3-af93-ece4cb2297b8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "update_folder_member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"member\\\": {\\n        \\\".tag\\\": \\\"email\\\", \\n        \\\"email\\\": \\\"justin@example.com\\\"\\n    }, \\n    \\\"access_level\\\": \\\"editor\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57e0ebff-98ae-4d88-9d6b-39ca35da4922",
+          "name": "Dropbox update_folder_policy",
+          "request": {
+            "name": "Dropbox update_folder_policy",
+            "description": {
+              "content": "[update_folder_policy](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_policy)\n\nscope: `sharing.write`\n\nUpdate the sharing policies for a shared folder.\nUser must have `AccessLevel.owner` access to the shared folder to update its policies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "sharing",
+                "update_folder_policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "64ac6f13-d1aa-4625-b8f0-e0bcee3436ac",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "sharing",
+                    "update_folder_policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"shared_folder_id\\\": \\\"84528192421\\\", \\n    \\\"member_policy\\\": \\\"team\\\", \\n    \\\"acl_update_policy\\\": \\\"owner\\\", \\n    \\\"shared_link_policy\\\": \\\"members\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1066",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_type\": {\n    \".tag\": \"owner\"\n  },\n  \"is_inside_team_folder\": false,\n  \"is_team_folder\": false,\n  \"name\": \"dir\",\n  \"policy\": {\n    \"acl_update_policy\": {\n      \".tag\": \"owner\"\n    },\n    \"shared_link_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"member_policy\": {\n      \".tag\": \"anyone\"\n    },\n    \"resolved_member_policy\": {\n      \".tag\": \"team\"\n    }\n  },\n  \"preview_url\": \"https://www.dropbox.com/scl/fo/fir9vjelf\",\n  \"shared_folder_id\": \"84528192421\",\n  \"time_invited\": \"2016-01-20T00:00:00Z\",\n  \"path_lower\": \"/dir\",\n  \"link_metadata\": {\n    \"audience_options\": [\n      {\n        \".tag\": \"public\"\n      },\n      {\n        \".tag\": \"team\"\n      },\n      {\n        \".tag\": \"members\"\n      }\n    ],\n    \"current_audience\": {\n      \".tag\": \"public\"\n    },\n    \"link_permissions\": [\n      {\n        \"action\": {\n          \".tag\": \"change_audience\"\n        },\n        \"allow\": true\n      }\n    ],\n    \"password_protected\": false,\n    \"url\": \"\"\n  },\n  \"permissions\": [],\n  \"access_inheritance\": {\n    \".tag\": \"inherit\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "885fdd8d-5789-4633-abac-060e4f388f77",
+    "name": "Dropbox API Reference Account Sharing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

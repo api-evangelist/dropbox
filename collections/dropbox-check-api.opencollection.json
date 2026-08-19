@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Check API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Check",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox app",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/check/app",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[app](https://www.dropbox.com/developers/documentation/http/documentation#check-app)\n\nscope: `None`\n\nThis endpoint performs App Authentication, validating the supplied app key and secret, and returns the supplied string, to allow you to test your code and connection to the Dropbox API. It has no other effect. If you receive an HTTP 200 response with the supplied query, it indicates at least part of the Dropbox API infrastructure is working and that the app key and secret valid."
+        },
+        {
+          "info": {
+            "name": "Dropbox user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/check/user",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[user](https://www.dropbox.com/developers/documentation/http/documentation#check-user)\n\nscope: `None`\n\nThis endpoint performs User Authentication, validating the supplied access token, and returns the supplied string, to allow you to test your code and connection to the Dropbox API. It has no other effect. If you receive an HTTP 200 response with the supplied query, it indicates at least part of the Dropbox API infrastructure is working and that the access token is valid."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

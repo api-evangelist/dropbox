@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Embedded API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Embedded",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox _t__EmbeddedEditUrl::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/embedded/edit_url/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__EmbeddedEditUrl::TEMPLATE_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__EmbeddedEditUrl::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__EmbeddedSignUrl::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/embedded/sign_url/:signature_id",
+            "params": [
+              {
+                "name": "signature_id",
+                "value": "50e3542f738adfa7ddd4cbd4c00d2a8ab6e4194b",
+                "type": "path",
+                "description": "_t__EmbeddedSignUrl::SIGNATURE_ID"
+              }
+            ]
+          },
+          "docs": "_t__EmbeddedSignUrl::DESCRIPTION"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

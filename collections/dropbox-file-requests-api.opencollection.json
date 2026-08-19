@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account File_requests API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "File_requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox count",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_requests/count"
+          },
+          "docs": "[count](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-count)\n\nscope: `file_requests.read`\n\nReturns the total number of file requests owned by this user. Includes both open and closed file requests.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_requests/create",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[create](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-create)\n\nscope: `file_requests.write`\n\nCreates a file request for this user."
+        },
+        {
+          "info": {
+            "name": "Dropbox delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_requests/delete",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[delete](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete)\n\nscope: `file_requests.write`\n\nDelete a batch of closed file requests."
+        },
+        {
+          "info": {
+            "name": "Dropbox delete_all_closed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_requests/delete_all_closed"
+          },
+          "docs": "[delete_all_closed](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete_all_closed)\n\nscope: `file_requests.write`\n\nDelete all closed file requests owned by this user.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox get",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_requests/get",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-get)\n\nscope: `file_requests.read`\n\nReturns the specified file request."
+        },
+        {
+          "info": {
+            "name": "Dropbox list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_requests/list_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list)\n\nscope: `file_requests.read`\n\nReturns a list of file requests owned by this user. For apps with the app folder permission, this will only return file requests with destinations in the app folder."
+        },
+        {
+          "info": {
+            "name": "Dropbox list/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_requests/list/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list-continue)\n\nscope: `file_requests.read`\n\nOnce a cursor has been retrieved from `list:2`, use this to paginate through all file requests. The cursor must come from a previous call to `list:2` or `list/continue`."
+        },
+        {
+          "info": {
+            "name": "Dropbox update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/file_requests/update",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[update](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-update)\n\nscope: `file_requests.write`\n\nUpdate a file request."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

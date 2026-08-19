@@ -1,0 +1,267 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Template API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Template",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateAddUser::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/template/add_user/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__TemplateAddUser::TEMPLATE_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TemplateAddUser::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateCreate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/template/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TemplateCreate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/template/create_embedded_draft",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TemplateCreateEmbeddedDraft::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateDelete::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/template/delete/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__TemplateDelete::TEMPLATE_ID"
+              }
+            ]
+          },
+          "docs": "_t__TemplateDelete::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateFiles::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/template/files/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__TemplateFiles::TEMPLATE_ID"
+              },
+              {
+                "name": "file_type",
+                "value": "",
+                "type": "query",
+                "description": "_t__TemplateFiles::FILE_TYPE"
+              }
+            ]
+          },
+          "docs": "_t__TemplateFiles::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateFilesAsDataUri::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/template/files_as_data_uri/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__TemplateFiles::TEMPLATE_ID"
+              }
+            ]
+          },
+          "docs": "_t__TemplateFilesAsDataUri::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateFilesAsFileUrl::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/template/files_as_file_url/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__TemplateFiles::TEMPLATE_ID"
+              },
+              {
+                "name": "force_download",
+                "value": "",
+                "type": "query",
+                "description": "_t__TemplateFiles::FORCE_DOWNLOAD"
+              }
+            ]
+          },
+          "docs": "_t__TemplateFilesAsFileUrl::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateGet::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/template/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__TemplateGet::TEMPLATE_ID"
+              }
+            ]
+          },
+          "docs": "_t__TemplateGet::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateList::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/template/list",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "query",
+                "description": "_t__TemplateList::ACCOUNT_ID"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "_t__TemplateList::PAGE"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "_t__TemplateList::PAGE_SIZE"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "_t__TemplateList::QUERY"
+              }
+            ]
+          },
+          "docs": "_t__TemplateList::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateRemoveUser::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/template/remove_user/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__TemplateRemoveUser::TEMPLATE_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TemplateRemoveUser::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TemplateUpdateFiles::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/template/update_files/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "f57db65d3f933b5316d398057a36176831451a35",
+                "type": "path",
+                "description": "_t__TemplateUpdateFiles::TEMPLATE_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TemplateUpdateFiles::DESCRIPTION"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

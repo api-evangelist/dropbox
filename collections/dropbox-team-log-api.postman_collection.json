@@ -1,0 +1,253 @@
+{
+  "item": [
+    {
+      "id": "8c408504-bee3-49ce-af40-83cb99b511b9",
+      "name": "Team_log",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "184519f8-2b16-4fc4-afad-6da8e4decce9",
+          "name": "Dropbox get_events",
+          "request": {
+            "name": "Dropbox get_events",
+            "description": {
+              "content": "[get_events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events)\n\nscope: `events.read`\n\nRetrieves team events. If the result's `GetTeamEventsResult.has_more` field is `true`, call `get_events/continue` with the returned cursor to retrieve more entries. If end_time is not specified in your request, you may use the returned cursor to poll `get_events/continue` for new events.\nMany attributes note 'may be missing due to historical data gap'.\nNote that the file_operations category and & analogous paper events are not available on all Dropbox Business [plans](http://www.dropbox.com/business/plans-comparison). Use [features/get_values](http://www.dropbox.com/developers/documentation/http/teams#team-features-get_values) to check for this feature.\nPermission : Team Auditing.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team_log",
+                "get_events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "b9e02b59-db4d-4762-b90a-d74be1e42794",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team_log",
+                    "get_events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"limit\\\": 50, \\n    \\\"category\\\": \\\"groups\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1409",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"timestamp\": \"2017-01-25T15:51:30Z\",\n      \"event_category\": {\n        \".tag\": \"tfa\"\n      },\n      \"event_type\": {\n        \".tag\": \"shared_content_download\",\n        \"description\": \"(sharing) Downloaded shared file/folder\"\n      },\n      \"details\": {\n        \".tag\": \"shared_content_download_details\",\n        \"shared_content_link\": \"abc\",\n        \"shared_content_access_level\": {\n          \".tag\": \"viewer_no_comment\"\n        },\n        \"shared_content_owner\": {\n          \".tag\": \"team_member\",\n          \"account_id\": \"dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho\",\n          \"display_name\": \"John Smith\",\n          \"email\": \"john_smith@acmecorp.com\",\n          \"team_member_id\": \"dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q\",\n          \"member_external_id\": \"ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224\",\n          \"team\": {\n            \"display_name\": \"A Team\"\n          }\n        }\n      },\n      \"actor\": {\n        \".tag\": \"user\",\n        \"user\": {\n          \".tag\": \"team_member\",\n          \"account_id\": \"dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho\",\n          \"display_name\": \"John Smith\",\n          \"email\": \"john_smith@acmecorp.com\",\n          \"team_member_id\": \"dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q\",\n          \"member_external_id\": \"ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224\",\n          \"team\": {\n            \"display_name\": \"A Team\"\n          }\n        }\n      },\n      \"origin\": {\n        \"access_method\": {\n          \".tag\": \"end_user\",\n          \"end_user\": {\n            \".tag\": \"web\",\n            \"session_id\": \"dbwsid:123456789012345678901234567890123456789\"\n          }\n        },\n        \"geo_location\": {\n          \"ip_address\": \"45.56.78.100\",\n          \"city\": \"San Francisco\",\n          \"region\": \"California\",\n          \"country\": \"US\"\n        }\n      },\n      \"involve_non_team_member\": true,\n      \"context\": {\n        \".tag\": \"team_member\",\n        \"account_id\": \"dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho\",\n        \"display_name\": \"John Smith\",\n        \"email\": \"john_smith@acmecorp.com\",\n        \"team_member_id\": \"dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q\",\n        \"member_external_id\": \"ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224\",\n        \"team\": {\n          \"display_name\": \"A Team\"\n        }\n      },\n      \"participants\": [\n        {\n          \".tag\": \"user\",\n          \"user\": {\n            \".tag\": \"team_member\",\n            \"account_id\": \"dbid:AAGx4oiLtHdvRdNxUpvvJBXYgR4BS19c9kw\",\n            \"display_name\": \"Jane Smith\",\n            \"email\": \"jane_smith@acmecorp.com\",\n            \"team_member_id\": \"dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q\",\n            \"member_external_id\": \"ADSYNC S-1-5-21-1004296348-1135238915-682003432-1225\",\n            \"team\": {\n              \"display_name\": \"A Team\"\n            }\n          }\n        }\n      ],\n      \"assets\": [\n        {\n          \".tag\": \"file\",\n          \"path\": {\n            \"namespace_relative\": {\n              \"ns_id\": \"1234\",\n              \"relative_path\": \"/Contract Work/Draft\",\n              \"is_shared_namespace\": false\n            },\n            \"contextual\": \"/Contract Work/Draft\"\n          },\n          \"display_name\": \"reports.xls\",\n          \"file_id\": \"id:jQKLsZFQImAAAAAAEZAAQt\",\n          \"file_size\": 4\n        }\n      ]\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\",\n  \"has_more\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78b50a1b-3c9b-4444-a7a5-1ff95fbfbcbb",
+          "name": "Dropbox get_events/continue",
+          "request": {
+            "name": "Dropbox get_events/continue",
+            "description": {
+              "content": "[get_events/continue](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events-continue)\n\nscope: `events.read`\n\nOnce a cursor has been retrieved from `get_events`, use this to paginate through all events.\nPermission : Team Auditing.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team_log",
+                "get_events",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "5c89eb21-e7bc-4844-b580-b4bb42d64864",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team_log",
+                    "get_events",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "1409",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"timestamp\": \"2017-01-25T15:51:30Z\",\n      \"event_category\": {\n        \".tag\": \"tfa\"\n      },\n      \"event_type\": {\n        \".tag\": \"shared_content_download\",\n        \"description\": \"(sharing) Downloaded shared file/folder\"\n      },\n      \"details\": {\n        \".tag\": \"shared_content_download_details\",\n        \"shared_content_link\": \"abc\",\n        \"shared_content_access_level\": {\n          \".tag\": \"viewer_no_comment\"\n        },\n        \"shared_content_owner\": {\n          \".tag\": \"team_member\",\n          \"account_id\": \"dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho\",\n          \"display_name\": \"John Smith\",\n          \"email\": \"john_smith@acmecorp.com\",\n          \"team_member_id\": \"dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q\",\n          \"member_external_id\": \"ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224\",\n          \"team\": {\n            \"display_name\": \"A Team\"\n          }\n        }\n      },\n      \"actor\": {\n        \".tag\": \"user\",\n        \"user\": {\n          \".tag\": \"team_member\",\n          \"account_id\": \"dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho\",\n          \"display_name\": \"John Smith\",\n          \"email\": \"john_smith@acmecorp.com\",\n          \"team_member_id\": \"dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q\",\n          \"member_external_id\": \"ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224\",\n          \"team\": {\n            \"display_name\": \"A Team\"\n          }\n        }\n      },\n      \"origin\": {\n        \"access_method\": {\n          \".tag\": \"end_user\",\n          \"end_user\": {\n            \".tag\": \"web\",\n            \"session_id\": \"dbwsid:123456789012345678901234567890123456789\"\n          }\n        },\n        \"geo_location\": {\n          \"ip_address\": \"45.56.78.100\",\n          \"city\": \"San Francisco\",\n          \"region\": \"California\",\n          \"country\": \"US\"\n        }\n      },\n      \"involve_non_team_member\": true,\n      \"context\": {\n        \".tag\": \"team_member\",\n        \"account_id\": \"dbid:AAHgR8xsQP48a5DQUGPo-Vxsrjd0OByVmho\",\n        \"display_name\": \"John Smith\",\n        \"email\": \"john_smith@acmecorp.com\",\n        \"team_member_id\": \"dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q\",\n        \"member_external_id\": \"ADSYNC S-1-5-21-1004296348-1135238915-682003432-1224\",\n        \"team\": {\n          \"display_name\": \"A Team\"\n        }\n      },\n      \"participants\": [\n        {\n          \".tag\": \"user\",\n          \"user\": {\n            \".tag\": \"team_member\",\n            \"account_id\": \"dbid:AAGx4oiLtHdvRdNxUpvvJBXYgR4BS19c9kw\",\n            \"display_name\": \"Jane Smith\",\n            \"email\": \"jane_smith@acmecorp.com\",\n            \"team_member_id\": \"dbmid:AAFoi-tmvRuQR0jU-3fN4B-9nZo6nHcDO9Q\",\n            \"member_external_id\": \"ADSYNC S-1-5-21-1004296348-1135238915-682003432-1225\",\n            \"team\": {\n              \"display_name\": \"A Team\"\n            }\n          }\n        }\n      ],\n      \"assets\": [\n        {\n          \".tag\": \"file\",\n          \"path\": {\n            \"namespace_relative\": {\n              \"ns_id\": \"1234\",\n              \"relative_path\": \"/Contract Work/Draft\",\n              \"is_shared_namespace\": false\n            },\n            \"contextual\": \"/Contract Work/Draft\"\n          },\n          \"display_name\": \"reports.xls\",\n          \"file_id\": \"id:jQKLsZFQImAAAAAAEZAAQt\",\n          \"file_size\": 4\n        }\n      ]\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\",\n  \"has_more\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "96839b4a-f0a1-495f-9a4e-32263bd27048",
+    "name": "Dropbox API Reference Account Team_log API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

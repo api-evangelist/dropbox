@@ -1,0 +1,257 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Team API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox features/get_values",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/features/get_values",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[features/get_values](https://www.dropbox.com/developers/documentation/http/teams#team-features-get_values)\n\nscope: `team_info.read`\n\nGet the values for one or more featues. This route allows you to check your account's capability for what feature you can access or what value you have for certain features.\nPermission : Team information."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/get_info",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "[get_info](https://www.dropbox.com/developers/documentation/http/teams#team-get_info)\n\nscope: `team_info.read`\n\nRetrieves information about a team.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox token/get_authenticated_admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/token/get_authenticated_admin"
+          },
+          "docs": "[token/get_authenticated_admin](https://www.dropbox.com/developers/documentation/http/teams#team-token-get_authenticated_admin)\n\nscope: `team_info.read`\n\nReturns the member profile of the admin who generated the team access token used to make the call.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamAddMember::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.dropbox.com/team/add_member",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "4fea99bfcf2b26bfccf6cea3e127fb8bb74d8d9c",
+                "type": "query",
+                "description": "_t__TeamAddMember::TEAM_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TeamAddMember::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamCreate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/team/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TeamCreate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamDelete::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.dropbox.com/team/destroy"
+          },
+          "docs": "_t__TeamDelete::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamGet::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/team"
+          },
+          "docs": "_t__TeamGet::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamUpdate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.dropbox.com/team",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TeamUpdate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamInfo::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/team/info",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "4fea99bfcf2b26bfccf6cea3e127fb8bb74d8d9c",
+                "type": "query",
+                "description": "_t__TeamInfo::TEAM_ID"
+              }
+            ]
+          },
+          "docs": "_t__TeamInfo::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamInvites::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/team/invites",
+            "params": [
+              {
+                "name": "email_address",
+                "value": "",
+                "type": "query",
+                "description": "_t__TeamInvites::EMAIL_ADDRESS"
+              }
+            ]
+          },
+          "docs": "_t__TeamInvites::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamMembers::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/team/members/:team_id",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "4fea99bfcf2b26bfccf6cea3e127fb8bb74d8d9c",
+                "type": "path",
+                "description": "_t__TeamMembers::TEAM_ID"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "_t__TeamMembers::PAGE"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "_t__TeamMembers::PAGE_SIZE"
+              }
+            ]
+          },
+          "docs": "_t__TeamMembers::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamRemoveMember::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/team/remove_member",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__TeamRemoveMember::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__TeamSubTeams::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/team/sub_teams/:team_id",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "4fea99bfcf2b26bfccf6cea3e127fb8bb74d8d9c",
+                "type": "path",
+                "description": "_t__TeamSubTeams::TEAM_ID"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "_t__TeamSubTeams::PAGE"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "_t__TeamSubTeams::PAGE_SIZE"
+              }
+            ]
+          },
+          "docs": "_t__TeamSubTeams::DESCRIPTION"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

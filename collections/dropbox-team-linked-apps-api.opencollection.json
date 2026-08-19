@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Team > Linked_apps API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team > Linked_apps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox linked_apps/list_member_linked_apps",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/linked_apps/list_member_linked_apps",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[linked_apps/list_member_linked_apps](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-list_member_linked_apps)\n\nscope: `sessions.list`\n\nList all linked applications of the team member.\nNote, this endpoint does not list any team-linked applications."
+        },
+        {
+          "info": {
+            "name": "Dropbox linked_apps/list_members_linked_apps",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/linked_apps/list_members_linked_apps",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[linked_apps/list_members_linked_apps](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-list_members_linked_apps)\n\nscope: `sessions.list`\n\nList all applications linked to the team members' accounts.\nNote, this endpoint does not list any team-linked applications."
+        },
+        {
+          "info": {
+            "name": "Dropbox linked_apps/revoke_linked_app",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/linked_apps/revoke_linked_app",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[linked_apps/revoke_linked_app](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-revoke_linked_app)\n\nscope: `sessions.modify`\n\nRevoke a linked application of the team member."
+        },
+        {
+          "info": {
+            "name": "Dropbox linked_apps/revoke_linked_app_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/linked_apps/revoke_linked_app_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[linked_apps/revoke_linked_app_batch](https://www.dropbox.com/developers/documentation/http/teams#team-linked_apps-revoke_linked_app_batch)\n\nscope: `sessions.modify`\n\nRevoke a list of linked applications of the team members."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

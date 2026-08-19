@@ -1,0 +1,1210 @@
+{
+  "item": [
+    {
+      "id": "d585813a-8f62-4d5a-8039-777ff3394c90",
+      "name": "Api App",
+      "description": {
+        "content": "_md__OpenApi::TAG::API_APP::DESCRIPTION",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cbcb7deb-b909-46d5-a338-05159268d45b",
+          "name": "Dropbox _t__ApiAppCreate::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__ApiAppCreate::SUMMARY",
+            "description": {
+              "content": "_t__ApiAppCreate::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api_app"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) _t__ApiAppCreate::NAME"
+                },
+                {
+                  "key": "domains",
+                  "value": "[\"<string>\"]",
+                  "type": "text",
+                  "description": "(Required) _t__ApiAppCreate::DOMAINS"
+                },
+                {
+                  "key": "callback_url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__ApiAppCreate::CALLBACK_URL"
+                },
+                {
+                  "key": "custom_logo_file",
+                  "type": "file",
+                  "description": "_t__ApiAppCreate::CUSTOM_LOGO_FILE"
+                },
+                {
+                  "key": "oauth",
+                  "value": "{\"callback_url\":\"<string>\",\"scopes\":[\"<string>\",\"<string>\"]}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "options",
+                  "value": "{\"can_insert_everywhere\":false}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "white_labeling_options",
+                  "value": "{\"header_background_color\":\"#1A1A1A\",\"legal_version\":\"terms1\",\"link_color\":\"#00B3E6\",\"page_background_color\":\"#F7F8F9\",\"primary_button_color\":\"#00B3E6\",\"primary_button_color_hover\":\"#00B3E6\",\"primary_button_text_color\":\"#FFFFFF\",\"primary_button_text_color_hover\":\"#FFFFFF\",\"secondary_button_color\":\"#FFFFFF\",\"secondary_button_color_hover\":\"#FFFFFF\",\"secondary_button_text_color\":\"#00B3E6\",\"secondary_button_text_color_hover\":\"#00B3E6\",\"text_color1\":\"#808080\",\"text_color2\":\"#FFFFFF\",\"reset_to_default\":\"<boolean>\"}",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "823060df-0f10-4fda-9db9-d21de56404da",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__ApiAppCreate::NAME",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__ApiAppCreate::DOMAINS",
+                        "type": "text/plain"
+                      },
+                      "key": "domains",
+                      "value": "[\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppCreate::CALLBACK_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "callback_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppCreate::CUSTOM_LOGO_FILE",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_logo_file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "oauth",
+                      "value": "{\"callback_url\":\"<string>\",\"scopes\":[\"<string>\",\"<string>\"]}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"can_insert_everywhere\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "white_labeling_options",
+                      "value": "{\"header_background_color\":\"#1A1A1A\",\"legal_version\":\"terms1\",\"link_color\":\"#00B3E6\",\"page_background_color\":\"#F7F8F9\",\"primary_button_color\":\"#00B3E6\",\"primary_button_color_hover\":\"#00B3E6\",\"primary_button_text_color\":\"#FFFFFF\",\"primary_button_text_color_hover\":\"#FFFFFF\",\"secondary_button_color\":\"#FFFFFF\",\"secondary_button_color_hover\":\"#FFFFFF\",\"secondary_button_text_color\":\"#00B3E6\",\"secondary_button_text_color_hover\":\"#00B3E6\",\"text_color1\":\"#808080\",\"text_color2\":\"#FFFFFF\",\"reset_to_default\":\"<boolean>\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/ApiAppCreateResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ce21767-c0e1-4957-b647-3527a9c3c7cf",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__ApiAppCreate::NAME",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__ApiAppCreate::DOMAINS",
+                        "type": "text/plain"
+                      },
+                      "key": "domains",
+                      "value": "[\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppCreate::CALLBACK_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "callback_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppCreate::CUSTOM_LOGO_FILE",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_logo_file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "oauth",
+                      "value": "{\"callback_url\":\"<string>\",\"scopes\":[\"<string>\",\"<string>\"]}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"can_insert_everywhere\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "white_labeling_options",
+                      "value": "{\"header_background_color\":\"#1A1A1A\",\"legal_version\":\"terms1\",\"link_color\":\"#00B3E6\",\"page_background_color\":\"#F7F8F9\",\"primary_button_color\":\"#00B3E6\",\"primary_button_color_hover\":\"#00B3E6\",\"primary_button_text_color\":\"#FFFFFF\",\"primary_button_text_color_hover\":\"#FFFFFF\",\"secondary_button_color\":\"#FFFFFF\",\"secondary_button_color_hover\":\"#FFFFFF\",\"secondary_button_text_color\":\"#00B3E6\",\"secondary_button_text_color_hover\":\"#00B3E6\",\"text_color1\":\"#808080\",\"text_color2\":\"#FFFFFF\",\"reset_to_default\":\"<boolean>\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ae7ba7c-340a-448a-bad2-9aa8349684be",
+          "name": "Dropbox _t__ApiAppGet::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__ApiAppGet::SUMMARY",
+            "description": {
+              "content": "_t__ApiAppGet::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api_app",
+                ":client_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "client_id",
+                  "description": "(Required) _t__ApiAppGet::CLIENT_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "4070fa49-9591-45ce-9f07-2d9c567af6ea",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app",
+                    ":client_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "client_id",
+                      "description": "(Required) _t__ApiAppGet::CLIENT_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/ApiAppGetResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b737bf0-b2ed-48a5-877e-f74570967bb4",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app",
+                    ":client_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "client_id",
+                      "description": "(Required) _t__ApiAppGet::CLIENT_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aef5862e-ff14-4a5f-808b-63afb1cfd116",
+          "name": "Dropbox _t__ApiAppUpdate::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__ApiAppUpdate::SUMMARY",
+            "description": {
+              "content": "_t__ApiAppUpdate::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api_app",
+                ":client_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "client_id",
+                  "description": "(Required) _t__ApiAppUpdate::CLIENT_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "callback_url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__ApiAppUpdate::CALLBACK_URL"
+                },
+                {
+                  "key": "custom_logo_file",
+                  "type": "file",
+                  "description": "_t__ApiAppUpdate::CUSTOM_LOGO_FILE"
+                },
+                {
+                  "key": "domains",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__ApiAppUpdate::DOMAINS"
+                },
+                {
+                  "key": "name",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__ApiAppUpdate::NAME"
+                },
+                {
+                  "key": "oauth",
+                  "value": "{\"callback_url\":\"<string>\",\"scopes\":[\"<string>\",\"<string>\"]}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "options",
+                  "value": "{\"can_insert_everywhere\":false}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "white_labeling_options",
+                  "value": "{\"header_background_color\":\"#1A1A1A\",\"legal_version\":\"terms1\",\"link_color\":\"#00B3E6\",\"page_background_color\":\"#F7F8F9\",\"primary_button_color\":\"#00B3E6\",\"primary_button_color_hover\":\"#00B3E6\",\"primary_button_text_color\":\"#FFFFFF\",\"primary_button_text_color_hover\":\"#FFFFFF\",\"secondary_button_color\":\"#FFFFFF\",\"secondary_button_color_hover\":\"#FFFFFF\",\"secondary_button_text_color\":\"#00B3E6\",\"secondary_button_text_color_hover\":\"#00B3E6\",\"text_color1\":\"#808080\",\"text_color2\":\"#FFFFFF\",\"reset_to_default\":\"<boolean>\"}",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4de7aedf-801b-44a4-8316-429a51c56483",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app",
+                    ":client_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "client_id",
+                      "description": "(Required) _t__ApiAppUpdate::CLIENT_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "_t__ApiAppUpdate::CALLBACK_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "callback_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppUpdate::CUSTOM_LOGO_FILE",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_logo_file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppUpdate::DOMAINS",
+                        "type": "text/plain"
+                      },
+                      "key": "domains",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppUpdate::NAME",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "oauth",
+                      "value": "{\"callback_url\":\"<string>\",\"scopes\":[\"<string>\",\"<string>\"]}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"can_insert_everywhere\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "white_labeling_options",
+                      "value": "{\"header_background_color\":\"#1A1A1A\",\"legal_version\":\"terms1\",\"link_color\":\"#00B3E6\",\"page_background_color\":\"#F7F8F9\",\"primary_button_color\":\"#00B3E6\",\"primary_button_color_hover\":\"#00B3E6\",\"primary_button_text_color\":\"#FFFFFF\",\"primary_button_text_color_hover\":\"#FFFFFF\",\"secondary_button_color\":\"#FFFFFF\",\"secondary_button_color_hover\":\"#FFFFFF\",\"secondary_button_text_color\":\"#00B3E6\",\"secondary_button_text_color_hover\":\"#00B3E6\",\"text_color1\":\"#808080\",\"text_color2\":\"#FFFFFF\",\"reset_to_default\":\"<boolean>\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/ApiAppUpdateResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71034d4c-2866-4c65-a8a1-b9b172393a90",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app",
+                    ":client_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "client_id",
+                      "description": "(Required) _t__ApiAppUpdate::CLIENT_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "_t__ApiAppUpdate::CALLBACK_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "callback_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppUpdate::CUSTOM_LOGO_FILE",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_logo_file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppUpdate::DOMAINS",
+                        "type": "text/plain"
+                      },
+                      "key": "domains",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__ApiAppUpdate::NAME",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "oauth",
+                      "value": "{\"callback_url\":\"<string>\",\"scopes\":[\"<string>\",\"<string>\"]}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"can_insert_everywhere\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "white_labeling_options",
+                      "value": "{\"header_background_color\":\"#1A1A1A\",\"legal_version\":\"terms1\",\"link_color\":\"#00B3E6\",\"page_background_color\":\"#F7F8F9\",\"primary_button_color\":\"#00B3E6\",\"primary_button_color_hover\":\"#00B3E6\",\"primary_button_text_color\":\"#FFFFFF\",\"primary_button_text_color_hover\":\"#FFFFFF\",\"secondary_button_color\":\"#FFFFFF\",\"secondary_button_color_hover\":\"#FFFFFF\",\"secondary_button_text_color\":\"#00B3E6\",\"secondary_button_text_color_hover\":\"#00B3E6\",\"text_color1\":\"#808080\",\"text_color2\":\"#FFFFFF\",\"reset_to_default\":\"<boolean>\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8eefba6e-ac9f-4b01-b033-32aaa862a858",
+          "name": "Dropbox _t__ApiAppDelete::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__ApiAppDelete::SUMMARY",
+            "description": {
+              "content": "_t__ApiAppDelete::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api_app",
+                ":client_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "client_id",
+                  "description": "(Required) _t__ApiAppDelete::CLIENT_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "65954311-6d8e-4a04-8a72-cb25d70b166e",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app",
+                    ":client_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "client_id",
+                      "description": "(Required) _t__ApiAppDelete::CLIENT_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "518751f6-28f4-47de-9b82-f44712d7112e",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app",
+                    ":client_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "client_id",
+                      "description": "(Required) _t__ApiAppDelete::CLIENT_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6eb9f0a6-e4f1-4121-bb1c-bfafbb321c37",
+          "name": "Dropbox _t__ApiAppList::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__ApiAppList::SUMMARY",
+            "description": {
+              "content": "_t__ApiAppList::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api_app",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "_t__ApiAppList::PAGE"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20",
+                  "description": "_t__ApiAppList::PAGE_SIZE"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "6de8f25e-899f-4f0e-922f-8d2ce569a2ae",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/ApiAppListResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ef8ad53-bbc5-4527-a8fe-8dddd5b9a633",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_app",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d9642c7-762a-49c2-bb67-413872e8da10",
+    "name": "Dropbox API Reference Account Api App API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

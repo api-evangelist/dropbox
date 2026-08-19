@@ -1,0 +1,228 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Team > Groups API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team > Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox groups/create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/create",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/create](https://www.dropbox.com/developers/documentation/http/teams#team-groups-create)\n\nscope: `groups.write`\n\nCreates a new, empty group, with a requested name.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/delete",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/delete](https://www.dropbox.com/developers/documentation/http/teams#team-groups-delete)\n\nscope: `groups.write`\n\nDeletes a group.\nThe group is deleted immediately. However the revoking of group-owned resources may take additional time. Use the `groups/job_status/get` to determine whether this process has completed.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/get_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/get_info",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-groups-get_info)\n\nscope: `groups.read`\n\nRetrieves information about one or more groups. Note that the optional field  `GroupFullInfo.members` is not returned for system-managed groups.\nPermission : Team Information."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/job_status/get",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/job_status/get",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-groups-job_status-get)\n\nscope: `groups.write`\n\nOnce an async_job_id is returned from `groups/delete`, `groups/members/add` , or `groups/members/remove` use this method to poll the status of granting/revoking group members' access to group-owned resources.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/list",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/list](https://www.dropbox.com/developers/documentation/http/teams#team-groups-list)\n\nscope: `groups.read`\n\nLists groups on a team.\nPermission : Team Information."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/list/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/list/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-groups-list-continue)\n\nscope: `groups.read`\n\nOnce a cursor has been retrieved from `groups/list`, use this to paginate through all groups.\nPermission : Team Information."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/members/add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/members/add",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/members/add](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-add)\n\nscope: `groups.write`\n\nAdds members to a group.\nThe members are added immediately. However the granting of group-owned resources may take additional time. Use the `groups/job_status/get` to determine whether this process has completed.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/members/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/members/list",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/members/list](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-list)\n\nscope: `groups.read`\n\nLists members of a group.\nPermission : Team Information."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/members/list/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/members/list/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-list-continue)\n\nscope: `groups.read`\n\nOnce a cursor has been retrieved from `groups/members/list`, use this to paginate through all members of the group.\nPermission : Team information."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/members/remove",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/members/remove",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-remove)\n\nscope: `groups.write`\n\nRemoves members from a group.\nThe members are removed immediately. However the revoking of group-owned resources may take additional time. Use the `groups/job_status/get` to determine whether this process has completed.\nThis method permits removing the only owner of a group, even in cases where this is not possible via the web client.\nPermission : Team member ma"
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/members/set_access_type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/members/set_access_type",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/members/set_access_type](https://www.dropbox.com/developers/documentation/http/teams#team-groups-members-set_access_type)\n\nscope: `groups.write`\n\nSets a member's access type in a group.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox groups/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/groups/update",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[groups/update](https://www.dropbox.com/developers/documentation/http/teams#team-groups-update)\n\nscope: `groups.write`\n\nUpdates a group's name and/or external ID.\nPermission : Team member management."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

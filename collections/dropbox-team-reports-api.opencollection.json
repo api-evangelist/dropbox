@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Team > Reports API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team > Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox reports/get_activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/reports/get_activity",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[reports/get_activity](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_activity)\n\nscope: `team_info.read`\n\nRetrieves reporting data about a team's user activity."
+        },
+        {
+          "info": {
+            "name": "Dropbox reports/get_devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/reports/get_devices",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[reports/get_devices](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_devices)\n\nscope: `team_info.read`\n\nRetrieves reporting data about a team's linked devices."
+        },
+        {
+          "info": {
+            "name": "Dropbox reports/get_membership",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/reports/get_membership",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[reports/get_membership](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_membership)\n\nscope: `team_info.read`\n\nRetrieves reporting data about a team's membership."
+        },
+        {
+          "info": {
+            "name": "Dropbox reports/get_storage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/reports/get_storage",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[reports/get_storage](https://www.dropbox.com/developers/documentation/http/teams#team-reports-get_storage)\n\nscope: `team_info.read`\n\nRetrieves reporting data about a team's storage usage."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

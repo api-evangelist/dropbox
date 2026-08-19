@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox set_profile_photo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/account/set_profile_photo",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[set_profile_photo](https://www.dropbox.com/developers/documentation/http/documentation#account-set_profile_photo)\n\nscope: `account_info.write`\n\nSets a user's profile photo."
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__AccountCreate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/account/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__AccountCreate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__AccountGet::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/account",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "query",
+                "description": "_t__AccountGet::ACCOUNT_ID"
+              },
+              {
+                "name": "email_address",
+                "value": "",
+                "type": "query",
+                "description": "_t__AccountGet::EMAIL_ADDRESS"
+              }
+            ]
+          },
+          "docs": "_t__AccountGet::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__AccountUpdate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.dropbox.com/account",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__AccountUpdate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__AccountVerify::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/account/verify",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__AccountVerify::DESCRIPTION"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,849 @@
+{
+  "item": [
+    {
+      "id": "9a3547f7-2384-4631-8d2c-520873eb50a4",
+      "name": "File_requests",
+      "description": {
+        "content": "This namespace contains endpoints and data types for file request operations.\n",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "98b93a9a-0e34-4e4a-ad0c-0d16cdd1a0bb",
+          "name": "Dropbox count",
+          "request": {
+            "name": "Dropbox count",
+            "description": {
+              "content": "[count](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-count)\n\nscope: `file_requests.read`\n\nReturns the total number of file requests owned by this user. Includes both open and closed file requests.      ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_requests",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9bbc911f-f7e3-4102-b1ff-1219bd6eb4e6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_requests",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7179",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file_request_count\": 15\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61cc84ea-f980-48d5-b749-fe40b6c59ad4",
+          "name": "Dropbox create",
+          "request": {
+            "name": "Dropbox create",
+            "description": {
+              "content": "[create](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-create)\n\nscope: `file_requests.write`\n\nCreates a file request for this user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_requests",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "3601ee37-a64b-4521-9200-67a13d213a29",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_requests",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"title\\\": \\\"Homework submission\\\", \\n    \\\"destination\\\": \\\"/File Requests/Homework\\\", \\n    \\\"deadline\\\": {\\n        \\\"deadline\\\": \\\"2020-10-12T17:00:00Z\\\", \\n        \\\"allow_late_uploads\\\": \\\"seven_days\\\"\\n    }, \\n    \\\"open\\\": true\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7179",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"oaCAVmEyrqYnkZX9955Y\",\n  \"url\": \"https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y\",\n  \"title\": \"Homework submission\",\n  \"created\": \"2015-10-05T17:00:00Z\",\n  \"is_open\": true,\n  \"file_count\": 3,\n  \"destination\": \"/File Requests/Homework\",\n  \"deadline\": {\n    \"deadline\": \"2020-10-12T17:00:00Z\",\n    \"allow_late_uploads\": {\n      \".tag\": \"seven_days\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e2761a9-ac70-414c-b336-d7acb47ef62c",
+          "name": "Dropbox delete",
+          "request": {
+            "name": "Dropbox delete",
+            "description": {
+              "content": "[delete](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete)\n\nscope: `file_requests.write`\n\nDelete a batch of closed file requests.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_requests",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "50893667-9ac7-41f0-a5a1-c3ecaf702850",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_requests",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"ids\\\": [\\n        \\\"oaCAVmEyrqYnkZX9955Y\\\", \\n        \\\"BaZmehYoXMPtaRmfTbSG\\\"\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7179",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file_requests\": [\n    {\n      \"id\": \"oaCAVmEyrqYnkZX9955Y\",\n      \"url\": \"https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y\",\n      \"title\": \"Homework submission\",\n      \"created\": \"2015-10-05T17:00:00Z\",\n      \"is_open\": true,\n      \"file_count\": 3,\n      \"destination\": \"/File Requests/Homework\",\n      \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\",\n        \"allow_late_uploads\": {\n          \".tag\": \"seven_days\"\n        }\n      }\n    },\n    {\n      \"id\": \"BAJ7IrRGicQKGToykQdB\",\n      \"url\": \"https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB\",\n      \"title\": \"Photo contest submission\",\n      \"created\": \"2015-11-02T04:00:00Z\",\n      \"is_open\": true,\n      \"file_count\": 105,\n      \"destination\": \"/Photo contest entries\",\n      \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\"\n      }\n    },\n    {\n      \"id\": \"rxwMPvK3ATTa0VxOJu5T\",\n      \"url\": \"https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T\",\n      \"title\": \"Wedding photo submission\",\n      \"created\": \"2015-12-15T13:02:00Z\",\n      \"is_open\": true,\n      \"file_count\": 37,\n      \"destination\": \"/Wedding photos\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "517e4215-e42e-4658-8b44-c894cf4933b6",
+          "name": "Dropbox delete_all_closed",
+          "request": {
+            "name": "Dropbox delete_all_closed",
+            "description": {
+              "content": "[delete_all_closed](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-delete_all_closed)\n\nscope: `file_requests.write`\n\nDelete all closed file requests owned by this user.      ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_requests",
+                "delete_all_closed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a022186-de16-4a57-a4fb-69379a2bc824",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_requests",
+                    "delete_all_closed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7179",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file_requests\": [\n    {\n      \"id\": \"oaCAVmEyrqYnkZX9955Y\",\n      \"url\": \"https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y\",\n      \"title\": \"Homework submission\",\n      \"created\": \"2015-10-05T17:00:00Z\",\n      \"is_open\": true,\n      \"file_count\": 3,\n      \"destination\": \"/File Requests/Homework\",\n      \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\",\n        \"allow_late_uploads\": {\n          \".tag\": \"seven_days\"\n        }\n      }\n    },\n    {\n      \"id\": \"BAJ7IrRGicQKGToykQdB\",\n      \"url\": \"https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB\",\n      \"title\": \"Photo contest submission\",\n      \"created\": \"2015-11-02T04:00:00Z\",\n      \"is_open\": true,\n      \"file_count\": 105,\n      \"destination\": \"/Photo contest entries\",\n      \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\"\n      }\n    },\n    {\n      \"id\": \"rxwMPvK3ATTa0VxOJu5T\",\n      \"url\": \"https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T\",\n      \"title\": \"Wedding photo submission\",\n      \"created\": \"2015-12-15T13:02:00Z\",\n      \"is_open\": true,\n      \"file_count\": 37,\n      \"destination\": \"/Wedding photos\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "034c7558-d8d3-4f76-93f2-2eced54d47c2",
+          "name": "Dropbox get",
+          "request": {
+            "name": "Dropbox get",
+            "description": {
+              "content": "[get](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-get)\n\nscope: `file_requests.read`\n\nReturns the specified file request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_requests",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "d0ecb7f0-903e-4452-8746-9804fac53e80",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_requests",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"id\\\": \\\"oaCAVmEyrqYnkZX9955Y\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7179",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"oaCAVmEyrqYnkZX9955Y\",\n  \"url\": \"https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y\",\n  \"title\": \"Homework submission\",\n  \"created\": \"2015-10-05T17:00:00Z\",\n  \"is_open\": true,\n  \"file_count\": 3,\n  \"destination\": \"/File Requests/Homework\",\n  \"deadline\": {\n    \"deadline\": \"2020-10-12T17:00:00Z\",\n    \"allow_late_uploads\": {\n      \".tag\": \"seven_days\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ce83684-19dd-4325-b11c-fa31f9b2a5a1",
+          "name": "Dropbox list",
+          "request": {
+            "name": "Dropbox list",
+            "description": {
+              "content": "[list](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list)\n\nscope: `file_requests.read`\n\nReturns a list of file requests owned by this user. For apps with the app folder permission, this will only return file requests with destinations in the app folder.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_requests",
+                "list_v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "b2cdedb7-813e-4730-bff1-7a58df0a5c06",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_requests",
+                    "list_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"limit\\\": 1000\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7179",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file_requests\": [\n    {\n      \"id\": \"oaCAVmEyrqYnkZX9955Y\",\n      \"url\": \"https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y\",\n      \"title\": \"Homework submission\",\n      \"created\": \"2015-10-05T17:00:00Z\",\n      \"is_open\": true,\n      \"file_count\": 3,\n      \"destination\": \"/File Requests/Homework\",\n      \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\",\n        \"allow_late_uploads\": {\n          \".tag\": \"seven_days\"\n        }\n      }\n    },\n    {\n      \"id\": \"BAJ7IrRGicQKGToykQdB\",\n      \"url\": \"https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB\",\n      \"title\": \"Photo contest submission\",\n      \"created\": \"2015-11-02T04:00:00Z\",\n      \"is_open\": true,\n      \"file_count\": 105,\n      \"destination\": \"/Photo contest entries\",\n      \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\"\n      }\n    },\n    {\n      \"id\": \"rxwMPvK3ATTa0VxOJu5T\",\n      \"url\": \"https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T\",\n      \"title\": \"Wedding photo submission\",\n      \"created\": \"2015-12-15T13:02:00Z\",\n      \"is_open\": true,\n      \"file_count\": 37,\n      \"destination\": \"/Wedding photos\"\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\",\n  \"has_more\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99279cb1-4c45-4884-92f5-7166309e2e66",
+          "name": "Dropbox list/continue",
+          "request": {
+            "name": "Dropbox list/continue",
+            "description": {
+              "content": "[list/continue](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-list-continue)\n\nscope: `file_requests.read`\n\nOnce a cursor has been retrieved from `list:2`, use this to paginate through all file requests. The cursor must come from a previous call to `list:2` or `list/continue`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_requests",
+                "list",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "8075cfd8-2996-4162-9031-fcb3b39962ec",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_requests",
+                    "list",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7179",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file_requests\": [\n    {\n      \"id\": \"oaCAVmEyrqYnkZX9955Y\",\n      \"url\": \"https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y\",\n      \"title\": \"Homework submission\",\n      \"created\": \"2015-10-05T17:00:00Z\",\n      \"is_open\": true,\n      \"file_count\": 3,\n      \"destination\": \"/File Requests/Homework\",\n      \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\",\n        \"allow_late_uploads\": {\n          \".tag\": \"seven_days\"\n        }\n      }\n    },\n    {\n      \"id\": \"BAJ7IrRGicQKGToykQdB\",\n      \"url\": \"https://www.dropbox.com/request/BAJ7IrRGjcQKGToykQdB\",\n      \"title\": \"Photo contest submission\",\n      \"created\": \"2015-11-02T04:00:00Z\",\n      \"is_open\": true,\n      \"file_count\": 105,\n      \"destination\": \"/Photo contest entries\",\n      \"deadline\": {\n        \"deadline\": \"2020-10-12T17:00:00Z\"\n      }\n    },\n    {\n      \"id\": \"rxwMPvK3ATTa0VxOJu5T\",\n      \"url\": \"https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T\",\n      \"title\": \"Wedding photo submission\",\n      \"created\": \"2015-12-15T13:02:00Z\",\n      \"is_open\": true,\n      \"file_count\": 37,\n      \"destination\": \"/Wedding photos\"\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\",\n  \"has_more\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a85e2ec5-250e-47de-b751-165315f0d07c",
+          "name": "Dropbox update",
+          "request": {
+            "name": "Dropbox update",
+            "description": {
+              "content": "[update](https://www.dropbox.com/developers/documentation/http/documentation#file_requests-update)\n\nscope: `file_requests.write`\n\nUpdate a file request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "file_requests",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "0cfba8d4-88fd-4dcd-ab4b-9654b186c882",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "file_requests",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"id\\\": \\\"oaCAVmEyrqYnkZX9955Y\\\", \\n    \\\"title\\\": \\\"Homework submission\\\", \\n    \\\"destination\\\": \\\"/File Requests/Homework\\\", \\n    \\\"deadline\\\": {\\n        \\\".tag\\\": \\\"update\\\", \\n        \\\"deadline\\\": \\\"2020-10-12T17:00:00Z\\\", \\n        \\\"allow_late_uploads\\\": \\\"seven_days\\\"\\n    }, \\n    \\\"open\\\": true\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7179",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"oaCAVmEyrqYnkZX9955Y\",\n  \"url\": \"https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y\",\n  \"title\": \"Homework submission\",\n  \"created\": \"2015-10-05T17:00:00Z\",\n  \"is_open\": true,\n  \"file_count\": 3,\n  \"destination\": \"/File Requests/Homework\",\n  \"deadline\": {\n    \"deadline\": \"2020-10-12T17:00:00Z\",\n    \"allow_late_uploads\": {\n      \".tag\": \"seven_days\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "790912a3-59a1-45dd-9759-cba99f8fbbac",
+    "name": "Dropbox API Reference Account File_requests API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

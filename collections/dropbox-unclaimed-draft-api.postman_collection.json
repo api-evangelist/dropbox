@@ -1,0 +1,2872 @@
+{
+  "item": [
+    {
+      "id": "018ecb4b-bacf-4eb5-b6f5-febd27e7e8ed",
+      "name": "Unclaimed Draft",
+      "description": {
+        "content": "_md__OpenApi::TAG::UNCLAIMED_DRAFT::DESCRIPTION",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c3931ef8-634e-4d50-8c27-6fbdd6fcb26d",
+          "name": "Dropbox _t__UnclaimedDraftCreate::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__UnclaimedDraftCreate::SUMMARY",
+            "description": {
+              "content": "_t__UnclaimedDraftCreate::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unclaimed_draft",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "type",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) _t__UnclaimedDraftCreate::TYPE (This can only be one of send_document,request_signature)"
+                },
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::FILES"
+                },
+                {
+                  "key": "file_urls",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::FILE_URLS"
+                },
+                {
+                  "key": "allow_decline",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::ALLOW_DECLINE"
+                },
+                {
+                  "key": "attachments",
+                  "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                  "type": "text",
+                  "description": "_t__SubAttachment::LIST_DESCRIPTION"
+                },
+                {
+                  "key": "cc_email_addresses",
+                  "value": "[\"<email>\",\"<email>\"]",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::CC_EMAIL_ADDRESSES"
+                },
+                {
+                  "key": "client_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::CLIENT_ID"
+                },
+                {
+                  "key": "custom_fields",
+                  "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::CustomField::DESCRIPTION"
+                },
+                {
+                  "key": "field_options",
+                  "value": "{\"date_format\":\"<string>\"}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "form_field_groups",
+                  "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldGroup::DESCRIPTION"
+                },
+                {
+                  "key": "form_field_rules",
+                  "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldRule::DESCRIPTION"
+                },
+                {
+                  "key": "form_fields_per_document",
+                  "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION"
+                },
+                {
+                  "key": "hide_text_tags",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::HIDE_TEXT_TAGS"
+                },
+                {
+                  "key": "message",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::MESSAGE"
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\"key_0\":{},\"key_1\":{},\"key_2\":{}}",
+                  "type": "text",
+                  "description": "_t__Sub::Metadata::DESCRIPTION"
+                },
+                {
+                  "key": "show_progress_stepper",
+                  "value": "true",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::SHOW_PROGRESS_STEPPER"
+                },
+                {
+                  "key": "signers",
+                  "value": "[{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::UnclaimedDraftSigner::DESCRIPTION"
+                },
+                {
+                  "key": "signing_options",
+                  "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "signing_redirect_url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::SIGNING_REDIRECT_URL"
+                },
+                {
+                  "key": "subject",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::SUBJECT"
+                },
+                {
+                  "key": "test_mode",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::TEST_MODE"
+                },
+                {
+                  "key": "use_preexisting_fields",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::USE_PREEXISTING_FIELDS"
+                },
+                {
+                  "key": "use_text_tags",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::USE_TEXT_TAGS"
+                },
+                {
+                  "key": "expires_at",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreate::EXPIRES_AT"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9e71265c-ffe0-4f6a-a1d1-744490658d94",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unclaimed_draft",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreate::TYPE (This can only be one of send_document,request_signature)",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::ALLOW_DECLINE",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_decline",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__SubAttachment::LIST_DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::CC_EMAIL_ADDRESSES",
+                        "type": "text/plain"
+                      },
+                      "key": "cc_email_addresses",
+                      "value": "[\"<email>\",\"<email>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::CustomField::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldGroup::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_groups",
+                      "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldRule::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_rules",
+                      "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_fields_per_document",
+                      "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::HIDE_TEXT_TAGS",
+                        "type": "text/plain"
+                      },
+                      "key": "hide_text_tags",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::SHOW_PROGRESS_STEPPER",
+                        "type": "text/plain"
+                      },
+                      "key": "show_progress_stepper",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::UnclaimedDraftSigner::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "signers",
+                      "value": "[{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_options",
+                      "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::SIGNING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::USE_PREEXISTING_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_preexisting_fields",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::USE_TEXT_TAGS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_text_tags",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::EXPIRES_AT",
+                        "type": "text/plain"
+                      },
+                      "key": "expires_at",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/UnclaimedDraftCreateResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2c5b5f0-b16c-44c0-b4bc-a9a09770ac99",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unclaimed_draft",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreate::TYPE (This can only be one of send_document,request_signature)",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::ALLOW_DECLINE",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_decline",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__SubAttachment::LIST_DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::CC_EMAIL_ADDRESSES",
+                        "type": "text/plain"
+                      },
+                      "key": "cc_email_addresses",
+                      "value": "[\"<email>\",\"<email>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::CustomField::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldGroup::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_groups",
+                      "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldRule::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_rules",
+                      "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_fields_per_document",
+                      "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::HIDE_TEXT_TAGS",
+                        "type": "text/plain"
+                      },
+                      "key": "hide_text_tags",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::SHOW_PROGRESS_STEPPER",
+                        "type": "text/plain"
+                      },
+                      "key": "show_progress_stepper",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::UnclaimedDraftSigner::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "signers",
+                      "value": "[{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_options",
+                      "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::SIGNING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::USE_PREEXISTING_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_preexisting_fields",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::USE_TEXT_TAGS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_text_tags",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreate::EXPIRES_AT",
+                        "type": "text/plain"
+                      },
+                      "key": "expires_at",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1bd22926-90b0-4118-b0fd-9b24a881950b",
+          "name": "Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY",
+            "description": {
+              "content": "_t__UnclaimedDraftCreateEmbedded::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unclaimed_draft",
+                "create_embedded"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "client_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) _t__UnclaimedDraftCreateEmbedded::CLIENT_ID"
+                },
+                {
+                  "key": "requester_email_address",
+                  "value": "<email>",
+                  "type": "text",
+                  "description": "(Required) _t__UnclaimedDraftCreateEmbedded::REQUESTER_EMAIL_ADDRESS"
+                },
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::FILES"
+                },
+                {
+                  "key": "file_urls",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::FILE_URLS"
+                },
+                {
+                  "key": "allow_ccs",
+                  "value": "true",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::ALLOW_CCS"
+                },
+                {
+                  "key": "allow_decline",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::ALLOW_DECLINE"
+                },
+                {
+                  "key": "allow_reassign",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::ALLOW_REASSIGN"
+                },
+                {
+                  "key": "attachments",
+                  "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                  "type": "text",
+                  "description": "_t__SubAttachment::LIST_DESCRIPTION"
+                },
+                {
+                  "key": "cc_email_addresses",
+                  "value": "[\"<email>\",\"<email>\"]",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::CC_EMAIL_ADDRESSES"
+                },
+                {
+                  "key": "custom_fields",
+                  "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::CustomField::DESCRIPTION"
+                },
+                {
+                  "key": "editor_options",
+                  "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "field_options",
+                  "value": "{\"date_format\":\"<string>\"}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "force_signer_page",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::FORCE_SIGNER_PAGE"
+                },
+                {
+                  "key": "force_subject_message",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::FORCE_SUBJECT_MESSAGE"
+                },
+                {
+                  "key": "form_field_groups",
+                  "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldGroup::DESCRIPTION"
+                },
+                {
+                  "key": "form_field_rules",
+                  "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldRule::DESCRIPTION"
+                },
+                {
+                  "key": "form_fields_per_document",
+                  "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION"
+                },
+                {
+                  "key": "hide_text_tags",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::HIDE_TEXT_TAGS"
+                },
+                {
+                  "key": "hold_request",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::HOLD_REQUEST"
+                },
+                {
+                  "key": "is_for_embedded_signing",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::IS_FOR_EMBEDDED_SIGNING"
+                },
+                {
+                  "key": "message",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::MESSAGE"
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\"key_0\":{}}",
+                  "type": "text",
+                  "description": "_t__Sub::Metadata::DESCRIPTION"
+                },
+                {
+                  "key": "requesting_redirect_url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::REQUESTING_REDIRECT_URL"
+                },
+                {
+                  "key": "show_preview",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::SHOW_PREVIEW"
+                },
+                {
+                  "key": "show_progress_stepper",
+                  "value": "true",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::SHOW_PROGRESS_STEPPER"
+                },
+                {
+                  "key": "signers",
+                  "value": "[{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::UnclaimedDraftSigner::DESCRIPTION"
+                },
+                {
+                  "key": "signing_options",
+                  "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "signing_redirect_url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::SIGNING_REDIRECT_URL"
+                },
+                {
+                  "key": "skip_me_now",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::SKIP_ME_NOW"
+                },
+                {
+                  "key": "subject",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::SUBJECT"
+                },
+                {
+                  "key": "test_mode",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::TEST_MODE"
+                },
+                {
+                  "key": "type",
+                  "value": "request_signature",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::TYPE (This can only be one of send_document,request_signature)"
+                },
+                {
+                  "key": "use_preexisting_fields",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::USE_PREEXISTING_FIELDS"
+                },
+                {
+                  "key": "use_text_tags",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::USE_TEXT_TAGS"
+                },
+                {
+                  "key": "populate_auto_fill_fields",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::POPULATE_AUTO_FILL_FIELDS"
+                },
+                {
+                  "key": "expires_at",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbedded::EXPIRES_AT"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bffcbb98-bfa8-4ccb-a26b-b68233168a8a",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unclaimed_draft",
+                    "create_embedded"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbedded::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbedded::REQUESTER_EMAIL_ADDRESS",
+                        "type": "text/plain"
+                      },
+                      "key": "requester_email_address",
+                      "value": "<email>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::ALLOW_CCS",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_ccs",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::ALLOW_DECLINE",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_decline",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::ALLOW_REASSIGN",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_reassign",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__SubAttachment::LIST_DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::CC_EMAIL_ADDRESSES",
+                        "type": "text/plain"
+                      },
+                      "key": "cc_email_addresses",
+                      "value": "[\"<email>\",\"<email>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::CustomField::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "editor_options",
+                      "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::FORCE_SIGNER_PAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "force_signer_page",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::FORCE_SUBJECT_MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "force_subject_message",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldGroup::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_groups",
+                      "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldRule::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_rules",
+                      "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_fields_per_document",
+                      "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::HIDE_TEXT_TAGS",
+                        "type": "text/plain"
+                      },
+                      "key": "hide_text_tags",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::HOLD_REQUEST",
+                        "type": "text/plain"
+                      },
+                      "key": "hold_request",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::IS_FOR_EMBEDDED_SIGNING",
+                        "type": "text/plain"
+                      },
+                      "key": "is_for_embedded_signing",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{},\"key_1\":{},\"key_2\":{},\"key_3\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::REQUESTING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "requesting_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SHOW_PREVIEW",
+                        "type": "text/plain"
+                      },
+                      "key": "show_preview",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SHOW_PROGRESS_STEPPER",
+                        "type": "text/plain"
+                      },
+                      "key": "show_progress_stepper",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::UnclaimedDraftSigner::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "signers",
+                      "value": "[{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_options",
+                      "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SIGNING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SKIP_ME_NOW",
+                        "type": "text/plain"
+                      },
+                      "key": "skip_me_now",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::TYPE (This can only be one of send_document,request_signature)",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "request_signature",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::USE_PREEXISTING_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_preexisting_fields",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::USE_TEXT_TAGS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_text_tags",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::POPULATE_AUTO_FILL_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "populate_auto_fill_fields",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::EXPIRES_AT",
+                        "type": "text/plain"
+                      },
+                      "key": "expires_at",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/UnclaimedDraftCreateEmbeddedResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "196c87fe-f572-44e4-92f0-ca6081e69b9b",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unclaimed_draft",
+                    "create_embedded"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbedded::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbedded::REQUESTER_EMAIL_ADDRESS",
+                        "type": "text/plain"
+                      },
+                      "key": "requester_email_address",
+                      "value": "<email>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::ALLOW_CCS",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_ccs",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::ALLOW_DECLINE",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_decline",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::ALLOW_REASSIGN",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_reassign",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__SubAttachment::LIST_DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::CC_EMAIL_ADDRESSES",
+                        "type": "text/plain"
+                      },
+                      "key": "cc_email_addresses",
+                      "value": "[\"<email>\",\"<email>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::CustomField::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "editor_options",
+                      "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::FORCE_SIGNER_PAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "force_signer_page",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::FORCE_SUBJECT_MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "force_subject_message",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldGroup::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_groups",
+                      "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldRule::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_rules",
+                      "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_fields_per_document",
+                      "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::HIDE_TEXT_TAGS",
+                        "type": "text/plain"
+                      },
+                      "key": "hide_text_tags",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::HOLD_REQUEST",
+                        "type": "text/plain"
+                      },
+                      "key": "hold_request",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::IS_FOR_EMBEDDED_SIGNING",
+                        "type": "text/plain"
+                      },
+                      "key": "is_for_embedded_signing",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{},\"key_1\":{},\"key_2\":{},\"key_3\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::REQUESTING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "requesting_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SHOW_PREVIEW",
+                        "type": "text/plain"
+                      },
+                      "key": "show_preview",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SHOW_PROGRESS_STEPPER",
+                        "type": "text/plain"
+                      },
+                      "key": "show_progress_stepper",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::UnclaimedDraftSigner::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "signers",
+                      "value": "[{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"email_address\":\"<email>\",\"order\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_options",
+                      "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SIGNING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SKIP_ME_NOW",
+                        "type": "text/plain"
+                      },
+                      "key": "skip_me_now",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::TYPE (This can only be one of send_document,request_signature)",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "request_signature",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::USE_PREEXISTING_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_preexisting_fields",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::USE_TEXT_TAGS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_text_tags",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::POPULATE_AUTO_FILL_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "populate_auto_fill_fields",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbedded::EXPIRES_AT",
+                        "type": "text/plain"
+                      },
+                      "key": "expires_at",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d12f0683-a8f2-4a57-8d6b-1631fa39bb06",
+          "name": "Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY",
+            "description": {
+              "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unclaimed_draft",
+                "create_embedded_with_template"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "client_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::CLIENT_ID"
+                },
+                {
+                  "key": "requester_email_address",
+                  "value": "<email>",
+                  "type": "text",
+                  "description": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTER_EMAIL_ADDRESS"
+                },
+                {
+                  "key": "template_ids",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::TEMPLATE_IDS"
+                },
+                {
+                  "key": "allow_decline",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_DECLINE"
+                },
+                {
+                  "key": "allow_reassign",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_REASSIGN"
+                },
+                {
+                  "key": "ccs",
+                  "value": "[{\"role\":\"<string>\",\"email_address\":\"<email>\"},{\"role\":\"<string>\",\"email_address\":\"<email>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::CC::DESCRIPTION"
+                },
+                {
+                  "key": "custom_fields",
+                  "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::CustomField::TEMPLATE"
+                },
+                {
+                  "key": "editor_options",
+                  "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "field_options",
+                  "value": "{\"date_format\":\"<string>\"}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FILES"
+                },
+                {
+                  "key": "file_urls",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FILE_URLS"
+                },
+                {
+                  "key": "force_signer_roles",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SIGNER_ROLES"
+                },
+                {
+                  "key": "force_subject_message",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SUBJECT_MESSAGE"
+                },
+                {
+                  "key": "hold_request",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::HOLD_REQUEST"
+                },
+                {
+                  "key": "is_for_embedded_signing",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::IS_FOR_EMBEDDED_SIGNING"
+                },
+                {
+                  "key": "message",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::MESSAGE"
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\"key_0\":{}}",
+                  "type": "text",
+                  "description": "_t__Sub::Metadata::DESCRIPTION"
+                },
+                {
+                  "key": "preview_only",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::PREVIEW_ONLY"
+                },
+                {
+                  "key": "requesting_redirect_url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTING_REDIRECT_URL"
+                },
+                {
+                  "key": "show_preview",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PREVIEW"
+                },
+                {
+                  "key": "show_progress_stepper",
+                  "value": "true",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PROGRESS_STEPPER"
+                },
+                {
+                  "key": "signers",
+                  "value": "[{\"role\":\"<string>\",\"name\":\"<string>\",\"email_address\":\"<email>\"},{\"role\":\"<string>\",\"name\":\"<string>\",\"email_address\":\"<email>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::UnclaimedDraftTemplateSigner::DESCRIPTION"
+                },
+                {
+                  "key": "signing_options",
+                  "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "signing_redirect_url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL"
+                },
+                {
+                  "key": "skip_me_now",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SKIP_ME_NOW"
+                },
+                {
+                  "key": "subject",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SUBJECT"
+                },
+                {
+                  "key": "test_mode",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TEST_MODE"
+                },
+                {
+                  "key": "title",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TITLE"
+                },
+                {
+                  "key": "populate_auto_fill_fields",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS"
+                },
+                {
+                  "key": "allow_ccs",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_CCS"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fd73e41e-b7e1-4363-825e-8bc9ba30297e",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unclaimed_draft",
+                    "create_embedded_with_template"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTER_EMAIL_ADDRESS",
+                        "type": "text/plain"
+                      },
+                      "key": "requester_email_address",
+                      "value": "<email>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::TEMPLATE_IDS",
+                        "type": "text/plain"
+                      },
+                      "key": "template_ids",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_DECLINE",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_decline",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_REASSIGN",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_reassign",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::CC::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "ccs",
+                      "value": "[{\"role\":\"<string>\",\"email_address\":\"<email>\"},{\"role\":\"<string>\",\"email_address\":\"<email>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::CustomField::TEMPLATE",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "editor_options",
+                      "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SIGNER_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "force_signer_roles",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SUBJECT_MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "force_subject_message",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::HOLD_REQUEST",
+                        "type": "text/plain"
+                      },
+                      "key": "hold_request",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::IS_FOR_EMBEDDED_SIGNING",
+                        "type": "text/plain"
+                      },
+                      "key": "is_for_embedded_signing",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{},\"key_1\":{},\"key_2\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::PREVIEW_ONLY",
+                        "type": "text/plain"
+                      },
+                      "key": "preview_only",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "requesting_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PREVIEW",
+                        "type": "text/plain"
+                      },
+                      "key": "show_preview",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PROGRESS_STEPPER",
+                        "type": "text/plain"
+                      },
+                      "key": "show_progress_stepper",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::UnclaimedDraftTemplateSigner::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "signers",
+                      "value": "[{\"role\":\"<string>\",\"name\":\"<string>\",\"email_address\":\"<email>\"},{\"role\":\"<string>\",\"name\":\"<string>\",\"email_address\":\"<email>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_options",
+                      "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SKIP_ME_NOW",
+                        "type": "text/plain"
+                      },
+                      "key": "skip_me_now",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TITLE",
+                        "type": "text/plain"
+                      },
+                      "key": "title",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "populate_auto_fill_fields",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_CCS",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_ccs",
+                      "value": "false",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/UnclaimedDraftCreateEmbeddedWithTemplateResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d15cd0d-8a3e-4f5d-bc92-95873f60366b",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unclaimed_draft",
+                    "create_embedded_with_template"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTER_EMAIL_ADDRESS",
+                        "type": "text/plain"
+                      },
+                      "key": "requester_email_address",
+                      "value": "<email>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__UnclaimedDraftCreateEmbeddedWithTemplate::TEMPLATE_IDS",
+                        "type": "text/plain"
+                      },
+                      "key": "template_ids",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_DECLINE",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_decline",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_REASSIGN",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_reassign",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::CC::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "ccs",
+                      "value": "[{\"role\":\"<string>\",\"email_address\":\"<email>\"},{\"role\":\"<string>\",\"email_address\":\"<email>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::CustomField::TEMPLATE",
+                        "type": "text/plain"
+                      },
+                      "key": "custom_fields",
+                      "value": "[{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"},{\"name\":\"<string>\",\"editor\":\"<string>\",\"required\":false,\"value\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "editor_options",
+                      "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SIGNER_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "force_signer_roles",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::FORCE_SUBJECT_MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "force_subject_message",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::HOLD_REQUEST",
+                        "type": "text/plain"
+                      },
+                      "key": "hold_request",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::IS_FOR_EMBEDDED_SIGNING",
+                        "type": "text/plain"
+                      },
+                      "key": "is_for_embedded_signing",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{},\"key_1\":{},\"key_2\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::PREVIEW_ONLY",
+                        "type": "text/plain"
+                      },
+                      "key": "preview_only",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::REQUESTING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "requesting_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PREVIEW",
+                        "type": "text/plain"
+                      },
+                      "key": "show_preview",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SHOW_PROGRESS_STEPPER",
+                        "type": "text/plain"
+                      },
+                      "key": "show_progress_stepper",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::UnclaimedDraftTemplateSigner::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "signers",
+                      "value": "[{\"role\":\"<string>\",\"name\":\"<string>\",\"email_address\":\"<email>\"},{\"role\":\"<string>\",\"name\":\"<string>\",\"email_address\":\"<email>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_options",
+                      "value": "{\"default_type\":\"<string>\",\"draw\":false,\"phone\":false,\"type\":false,\"upload\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL",
+                        "type": "text/plain"
+                      },
+                      "key": "signing_redirect_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SKIP_ME_NOW",
+                        "type": "text/plain"
+                      },
+                      "key": "skip_me_now",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::TITLE",
+                        "type": "text/plain"
+                      },
+                      "key": "title",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "populate_auto_fill_fields",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::ALLOW_CCS",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_ccs",
+                      "value": "false",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5be9d407-5764-423f-b2ee-e981b4c341e7",
+          "name": "Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY",
+            "description": {
+              "content": "_t__UnclaimedDraftEditAndResend::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unclaimed_draft",
+                "edit_and_resend",
+                ":signature_request_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signature_request_id",
+                  "description": "(Required) _t__UnclaimedDraftEditAndResend::SIGNATURE_REQUEST_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"client_id\": \"<string>\",\n  \"editor_options\": {\n    \"allow_edit_signers\": false,\n    \"allow_edit_documents\": false\n  },\n  \"is_for_embedded_signing\": \"<boolean>\",\n  \"requester_email_address\": \"<email>\",\n  \"requesting_redirect_url\": \"<string>\",\n  \"show_progress_stepper\": true,\n  \"signing_redirect_url\": \"<string>\",\n  \"test_mode\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "19869afa-1534-458a-803c-7dad15bea4ef",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unclaimed_draft",
+                    "edit_and_resend",
+                    ":signature_request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature_request_id",
+                      "description": "(Required) _t__UnclaimedDraftEditAndResend::SIGNATURE_REQUEST_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"$ref\": \"examples/json/UnclaimedDraftEditAndResendRequestDefaultExample.json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/UnclaimedDraftEditAndResendExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab307843-e46f-4682-b74c-8da719c7492d",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unclaimed_draft",
+                    "edit_and_resend",
+                    ":signature_request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature_request_id",
+                      "description": "(Required) _t__UnclaimedDraftEditAndResend::SIGNATURE_REQUEST_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"$ref\": \"examples/json/UnclaimedDraftEditAndResendRequestDefaultExample.json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "85476a64-6e6c-4458-a8ce-85b2014d49b6",
+    "name": "Dropbox API Reference Account Unclaimed Draft API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

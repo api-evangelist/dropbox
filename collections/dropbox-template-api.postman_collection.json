@@ -1,0 +1,3183 @@
+{
+  "item": [
+    {
+      "id": "babbf625-72b1-404d-aeba-3f758d4a8255",
+      "name": "Template",
+      "description": {
+        "content": "_md__OpenApi::TAG::TEMPLATE::DESCRIPTION",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "65330b44-4653-4ff3-915f-50bb79ac7207",
+          "name": "Dropbox _t__TemplateAddUser::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateAddUser::SUMMARY",
+            "description": {
+              "content": "_t__TemplateAddUser::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "add_user",
+                ":template_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "template_id",
+                  "description": "(Required) _t__TemplateAddUser::TEMPLATE_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_id\": \"<string>\",\n  \"email_address\": \"<email>\",\n  \"skip_notification\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7affe63f-7df6-4a3a-ba42-63085f37d982",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "add_user",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateAddUser::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"$ref\": \"examples/json/TemplateAddUserRequestDefaultExample.json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateAddUserResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c52a914-ac18-4025-b2d0-7149dd8edd8f",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "add_user",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateAddUser::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"$ref\": \"examples/json/TemplateAddUserRequestDefaultExample.json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a34d3623-8983-4832-8990-563f48a27895",
+          "name": "Dropbox _t__TemplateCreate::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateCreate::SUMMARY",
+            "description": {
+              "content": "_t__TemplateCreate::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "signer_roles",
+                  "value": "[{\"name\":\"<string>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"order\":\"<integer>\"}]",
+                  "type": "text",
+                  "description": "(Required) _t__TemplateCreate::SIGNER_ROLES"
+                },
+                {
+                  "key": "form_fields_per_document",
+                  "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                  "type": "text",
+                  "description": "(Required) _t__Sub::FormFieldsPerDocument::DESCRIPTION"
+                },
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::FILES"
+                },
+                {
+                  "key": "file_urls",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::FILE_URLS"
+                },
+                {
+                  "key": "allow_reassign",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::ALLOW_REASSIGN"
+                },
+                {
+                  "key": "attachments",
+                  "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                  "type": "text",
+                  "description": "_t__SubAttachment::LIST_DESCRIPTION"
+                },
+                {
+                  "key": "cc_roles",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::CC_ROLES"
+                },
+                {
+                  "key": "client_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::CLIENT_ID"
+                },
+                {
+                  "key": "field_options",
+                  "value": "{\"date_format\":\"<string>\"}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "form_field_groups",
+                  "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldGroup::DESCRIPTION"
+                },
+                {
+                  "key": "form_field_rules",
+                  "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldRule::DESCRIPTION"
+                },
+                {
+                  "key": "merge_fields",
+                  "value": "[{\"name\":\"<string>\",\"type\":\"<string>\"},{\"name\":\"<string>\",\"type\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::MERGE_FIELDS"
+                },
+                {
+                  "key": "message",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::MESSAGE"
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\"key_0\":{}}",
+                  "type": "text",
+                  "description": "_t__Sub::Metadata::DESCRIPTION"
+                },
+                {
+                  "key": "subject",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::SUBJECT"
+                },
+                {
+                  "key": "test_mode",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::TEST_MODE"
+                },
+                {
+                  "key": "title",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::TITLE"
+                },
+                {
+                  "key": "use_preexisting_fields",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreate::USE_PREEXISTING_FIELDS"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fc2ad293-2fcb-402d-a0dd-d4d1d099a7b0",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__TemplateCreate::SIGNER_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "signer_roles",
+                      "value": "[{\"name\":\"<string>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"order\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__Sub::FormFieldsPerDocument::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_fields_per_document",
+                      "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::ALLOW_REASSIGN",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_reassign",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__SubAttachment::LIST_DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::CC_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "cc_roles",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldGroup::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_groups",
+                      "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldRule::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_rules",
+                      "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::MERGE_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "merge_fields",
+                      "value": "[{\"name\":\"<string>\",\"type\":\"<string>\"},{\"name\":\"<string>\",\"type\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::TITLE",
+                        "type": "text/plain"
+                      },
+                      "key": "title",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::USE_PREEXISTING_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_preexisting_fields",
+                      "value": "false",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateCreateResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70dbdb77-debc-43c1-bc01-bc1475c8b3bd",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__TemplateCreate::SIGNER_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "signer_roles",
+                      "value": "[{\"name\":\"<string>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"order\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) _t__Sub::FormFieldsPerDocument::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_fields_per_document",
+                      "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::ALLOW_REASSIGN",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_reassign",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__SubAttachment::LIST_DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::CC_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "cc_roles",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldGroup::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_groups",
+                      "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldRule::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_rules",
+                      "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::MERGE_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "merge_fields",
+                      "value": "[{\"name\":\"<string>\",\"type\":\"<string>\"},{\"name\":\"<string>\",\"type\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::TITLE",
+                        "type": "text/plain"
+                      },
+                      "key": "title",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreate::USE_PREEXISTING_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_preexisting_fields",
+                      "value": "false",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bcb72b54-7f31-40e9-9957-e226075b042a",
+          "name": "Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY",
+            "description": {
+              "content": "_t__TemplateCreateEmbeddedDraft::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "create_embedded_draft"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "client_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) _t__TemplateCreateEmbeddedDraft::CLIENT_ID"
+                },
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::FILES"
+                },
+                {
+                  "key": "file_urls",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::FILE_URLS"
+                },
+                {
+                  "key": "allow_ccs",
+                  "value": "true",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::ALLOW_CCS"
+                },
+                {
+                  "key": "allow_reassign",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::ALLOW_REASSIGN"
+                },
+                {
+                  "key": "attachments",
+                  "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                  "type": "text",
+                  "description": "_t__SubAttachment::LIST_DESCRIPTION"
+                },
+                {
+                  "key": "cc_roles",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::CC_ROLES"
+                },
+                {
+                  "key": "editor_options",
+                  "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "field_options",
+                  "value": "{\"date_format\":\"<string>\"}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "force_signer_roles",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::FORCE_SIGNER_ROLES"
+                },
+                {
+                  "key": "force_subject_message",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::FORCE_SUBJECT_MESSAGE"
+                },
+                {
+                  "key": "form_field_groups",
+                  "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldGroup::DESCRIPTION"
+                },
+                {
+                  "key": "form_field_rules",
+                  "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldRule::DESCRIPTION"
+                },
+                {
+                  "key": "form_fields_per_document",
+                  "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                  "type": "text",
+                  "description": "_t__Sub::FormFieldsPerDocument::DESCRIPTION"
+                },
+                {
+                  "key": "merge_fields",
+                  "value": "[{\"name\":\"<string>\",\"type\":\"<string>\"},{\"name\":\"<string>\",\"type\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::MERGE_FIELDS"
+                },
+                {
+                  "key": "message",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::MESSAGE"
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\"key_0\":{}}",
+                  "type": "text",
+                  "description": "_t__Sub::Metadata::DESCRIPTION"
+                },
+                {
+                  "key": "show_preview",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::SHOW_PREVIEW"
+                },
+                {
+                  "key": "show_progress_stepper",
+                  "value": "true",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::SHOW_PROGRESS_STEPPER"
+                },
+                {
+                  "key": "signer_roles",
+                  "value": "[{\"name\":\"<string>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"order\":\"<integer>\"}]",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::SIGNER_ROLES"
+                },
+                {
+                  "key": "skip_me_now",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::SKIP_ME_NOW"
+                },
+                {
+                  "key": "subject",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::SUBJECT"
+                },
+                {
+                  "key": "test_mode",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::TEST_MODE"
+                },
+                {
+                  "key": "title",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::TITLE"
+                },
+                {
+                  "key": "use_preexisting_fields",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateCreateEmbeddedDraft::USE_PREEXISTING_FIELDS"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3287ce81-48e7-4b9f-80d1-1ddbd08d036f",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "create_embedded_draft"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__TemplateCreateEmbeddedDraft::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::ALLOW_CCS",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_ccs",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::ALLOW_REASSIGN",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_reassign",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__SubAttachment::LIST_DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::CC_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "cc_roles",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "editor_options",
+                      "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::FORCE_SIGNER_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "force_signer_roles",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::FORCE_SUBJECT_MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "force_subject_message",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldGroup::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_groups",
+                      "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldRule::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_rules",
+                      "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_fields_per_document",
+                      "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::MERGE_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "merge_fields",
+                      "value": "[{\"name\":\"<string>\",\"type\":\"<string>\"},{\"name\":\"<string>\",\"type\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SHOW_PREVIEW",
+                        "type": "text/plain"
+                      },
+                      "key": "show_preview",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SHOW_PROGRESS_STEPPER",
+                        "type": "text/plain"
+                      },
+                      "key": "show_progress_stepper",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SIGNER_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "signer_roles",
+                      "value": "[{\"name\":\"<string>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"order\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SKIP_ME_NOW",
+                        "type": "text/plain"
+                      },
+                      "key": "skip_me_now",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::TITLE",
+                        "type": "text/plain"
+                      },
+                      "key": "title",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::USE_PREEXISTING_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_preexisting_fields",
+                      "value": "false",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateCreateEmbeddedDraftResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b758635e-6f65-4160-a687-1e583a52e529",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "create_embedded_draft"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) _t__TemplateCreateEmbeddedDraft::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::ALLOW_CCS",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_ccs",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::ALLOW_REASSIGN",
+                        "type": "text/plain"
+                      },
+                      "key": "allow_reassign",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__SubAttachment::LIST_DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false},{\"name\":\"<string>\",\"signer_index\":\"<integer>\",\"instructions\":\"<string>\",\"required\":false}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::CC_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "cc_roles",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "editor_options",
+                      "value": "{\"allow_edit_signers\":false,\"allow_edit_documents\":false}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "field_options",
+                      "value": "{\"date_format\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::FORCE_SIGNER_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "force_signer_roles",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::FORCE_SUBJECT_MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "force_subject_message",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldGroup::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_groups",
+                      "value": "[{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"},{\"group_id\":\"<string>\",\"group_label\":\"<string>\",\"requirement\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldRule::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_field_rules",
+                      "value": "[{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]},{\"id\":\"<string>\",\"trigger_operator\":\"AND\",\"triggers\":[{\"id\":\"<string>\",\"operator\":\"<string>\",\"value\":\"<string>\",\"values\":[\"<string>\",\"<string>\"]}],\"actions\":[{\"hidden\":\"<boolean>\",\"type\":\"<string>\",\"field_id\":\"<string>\",\"group_id\":\"<string>\"}]}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::FormFieldsPerDocument::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "form_fields_per_document",
+                      "value": "[{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"},{\"document_index\":\"<integer>\",\"api_id\":\"<string>\",\"type\":\"<string>\",\"required\":\"<boolean>\",\"signer\":\"<string>\",\"width\":\"<integer>\",\"height\":\"<integer>\",\"x\":\"<integer>\",\"y\":\"<integer>\",\"name\":\"<string>\",\"page\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::MERGE_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "merge_fields",
+                      "value": "[{\"name\":\"<string>\",\"type\":\"<string>\"},{\"name\":\"<string>\",\"type\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__Sub::Metadata::DESCRIPTION",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SHOW_PREVIEW",
+                        "type": "text/plain"
+                      },
+                      "key": "show_preview",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SHOW_PROGRESS_STEPPER",
+                        "type": "text/plain"
+                      },
+                      "key": "show_progress_stepper",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SIGNER_ROLES",
+                        "type": "text/plain"
+                      },
+                      "key": "signer_roles",
+                      "value": "[{\"name\":\"<string>\",\"order\":\"<integer>\"},{\"name\":\"<string>\",\"order\":\"<integer>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SKIP_ME_NOW",
+                        "type": "text/plain"
+                      },
+                      "key": "skip_me_now",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::TITLE",
+                        "type": "text/plain"
+                      },
+                      "key": "title",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateCreateEmbeddedDraft::USE_PREEXISTING_FIELDS",
+                        "type": "text/plain"
+                      },
+                      "key": "use_preexisting_fields",
+                      "value": "false",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7d3e9fc-4d07-4f18-88ec-f7f5760d2fbc",
+          "name": "Dropbox _t__TemplateDelete::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateDelete::SUMMARY",
+            "description": {
+              "content": "_t__TemplateDelete::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "delete",
+                ":template_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "template_id",
+                  "description": "(Required) _t__TemplateDelete::TEMPLATE_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST"
+          },
+          "response": [
+            {
+              "id": "1703730b-926f-414a-a22c-62b07395d41a",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "delete",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateDelete::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "377d1fa1-4a11-43dd-a169-a6081c15dacc",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "delete",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateDelete::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "499bd390-99d8-4a2a-8933-50c7835882af",
+          "name": "Dropbox _t__TemplateFiles::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateFiles::SUMMARY",
+            "description": {
+              "content": "_t__TemplateFiles::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "files",
+                ":template_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "file_type",
+                  "value": "<string>",
+                  "description": "_t__TemplateFiles::FILE_TYPE"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "template_id",
+                  "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "5cfe32b8-e38e-46e2-8133-1c9f8d280444",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "files",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "file_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3483531d-d292-4629-b5b4-9081c6ff8c68",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "files",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "file_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fd106221-e9e2-4276-9477-99cbdb26db10",
+          "name": "Dropbox _t__TemplateFilesAsDataUri::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateFilesAsDataUri::SUMMARY",
+            "description": {
+              "content": "_t__TemplateFilesAsDataUri::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "files_as_data_uri",
+                ":template_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "template_id",
+                  "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "01b6bb4e-ceab-42fb-999e-0a5cc6120959",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "files_as_data_uri",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateFilesResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19729f2b-ad8a-4642-9018-24fa9fa055c2",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "files_as_data_uri",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2c42c11-29a4-47c3-a7e1-5a420947d016",
+          "name": "Dropbox _t__TemplateFilesAsFileUrl::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateFilesAsFileUrl::SUMMARY",
+            "description": {
+              "content": "_t__TemplateFilesAsFileUrl::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "files_as_file_url",
+                ":template_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "force_download",
+                  "value": "1",
+                  "description": "_t__TemplateFiles::FORCE_DOWNLOAD"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "template_id",
+                  "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "a24f482b-733e-4329-895e-7b3d5b06041c",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "files_as_file_url",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "force_download",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateFilesResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1fbee5e3-e355-4925-9aea-fec2f7d58360",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "files_as_file_url",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "force_download",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateFiles::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6aba6f45-17e2-4b39-9082-9c2d69db7ec0",
+          "name": "Dropbox _t__TemplateGet::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateGet::SUMMARY",
+            "description": {
+              "content": "_t__TemplateGet::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                ":template_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "template_id",
+                  "description": "(Required) _t__TemplateGet::TEMPLATE_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "c72be29a-6c50-4948-949f-c510387c049f",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateGet::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateGetResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba62616b-33f7-487a-bea1-3460d35d6ae6",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateGet::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a237fe2a-363f-4d10-9761-cbdb4b513857",
+          "name": "Dropbox _t__TemplateList::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateList::SUMMARY",
+            "description": {
+              "content": "_t__TemplateList::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "_t__TemplateList::ACCOUNT_ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "_t__TemplateList::PAGE"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20",
+                  "description": "_t__TemplateList::PAGE_SIZE"
+                },
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "_t__TemplateList::QUERY"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "ef99e3c1-a31d-43bd-b971-7115bba67eed",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateListResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "252f63d3-08a2-408b-a44d-f39e758ed4d3",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27c672fb-8cf5-4a55-af69-80b0b1320ceb",
+          "name": "Dropbox _t__TemplateRemoveUser::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateRemoveUser::SUMMARY",
+            "description": {
+              "content": "_t__TemplateRemoveUser::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "remove_user",
+                ":template_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "template_id",
+                  "description": "(Required) _t__TemplateRemoveUser::TEMPLATE_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_id\": \"<string>\",\n  \"email_address\": \"<email>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "554b13dd-1c87-4701-bc0d-7fa93a9fd958",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "remove_user",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateRemoveUser::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"$ref\": \"examples/json/TemplateRemoveUserRequestDefaultExample.json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateRemoveUserResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0cbcdda8-5538-4368-a3ad-f05cbaff02a2",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "remove_user",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateRemoveUser::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"$ref\": \"examples/json/TemplateRemoveUserRequestDefaultExample.json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75a32346-c1d9-4cca-8623-a0d30d7b83ec",
+          "name": "Dropbox _t__TemplateUpdateFiles::SUMMARY",
+          "request": {
+            "name": "Dropbox _t__TemplateUpdateFiles::SUMMARY",
+            "description": {
+              "content": "_t__TemplateUpdateFiles::DESCRIPTION",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                "update_files",
+                ":template_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "template_id",
+                  "description": "(Required) _t__TemplateUpdateFiles::TEMPLATE_ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "client_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateUpdateFiles::CLIENT_ID"
+                },
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "_t__TemplateUpdateFiles::FILES"
+                },
+                {
+                  "key": "file_urls",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "_t__TemplateUpdateFiles::FILE_URLS"
+                },
+                {
+                  "key": "message",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateUpdateFiles::MESSAGE"
+                },
+                {
+                  "key": "subject",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "_t__TemplateUpdateFiles::SUBJECT"
+                },
+                {
+                  "key": "test_mode",
+                  "value": "false",
+                  "type": "text",
+                  "description": "_t__TemplateUpdateFiles::TEST_MODE"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3b57d59b-5876-4102-a514-ff9e91e07460",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "update_files",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateUpdateFiles::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::LIMIT",
+                  "key": "X-RateLimit-Limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::REMAINING",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "99"
+                },
+                {
+                  "disabled": false,
+                  "description": "_t__Common::RateLimiting::RESET",
+                  "key": "X-Ratelimit-Reset",
+                  "value": "1430170900"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/TemplateUpdateFilesResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f623663e-a67b-4743-a23b-32de4a32b7fb",
+              "name": "failed_operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    "update_files",
+                    ":template_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "template_id",
+                      "description": "(Required) _t__TemplateUpdateFiles::TEMPLATE_ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::CLIENT_ID",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::FILES",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::FILE_URLS",
+                        "type": "text/plain"
+                      },
+                      "key": "file_urls",
+                      "value": "[\"<string>\",\"<string>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::MESSAGE",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::SUBJECT",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "_t__TemplateUpdateFiles::TEST_MODE",
+                        "type": "text/plain"
+                      },
+                      "key": "test_mode",
+                      "value": "false",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"$ref\": \"examples/json/Error400ResponseExample.json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "39e1124d-e465-4a25-b2b7-2581b0c46eeb",
+    "name": "Dropbox API Reference Account Template API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Contacts API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox delete_manual_contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/contacts/delete_manual_contacts"
+          },
+          "docs": "[delete_manual_contacts](https://www.dropbox.com/developers/documentation/http/documentation#contacts-delete_manual_contacts)\n\nscope: `contacts.write`\n\nRemoves all manually added contacts. You'll still keep contacts who are on your team or who you imported. New contacts will be added when you share.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox delete_manual_contacts_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/contacts/delete_manual_contacts_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[delete_manual_contacts_batch](https://www.dropbox.com/developers/documentation/http/documentation#contacts-delete_manual_contacts_batch)\n\nscope: `contacts.write`\n\nRemoves manually added contacts from the given list."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,194 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Team > Team_folder API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team > Team_folder",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox team_folder/activate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/activate",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/activate](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-activate)\n\nscope: `team_data.team_space`\n\nSets an archived team folder's status to active.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/archive",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/archive",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/archive](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-archive)\n\nscope: `team_data.team_space`\n\nSets an active team folder's status to archived and removes all folder and file members.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/archive/check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/archive/check",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/archive/check](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-archive-check)\n\nscope: `team_data.team_space`\n\nReturns the status of an asynchronous job for archiving a team folder.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/create",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/create](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-create)\n\nscope: `team_data.team_space`\n\nCreates a new, active, team folder with no members.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/get_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/get_info",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-get_info)\n\nscope: `team_data.team_space`\n\nRetrieves metadata for team folders.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/list",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/list](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-list)\n\nscope: `team_data.team_space`\n\nLists all team folders.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/list/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/list/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-list-continue)\n\nscope: `team_data.team_space`\n\nOnce a cursor has been retrieved from `team_folder/list`, use this to paginate through all team folders.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/permanently_delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/permanently_delete",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/permanently_delete](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-permanently_delete)\n\nscope: `team_data.team_space`\n\nPermanently deletes an archived team folder.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/rename",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/rename",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/rename](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-rename)\n\nscope: `team_data.team_space`\n\nChanges an active team folder's name.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox team_folder/update_sync_settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/team_folder/update_sync_settings",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[team_folder/update_sync_settings](https://www.dropbox.com/developers/documentation/http/teams#team-team_folder-update_sync_settings)\n\nscope: `team_data.team_space`\n\nUpdates the sync settings on a team folder or its contents.  Use of this endpoint requires that the team has team selective sync enabled."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,143 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Team > Legal_holds API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team > Legal_holds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox legal_holds/create_policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/legal_holds/create_policy",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[legal_holds/create_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-create_policy)\n\nscope: `team_data.member`\n\nCreates new legal hold policy. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox legal_holds/get_policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/legal_holds/get_policy",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[legal_holds/get_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-get_policy)\n\nscope: `team_data.member`\n\nGets a legal hold by Id. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox legal_holds/list_held_revisions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/legal_holds/list_held_revisions",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[legal_holds/list_held_revisions](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_held_revisions)\n\nscope: `team_data.member`\n\nList the file metadata that's under the hold. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox legal_holds/list_held_revisions_continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/legal_holds/list_held_revisions_continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[legal_holds/list_held_revisions_continue](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_held_revisions_continue)\n\nscope: `team_data.member`\n\nContinue listing the file metadata that's under the hold. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox legal_holds/list_policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/legal_holds/list_policies",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[legal_holds/list_policies](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_policies)\n\nscope: `team_data.member`\n\nLists legal holds on a team. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox legal_holds/release_policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/legal_holds/release_policy",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[legal_holds/release_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-release_policy)\n\nscope: `team_data.member`\n\nReleases a legal hold by Id. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access."
+        },
+        {
+          "info": {
+            "name": "Dropbox legal_holds/update_policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/legal_holds/update_policy",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[legal_holds/update_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-update_policy)\n\nscope: `team_data.member`\n\nUpdates a legal hold. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

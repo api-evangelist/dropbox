@@ -1,0 +1,534 @@
+{
+  "item": [
+    {
+      "id": "6fd969ee-25ea-4e22-bd59-61d8ce42ac7a",
+      "name": "Users",
+      "description": {
+        "content": "This namespace contains endpoints and data types for user management.\n",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "17842a99-d6d5-4cc9-8654-d790aa3f3e6b",
+          "name": "Dropbox features/get_values",
+          "request": {
+            "name": "Dropbox features/get_values",
+            "description": {
+              "content": "[features/get_values](https://www.dropbox.com/developers/documentation/http/documentation#users-features-get_values)\n\nscope: `account_info.read`\n\nGet a list of feature values that may be configured for the current account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "users",
+                "features",
+                "get_values"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "34cf70dd-8c65-4c2d-9f7a-2ad262f3d83e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "users",
+                    "features",
+                    "get_values"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"features\\\": [\\n        {\\n            \\\".tag\\\": \\\"paper_as_files\\\"\\n        }, \\n        {\\n            \\\".tag\\\": \\\"file_locking\\\"\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7200",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"values\": [\n    {\n      \".tag\": \"paper_as_files\",\n      \"paper_as_files\": {\n        \".tag\": \"enabled\",\n        \"enabled\": true\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57b26569-fa24-4949-ba84-fe091c951b3b",
+          "name": "Dropbox get_account",
+          "request": {
+            "name": "Dropbox get_account",
+            "description": {
+              "content": "[get_account](https://www.dropbox.com/developers/documentation/http/documentation#users-get_account)\n\nscope: `sharing.read`\n\nGet information about a user's account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "users",
+                "get_account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "1943810c-5dd2-499a-965e-0c0352505a66",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "users",
+                    "get_account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"account_id\\\": \\\"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7200",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n  \"name\": {\n    \"given_name\": \"Franz\",\n    \"surname\": \"Ferdinand\",\n    \"familiar_name\": \"Franz\",\n    \"display_name\": \"Franz Ferdinand (Personal)\",\n    \"abbreviated_name\": \"FF\"\n  },\n  \"email\": \"franz@dropbox.com\",\n  \"email_verified\": true,\n  \"disabled\": false,\n  \"is_teammate\": false,\n  \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c72aaae-857e-4944-b965-7ed627ffcda1",
+          "name": "Dropbox get_account_batch",
+          "request": {
+            "name": "Dropbox get_account_batch",
+            "description": {
+              "content": "[get_account_batch](https://www.dropbox.com/developers/documentation/http/documentation#users-get_account_batch)\n\nscope: `sharing.read`\n\nGet information about multiple user accounts.  At most 300 accounts may be queried per request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "users",
+                "get_account_batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "b3558e11-1dc3-4019-9097-d5c12fcf6cc5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "users",
+                    "get_account_batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"account_ids\\\": [\\n        \\\"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\\\", \\n        \\\"dbid:AAH1Vcz-DVoRDeixtr_OA8oUGgiqhs4XPOQ\\\"\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7200",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n    \"name\": {\n      \"given_name\": \"Franz\",\n      \"surname\": \"Ferdinand\",\n      \"familiar_name\": \"Franz\",\n      \"display_name\": \"Franz Ferdinand (Personal)\",\n      \"abbreviated_name\": \"FF\"\n    },\n    \"email\": \"franz@dropbox.com\",\n    \"email_verified\": true,\n    \"disabled\": false,\n    \"is_teammate\": false,\n    \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af9901cb-6fdd-4a2e-97a8-f8d5f2f2ecd9",
+          "name": "Dropbox get_current_account",
+          "request": {
+            "name": "Dropbox get_current_account",
+            "description": {
+              "content": "[get_current_account](https://www.dropbox.com/developers/documentation/http/documentation#users-get_current_account)\n\nscope: `account_info.read`\n\nGet information about the current user's account.      ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "users",
+                "get_current_account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09c49c02-30e8-4dc4-bb2d-fe047f87d324",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "users",
+                    "get_current_account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7200",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n  \"name\": {\n    \"given_name\": \"Franz\",\n    \"surname\": \"Ferdinand\",\n    \"familiar_name\": \"Franz\",\n    \"display_name\": \"Franz Ferdinand (Personal)\",\n    \"abbreviated_name\": \"FF\"\n  },\n  \"email\": \"franz@dropbox.com\",\n  \"email_verified\": true,\n  \"disabled\": false,\n  \"locale\": \"en\",\n  \"referral_link\": \"https://db.tt/ZITNuhtI\",\n  \"is_paired\": true,\n  \"account_type\": {\n    \".tag\": \"business\"\n  },\n  \"root_info\": {\n    \".tag\": \"user\",\n    \"root_namespace_id\": \"3235641\",\n    \"home_namespace_id\": \"3235641\"\n  },\n  \"country\": \"US\",\n  \"team\": {\n    \"id\": \"dbtid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I\",\n    \"name\": \"Acme, Inc.\",\n    \"sharing_policies\": {\n      \"shared_folder_member_policy\": {\n        \".tag\": \"team\"\n      },\n      \"shared_folder_join_policy\": {\n        \".tag\": \"from_anyone\"\n      },\n      \"shared_link_create_policy\": {\n        \".tag\": \"team_only\"\n      }\n    },\n    \"office_addin_policy\": {\n      \".tag\": \"disabled\"\n    }\n  },\n  \"team_member_id\": \"dbmid:AAHhy7WsR0x-u4ZCqiDl5Fz5zvuL3kmspwU\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "367da7c6-26d0-44b7-af1b-ac53bdd33b63",
+          "name": "Dropbox get_space_usage",
+          "request": {
+            "name": "Dropbox get_space_usage",
+            "description": {
+              "content": "[get_space_usage](https://www.dropbox.com/developers/documentation/http/documentation#users-get_space_usage)\n\nscope: `account_info.read`\n\nGet the space usage information for the current user's account.      ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "users",
+                "get_space_usage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0d9135c3-d6f9-4ab2-a8d8-54fc870a8989",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "users",
+                    "get_space_usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7200",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"used\": 314159265,\n  \"allocation\": {\n    \".tag\": \"individual\",\n    \"allocated\": 10000000000\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "27b9cab6-316a-43c3-a197-5f84b15a143e",
+    "name": "Dropbox API Reference Account Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

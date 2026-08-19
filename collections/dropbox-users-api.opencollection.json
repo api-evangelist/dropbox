@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Users API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox features/get_values",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/users/features/get_values",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[features/get_values](https://www.dropbox.com/developers/documentation/http/documentation#users-features-get_values)\n\nscope: `account_info.read`\n\nGet a list of feature values that may be configured for the current account."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/users/get_account",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_account](https://www.dropbox.com/developers/documentation/http/documentation#users-get_account)\n\nscope: `sharing.read`\n\nGet information about a user's account."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_account_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/users/get_account_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_account_batch](https://www.dropbox.com/developers/documentation/http/documentation#users-get_account_batch)\n\nscope: `sharing.read`\n\nGet information about multiple user accounts.  At most 300 accounts may be queried per request."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_current_account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/users/get_current_account"
+          },
+          "docs": "[get_current_account](https://www.dropbox.com/developers/documentation/http/documentation#users-get_current_account)\n\nscope: `account_info.read`\n\nGet information about the current user's account.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox get_space_usage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/users/get_space_usage"
+          },
+          "docs": "[get_space_usage](https://www.dropbox.com/developers/documentation/http/documentation#users-get_space_usage)\n\nscope: `account_info.read`\n\nGet the space usage information for the current user's account.      "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

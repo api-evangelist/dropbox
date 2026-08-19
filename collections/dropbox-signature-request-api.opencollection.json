@@ -1,0 +1,434 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Signature Request API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Signature Request",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/bulk_create_embedded_with_template",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestBulkCreateEmbeddedWithTemplate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestBulkSendWithTemplate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/bulk_send_with_template",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestBulkSendWithTemplate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestCancel::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/cancel/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestCancel::SIGNATURE_REQUEST_ID"
+              }
+            ]
+          },
+          "docs": "_t__SignatureRequestCancel::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestCreateEmbedded::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/create_embedded",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestCreateEmbedded::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestCreateEmbeddedWithTemplate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/create_embedded_with_template",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestCreateEmbeddedWithTemplate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestEdit::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.dropbox.com/signature_request/edit/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestEdit::SIGNATURE_REQUEST_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestEdit::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestEditEmbedded::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.dropbox.com/signature_request/edit_embedded/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestEditEmbedded::SIGNATURE_REQUEST_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestEditEmbedded::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestEditEmbeddedWithTemplate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.dropbox.com/signature_request/edit_embedded_with_template/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestEditEmbeddedWithTemplate::SIGNATURE_REQUEST_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestEditEmbeddedWithTemplate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestEditWithTemplate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.dropbox.com/signature_request/edit_with_template/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestEditWithTemplate::SIGNATURE_REQUEST_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestEditWithTemplate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestFiles::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/signature_request/files/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestFiles::SIGNATURE_REQUEST_ID"
+              },
+              {
+                "name": "file_type",
+                "value": "",
+                "type": "query",
+                "description": "_t__SignatureRequestFiles::FILE_TYPE"
+              }
+            ]
+          },
+          "docs": "_t__SignatureRequestFiles::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestFilesAsDataUri::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/signature_request/files_as_data_uri/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestFiles::SIGNATURE_REQUEST_ID"
+              }
+            ]
+          },
+          "docs": "_t__SignatureRequestFilesAsDataUri::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestFilesAsFileUrl::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/signature_request/files_as_file_url/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestFiles::SIGNATURE_REQUEST_ID"
+              },
+              {
+                "name": "force_download",
+                "value": "",
+                "type": "query",
+                "description": "_t__SignatureRequestFiles::FORCE_DOWNLOAD"
+              }
+            ]
+          },
+          "docs": "_t__SignatureRequestFilesAsFileUrl::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestGet::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/signature_request/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestGet::SIGNATURE_REQUEST_ID"
+              }
+            ]
+          },
+          "docs": "_t__SignatureRequestGet::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestList::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/signature_request/list",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "query",
+                "description": "_t__SignatureRequestList::ACCOUNT_ID"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "_t__SignatureRequestList::PAGE"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "_t__SignatureRequestList::PAGE_SIZE"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "_t__SignatureRequestList::QUERY"
+              }
+            ]
+          },
+          "docs": "_t__SignatureRequestList::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestReleaseHold::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/release_hold/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestReleaseHold::SIGNATURE_REQUEST_ID"
+              }
+            ]
+          },
+          "docs": "_t__SignatureRequestReleaseHold::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestRemind::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/remind/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestRemind::SIGNATURE_REQUEST_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestRemind::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestRemove::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/remove/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestRemove::SIGNATURE_REQUEST_ID"
+              }
+            ]
+          },
+          "docs": "_t__SignatureRequestRemove::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestSend::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestSend::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestSendWithTemplate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/send_with_template",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestSendWithTemplate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__SignatureRequestUpdate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/signature_request/update/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__SignatureRequestUpdate::SIGNATURE_REQUEST_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__SignatureRequestUpdate::DESCRIPTION"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,653 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Sharing API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sharing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox add_file_member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/add_file_member",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[add_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_file_member)\n\nscope: `sharing.write`\n\nAdds specified members to a file."
+        },
+        {
+          "info": {
+            "name": "Dropbox add_folder_member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/add_folder_member",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[add_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_folder_member)\n\nscope: `sharing.write`\n\nAllows an owner or editor (if the ACL update policy allows) of a shared folder to add another member.\nFor the new member to get access to all the functionality for this folder, you will need to call `mount_folder` on their behalf."
+        },
+        {
+          "info": {
+            "name": "Dropbox check_job_status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/check_job_status",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_job_status)\n\nscope: `sharing.write`\n\nReturns the status of an asynchronous job."
+        },
+        {
+          "info": {
+            "name": "Dropbox check_remove_member_job_status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/check_remove_member_job_status",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[check_remove_member_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_remove_member_job_status)\n\nscope: `sharing.write`\n\nReturns the status of an asynchronous job for sharing a folder."
+        },
+        {
+          "info": {
+            "name": "Dropbox check_share_job_status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/check_share_job_status",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[check_share_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_share_job_status)\n\nscope: `sharing.write`\n\nReturns the status of an asynchronous job for sharing a folder."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_file_metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/get_file_metadata",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_file_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata)\n\nscope: `sharing.read`\n\nReturns shared file metadata."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_file_metadata/batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/get_file_metadata/batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_file_metadata/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata-batch)\n\nscope: `sharing.read`\n\nReturns shared file metadata."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_folder_metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/get_folder_metadata",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_folder_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_folder_metadata)\n\nscope: `sharing.read`\n\nReturns shared folder metadata by its folder ID."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_shared_link_file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/get_shared_link_file",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"url\": \"https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0\", \n    \"path\": \"/Prime_Numbers.txt\"\n}"
+              }
+            ]
+          },
+          "docs": "[get_shared_link_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_file)\n\nscope: `sharing.read`\n\nDownload the shared link's file from a user's Dropbox.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox get_shared_link_metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/get_shared_link_metadata",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_shared_link_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_metadata)\n\nscope: `sharing.read`\n\nGet the shared link's metadata."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_file_members",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_file_members",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_file_members](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members)\n\nscope: `sharing.read`\n\nUse to obtain the members who have been invited to a file, both inherited and uninherited members."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_file_members/batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_file_members/batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_file_members/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-batch)\n\nscope: `sharing.read`\n\nGet members of multiple files at once. The arguments to this route are more limited, and the limit on query result size per file is more strict. To customize the results more, use the individual file endpoint.\nInherited users and groups are not included in the result, and permissions are not returned for this endpoint."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_file_members/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_file_members/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_file_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-continue)\n\nscope: `sharing.read`\n\nOnce a cursor has been retrieved from `list_file_members` or `list_file_members/batch`, use this to paginate through all shared file members."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_folder_members/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_folder_members/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_folder_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folder_members-continue)\n\nscope: `sharing.read`\n\nOnce a cursor has been retrieved from `list_folder_members`, use this to paginate through all shared folder members."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_folders",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders)\n\nscope: `sharing.read`\n\nReturn the list of all shared folders the current user has access to."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_folders/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_folders/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders-continue)\n\nscope: `sharing.read`\n\nOnce a cursor has been retrieved from `list_folders`, use this to paginate through all shared folders. The cursor must come from a previous call to `list_folders` or `list_folders/continue`."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_mountable_folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_mountable_folders",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_mountable_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders)\n\nscope: `sharing.read`\n\nReturn the list of all shared folders the current user can mount or unmount."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_mountable_folders/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_mountable_folders/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_mountable_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders-continue)\n\nscope: `sharing.read`\n\nOnce a cursor has been retrieved from `list_mountable_folders`, use this to paginate through all mountable shared folders. The cursor must come from a previous call to `list_mountable_folders` or `list_mountable_folders/continue`."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_received_files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_received_files",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_received_files](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files)\n\nscope: `sharing.read`\n\nReturns a list of all files shared with current user.\n Does not include files the user has received via shared folders, and does  not include unclaimed invitations."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_received_files/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_received_files/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_received_files/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files-continue)\n\nscope: `sharing.read`\n\nGet more results with a cursor from `list_received_files`."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_shared_links",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/list_shared_links",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_shared_links](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_shared_links)\n\nscope: `sharing.read`\n\nList shared links of this user.\nIf no path is given, returns a list of all shared links for the current user.\nIf a non-empty path is given, returns a list of all shared links that allow access to the given path - direct links to the given path and links to parent folders of the given path. Links to parent folders can be suppressed by setting direct_only to tr"
+        },
+        {
+          "info": {
+            "name": "Dropbox modify_shared_link_settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/modify_shared_link_settings",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[modify_shared_link_settings](https://www.dropbox.com/developers/documentation/http/documentation#sharing-modify_shared_link_settings)\n\nscope: `sharing.write`\n\nModify the shared link's settings.\nIf the requested visibility conflict with the shared links policy of the team or the shared folder (in case the linked file is part of a shared folder) then the `LinkPermissions.resolved_visibility` of the returned `SharedLinkMetadata` will reflect the actual visibility of the shared link and the `LinkPe"
+        },
+        {
+          "info": {
+            "name": "Dropbox mount_folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/mount_folder",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[mount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-mount_folder)\n\nscope: `sharing.write`\n\nThe current user mounts the designated folder.\nMount a shared folder for a user after they have been added as a member. Once mounted, the shared folder will appear in their Dropbox."
+        },
+        {
+          "info": {
+            "name": "Dropbox relinquish_file_membership",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/relinquish_file_membership",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[relinquish_file_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_file_membership)\n\nscope: `sharing.write`\n\nThe current user relinquishes their membership in the designated file. Note that the current user may still have inherited access to this file through the parent folder."
+        },
+        {
+          "info": {
+            "name": "Dropbox relinquish_folder_membership",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/relinquish_folder_membership",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[relinquish_folder_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_folder_membership)\n\nscope: `sharing.write`\n\nThe current user relinquishes their membership in the designated shared folder and will no longer have access to the folder.  A folder owner cannot relinquish membership in their own folder.\nThis will run synchronously if leave_a_copy is false, and asynchronously if leave_a_copy is true."
+        },
+        {
+          "info": {
+            "name": "Dropbox remove_file_member_2",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/remove_file_member_2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[remove_file_member_2](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_file_member_2)\n\nscope: `sharing.write`\n\nRemoves a specified member from the file."
+        },
+        {
+          "info": {
+            "name": "Dropbox remove_folder_member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/remove_folder_member",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[remove_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_folder_member)\n\nscope: `sharing.write`\n\nAllows an owner or editor (if the ACL update policy allows) of a shared folder to remove another member."
+        },
+        {
+          "info": {
+            "name": "Dropbox revoke_shared_link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/revoke_shared_link",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[revoke_shared_link](https://www.dropbox.com/developers/documentation/http/documentation#sharing-revoke_shared_link)\n\nscope: `sharing.write`\n\nRevoke a shared link.\nNote that even after revoking a shared link to a file, the file may be accessible if there are shared links leading to any of the file parent folders. To list all shared links that enable access to a specific file, you can use the `list_shared_links` with the file as the `ListSharedLinksArg.path` argument."
+        },
+        {
+          "info": {
+            "name": "Dropbox set_access_inheritance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/set_access_inheritance",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[set_access_inheritance](https://www.dropbox.com/developers/documentation/http/documentation#sharing-set_access_inheritance)\n\nscope: `sharing.write`\n\nChange the inheritance policy of an existing Shared Folder. Only permitted for shared folders in a shared team root.\nIf a `ShareFolderLaunch.async_job_id` is returned, you'll need to call `check_share_job_status` until the action completes to get the metadata for the folder."
+        },
+        {
+          "info": {
+            "name": "Dropbox share_folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/share_folder",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[share_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-share_folder)\n\nscope: `sharing.write`\n\nShare a folder with collaborators.\nMost sharing will be completed synchronously. Large folders will be completed asynchronously. To make testing the async case repeatable, set `ShareFolderArg.force_async`.\nIf a `ShareFolderLaunch.async_job_id` is returned, you'll need to call `check_share_job_status` until the action completes to get the metadata for the folder."
+        },
+        {
+          "info": {
+            "name": "Dropbox transfer_folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/transfer_folder",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[transfer_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-transfer_folder)\n\nscope: `sharing.write`\n\nTransfer ownership of a shared folder to a member of the shared folder.\nUser must have `AccessLevel.owner` access to the shared folder to perform a transfer."
+        },
+        {
+          "info": {
+            "name": "Dropbox unmount_folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/unmount_folder",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[unmount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unmount_folder)\n\nscope: `sharing.write`\n\nThe current user unmounts the designated folder. They can re-mount the folder at a later time using `mount_folder`."
+        },
+        {
+          "info": {
+            "name": "Dropbox unshare_file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/unshare_file",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[unshare_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_file)\n\nscope: `sharing.write`\n\nRemove all members from this file. Does not remove inherited members."
+        },
+        {
+          "info": {
+            "name": "Dropbox unshare_folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/unshare_folder",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[unshare_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_folder)\n\nscope: `sharing.write`\n\nAllows a shared folder owner to unshare the folder.\nYou'll need to call `check_job_status` to determine if the action has completed successfully."
+        },
+        {
+          "info": {
+            "name": "Dropbox update_file_member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/update_file_member",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[update_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_file_member)\n\nscope: `sharing.write`\n\nChanges a member's access on a shared file."
+        },
+        {
+          "info": {
+            "name": "Dropbox update_folder_member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/update_folder_member",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[update_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_member)\n\nscope: `sharing.write`\n\nAllows an owner or editor of a shared folder to update another member's permissions."
+        },
+        {
+          "info": {
+            "name": "Dropbox update_folder_policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/sharing/update_folder_policy",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[update_folder_policy](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_policy)\n\nscope: `sharing.write`\n\nUpdate the sharing policies for a shared folder.\nUser must have `AccessLevel.owner` access to the shared folder to update its policies."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

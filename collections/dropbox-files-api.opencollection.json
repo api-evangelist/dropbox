@@ -1,0 +1,755 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Files API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox copy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/copy_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[copy](https://www.dropbox.com/developers/documentation/http/documentation#files-copy)\n\nscope: `files.content.write`\n\nCopy a file or folder to a different location in the user's Dropbox.\nIf the source path is a folder all its contents will be copied."
+        },
+        {
+          "info": {
+            "name": "Dropbox copy_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/copy_batch_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[copy_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch)\n\nscope: `files.content.write`\n\nCopy multiple files or folders to different locations at once in the user's Dropbox.\nThis route will replace `copy_batch:1`. The main difference is this route will return status for each entry, while `copy_batch:1` raises failure if any entry fails.\nThis route will either finish synchronously, or return a job ID and do the async copy job in background. Please use `cop"
+        },
+        {
+          "info": {
+            "name": "Dropbox copy_batch/check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/copy_batch/check_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[copy_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch-check)\n\nscope: `files.content.write`\n\nReturns the status of an asynchronous job for `copy_batch:2`. It returns list of results for each entry."
+        },
+        {
+          "info": {
+            "name": "Dropbox copy_reference/get",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/copy_reference/get",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[copy_reference/get](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-get)\n\nscope: `files.content.write`\n\nGet a copy reference to a file or folder. This reference string can be used to save that file or folder to another user's Dropbox by passing it to `copy_reference/save`."
+        },
+        {
+          "info": {
+            "name": "Dropbox copy_reference/save",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/copy_reference/save",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[copy_reference/save](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-save)\n\nscope: `files.content.write`\n\nSave a copy reference returned by `copy_reference/get` to the user's Dropbox."
+        },
+        {
+          "info": {
+            "name": "Dropbox create_folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/create_folder_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[create_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder)\n\nscope: `files.content.write`\n\nCreate a folder at a given path."
+        },
+        {
+          "info": {
+            "name": "Dropbox create_folder_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/create_folder_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[create_folder_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch)\n\nscope: `files.content.write`\n\nCreate multiple folders at once.\nThis route is asynchronous for large batches, which returns a job ID immediately and runs the create folder batch asynchronously. Otherwise, creates the folders and returns the result synchronously for smaller inputs. You can force asynchronous behaviour by using the `CreateFolderBatchArg.force_async` flag.  Use `crea"
+        },
+        {
+          "info": {
+            "name": "Dropbox create_folder_batch/check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/create_folder_batch/check",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[create_folder_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch-check)\n\nscope: `files.content.write`\n\nReturns the status of an asynchronous job for `create_folder_batch`. If success, it returns list of result for each entry."
+        },
+        {
+          "info": {
+            "name": "Dropbox delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/delete_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[delete](https://www.dropbox.com/developers/documentation/http/documentation#files-delete)\n\nscope: `files.content.write`\n\nDelete the file or folder at a given path.\nIf the path is a folder, all its contents will be deleted too.\nA successful response indicates that the file or folder was deleted. The returned metadata will be the corresponding `FileMetadata` or `FolderMetadata` for the item at time of deletion, and not a `DeletedMetadata` object."
+        },
+        {
+          "info": {
+            "name": "Dropbox delete_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/delete_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[delete_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch)\n\nscope: `files.content.write`\n\nDelete multiple files/folders at once.\nThis route is asynchronous, which returns a job ID immediately and runs the delete batch asynchronously. Use `delete_batch/check` to check the job status."
+        },
+        {
+          "info": {
+            "name": "Dropbox delete_batch/check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/delete_batch/check",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[delete_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch-check)\n\nscope: `files.content.write`\n\nReturns the status of an asynchronous job for `delete_batch`. If success, it returns list of result for each entry."
+        },
+        {
+          "info": {
+            "name": "Dropbox download",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/download",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"path\": \"/Homework/math/Prime_Numbers.txt\"\n}"
+              }
+            ]
+          },
+          "docs": "[download](https://www.dropbox.com/developers/documentation/http/documentation#files-download)\n\nscope: `files.content.read`\n\nDownload a file from a user's Dropbox.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox download_zip",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/download_zip",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"path\": \"/Homework/math\"\n}"
+              }
+            ]
+          },
+          "docs": "[download_zip](https://www.dropbox.com/developers/documentation/http/documentation#files-download_zip)\n\nscope: `files.content.read`\n\nDownload a folder from the user's Dropbox, as a zip file. The folder must be less than 20 GB in size and have fewer than 10,000 total files. The input cannot be a single file. Any single file must be less than 4GB in size.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox export",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/export",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"path\": \"/Homework/math/Prime_Numbers.gsheet\"\n}"
+              }
+            ]
+          },
+          "docs": "[export](https://www.dropbox.com/developers/documentation/http/documentation#files-export)\n\nscope: `files.content.read`\n\nExport a file from a user's Dropbox. This route only supports exporting files that cannot be downloaded directly  and whose `ExportResult.file_metadata` has `ExportInfo.export_as` populated.      "
+        },
+        {
+          "info": {
+            "name": "Dropbox get_file_lock_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/get_file_lock_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_file_lock_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_file_lock_batch)\n\nscope: `files.content.read`\n\nReturn the lock metadata for the given list of paths."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/get_metadata",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_metadata](https://www.dropbox.com/developers/documentation/http/documentation#files-get_metadata)\n\nscope: `files.metadata.read`\n\nReturns the metadata for a file or folder.\nNote: Metadata for the root folder is unsupported."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_preview",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/get_preview",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"path\": \"/word.docx\"\n}"
+              }
+            ]
+          },
+          "docs": "[get_preview](https://www.dropbox.com/developers/documentation/http/documentation#files-get_preview)\n\nscope: `files.content.read`\n\nGet a preview for a file.\nCurrently, PDF previews are generated for files with the following extensions: .ai, .doc, .docm, .docx, .eps, .gdoc, .gslides, .odp, .odt, .pps, .ppsm, .ppsx, .ppt, .pptm, .pptx, .rtf.\nHTML previews are generated for files with the following extensions: .csv, .ods, .xls, .xlsm, .gsheet, .xlsx.\nOther formats will return an unsupported extensi"
+        },
+        {
+          "info": {
+            "name": "Dropbox get_temporary_link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/get_temporary_link",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_temporary_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_link)\n\nscope: `files.content.read`\n\nGet a temporary link to stream content of a file. This link will expire in four hours and afterwards you will get 410 Gone. This URL should not be used to display content directly in the browser. The Content-Type of the link is determined automatically by the file's mime type."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_temporary_upload_link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/get_temporary_upload_link",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_temporary_upload_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_upload_link)\n\nscope: `files.content.write`\n\nGet a one-time use temporary upload link to upload a file to a Dropbox location.\n\nThis endpoint acts as a delayed `upload`. The returned temporary upload link may be used to make a POST request with the data to be uploaded. The upload will then be perfomed with the `CommitInfo` previously provided to `get_temporary_upload_link` but evalua"
+        },
+        {
+          "info": {
+            "name": "Dropbox get_thumbnail",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/get_thumbnail_v2",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"resource\": {\n        \".tag\": \"path\", \n        \"path\": \"/a.docx\"\n    }, \n    \"format\": \"jpeg\", \n    \"size\": \"w64h64\", \n    \"mode\": \"strict\"\n}"
+              }
+            ]
+          },
+          "docs": "[get_thumbnail](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail)\n\nscope: `files.content.read`\n\nGet a thumbnail for a file."
+        },
+        {
+          "info": {
+            "name": "Dropbox get_thumbnail_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/get_thumbnail_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[get_thumbnail_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail_batch)\n\nscope: `files.content.read`\n\nGet thumbnails for a list of images. We allow up to 25 thumbnails in a single batch.\nThis method currently supports files with the following file extensions: jpg, jpeg, png, tiff, tif, gif and bmp. Photos that are larger than 20MB in size won't be converted to a thumbnail."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/list_folder",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder)\n\nscope: `files.metadata.read`\n\nStarts returning the contents of a folder. If the result's `ListFolderResult.has_more` field is `true`, call `list_folder/continue` with the returned `ListFolderResult.cursor` to retrieve more entries.\nIf you're using `ListFolderArg.recursive` set to `true` to keep a local cache of the contents of a Dropbox account, iterate through each entry in order and process th"
+        },
+        {
+          "info": {
+            "name": "Dropbox list_folder/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/list_folder/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_folder/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-continue)\n\nscope: `files.metadata.read`\n\nOnce a cursor has been retrieved from `list_folder`, use this to paginate through all files and retrieve updates to the folder, following the same rules as documented for `list_folder`."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_folder/get_latest_cursor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/list_folder/get_latest_cursor",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_folder/get_latest_cursor](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-get_latest_cursor)\n\nscope: `files.metadata.read`\n\nA way to quickly get a cursor for the folder's state. Unlike `list_folder`, `list_folder/get_latest_cursor` doesn't return any entries. This endpoint is for app which only needs to know about new files and modifications and doesn't need to know about files that already exist in Dropbox."
+        },
+        {
+          "info": {
+            "name": "Dropbox list_folder/longpoll",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/list_folder/longpoll",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_folder/longpoll](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-longpoll)\n\nscope: `files.metadata.read`\n\nA longpoll endpoint to wait for changes on an account. In conjunction with `list_folder/continue`, this call gives you a low-latency way to monitor an account for file changes. The connection will block until there are changes available or a timeout occurs. This endpoint is useful mostly for client-side apps. If you're looking for server-side notif"
+        },
+        {
+          "info": {
+            "name": "Dropbox list_revisions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/list_revisions",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[list_revisions](https://www.dropbox.com/developers/documentation/http/documentation#files-list_revisions)\n\nscope: `files.metadata.read`\n\nReturns revisions for files based on a file path or a file id. The file path or file id is identified from the latest file entry at the given file path or id. This end point allows your app to query either by file path or file id by setting the mode parameter appropriately.\nIn the `ListRevisionsMode.path` (default) mode, all revisions at the same file path as "
+        },
+        {
+          "info": {
+            "name": "Dropbox lock_file_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/lock_file_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[lock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-lock_file_batch)\n\nscope: `files.content.write`\n\nLock the files at the given paths. A locked file will be writable only by the lock holder. A successful response indicates that the file has been locked. Returns a list of the locked file paths and their metadata after this operation."
+        },
+        {
+          "info": {
+            "name": "Dropbox move",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/move_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[move](https://www.dropbox.com/developers/documentation/http/documentation#files-move)\n\nscope: `files.content.write`\n\nMove a file or folder to a different location in the user's Dropbox.\nIf the source path is a folder all its contents will be moved.\nNote that we do not currently support case-only renaming."
+        },
+        {
+          "info": {
+            "name": "Dropbox move_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/move_batch_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[move_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch)\n\nscope: `files.content.write`\n\nMove multiple files or folders to different locations at once in the user's Dropbox. Note that we do not currently support case-only renaming.\nThis route will replace `move_batch:1`. The main difference is this route will return status for each entry, while `move_batch:1` raises failure if any entry fails.\nThis route will either finish synchronously, or return a job I"
+        },
+        {
+          "info": {
+            "name": "Dropbox move_batch/check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/move_batch/check_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[move_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch-check)\n\nscope: `files.content.write`\n\nReturns the status of an asynchronous job for `move_batch:2`. It returns list of results for each entry."
+        },
+        {
+          "info": {
+            "name": "Dropbox permanently_delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/permanently_delete",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[permanently_delete](https://www.dropbox.com/developers/documentation/http/documentation#files-permanently_delete)\n\nscope: `files.permanent_delete`\n\nPermanently delete the file or folder at a given path (see https://www.dropbox.com/en/help/40).\nNote: This endpoint is only available for Dropbox Business apps."
+        },
+        {
+          "info": {
+            "name": "Dropbox restore",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/restore",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[restore](https://www.dropbox.com/developers/documentation/http/documentation#files-restore)\n\nscope: `files.content.write`\n\nRestore a specific revision of a file to the given path."
+        },
+        {
+          "info": {
+            "name": "Dropbox save_url",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/save_url",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[save_url](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url)\n\nscope: `files.content.write`\n\nSave the data from a specified URL into a file in user's Dropbox.\nNote that the transfer from the URL must complete within 5 minutes, or the operation will time out and the job will fail.\nIf the given path already exists, the file will be renamed to avoid the conflict (e.g. myfile (1).txt)."
+        },
+        {
+          "info": {
+            "name": "Dropbox save_url/check_job_status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/save_url/check_job_status",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[save_url/check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url-check_job_status)\n\nscope: `files.content.write`\n\nCheck the status of a `save_url` job."
+        },
+        {
+          "info": {
+            "name": "Dropbox search",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/search_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[search](https://www.dropbox.com/developers/documentation/http/documentation#files-search)\n\nscope: `files.metadata.read`\n\nSearches for files and folders.\nNote: `search:2` along with `search/continue:2` can only be used to retrieve a maximum of 10,000 matches.\nRecent changes may not immediately be reflected in search results due to a short delay in indexing. Duplicate results may be returned across pages. Some results may not be returned."
+        },
+        {
+          "info": {
+            "name": "Dropbox search/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/search/continue_v2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[search/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-search-continue)\n\nscope: `files.metadata.read`\n\nFetches the next page of search results returned from `search:2`.\nNote: `search:2` along with `search/continue:2` can only be used to retrieve a maximum of 10,000 matches.\nRecent changes may not immediately be reflected in search results due to a short delay in indexing. Duplicate results may be returned across pages. Some results may not be returned."
+        },
+        {
+          "info": {
+            "name": "Dropbox unlock_file_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/unlock_file_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[unlock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-unlock_file_batch)\n\nscope: `files.content.write`\n\nUnlock the files at the given paths. A locked file can only be unlocked by the lock holder or, if a business account, a team admin. A successful response indicates that the file has been unlocked. Returns a list of the unlocked file paths and their metadata after this operation."
+        },
+        {
+          "info": {
+            "name": "Dropbox upload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/upload",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"path\": \"/Homework/math/Matrices.txt\", \n    \"mode\": \"add\", \n    \"autorename\": true, \n    \"mute\": false, \n    \"strict_conflict\": false\n}"
+              }
+            ]
+          },
+          "docs": "[upload](https://www.dropbox.com/developers/documentation/http/documentation#files-upload)\n\nscope: `files.content.write`\n\nCreate a new file with the contents provided in the request.\nDo not use this to upload a file larger than 150 MB. Instead, create an upload session with `upload_session/start`.\nCalls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transp"
+        },
+        {
+          "info": {
+            "name": "Dropbox upload_session/append",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/upload_session/append_v2",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"cursor\": {\n        \"session_id\": \"1234faaf0678bcde\", \n        \"offset\": 0\n    }, \n    \"close\": false\n}"
+              }
+            ]
+          },
+          "docs": "[upload_session/append](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-append)\n\nscope: `files.content.write`\n\nAppend more data to an upload session.\nWhen the parameter close is set, this call will close the session.\nA single request should not upload more than 150 MB. The maximum size of a file one can upload to an upload session is 350 GB.\nCalls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number"
+        },
+        {
+          "info": {
+            "name": "Dropbox upload_session/finish",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/upload_session/finish",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"cursor\": {\n        \"session_id\": \"1234faaf0678bcde\", \n        \"offset\": 0\n    }, \n    \"commit\": {\n        \"path\": \"/Homework/math/Matrices.txt\", \n        \"mode\": \"add\", \n        \"autorename\": true, \n        \"mute\": false, \n        \"strict_conflict\": false\n    }\n}"
+              }
+            ]
+          },
+          "docs": "[upload_session/finish](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish)\n\nscope: `files.content.write`\n\nFinish an upload session and save the uploaded data to the given file path.\nA single request should not upload more than 150 MB. The maximum size of a file one can upload to an upload session is 350 GB.\nCalls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allow"
+        },
+        {
+          "info": {
+            "name": "Dropbox upload_session/finish_batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/upload_session/finish_batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[upload_session/finish_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch)\n\nscope: `files.content.write`\n\nThis route helps you commit many files at once into a user's Dropbox. Use `upload_session/start` and `upload_session/append:2` to upload file contents. We recommend uploading many files in parallel to increase throughput. Once the file contents have been uploaded, rather than calling `upload_session/finish`, use this route to finish a"
+        },
+        {
+          "info": {
+            "name": "Dropbox upload_session/finish_batch/check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/upload_session/finish_batch/check",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[upload_session/finish_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch-check)\n\nscope: `files.content.write`\n\nReturns the status of an asynchronous job for `upload_session/finish_batch`. If success, it returns list of result for each entry."
+        },
+        {
+          "info": {
+            "name": "Dropbox upload_session/start",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/files/upload_session/start",
+            "headers": [
+              {
+                "name": "Dropbox-API-Arg",
+                "value": "{\n    \"close\": false\n}"
+              }
+            ]
+          },
+          "docs": "[upload_session/start](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-start)\n\nscope: `files.content.write`\n\nUpload sessions allow you to upload a single file in one or more requests, for example where the size of the file is greater than 150 MB.  This call starts a new upload session with the given data. You can then use `upload_session/append:2` to add more data and `upload_session/finish` to save all the data to a file in Dropbox.\nA single request shou"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

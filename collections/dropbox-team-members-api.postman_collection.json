@@ -1,0 +1,2177 @@
+{
+  "item": [
+    {
+      "id": "c44d9316-a0f8-4ff0-be8f-9cfbfdcfd5cb",
+      "name": "Team > Members",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1852130a-271a-47b1-a22a-105fd29dea50",
+          "name": "Dropbox members/add",
+          "request": {
+            "name": "Dropbox members/add",
+            "description": {
+              "content": "[members/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-add)\n\nscope: `members.write`\n\nAdds members to a team.\nPermission : Team member management\nA maximum of 20 members can be specified in a single call.\nIf no Dropbox account exists with the email address specified, a new Dropbox account will be created with the given email address, and that account will be invited to the team.\nIf a personal Dropbox account exists with the email address specified in the call, this call will create a placeholder Dropbox account for the user on the team and send an email inviting the user to migrate their existing personal account onto the team.\nTeam member management apps are required to set an initial given_name and surname for a user to use in the team invitation and for 'Perform as team member' actions taken on the user before they become 'active'.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "e0c32f7b-1edc-46f4-997f-14e9dc5c6307",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"new_members\\\": [\\n        {\\n            \\\"member_email\\\": \\\"tom.s@company.com\\\", \\n            \\\"member_given_name\\\": \\\"Tom\\\", \\n            \\\"member_surname\\\": \\\"Silverstone\\\", \\n            \\\"member_external_id\\\": \\\"company_id:342432\\\", \\n            \\\"send_welcome_email\\\": true, \\n            \\\"role\\\": \\\"member_only\\\"\\n        }\\n    ], \\n    \\\"force_async\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\",\n  \"complete\": [\n    {\n      \".tag\": \"success\",\n      \"profile\": {\n        \"team_member_id\": \"dbmid:FDFSVF-DFSDF\",\n        \"email\": \"tami@seagull.com\",\n        \"email_verified\": false,\n        \"status\": {\n          \".tag\": \"active\"\n        },\n        \"name\": {\n          \"given_name\": \"Franz\",\n          \"surname\": \"Ferdinand\",\n          \"familiar_name\": \"Franz\",\n          \"display_name\": \"Franz Ferdinand (Personal)\",\n          \"abbreviated_name\": \"FF\"\n        },\n        \"membership_type\": {\n          \".tag\": \"full\"\n        },\n        \"groups\": [\n          \"g:e2db7665347abcd600000000001a2b3c\"\n        ],\n        \"member_folder_id\": \"20\",\n        \"external_id\": \"244423\",\n        \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n        \"secondary_emails\": [\n          {\n            \"email\": \"grape@strawberry.com\",\n            \"is_verified\": false\n          },\n          {\n            \"email\": \"apple@orange.com\",\n            \"is_verified\": true\n          }\n        ],\n        \"joined_on\": \"2015-05-12T15:50:38Z\",\n        \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n      },\n      \"role\": {\n        \".tag\": \"member_only\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78d79baf-0621-403b-8e94-1b5c1e221b65",
+          "name": "Dropbox members/add/job_status/get",
+          "request": {
+            "name": "Dropbox members/add/job_status/get",
+            "description": {
+              "content": "[members/add/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-add-job_status-get)\n\nscope: `members.write`\n\nOnce an async_job_id is returned from `members/add` , use this to poll the status of the asynchronous request.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "add",
+                "job_status",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "37e93592-8c17-4871-bc7e-00efae377836",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "add",
+                    "job_status",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"async_job_id\\\": \\\"34g93hh34h04y384084\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\",\n  \"complete\": [\n    {\n      \".tag\": \"success\",\n      \"profile\": {\n        \"team_member_id\": \"dbmid:FDFSVF-DFSDF\",\n        \"email\": \"tami@seagull.com\",\n        \"email_verified\": false,\n        \"status\": {\n          \".tag\": \"active\"\n        },\n        \"name\": {\n          \"given_name\": \"Franz\",\n          \"surname\": \"Ferdinand\",\n          \"familiar_name\": \"Franz\",\n          \"display_name\": \"Franz Ferdinand (Personal)\",\n          \"abbreviated_name\": \"FF\"\n        },\n        \"membership_type\": {\n          \".tag\": \"full\"\n        },\n        \"groups\": [\n          \"g:e2db7665347abcd600000000001a2b3c\"\n        ],\n        \"member_folder_id\": \"20\",\n        \"external_id\": \"244423\",\n        \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n        \"secondary_emails\": [\n          {\n            \"email\": \"grape@strawberry.com\",\n            \"is_verified\": false\n          },\n          {\n            \"email\": \"apple@orange.com\",\n            \"is_verified\": true\n          }\n        ],\n        \"joined_on\": \"2015-05-12T15:50:38Z\",\n        \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n      },\n      \"role\": {\n        \".tag\": \"member_only\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84a14d99-2ef9-491b-ab7b-2c9bbbf1b603",
+          "name": "Dropbox members/delete_profile_photo",
+          "request": {
+            "name": "Dropbox members/delete_profile_photo",
+            "description": {
+              "content": "[members/delete_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-delete_profile_photo)\n\nscope: `members.write`\n\nDeletes a team member's profile photo.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "delete_profile_photo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "e904303e-5d27-4521-a52d-1ff2d9dcf626",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "delete_profile_photo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profile\": {\n    \"team_member_id\": \"dbmid:FDFSVF-DFSDF\",\n    \"email\": \"tami@seagull.com\",\n    \"email_verified\": false,\n    \"status\": {\n      \".tag\": \"active\"\n    },\n    \"name\": {\n      \"given_name\": \"Franz\",\n      \"surname\": \"Ferdinand\",\n      \"familiar_name\": \"Franz\",\n      \"display_name\": \"Franz Ferdinand (Personal)\",\n      \"abbreviated_name\": \"FF\"\n    },\n    \"membership_type\": {\n      \".tag\": \"full\"\n    },\n    \"groups\": [\n      \"g:e2db7665347abcd600000000001a2b3c\"\n    ],\n    \"member_folder_id\": \"20\",\n    \"external_id\": \"244423\",\n    \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n    \"secondary_emails\": [\n      {\n        \"email\": \"grape@strawberry.com\",\n        \"is_verified\": false\n      },\n      {\n        \"email\": \"apple@orange.com\",\n        \"is_verified\": true\n      }\n    ],\n    \"joined_on\": \"2015-05-12T15:50:38Z\",\n    \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n  },\n  \"role\": {\n    \".tag\": \"member_only\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2cabc26f-aafe-43bc-bb07-55a7c3c797a7",
+          "name": "Dropbox members/get_info",
+          "request": {
+            "name": "Dropbox members/get_info",
+            "description": {
+              "content": "[members/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-members-get_info)\n\nscope: `members.read`\n\nReturns information about multiple team members.\nPermission : Team information\nThis endpoint will return `MembersGetInfoItem.id_not_found`, for IDs (or emails) that cannot be matched to a valid team member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "get_info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "0a39a9ae-2133-4a8b-bcee-4e77faa0ea06",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "get_info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"members\\\": [\\n        {\\n            \\\".tag\\\": \\\"team_member_id\\\", \\n            \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \".tag\": \"member_info\",\n    \"profile\": {\n      \"team_member_id\": \"dbmid:FDFSVF-DFSDF\",\n      \"email\": \"tami@seagull.com\",\n      \"email_verified\": false,\n      \"status\": {\n        \".tag\": \"active\"\n      },\n      \"name\": {\n        \"given_name\": \"Franz\",\n        \"surname\": \"Ferdinand\",\n        \"familiar_name\": \"Franz\",\n        \"display_name\": \"Franz Ferdinand (Personal)\",\n        \"abbreviated_name\": \"FF\"\n      },\n      \"membership_type\": {\n        \".tag\": \"full\"\n      },\n      \"groups\": [\n        \"g:e2db7665347abcd600000000001a2b3c\"\n      ],\n      \"member_folder_id\": \"20\",\n      \"external_id\": \"244423\",\n      \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n      \"secondary_emails\": [\n        {\n          \"email\": \"grape@strawberry.com\",\n          \"is_verified\": false\n        },\n        {\n          \"email\": \"apple@orange.com\",\n          \"is_verified\": true\n        }\n      ],\n      \"joined_on\": \"2015-05-12T15:50:38Z\",\n      \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n    },\n    \"role\": {\n      \".tag\": \"member_only\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ac98eb1-6cb0-4f80-9728-4b6a1143e366",
+          "name": "Dropbox members/list",
+          "request": {
+            "name": "Dropbox members/list",
+            "description": {
+              "content": "[members/list](https://www.dropbox.com/developers/documentation/http/teams#team-members-list)\n\nscope: `members.read`\n\nLists members of a team.\nPermission : Team information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "3a793f65-2b9f-41c7-9de0-d901db425e57",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"limit\\\": 100, \\n    \\\"include_removed\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"members\": [\n    {\n      \"profile\": {\n        \"team_member_id\": \"dbmid:FDFSVF-DFSDF\",\n        \"email\": \"tami@seagull.com\",\n        \"email_verified\": false,\n        \"status\": {\n          \".tag\": \"active\"\n        },\n        \"name\": {\n          \"given_name\": \"Franz\",\n          \"surname\": \"Ferdinand\",\n          \"familiar_name\": \"Franz\",\n          \"display_name\": \"Franz Ferdinand (Personal)\",\n          \"abbreviated_name\": \"FF\"\n        },\n        \"membership_type\": {\n          \".tag\": \"full\"\n        },\n        \"groups\": [\n          \"g:e2db7665347abcd600000000001a2b3c\"\n        ],\n        \"member_folder_id\": \"20\",\n        \"external_id\": \"244423\",\n        \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n        \"secondary_emails\": [\n          {\n            \"email\": \"grape@strawberry.com\",\n            \"is_verified\": false\n          },\n          {\n            \"email\": \"apple@orange.com\",\n            \"is_verified\": true\n          }\n        ],\n        \"joined_on\": \"2015-05-12T15:50:38Z\",\n        \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n      },\n      \"role\": {\n        \".tag\": \"member_only\"\n      }\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\",\n  \"has_more\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4839a844-b5e0-48c7-9e58-4eaa5f517a58",
+          "name": "Dropbox members/list/continue",
+          "request": {
+            "name": "Dropbox members/list/continue",
+            "description": {
+              "content": "[members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-members-list-continue)\n\nscope: `members.read`\n\nOnce a cursor has been retrieved from `members/list`, use this to paginate through all team members.\nPermission : Team information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "list",
+                "continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "c4dd3b57-d98d-4dfc-b202-4ea54a53c0c9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "list",
+                    "continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"cursor\\\": \\\"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"members\": [\n    {\n      \"profile\": {\n        \"team_member_id\": \"dbmid:FDFSVF-DFSDF\",\n        \"email\": \"tami@seagull.com\",\n        \"email_verified\": false,\n        \"status\": {\n          \".tag\": \"active\"\n        },\n        \"name\": {\n          \"given_name\": \"Franz\",\n          \"surname\": \"Ferdinand\",\n          \"familiar_name\": \"Franz\",\n          \"display_name\": \"Franz Ferdinand (Personal)\",\n          \"abbreviated_name\": \"FF\"\n        },\n        \"membership_type\": {\n          \".tag\": \"full\"\n        },\n        \"groups\": [\n          \"g:e2db7665347abcd600000000001a2b3c\"\n        ],\n        \"member_folder_id\": \"20\",\n        \"external_id\": \"244423\",\n        \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n        \"secondary_emails\": [\n          {\n            \"email\": \"grape@strawberry.com\",\n            \"is_verified\": false\n          },\n          {\n            \"email\": \"apple@orange.com\",\n            \"is_verified\": true\n          }\n        ],\n        \"joined_on\": \"2015-05-12T15:50:38Z\",\n        \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n      },\n      \"role\": {\n        \".tag\": \"member_only\"\n      }\n    }\n  ],\n  \"cursor\": \"ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu\",\n  \"has_more\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69331b37-cca5-4c49-bca8-e88a20782643",
+          "name": "Dropbox members/move_former_member_files",
+          "request": {
+            "name": "Dropbox members/move_former_member_files",
+            "description": {
+              "content": "[members/move_former_member_files](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files)\n\nscope: `members.write`\n\nMoves removed member's files to a different member. This endpoint initiates an asynchronous job. To obtain the final result of the job, the client should periodically poll `members/move_former_member_files/job_status/check`.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "move_former_member_files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "46ed4224-bc46-4bc9-81ad-e74f06208e39",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "move_former_member_files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"transfer_dest_id\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"transfer_admin_id\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9abca89-7d72-401f-9602-9888142188d3",
+          "name": "Dropbox members/move_former_member_files/job_status/check",
+          "request": {
+            "name": "Dropbox members/move_former_member_files/job_status/check",
+            "description": {
+              "content": "[members/move_former_member_files/job_status/check](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files-job_status-check)\n\nscope: `members.write`\n\nOnce an async_job_id is returned from `members/move_former_member_files` , use this to poll the status of the asynchronous request.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "move_former_member_files",
+                "job_status",
+                "check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "02d3ef79-797d-4ec5-a91c-7ceb9a6e6a31",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "move_former_member_files",
+                    "job_status",
+                    "check"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"async_job_id\\\": \\\"34g93hh34h04y384084\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b683d55b-b775-416b-b714-91f380242ea0",
+          "name": "Dropbox members/recover",
+          "request": {
+            "name": "Dropbox members/recover",
+            "description": {
+              "content": "[members/recover](https://www.dropbox.com/developers/documentation/http/teams#team-members-recover)\n\nscope: `members.delete`\n\nRecover a deleted member.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "recover"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "4765a0fe-03f7-4603-9a10-4533fd9b7461",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "recover"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "abfa38c0-0089-4d07-93f6-ab7360aac909",
+          "name": "Dropbox members/remove",
+          "request": {
+            "name": "Dropbox members/remove",
+            "description": {
+              "content": "[members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove)\n\nscope: `members.delete`\n\nRemoves a member from a team.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account.\nAccounts can be recovered via `members/recover` for a 7 day period or until the account has been permanently deleted or transferred to another account (whichever comes first). Calling `members/add` while a user is still recoverable on your team will return with `MemberAddResult.user_already_on_team`.\nAccounts can have their files transferred via the admin console for a limited time, based on the version history length associated with the team (180 days for most teams).\nThis endpoint may initiate an asynchronous job. To obtain the final result of the job, the client should periodically poll `members/remove/job_status/get`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "remove"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "a449fe8c-1dcf-4bbd-b779-fec1ef614ca5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "remove"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"wipe_data\\\": true, \\n    \\\"transfer_dest_id\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"transfer_admin_id\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"keep_account\\\": false, \\n    \\\"retain_team_shares\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b07ad21d-199f-4cd9-90c4-9e957af76d2e",
+          "name": "Dropbox members/remove/job_status/get",
+          "request": {
+            "name": "Dropbox members/remove/job_status/get",
+            "description": {
+              "content": "[members/remove/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove-job_status-get)\n\nscope: `members.delete`\n\nOnce an async_job_id is returned from `members/remove` , use this to poll the status of the asynchronous request.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "remove",
+                "job_status",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "cb67a38a-8c94-4fde-b35b-ffa6b21d1848",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "remove",
+                    "job_status",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"async_job_id\\\": \\\"34g93hh34h04y384084\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \".tag\": \"complete\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38c4ea13-4ed2-44f2-8802-b9cbf3eeec0d",
+          "name": "Dropbox members/secondary_emails/add",
+          "request": {
+            "name": "Dropbox members/secondary_emails/add",
+            "description": {
+              "content": "[members/secondary_emails/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-add)\n\nscope: `members.write`\n\nAdd secondary emails to users.\nPermission : Team member management.\nEmails that are on verified domains will be verified automatically. For each email address not on a verified domain a verification email will be sent.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "secondary_emails",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "1430d2b3-8178-4875-acb5-12b22cce3354",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "secondary_emails",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"new_secondary_emails\\\": [\\n        {\\n            \\\"user\\\": {\\n                \\\".tag\\\": \\\"team_member_id\\\", \\n                \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n            }, \\n            \\\"secondary_emails\\\": [\\n                \\\"bob2@hotmail.com\\\", \\n                \\\"bob@inst.gov\\\"\\n            ]\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \".tag\": \"success\",\n      \"user\": {\n        \".tag\": \"team_member_id\",\n        \"team_member_id\": \"dbmid:efgh5678\"\n      },\n      \"results\": [\n        {\n          \".tag\": \"success\",\n          \"success\": {\n            \"email\": \"apple@orange.com\",\n            \"is_verified\": true\n          }\n        },\n        {\n          \".tag\": \"unavailable\",\n          \"unavailable\": \"alice@example.com\"\n        }\n      ]\n    },\n    {\n      \".tag\": \"invalid_user\",\n      \"invalid_user\": {\n        \".tag\": \"team_member_id\",\n        \"team_member_id\": \"dbmid:efgh5678\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "030b79a0-5930-4515-b389-a3c3c780d0db",
+          "name": "Dropbox members/secondary_emails/delete",
+          "request": {
+            "name": "Dropbox members/secondary_emails/delete",
+            "description": {
+              "content": "[members/secondary_emails/delete](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-delete)\n\nscope: `members.write`\n\nDelete secondary emails from users\nPermission : Team member management.\nUsers will be notified of deletions of verified secondary emails at both the secondary email and their primary email.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "secondary_emails",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "0832de65-8a8a-4b96-afed-43a8f1743e79",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "secondary_emails",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"emails_to_delete\\\": [\\n        {\\n            \\\"user\\\": {\\n                \\\".tag\\\": \\\"team_member_id\\\", \\n                \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n            }, \\n            \\\"secondary_emails\\\": [\\n                \\\"bob2@hotmail.com\\\", \\n                \\\"bob@inst.gov\\\"\\n            ]\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \".tag\": \"success\",\n      \"user\": {\n        \".tag\": \"team_member_id\",\n        \"team_member_id\": \"dbmid:efgh5678\"\n      },\n      \"results\": [\n        {\n          \".tag\": \"success\",\n          \"success\": \"alice@example.com\"\n        },\n        {\n          \".tag\": \"not_found\",\n          \"not_found\": \"alic@example.com\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9937bb8b-5210-4501-b639-8b312f0924ff",
+          "name": "Dropbox members/secondary_emails/resend_verification_emails",
+          "request": {
+            "name": "Dropbox members/secondary_emails/resend_verification_emails",
+            "description": {
+              "content": "[members/secondary_emails/resend_verification_emails](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-resend_verification_emails)\n\nscope: `members.write`\n\nResend secondary email verification emails.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "secondary_emails",
+                "resend_verification_emails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "566a5ccf-f999-4548-a9de-3a80e0dfe393",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "secondary_emails",
+                    "resend_verification_emails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"emails_to_resend\\\": [\\n        {\\n            \\\"user\\\": {\\n                \\\".tag\\\": \\\"team_member_id\\\", \\n                \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n            }, \\n            \\\"secondary_emails\\\": [\\n                \\\"bob2@hotmail.com\\\", \\n                \\\"bob@inst.gov\\\"\\n            ]\\n        }\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \".tag\": \"success\",\n      \"user\": {\n        \".tag\": \"team_member_id\",\n        \"team_member_id\": \"dbmid:efgh5678\"\n      },\n      \"results\": [\n        {\n          \".tag\": \"success\",\n          \"success\": \"alice@example.com\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e9ce517-f3c6-460c-8d0f-15400f3bb213",
+          "name": "Dropbox members/send_welcome_email",
+          "request": {
+            "name": "Dropbox members/send_welcome_email",
+            "description": {
+              "content": "[members/send_welcome_email](https://www.dropbox.com/developers/documentation/http/teams#team-members-send_welcome_email)\n\nscope: `members.write`\n\nSends welcome email to pending team member.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account.\nNo-op if team member is not pending.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "send_welcome_email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "ff069e5a-9281-4169-9232-a256567e329a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "send_welcome_email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\".tag\\\": \\\"team_member_id\\\", \\n    \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6f2b966a-6e8b-48ca-8990-01ceaf7cc258",
+          "name": "Dropbox members/set_admin_permissions",
+          "request": {
+            "name": "Dropbox members/set_admin_permissions",
+            "description": {
+              "content": "[members/set_admin_permissions](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_admin_permissions)\n\nscope: `members.write`\n\nUpdates a team member's permissions.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "set_admin_permissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "52a2460a-b4bc-43ef-b2d4-4861af5c1b27",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "set_admin_permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"new_role\\\": \\\"member_only\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"team_member_id\": \"dbmid:9978889\",\n  \"role\": {\n    \".tag\": \"member_only\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5031d03d-5c70-49d5-a53f-ae65541c92f7",
+          "name": "Dropbox members/set_profile",
+          "request": {
+            "name": "Dropbox members/set_profile",
+            "description": {
+              "content": "[members/set_profile](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile)\n\nscope: `members.write`\n\nUpdates a team member's profile.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "set_profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "c60c8cbc-bd26-45ba-b4aa-bd822305e235",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "set_profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"new_email\\\": \\\"t.smith@domain.com\\\", \\n    \\\"new_surname\\\": \\\"Smith\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profile\": {\n    \"team_member_id\": \"dbmid:FDFSVF-DFSDF\",\n    \"email\": \"tami@seagull.com\",\n    \"email_verified\": false,\n    \"status\": {\n      \".tag\": \"active\"\n    },\n    \"name\": {\n      \"given_name\": \"Franz\",\n      \"surname\": \"Ferdinand\",\n      \"familiar_name\": \"Franz\",\n      \"display_name\": \"Franz Ferdinand (Personal)\",\n      \"abbreviated_name\": \"FF\"\n    },\n    \"membership_type\": {\n      \".tag\": \"full\"\n    },\n    \"groups\": [\n      \"g:e2db7665347abcd600000000001a2b3c\"\n    ],\n    \"member_folder_id\": \"20\",\n    \"external_id\": \"244423\",\n    \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n    \"secondary_emails\": [\n      {\n        \"email\": \"grape@strawberry.com\",\n        \"is_verified\": false\n      },\n      {\n        \"email\": \"apple@orange.com\",\n        \"is_verified\": true\n      }\n    ],\n    \"joined_on\": \"2015-05-12T15:50:38Z\",\n    \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n  },\n  \"role\": {\n    \".tag\": \"member_only\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47c6fc41-ab7d-43d6-8da9-8ff745e02d61",
+          "name": "Dropbox members/set_profile_photo",
+          "request": {
+            "name": "Dropbox members/set_profile_photo",
+            "description": {
+              "content": "[members/set_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile_photo)\n\nscope: `members.write`\n\nUpdates a team member's profile photo.\nPermission : Team member management.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "set_profile_photo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "72c41050-0c29-4c42-a1d0-130abb7ce7d0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "set_profile_photo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"photo\\\": {\\n        \\\".tag\\\": \\\"base64_data\\\", \\n        \\\"base64_data\\\": \\\"SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4=\\\"\\n    }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7481",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profile\": {\n    \"team_member_id\": \"dbmid:FDFSVF-DFSDF\",\n    \"email\": \"tami@seagull.com\",\n    \"email_verified\": false,\n    \"status\": {\n      \".tag\": \"active\"\n    },\n    \"name\": {\n      \"given_name\": \"Franz\",\n      \"surname\": \"Ferdinand\",\n      \"familiar_name\": \"Franz\",\n      \"display_name\": \"Franz Ferdinand (Personal)\",\n      \"abbreviated_name\": \"FF\"\n    },\n    \"membership_type\": {\n      \".tag\": \"full\"\n    },\n    \"groups\": [\n      \"g:e2db7665347abcd600000000001a2b3c\"\n    ],\n    \"member_folder_id\": \"20\",\n    \"external_id\": \"244423\",\n    \"account_id\": \"dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc\",\n    \"secondary_emails\": [\n      {\n        \"email\": \"grape@strawberry.com\",\n        \"is_verified\": false\n      },\n      {\n        \"email\": \"apple@orange.com\",\n        \"is_verified\": true\n      }\n    ],\n    \"joined_on\": \"2015-05-12T15:50:38Z\",\n    \"profile_photo_url\": \"https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128\"\n  },\n  \"role\": {\n    \".tag\": \"member_only\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5cc38ea-4aae-46bc-a73b-3f192f8365d3",
+          "name": "Dropbox members/suspend",
+          "request": {
+            "name": "Dropbox members/suspend",
+            "description": {
+              "content": "[members/suspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-suspend)\n\nscope: `members.write`\n\nSuspend a member from a team.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "suspend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "347b855f-8148-4015-a322-3221582e3000",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }, \\n    \\\"wipe_data\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7251a9cc-35c7-4eee-b591-5e8ce8e4d6dd",
+          "name": "Dropbox members/unsuspend",
+          "request": {
+            "name": "Dropbox members/unsuspend",
+            "description": {
+              "content": "[members/unsuspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-unsuspend)\n\nscope: `members.write`\n\nUnsuspend a member from a team.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "members",
+                "unsuspend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "b3a24fcc-ba35-4220-93aa-5ff016d6eaf7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "members",
+                    "unsuspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"user\\\": {\\n        \\\".tag\\\": \\\"team_member_id\\\", \\n        \\\"team_member_id\\\": \\\"dbmid:efgh5678\\\"\\n    }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ab209110-dc7b-4261-a1b7-a19296faaa5f",
+    "name": "Dropbox API Reference Account Team > Members API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

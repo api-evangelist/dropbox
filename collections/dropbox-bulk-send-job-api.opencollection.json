@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Bulk Send Job API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bulk Send Job",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox _t__BulkSendJobGet::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/bulk_send_job/:bulk_send_job_id",
+            "params": [
+              {
+                "name": "bulk_send_job_id",
+                "value": "6e683bc0369ba3d5b6f43c2c22a8031dbf6bd174",
+                "type": "path",
+                "description": "_t__BulkSendJobGet::BULK_SEND_JOB_ID"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "_t__BulkSendJobGet::PAGE"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "_t__BulkSendJobGet::PAGE_SIZE"
+              }
+            ]
+          },
+          "docs": "_t__BulkSendJobGet::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__BulkSendJobList::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/bulk_send_job/list",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "_t__BulkSendJobList::PAGE"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "_t__BulkSendJobList::PAGE_SIZE"
+              }
+            ]
+          },
+          "docs": "_t__BulkSendJobList::DESCRIPTION"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

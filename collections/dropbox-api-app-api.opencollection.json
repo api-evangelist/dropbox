@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Api App API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Api App",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox _t__ApiAppCreate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/api_app",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__ApiAppCreate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__ApiAppGet::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/api_app/:client_id",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "0dd3b823a682527788c4e40cb7b6f7e9",
+                "type": "path",
+                "description": "_t__ApiAppGet::CLIENT_ID"
+              }
+            ]
+          },
+          "docs": "_t__ApiAppGet::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__ApiAppUpdate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.dropbox.com/api_app/:client_id",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "0dd3b823a682527788c4e40cb7b6f7e9",
+                "type": "path",
+                "description": "_t__ApiAppUpdate::CLIENT_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__ApiAppUpdate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__ApiAppDelete::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.dropbox.com/api_app/:client_id",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "0dd3b823a682527788c4e40cb7b6f7e9",
+                "type": "path",
+                "description": "_t__ApiAppDelete::CLIENT_ID"
+              }
+            ]
+          },
+          "docs": "_t__ApiAppDelete::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__ApiAppList::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dropbox.com/api_app/list",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "_t__ApiAppList::PAGE"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "_t__ApiAppList::PAGE_SIZE"
+              }
+            ]
+          },
+          "docs": "_t__ApiAppList::DESCRIPTION"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

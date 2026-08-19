@@ -1,0 +1,784 @@
+{
+  "item": [
+    {
+      "id": "ed6811fa-6801-44bd-9937-27a35d364889",
+      "name": "Team > Legal_holds",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b9455074-f6b8-457c-87a6-01896d4818c6",
+          "name": "Dropbox legal_holds/create_policy",
+          "request": {
+            "name": "Dropbox legal_holds/create_policy",
+            "description": {
+              "content": "[legal_holds/create_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-create_policy)\n\nscope: `team_data.member`\n\nCreates new legal hold policy. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "legal_holds",
+                "create_policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "47dcbc55-645b-4b1b-a852-b33ecd5ac3b6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "legal_holds",
+                    "create_policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"name\\\": \\\"acme cfo policy\\\", \\n    \\\"members\\\": [\\n        \\\"dbmid:FDFSVF-DFSDF\\\"\\n    ], \\n    \\\"start_date\\\": \\\"2016-01-01T00:00:00Z\\\", \\n    \\\"end_date\\\": \\\"2017-12-31T00:00:00Z\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7824",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"pid_dbhid:abcd1234\",\n  \"name\": \"acme cfo policy\",\n  \"members\": {\n    \"team_member_ids\": [\n      \"dbmid:efgh5678\"\n    ],\n    \"permanently_deleted_users\": 2\n  },\n  \"status\": {\n    \".tag\": \"active\"\n  },\n  \"start_date\": \"2016-01-01T00:00:00Z\",\n  \"activation_time\": \"2016-01-20T00:00:10Z\",\n  \"end_date\": \"2017-12-31T00:00:00Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19166148-e084-48d6-9adb-41a163550831",
+          "name": "Dropbox legal_holds/get_policy",
+          "request": {
+            "name": "Dropbox legal_holds/get_policy",
+            "description": {
+              "content": "[legal_holds/get_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-get_policy)\n\nscope: `team_data.member`\n\nGets a legal hold by Id. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "legal_holds",
+                "get_policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "62a11c33-0eab-4b95-a1ac-38a6f23eace8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "legal_holds",
+                    "get_policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"id\\\": \\\"pid_dbhid:abcd1234\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7824",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"pid_dbhid:abcd1234\",\n  \"name\": \"acme cfo policy\",\n  \"members\": {\n    \"team_member_ids\": [\n      \"dbmid:efgh5678\"\n    ],\n    \"permanently_deleted_users\": 2\n  },\n  \"status\": {\n    \".tag\": \"active\"\n  },\n  \"start_date\": \"2016-01-01T00:00:00Z\",\n  \"activation_time\": \"2016-01-20T00:00:10Z\",\n  \"end_date\": \"2017-12-31T00:00:00Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "facce20f-3fe9-4b8c-b848-9a2b9d267b35",
+          "name": "Dropbox legal_holds/list_held_revisions",
+          "request": {
+            "name": "Dropbox legal_holds/list_held_revisions",
+            "description": {
+              "content": "[legal_holds/list_held_revisions](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_held_revisions)\n\nscope: `team_data.member`\n\nList the file metadata that's under the hold. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "legal_holds",
+                "list_held_revisions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "3deec365-201d-4e61-89e5-64c12e944e57",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "legal_holds",
+                    "list_held_revisions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"id\\\": \\\"pid_dbhid:abcd1234\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7824",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"new_filename\": \"111_222.pdf\",\n      \"original_revision_id\": \"ab2rij4i5ojgfd\",\n      \"original_file_path\": \"/a.pdf\",\n      \"server_modified\": \"2019-08-12T12:08:52Z\",\n      \"author_member_id\": \"dbmid:abcd1234abcd1234abcd1234abcd1234a23\",\n      \"author_member_status\": {\n        \".tag\": \"active\"\n      },\n      \"author_email\": \"a@a.com\",\n      \"file_type\": \"Document\",\n      \"size\": 3,\n      \"content_hash\": \"abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234\"\n    }\n  ],\n  \"has_more\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3bc4d86-6db3-411a-9f5a-d92aea7bdcb5",
+          "name": "Dropbox legal_holds/list_held_revisions_continue",
+          "request": {
+            "name": "Dropbox legal_holds/list_held_revisions_continue",
+            "description": {
+              "content": "[legal_holds/list_held_revisions_continue](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_held_revisions_continue)\n\nscope: `team_data.member`\n\nContinue listing the file metadata that's under the hold. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "legal_holds",
+                "list_held_revisions_continue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "9fdb85c0-d1d0-41fc-9cfa-938885edceb5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "legal_holds",
+                    "list_held_revisions_continue"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"id\\\": \\\"pid_dbhid:abcd1234\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7824",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"new_filename\": \"111_222.pdf\",\n      \"original_revision_id\": \"ab2rij4i5ojgfd\",\n      \"original_file_path\": \"/a.pdf\",\n      \"server_modified\": \"2019-08-12T12:08:52Z\",\n      \"author_member_id\": \"dbmid:abcd1234abcd1234abcd1234abcd1234a23\",\n      \"author_member_status\": {\n        \".tag\": \"active\"\n      },\n      \"author_email\": \"a@a.com\",\n      \"file_type\": \"Document\",\n      \"size\": 3,\n      \"content_hash\": \"abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234\"\n    }\n  ],\n  \"has_more\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1f861651-9fdd-4624-8d20-d34d19e85d6e",
+          "name": "Dropbox legal_holds/list_policies",
+          "request": {
+            "name": "Dropbox legal_holds/list_policies",
+            "description": {
+              "content": "[legal_holds/list_policies](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-list_policies)\n\nscope: `team_data.member`\n\nLists legal holds on a team. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "legal_holds",
+                "list_policies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "573644d7-1f44-425b-8456-69fd9e95c141",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "legal_holds",
+                    "list_policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"include_released\\\": false\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7824",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"policies\": [\n    {\n      \"id\": \"pid_dbhid:abcd1234\",\n      \"name\": \"acme cfo policy\",\n      \"members\": {\n        \"team_member_ids\": [\n          \"dbmid:efgh5678\"\n        ],\n        \"permanently_deleted_users\": 2\n      },\n      \"status\": {\n        \".tag\": \"active\"\n      },\n      \"start_date\": \"2016-01-01T00:00:00Z\",\n      \"activation_time\": \"2016-01-20T00:00:10Z\",\n      \"end_date\": \"2017-12-31T00:00:00Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b4f06585-28c9-411a-857c-d296b36aed68",
+          "name": "Dropbox legal_holds/release_policy",
+          "request": {
+            "name": "Dropbox legal_holds/release_policy",
+            "description": {
+              "content": "[legal_holds/release_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-release_policy)\n\nscope: `team_data.member`\n\nReleases a legal hold by Id. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "legal_holds",
+                "release_policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "77cdb6d8-b54e-4ee4-8efb-96b8e6d5dd18",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "legal_holds",
+                    "release_policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"id\\\": \\\"pid_dbhid:abcd1234\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6caa99e-d014-415e-aa83-672d64435ad7",
+          "name": "Dropbox legal_holds/update_policy",
+          "request": {
+            "name": "Dropbox legal_holds/update_policy",
+            "description": {
+              "content": "[legal_holds/update_policy](https://www.dropbox.com/developers/documentation/http/teams#team-legal_holds-update_policy)\n\nscope: `team_data.member`\n\nUpdates a legal hold. Note: Legal Holds is a paid add-on. Not all teams have the feature.\nPermission : Team member file access.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2",
+                "team",
+                "legal_holds",
+                "update_policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "ab528fe8-13ce-46e8-bb42-957a3e5ec953",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2",
+                    "team",
+                    "legal_holds",
+                    "update_policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"id\\\": \\\"pid_dbhid:abcd1234\\\", \\n    \\\"members\\\": [\\n        \\\"dbmid:FDFSVF-DFSDF\\\"\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Dropbox-Request-Id",
+                  "value": "7824",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"pid_dbhid:abcd1234\",\n  \"name\": \"acme cfo policy\",\n  \"members\": {\n    \"team_member_ids\": [\n      \"dbmid:efgh5678\"\n    ],\n    \"permanently_deleted_users\": 2\n  },\n  \"status\": {\n    \".tag\": \"active\"\n  },\n  \"start_date\": \"2016-01-01T00:00:00Z\",\n  \"activation_time\": \"2016-01-20T00:00:10Z\",\n  \"end_date\": \"2017-12-31T00:00:00Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dropbox.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f458cbc1-6dd5-4740-9341-c84d5db8c9ce",
+    "name": "Dropbox API Reference Account Team > Legal_holds API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n",
+      "type": "text/plain"
+    }
+  }
+}

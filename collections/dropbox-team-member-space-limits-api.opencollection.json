@@ -1,0 +1,143 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Team > Member_space_limits API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team > Member_space_limits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox member_space_limits/excluded_users/add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/member_space_limits/excluded_users/add",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[member_space_limits/excluded_users/add](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-add)\n\nscope: `members.write`\n\nAdd users to member space limits excluded users list."
+        },
+        {
+          "info": {
+            "name": "Dropbox member_space_limits/excluded_users/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/member_space_limits/excluded_users/list",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[member_space_limits/excluded_users/list](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-list)\n\nscope: `members.read`\n\nList member space limits excluded users."
+        },
+        {
+          "info": {
+            "name": "Dropbox member_space_limits/excluded_users/list/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/member_space_limits/excluded_users/list/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[member_space_limits/excluded_users/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-list-continue)\n\nscope: `members.read`\n\nContinue listing member space limits excluded users."
+        },
+        {
+          "info": {
+            "name": "Dropbox member_space_limits/excluded_users/remove",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/member_space_limits/excluded_users/remove",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[member_space_limits/excluded_users/remove](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-excluded_users-remove)\n\nscope: `members.write`\n\nRemove users from member space limits excluded users list."
+        },
+        {
+          "info": {
+            "name": "Dropbox member_space_limits/get_custom_quota",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/member_space_limits/get_custom_quota",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[member_space_limits/get_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-get_custom_quota)\n\nscope: `members.read`\n\nGet users custom quota. Returns none as the custom quota if none was set. A maximum of 1000 members can be specified in a single call."
+        },
+        {
+          "info": {
+            "name": "Dropbox member_space_limits/remove_custom_quota",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/member_space_limits/remove_custom_quota",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[member_space_limits/remove_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-remove_custom_quota)\n\nscope: `members.write`\n\nRemove users custom quota. A maximum of 1000 members can be specified in a single call."
+        },
+        {
+          "info": {
+            "name": "Dropbox member_space_limits/set_custom_quota",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/member_space_limits/set_custom_quota",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[member_space_limits/set_custom_quota](https://www.dropbox.com/developers/documentation/http/teams#team-member_space_limits-set_custom_quota)\n\nscope: `members.read`\n\nSet users custom quota. Custom quota has to be at least 15GB. A maximum of 1000 members can be specified in a single call."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

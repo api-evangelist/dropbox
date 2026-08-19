@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Auth API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox token/from_oauth1",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/auth/token/from_oauth1",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[token/from_oauth1](https://www.dropbox.com/developers/documentation/http/documentation#auth-token-from_oauth1)\n\nscope: `None`\n\nCreates an OAuth 2.0 access token from the supplied OAuth 1.0 access token."
+        },
+        {
+          "info": {
+            "name": "Dropbox token/revoke",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/auth/token/revoke"
+          },
+          "docs": "[token/revoke](https://www.dropbox.com/developers/documentation/http/documentation#auth-token-revoke)\n\nscope: `None`\n\nDisables the access token used to authenticate the call.      "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

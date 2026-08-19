@@ -1,0 +1,364 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Team > Members API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team > Members",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox members/add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/add",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-add)\n\nscope: `members.write`\n\nAdds members to a team.\nPermission : Team member management\nA maximum of 20 members can be specified in a single call.\nIf no Dropbox account exists with the email address specified, a new Dropbox account will be created with the given email address, and that account will be invited to the team.\nIf a personal Dropbox account exists with the email address specified in the call, this"
+        },
+        {
+          "info": {
+            "name": "Dropbox members/add/job_status/get",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/add/job_status/get",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/add/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-add-job_status-get)\n\nscope: `members.write`\n\nOnce an async_job_id is returned from `members/add` , use this to poll the status of the asynchronous request.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/delete_profile_photo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/delete_profile_photo",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/delete_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-delete_profile_photo)\n\nscope: `members.write`\n\nDeletes a team member's profile photo.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/get_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/get_info",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-members-get_info)\n\nscope: `members.read`\n\nReturns information about multiple team members.\nPermission : Team information\nThis endpoint will return `MembersGetInfoItem.id_not_found`, for IDs (or emails) that cannot be matched to a valid team member."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/list",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/list](https://www.dropbox.com/developers/documentation/http/teams#team-members-list)\n\nscope: `members.read`\n\nLists members of a team.\nPermission : Team information."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/list/continue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/list/continue",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-members-list-continue)\n\nscope: `members.read`\n\nOnce a cursor has been retrieved from `members/list`, use this to paginate through all team members.\nPermission : Team information."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/move_former_member_files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/move_former_member_files",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/move_former_member_files](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files)\n\nscope: `members.write`\n\nMoves removed member's files to a different member. This endpoint initiates an asynchronous job. To obtain the final result of the job, the client should periodically poll `members/move_former_member_files/job_status/check`.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/move_former_member_files/job_status/check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/move_former_member_files/job_status/check",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/move_former_member_files/job_status/check](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files-job_status-check)\n\nscope: `members.write`\n\nOnce an async_job_id is returned from `members/move_former_member_files` , use this to poll the status of the asynchronous request.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/recover",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/recover",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/recover](https://www.dropbox.com/developers/documentation/http/teams#team-members-recover)\n\nscope: `members.delete`\n\nRecover a deleted member.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/remove",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/remove",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove)\n\nscope: `members.delete`\n\nRemoves a member from a team.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account.\nAccounts can be recovered via `members/recover` for a 7 day period or until the account has been permanently deleted or transferred to another account (whichever comes first). Calling `members/add` while a user"
+        },
+        {
+          "info": {
+            "name": "Dropbox members/remove/job_status/get",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/remove/job_status/get",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/remove/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove-job_status-get)\n\nscope: `members.delete`\n\nOnce an async_job_id is returned from `members/remove` , use this to poll the status of the asynchronous request.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/secondary_emails/add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/secondary_emails/add",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/secondary_emails/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-add)\n\nscope: `members.write`\n\nAdd secondary emails to users.\nPermission : Team member management.\nEmails that are on verified domains will be verified automatically. For each email address not on a verified domain a verification email will be sent."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/secondary_emails/delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/secondary_emails/delete",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/secondary_emails/delete](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-delete)\n\nscope: `members.write`\n\nDelete secondary emails from users\nPermission : Team member management.\nUsers will be notified of deletions of verified secondary emails at both the secondary email and their primary email."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/secondary_emails/resend_verification_emails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/secondary_emails/resend_verification_emails",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/secondary_emails/resend_verification_emails](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-resend_verification_emails)\n\nscope: `members.write`\n\nResend secondary email verification emails.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/send_welcome_email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/send_welcome_email",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/send_welcome_email](https://www.dropbox.com/developers/documentation/http/teams#team-members-send_welcome_email)\n\nscope: `members.write`\n\nSends welcome email to pending team member.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account.\nNo-op if team member is not pending."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/set_admin_permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/set_admin_permissions",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/set_admin_permissions](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_admin_permissions)\n\nscope: `members.write`\n\nUpdates a team member's permissions.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/set_profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/set_profile",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/set_profile](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile)\n\nscope: `members.write`\n\nUpdates a team member's profile.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/set_profile_photo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/set_profile_photo",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/set_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile_photo)\n\nscope: `members.write`\n\nUpdates a team member's profile photo.\nPermission : Team member management."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/suspend",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/suspend",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/suspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-suspend)\n\nscope: `members.write`\n\nSuspend a member from a team.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account."
+        },
+        {
+          "info": {
+            "name": "Dropbox members/unsuspend",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/2/team/members/unsuspend",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "[members/unsuspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-unsuspend)\n\nscope: `members.write`\n\nUnsuspend a member from a team.\nPermission : Team member management\nExactly one of team_member_id, email, or external_id must be provided to identify the user account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

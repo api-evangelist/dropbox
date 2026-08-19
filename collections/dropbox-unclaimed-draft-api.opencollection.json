@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dropbox API Reference Account Unclaimed Draft API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Unclaimed Draft",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dropbox _t__UnclaimedDraftCreate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/unclaimed_draft/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__UnclaimedDraftCreate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__UnclaimedDraftCreateEmbedded::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/unclaimed_draft/create_embedded",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__UnclaimedDraftCreateEmbedded::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__UnclaimedDraftCreateEmbeddedWithTemplate::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/unclaimed_draft/create_embedded_with_template",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__UnclaimedDraftCreateEmbeddedWithTemplate::DESCRIPTION"
+        },
+        {
+          "info": {
+            "name": "Dropbox _t__UnclaimedDraftEditAndResend::SUMMARY",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dropbox.com/unclaimed_draft/edit_and_resend/:signature_request_id",
+            "params": [
+              {
+                "name": "signature_request_id",
+                "value": "fa5c8a0b0f492d768749333ad6fcc214c111e967",
+                "type": "path",
+                "description": "_t__UnclaimedDraftEditAndResend::SIGNATURE_REQUEST_ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "_t__UnclaimedDraftEditAndResend::DESCRIPTION"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
