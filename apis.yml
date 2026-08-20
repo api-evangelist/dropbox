@@ -27,6 +27,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - API App
+  tags_raw:
   - Api App
   properties:
   - type: OpenAPI
@@ -47,6 +49,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -204,6 +208,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - File Requests
+  tags_raw:
   - File_requests
   properties:
   - type: OpenAPI
@@ -224,6 +230,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -244,6 +252,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - Authentication
+  tags_raw:
   - OAuth
   properties:
   - type: OpenAPI
@@ -467,6 +477,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - Team Members
+  tags_raw:
   - Team > Members
   properties:
   - type: OpenAPI
@@ -587,6 +599,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
