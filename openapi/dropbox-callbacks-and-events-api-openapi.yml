@@ -1,0 +1,970 @@
+openapi: 3.2.0
+info:
+  title: Dropbox Sign Callbacks and Events API
+  description: The Dropbox Sign API offers a reliable, flexible set of eSignature tools that can be used to power digital agreements and turn slow, outdated business processes into a competitive advantage. With a broad range of highly-configurable features, the Dropbox Sign API empowers you to build secure signing experiences and document workflows that delight your users.
+  termsOfService: https://www.hellosign.com/terms
+  contact:
+    email: apisupport@hellosign.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  version: 3.0.0
+servers:
+- url: https://api.hellosign.com/v3
+security:
+- api_key: []
+  oauth2:
+  - account_access
+  - signature_request_access
+  - template_access
+  - team_access
+  - api_app_access
+  - basic_account_info
+  - request_signature
+tags:
+- name: Callbacks and Events
+paths: {}
+webhooks:
+  accountCallback:
+    post:
+      summary: _t__OpenApi::ACCOUNT_CALLBACK::SUMMARY
+      operationId: accountUpdateEventCallback
+      description: _md__OpenApi::ACCOUNT_CALLBACK::DESCRIPTION
+      x-meta:
+        seo:
+          title: _t__accountUpdateEventCallback::SEO::TITLE
+          description: _t__accountUpdateEventCallback::SEO::DESCRIPTION
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/EventCallback.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/EventCallback.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/EventCallback.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/EventCallback.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/EventCallback.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/EventCallback.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/EventCallback.py
+      tags:
+      - Callbacks and Events
+      requestBody:
+        $ref: '#/components/requestBodies/EventCallbackAccountRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/EventCallbackResponse'
+  appCallback:
+    post:
+      summary: _t__OpenApi::APP_CALLBACK::SUMMARY
+      description: _md__OpenApi::APP_CALLBACK::DESCRIPTION
+      operationId: apiAppCreateEventCallback
+      x-meta:
+        seo:
+          title: _t__appCreateEventCallback::SEO::TITLE
+          description: _t__appCreateEventCallback::SEO::DESCRIPTION
+      x-codeSamples:
+      - lang: PHP
+        label: PHP
+        source:
+          $ref: examples/EventCallback.php
+      - lang: C#
+        label: C#
+        source:
+          $ref: examples/EventCallback.cs
+      - lang: JavaScript
+        label: JavaScript
+        source:
+          $ref: examples/EventCallback.js
+      - lang: TypeScript
+        label: TypeScript
+        source:
+          $ref: examples/EventCallback.ts
+      - lang: Java
+        label: Java
+        source:
+          $ref: examples/EventCallback.java
+      - lang: Ruby
+        label: Ruby
+        source:
+          $ref: examples/EventCallback.rb
+      - lang: Python
+        label: Python
+        source:
+          $ref: examples/EventCallback.py
+      tags:
+      - Callbacks and Events
+      requestBody:
+        $ref: '#/components/requestBodies/EventCallbackAppRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/EventCallbackResponse'
+components:
+  schemas:
+    TemplateResponseAccountQuota:
+      description: _t__TemplateResponseAccountQuota::DESCRIPTION
+      properties:
+        templates_left:
+          description: _t__TemplateResponseAccountQuota::TEMPLATES_LEFT
+          type: integer
+        api_signature_requests_left:
+          description: _t__TemplateResponseAccountQuota::API_SIGNATURE_REQUESTS_LEFT
+          type: integer
+        documents_left:
+          description: _t__TemplateResponseAccountQuota::DOCUMENTS_LEFT
+          type: integer
+        sms_verifications_left:
+          description: _t__TemplateResponseAccountQuota::SMS_VERIFICATIONS_LEFT
+          type: integer
+      type: object
+      x-internal: true
+    SignatureRequestResponseAttachment:
+      description: _t__SignatureRequestResponseAttachment::DESCRIPTION
+      required:
+      - id
+      - signer
+      - name
+      - required
+      properties:
+        id:
+          description: _t__SignatureRequestResponseAttachment::ID
+          type: string
+        signer:
+          description: _t__SignatureRequestResponseAttachment::SIGNER
+          type: string
+        name:
+          description: _t__SignatureRequestResponseAttachment::NAME
+          type: string
+        required:
+          description: _t__SignatureRequestResponseAttachment::REQUIRED
+          type: boolean
+        instructions:
+          description: _t__SignatureRequestResponseAttachment::INSTRUCTIONS
+          type:
+          - string
+          - 'null'
+        uploaded_at:
+          description: _t__SignatureRequestResponseAttachment::UPLOADED_AT
+          type:
+          - integer
+          - 'null'
+      type: object
+      x-internal: true
+    EventCallbackRequestEvent:
+      description: _t__EventCallbackRequestEvent::DESCRIPTION
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      properties:
+        event_time:
+          description: _t__EventCallbackRequestEvent::EVENT_TIME
+          type: string
+        event_type:
+          description: _t__EventCallbackRequestEvent::EVENT_TYPE
+          type: string
+          enum:
+          - account_confirmed
+          - unknown_error
+          - file_error
+          - sign_url_invalid
+          - signature_request_viewed
+          - signature_request_signed
+          - signature_request_sent
+          - signature_request_all_signed
+          - signature_request_email_bounce
+          - signature_request_remind
+          - signature_request_incomplete_qes
+          - signature_request_destroyed
+          - signature_request_canceled
+          - signature_request_downloadable
+          - signature_request_declined
+          - signature_request_reassigned
+          - signature_request_invalid
+          - signature_request_prepared
+          - signature_request_expired
+          - template_created
+          - template_error
+          - callback_test
+          - signature_request_signer_removed
+        event_hash:
+          description: _t__EventCallbackRequestEvent::EVENT_HASH
+          type: string
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      type: object
+    SignatureRequestResponseDataBase:
+      description: _t__SignatureRequestResponseData::DESCRIPTION
+      properties:
+        api_id:
+          description: _t__SignatureRequestResponseData::API_ID
+          type: string
+        signature_id:
+          description: _t__SignatureRequestResponseData::SIGNATURE_ID
+          type: string
+        name:
+          description: _t__SignatureRequestResponseData::NAME
+          type: string
+        required:
+          description: _t__SignatureRequestResponseData::REQUIRED
+          type: boolean
+        type:
+          type: string
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SignatureRequestResponseDataValueText'
+          checkbox: '#/components/schemas/SignatureRequestResponseDataValueCheckbox'
+          dropdown: '#/components/schemas/SignatureRequestResponseDataValueDropdown'
+          radio: '#/components/schemas/SignatureRequestResponseDataValueRadio'
+          signature: '#/components/schemas/SignatureRequestResponseDataValueSignature'
+          date_signed: '#/components/schemas/SignatureRequestResponseDataValueDateSigned'
+          initials: '#/components/schemas/SignatureRequestResponseDataValueInitials'
+          text-merge: '#/components/schemas/SignatureRequestResponseDataValueTextMerge'
+          checkbox-merge: '#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge'
+      x-internal: true
+      x-base-class: true
+    AccountResponseQuotas:
+      description: _t__Account::QUOTA
+      properties:
+        api_signature_requests_left:
+          description: _t__AccountQuota::API_SIGNATURE_REQUESTS_LEFT
+          type:
+          - integer
+          - 'null'
+        documents_left:
+          description: _t__AccountQuota::DOCUMENTS_LEFT
+          type:
+          - integer
+          - 'null'
+        templates_total:
+          description: _t__AccountQuota::TEMPLATES_TOTAL
+          type:
+          - integer
+          - 'null'
+        templates_left:
+          description: _t__AccountQuota::TEMPLATES_LEFT
+          type:
+          - integer
+          - 'null'
+        sms_verifications_left:
+          description: _t__AccountQuota::SMS_VERIFICATIONS_LEFT
+          type:
+          - integer
+          - 'null'
+      type: object
+      x-internal: true
+    TemplateResponse:
+      description: _t__TemplateResponse::DESCRIPTION
+      properties:
+        template_id:
+          description: _t__TemplateResponse::TEMPLATE_ID
+          type: string
+        title:
+          description: _t__TemplateResponse::TITLE
+          type: string
+        message:
+          description: _t__TemplateResponse::MESSAGE
+          type: string
+        updated_at:
+          description: _t__TemplateResponse::UPDATED_AT
+          type: integer
+        is_embedded:
+          description: _t__TemplateResponse::IS_EMBEDDED
+          type:
+          - boolean
+          - 'null'
+        is_creator:
+          description: _t__TemplateResponse::IS_CREATOR
+          type:
+          - boolean
+          - 'null'
+        can_edit:
+          description: _t__TemplateResponse::CAN_EDIT
+          type:
+          - boolean
+          - 'null'
+        is_locked:
+          description: _t__TemplateResponse::IS_LOCKED
+          type:
+          - boolean
+          - 'null'
+        metadata:
+          description: _t__TemplateResponse::METADATA
+          type: object
+        signer_roles:
+          description: _t__TemplateResponse::SIGNER_ROLES
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseSignerRole'
+        cc_roles:
+          description: _t__TemplateResponse::CC_ROLES
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseCCRole'
+        documents:
+          description: _t__TemplateResponse::DOCUMENTS
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocument'
+        custom_fields:
+          description: _t__TemplateResponseCustomField::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+          deprecated: true
+        named_form_fields:
+          description: _t__TemplateResponseNamedFormField::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+          deprecated: true
+        accounts:
+          description: _t__TemplateResponse::ACCOUNTS
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseAccount'
+      type: object
+      x-internal: true
+    TemplateResponseDocumentFormFieldBase:
+      description: _t__TemplateResponseDocumentFormField::DESCRIPTION
+      required:
+      - type
+      properties:
+        api_id:
+          description: _t__TemplateResponseDocumentFormField::API_ID
+          type: string
+        name:
+          description: _t__TemplateResponseDocumentFormField::NAME
+          type: string
+        type:
+          type: string
+        signer:
+          description: _t__TemplateResponseDocumentFormField::SIGNER
+          type: string
+        x:
+          description: _t__TemplateResponseDocumentFormField::X
+          type: integer
+        y:
+          description: _t__TemplateResponseDocumentFormField::Y
+          type: integer
+        width:
+          description: _t__TemplateResponseDocumentFormField::WIDTH
+          type: integer
+        height:
+          description: _t__TemplateResponseDocumentFormField::HEIGHT
+          type: integer
+        required:
+          description: _t__TemplateResponseDocumentFormField::REQUIRED
+          type: boolean
+        group:
+          description: _t__TemplateResponseDocumentFormField::GROUP
+          type:
+          - string
+          - 'null'
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TemplateResponseDocumentFormFieldText'
+          dropdown: '#/components/schemas/TemplateResponseDocumentFormFieldDropdown'
+          hyperlink: '#/components/schemas/TemplateResponseDocumentFormFieldHyperlink'
+          checkbox: '#/components/schemas/TemplateResponseDocumentFormFieldCheckbox'
+          radio: '#/components/schemas/TemplateResponseDocumentFormFieldRadio'
+          signature: '#/components/schemas/TemplateResponseDocumentFormFieldSignature'
+          date_signed: '#/components/schemas/TemplateResponseDocumentFormFieldDateSigned'
+          initials: '#/components/schemas/TemplateResponseDocumentFormFieldInitials'
+      x-internal: true
+      x-base-class: true
+    SignatureRequestResponse:
+      description: _t__SignatureRequestResponse::DESCRIPTION
+      properties:
+        test_mode:
+          description: _t__SignatureRequestResponse::TEST_MODE
+          type:
+          - boolean
+          - 'null'
+          default: false
+        signature_request_id:
+          description: _t__SignatureRequestResponse::SIGNATURE_REQUEST_ID
+          type: string
+        requester_email_address:
+          description: _t__SignatureRequestResponse::REQUESTER_EMAIL_ADDRESS
+          type: string
+        title:
+          description: _t__SignatureRequestResponse::TITLE
+          type: string
+        original_title:
+          description: _t__SignatureRequestResponse::ORIGINAL_TITLE
+          type: string
+        subject:
+          description: _t__SignatureRequestResponse::SUBJECT
+          type:
+          - string
+          - 'null'
+        message:
+          description: _t__SignatureRequestResponse::MESSAGE
+          type:
+          - string
+          - 'null'
+        metadata:
+          description: _t__SignatureRequestResponse::METADATA
+          type: object
+        created_at:
+          description: _t__SignatureRequestResponse::CREATED_AT
+          type: integer
+        expires_at:
+          description: _t__SignatureRequestResponse::EXPIRES_AT
+          type: integer
+        is_complete:
+          description: _t__SignatureRequestResponse::IS_COMPLETE
+          type: boolean
+        is_declined:
+          description: _t__SignatureRequestResponse::IS_DECLINED
+          type: boolean
+        has_error:
+          description: _t__SignatureRequestResponse::HAS_ERROR
+          type: boolean
+        files_url:
+          description: _t__SignatureRequestResponse::FILES_URL
+          type: string
+        signing_url:
+          description: _t__SignatureRequestResponse::SIGNING_URL
+          type:
+          - string
+          - 'null'
+        details_url:
+          description: _t__SignatureRequestResponse::DETAILS_URL
+          type: string
+        cc_email_addresses:
+          description: _t__SignatureRequestResponse::CC_EMAIL_ADDRESSES
+          type: array
+          items:
+            type: string
+        signing_redirect_url:
+          description: _t__SignatureRequestResponse::SIGNING_REDIRECT_URL
+          type:
+          - string
+          - 'null'
+        final_copy_uri:
+          description: _t__SignatureRequestResponse::FINAL_COPY_URI
+          type:
+          - string
+          - 'null'
+        template_ids:
+          description: _t__SignatureRequestResponse::TEMPLATE_IDS
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        custom_fields:
+          description: _t__SignatureRequestResponseCustomField::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
+        attachments:
+          description: _t__SignatureRequestResponseAttachment::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseAttachment'
+        response_data:
+          description: _t__SignatureRequestResponseData::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        signatures:
+          description: _t__SignatureRequestResponseSignatures::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseSignatures'
+        bulk_send_job_id:
+          description: _t__SignatureRequestResponse::BULK_SEND_JOB_ID
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
+    TemplateResponseDocumentStaticFieldBase:
+      description: _t__TemplateResponseDocumentStaticField::DESCRIPTION
+      required:
+      - type
+      properties:
+        api_id:
+          description: _t__TemplateResponseDocumentStaticField::API_ID
+          type: string
+        name:
+          description: _t__TemplateResponseDocumentStaticField::NAME
+          type: string
+        type:
+          type: string
+        signer:
+          description: _t__TemplateResponseDocumentStaticField::SIGNER
+          type: string
+          default: me_now
+        x:
+          description: _t__TemplateResponseDocumentStaticField::X
+          type: integer
+        y:
+          description: _t__TemplateResponseDocumentStaticField::Y
+          type: integer
+        width:
+          description: _t__TemplateResponseDocumentStaticField::WIDTH
+          type: integer
+        height:
+          description: _t__TemplateResponseDocumentStaticField::HEIGHT
+          type: integer
+        required:
+          description: _t__TemplateResponseDocumentStaticField::REQUIRED
+          type: boolean
+        group:
+          description: _t__TemplateResponseDocumentStaticField::GROUP
+          type:
+          - string
+          - 'null'
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TemplateResponseDocumentStaticFieldText'
+          dropdown: '#/components/schemas/TemplateResponseDocumentStaticFieldDropdown'
+          hyperlink: '#/components/schemas/TemplateResponseDocumentStaticFieldHyperlink'
+          checkbox: '#/components/schemas/TemplateResponseDocumentStaticFieldCheckbox'
+          radio: '#/components/schemas/TemplateResponseDocumentStaticFieldRadio'
+          signature: '#/components/schemas/TemplateResponseDocumentStaticFieldSignature'
+          date_signed: '#/components/schemas/TemplateResponseDocumentStaticFieldDateSigned'
+          initials: '#/components/schemas/TemplateResponseDocumentStaticFieldInitials'
+      x-internal: true
+      x-base-class: true
+    SignatureRequestResponseCustomFieldBase:
+      description: _t__SignatureRequestResponseCustomField::DESCRIPTION
+      required:
+      - name
+      - type
+      properties:
+        type:
+          description: _t__SignatureRequestResponseCustomField::TYPE
+          type: string
+        name:
+          description: _t__SignatureRequestResponseCustomField::NAME
+          type: string
+        required:
+          description: _t__SignatureRequestResponseCustomField::REQUIRED
+          type: boolean
+        api_id:
+          description: _t__SignatureRequestResponseCustomField::API_ID
+          type: string
+        editor:
+          description: _t__SignatureRequestResponseCustomField::EDITOR
+          type: string
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SignatureRequestResponseCustomFieldText'
+          checkbox: '#/components/schemas/SignatureRequestResponseCustomFieldCheckbox'
+      x-internal: true
+      x-base-class: true
+    TemplateResponseDocument:
+      properties:
+        name:
+          description: _t__TemplateResponseDocument::NAME
+          type: string
+        index:
+          description: _t__TemplateResponseDocument::INDEX
+          type: integer
+        field_groups:
+          description: _t__TemplateResponseDocument::FIELD_GROUPS
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFieldGroup'
+        form_fields:
+          description: _t__TemplateResponseDocumentFormField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        custom_fields:
+          description: _t__TemplateResponseDocumentCustomField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+        static_fields:
+          description: _t__TemplateResponseDocumentStaticField::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+      type: object
+      x-internal: true
+    SignatureRequestResponseSignatures:
+      description: _t__SignatureRequestResponseSignatures::DESCRIPTION
+      properties:
+        signature_id:
+          description: _t__SignatureRequestResponseSignatures::SIGNATURE_ID
+          type: string
+        signer_group_guid:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_GROUP_GUID
+          type:
+          - string
+          - 'null'
+        signer_email_address:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_EMAIL_ADDRESS
+          type: string
+        signer_name:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_NAME
+          type:
+          - string
+          - 'null'
+        signer_role:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_ROLE
+          type:
+          - string
+          - 'null'
+        order:
+          description: _t__SignatureRequestResponseSignatures::ORDER
+          type:
+          - integer
+          - 'null'
+        status_code:
+          description: _t__SignatureRequestResponseSignatures::STATUS_CODE
+          type: string
+        decline_reason:
+          description: _t__SignatureRequestResponseSignatures::DECLINE_REASON
+          type:
+          - string
+          - 'null'
+        signed_at:
+          description: _t__SignatureRequestResponseSignatures::SIGNED_AT
+          type:
+          - integer
+          - 'null'
+        last_viewed_at:
+          description: _t__SignatureRequestResponseSignatures::LAST_VIEWED_AT
+          type:
+          - integer
+          - 'null'
+        last_reminded_at:
+          description: _t__SignatureRequestResponseSignatures::LAST_REMINDED_AT
+          type:
+          - integer
+          - 'null'
+        has_pin:
+          description: _t__SignatureRequestResponseSignatures::HAS_PIN
+          type: boolean
+        has_sms_auth:
+          description: _t__SignatureRequestResponseSignatures::HAS_SMS_AUTH
+          type:
+          - boolean
+          - 'null'
+        has_sms_delivery:
+          description: _t__SignatureRequestResponseSignatures::HAS_SMS_DELIVERY
+          type:
+          - boolean
+          - 'null'
+        sms_phone_number:
+          description: _t__SignatureRequestResponseSignatures::SMS_PHONE_NUMBER
+          type:
+          - string
+          - 'null'
+        reassigned_by:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNED_BY
+          type:
+          - string
+          - 'null'
+        reassignment_reason:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNMENT_REASON
+          type:
+          - string
+          - 'null'
+        reassigned_from:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNED_FROM
+          type:
+          - string
+          - 'null'
+        error:
+          description: _t__SignatureRequestResponseSignatures::ERROR
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
+    EventCallbackRequest:
+      title: EventCallbackRequest
+      required:
+      - event
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackRequestEvent'
+        account:
+          $ref: '#/components/schemas/AccountResponse'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+        template:
+          $ref: '#/components/schemas/TemplateResponse'
+      type: object
+    TemplateResponseCCRole:
+      properties:
+        name:
+          description: _t__TemplateResponseCCRole::TEMPLATES_LEFT
+          type: string
+      type: object
+      x-internal: true
+    TemplateResponseDocumentFieldGroupRule:
+      description: _t__TemplateResponseDocumentFieldGroup::RULE
+      properties:
+        requirement:
+          description: _t__TemplateResponseDocumentFieldGroupRule::REQUIREMENT
+          type: string
+        groupLabel:
+          description: _t__TemplateResponseDocumentFieldGroupRule::GROUP_LABEL
+          type: string
+      type: object
+      x-internal: true
+    AccountResponse:
+      properties:
+        account_id:
+          description: _t__Account::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__Account::EMAIL_ADDRESS
+          type: string
+        is_locked:
+          description: _t__Account::IS_LOCKED
+          type: boolean
+        is_paid_hs:
+          description: _t__Account::IS_PAID_HS
+          type: boolean
+        is_paid_hf:
+          description: _t__Account::IS_PAID_HF
+          type: boolean
+        quotas:
+          $ref: '#/components/schemas/AccountResponseQuotas'
+        callback_url:
+          description: _t__Account::CALLBACK_URL
+          type:
+          - string
+          - 'null'
+        role_code:
+          description: _t__Account::ROLE_CODE
+          type:
+          - string
+          - 'null'
+        team_id:
+          description: _t__Account::TEAM_ID
+          type:
+          - string
+          - 'null'
+        locale:
+          description: _t__Account::LOCALE
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
+    TemplateResponseAccount:
+      properties:
+        account_id:
+          description: _t__TemplateResponseAccount::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__TemplateResponseAccount::EMAIL_ADDRESS
+          type: string
+        is_locked:
+          description: _t__TemplateResponseAccount::IS_LOCKED
+          type: boolean
+        is_paid_hs:
+          description: _t__TemplateResponseAccount::IS_PAID_HS
+          type: boolean
+        is_paid_hf:
+          description: _t__TemplateResponseAccount::IS_PAID_HF
+          type: boolean
+        quotas:
+          $ref: '#/components/schemas/TemplateResponseAccountQuota'
+      type: object
+      x-internal: true
+    TemplateResponseSignerRole:
+      properties:
+        name:
+          description: _t__TemplateResponseSignerRole::NAME
+          type: string
+        order:
+          description: _t__TemplateResponseSignerRole::ORDER
+          type: integer
+      type: object
+      x-internal: true
+    EventCallbackRequestEventMetadata:
+      description: _t__EventCallbackRequestEventMetadata::DESCRIPTION
+      properties:
+        related_signature_id:
+          description: _t__EventCallbackRequestEventMetadata::RELATED_SIGNATURE_ID
+          type:
+          - string
+          - 'null'
+        reported_for_account_id:
+          description: _t__EventCallbackRequestEventMetadata::REPORTED_FOR_ACCOUNT_ID
+          type:
+          - string
+          - 'null'
+        reported_for_app_id:
+          description: _t__EventCallbackRequestEventMetadata::REPORTED_FOR_APP_ID
+          type:
+          - string
+          - 'null'
+        event_message:
+          description: _t__EventCallbackRequestEventMetadata::EVENT_MESSAGE
+          type:
+          - string
+          - 'null'
+      type: object
+    TemplateResponseDocumentFieldGroup:
+      properties:
+        name:
+          description: _t__TemplateResponseDocumentFieldGroup::NAME
+          type: string
+        rule:
+          $ref: '#/components/schemas/TemplateResponseDocumentFieldGroupRule'
+      type: object
+      x-internal: true
+    TemplateResponseDocumentCustomFieldBase:
+      description: _t__TemplateResponseDocumentCustomField::DESCRIPTION
+      required:
+      - type
+      properties:
+        api_id:
+          description: _t__TemplateResponseDocumentCustomField::API_ID
+          type: string
+        name:
+          description: _t__TemplateResponseDocumentCustomField::NAME
+          type: string
+        type:
+          type: string
+        signer:
+          description: _t__TemplateResponseDocumentCustomField::SIGNER
+          type:
+          - string
+          - 'null'
+        x:
+          description: _t__TemplateResponseDocumentCustomField::X
+          type: integer
+        y:
+          description: _t__TemplateResponseDocumentCustomField::Y
+          type: integer
+        width:
+          description: _t__TemplateResponseDocumentCustomField::WIDTH
+          type: integer
+        height:
+          description: _t__TemplateResponseDocumentCustomField::HEIGHT
+          type: integer
+        required:
+          description: _t__TemplateResponseDocumentStaticField::REQUIRED
+          type: boolean
+        group:
+          description: _t__TemplateResponseDocumentCustomField::GROUP
+          type:
+          - string
+          - 'null'
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TemplateResponseDocumentCustomFieldText'
+          checkbox: '#/components/schemas/TemplateResponseDocumentCustomFieldCheckbox'
+      x-internal: true
+      x-base-class: true
+  requestBodies:
+    EventCallbackAccountRequest:
+      description: _t__EventCallbackAccountRequest::DESCRIPTION
+      content:
+        multipart/form-data:
+          schema:
+            $ref: '#/components/schemas/EventCallbackRequest'
+          examples:
+            signature_request_sent_example:
+              $ref: '#/components/examples/EventCallbackAccountSignatureRequestSentExample'
+            template_created_example:
+              $ref: '#/components/examples/EventCallbackAccountTemplateCreatedExample'
+    EventCallbackAppRequest:
+      description: _t__EventCallbackAppRequest::DESCRIPTION
+      content:
+        multipart/form-data:
+          schema:
+            $ref: '#/components/schemas/EventCallbackRequest'
+          examples:
+            account_confirmed_example:
+              $ref: '#/components/examples/EventCallbackAppAccountConfirmedExample'
+            signature_request_sent_example:
+              $ref: '#/components/examples/EventCallbackAppSignatureRequestSentExample'
+            template_created_example:
+              $ref: '#/components/examples/EventCallbackAppTemplateCreatedExample'
+  examples:
+    EventCallbackAppSignatureRequestSentExample:
+      summary: _t__EventCallbackAppSignatureRequestSentExample::SUMMARY
+      value:
+        $ref: examples/json/EventCallbackAppSignatureRequestSentExample.json
+    EventCallbackAppAccountConfirmedExample:
+      summary: _t__EventCallbackAppAccountConfirmedExample::SUMMARY
+      value:
+        $ref: examples/json/EventCallbackAppAccountConfirmedExample.json
+    EventCallbackAppTemplateCreatedExample:
+      summary: _t__EventCallbackAppTemplateCreatedExample::SUMMARY
+      value:
+        $ref: examples/json/EventCallbackAppTemplateCreatedExample.json
+    EventCallbackAccountSignatureRequestSentExample:
+      summary: _t__EventCallbackAccountSignatureRequestSentExample::SUMMARY
+      value:
+        $ref: examples/json/EventCallbackAccountSignatureRequestSentExample.json
+    EventCallbackAccountTemplateCreatedExample:
+      summary: _t__EventCallbackAccountTemplateCreatedExample::SUMMARY
+      value:
+        $ref: examples/json/EventCallbackAccountTemplateCreatedExample.json
+  responses:
+    EventCallbackResponse:
+      description: successful operation
+      content:
+        text/plain:
+          schema:
+            type: string
+            default: Hello API Event Received
+  securitySchemes:
+    api_key:
+      type: http
+      description: _t__OpenApi::AUTH::API_KEY
+      scheme: basic
+    oauth2:
+      type: http
+      description: _t__OpenApi::AUTH::OAUTH
+      bearerFormat: JWT
+      scheme: bearer
+externalDocs:
+  description: Legacy API Reference
+  url: https://app.hellosign.com/api/reference

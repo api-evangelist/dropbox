@@ -615,6 +615,16 @@ apis:
     url: https://developers.hellosign.com/docs/sdks/overview/
   - type: GettingStarted
     url: https://developers.hellosign.com/api/quickstart/
+- aid: dropbox:dropbox-callbacks-and-events-api
+  name: Dropbox Callbacks and Events API
+  description: The Callbacks and Events API from Dropbox — 0 operation(s) for callbacks and events.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Callbacks and Events
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-callbacks-and-events-api-openapi.yml
 name: Dropbox
 tags:
 - Documents

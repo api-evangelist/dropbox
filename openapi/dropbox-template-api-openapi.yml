@@ -1,12 +1,26 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Dropbox API Reference Account Template API
-  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
-  version: 1.0.0
+  title: Dropbox Sign Template API
+  description: The Dropbox Sign API offers a reliable, flexible set of eSignature tools that can be used to power digital agreements and turn slow, outdated business processes into a competitive advantage. With a broad range of highly-configurable features, the Dropbox Sign API empowers you to build secure signing experiences and document workflows that delight your users.
+  termsOfService: https://www.hellosign.com/terms
+  contact:
+    email: apisupport@hellosign.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  version: 3.0.0
 servers:
-- url: https://api.dropbox.com
+- url: https://api.hellosign.com/v3
 security:
-- bearerAuth: []
+- api_key: []
+  oauth2:
+  - account_access
+  - signature_request_access
+  - template_access
+  - team_access
+  - api_app_access
+  - basic_account_info
+  - request_signature
 tags:
 - name: Template
   description: _md__OpenApi::TAG::TEMPLATE::DESCRIPTION
@@ -1134,644 +1148,7 @@ paths:
           title: _t__TemplateUpdateFiles::SEO::TITLE
           description: _t__TemplateUpdateFiles::SEO::DESCRIPTION
 components:
-  examples:
-    TemplateCreateEmbeddedDraftResponseExample:
-      summary: _t__TemplateCreateEmbeddedDraftResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftResponseExample.json
-    TemplateRemoveUserRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateRemoveUserRequestDefaultExample.json
-    TemplateCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateCreateRequestDefaultExample.json
-    Error422ResponseExample:
-      summary: _t__Error::422
-      value:
-        $ref: examples/json/Error422ResponseExample.json
-    TemplateCreateResponseExample:
-      summary: _t__TemplateCreateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateCreateResponseExample.json
-    TemplateGetResponseExample:
-      summary: _t__TemplateGetResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateGetResponseExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    TemplateCreateRequestFormFieldRulesExample:
-      summary: Form Fields Per Document and Rules Example
-      value:
-        $ref: examples/json/TemplateCreateRequestFormFieldRulesExample.json
-    TemplateCreateEmbeddedDraftRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestDefaultExample.json
-    TemplateCreateEmbeddedDraftRequestFormFieldGroupsExample:
-      summary: Form Fields Per Document and Groups Example
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldGroupsExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    TemplateListResponseExample:
-      summary: _t__TemplateListResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateListResponseExample.json
-    Error429ResponseExample:
-      summary: _t__Error::429
-      value:
-        $ref: examples/json/Error429ResponseExample.json
-    Error409ResponseExample:
-      summary: _t__Error::409
-      value:
-        $ref: examples/json/Error409ResponseExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    TemplateCreateRequestFormFieldsPerDocumentExample:
-      summary: Form Fields Per Document Example
-      value:
-        $ref: examples/json/TemplateCreateRequestFormFieldsPerDocumentExample.json
-    TemplateUpdateFilesResponseExample:
-      summary: _t__TemplateUpdateFilesResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateUpdateFilesResponseExample.json
-    TemplateRemoveUserResponseExample:
-      summary: _t__TemplateRemoveUserResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateRemoveUserResponseExample.json
-    TemplateCreateEmbeddedDraftRequestFormFieldsPerDocumentExample:
-      summary: Form Fields Per Document Example
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldsPerDocumentExample.json
-    TemplateUpdateFilesRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateUpdateFilesRequestDefaultExample.json
-    TemplateCreateEmbeddedDraftRequestFormFieldRulesExample:
-      summary: Form Fields Per Document and Rules Example
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldRulesExample.json
-    TemplateAddUserRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateAddUserRequestDefaultExample.json
-    TemplateFilesResponseExample:
-      summary: _t__TemplateFilesResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateFilesResponseExample.json
-    TemplateCreateRequestFormFieldGroupsExample:
-      summary: Form Fields Per Document and Groups Example
-      value:
-        $ref: examples/json/TemplateCreateRequestFormFieldGroupsExample.json
-    Error404ResponseExample:
-      summary: _t__Error::404
-      value:
-        $ref: examples/json/Error404ResponseExample.json
-    TemplateAddUserResponseExample:
-      summary: _t__TemplateAddUserResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateAddUserResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
   schemas:
-    SubFormFieldGroup:
-      required:
-      - group_id
-      - group_label
-      - requirement
-      properties:
-        group_id:
-          description: _t__Sub::FormFieldGroup::GROUP_ID_LABEL
-          type: string
-        group_label:
-          description: _t__Sub::FormFieldGroup::GROUP_LABEL
-          type: string
-        requirement:
-          description: _t__Sub::FormFieldGroup::REQUIREMENT
-          type: string
-      type: object
-    TemplateCreateResponse:
-      properties:
-        template:
-          $ref: '#/components/schemas/TemplateCreateResponseTemplate'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    ErrorResponse:
-      required:
-      - error
-      properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
-      type: object
-    TemplateResponseDocumentFormFieldBase:
-      description: _t__TemplateResponseDocumentFormField::DESCRIPTION
-      required:
-      - type
-      properties:
-        api_id:
-          description: _t__TemplateResponseDocumentFormField::API_ID
-          type: string
-        name:
-          description: _t__TemplateResponseDocumentFormField::NAME
-          type: string
-        type:
-          type: string
-        signer:
-          description: _t__TemplateResponseDocumentFormField::SIGNER
-          type: string
-        x:
-          description: _t__TemplateResponseDocumentFormField::X
-          type: integer
-        y:
-          description: _t__TemplateResponseDocumentFormField::Y
-          type: integer
-        width:
-          description: _t__TemplateResponseDocumentFormField::WIDTH
-          type: integer
-        height:
-          description: _t__TemplateResponseDocumentFormField::HEIGHT
-          type: integer
-        required:
-          description: _t__TemplateResponseDocumentFormField::REQUIRED
-          type: boolean
-        group:
-          description: _t__TemplateResponseDocumentFormField::GROUP
-          type: string
-          nullable: true
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/TemplateResponseDocumentFormFieldText'
-          dropdown: '#/components/schemas/TemplateResponseDocumentFormFieldDropdown'
-          hyperlink: '#/components/schemas/TemplateResponseDocumentFormFieldHyperlink'
-          checkbox: '#/components/schemas/TemplateResponseDocumentFormFieldCheckbox'
-          radio: '#/components/schemas/TemplateResponseDocumentFormFieldRadio'
-          signature: '#/components/schemas/TemplateResponseDocumentFormFieldSignature'
-          date_signed: '#/components/schemas/TemplateResponseDocumentFormFieldDateSigned'
-          initials: '#/components/schemas/TemplateResponseDocumentFormFieldInitials'
-      x-internal: true
-      x-base-class: true
-    TemplateResponse:
-      description: _t__TemplateResponse::DESCRIPTION
-      properties:
-        template_id:
-          description: _t__TemplateResponse::TEMPLATE_ID
-          type: string
-        title:
-          description: _t__TemplateResponse::TITLE
-          type: string
-        message:
-          description: _t__TemplateResponse::MESSAGE
-          type: string
-        updated_at:
-          description: _t__TemplateResponse::UPDATED_AT
-          type: integer
-        is_embedded:
-          description: _t__TemplateResponse::IS_EMBEDDED
-          type: boolean
-          nullable: true
-        is_creator:
-          description: _t__TemplateResponse::IS_CREATOR
-          type: boolean
-          nullable: true
-        can_edit:
-          description: _t__TemplateResponse::CAN_EDIT
-          type: boolean
-          nullable: true
-        is_locked:
-          description: _t__TemplateResponse::IS_LOCKED
-          type: boolean
-          nullable: true
-        metadata:
-          description: _t__TemplateResponse::METADATA
-          type: object
-        signer_roles:
-          description: _t__TemplateResponse::SIGNER_ROLES
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseSignerRole'
-        cc_roles:
-          description: _t__TemplateResponse::CC_ROLES
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseCCRole'
-        documents:
-          description: _t__TemplateResponse::DOCUMENTS
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocument'
-        custom_fields:
-          description: _t__TemplateResponseCustomField::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
-          nullable: true
-          deprecated: true
-        named_form_fields:
-          description: _t__TemplateResponseNamedFormField::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-          nullable: true
-          deprecated: true
-        accounts:
-          description: _t__TemplateResponse::ACCOUNTS
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseAccount'
-          nullable: true
-      type: object
-      x-internal: true
-    SubFormFieldRuleTrigger:
-      required:
-      - id
-      - operator
-      properties:
-        id:
-          description: _t__Sub::FormFieldRuleTrigger::ID
-          type: string
-        operator:
-          description: _t__Sub::FormFieldRuleTrigger::OPERATOR
-          type: string
-          enum:
-          - any
-          - is
-          - match
-          - none
-          - not
-        value:
-          description: _t__Sub::FormFieldRuleTrigger::VALUE_SINGLE
-          type: string
-        values:
-          description: _t__Sub::FormFieldRuleTrigger::VALUE_MULTI
-          type: array
-          items:
-            type: string
-      type: object
-    SubTemplateRole:
-      properties:
-        name:
-          description: _t__Sub::SignerRole::NAME
-          type: string
-        order:
-          description: _t__Sub::SignerRole::ORDER
-          type: integer
-          nullable: true
-      type: object
-    SubFormFieldRuleAction:
-      required:
-      - hidden
-      - type
-      properties:
-        field_id:
-          description: _t__Sub::FormFieldRuleAction::FIELD_ID
-          type: string
-        group_id:
-          description: _t__Sub::FormFieldRuleAction::GROUP_ID
-          type: string
-        hidden:
-          description: _t__Sub::FormFieldRuleAction::HIDDEN
-          type: boolean
-        type:
-          type: string
-          enum:
-          - change-field-visibility
-          - change-group-visibility
-      type: object
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
-          type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
-          type: string
-      type: object
-    SubEditorOptions:
-      description: _t__Sub::EditorOptions::DESCRIPTION
-      properties:
-        allow_edit_signers:
-          description: _t__Sub::EditorOptions::ALLOW_EDIT_SIGNERS
-          type: boolean
-          default: false
-        allow_edit_documents:
-          description: _t__Sub::EditorOptions::ALLOW_EDIT_DOCUMENTS
-          type: boolean
-          default: false
-      type: object
-    TemplateResponseCCRole:
-      properties:
-        name:
-          description: _t__TemplateResponseCCRole::TEMPLATES_LEFT
-          type: string
-      type: object
-      x-internal: true
-    TemplateListResponse:
-      properties:
-        templates:
-          description: _t__TemplateListResponse::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponse'
-        list_info:
-          $ref: '#/components/schemas/ListInfoResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    TemplateResponseDocumentFieldGroup:
-      properties:
-        name:
-          description: _t__TemplateResponseDocumentFieldGroup::NAME
-          type: string
-        rule:
-          $ref: '#/components/schemas/TemplateResponseDocumentFieldGroupRule'
-      type: object
-      x-internal: true
-    FileResponse:
-      properties:
-        file_url:
-          description: _t__FileResponse::FILE_URL
-          type: string
-        expires_at:
-          description: _t__FileResponse::EXPIRES_AT
-          type: integer
-      type: object
-      x-internal: true
-    TemplateCreateEmbeddedDraftResponseTemplate:
-      description: _t__TemplateCreateEmbeddedDraftResponseTemplate::DESCRIPTION
-      properties:
-        template_id:
-          description: _t__TemplateResponse::TEMPLATE_ID
-          type: string
-        edit_url:
-          description: _t__TemplateCreateEmbeddedDraftResponseTemplate::EDIT_URL
-          type: string
-        expires_at:
-          description: _t__TemplateCreateEmbeddedDraftResponseTemplate::EXPIRES_AT
-          type: integer
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-          deprecated: true
-      type: object
-      x-internal: true
-    TemplateResponseDocumentCustomFieldBase:
-      description: _t__TemplateResponseDocumentCustomField::DESCRIPTION
-      required:
-      - type
-      properties:
-        api_id:
-          description: _t__TemplateResponseDocumentCustomField::API_ID
-          type: string
-        name:
-          description: _t__TemplateResponseDocumentCustomField::NAME
-          type: string
-        type:
-          type: string
-        signer:
-          description: _t__TemplateResponseDocumentCustomField::SIGNER
-          type: string
-          nullable: true
-        x:
-          description: _t__TemplateResponseDocumentCustomField::X
-          type: integer
-        y:
-          description: _t__TemplateResponseDocumentCustomField::Y
-          type: integer
-        width:
-          description: _t__TemplateResponseDocumentCustomField::WIDTH
-          type: integer
-        height:
-          description: _t__TemplateResponseDocumentCustomField::HEIGHT
-          type: integer
-        required:
-          description: _t__TemplateResponseDocumentStaticField::REQUIRED
-          type: boolean
-        group:
-          description: _t__TemplateResponseDocumentCustomField::GROUP
-          type: string
-          nullable: true
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/TemplateResponseDocumentCustomFieldText'
-          checkbox: '#/components/schemas/TemplateResponseDocumentCustomFieldCheckbox'
-      x-internal: true
-      x-base-class: true
-    SubFormFieldRule:
-      required:
-      - id
-      - trigger_operator
-      - triggers
-      - actions
-      properties:
-        id:
-          description: _t__Sub::FormFieldRule::ID
-          type: string
-        trigger_operator:
-          description: _t__Sub::FormFieldRule::TRIGGER_OPERATOR
-          type: string
-          default: AND
-        triggers:
-          description: _t__Sub::FormFieldRuleTrigger::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldRuleTrigger'
-          maxItems: 1
-          minItems: 1
-        actions:
-          description: _t__Sub::FormFieldRuleAction::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldRuleAction'
-          minItems: 1
-      type: object
-    TemplateCreateResponseTemplate:
-      description: _t__TemplateCreateResponseTemplate::DESCRIPTION
-      properties:
-        template_id:
-          description: _t__TemplateResponse::TEMPLATE_ID
-          type: string
-      type: object
-      x-internal: true
-    TemplateResponseAccount:
-      properties:
-        account_id:
-          description: _t__TemplateResponseAccount::ACCOUNT_ID
-          type: string
-        email_address:
-          description: _t__TemplateResponseAccount::EMAIL_ADDRESS
-          type: string
-        is_locked:
-          description: _t__TemplateResponseAccount::IS_LOCKED
-          type: boolean
-        is_paid_hs:
-          description: _t__TemplateResponseAccount::IS_PAID_HS
-          type: boolean
-        is_paid_hf:
-          description: _t__TemplateResponseAccount::IS_PAID_HF
-          type: boolean
-        quotas:
-          $ref: '#/components/schemas/TemplateResponseAccountQuota'
-      type: object
-      x-internal: true
-    SubFieldOptions:
-      description: _t__Sub::FieldOptions::DESCRIPTION
-      required:
-      - date_format
-      properties:
-        date_format:
-          description: _t__Sub::FieldOptions::DATE_FORMAT
-          type: string
-          enum:
-          - MM / DD / YYYY
-          - MM - DD - YYYY
-          - DD / MM / YYYY
-          - DD - MM - YYYY
-          - YYYY / MM / DD
-          - YYYY - MM - DD
-          x-enum-varnames:
-          - MMDDYYYY
-          - MM_DD_YYYY
-          - DDMMYYYY
-          - DD_MM_YYYY
-          - YYYYMMDD
-          - YYYY_MM_DD
-      type: object
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
-      properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
-          type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
-          type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
-          type: string
-      type: object
-    SubAttachment:
-      required:
-      - name
-      - signer_index
-      properties:
-        instructions:
-          description: _t__Sub::Attachment::INSTRUCTIONS
-          type: string
-        name:
-          description: _t__Sub::Attachment::NAME
-          type: string
-        required:
-          description: _t__Sub::Attachment::REQUIRED
-          type: boolean
-          default: false
-        signer_index:
-          description: _t__Sub::Attachment::SIGNER_INDEX
-          type: integer
-      type: object
-    TemplateResponseDocumentStaticFieldBase:
-      description: _t__TemplateResponseDocumentStaticField::DESCRIPTION
-      required:
-      - type
-      properties:
-        api_id:
-          description: _t__TemplateResponseDocumentStaticField::API_ID
-          type: string
-        name:
-          description: _t__TemplateResponseDocumentStaticField::NAME
-          type: string
-        type:
-          type: string
-        signer:
-          description: _t__TemplateResponseDocumentStaticField::SIGNER
-          type: string
-          default: me_now
-        x:
-          description: _t__TemplateResponseDocumentStaticField::X
-          type: integer
-        y:
-          description: _t__TemplateResponseDocumentStaticField::Y
-          type: integer
-        width:
-          description: _t__TemplateResponseDocumentStaticField::WIDTH
-          type: integer
-        height:
-          description: _t__TemplateResponseDocumentStaticField::HEIGHT
-          type: integer
-        required:
-          description: _t__TemplateResponseDocumentStaticField::REQUIRED
-          type: boolean
-        group:
-          description: _t__TemplateResponseDocumentStaticField::GROUP
-          type: string
-          nullable: true
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/TemplateResponseDocumentStaticFieldText'
-          dropdown: '#/components/schemas/TemplateResponseDocumentStaticFieldDropdown'
-          hyperlink: '#/components/schemas/TemplateResponseDocumentStaticFieldHyperlink'
-          checkbox: '#/components/schemas/TemplateResponseDocumentStaticFieldCheckbox'
-          radio: '#/components/schemas/TemplateResponseDocumentStaticFieldRadio'
-          signature: '#/components/schemas/TemplateResponseDocumentStaticFieldSignature'
-          date_signed: '#/components/schemas/TemplateResponseDocumentStaticFieldDateSigned'
-          initials: '#/components/schemas/TemplateResponseDocumentStaticFieldInitials'
-      x-internal: true
-      x-base-class: true
-    ListInfoResponse:
-      description: _t__ListInfoResponse::DESCRIPTION
-      properties:
-        num_pages:
-          description: _t__ListInfoResponse::NUM_PAGES
-          type: integer
-        num_results:
-          description: _t__ListInfoResponse::NUM_RESULTS
-          type: integer
-          nullable: true
-        page:
-          description: _t__ListInfoResponse::PAGE
-          type: integer
-        page_size:
-          description: _t__ListInfoResponse::PAGE_SIZE
-          type: integer
-      type: object
-      x-internal: true
     TemplateCreateRequest:
       required:
       - signer_roles
@@ -1857,15 +1234,307 @@ components:
           type: boolean
           default: false
       type: object
-    TemplateResponseDocumentFieldGroupRule:
-      description: _t__TemplateResponseDocumentFieldGroup::RULE
+    TemplateResponseAccountQuota:
+      description: _t__TemplateResponseAccountQuota::DESCRIPTION
       properties:
-        requirement:
-          description: _t__TemplateResponseDocumentFieldGroupRule::REQUIREMENT
+        templates_left:
+          description: _t__TemplateResponseAccountQuota::TEMPLATES_LEFT
+          type: integer
+        api_signature_requests_left:
+          description: _t__TemplateResponseAccountQuota::API_SIGNATURE_REQUESTS_LEFT
+          type: integer
+        documents_left:
+          description: _t__TemplateResponseAccountQuota::DOCUMENTS_LEFT
+          type: integer
+        sms_verifications_left:
+          description: _t__TemplateResponseAccountQuota::SMS_VERIFICATIONS_LEFT
+          type: integer
+      type: object
+      x-internal: true
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    TemplateCreateResponseTemplate:
+      description: _t__TemplateCreateResponseTemplate::DESCRIPTION
+      properties:
+        template_id:
+          description: _t__TemplateResponse::TEMPLATE_ID
           type: string
-        groupLabel:
-          description: _t__TemplateResponseDocumentFieldGroupRule::GROUP_LABEL
+      type: object
+      x-internal: true
+    TemplateAddUserRequest:
+      properties:
+        account_id:
+          description: _t__TemplateAddUser::ACCOUNT_ID
           type: string
+        email_address:
+          description: _t__TemplateAddUser::EMAIL_ADDRESS
+          type: string
+          format: email
+        skip_notification:
+          description: _t__TemplateAddUser::SKIP_NOTIFICATION
+          type: boolean
+          default: false
+      type: object
+    TemplateCreateEmbeddedDraftResponseTemplate:
+      description: _t__TemplateCreateEmbeddedDraftResponseTemplate::DESCRIPTION
+      properties:
+        template_id:
+          description: _t__TemplateResponse::TEMPLATE_ID
+          type: string
+        edit_url:
+          description: _t__TemplateCreateEmbeddedDraftResponseTemplate::EDIT_URL
+          type: string
+        expires_at:
+          description: _t__TemplateCreateEmbeddedDraftResponseTemplate::EXPIRES_AT
+          type: integer
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          deprecated: true
+      type: object
+      x-internal: true
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
+      required:
+      - error_msg
+      - error_name
+      properties:
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
+          type: string
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
+          type: string
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
+          type: string
+      type: object
+    TemplateUpdateFilesResponse:
+      properties:
+        template:
+          $ref: '#/components/schemas/TemplateUpdateFilesResponseTemplate'
+      type: object
+      x-internal: true
+    SubMergeField:
+      required:
+      - name
+      - type
+      properties:
+        name:
+          description: _t__Sub::MergeField::NAME
+          type: string
+        type:
+          description: _t__Sub::MergeField::TYPE
+          type: string
+          enum:
+          - text
+          - checkbox
+          x-enumDescriptions:
+            text: _t__Sub::MergeField::EnumDescriptions::TEXT
+            checkbox: _t__Sub::MergeField::EnumDescriptions::CHECKBOX
+      type: object
+    TemplateResponse:
+      description: _t__TemplateResponse::DESCRIPTION
+      properties:
+        template_id:
+          description: _t__TemplateResponse::TEMPLATE_ID
+          type: string
+        title:
+          description: _t__TemplateResponse::TITLE
+          type: string
+        message:
+          description: _t__TemplateResponse::MESSAGE
+          type: string
+        updated_at:
+          description: _t__TemplateResponse::UPDATED_AT
+          type: integer
+        is_embedded:
+          description: _t__TemplateResponse::IS_EMBEDDED
+          type:
+          - boolean
+          - 'null'
+        is_creator:
+          description: _t__TemplateResponse::IS_CREATOR
+          type:
+          - boolean
+          - 'null'
+        can_edit:
+          description: _t__TemplateResponse::CAN_EDIT
+          type:
+          - boolean
+          - 'null'
+        is_locked:
+          description: _t__TemplateResponse::IS_LOCKED
+          type:
+          - boolean
+          - 'null'
+        metadata:
+          description: _t__TemplateResponse::METADATA
+          type: object
+        signer_roles:
+          description: _t__TemplateResponse::SIGNER_ROLES
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseSignerRole'
+        cc_roles:
+          description: _t__TemplateResponse::CC_ROLES
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseCCRole'
+        documents:
+          description: _t__TemplateResponse::DOCUMENTS
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocument'
+        custom_fields:
+          description: _t__TemplateResponseCustomField::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+          deprecated: true
+        named_form_fields:
+          description: _t__TemplateResponseNamedFormField::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+          deprecated: true
+        accounts:
+          description: _t__TemplateResponse::ACCOUNTS
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseAccount'
+      type: object
+      x-internal: true
+    TemplateResponseDocumentFormFieldBase:
+      description: _t__TemplateResponseDocumentFormField::DESCRIPTION
+      required:
+      - type
+      properties:
+        api_id:
+          description: _t__TemplateResponseDocumentFormField::API_ID
+          type: string
+        name:
+          description: _t__TemplateResponseDocumentFormField::NAME
+          type: string
+        type:
+          type: string
+        signer:
+          description: _t__TemplateResponseDocumentFormField::SIGNER
+          type: string
+        x:
+          description: _t__TemplateResponseDocumentFormField::X
+          type: integer
+        y:
+          description: _t__TemplateResponseDocumentFormField::Y
+          type: integer
+        width:
+          description: _t__TemplateResponseDocumentFormField::WIDTH
+          type: integer
+        height:
+          description: _t__TemplateResponseDocumentFormField::HEIGHT
+          type: integer
+        required:
+          description: _t__TemplateResponseDocumentFormField::REQUIRED
+          type: boolean
+        group:
+          description: _t__TemplateResponseDocumentFormField::GROUP
+          type:
+          - string
+          - 'null'
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TemplateResponseDocumentFormFieldText'
+          dropdown: '#/components/schemas/TemplateResponseDocumentFormFieldDropdown'
+          hyperlink: '#/components/schemas/TemplateResponseDocumentFormFieldHyperlink'
+          checkbox: '#/components/schemas/TemplateResponseDocumentFormFieldCheckbox'
+          radio: '#/components/schemas/TemplateResponseDocumentFormFieldRadio'
+          signature: '#/components/schemas/TemplateResponseDocumentFormFieldSignature'
+          date_signed: '#/components/schemas/TemplateResponseDocumentFormFieldDateSigned'
+          initials: '#/components/schemas/TemplateResponseDocumentFormFieldInitials'
+      x-internal: true
+      x-base-class: true
+    TemplateResponseDocumentStaticFieldBase:
+      description: _t__TemplateResponseDocumentStaticField::DESCRIPTION
+      required:
+      - type
+      properties:
+        api_id:
+          description: _t__TemplateResponseDocumentStaticField::API_ID
+          type: string
+        name:
+          description: _t__TemplateResponseDocumentStaticField::NAME
+          type: string
+        type:
+          type: string
+        signer:
+          description: _t__TemplateResponseDocumentStaticField::SIGNER
+          type: string
+          default: me_now
+        x:
+          description: _t__TemplateResponseDocumentStaticField::X
+          type: integer
+        y:
+          description: _t__TemplateResponseDocumentStaticField::Y
+          type: integer
+        width:
+          description: _t__TemplateResponseDocumentStaticField::WIDTH
+          type: integer
+        height:
+          description: _t__TemplateResponseDocumentStaticField::HEIGHT
+          type: integer
+        required:
+          description: _t__TemplateResponseDocumentStaticField::REQUIRED
+          type: boolean
+        group:
+          description: _t__TemplateResponseDocumentStaticField::GROUP
+          type:
+          - string
+          - 'null'
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TemplateResponseDocumentStaticFieldText'
+          dropdown: '#/components/schemas/TemplateResponseDocumentStaticFieldDropdown'
+          hyperlink: '#/components/schemas/TemplateResponseDocumentStaticFieldHyperlink'
+          checkbox: '#/components/schemas/TemplateResponseDocumentStaticFieldCheckbox'
+          radio: '#/components/schemas/TemplateResponseDocumentStaticFieldRadio'
+          signature: '#/components/schemas/TemplateResponseDocumentStaticFieldSignature'
+          date_signed: '#/components/schemas/TemplateResponseDocumentStaticFieldDateSigned'
+          initials: '#/components/schemas/TemplateResponseDocumentStaticFieldInitials'
+      x-internal: true
+      x-base-class: true
+    FileResponseDataUri:
+      properties:
+        data_uri:
+          description: _t__FileResponse::DATA_URI
+          type: string
+      type: object
+      x-internal: true
+    TemplateCreateResponse:
+      properties:
+        template:
+          $ref: '#/components/schemas/TemplateCreateResponseTemplate'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
     TemplateGetResponse:
@@ -1879,14 +1548,47 @@ components:
             $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
-    TemplateResponseSignerRole:
+    SubTemplateRole:
       properties:
         name:
-          description: _t__TemplateResponseSignerRole::NAME
+          description: _t__Sub::SignerRole::NAME
           type: string
         order:
-          description: _t__TemplateResponseSignerRole::ORDER
+          description: _t__Sub::SignerRole::ORDER
+          type:
+          - integer
+          - 'null'
+      type: object
+    TemplateResponseDocument:
+      properties:
+        name:
+          description: _t__TemplateResponseDocument::NAME
+          type: string
+        index:
+          description: _t__TemplateResponseDocument::INDEX
           type: integer
+        field_groups:
+          description: _t__TemplateResponseDocument::FIELD_GROUPS
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFieldGroup'
+        form_fields:
+          description: _t__TemplateResponseDocumentFormField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+        custom_fields:
+          description: _t__TemplateResponseDocumentCustomField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+        static_fields:
+          description: _t__TemplateResponseDocumentStaticField::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
       type: object
       x-internal: true
     TemplateUpdateFilesRequest:
@@ -1918,6 +1620,411 @@ components:
           type: boolean
           default: false
       type: object
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
+      required:
+      - warning_msg
+      - warning_name
+      properties:
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
+      type: object
+    SubEditorOptions:
+      description: _t__Sub::EditorOptions::DESCRIPTION
+      properties:
+        allow_edit_signers:
+          description: _t__Sub::EditorOptions::ALLOW_EDIT_SIGNERS
+          type: boolean
+          default: false
+        allow_edit_documents:
+          description: _t__Sub::EditorOptions::ALLOW_EDIT_DOCUMENTS
+          type: boolean
+          default: false
+      type: object
+    ListInfoResponse:
+      description: _t__ListInfoResponse::DESCRIPTION
+      properties:
+        num_pages:
+          description: _t__ListInfoResponse::NUM_PAGES
+          type: integer
+        num_results:
+          description: _t__ListInfoResponse::NUM_RESULTS
+          type:
+          - integer
+          - 'null'
+        page:
+          description: _t__ListInfoResponse::PAGE
+          type: integer
+        page_size:
+          description: _t__ListInfoResponse::PAGE_SIZE
+          type: integer
+      type: object
+      x-internal: true
+    TemplateResponseCCRole:
+      properties:
+        name:
+          description: _t__TemplateResponseCCRole::TEMPLATES_LEFT
+          type: string
+      type: object
+      x-internal: true
+    TemplateCreateEmbeddedDraftResponse:
+      properties:
+        template:
+          $ref: '#/components/schemas/TemplateCreateEmbeddedDraftResponseTemplate'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    TemplateResponseDocumentFieldGroupRule:
+      description: _t__TemplateResponseDocumentFieldGroup::RULE
+      properties:
+        requirement:
+          description: _t__TemplateResponseDocumentFieldGroupRule::REQUIREMENT
+          type: string
+        groupLabel:
+          description: _t__TemplateResponseDocumentFieldGroupRule::GROUP_LABEL
+          type: string
+      type: object
+      x-internal: true
+    SubAttachment:
+      required:
+      - name
+      - signer_index
+      properties:
+        instructions:
+          description: _t__Sub::Attachment::INSTRUCTIONS
+          type: string
+        name:
+          description: _t__Sub::Attachment::NAME
+          type: string
+        required:
+          description: _t__Sub::Attachment::REQUIRED
+          type: boolean
+          default: false
+        signer_index:
+          description: _t__Sub::Attachment::SIGNER_INDEX
+          type: integer
+      type: object
+    TemplateListResponse:
+      properties:
+        templates:
+          description: _t__TemplateListResponse::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    FileResponse:
+      properties:
+        file_url:
+          description: _t__FileResponse::FILE_URL
+          type: string
+        expires_at:
+          description: _t__FileResponse::EXPIRES_AT
+          type: integer
+      type: object
+      x-internal: true
+    TemplateUpdateFilesResponseTemplate:
+      description: _t__TemplateUpdateFilesResponseTemplate::DESCRIPTION
+      properties:
+        template_id:
+          description: _t__TemplateResponse::TEMPLATE_ID
+          type: string
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          deprecated: true
+      type: object
+      x-internal: true
+    SubFormFieldsPerDocumentBase:
+      description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
+      required:
+      - document_index
+      - api_id
+      - type
+      - required
+      - signer
+      - width
+      - height
+      - x
+      - y
+      properties:
+        document_index:
+          description: _t__Sub::FormFieldsPerDocument::DOCUMENT_INDEX
+          type: integer
+        api_id:
+          description: _t__Sub::FormFieldsPerDocument::API_ID
+          type: string
+        height:
+          description: _t__Sub::FormFieldsPerDocument::HEIGHT
+          type: integer
+        name:
+          description: _t__Sub::FormFieldsPerDocument::NAME
+          type: string
+        page:
+          description: _t__Sub::FormFieldsPerDocument::PAGE
+          type:
+          - integer
+          - 'null'
+        required:
+          description: _t__Sub::FormFieldsPerDocument::REQUIRED
+          type: boolean
+        signer:
+          description: _t__Sub::FormFieldsPerDocument::SIGNER
+          type: string
+          x-int-or-string: true
+        type:
+          type: string
+        width:
+          description: _t__Sub::FormFieldsPerDocument::WIDTH
+          type: integer
+        x:
+          description: _t__Sub::FormFieldsPerDocument::X
+          type: integer
+        y:
+          description: _t__Sub::FormFieldsPerDocument::Y
+          type: integer
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SubFormFieldsPerDocumentText'
+          dropdown: '#/components/schemas/SubFormFieldsPerDocumentDropdown'
+          hyperlink: '#/components/schemas/SubFormFieldsPerDocumentHyperlink'
+          checkbox: '#/components/schemas/SubFormFieldsPerDocumentCheckbox'
+          radio: '#/components/schemas/SubFormFieldsPerDocumentRadio'
+          signature: '#/components/schemas/SubFormFieldsPerDocumentSignature'
+          date_signed: '#/components/schemas/SubFormFieldsPerDocumentDateSigned'
+          initials: '#/components/schemas/SubFormFieldsPerDocumentInitials'
+          text-merge: '#/components/schemas/SubFormFieldsPerDocumentTextMerge'
+          checkbox-merge: '#/components/schemas/SubFormFieldsPerDocumentCheckboxMerge'
+      x-internal: true
+      x-base-class: true
+    TemplateResponseAccount:
+      properties:
+        account_id:
+          description: _t__TemplateResponseAccount::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__TemplateResponseAccount::EMAIL_ADDRESS
+          type: string
+        is_locked:
+          description: _t__TemplateResponseAccount::IS_LOCKED
+          type: boolean
+        is_paid_hs:
+          description: _t__TemplateResponseAccount::IS_PAID_HS
+          type: boolean
+        is_paid_hf:
+          description: _t__TemplateResponseAccount::IS_PAID_HF
+          type: boolean
+        quotas:
+          $ref: '#/components/schemas/TemplateResponseAccountQuota'
+      type: object
+      x-internal: true
+    TemplateResponseSignerRole:
+      properties:
+        name:
+          description: _t__TemplateResponseSignerRole::NAME
+          type: string
+        order:
+          description: _t__TemplateResponseSignerRole::ORDER
+          type: integer
+      type: object
+      x-internal: true
+    SubFormFieldRule:
+      required:
+      - id
+      - trigger_operator
+      - triggers
+      - actions
+      properties:
+        id:
+          description: _t__Sub::FormFieldRule::ID
+          type: string
+        trigger_operator:
+          description: _t__Sub::FormFieldRule::TRIGGER_OPERATOR
+          type: string
+          default: AND
+        triggers:
+          description: _t__Sub::FormFieldRuleTrigger::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRuleTrigger'
+          maxItems: 1
+          minItems: 1
+        actions:
+          description: _t__Sub::FormFieldRuleAction::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRuleAction'
+          minItems: 1
+      type: object
+    TemplateRemoveUserRequest:
+      properties:
+        account_id:
+          description: _t__TemplateRemoveUser::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__TemplateRemoveUser::EMAIL_ADDRESS
+          type: string
+          format: email
+      type: object
+    SubFormFieldRuleAction:
+      required:
+      - hidden
+      - type
+      properties:
+        field_id:
+          description: _t__Sub::FormFieldRuleAction::FIELD_ID
+          type: string
+        group_id:
+          description: _t__Sub::FormFieldRuleAction::GROUP_ID
+          type: string
+        hidden:
+          description: _t__Sub::FormFieldRuleAction::HIDDEN
+          type: boolean
+        type:
+          type: string
+          enum:
+          - change-field-visibility
+          - change-group-visibility
+      type: object
+    TemplateResponseDocumentFieldGroup:
+      properties:
+        name:
+          description: _t__TemplateResponseDocumentFieldGroup::NAME
+          type: string
+        rule:
+          $ref: '#/components/schemas/TemplateResponseDocumentFieldGroupRule'
+      type: object
+      x-internal: true
+    SubFieldOptions:
+      description: _t__Sub::FieldOptions::DESCRIPTION
+      required:
+      - date_format
+      properties:
+        date_format:
+          description: _t__Sub::FieldOptions::DATE_FORMAT
+          type: string
+          enum:
+          - MM / DD / YYYY
+          - MM - DD - YYYY
+          - DD / MM / YYYY
+          - DD - MM - YYYY
+          - YYYY / MM / DD
+          - YYYY - MM - DD
+          x-enum-varnames:
+          - MMDDYYYY
+          - MM_DD_YYYY
+          - DDMMYYYY
+          - DD_MM_YYYY
+          - YYYYMMDD
+          - YYYY_MM_DD
+      type: object
+    SubFormFieldGroup:
+      required:
+      - group_id
+      - group_label
+      - requirement
+      properties:
+        group_id:
+          description: _t__Sub::FormFieldGroup::GROUP_ID_LABEL
+          type: string
+        group_label:
+          description: _t__Sub::FormFieldGroup::GROUP_LABEL
+          type: string
+        requirement:
+          description: _t__Sub::FormFieldGroup::REQUIREMENT
+          type: string
+      type: object
+    SubFormFieldRuleTrigger:
+      required:
+      - id
+      - operator
+      properties:
+        id:
+          description: _t__Sub::FormFieldRuleTrigger::ID
+          type: string
+        operator:
+          description: _t__Sub::FormFieldRuleTrigger::OPERATOR
+          type: string
+          enum:
+          - any
+          - is
+          - match
+          - none
+          - not
+        value:
+          description: _t__Sub::FormFieldRuleTrigger::VALUE_SINGLE
+          type: string
+        values:
+          description: _t__Sub::FormFieldRuleTrigger::VALUE_MULTI
+          type: array
+          items:
+            type: string
+      type: object
+    TemplateResponseDocumentCustomFieldBase:
+      description: _t__TemplateResponseDocumentCustomField::DESCRIPTION
+      required:
+      - type
+      properties:
+        api_id:
+          description: _t__TemplateResponseDocumentCustomField::API_ID
+          type: string
+        name:
+          description: _t__TemplateResponseDocumentCustomField::NAME
+          type: string
+        type:
+          type: string
+        signer:
+          description: _t__TemplateResponseDocumentCustomField::SIGNER
+          type:
+          - string
+          - 'null'
+        x:
+          description: _t__TemplateResponseDocumentCustomField::X
+          type: integer
+        y:
+          description: _t__TemplateResponseDocumentCustomField::Y
+          type: integer
+        width:
+          description: _t__TemplateResponseDocumentCustomField::WIDTH
+          type: integer
+        height:
+          description: _t__TemplateResponseDocumentCustomField::HEIGHT
+          type: integer
+        required:
+          description: _t__TemplateResponseDocumentStaticField::REQUIRED
+          type: boolean
+        group:
+          description: _t__TemplateResponseDocumentCustomField::GROUP
+          type:
+          - string
+          - 'null'
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TemplateResponseDocumentCustomFieldText'
+          checkbox: '#/components/schemas/TemplateResponseDocumentCustomFieldCheckbox'
+      x-internal: true
+      x-base-class: true
     TemplateCreateEmbeddedDraftRequest:
       required:
       - client_id
@@ -2028,210 +2135,132 @@ components:
           type: boolean
           default: false
       type: object
-    SubFormFieldsPerDocumentBase:
-      description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
-      required:
-      - document_index
-      - api_id
-      - type
-      - required
-      - signer
-      - width
-      - height
-      - x
-      - y
-      properties:
-        document_index:
-          description: _t__Sub::FormFieldsPerDocument::DOCUMENT_INDEX
-          type: integer
-        api_id:
-          description: _t__Sub::FormFieldsPerDocument::API_ID
-          type: string
-        height:
-          description: _t__Sub::FormFieldsPerDocument::HEIGHT
-          type: integer
-        name:
-          description: _t__Sub::FormFieldsPerDocument::NAME
-          type: string
-        page:
-          description: _t__Sub::FormFieldsPerDocument::PAGE
-          type: integer
-          nullable: true
-        required:
-          description: _t__Sub::FormFieldsPerDocument::REQUIRED
-          type: boolean
-        signer:
-          description: _t__Sub::FormFieldsPerDocument::SIGNER
-          type: string
-          x-int-or-string: true
-        type:
-          type: string
-        width:
-          description: _t__Sub::FormFieldsPerDocument::WIDTH
-          type: integer
-        x:
-          description: _t__Sub::FormFieldsPerDocument::X
-          type: integer
-        y:
-          description: _t__Sub::FormFieldsPerDocument::Y
-          type: integer
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/SubFormFieldsPerDocumentText'
-          dropdown: '#/components/schemas/SubFormFieldsPerDocumentDropdown'
-          hyperlink: '#/components/schemas/SubFormFieldsPerDocumentHyperlink'
-          checkbox: '#/components/schemas/SubFormFieldsPerDocumentCheckbox'
-          radio: '#/components/schemas/SubFormFieldsPerDocumentRadio'
-          signature: '#/components/schemas/SubFormFieldsPerDocumentSignature'
-          date_signed: '#/components/schemas/SubFormFieldsPerDocumentDateSigned'
-          initials: '#/components/schemas/SubFormFieldsPerDocumentInitials'
-          text-merge: '#/components/schemas/SubFormFieldsPerDocumentTextMerge'
-          checkbox-merge: '#/components/schemas/SubFormFieldsPerDocumentCheckboxMerge'
-      x-internal: true
-      x-base-class: true
-    TemplateCreateEmbeddedDraftResponse:
-      properties:
-        template:
-          $ref: '#/components/schemas/TemplateCreateEmbeddedDraftResponseTemplate'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    TemplateResponseAccountQuota:
-      description: _t__TemplateResponseAccountQuota::DESCRIPTION
-      properties:
-        templates_left:
-          description: _t__TemplateResponseAccountQuota::TEMPLATES_LEFT
-          type: integer
-        api_signature_requests_left:
-          description: _t__TemplateResponseAccountQuota::API_SIGNATURE_REQUESTS_LEFT
-          type: integer
-        documents_left:
-          description: _t__TemplateResponseAccountQuota::DOCUMENTS_LEFT
-          type: integer
-        sms_verifications_left:
-          description: _t__TemplateResponseAccountQuota::SMS_VERIFICATIONS_LEFT
-          type: integer
-      type: object
-      x-internal: true
-    TemplateResponseDocument:
-      properties:
-        name:
-          description: _t__TemplateResponseDocument::NAME
-          type: string
-        index:
-          description: _t__TemplateResponseDocument::INDEX
-          type: integer
-        field_groups:
-          description: _t__TemplateResponseDocument::FIELD_GROUPS
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocumentFieldGroup'
-        form_fields:
-          description: _t__TemplateResponseDocumentFormField::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-        custom_fields:
-          description: _t__TemplateResponseDocumentCustomField::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
-        static_fields:
-          description: _t__TemplateResponseDocumentStaticField::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
-          nullable: true
-      type: object
-      x-internal: true
-    TemplateUpdateFilesResponse:
-      properties:
-        template:
-          $ref: '#/components/schemas/TemplateUpdateFilesResponseTemplate'
-      type: object
-      x-internal: true
-    TemplateAddUserRequest:
-      properties:
-        account_id:
-          description: _t__TemplateAddUser::ACCOUNT_ID
-          type: string
-        email_address:
-          description: _t__TemplateAddUser::EMAIL_ADDRESS
-          type: string
-          format: email
-        skip_notification:
-          description: _t__TemplateAddUser::SKIP_NOTIFICATION
-          type: boolean
-          default: false
-      type: object
-    SubMergeField:
-      required:
-      - name
-      - type
-      properties:
-        name:
-          description: _t__Sub::MergeField::NAME
-          type: string
-        type:
-          description: _t__Sub::MergeField::TYPE
-          type: string
-          enum:
-          - text
-          - checkbox
-          x-enumDescriptions:
-            text: _t__Sub::MergeField::EnumDescriptions::TEXT
-            checkbox: _t__Sub::MergeField::EnumDescriptions::CHECKBOX
-      type: object
-    TemplateRemoveUserRequest:
-      properties:
-        account_id:
-          description: _t__TemplateRemoveUser::ACCOUNT_ID
-          type: string
-        email_address:
-          description: _t__TemplateRemoveUser::EMAIL_ADDRESS
-          type: string
-          format: email
-      type: object
-    FileResponseDataUri:
-      properties:
-        data_uri:
-          description: _t__FileResponse::DATA_URI
-          type: string
-      type: object
-      x-internal: true
-    TemplateUpdateFilesResponseTemplate:
-      description: _t__TemplateUpdateFilesResponseTemplate::DESCRIPTION
-      properties:
-        template_id:
-          description: _t__TemplateResponse::TEMPLATE_ID
-          type: string
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-          deprecated: true
-      type: object
-      x-internal: true
+  examples:
+    TemplateCreateRequestFormFieldsPerDocumentExample:
+      summary: Form Fields Per Document Example
+      value:
+        $ref: examples/json/TemplateCreateRequestFormFieldsPerDocumentExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    TemplateCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/TemplateCreateRequestDefaultExample.json
+    TemplateCreateRequestFormFieldGroupsExample:
+      summary: Form Fields Per Document and Groups Example
+      value:
+        $ref: examples/json/TemplateCreateRequestFormFieldGroupsExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    TemplateListResponseExample:
+      summary: _t__TemplateListResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TemplateListResponseExample.json
+    TemplateCreateEmbeddedDraftRequestFormFieldRulesExample:
+      summary: Form Fields Per Document and Rules Example
+      value:
+        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldRulesExample.json
+    TemplateRemoveUserResponseExample:
+      summary: _t__TemplateRemoveUserResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TemplateRemoveUserResponseExample.json
+    TemplateCreateEmbeddedDraftRequestFormFieldGroupsExample:
+      summary: Form Fields Per Document and Groups Example
+      value:
+        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldGroupsExample.json
+    TemplateUpdateFilesRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/TemplateUpdateFilesRequestDefaultExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    TemplateAddUserResponseExample:
+      summary: _t__TemplateAddUserResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TemplateAddUserResponseExample.json
+    TemplateAddUserRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/TemplateAddUserRequestDefaultExample.json
+    TemplateRemoveUserRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/TemplateRemoveUserRequestDefaultExample.json
+    Error409ResponseExample:
+      summary: _t__Error::409
+      value:
+        $ref: examples/json/Error409ResponseExample.json
+    TemplateUpdateFilesResponseExample:
+      summary: _t__TemplateUpdateFilesResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TemplateUpdateFilesResponseExample.json
+    Error422ResponseExample:
+      summary: _t__Error::422
+      value:
+        $ref: examples/json/Error422ResponseExample.json
+    TemplateCreateEmbeddedDraftResponseExample:
+      summary: _t__TemplateCreateEmbeddedDraftResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TemplateCreateEmbeddedDraftResponseExample.json
+    TemplateCreateEmbeddedDraftRequestFormFieldsPerDocumentExample:
+      summary: Form Fields Per Document Example
+      value:
+        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldsPerDocumentExample.json
+    TemplateCreateEmbeddedDraftRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/TemplateCreateEmbeddedDraftRequestDefaultExample.json
+    TemplateCreateRequestFormFieldRulesExample:
+      summary: Form Fields Per Document and Rules Example
+      value:
+        $ref: examples/json/TemplateCreateRequestFormFieldRulesExample.json
+    TemplateFilesResponseExample:
+      summary: _t__TemplateFilesResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TemplateFilesResponseExample.json
+    Error429ResponseExample:
+      summary: _t__Error::429
+      value:
+        $ref: examples/json/Error429ResponseExample.json
+    TemplateCreateResponseExample:
+      summary: _t__TemplateCreateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TemplateCreateResponseExample.json
+    TemplateGetResponseExample:
+      summary: _t__TemplateGetResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TemplateGetResponseExample.json
+    Error404ResponseExample:
+      summary: _t__Error::404
+      value:
+        $ref: examples/json/Error404ResponseExample.json
   headers:
-    X-Ratelimit-Reset:
-      description: _t__Common::RateLimiting::RESET
-      schema:
-        type: integer
-        format: int64
-        example: 1430170900
     X-RateLimit-Limit:
       description: _t__Common::RateLimiting::LIMIT
       schema:
         type: integer
         format: int32
         example: 100
+    X-Ratelimit-Reset:
+      description: _t__Common::RateLimiting::RESET
+      schema:
+        type: integer
+        format: int64
+        example: 1430170900
     X-RateLimit-Remaining:
       description: _t__Common::RateLimiting::REMAINING
       schema:
@@ -2239,6 +2268,15 @@ components:
         format: int32
         example: 99
   securitySchemes:
-    bearerAuth:
+    api_key:
       type: http
+      description: _t__OpenApi::AUTH::API_KEY
+      scheme: basic
+    oauth2:
+      type: http
+      description: _t__OpenApi::AUTH::OAUTH
+      bearerFormat: JWT
       scheme: bearer
+externalDocs:
+  description: Legacy API Reference
+  url: https://app.hellosign.com/api/reference

@@ -1,12 +1,11 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Dropbox API Reference Account Team API
-  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
-  version: 1.0.0
+  title: Dropbox Team API
+  version: '1.0'
+  description: 'Operations tagged Team across 2 of this provider''s published API definitions: dropbox-openapi-original.yml, dropbox-sign-openapi-original.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://api.dropbox.com
-security:
-- bearerAuth: []
+- url: https://api.hellosign.com/v3
 tags:
 - name: Team
 paths:
@@ -62,6 +61,10 @@ paths:
                   has_team_shared_dropbox:
                     .tag: has_team_shared_dropbox
                     has_team_shared_dropbox: false
+      security:
+      - bearerAuth: []
+    servers:
+    - url: https://api.dropbox.com
   /2/team/get_info:
     post:
       tags:
@@ -109,6 +112,8 @@ paths:
                     .tag: disabled
                   office_addin:
                     .tag: disabled
+    servers:
+    - url: https://api.dropbox.com
   /2/team/token/get_authenticated_admin:
     post:
       tags:
@@ -164,6 +169,10 @@ paths:
                     is_verified: true
                   joined_on: '2015-05-12T15:50:38Z'
                   profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
+      security:
+      - bearerAuth: []
+    servers:
+    - url: https://api.dropbox.com
   /team/add_member:
     put:
       tags:
@@ -267,6 +276,8 @@ paths:
         seo:
           title: _t__TeamAddMember::SEO::TITLE
           description: _t__TeamAddMember::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
   /team/create:
     post:
       tags:
@@ -358,6 +369,8 @@ paths:
         seo:
           title: _t__TeamCreate::SEO::TITLE
           description: _t__TeamCreate::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
   /team/destroy:
     delete:
       tags:
@@ -433,6 +446,8 @@ paths:
         seo:
           title: _t__TeamDelete::SEO::TITLE
           description: _t__TeamDelete::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
   /team:
     get:
       tags:
@@ -607,6 +622,8 @@ paths:
         seo:
           title: _t__TeamUpdate::SEO::TITLE
           description: _t__TeamUpdate::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
   /team/info:
     get:
       tags:
@@ -701,6 +718,8 @@ paths:
         seo:
           title: _t__TeamInfo::SEO::TITLE
           description: _t__TeamInfo::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
   /team/invites:
     get:
       tags:
@@ -791,6 +810,8 @@ paths:
         seo:
           title: _t__TeamInvites::SEO::TITLE
           description: _t__TeamInvites::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
   /team/members/{team_id}:
     get:
       tags:
@@ -899,6 +920,8 @@ paths:
         seo:
           title: _t__TeamMembers::SEO::TITLE
           description: _t__TeamMembers::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
   /team/remove_member:
     post:
       tags:
@@ -994,6 +1017,8 @@ paths:
         seo:
           title: _t__TeamRemoveMember::SEO::TITLE
           description: _t__TeamRemoveMember::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
   /team/sub_teams/{team_id}:
     get:
       tags:
@@ -1102,58 +1127,107 @@ paths:
         seo:
           title: _t__TeamSubTeams::SEO::TITLE
           description: _t__TeamSubTeams::SEO::DESCRIPTION
+    servers:
+    - url: https://api.hellosign.com/v3
 components:
+  examples:
+    TeamGetResponseExample:
+      summary: _t__TeamGetResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamGetResponseExample.json
+    TeamAddMemberResponseExample:
+      summary: _t__TeamAddMemberResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamAddMemberResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    TeamMembersResponseExample:
+      summary: _t__TeamMembersResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamMembersResponseExample.json
+    TeamCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/TeamCreateRequestDefaultExample.json
+    TeamInvitesResponseExample:
+      summary: _t__TeamInvitesResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamInvitesResponseExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    TeamGetInfoResponseExample:
+      summary: _t__TeamInfoResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamGetInfoResponseExample.json
+    TeamCreateResponseExample:
+      summary: _t__TeamCreateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamCreateResponseExample.json
+    TeamDoesNotExistResponseExample:
+      summary: _t__TeamDoesNotExistResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamDoesNotExistResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    TeamSubTeamsResponseExample:
+      summary: _t__TeamSubTeamsResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamSubTeamsResponseExample.json
+    TeamRemoveMemberRequestEmailAddressExample:
+      summary: Email Address Example
+      value:
+        $ref: examples/json/TeamRemoveMemberRequestEmailAddressExample.json
+    TeamUpdateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/TeamUpdateRequestDefaultExample.json
+    TeamAddMemberRequestEmailAddressExample:
+      summary: Email Address Example
+      value:
+        $ref: examples/json/TeamAddMemberRequestEmailAddressExample.json
+    TeamRemoveMemberRequestAccountIdExample:
+      summary: Account ID Example
+      value:
+        $ref: examples/json/TeamRemoveMemberRequestAccountIdExample.json
+    Error409ResponseExample:
+      summary: _t__Error::409
+      value:
+        $ref: examples/json/Error409ResponseExample.json
+    TeamRemoveMemberResponseExample:
+      summary: _t__TeamRemoveMemberResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamRemoveMemberResponseExample.json
+    TeamAddMemberRequestAccountIdExample:
+      summary: Account ID Example
+      value:
+        $ref: examples/json/TeamAddMemberRequestAccountIdExample.json
+    Error429ResponseExample:
+      summary: _t__Error::429
+      value:
+        $ref: examples/json/Error429ResponseExample.json
+    TeamUpdateResponseExample:
+      summary: _t__TeamUpdateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/TeamUpdateResponseExample.json
+    Error404ResponseExample:
+      summary: _t__Error::404
+      value:
+        $ref: examples/json/Error404ResponseExample.json
   schemas:
-    TeamMemberResponse:
-      properties:
-        account_id:
-          description: _t__TeamMemberResponse::ACCOUNT_ID
-          type: string
-        email_address:
-          description: _t__TeamMemberResponse::EMAIL_ADDRESS
-          type: string
-        role:
-          description: _t__TeamMemberResponse::MEMBER_ROLE
-          type: string
-      type: object
-      x-internal: true
-    AccountResponse:
-      properties:
-        account_id:
-          description: _t__Account::ACCOUNT_ID
-          type: string
-        email_address:
-          description: _t__Account::EMAIL_ADDRESS
-          type: string
-        is_locked:
-          description: _t__Account::IS_LOCKED
-          type: boolean
-        is_paid_hs:
-          description: _t__Account::IS_PAID_HS
-          type: boolean
-        is_paid_hf:
-          description: _t__Account::IS_PAID_HF
-          type: boolean
-        quotas:
-          $ref: '#/components/schemas/AccountResponseQuotas'
-        callback_url:
-          description: _t__Account::CALLBACK_URL
-          type: string
-          nullable: true
-        role_code:
-          description: _t__Account::ROLE_CODE
-          type: string
-          nullable: true
-        team_id:
-          description: _t__Account::TEAM_ID
-          type: string
-          nullable: true
-        locale:
-          description: _t__Account::LOCALE
-          type: string
-          nullable: true
-      type: object
-      x-internal: true
     ErrorResponse:
       required:
       - error
@@ -1161,14 +1235,118 @@ components:
         error:
           $ref: '#/components/schemas/ErrorResponseError'
       type: object
-    SubTeamResponse:
+    TeamInvitesResponse:
+      properties:
+        team_invites:
+          description: _t__TeamInvitesResponse::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/TeamInviteResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    TeamInfoResponse:
       properties:
         team_id:
           description: _t__TeamGeneral::TEAM_ID
           type: string
+        team_parent:
+          $ref: '#/components/schemas/TeamParentResponse'
         name:
           description: _t__TeamGeneral::NAME
           type: string
+        num_members:
+          description: _t__TeamGeneral::NUM_MEMBERS
+          type: integer
+        num_sub_teams:
+          description: _t__TeamGeneral::NUM_SUB_TEAMS
+          type: integer
+      type: object
+      x-internal: true
+    TeamCreateRequest:
+      properties:
+        name:
+          description: _t__TeamCreate::NAME
+          type: string
+          default: Untitled Team
+      type: object
+    TeamUpdateRequest:
+      properties:
+        name:
+          description: _t__TeamUpdate::NAME
+          type: string
+      type: object
+    TeamAddMemberRequest:
+      properties:
+        account_id:
+          description: _t__TeamAddMember::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__TeamAddMember::EMAIL_ADDRESS
+          type: string
+          format: email
+        role:
+          description: _t__TeamAddMember::ROLE
+          type: string
+          enum:
+          - Member
+          - Developer
+          - Team Manager
+          - Admin
+      type: object
+    TeamInviteResponse:
+      properties:
+        email_address:
+          description: _t__TeamInviteResponse::EMAIL_ADDRESS
+          type: string
+        team_id:
+          description: _t__TeamInviteResponse::TEAM_ID
+          type: string
+        role:
+          description: _t__TeamInviteResponse::ROLE
+          type: string
+        sent_at:
+          description: _t__TeamInviteResponse::SENT_AT
+          type: integer
+        redeemed_at:
+          description: _t__TeamInviteResponse::REDEEMED_AT
+          type: integer
+        expires_at:
+          description: _t__TeamInviteResponse::EXPIRES_AT
+          type: integer
+      type: object
+      x-internal: true
+    AccountResponseQuotas:
+      description: _t__Account::QUOTA
+      properties:
+        api_signature_requests_left:
+          description: _t__AccountQuota::API_SIGNATURE_REQUESTS_LEFT
+          type:
+          - integer
+          - 'null'
+        documents_left:
+          description: _t__AccountQuota::DOCUMENTS_LEFT
+          type:
+          - integer
+          - 'null'
+        templates_total:
+          description: _t__AccountQuota::TEMPLATES_TOTAL
+          type:
+          - integer
+          - 'null'
+        templates_left:
+          description: _t__AccountQuota::TEMPLATES_LEFT
+          type:
+          - integer
+          - 'null'
+        sms_verifications_left:
+          description: _t__AccountQuota::SMS_VERIFICATIONS_LEFT
+          type:
+          - integer
+          - 'null'
       type: object
       x-internal: true
     TeamRemoveMemberRequest:
@@ -1196,74 +1374,6 @@ components:
           - Team Manager
           - Admin
       type: object
-    TeamParentResponse:
-      description: _t__TeamInfo::TEAM_PARENT
-      properties:
-        team_id:
-          description: _t__TeamGeneral::TEAM_ID
-          type: string
-        name:
-          description: _t__TeamGeneral::NAME
-          type: string
-      type: object
-      nullable: true
-      x-internal: true
-    TeamInviteResponse:
-      properties:
-        email_address:
-          description: _t__TeamInviteResponse::EMAIL_ADDRESS
-          type: string
-        team_id:
-          description: _t__TeamInviteResponse::TEAM_ID
-          type: string
-        role:
-          description: _t__TeamInviteResponse::ROLE
-          type: string
-        sent_at:
-          description: _t__TeamInviteResponse::SENT_AT
-          type: integer
-        redeemed_at:
-          description: _t__TeamInviteResponse::REDEEMED_AT
-          type: integer
-        expires_at:
-          description: _t__TeamInviteResponse::EXPIRES_AT
-          type: integer
-      type: object
-      x-internal: true
-    TeamUpdateRequest:
-      properties:
-        name:
-          description: _t__TeamUpdate::NAME
-          type: string
-      type: object
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
-          type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
-          type: string
-      type: object
-    TeamMembersResponse:
-      properties:
-        team_members:
-          description: _t__TeamMembersResponse::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TeamMemberResponse'
-        list_info:
-          $ref: '#/components/schemas/ListInfoResponse'
-        warnings:
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
     TeamResponse:
       description: _t__TeamResponse::DESCRIPTION
       properties:
@@ -1302,6 +1412,107 @@ components:
           description: _t__ErrorResponseError::ERROR_NAME
           type: string
       type: object
+    TeamMembersResponse:
+      properties:
+        team_members:
+          description: _t__TeamMembersResponse::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/TeamMemberResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
+      required:
+      - warning_msg
+      - warning_name
+      properties:
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
+      type: object
+    TeamMemberResponse:
+      properties:
+        account_id:
+          description: _t__TeamMemberResponse::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__TeamMemberResponse::EMAIL_ADDRESS
+          type: string
+        role:
+          description: _t__TeamMemberResponse::MEMBER_ROLE
+          type: string
+      type: object
+      x-internal: true
+    ListInfoResponse:
+      description: _t__ListInfoResponse::DESCRIPTION
+      properties:
+        num_pages:
+          description: _t__ListInfoResponse::NUM_PAGES
+          type: integer
+        num_results:
+          description: _t__ListInfoResponse::NUM_RESULTS
+          type:
+          - integer
+          - 'null'
+        page:
+          description: _t__ListInfoResponse::PAGE
+          type: integer
+        page_size:
+          description: _t__ListInfoResponse::PAGE_SIZE
+          type: integer
+      type: object
+      x-internal: true
+    AccountResponse:
+      properties:
+        account_id:
+          description: _t__Account::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__Account::EMAIL_ADDRESS
+          type: string
+        is_locked:
+          description: _t__Account::IS_LOCKED
+          type: boolean
+        is_paid_hs:
+          description: _t__Account::IS_PAID_HS
+          type: boolean
+        is_paid_hf:
+          description: _t__Account::IS_PAID_HF
+          type: boolean
+        quotas:
+          $ref: '#/components/schemas/AccountResponseQuotas'
+        callback_url:
+          description: _t__Account::CALLBACK_URL
+          type:
+          - string
+          - 'null'
+        role_code:
+          description: _t__Account::ROLE_CODE
+          type:
+          - string
+          - 'null'
+        team_id:
+          description: _t__Account::TEAM_ID
+          type:
+          - string
+          - 'null'
+        locale:
+          description: _t__Account::LOCALE
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
     TeamSubTeamsResponse:
       properties:
         sub_teams:
@@ -1317,24 +1528,6 @@ components:
             $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
-    ListInfoResponse:
-      description: _t__ListInfoResponse::DESCRIPTION
-      properties:
-        num_pages:
-          description: _t__ListInfoResponse::NUM_PAGES
-          type: integer
-        num_results:
-          description: _t__ListInfoResponse::NUM_RESULTS
-          type: integer
-          nullable: true
-        page:
-          description: _t__ListInfoResponse::PAGE
-          type: integer
-        page_size:
-          description: _t__ListInfoResponse::PAGE_SIZE
-          type: integer
-      type: object
-      x-internal: true
     TeamGetResponse:
       properties:
         team:
@@ -1346,42 +1539,14 @@ components:
             $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
-    TeamInfoResponse:
+    SubTeamResponse:
       properties:
         team_id:
           description: _t__TeamGeneral::TEAM_ID
           type: string
-        team_parent:
-          $ref: '#/components/schemas/TeamParentResponse'
         name:
           description: _t__TeamGeneral::NAME
           type: string
-        num_members:
-          description: _t__TeamGeneral::NUM_MEMBERS
-          type: integer
-        num_sub_teams:
-          description: _t__TeamGeneral::NUM_SUB_TEAMS
-          type: integer
-      type: object
-      x-internal: true
-    TeamCreateRequest:
-      properties:
-        name:
-          description: _t__TeamCreate::NAME
-          type: string
-          default: Untitled Team
-      type: object
-    TeamInvitesResponse:
-      properties:
-        team_invites:
-          description: _t__TeamInvitesResponse::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TeamInviteResponse'
-        warnings:
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
     TeamGetInfoResponse:
@@ -1395,159 +1560,32 @@ components:
             $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
-    TeamAddMemberRequest:
+    TeamParentResponse:
+      description: _t__TeamInfo::TEAM_PARENT
       properties:
-        account_id:
-          description: _t__TeamAddMember::ACCOUNT_ID
+        team_id:
+          description: _t__TeamGeneral::TEAM_ID
           type: string
-        email_address:
-          description: _t__TeamAddMember::EMAIL_ADDRESS
+        name:
+          description: _t__TeamGeneral::NAME
           type: string
-          format: email
-        role:
-          description: _t__TeamAddMember::ROLE
-          type: string
-          enum:
-          - Member
-          - Developer
-          - Team Manager
-          - Admin
-      type: object
-    AccountResponseQuotas:
-      description: _t__Account::QUOTA
-      properties:
-        api_signature_requests_left:
-          description: _t__AccountQuota::API_SIGNATURE_REQUESTS_LEFT
-          type: integer
-          nullable: true
-        documents_left:
-          description: _t__AccountQuota::DOCUMENTS_LEFT
-          type: integer
-          nullable: true
-        templates_total:
-          description: _t__AccountQuota::TEMPLATES_TOTAL
-          type: integer
-          nullable: true
-        templates_left:
-          description: _t__AccountQuota::TEMPLATES_LEFT
-          type: integer
-          nullable: true
-        sms_verifications_left:
-          description: _t__AccountQuota::SMS_VERIFICATIONS_LEFT
-          type: integer
-          nullable: true
-      type: object
+      type:
+      - object
+      - 'null'
       x-internal: true
-  examples:
-    TeamAddMemberRequestAccountIdExample:
-      summary: Account ID Example
-      value:
-        $ref: examples/json/TeamAddMemberRequestAccountIdExample.json
-    TeamGetInfoResponseExample:
-      summary: _t__TeamInfoResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamGetInfoResponseExample.json
-    TeamRemoveMemberResponseExample:
-      summary: _t__TeamRemoveMemberResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamRemoveMemberResponseExample.json
-    TeamSubTeamsResponseExample:
-      summary: _t__TeamSubTeamsResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamSubTeamsResponseExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    TeamGetResponseExample:
-      summary: _t__TeamGetResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamGetResponseExample.json
-    TeamAddMemberRequestEmailAddressExample:
-      summary: Email Address Example
-      value:
-        $ref: examples/json/TeamAddMemberRequestEmailAddressExample.json
-    TeamUpdateResponseExample:
-      summary: _t__TeamUpdateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamUpdateResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    Error429ResponseExample:
-      summary: _t__Error::429
-      value:
-        $ref: examples/json/Error429ResponseExample.json
-    Error409ResponseExample:
-      summary: _t__Error::409
-      value:
-        $ref: examples/json/Error409ResponseExample.json
-    TeamCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TeamCreateRequestDefaultExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    TeamRemoveMemberRequestAccountIdExample:
-      summary: Account ID Example
-      value:
-        $ref: examples/json/TeamRemoveMemberRequestAccountIdExample.json
-    TeamAddMemberResponseExample:
-      summary: _t__TeamAddMemberResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamAddMemberResponseExample.json
-    TeamRemoveMemberRequestEmailAddressExample:
-      summary: Email Address Example
-      value:
-        $ref: examples/json/TeamRemoveMemberRequestEmailAddressExample.json
-    TeamCreateResponseExample:
-      summary: _t__TeamCreateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamCreateResponseExample.json
-    TeamUpdateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TeamUpdateRequestDefaultExample.json
-    Error404ResponseExample:
-      summary: _t__Error::404
-      value:
-        $ref: examples/json/Error404ResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    TeamInvitesResponseExample:
-      summary: _t__TeamInvitesResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamInvitesResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    TeamMembersResponseExample:
-      summary: _t__TeamMembersResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamMembersResponseExample.json
-    TeamDoesNotExistResponseExample:
-      summary: _t__TeamDoesNotExistResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TeamDoesNotExistResponseExample.json
   headers:
-    X-Ratelimit-Reset:
-      description: _t__Common::RateLimiting::RESET
-      schema:
-        type: integer
-        format: int64
-        example: 1430170900
     X-RateLimit-Limit:
       description: _t__Common::RateLimiting::LIMIT
       schema:
         type: integer
         format: int32
         example: 100
+    X-Ratelimit-Reset:
+      description: _t__Common::RateLimiting::RESET
+      schema:
+        type: integer
+        format: int64
+        example: 1430170900
     X-RateLimit-Remaining:
       description: _t__Common::RateLimiting::REMAINING
       schema:
@@ -1558,3 +1596,18 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+    api_key:
+      type: http
+      description: _t__OpenApi::AUTH::API_KEY
+      scheme: basic
+    oauth2:
+      type: http
+      description: _t__OpenApi::AUTH::OAUTH
+      bearerFormat: JWT
+      scheme: bearer
+externalDocs:
+  description: Legacy API Reference
+  url: https://app.hellosign.com/api/reference
+x-refined-from:
+- dropbox-openapi-original.yml
+- dropbox-sign-openapi-original.yml
