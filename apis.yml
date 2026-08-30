@@ -27,7 +27,7 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
-  - API App
+  - Api App
   tags_raw:
   - Api App
   properties:
@@ -208,7 +208,7 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
-  - File Requests
+  - File_requests
   tags_raw:
   - File_requests
   properties:
@@ -477,7 +477,7 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
-  - Team Members
+  - Team > Members
   tags_raw:
   - Team > Members
   properties:
