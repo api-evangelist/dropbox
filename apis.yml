@@ -246,28 +246,6 @@ apis:
     url: https://developers.hellosign.com/docs/sdks/overview/
   - type: GettingStarted
     url: https://developers.hellosign.com/api/quickstart/
-- aid: dropbox:dropbox-oauth-api
-  name: Dropbox OAuth API
-  description: _md__OpenApi::TAG::OAUTH::DESCRIPTION
-  humanURL: https://www.dropbox.com/developers/documentation/http/overview
-  baseURL: https://api.dropboxapi.com
-  tags:
-  - Authentication
-  tags_raw:
-  - OAuth
-  properties:
-  - type: OpenAPI
-    url: openapi/dropbox-oauth-api-openapi.yml
-  - type: Documentation
-    url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
-  - type: Documentation
-    url: https://developers.hellosign.com/
-  - type: SDKs
-    url: https://developers.hellosign.com/docs/sdks/overview/
-  - type: GettingStarted
-    url: https://developers.hellosign.com/api/quickstart/
 - aid: dropbox:dropbox-report-api
   name: Dropbox Report API
   description: _md__OpenApi::TAG::REPORT::DESCRIPTION
@@ -625,6 +603,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/dropbox-callbacks-and-events-api-openapi.yml
+- aid: dropbox:dropbox-oauth-api
+  name: Dropbox O Auth API
+  description: _md__OpenApi::TAG::OAUTH::DESCRIPTION
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - OAuth
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-oauth-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: GraphQL
+    url: graphql/dropbox-graphql.md
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
 name: Dropbox
 tags:
 - Documents
