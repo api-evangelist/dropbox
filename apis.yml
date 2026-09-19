@@ -537,6 +537,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - Templates
+  tags_raw:
   - Template
   properties:
   - type: OpenAPI
@@ -609,6 +611,8 @@ apis:
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
+  - Authentication
+  tags_raw:
   - OAuth
   properties:
   - type: OpenAPI
