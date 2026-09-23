@@ -1,21 +1,21 @@
 openapi: 3.2.0
 info:
   title: Dropbox API Reference Team > Members API
-  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  description: The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways.
   version: 1.0.0
 servers:
 - url: https://api.dropbox.com
 security:
 - bearerAuth: []
 tags:
-- name: Team > Members
+- name: Team Members
 paths:
   /2/team/members/add:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/add
-      description: '[members/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-add)
+      description: 'members/add
 
 
         scope: `members.write`
@@ -92,12 +92,14 @@ paths:
                     profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
                   role:
                     .tag: member_only
+      operationId: post2TeamMembersAdd
+      x-operation-id-source: derived
   /2/team/members/add/job_status/get:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/add/job_status/get
-      description: '[members/add/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-add-job_status-get)
+      description: 'members/add/job_status/get
 
 
         scope: `members.write`
@@ -166,12 +168,14 @@ paths:
                     profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
                   role:
                     .tag: member_only
+      operationId: post2TeamMembersAddJobStatusGet
+      x-operation-id-source: derived
   /2/team/members/delete_profile_photo:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/delete_profile_photo
-      description: '[members/delete_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-delete_profile_photo)
+      description: 'members/delete_profile_photo
 
 
         scope: `members.write`
@@ -237,12 +241,14 @@ paths:
                   profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
                 role:
                   .tag: member_only
+      operationId: post2TeamMembersDeleteProfilePhoto
+      x-operation-id-source: derived
   /2/team/members/get_info:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/get_info
-      description: '[members/get_info](https://www.dropbox.com/developers/documentation/http/teams#team-members-get_info)
+      description: 'members/get_info
 
 
         scope: `members.read`
@@ -311,12 +317,14 @@ paths:
                   profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
                 role:
                   .tag: member_only
+      operationId: post2TeamMembersGetInfo
+      x-operation-id-source: derived
   /2/team/members/list:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/list
-      description: '[members/list](https://www.dropbox.com/developers/documentation/http/teams#team-members-list)
+      description: 'members/list
 
 
         scope: `members.read`
@@ -385,12 +393,14 @@ paths:
                     .tag: member_only
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
                 has_more: true
+      operationId: post2TeamMembersList
+      x-operation-id-source: derived
   /2/team/members/list/continue:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/list/continue
-      description: '[members/list/continue](https://www.dropbox.com/developers/documentation/http/teams#team-members-list-continue)
+      description: 'members/list/continue
 
 
         scope: `members.read`
@@ -459,12 +469,14 @@ paths:
                     .tag: member_only
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
                 has_more: true
+      operationId: post2TeamMembersListContinue
+      x-operation-id-source: derived
   /2/team/members/move_former_member_files:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/move_former_member_files
-      description: '[members/move_former_member_files](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files)
+      description: 'members/move_former_member_files
 
 
         scope: `members.write`
@@ -503,12 +515,14 @@ paths:
                 type: object
               example:
                 .tag: complete
+      operationId: post2TeamMembersMoveFormerMemberFiles
+      x-operation-id-source: derived
   /2/team/members/move_former_member_files/job_status/check:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/move_former_member_files/job_status/check
-      description: '[members/move_former_member_files/job_status/check](https://www.dropbox.com/developers/documentation/http/teams#team-members-move_former_member_files-job_status-check)
+      description: 'members/move_former_member_files/job_status/check
 
 
         scope: `members.write`
@@ -547,12 +561,14 @@ paths:
                 type: object
               example:
                 .tag: complete
+      operationId: post2TeamMembersMoveFormerMemberFilesJobStatusCheck
+      x-operation-id-source: derived
   /2/team/members/recover:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/recover
-      description: '[members/recover](https://www.dropbox.com/developers/documentation/http/teams#team-members-recover)
+      description: 'members/recover
 
 
         scope: `members.delete`
@@ -580,12 +596,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2TeamMembersRecover
+      x-operation-id-source: derived
   /2/team/members/remove:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/remove
-      description: '[members/remove](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove)
+      description: 'members/remove
 
 
         scope: `members.delete`
@@ -632,12 +650,14 @@ paths:
                 type: object
               example:
                 .tag: complete
+      operationId: post2TeamMembersRemove
+      x-operation-id-source: derived
   /2/team/members/remove/job_status/get:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/remove/job_status/get
-      description: '[members/remove/job_status/get](https://www.dropbox.com/developers/documentation/http/teams#team-members-remove-job_status-get)
+      description: 'members/remove/job_status/get
 
 
         scope: `members.delete`
@@ -676,12 +696,14 @@ paths:
                 type: object
               example:
                 .tag: complete
+      operationId: post2TeamMembersRemoveJobStatusGet
+      x-operation-id-source: derived
   /2/team/members/secondary_emails/add:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/secondary_emails/add
-      description: '[members/secondary_emails/add](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-add)
+      description: 'members/secondary_emails/add
 
 
         scope: `members.write`
@@ -737,12 +759,14 @@ paths:
                   invalid_user:
                     .tag: team_member_id
                     team_member_id: dbmid:efgh5678
+      operationId: post2TeamMembersSecondaryEmailsAdd
+      x-operation-id-source: derived
   /2/team/members/secondary_emails/delete:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/secondary_emails/delete
-      description: '[members/secondary_emails/delete](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-delete)
+      description: 'members/secondary_emails/delete
 
 
         scope: `members.write`
@@ -792,12 +816,14 @@ paths:
                     success: alice@example.com
                   - .tag: not_found
                     not_found: alic@example.com
+      operationId: post2TeamMembersSecondaryEmailsDelete
+      x-operation-id-source: derived
   /2/team/members/secondary_emails/resend_verification_emails:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/secondary_emails/resend_verification_emails
-      description: '[members/secondary_emails/resend_verification_emails](https://www.dropbox.com/developers/documentation/http/teams#team-members-secondary_emails-resend_verification_emails)
+      description: 'members/secondary_emails/resend_verification_emails
 
 
         scope: `members.write`
@@ -843,12 +869,14 @@ paths:
                   results:
                   - .tag: success
                     success: alice@example.com
+      operationId: post2TeamMembersSecondaryEmailsResendVerificationEmails
+      x-operation-id-source: derived
   /2/team/members/send_welcome_email:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/send_welcome_email
-      description: '[members/send_welcome_email](https://www.dropbox.com/developers/documentation/http/teams#team-members-send_welcome_email)
+      description: 'members/send_welcome_email
 
 
         scope: `members.write`
@@ -878,12 +906,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2TeamMembersSendWelcomeEmail
+      x-operation-id-source: derived
   /2/team/members/set_admin_permissions:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/set_admin_permissions
-      description: '[members/set_admin_permissions](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_admin_permissions)
+      description: 'members/set_admin_permissions
 
 
         scope: `members.write`
@@ -924,12 +954,14 @@ paths:
                 team_member_id: dbmid:9978889
                 role:
                   .tag: member_only
+      operationId: post2TeamMembersSetAdminPermissions
+      x-operation-id-source: derived
   /2/team/members/set_profile:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/set_profile
-      description: '[members/set_profile](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile)
+      description: 'members/set_profile
 
 
         scope: `members.write`
@@ -995,12 +1027,14 @@ paths:
                   profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
                 role:
                   .tag: member_only
+      operationId: post2TeamMembersSetProfile
+      x-operation-id-source: derived
   /2/team/members/set_profile_photo:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/set_profile_photo
-      description: '[members/set_profile_photo](https://www.dropbox.com/developers/documentation/http/teams#team-members-set_profile_photo)
+      description: 'members/set_profile_photo
 
 
         scope: `members.write`
@@ -1066,12 +1100,14 @@ paths:
                   profile_photo_url: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
                 role:
                   .tag: member_only
+      operationId: post2TeamMembersSetProfilePhoto
+      x-operation-id-source: derived
   /2/team/members/suspend:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/suspend
-      description: '[members/suspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-suspend)
+      description: 'members/suspend
 
 
         scope: `members.write`
@@ -1099,12 +1135,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2TeamMembersSuspend
+      x-operation-id-source: derived
   /2/team/members/unsuspend:
     post:
       tags:
-      - Team > Members
+      - Team Members
       summary: Dropbox members/unsuspend
-      description: '[members/unsuspend](https://www.dropbox.com/developers/documentation/http/teams#team-members-unsuspend)
+      description: 'members/unsuspend
 
 
         scope: `members.write`
@@ -1132,6 +1170,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2TeamMembersUnsuspend
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

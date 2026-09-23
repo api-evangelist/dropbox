@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: Dropbox API Reference Sharing API
-  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  description: The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways.
   version: 1.0.0
 servers:
 - url: https://api.dropbox.com
@@ -9,16 +9,14 @@ security:
 - bearerAuth: []
 tags:
 - name: Sharing
-  description: 'This namespace contains endpoints and data types for creating and managing shared links and shared folders.
-
-    '
+  description: This namespace contains endpoints and data types for creating and managing shared links and shared folders.
 paths:
   /2/sharing/add_file_member:
     post:
       tags:
       - Sharing
       summary: Dropbox add_file_member
-      description: '[add_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_file_member)
+      description: 'add_file_member
 
 
         scope: `sharing.write`
@@ -59,12 +57,14 @@ paths:
                   email: justin@example.com
                 result:
                   .tag: success
+      operationId: post2SharingAddFileMember
+      x-operation-id-source: derived
   /2/sharing/add_folder_member:
     post:
       tags:
       - Sharing
       summary: Dropbox add_folder_member
-      description: '[add_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-add_folder_member)
+      description: 'add_folder_member
 
 
         scope: `sharing.write`
@@ -90,12 +90,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2SharingAddFolderMember
+      x-operation-id-source: derived
   /2/sharing/check_job_status:
     post:
       tags:
       - Sharing
       summary: Dropbox check_job_status
-      description: '[check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_job_status)
+      description: 'check_job_status
 
 
         scope: `sharing.write`
@@ -132,12 +134,14 @@ paths:
                 type: object
               example:
                 .tag: in_progress
+      operationId: post2SharingCheckJobStatus
+      x-operation-id-source: derived
   /2/sharing/check_remove_member_job_status:
     post:
       tags:
       - Sharing
       summary: Dropbox check_remove_member_job_status
-      description: '[check_remove_member_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_remove_member_job_status)
+      description: 'check_remove_member_job_status
 
 
         scope: `sharing.write`
@@ -174,12 +178,14 @@ paths:
                 type: object
               example:
                 .tag: complete
+      operationId: post2SharingCheckRemoveMemberJobStatus
+      x-operation-id-source: derived
   /2/sharing/check_share_job_status:
     post:
       tags:
       - Sharing
       summary: Dropbox check_share_job_status
-      description: '[check_share_job_status](https://www.dropbox.com/developers/documentation/http/documentation#sharing-check_share_job_status)
+      description: 'check_share_job_status
 
 
         scope: `sharing.write`
@@ -250,12 +256,14 @@ paths:
                 permissions: []
                 access_inheritance:
                   .tag: inherit
+      operationId: post2SharingCheckShareJobStatus
+      x-operation-id-source: derived
   /2/sharing/get_file_metadata:
     post:
       tags:
       - Sharing
       summary: Dropbox get_file_metadata
-      description: '[get_file_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata)
+      description: 'get_file_metadata
 
 
         scope: `sharing.read`
@@ -314,12 +322,14 @@ paths:
                 path_lower: /dir/file.txt
                 permissions: []
                 time_invited: '2016-01-20T00:00:00Z'
+      operationId: post2SharingGetFileMetadata
+      x-operation-id-source: derived
   /2/sharing/get_file_metadata/batch:
     post:
       tags:
       - Sharing
       summary: Dropbox get_file_metadata/batch
-      description: '[get_file_metadata/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_file_metadata-batch)
+      description: 'get_file_metadata/batch
 
 
         scope: `sharing.read`
@@ -381,12 +391,14 @@ paths:
                   path_lower: /dir/file.txt
                   permissions: []
                   time_invited: '2016-01-20T00:00:00Z'
+      operationId: post2SharingGetFileMetadataBatch
+      x-operation-id-source: derived
   /2/sharing/get_folder_metadata:
     post:
       tags:
       - Sharing
       summary: Dropbox get_folder_metadata
-      description: '[get_folder_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_folder_metadata)
+      description: 'get_folder_metadata
 
 
         scope: `sharing.read`
@@ -456,18 +468,20 @@ paths:
                 permissions: []
                 access_inheritance:
                   .tag: inherit
+      operationId: post2SharingGetFolderMetadata
+      x-operation-id-source: derived
   /2/sharing/get_shared_link_file:
     post:
       tags:
       - Sharing
       summary: Dropbox get_shared_link_file
-      description: '[get_shared_link_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_file)
+      description: 'get_shared_link_file
 
 
         scope: `sharing.read`
 
 
-        Download the shared link''s file from a user''s Dropbox.      '
+        Download the shared link''s file from a user''s Dropbox.'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -512,12 +526,14 @@ paths:
                     name: Acme, Inc.
                   display_name: Roger Rabbit
                   member_id: dbmid:abcd1234
+      operationId: post2SharingGetSharedLinkFile
+      x-operation-id-source: derived
   /2/sharing/get_shared_link_metadata:
     post:
       tags:
       - Sharing
       summary: Dropbox get_shared_link_metadata
-      description: '[get_shared_link_metadata](https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_metadata)
+      description: 'get_shared_link_metadata
 
 
         scope: `sharing.read`
@@ -574,12 +590,14 @@ paths:
                     name: Acme, Inc.
                   display_name: Roger Rabbit
                   member_id: dbmid:abcd1234
+      operationId: post2SharingGetSharedLinkMetadata
+      x-operation-id-source: derived
   /2/sharing/list_file_members:
     post:
       tags:
       - Sharing
       summary: Dropbox list_file_members
-      description: '[list_file_members](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members)
+      description: 'list_file_members
 
 
         scope: `sharing.read`
@@ -653,12 +671,14 @@ paths:
                     email: jessica@example.com
                   permissions: []
                   is_inherited: false
+      operationId: post2SharingListFileMembers
+      x-operation-id-source: derived
   /2/sharing/list_file_members/batch:
     post:
       tags:
       - Sharing
       summary: Dropbox list_file_members/batch
-      description: '[list_file_members/batch](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-batch)
+      description: 'list_file_members/batch
 
 
         scope: `sharing.read`
@@ -739,12 +759,14 @@ paths:
                       permissions: []
                       is_inherited: false
                   member_count: 3
+      operationId: post2SharingListFileMembersBatch
+      x-operation-id-source: derived
   /2/sharing/list_file_members/continue:
     post:
       tags:
       - Sharing
       summary: Dropbox list_file_members/continue
-      description: '[list_file_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_file_members-continue)
+      description: 'list_file_members/continue
 
 
         scope: `sharing.read`
@@ -818,12 +840,14 @@ paths:
                     email: jessica@example.com
                   permissions: []
                   is_inherited: false
+      operationId: post2SharingListFileMembersContinue
+      x-operation-id-source: derived
   /2/sharing/list_folder_members/continue:
     post:
       tags:
       - Sharing
       summary: Dropbox list_folder_members/continue
-      description: '[list_folder_members/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folder_members-continue)
+      description: 'list_folder_members/continue
 
 
         scope: `sharing.read`
@@ -895,12 +919,14 @@ paths:
                   permissions: []
                   is_inherited: false
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+      operationId: post2SharingListFolderMembersContinue
+      x-operation-id-source: derived
   /2/sharing/list_folders:
     post:
       tags:
       - Sharing
       summary: Dropbox list_folders
-      description: '[list_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders)
+      description: 'list_folders
 
 
         scope: `sharing.read`
@@ -972,12 +998,14 @@ paths:
                   access_inheritance:
                     .tag: inherit
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+      operationId: post2SharingListFolders
+      x-operation-id-source: derived
   /2/sharing/list_folders/continue:
     post:
       tags:
       - Sharing
       summary: Dropbox list_folders/continue
-      description: '[list_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders-continue)
+      description: 'list_folders/continue
 
 
         scope: `sharing.read`
@@ -1049,12 +1077,14 @@ paths:
                   access_inheritance:
                     .tag: inherit
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+      operationId: post2SharingListFoldersContinue
+      x-operation-id-source: derived
   /2/sharing/list_mountable_folders:
     post:
       tags:
       - Sharing
       summary: Dropbox list_mountable_folders
-      description: '[list_mountable_folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders)
+      description: 'list_mountable_folders
 
 
         scope: `sharing.read`
@@ -1126,12 +1156,14 @@ paths:
                   access_inheritance:
                     .tag: inherit
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+      operationId: post2SharingListMountableFolders
+      x-operation-id-source: derived
   /2/sharing/list_mountable_folders/continue:
     post:
       tags:
       - Sharing
       summary: Dropbox list_mountable_folders/continue
-      description: '[list_mountable_folders/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_mountable_folders-continue)
+      description: 'list_mountable_folders/continue
 
 
         scope: `sharing.read`
@@ -1203,12 +1235,22 @@ paths:
                   access_inheritance:
                     .tag: inherit
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+      operationId: post2SharingListMountableFoldersContinue
+      x-operation-id-source: derived
   /2/sharing/list_received_files:
     post:
       tags:
       - Sharing
       summary: Dropbox list_received_files
-      description: "[list_received_files](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files)\n\nscope: `sharing.read`\n\nReturns a list of all files shared with current user.\n Does not include files the user has received via shared folders, and does  not include unclaimed invitations."
+      description: 'list_received_files
+
+
+        scope: `sharing.read`
+
+
+        Returns a list of all files shared with current user.
+
+        Does not include files the user has received via shared folders, and does not include unclaimed invitations.'
       requestBody:
         content:
           '*/*':
@@ -1263,12 +1305,14 @@ paths:
                   permissions: []
                   time_invited: '2016-01-20T00:00:00Z'
                 cursor: AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9cmV2aXNpb24H3Qf6o1fkHxQ
+      operationId: post2SharingListReceivedFiles
+      x-operation-id-source: derived
   /2/sharing/list_received_files/continue:
     post:
       tags:
       - Sharing
       summary: Dropbox list_received_files/continue
-      description: '[list_received_files/continue](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_received_files-continue)
+      description: 'list_received_files/continue
 
 
         scope: `sharing.read`
@@ -1329,12 +1373,14 @@ paths:
                   permissions: []
                   time_invited: '2016-01-20T00:00:00Z'
                 cursor: AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9cmV2aXNpb24H3Qf6o1fkHxQ
+      operationId: post2SharingListReceivedFilesContinue
+      x-operation-id-source: derived
   /2/sharing/list_shared_links:
     post:
       tags:
       - Sharing
       summary: Dropbox list_shared_links
-      description: '[list_shared_links](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_shared_links)
+      description: 'list_shared_links
 
 
         scope: `sharing.read`
@@ -1398,12 +1444,14 @@ paths:
                     member_id: dbmid:abcd1234
                 has_more: true
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+      operationId: post2SharingListSharedLinks
+      x-operation-id-source: derived
   /2/sharing/modify_shared_link_settings:
     post:
       tags:
       - Sharing
       summary: Dropbox modify_shared_link_settings
-      description: '[modify_shared_link_settings](https://www.dropbox.com/developers/documentation/http/documentation#sharing-modify_shared_link_settings)
+      description: 'modify_shared_link_settings
 
 
         scope: `sharing.write`
@@ -1462,12 +1510,14 @@ paths:
                     name: Acme, Inc.
                   display_name: Roger Rabbit
                   member_id: dbmid:abcd1234
+      operationId: post2SharingModifySharedLinkSettings
+      x-operation-id-source: derived
   /2/sharing/mount_folder:
     post:
       tags:
       - Sharing
       summary: Dropbox mount_folder
-      description: '[mount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-mount_folder)
+      description: 'mount_folder
 
 
         scope: `sharing.write`
@@ -1539,12 +1589,14 @@ paths:
                 permissions: []
                 access_inheritance:
                   .tag: inherit
+      operationId: post2SharingMountFolder
+      x-operation-id-source: derived
   /2/sharing/relinquish_file_membership:
     post:
       tags:
       - Sharing
       summary: Dropbox relinquish_file_membership
-      description: '[relinquish_file_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_file_membership)
+      description: 'relinquish_file_membership
 
 
         scope: `sharing.write`
@@ -1568,18 +1620,20 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2SharingRelinquishFileMembership
+      x-operation-id-source: derived
   /2/sharing/relinquish_folder_membership:
     post:
       tags:
       - Sharing
       summary: Dropbox relinquish_folder_membership
-      description: '[relinquish_folder_membership](https://www.dropbox.com/developers/documentation/http/documentation#sharing-relinquish_folder_membership)
+      description: 'relinquish_folder_membership
 
 
         scope: `sharing.write`
 
 
-        The current user relinquishes their membership in the designated shared folder and will no longer have access to the folder.  A folder owner cannot relinquish membership in their own folder.
+        The current user relinquishes their membership in the designated shared folder and will no longer have access to the folder. A folder owner cannot relinquish membership in their own folder.
 
         This will run synchronously if leave_a_copy is false, and asynchronously if leave_a_copy is true.'
       requestBody:
@@ -1612,12 +1666,14 @@ paths:
                 type: object
               example:
                 .tag: complete
+      operationId: post2SharingRelinquishFolderMembership
+      x-operation-id-source: derived
   /2/sharing/remove_file_member_2:
     post:
       tags:
       - Sharing
       summary: Dropbox remove_file_member_2
-      description: '[remove_file_member_2](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_file_member_2)
+      description: 'remove_file_member_2
 
 
         scope: `sharing.write`
@@ -1654,12 +1710,14 @@ paths:
                 type: object
               example:
                 .tag: other
+      operationId: post2SharingRemoveFileMember2
+      x-operation-id-source: derived
   /2/sharing/remove_folder_member:
     post:
       tags:
       - Sharing
       summary: Dropbox remove_folder_member
-      description: '[remove_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-remove_folder_member)
+      description: 'remove_folder_member
 
 
         scope: `sharing.write`
@@ -1697,12 +1755,14 @@ paths:
               example:
                 .tag: async_job_id
                 async_job_id: 34g93hh34h04y384084
+      operationId: post2SharingRemoveFolderMember
+      x-operation-id-source: derived
   /2/sharing/revoke_shared_link:
     post:
       tags:
       - Sharing
       summary: Dropbox revoke_shared_link
-      description: '[revoke_shared_link](https://www.dropbox.com/developers/documentation/http/documentation#sharing-revoke_shared_link)
+      description: 'revoke_shared_link
 
 
         scope: `sharing.write`
@@ -1728,12 +1788,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2SharingRevokeSharedLink
+      x-operation-id-source: derived
   /2/sharing/set_access_inheritance:
     post:
       tags:
       - Sharing
       summary: Dropbox set_access_inheritance
-      description: '[set_access_inheritance](https://www.dropbox.com/developers/documentation/http/documentation#sharing-set_access_inheritance)
+      description: 'set_access_inheritance
 
 
         scope: `sharing.write`
@@ -1806,12 +1868,14 @@ paths:
                 permissions: []
                 access_inheritance:
                   .tag: inherit
+      operationId: post2SharingSetAccessInheritance
+      x-operation-id-source: derived
   /2/sharing/share_folder:
     post:
       tags:
       - Sharing
       summary: Dropbox share_folder
-      description: '[share_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-share_folder)
+      description: 'share_folder
 
 
         scope: `sharing.write`
@@ -1886,12 +1950,14 @@ paths:
                 permissions: []
                 access_inheritance:
                   .tag: inherit
+      operationId: post2SharingShareFolder
+      x-operation-id-source: derived
   /2/sharing/transfer_folder:
     post:
       tags:
       - Sharing
       summary: Dropbox transfer_folder
-      description: '[transfer_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-transfer_folder)
+      description: 'transfer_folder
 
 
         scope: `sharing.write`
@@ -1917,12 +1983,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2SharingTransferFolder
+      x-operation-id-source: derived
   /2/sharing/unmount_folder:
     post:
       tags:
       - Sharing
       summary: Dropbox unmount_folder
-      description: '[unmount_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unmount_folder)
+      description: 'unmount_folder
 
 
         scope: `sharing.write`
@@ -1946,12 +2014,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2SharingUnmountFolder
+      x-operation-id-source: derived
   /2/sharing/unshare_file:
     post:
       tags:
       - Sharing
       summary: Dropbox unshare_file
-      description: '[unshare_file](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_file)
+      description: 'unshare_file
 
 
         scope: `sharing.write`
@@ -1975,12 +2045,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2SharingUnshareFile
+      x-operation-id-source: derived
   /2/sharing/unshare_folder:
     post:
       tags:
       - Sharing
       summary: Dropbox unshare_folder
-      description: '[unshare_folder](https://www.dropbox.com/developers/documentation/http/documentation#sharing-unshare_folder)
+      description: 'unshare_folder
 
 
         scope: `sharing.write`
@@ -2019,12 +2091,14 @@ paths:
                 type: object
               example:
                 .tag: complete
+      operationId: post2SharingUnshareFolder
+      x-operation-id-source: derived
   /2/sharing/update_file_member:
     post:
       tags:
       - Sharing
       summary: Dropbox update_file_member
-      description: '[update_file_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_file_member)
+      description: 'update_file_member
 
 
         scope: `sharing.write`
@@ -2060,12 +2134,14 @@ paths:
               schema:
                 type: object
               example: {}
+      operationId: post2SharingUpdateFileMember
+      x-operation-id-source: derived
   /2/sharing/update_folder_member:
     post:
       tags:
       - Sharing
       summary: Dropbox update_folder_member
-      description: '[update_folder_member](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_member)
+      description: 'update_folder_member
 
 
         scope: `sharing.write`
@@ -2101,12 +2177,14 @@ paths:
               schema:
                 type: object
               example: {}
+      operationId: post2SharingUpdateFolderMember
+      x-operation-id-source: derived
   /2/sharing/update_folder_policy:
     post:
       tags:
       - Sharing
       summary: Dropbox update_folder_policy
-      description: '[update_folder_policy](https://www.dropbox.com/developers/documentation/http/documentation#sharing-update_folder_policy)
+      description: 'update_folder_policy
 
 
         scope: `sharing.write`
@@ -2178,6 +2256,8 @@ paths:
                 permissions: []
                 access_inheritance:
                   .tag: inherit
+      operationId: post2SharingUpdateFolderPolicy
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

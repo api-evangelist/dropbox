@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: Dropbox API Reference Files API
-  description: "The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways. This is a collection that includes requests to all endpoints in the Dropbox API. \n\nThe Dropbox API is divided in two groups of endpoints: User Endpoints and Business Endpoints. Operations that would most likely be executed by a user, such as file operations, are in the User Endpoints folder. Operations that would most likely be executed by a team administrator, such as adding users to groups, live in the Business Endpoints folder. \n\nIf you are new to Dropbox Business and Team Administration, please have a look at the [Dropobox Admin Guide](https://help.dropbox.com/guide/admin/how-to-get-started#dropbox-admin-guide). \n\nIf you want more information on how to use our API please refer to our [Developer Portal](https://www.dropbox.com/developers). \n\n# What's in the collection?\n\nThe endpoints are organized in the following folders:\n* account\n* auth\n* check\n* contacts\n* file_properties\n* file_requests\n* files\n* sharing\n* team\n* team_log\n* users\n\n# Authorization\n\n## OAuth 2.0 for API Access\nDropbox uses OAuth 2.0, an open specification, to authorize access to data. To get an OAuth token from Dropbox to enable Postman to access your Dropbox account via the API you’ll need to create a new app on the DBX Platform.\n\n## Creating an App on the DBX Platform\nNavigate to https://www.dropbox.com/developers/apps and select “Create app” \n1. Choose an API  \n2. Choose the type of access you need \n3. Give your app a name  \n4. Choose the Dropbox account that will own your app  \n\nFor reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide) \n\n## Generating an Access Token\nOnce you select “Create app” a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Postman Collection.\n\n## Adding an Access Token to the requests\nIn the Postman client, click on the three dots to the right of the collection name to \"View more actions.\"\n\n![Screenshot of adding access token](https://www.dropbox.com/s/sfebu9ai76cbq39/Screen%20Shot%202020-10-28%20at%2012.50.56%20AM.png?raw=1)\n\nThen, click \"Edit.\"\n\nClick on the \"Variables\" tab and, in the row for the `access_token` variable, paste your access token in the `CURRENT VALUE` column. The default value is `your-access-token-here`.\n\n![Screenshot of adding access token](https://www.dropbox.com/s/ahnbxwe6oscjues/Screen%20Shot%202020-10-28%20at%2012.51.13%20AM.png?raw=1)\n\nFor information on sessions and variables in Postman see the blog post at https://blog.postman.com/sessions-faq/.\n\n# Notes\n* Dropbox also has a Postman Collection in the API Network to help administrators with team management workflows. It is called [Dropbox Team Admin Workflows](). \n\n"
+  description: The powerful, yet simple, Dropbox API allows you to manage and control content and team settings programmatically and extend Dropbox capabilities in new and powerful ways.
   version: 1.0.0
 servers:
 - url: https://api.dropbox.com
@@ -9,16 +9,14 @@ security:
 - bearerAuth: []
 tags:
 - name: Files
-  description: 'This namespace contains endpoints and data types for basic file operations.
-
-    '
+  description: This namespace contains endpoints and data types for basic file operations.
 paths:
   /2/files/copy_v2:
     post:
       tags:
       - Files
       summary: Dropbox copy
-      description: '[copy](https://www.dropbox.com/developers/documentation/http/documentation#files-copy)
+      description: 'copy
 
 
         scope: `files.content.write`
@@ -82,12 +80,14 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesCopyV2
+      x-operation-id-source: derived
   /2/files/copy_batch_v2:
     post:
       tags:
       - Files
       summary: Dropbox copy_batch
-      description: '[copy_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch)
+      description: 'copy_batch
 
 
         scope: `files.content.write`
@@ -156,12 +156,14 @@ paths:
                       is_lockholder: true
                       lockholder_name: Imaginary User
                       created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesCopyBatchV2
+      x-operation-id-source: derived
   /2/files/copy_batch/check_v2:
     post:
       tags:
       - Files
       summary: Dropbox copy_batch/check
-      description: '[copy_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_batch-check)
+      description: 'copy_batch/check
 
 
         scope: `files.content.write`
@@ -226,12 +228,14 @@ paths:
                       is_lockholder: true
                       lockholder_name: Imaginary User
                       created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesCopyBatchCheckV2
+      x-operation-id-source: derived
   /2/files/copy_reference/get:
     post:
       tags:
       - Files
       summary: Dropbox copy_reference/get
-      description: '[copy_reference/get](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-get)
+      description: 'copy_reference/get
 
 
         scope: `files.content.write`
@@ -295,12 +299,14 @@ paths:
                     created: '2015-05-12T15:50:38Z'
                 copy_reference: z1X6ATl6aWtzOGq0c3g5Ng
                 expires: '2045-05-12T15:50:38Z'
+      operationId: post2FilesCopyReferenceGet
+      x-operation-id-source: derived
   /2/files/copy_reference/save:
     post:
       tags:
       - Files
       summary: Dropbox copy_reference/save
-      description: '[copy_reference/save](https://www.dropbox.com/developers/documentation/http/documentation#files-copy_reference-save)
+      description: 'copy_reference/save
 
 
         scope: `files.content.write`
@@ -362,12 +368,14 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesCopyReferenceSave
+      x-operation-id-source: derived
   /2/files/create_folder_v2:
     post:
       tags:
       - Files
       summary: Dropbox create_folder
-      description: '[create_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder)
+      description: 'create_folder
 
 
         scope: `files.content.write`
@@ -418,12 +426,14 @@ paths:
                     fields:
                     - name: Security Policy
                       value: Confidential
+      operationId: post2FilesCreateFolderV2
+      x-operation-id-source: derived
   /2/files/create_folder_batch:
     post:
       tags:
       - Files
       summary: Dropbox create_folder_batch
-      description: '[create_folder_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch)
+      description: 'create_folder_batch
 
 
         scope: `files.content.write`
@@ -431,7 +441,7 @@ paths:
 
         Create multiple folders at once.
 
-        This route is asynchronous for large batches, which returns a job ID immediately and runs the create folder batch asynchronously. Otherwise, creates the folders and returns the result synchronously for smaller inputs. You can force asynchronous behaviour by using the `CreateFolderBatchArg.force_async` flag.  Use `create_folder_batch/check` to check the job status.'
+        This route is asynchronous for large batches, which returns a job ID immediately and runs the create folder batch asynchronously. Otherwise, creates the folders and returns the result synchronously for smaller inputs. You can force asynchronous behaviour by using the `CreateFolderBatchArg.force_async` flag. Use `create_folder_batch/check` to check the job status.'
       requestBody:
         content:
           '*/*':
@@ -479,12 +489,14 @@ paths:
                       fields:
                       - name: Security Policy
                         value: Confidential
+      operationId: post2FilesCreateFolderBatch
+      x-operation-id-source: derived
   /2/files/create_folder_batch/check:
     post:
       tags:
       - Files
       summary: Dropbox create_folder_batch/check
-      description: '[create_folder_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-create_folder_batch-check)
+      description: 'create_folder_batch/check
 
 
         scope: `files.content.write`
@@ -538,12 +550,14 @@ paths:
                       fields:
                       - name: Security Policy
                         value: Confidential
+      operationId: post2FilesCreateFolderBatchCheck
+      x-operation-id-source: derived
   /2/files/delete_v2:
     post:
       tags:
       - Files
       summary: Dropbox delete
-      description: '[delete](https://www.dropbox.com/developers/documentation/http/documentation#files-delete)
+      description: 'delete
 
 
         scope: `files.content.write`
@@ -609,12 +623,14 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesDeleteV2
+      x-operation-id-source: derived
   /2/files/delete_batch:
     post:
       tags:
       - Files
       summary: Dropbox delete_batch
-      description: '[delete_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch)
+      description: 'delete_batch
 
 
         scope: `files.content.write`
@@ -681,12 +697,14 @@ paths:
                       is_lockholder: true
                       lockholder_name: Imaginary User
                       created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesDeleteBatch
+      x-operation-id-source: derived
   /2/files/delete_batch/check:
     post:
       tags:
       - Files
       summary: Dropbox delete_batch/check
-      description: '[delete_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-delete_batch-check)
+      description: 'delete_batch/check
 
 
         scope: `files.content.write`
@@ -751,18 +769,20 @@ paths:
                       is_lockholder: true
                       lockholder_name: Imaginary User
                       created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesDeleteBatchCheck
+      x-operation-id-source: derived
   /2/files/download:
     post:
       tags:
       - Files
       summary: Dropbox download
-      description: '[download](https://www.dropbox.com/developers/documentation/http/documentation#files-download)
+      description: 'download
 
 
         scope: `files.content.read`
 
 
-        Download a file from a user''s Dropbox.      '
+        Download a file from a user''s Dropbox.'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -810,18 +830,20 @@ paths:
                   is_lockholder: true
                   lockholder_name: Imaginary User
                   created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesDownload
+      x-operation-id-source: derived
   /2/files/download_zip:
     post:
       tags:
       - Files
       summary: Dropbox download_zip
-      description: '[download_zip](https://www.dropbox.com/developers/documentation/http/documentation#files-download_zip)
+      description: 'download_zip
 
 
         scope: `files.content.read`
 
 
-        Download a folder from the user''s Dropbox, as a zip file. The folder must be less than 20 GB in size and have fewer than 10,000 total files. The input cannot be a single file. Any single file must be less than 4GB in size.      '
+        Download a folder from the user''s Dropbox, as a zip file. The folder must be less than 20 GB in size and have fewer than 10,000 total files. The input cannot be a single file. Any single file must be less than 4GB in size.'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -860,18 +882,20 @@ paths:
                     fields:
                     - name: Security Policy
                       value: Confidential
+      operationId: post2FilesDownloadZip
+      x-operation-id-source: derived
   /2/files/export:
     post:
       tags:
       - Files
       summary: Dropbox export
-      description: '[export](https://www.dropbox.com/developers/documentation/http/documentation#files-export)
+      description: 'export
 
 
         scope: `files.content.read`
 
 
-        Export a file from a user''s Dropbox. This route only supports exporting files that cannot be downloaded directly  and whose `ExportResult.file_metadata` has `ExportInfo.export_as` populated.      '
+        Export a file from a user''s Dropbox. This route only supports exporting files that cannot be downloaded directly and whose `ExportResult.file_metadata` has `ExportInfo.export_as` populated.'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -924,12 +948,14 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesExport
+      x-operation-id-source: derived
   /2/files/get_file_lock_batch:
     post:
       tags:
       - Files
       summary: Dropbox get_file_lock_batch
-      description: '[get_file_lock_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_file_lock_batch)
+      description: 'get_file_lock_batch
 
 
         scope: `files.content.read`
@@ -999,12 +1025,14 @@ paths:
                       created: '2015-05-12T15:50:38Z'
                       lock_holder_account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
                       lock_holder_team_id: dbtid:1234abcd
+      operationId: post2FilesGetFileLockBatch
+      x-operation-id-source: derived
   /2/files/get_metadata:
     post:
       tags:
       - Files
       summary: Dropbox get_metadata
-      description: '[get_metadata](https://www.dropbox.com/developers/documentation/http/documentation#files-get_metadata)
+      description: 'get_metadata
 
 
         scope: `files.metadata.read`
@@ -1067,12 +1095,14 @@ paths:
                   is_lockholder: true
                   lockholder_name: Imaginary User
                   created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesGetMetadata
+      x-operation-id-source: derived
   /2/files/get_preview:
     post:
       tags:
       - Files
       summary: Dropbox get_preview
-      description: '[get_preview](https://www.dropbox.com/developers/documentation/http/documentation#files-get_preview)
+      description: 'get_preview
 
 
         scope: `files.content.read`
@@ -1084,7 +1114,7 @@ paths:
 
         HTML previews are generated for files with the following extensions: .csv, .ods, .xls, .xlsm, .gsheet, .xlsx.
 
-        Other formats will return an unsupported extension error.      '
+        Other formats will return an unsupported extension error.'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -1132,12 +1162,14 @@ paths:
                   is_lockholder: true
                   lockholder_name: Imaginary User
                   created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesGetPreview
+      x-operation-id-source: derived
   /2/files/get_temporary_link:
     post:
       tags:
       - Files
       summary: Dropbox get_temporary_link
-      description: '[get_temporary_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_link)
+      description: 'get_temporary_link
 
 
         scope: `files.content.read`
@@ -1199,12 +1231,14 @@ paths:
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
                 link: https://dl.dropboxusercontent.com/apitl/1/YXNkZmFzZGcyMzQyMzI0NjU2NDU2NDU2
+      operationId: post2FilesGetTemporaryLink
+      x-operation-id-source: derived
   /2/files/get_temporary_upload_link:
     post:
       tags:
       - Files
       summary: Dropbox get_temporary_upload_link
-      description: '[get_temporary_upload_link](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_upload_link)
+      description: 'get_temporary_upload_link
 
 
         scope: `files.content.write`
@@ -1280,12 +1314,14 @@ paths:
                 type: object
               example:
                 link: https://content.dropboxapi.com/apitul/1/bNi2uIYF51cVBND
+      operationId: post2FilesGetTemporaryUploadLink
+      x-operation-id-source: derived
   /2/files/get_thumbnail_v2:
     post:
       tags:
       - Files
       summary: Dropbox get_thumbnail
-      description: '[get_thumbnail](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail)
+      description: 'get_thumbnail
 
 
         scope: `files.content.read`
@@ -1340,12 +1376,14 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesGetThumbnailV2
+      x-operation-id-source: derived
   /2/files/get_thumbnail_batch:
     post:
       tags:
       - Files
       summary: Dropbox get_thumbnail_batch
-      description: '[get_thumbnail_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-get_thumbnail_batch)
+      description: 'get_thumbnail_batch
 
 
         scope: `files.content.read`
@@ -1411,12 +1449,14 @@ paths:
                       lockholder_name: Imaginary User
                       created: '2015-05-12T15:50:38Z'
                   thumbnail: iVBORw0KGgoAAAANSUhEUgAAAdcAAABrCAMAAAI=
+      operationId: post2FilesGetThumbnailBatch
+      x-operation-id-source: derived
   /2/files/list_folder:
     post:
       tags:
       - Files
       summary: Dropbox list_folder
-      description: '[list_folder](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder)
+      description: 'list_folder
 
 
         scope: `files.metadata.read`
@@ -1505,12 +1545,14 @@ paths:
                       value: Confidential
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
                 has_more: false
+      operationId: post2FilesListFolder
+      x-operation-id-source: derived
   /2/files/list_folder/continue:
     post:
       tags:
       - Files
       summary: Dropbox list_folder/continue
-      description: '[list_folder/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-continue)
+      description: 'list_folder/continue
 
 
         scope: `files.metadata.read`
@@ -1589,12 +1631,14 @@ paths:
                       value: Confidential
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
                 has_more: false
+      operationId: post2FilesListFolderContinue
+      x-operation-id-source: derived
   /2/files/list_folder/get_latest_cursor:
     post:
       tags:
       - Files
       summary: Dropbox list_folder/get_latest_cursor
-      description: '[list_folder/get_latest_cursor](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-get_latest_cursor)
+      description: 'list_folder/get_latest_cursor
 
 
         scope: `files.metadata.read`
@@ -1631,18 +1675,20 @@ paths:
                 type: object
               example:
                 cursor: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
+      operationId: post2FilesListFolderGetLatestCursor
+      x-operation-id-source: derived
   /2/files/list_folder/longpoll:
     post:
       tags:
       - Files
       summary: Dropbox list_folder/longpoll
-      description: '[list_folder/longpoll](https://www.dropbox.com/developers/documentation/http/documentation#files-list_folder-longpoll)
+      description: 'list_folder/longpoll
 
 
         scope: `files.metadata.read`
 
 
-        A longpoll endpoint to wait for changes on an account. In conjunction with `list_folder/continue`, this call gives you a low-latency way to monitor an account for file changes. The connection will block until there are changes available or a timeout occurs. This endpoint is useful mostly for client-side apps. If you''re looking for server-side notifications, check out our [webhooks documentation](https://www.dropbox.com/developers/reference/webhooks).'
+        A longpoll endpoint to wait for changes on an account. In conjunction with `list_folder/continue`, this call gives you a low-latency way to monitor an account for file changes. The connection will block until there are changes available or a timeout occurs. This endpoint is useful mostly for client-side apps. If you''re looking for server-side notifications, check out our webhooks documentation.'
       requestBody:
         content:
           '*/*':
@@ -1673,12 +1719,14 @@ paths:
                 type: object
               example:
                 changes: true
+      operationId: post2FilesListFolderLongpoll
+      x-operation-id-source: derived
   /2/files/list_revisions:
     post:
       tags:
       - Files
       summary: Dropbox list_revisions
-      description: '[list_revisions](https://www.dropbox.com/developers/documentation/http/documentation#files-list_revisions)
+      description: 'list_revisions
 
 
         scope: `files.metadata.read`
@@ -1742,12 +1790,14 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesListRevisions
+      x-operation-id-source: derived
   /2/files/lock_file_batch:
     post:
       tags:
       - Files
       summary: Dropbox lock_file_batch
-      description: '[lock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-lock_file_batch)
+      description: 'lock_file_batch
 
 
         scope: `files.content.write`
@@ -1817,12 +1867,14 @@ paths:
                       created: '2015-05-12T15:50:38Z'
                       lock_holder_account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
                       lock_holder_team_id: dbtid:1234abcd
+      operationId: post2FilesLockFileBatch
+      x-operation-id-source: derived
   /2/files/move_v2:
     post:
       tags:
       - Files
       summary: Dropbox move
-      description: '[move](https://www.dropbox.com/developers/documentation/http/documentation#files-move)
+      description: 'move
 
 
         scope: `files.content.write`
@@ -1888,12 +1940,14 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesMoveV2
+      x-operation-id-source: derived
   /2/files/move_batch_v2:
     post:
       tags:
       - Files
       summary: Dropbox move_batch
-      description: '[move_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch)
+      description: 'move_batch
 
 
         scope: `files.content.write`
@@ -1962,12 +2016,14 @@ paths:
                       is_lockholder: true
                       lockholder_name: Imaginary User
                       created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesMoveBatchV2
+      x-operation-id-source: derived
   /2/files/move_batch/check_v2:
     post:
       tags:
       - Files
       summary: Dropbox move_batch/check
-      description: '[move_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-move_batch-check)
+      description: 'move_batch/check
 
 
         scope: `files.content.write`
@@ -2032,12 +2088,14 @@ paths:
                       is_lockholder: true
                       lockholder_name: Imaginary User
                       created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesMoveBatchCheckV2
+      x-operation-id-source: derived
   /2/files/permanently_delete:
     post:
       tags:
       - Files
       summary: Dropbox permanently_delete
-      description: '[permanently_delete](https://www.dropbox.com/developers/documentation/http/documentation#files-permanently_delete)
+      description: 'permanently_delete
 
 
         scope: `files.permanent_delete`
@@ -2063,12 +2121,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2FilesPermanentlyDelete
+      x-operation-id-source: derived
   /2/files/restore:
     post:
       tags:
       - Files
       summary: Dropbox restore
-      description: '[restore](https://www.dropbox.com/developers/documentation/http/documentation#files-restore)
+      description: 'restore
 
 
         scope: `files.content.write`
@@ -2128,12 +2188,14 @@ paths:
                   is_lockholder: true
                   lockholder_name: Imaginary User
                   created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesRestore
+      x-operation-id-source: derived
   /2/files/save_url:
     post:
       tags:
       - Files
       summary: Dropbox save_url
-      description: '[save_url](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url)
+      description: 'save_url
 
 
         scope: `files.content.write`
@@ -2198,12 +2260,14 @@ paths:
                   is_lockholder: true
                   lockholder_name: Imaginary User
                   created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesSaveUrl
+      x-operation-id-source: derived
   /2/files/save_url/check_job_status:
     post:
       tags:
       - Files
       summary: Dropbox save_url/check_job_status
-      description: '[save_url/check_job_status](https://www.dropbox.com/developers/documentation/http/documentation#files-save_url-check_job_status)
+      description: 'save_url/check_job_status
 
 
         scope: `files.content.write`
@@ -2240,12 +2304,14 @@ paths:
                 type: object
               example:
                 .tag: in_progress
+      operationId: post2FilesSaveUrlCheckJobStatus
+      x-operation-id-source: derived
   /2/files/search_v2:
     post:
       tags:
       - Files
       summary: Dropbox search
-      description: '[search](https://www.dropbox.com/developers/documentation/http/documentation#files-search)
+      description: 'search
 
 
         scope: `files.metadata.read`
@@ -2315,12 +2381,14 @@ paths:
                         lockholder_name: Imaginary User
                         created: '2015-05-12T15:50:38Z'
                 has_more: false
+      operationId: post2FilesSearchV2
+      x-operation-id-source: derived
   /2/files/search/continue_v2:
     post:
       tags:
       - Files
       summary: Dropbox search/continue
-      description: '[search/continue](https://www.dropbox.com/developers/documentation/http/documentation#files-search-continue)
+      description: 'search/continue
 
 
         scope: `files.metadata.read`
@@ -2390,12 +2458,14 @@ paths:
                         lockholder_name: Imaginary User
                         created: '2015-05-12T15:50:38Z'
                 has_more: false
+      operationId: post2FilesSearchContinueV2
+      x-operation-id-source: derived
   /2/files/unlock_file_batch:
     post:
       tags:
       - Files
       summary: Dropbox unlock_file_batch
-      description: '[unlock_file_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-unlock_file_batch)
+      description: 'unlock_file_batch
 
 
         scope: `files.content.write`
@@ -2465,12 +2535,14 @@ paths:
                       created: '2015-05-12T15:50:38Z'
                       lock_holder_account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
                       lock_holder_team_id: dbtid:1234abcd
+      operationId: post2FilesUnlockFileBatch
+      x-operation-id-source: derived
   /2/files/upload:
     post:
       tags:
       - Files
       summary: Dropbox upload
-      description: '[upload](https://www.dropbox.com/developers/documentation/http/documentation#files-upload)
+      description: 'upload
 
 
         scope: `files.content.write`
@@ -2480,7 +2552,7 @@ paths:
 
         Do not use this to upload a file larger than 150 MB. Instead, create an upload session with `upload_session/start`.
 
-        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit).      '
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the Data transport limit page.'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -2528,12 +2600,14 @@ paths:
                   is_lockholder: true
                   lockholder_name: Imaginary User
                   created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesUpload
+      x-operation-id-source: derived
   /2/files/upload_session/append_v2:
     post:
       tags:
       - Files
       summary: Dropbox upload_session/append
-      description: '[upload_session/append](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-append)
+      description: 'upload_session/append
 
 
         scope: `files.content.write`
@@ -2545,7 +2619,7 @@ paths:
 
         A single request should not upload more than 150 MB. The maximum size of a file one can upload to an upload session is 350 GB.
 
-        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit).      '
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the Data transport limit page.'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -2557,12 +2631,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: post2FilesUploadSessionAppendV2
+      x-operation-id-source: derived
   /2/files/upload_session/finish:
     post:
       tags:
       - Files
       summary: Dropbox upload_session/finish
-      description: '[upload_session/finish](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish)
+      description: 'upload_session/finish
 
 
         scope: `files.content.write`
@@ -2572,7 +2648,7 @@ paths:
 
         A single request should not upload more than 150 MB. The maximum size of a file one can upload to an upload session is 350 GB.
 
-        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit).      '
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the Data transport limit page.'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -2620,12 +2696,14 @@ paths:
                   is_lockholder: true
                   lockholder_name: Imaginary User
                   created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesUploadSessionFinish
+      x-operation-id-source: derived
   /2/files/upload_session/finish_batch:
     post:
       tags:
       - Files
       summary: Dropbox upload_session/finish_batch
-      description: '[upload_session/finish_batch](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch)
+      description: 'upload_session/finish_batch
 
 
         scope: `files.content.write`
@@ -2639,7 +2717,7 @@ paths:
 
         For the same account, this route should be executed serially. That means you should not start the next job before current job finishes. We allow up to 1000 entries in a single request.
 
-        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit).'
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the Data transport limit page.'
       requestBody:
         content:
           '*/*':
@@ -2696,12 +2774,14 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesUploadSessionFinishBatch
+      x-operation-id-source: derived
   /2/files/upload_session/finish_batch/check:
     post:
       tags:
       - Files
       summary: Dropbox upload_session/finish_batch/check
-      description: '[upload_session/finish_batch/check](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-finish_batch-check)
+      description: 'upload_session/finish_batch/check
 
 
         scope: `files.content.write`
@@ -2764,24 +2844,26 @@ paths:
                     is_lockholder: true
                     lockholder_name: Imaginary User
                     created: '2015-05-12T15:50:38Z'
+      operationId: post2FilesUploadSessionFinishBatchCheck
+      x-operation-id-source: derived
   /2/files/upload_session/start:
     post:
       tags:
       - Files
       summary: Dropbox upload_session/start
-      description: '[upload_session/start](https://www.dropbox.com/developers/documentation/http/documentation#files-upload_session-start)
+      description: 'upload_session/start
 
 
         scope: `files.content.write`
 
 
-        Upload sessions allow you to upload a single file in one or more requests, for example where the size of the file is greater than 150 MB.  This call starts a new upload session with the given data. You can then use `upload_session/append:2` to add more data and `upload_session/finish` to save all the data to a file in Dropbox.
+        Upload sessions allow you to upload a single file in one or more requests, for example where the size of the file is greater than 150 MB. This call starts a new upload session with the given data. You can then use `upload_session/append:2` to add more data and `upload_session/finish` to save all the data to a file in Dropbox.
 
         A single request should not upload more than 150 MB. The maximum size of a file one can upload to an upload session is 350 GB.
 
         An upload session can be used for a maximum of 48 hours. Attempting to use an `UploadSessionStartResult.session_id` with `upload_session/append:2` or `upload_session/finish` more than 48 hours after its creation will return a `UploadSessionLookupError.not_found`.
 
-        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the [Data transport limit page](https://www.dropbox.com/developers/reference/data-transport-limit)      '
+        Calls to this endpoint will count as data transport calls for any Dropbox Business teams with a limit on the number of data transport calls allowed per month. For more information, see the Data transport limit page'
       parameters:
       - name: Dropbox-API-Arg
         in: header
@@ -2806,6 +2888,8 @@ paths:
                 type: object
               example:
                 session_id: 1234faaf0678bcde
+      operationId: post2FilesUploadSessionStart
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

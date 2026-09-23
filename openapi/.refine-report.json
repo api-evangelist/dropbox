@@ -2,7 +2,8 @@
   "provider": "dropbox",
   "sources": [
     "_original/dropbox-openapi-original.yml",
-    "_original/dropbox-sign-openapi-original.yml"
+    "_original/dropbox-sign-openapi-original.yml",
+    "dropbox-callbacks-and-events-api-openapi.yml"
   ],
   "outputs": [
     "dropbox-account-api-openapi.yml",
@@ -35,16 +36,23 @@
     "dropbox-template-api-openapi.yml",
     "dropbox-unclaimed-draft-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "dropbox-callbacks-and-events-api-openapi.yml: previously refined output kept for 2 operation(s) no archived document covers (e.g. webhook:accountCallback post, webhook:appCallback post); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
+  ],
   "notes": [
     "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "dropbox-openapi-original.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
     "dropbox-sign-openapi-original.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0; promoted x-webhooks (2) to the standard `webhooks` key",
     "dropbox-sign-openapi-original.yml: declared missing tag: Callbacks and Events",
     "tag 'Account' spans 2 source specs (dropbox-openapi-original.yml, dropbox-sign-openapi-original.yml): per-path servers applied",
-    "tag 'Team' spans 2 source specs (dropbox-openapi-original.yml, dropbox-sign-openapi-original.yml): per-path servers applied"
+    "tag 'Team' spans 2 source specs (dropbox-openapi-original.yml, dropbox-sign-openapi-original.yml): per-path servers applied",
+    "tag 'Callbacks and Events' spans 2 source specs (dropbox-sign-openapi-original.yml, dropbox-callbacks-and-events-api-openapi.yml): per-path servers applied",
+    "superseded outputs removed: dropbox-o-auth-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 29 total)"
   ],
   "skipped": [
     "dropbox-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -57,7 +65,7 @@
     "dropbox-file-properties-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "dropbox-file-requests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "dropbox-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "dropbox-oauth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dropbox-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "dropbox-report-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "dropbox-sharing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "dropbox-signature-request-api-openapi.yml: previously refined output, superseded by openapi/_original/",

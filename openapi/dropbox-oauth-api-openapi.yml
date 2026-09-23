@@ -179,36 +179,38 @@ components:
       summary: OAuth Token Refresh Example
       value:
         $ref: examples/json/OAuthTokenRefreshRequestExample.json
-    OAuthTokenGenerateRequestExample:
-      summary: OAuth Token Generate Example
-      value:
-        $ref: examples/json/OAuthTokenGenerateRequestExample.json
-    OAuthTokenGenerateResponseExample:
-      summary: _t__OAuthTokenGenerateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/OAuthTokenGenerateResponseExample.json
     OAuthTokenRefreshResponseExample:
       summary: _t__OAuthTokenRefreshResponseExample::SUMMARY
       value:
         $ref: examples/json/OAuthTokenRefreshResponseExample.json
+    OAuthTokenGenerateResponseExample:
+      summary: _t__OAuthTokenGenerateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/OAuthTokenGenerateResponseExample.json
+    OAuthTokenGenerateRequestExample:
+      summary: OAuth Token Generate Example
+      value:
+        $ref: examples/json/OAuthTokenGenerateRequestExample.json
+  headers:
+    X-RateLimit-Remaining:
+      description: _t__Common::RateLimiting::REMAINING
+      schema:
+        type: integer
+        format: int32
+        example: 99
+    X-RateLimit-Limit:
+      description: _t__Common::RateLimiting::LIMIT
+      schema:
+        type: integer
+        format: int32
+        example: 100
+    X-Ratelimit-Reset:
+      description: _t__Common::RateLimiting::RESET
+      schema:
+        type: integer
+        format: int64
+        example: 1430170900
   schemas:
-    OAuthTokenResponse:
-      properties:
-        access_token:
-          type: string
-        token_type:
-          type: string
-        refresh_token:
-          type: string
-        expires_in:
-          description: _t__OAuthTokenResponse::EXPIRES_IN
-          type: integer
-        state:
-          type:
-          - string
-          - 'null'
-      type: object
-      x-internal: true
     OAuthTokenGenerateRequest:
       required:
       - client_id
@@ -234,6 +236,23 @@ components:
           description: _t__OAuthTokenGenerate::STATE
           type: string
       type: object
+    OAuthTokenResponse:
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        refresh_token:
+          type: string
+        expires_in:
+          description: _t__OAuthTokenResponse::EXPIRES_IN
+          type: integer
+        state:
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
     OAuthTokenRefreshRequest:
       required:
       - grant_type
@@ -247,25 +266,6 @@ components:
           description: _t__OAuthTokenRefresh::REFRESH_TOKEN
           type: string
       type: object
-  headers:
-    X-RateLimit-Limit:
-      description: _t__Common::RateLimiting::LIMIT
-      schema:
-        type: integer
-        format: int32
-        example: 100
-    X-Ratelimit-Reset:
-      description: _t__Common::RateLimiting::RESET
-      schema:
-        type: integer
-        format: int64
-        example: 1430170900
-    X-RateLimit-Remaining:
-      description: _t__Common::RateLimiting::REMAINING
-      schema:
-        type: integer
-        format: int32
-        example: 99
   securitySchemes:
     api_key:
       type: http

@@ -115,25 +115,50 @@ paths:
           title: _t__ReportCreate::SEO::TITLE
           description: _t__ReportCreate::SEO::DESCRIPTION
 components:
+  examples:
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    ReportCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/ReportCreateRequestDefaultExample.json
+    ReportCreateResponseExample:
+      summary: _t__ReportCreateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/ReportCreateResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
   schemas:
-    ErrorResponse:
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
       required:
-      - error
+      - error_msg
+      - error_name
       properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
-      type: object
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
           type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
+          type: string
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
           type: string
       type: object
     ReportCreateResponse:
@@ -147,6 +172,47 @@ components:
             $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
+    ReportResponse:
+      description: _t__ReportResponse::DESCRIPTION
+      properties:
+        success:
+          description: _t__ReportResponse::SUCCESS
+          type: string
+        start_date:
+          description: _t__ReportResponse::START_DATE
+          type: string
+        end_date:
+          description: _t__ReportResponse::END_DATE
+          type: string
+        report_type:
+          description: _t__ReportResponse::REPORT_TYPE
+          type: array
+          items:
+            enum:
+            - user_activity
+            - document_status
+      type: object
+      x-internal: true
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
+      required:
+      - warning_msg
+      - warning_name
+      properties:
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
+      type: object
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
     ReportCreateRequest:
       required:
       - start_date
@@ -170,73 +236,13 @@ components:
           description: _t__ReportCreate::START_DATE
           type: string
       type: object
-    ReportResponse:
-      description: _t__ReportResponse::DESCRIPTION
-      properties:
-        success:
-          description: _t__ReportResponse::SUCCESS
-          type: string
-        start_date:
-          description: _t__ReportResponse::START_DATE
-          type: string
-        end_date:
-          description: _t__ReportResponse::END_DATE
-          type: string
-        report_type:
-          description: _t__ReportResponse::REPORT_TYPE
-          type: array
-          items:
-            enum:
-            - user_activity
-            - document_status
-      type: object
-      x-internal: true
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
-      properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
-          type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
-          type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
-          type: string
-      type: object
-  examples:
-    ReportCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/ReportCreateRequestDefaultExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    ReportCreateResponseExample:
-      summary: _t__ReportCreateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/ReportCreateResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
   headers:
+    X-RateLimit-Remaining:
+      description: _t__Common::RateLimiting::REMAINING
+      schema:
+        type: integer
+        format: int32
+        example: 99
     X-RateLimit-Limit:
       description: _t__Common::RateLimiting::LIMIT
       schema:
@@ -249,12 +255,6 @@ components:
         type: integer
         format: int64
         example: 1430170900
-    X-RateLimit-Remaining:
-      description: _t__Common::RateLimiting::REMAINING
-      schema:
-        type: integer
-        format: int32
-        example: 99
   securitySchemes:
     api_key:
       type: http
