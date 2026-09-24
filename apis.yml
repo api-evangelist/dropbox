@@ -13,8 +13,6 @@ apis:
     url: openapi/dropbox-account-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -35,8 +33,6 @@ apis:
     url: openapi/dropbox-api-app-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -57,8 +53,6 @@ apis:
     url: openapi/dropbox-auth-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -77,8 +71,6 @@ apis:
     url: openapi/dropbox-bulk-send-job-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -97,8 +89,6 @@ apis:
     url: openapi/dropbox-check-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -117,8 +107,6 @@ apis:
     url: openapi/dropbox-contacts-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -137,8 +125,6 @@ apis:
     url: openapi/dropbox-embedded-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -194,8 +180,6 @@ apis:
     url: openapi/dropbox-file-properties-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -216,8 +200,6 @@ apis:
     url: openapi/dropbox-file-requests-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -238,8 +220,6 @@ apis:
     url: openapi/dropbox-files-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -258,8 +238,6 @@ apis:
     url: openapi/dropbox-report-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -280,8 +258,6 @@ apis:
     url: openapi/dropbox-sharing-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -300,8 +276,6 @@ apis:
     url: openapi/dropbox-signature-request-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -320,8 +294,6 @@ apis:
     url: openapi/dropbox-team-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -340,8 +312,6 @@ apis:
     url: openapi/dropbox-team-devices-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -360,8 +330,6 @@ apis:
     url: openapi/dropbox-team-groups-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -380,8 +348,6 @@ apis:
     url: openapi/dropbox-team-legal-holds-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -400,8 +366,6 @@ apis:
     url: openapi/dropbox-team-linked-apps-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -420,8 +384,6 @@ apis:
     url: openapi/dropbox-team-log-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -441,8 +403,6 @@ apis:
     url: openapi/dropbox-team-member-space-limits-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -463,8 +423,6 @@ apis:
     url: openapi/dropbox-team-members-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -483,8 +441,6 @@ apis:
     url: openapi/dropbox-team-namespaces-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -503,8 +459,6 @@ apis:
     url: openapi/dropbox-team-reports-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -523,8 +477,6 @@ apis:
     url: openapi/dropbox-team-team-folder-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -545,8 +497,6 @@ apis:
     url: openapi/dropbox-template-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -565,8 +515,6 @@ apis:
     url: openapi/dropbox-unclaimed-draft-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -587,8 +535,6 @@ apis:
     url: openapi/dropbox-users-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -619,8 +565,6 @@ apis:
     url: openapi/dropbox-oauth-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: GraphQL
-    url: graphql/dropbox-graphql.md
   - type: Documentation
     url: https://developers.hellosign.com/
   - type: SDKs
@@ -630,6 +574,7 @@ apis:
 name: Dropbox
 tags:
 - Documents
+- Collaboration
 deliveryModel:
   model: saas
   open_source: false
