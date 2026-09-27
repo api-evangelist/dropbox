@@ -116,22 +116,14 @@ paths:
           description: _t__ReportCreate::SEO::DESCRIPTION
 components:
   examples:
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    ReportCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/ReportCreateRequestDefaultExample.json
     ReportCreateResponseExample:
       summary: _t__ReportCreateResponseExample::SUMMARY
       value:
         $ref: examples/json/ReportCreateResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
       value:
-        $ref: examples/json/Error401ResponseExample.json
+        $ref: examples/json/Error4XXResponseExample.json
     Error403ResponseExample:
       summary: _t__Error::403
       value:
@@ -144,6 +136,14 @@ components:
       summary: _t__Error::402
       value:
         $ref: examples/json/Error402ResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    ReportCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/ReportCreateRequestDefaultExample.json
   schemas:
     ErrorResponseError:
       description: _t__ErrorResponseError::DESCRIPTION
@@ -161,17 +161,19 @@ components:
           description: _t__ErrorResponseError::ERROR_NAME
           type: string
       type: object
-    ReportCreateResponse:
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
+      required:
+      - warning_msg
+      - warning_name
       properties:
-        report:
-          $ref: '#/components/schemas/ReportResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
       type: object
-      x-internal: true
     ReportResponse:
       description: _t__ReportResponse::DESCRIPTION
       properties:
@@ -193,26 +195,6 @@ components:
             - document_status
       type: object
       x-internal: true
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
-          type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
-          type: string
-      type: object
-    ErrorResponse:
-      required:
-      - error
-      properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
-      type: object
     ReportCreateRequest:
       required:
       - start_date
@@ -236,6 +218,24 @@ components:
           description: _t__ReportCreate::START_DATE
           type: string
       type: object
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    ReportCreateResponse:
+      properties:
+        report:
+          $ref: '#/components/schemas/ReportResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
   headers:
     X-RateLimit-Remaining:
       description: _t__Common::RateLimiting::REMAINING

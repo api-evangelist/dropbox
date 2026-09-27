@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Dropbox Sign O Auth API
+  title: Dropbox Sign OAuth API
   description: The Dropbox Sign API offers a reliable, flexible set of eSignature tools that can be used to power digital agreements and turn slow, outdated business processes into a competitive advantage. With a broad range of highly-configurable features, the Dropbox Sign API empowers you to build secure signing experiences and document workflows that delight your users.
   termsOfService: https://www.hellosign.com/terms
   contact:
@@ -175,14 +175,6 @@ paths:
       x-hideTryItPanel: true
 components:
   examples:
-    OAuthTokenRefreshRequestExample:
-      summary: OAuth Token Refresh Example
-      value:
-        $ref: examples/json/OAuthTokenRefreshRequestExample.json
-    OAuthTokenRefreshResponseExample:
-      summary: _t__OAuthTokenRefreshResponseExample::SUMMARY
-      value:
-        $ref: examples/json/OAuthTokenRefreshResponseExample.json
     OAuthTokenGenerateResponseExample:
       summary: _t__OAuthTokenGenerateResponseExample::SUMMARY
       value:
@@ -191,26 +183,32 @@ components:
       summary: OAuth Token Generate Example
       value:
         $ref: examples/json/OAuthTokenGenerateRequestExample.json
-  headers:
-    X-RateLimit-Remaining:
-      description: _t__Common::RateLimiting::REMAINING
-      schema:
-        type: integer
-        format: int32
-        example: 99
-    X-RateLimit-Limit:
-      description: _t__Common::RateLimiting::LIMIT
-      schema:
-        type: integer
-        format: int32
-        example: 100
-    X-Ratelimit-Reset:
-      description: _t__Common::RateLimiting::RESET
-      schema:
-        type: integer
-        format: int64
-        example: 1430170900
+    OAuthTokenRefreshResponseExample:
+      summary: _t__OAuthTokenRefreshResponseExample::SUMMARY
+      value:
+        $ref: examples/json/OAuthTokenRefreshResponseExample.json
+    OAuthTokenRefreshRequestExample:
+      summary: OAuth Token Refresh Example
+      value:
+        $ref: examples/json/OAuthTokenRefreshRequestExample.json
   schemas:
+    OAuthTokenResponse:
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        refresh_token:
+          type: string
+        expires_in:
+          description: _t__OAuthTokenResponse::EXPIRES_IN
+          type: integer
+        state:
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
     OAuthTokenGenerateRequest:
       required:
       - client_id
@@ -236,23 +234,6 @@ components:
           description: _t__OAuthTokenGenerate::STATE
           type: string
       type: object
-    OAuthTokenResponse:
-      properties:
-        access_token:
-          type: string
-        token_type:
-          type: string
-        refresh_token:
-          type: string
-        expires_in:
-          description: _t__OAuthTokenResponse::EXPIRES_IN
-          type: integer
-        state:
-          type:
-          - string
-          - 'null'
-      type: object
-      x-internal: true
     OAuthTokenRefreshRequest:
       required:
       - grant_type
@@ -266,6 +247,25 @@ components:
           description: _t__OAuthTokenRefresh::REFRESH_TOKEN
           type: string
       type: object
+  headers:
+    X-RateLimit-Remaining:
+      description: _t__Common::RateLimiting::REMAINING
+      schema:
+        type: integer
+        format: int32
+        example: 99
+    X-RateLimit-Limit:
+      description: _t__Common::RateLimiting::LIMIT
+      schema:
+        type: integer
+        format: int32
+        example: 100
+    X-Ratelimit-Reset:
+      description: _t__Common::RateLimiting::RESET
+      schema:
+        type: integer
+        format: int64
+        example: 1430170900
   securitySchemes:
     api_key:
       type: http

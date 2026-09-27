@@ -341,6 +341,87 @@ components:
           - 'null'
       type: object
       x-internal: true
+    BulkSendJobResponse:
+      description: _t__BulkSendJobResponse::DESCRIPTION
+      properties:
+        bulk_send_job_id:
+          description: _t__BulkSendJobResponse::BULK_SEND_JOB_ID
+          type:
+          - string
+          - 'null'
+        total:
+          description: _t__BulkSendJobResponse::TOTAL
+          type: integer
+        is_creator:
+          description: _t__BulkSendJobResponse::IS_CREATOR
+          type: boolean
+        created_at:
+          description: _t__BulkSendJobResponse::CREATED_AT
+          type: integer
+      type: object
+      x-internal: true
+    BulkSendJobGetResponseSignatureRequests:
+      title: BulkSendJobGetResponseSignatureRequests
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/SignatureRequestResponse'
+      - properties:
+          bulk_send_job_id:
+            description: _t__BulkSendJobGetResponseSignatureRequests::BULK_SEND_JOB_ID
+            type: string
+      x-internal: true
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
+      required:
+      - error_msg
+      - error_name
+      properties:
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
+          type: string
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
+          type: string
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
+          type: string
+      type: object
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    SignatureRequestResponseCustomFieldBase:
+      description: _t__SignatureRequestResponseCustomField::DESCRIPTION
+      required:
+      - name
+      - type
+      properties:
+        type:
+          description: _t__SignatureRequestResponseCustomField::TYPE
+          type: string
+        name:
+          description: _t__SignatureRequestResponseCustomField::NAME
+          type: string
+        required:
+          description: _t__SignatureRequestResponseCustomField::REQUIRED
+          type: boolean
+        api_id:
+          description: _t__SignatureRequestResponseCustomField::API_ID
+          type: string
+        editor:
+          description: _t__SignatureRequestResponseCustomField::EDITOR
+          type: string
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SignatureRequestResponseCustomFieldText'
+          checkbox: '#/components/schemas/SignatureRequestResponseCustomFieldCheckbox'
+      x-internal: true
+      x-base-class: true
     SignatureRequestResponseDataBase:
       description: _t__SignatureRequestResponseData::DESCRIPTION
       properties:
@@ -373,56 +454,6 @@ components:
           checkbox-merge: '#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge'
       x-internal: true
       x-base-class: true
-    BulkSendJobResponse:
-      description: _t__BulkSendJobResponse::DESCRIPTION
-      properties:
-        bulk_send_job_id:
-          description: _t__BulkSendJobResponse::BULK_SEND_JOB_ID
-          type:
-          - string
-          - 'null'
-        total:
-          description: _t__BulkSendJobResponse::TOTAL
-          type: integer
-        is_creator:
-          description: _t__BulkSendJobResponse::IS_CREATOR
-          type: boolean
-        created_at:
-          description: _t__BulkSendJobResponse::CREATED_AT
-          type: integer
-      type: object
-      x-internal: true
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
-          type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
-          type: string
-      type: object
-    BulkSendJobGetResponse:
-      properties:
-        bulk_send_job:
-          $ref: '#/components/schemas/BulkSendJobResponse'
-        list_info:
-          $ref: '#/components/schemas/ListInfoResponse'
-        signature_requests:
-          description: _t__BulkSendJobGetResponse::SIGNATURE_REQUESTS
-          type: array
-          items:
-            $ref: '#/components/schemas/BulkSendJobGetResponseSignatureRequests'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
     ListInfoResponse:
       description: _t__ListInfoResponse::DESCRIPTION
       properties:
@@ -441,16 +472,6 @@ components:
           description: _t__ListInfoResponse::PAGE_SIZE
           type: integer
       type: object
-      x-internal: true
-    BulkSendJobGetResponseSignatureRequests:
-      title: BulkSendJobGetResponseSignatureRequests
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/SignatureRequestResponse'
-      - properties:
-          bulk_send_job_id:
-            description: _t__BulkSendJobGetResponseSignatureRequests::BULK_SEND_JOB_ID
-            type: string
       x-internal: true
     SignatureRequestResponseSignatures:
       description: _t__SignatureRequestResponseSignatures::DESCRIPTION
@@ -544,22 +565,6 @@ components:
           - 'null'
       type: object
       x-internal: true
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
-      properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
-          type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
-          type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
-          type: string
-      type: object
     SignatureRequestResponseAttachment:
       description: _t__SignatureRequestResponseAttachment::DESCRIPTION
       required:
@@ -592,35 +597,24 @@ components:
           - 'null'
       type: object
       x-internal: true
-    SignatureRequestResponseCustomFieldBase:
-      description: _t__SignatureRequestResponseCustomField::DESCRIPTION
-      required:
-      - name
-      - type
+    BulkSendJobGetResponse:
       properties:
-        type:
-          description: _t__SignatureRequestResponseCustomField::TYPE
-          type: string
-        name:
-          description: _t__SignatureRequestResponseCustomField::NAME
-          type: string
-        required:
-          description: _t__SignatureRequestResponseCustomField::REQUIRED
-          type: boolean
-        api_id:
-          description: _t__SignatureRequestResponseCustomField::API_ID
-          type: string
-        editor:
-          description: _t__SignatureRequestResponseCustomField::EDITOR
-          type: string
+        bulk_send_job:
+          $ref: '#/components/schemas/BulkSendJobResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        signature_requests:
+          description: _t__BulkSendJobGetResponse::SIGNATURE_REQUESTS
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkSendJobGetResponseSignatureRequests'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
       type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/SignatureRequestResponseCustomFieldText'
-          checkbox: '#/components/schemas/SignatureRequestResponseCustomFieldCheckbox'
       x-internal: true
-      x-base-class: true
     BulkSendJobListResponse:
       properties:
         bulk_send_jobs:
@@ -637,42 +631,48 @@ components:
             $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
-    ErrorResponse:
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
       required:
-      - error
+      - warning_msg
+      - warning_name
       properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
       type: object
   examples:
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    BulkSendJobListResponseExample:
-      summary: _t__BulkSendJobListResponseExample::SUMMARY
-      value:
-        $ref: examples/json/BulkSendJobListResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
     BulkSendJobGetResponseExample:
       summary: _t__BulkSendJobGetResponseExample::SUMMARY
       value:
         $ref: examples/json/BulkSendJobGetResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
+    Error402ResponseExample:
+      summary: _t__Error::402
       value:
-        $ref: examples/json/Error400ResponseExample.json
+        $ref: examples/json/Error402ResponseExample.json
     Error403ResponseExample:
       summary: _t__Error::403
       value:
         $ref: examples/json/Error403ResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    BulkSendJobListResponseExample:
+      summary: _t__BulkSendJobListResponseExample::SUMMARY
+      value:
+        $ref: examples/json/BulkSendJobListResponseExample.json
   headers:
     X-RateLimit-Remaining:
       description: _t__Common::RateLimiting::REMAINING
@@ -680,18 +680,18 @@ components:
         type: integer
         format: int32
         example: 99
-    X-RateLimit-Limit:
-      description: _t__Common::RateLimiting::LIMIT
-      schema:
-        type: integer
-        format: int32
-        example: 100
     X-Ratelimit-Reset:
       description: _t__Common::RateLimiting::RESET
       schema:
         type: integer
         format: int64
         example: 1430170900
+    X-RateLimit-Limit:
+      description: _t__Common::RateLimiting::LIMIT
+      schema:
+        type: integer
+        format: int32
+        example: 100
   securitySchemes:
     api_key:
       type: http

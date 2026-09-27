@@ -1,5 +1,8 @@
 aid: dropbox
 url: https://raw.githubusercontent.com/api-evangelist/dropbox/refs/heads/main/apis.yml
+x-docs-platform: nextra
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-25
 apis:
 - aid: dropbox:dropbox-account-api
   name: Dropbox Account API
@@ -575,6 +578,9 @@ name: Dropbox
 tags:
 - Documents
 - Collaboration
+- Storage
+- Cloud Storage
+- File Sharing
 deliveryModel:
   model: saas
   open_source: false
