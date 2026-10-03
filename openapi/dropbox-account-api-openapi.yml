@@ -440,62 +440,72 @@ paths:
     servers:
     - url: https://api.hellosign.com/v3
 components:
+  examples:
+    AccountVerifyFoundResponseExample:
+      summary: _t__AccountVerifyFoundResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountVerifyFoundResponseExample.json
+    Error409ResponseExample:
+      summary: _t__Error::409
+      value:
+        $ref: examples/json/Error409ResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    AccountUpdateResponseExample:
+      summary: _t__AccountUpdateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountUpdateResponseExample.json
+    AccountVerifyNotFoundResponseExample:
+      summary: _t__AccountVerifyNotFoundResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountVerifyNotFoundResponseExample.json
+    AccountVerifyRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/AccountVerifyRequestDefaultExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    AccountCreateRequestOAuthExample:
+      summary: OAuth Example
+      value:
+        $ref: examples/json/AccountCreateRequestOAuthExample.json
+    AccountCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/AccountCreateRequestDefaultExample.json
+    AccountCreateOAuthResponseExample:
+      summary: _t__AccountCreateOAuthResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountCreateOAuthResponseExample.json
+    AccountGetResponseExample:
+      summary: _t__AccountGetResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountGetResponseExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    AccountCreateResponseExample:
+      summary: _t__AccountCreateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/AccountCreateResponseExample.json
+    AccountUpdateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/AccountUpdateRequestDefaultExample.json
   schemas:
-    AccountVerifyResponse:
-      properties:
-        account:
-          $ref: '#/components/schemas/AccountVerifyResponseAccount'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    AccountGetResponse:
-      properties:
-        account:
-          $ref: '#/components/schemas/AccountResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
-      properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
-          type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
-          type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
-          type: string
-      type: object
-    OAuthTokenResponse:
-      properties:
-        access_token:
-          type: string
-        token_type:
-          type: string
-        refresh_token:
-          type: string
-        expires_in:
-          description: _t__OAuthTokenResponse::EXPIRES_IN
-          type: integer
-        state:
-          type:
-          - string
-          - 'null'
-      type: object
-      x-internal: true
     ErrorResponse:
       required:
       - error
@@ -503,97 +513,6 @@ components:
         error:
           $ref: '#/components/schemas/ErrorResponseError'
       type: object
-    AccountCreateRequest:
-      required:
-      - email_address
-      properties:
-        client_id:
-          description: _t__AccountCreate::CLIENT_ID
-          type: string
-        client_secret:
-          description: _t__AccountCreate::CLIENT_SECRET
-          type: string
-        email_address:
-          description: _t__AccountCreate::EMAIL_ADDRESS
-          type: string
-          format: email
-        locale:
-          description: _t__AccountCreate::LOCALE
-          type: string
-      type: object
-    AccountVerifyRequest:
-      required:
-      - email_address
-      properties:
-        email_address:
-          description: _t__AccountVerify::EMAIL_ADDRESS
-          type: string
-          format: email
-      type: object
-    AccountCreateResponse:
-      properties:
-        account:
-          $ref: '#/components/schemas/AccountResponse'
-        oauth_data:
-          $ref: '#/components/schemas/OAuthTokenResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    AccountResponseQuotas:
-      description: _t__Account::QUOTA
-      properties:
-        api_signature_requests_left:
-          description: _t__AccountQuota::API_SIGNATURE_REQUESTS_LEFT
-          type:
-          - integer
-          - 'null'
-        documents_left:
-          description: _t__AccountQuota::DOCUMENTS_LEFT
-          type:
-          - integer
-          - 'null'
-        templates_total:
-          description: _t__AccountQuota::TEMPLATES_TOTAL
-          type:
-          - integer
-          - 'null'
-        templates_left:
-          description: _t__AccountQuota::TEMPLATES_LEFT
-          type:
-          - integer
-          - 'null'
-        sms_verifications_left:
-          description: _t__AccountQuota::SMS_VERIFICATIONS_LEFT
-          type:
-          - integer
-          - 'null'
-      type: object
-      x-internal: true
-    AccountUpdateRequest:
-      properties:
-        account_id:
-          description: _t__AccountUpdate::ACCOUNT_ID
-          type:
-          - string
-          - 'null'
-        callback_url:
-          description: _t__AccountUpdate::CALLBACK_URL
-          type: string
-        locale:
-          description: _t__AccountUpdate::LOCALE
-          type: string
-      type: object
-    AccountVerifyResponseAccount:
-      properties:
-        email_address:
-          description: _t__Account::EMAIL_ADDRESS
-          type: string
-      type: object
-      x-internal: true
     AccountResponse:
       properties:
         account_id:
@@ -648,84 +567,165 @@ components:
           description: _t__WarningResponse::WARNING_NAME
           type: string
       type: object
-  examples:
-    AccountGetResponseExample:
-      summary: _t__AccountGetResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountGetResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    AccountCreateResponseExample:
-      summary: _t__AccountCreateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountCreateResponseExample.json
-    AccountUpdateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/AccountUpdateRequestDefaultExample.json
-    AccountVerifyRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/AccountVerifyRequestDefaultExample.json
-    AccountVerifyNotFoundResponseExample:
-      summary: _t__AccountVerifyNotFoundResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountVerifyNotFoundResponseExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    Error409ResponseExample:
-      summary: _t__Error::409
-      value:
-        $ref: examples/json/Error409ResponseExample.json
-    AccountVerifyFoundResponseExample:
-      summary: _t__AccountVerifyFoundResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountVerifyFoundResponseExample.json
-    AccountCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/AccountCreateRequestDefaultExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    AccountCreateOAuthResponseExample:
-      summary: _t__AccountCreateOAuthResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountCreateOAuthResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    AccountCreateRequestOAuthExample:
-      summary: OAuth Example
-      value:
-        $ref: examples/json/AccountCreateRequestOAuthExample.json
-    AccountUpdateResponseExample:
-      summary: _t__AccountUpdateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountUpdateResponseExample.json
+    AccountGetResponse:
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    AccountUpdateRequest:
+      properties:
+        account_id:
+          description: _t__AccountUpdate::ACCOUNT_ID
+          type:
+          - string
+          - 'null'
+        callback_url:
+          description: _t__AccountUpdate::CALLBACK_URL
+          type: string
+        locale:
+          description: _t__AccountUpdate::LOCALE
+          type: string
+      type: object
+    AccountVerifyResponse:
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountVerifyResponseAccount'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
+      required:
+      - error_msg
+      - error_name
+      properties:
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
+          type: string
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
+          type: string
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
+          type: string
+      type: object
+    AccountCreateRequest:
+      required:
+      - email_address
+      properties:
+        client_id:
+          description: _t__AccountCreate::CLIENT_ID
+          type: string
+        client_secret:
+          description: _t__AccountCreate::CLIENT_SECRET
+          type: string
+        email_address:
+          description: _t__AccountCreate::EMAIL_ADDRESS
+          type: string
+          format: email
+        locale:
+          description: _t__AccountCreate::LOCALE
+          type: string
+      type: object
+    AccountVerifyResponseAccount:
+      properties:
+        email_address:
+          description: _t__Account::EMAIL_ADDRESS
+          type: string
+      type: object
+      x-internal: true
+    AccountResponseQuotas:
+      description: _t__Account::QUOTA
+      properties:
+        api_signature_requests_left:
+          description: _t__AccountQuota::API_SIGNATURE_REQUESTS_LEFT
+          type:
+          - integer
+          - 'null'
+        documents_left:
+          description: _t__AccountQuota::DOCUMENTS_LEFT
+          type:
+          - integer
+          - 'null'
+        templates_total:
+          description: _t__AccountQuota::TEMPLATES_TOTAL
+          type:
+          - integer
+          - 'null'
+        templates_left:
+          description: _t__AccountQuota::TEMPLATES_LEFT
+          type:
+          - integer
+          - 'null'
+        sms_verifications_left:
+          description: _t__AccountQuota::SMS_VERIFICATIONS_LEFT
+          type:
+          - integer
+          - 'null'
+      type: object
+      x-internal: true
+    AccountVerifyRequest:
+      required:
+      - email_address
+      properties:
+        email_address:
+          description: _t__AccountVerify::EMAIL_ADDRESS
+          type: string
+          format: email
+      type: object
+    AccountCreateResponse:
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountResponse'
+        oauth_data:
+          $ref: '#/components/schemas/OAuthTokenResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    OAuthTokenResponse:
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        refresh_token:
+          type: string
+        expires_in:
+          description: _t__OAuthTokenResponse::EXPIRES_IN
+          type: integer
+        state:
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
   headers:
-    X-RateLimit-Remaining:
-      description: _t__Common::RateLimiting::REMAINING
-      schema:
-        type: integer
-        format: int32
-        example: 99
     X-Ratelimit-Reset:
       description: _t__Common::RateLimiting::RESET
       schema:
         type: integer
         format: int64
         example: 1430170900
+    X-RateLimit-Remaining:
+      description: _t__Common::RateLimiting::REMAINING
+      schema:
+        type: integer
+        format: int32
+        example: 99
     X-RateLimit-Limit:
       description: _t__Common::RateLimiting::LIMIT
       schema:

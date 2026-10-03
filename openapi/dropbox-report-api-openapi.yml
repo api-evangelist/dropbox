@@ -115,36 +115,69 @@ paths:
           title: _t__ReportCreate::SEO::TITLE
           description: _t__ReportCreate::SEO::DESCRIPTION
 components:
-  examples:
-    ReportCreateResponseExample:
-      summary: _t__ReportCreateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/ReportCreateResponseExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    ReportCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/ReportCreateRequestDefaultExample.json
   schemas:
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    ReportCreateResponse:
+      properties:
+        report:
+          $ref: '#/components/schemas/ReportResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    ReportCreateRequest:
+      required:
+      - start_date
+      - end_date
+      - report_type
+      properties:
+        end_date:
+          description: _t__ReportCreate::END_DATE
+          type: string
+        report_type:
+          description: _t__ReportCreate::REPORT_TYPE
+          type: array
+          items:
+            type: string
+            enum:
+            - user_activity
+            - document_status
+          maxItems: 2
+          minItems: 1
+        start_date:
+          description: _t__ReportCreate::START_DATE
+          type: string
+      type: object
+    ReportResponse:
+      description: _t__ReportResponse::DESCRIPTION
+      properties:
+        success:
+          description: _t__ReportResponse::SUCCESS
+          type: string
+        start_date:
+          description: _t__ReportResponse::START_DATE
+          type: string
+        end_date:
+          description: _t__ReportResponse::END_DATE
+          type: string
+        report_type:
+          description: _t__ReportResponse::REPORT_TYPE
+          type: array
+          items:
+            enum:
+            - user_activity
+            - document_status
+      type: object
+      x-internal: true
     ErrorResponseError:
       description: _t__ErrorResponseError::DESCRIPTION
       required:
@@ -174,68 +207,35 @@ components:
           description: _t__WarningResponse::WARNING_NAME
           type: string
       type: object
-    ReportResponse:
-      description: _t__ReportResponse::DESCRIPTION
-      properties:
-        success:
-          description: _t__ReportResponse::SUCCESS
-          type: string
-        start_date:
-          description: _t__ReportResponse::START_DATE
-          type: string
-        end_date:
-          description: _t__ReportResponse::END_DATE
-          type: string
-        report_type:
-          description: _t__ReportResponse::REPORT_TYPE
-          type: array
-          items:
-            enum:
-            - user_activity
-            - document_status
-      type: object
-      x-internal: true
-    ReportCreateRequest:
-      required:
-      - start_date
-      - end_date
-      - report_type
-      properties:
-        end_date:
-          description: _t__ReportCreate::END_DATE
-          type: string
-        report_type:
-          description: _t__ReportCreate::REPORT_TYPE
-          type: array
-          items:
-            type: string
-            enum:
-            - user_activity
-            - document_status
-          maxItems: 2
-          minItems: 1
-        start_date:
-          description: _t__ReportCreate::START_DATE
-          type: string
-      type: object
-    ErrorResponse:
-      required:
-      - error
-      properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
-      type: object
-    ReportCreateResponse:
-      properties:
-        report:
-          $ref: '#/components/schemas/ReportResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
+  examples:
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    ReportCreateResponseExample:
+      summary: _t__ReportCreateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/ReportCreateResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    ReportCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/ReportCreateRequestDefaultExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
   headers:
     X-RateLimit-Remaining:
       description: _t__Common::RateLimiting::REMAINING
@@ -243,18 +243,18 @@ components:
         type: integer
         format: int32
         example: 99
-    X-RateLimit-Limit:
-      description: _t__Common::RateLimiting::LIMIT
-      schema:
-        type: integer
-        format: int32
-        example: 100
     X-Ratelimit-Reset:
       description: _t__Common::RateLimiting::RESET
       schema:
         type: integer
         format: int64
         example: 1430170900
+    X-RateLimit-Limit:
+      description: _t__Common::RateLimiting::LIMIT
+      schema:
+        type: integer
+        format: int32
+        example: 100
   securitySchemes:
     api_key:
       type: http
