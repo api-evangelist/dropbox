@@ -224,42 +224,42 @@ paths:
           description: _t__EmbeddedSignUrl::SEO::DESCRIPTION
 components:
   examples:
-    Error409ResponseExample:
-      summary: _t__Error::409
-      value:
-        $ref: examples/json/Error409ResponseExample.json
-    Error429ResponseExample:
-      summary: _t__Error::429
-      value:
-        $ref: examples/json/Error429ResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    Error404ResponseExample:
-      summary: _t__Error::404
-      value:
-        $ref: examples/json/Error404ResponseExample.json
-    EmbeddedEditUrlResponseExample:
-      summary: _t__EmbeddedEditUrlResponseExample::SUMMARY
-      value:
-        $ref: examples/json/EmbeddedEditUrlResponseExample.json
     Error403ResponseExample:
       summary: _t__Error::403
       value:
         $ref: examples/json/Error403ResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
     Error4XXResponseExample:
       summary: _t__Error::4XX
       value:
         $ref: examples/json/Error4XXResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    EmbeddedEditUrlResponseExample:
+      summary: _t__EmbeddedEditUrlResponseExample::SUMMARY
+      value:
+        $ref: examples/json/EmbeddedEditUrlResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    Error404ResponseExample:
+      summary: _t__Error::404
+      value:
+        $ref: examples/json/Error404ResponseExample.json
+    Error429ResponseExample:
+      summary: _t__Error::429
+      value:
+        $ref: examples/json/Error429ResponseExample.json
+    Error409ResponseExample:
+      summary: _t__Error::409
+      value:
+        $ref: examples/json/Error409ResponseExample.json
     EmbeddedEditUrlRequestDefaultExample:
       summary: Default Example
       value:
@@ -269,13 +269,17 @@ components:
       value:
         $ref: examples/json/EmbeddedSignUrlResponseExample.json
   schemas:
-    ErrorResponse:
-      required:
-      - error
+    EmbeddedEditUrlResponse:
       properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
+        embedded:
+          $ref: '#/components/schemas/EmbeddedEditUrlResponseEmbedded'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
       type: object
+      x-internal: true
     EmbeddedSignUrlResponse:
       properties:
         embedded:
@@ -300,6 +304,42 @@ components:
           description: _t__WarningResponse::WARNING_NAME
           type: string
       type: object
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    SubMergeField:
+      required:
+      - name
+      - type
+      properties:
+        name:
+          description: _t__Sub::MergeField::NAME
+          type: string
+        type:
+          description: _t__Sub::MergeField::TYPE
+          type: string
+          enum:
+          - text
+          - checkbox
+          x-enumDescriptions:
+            text: _t__Sub::MergeField::EnumDescriptions::TEXT
+            checkbox: _t__Sub::MergeField::EnumDescriptions::CHECKBOX
+      type: object
+    EmbeddedEditUrlResponseEmbedded:
+      description: _t__EmbeddedEditUrlResponseEmbedded::DESCRIPTION
+      properties:
+        edit_url:
+          description: _t__EmbeddedEditUrlResponseEmbedded::EDIT_URL
+          type: string
+        expires_at:
+          description: _t__EmbeddedEditUrlResponseEmbedded::EXPIRES_AT
+          type: integer
+      type: object
+      x-internal: true
     EmbeddedEditUrlRequest:
       properties:
         allow_edit_ccs:
@@ -370,35 +410,6 @@ components:
           description: _t__ErrorResponseError::ERROR_NAME
           type: string
       type: object
-    EmbeddedEditUrlResponse:
-      properties:
-        embedded:
-          $ref: '#/components/schemas/EmbeddedEditUrlResponseEmbedded'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    SubMergeField:
-      required:
-      - name
-      - type
-      properties:
-        name:
-          description: _t__Sub::MergeField::NAME
-          type: string
-        type:
-          description: _t__Sub::MergeField::TYPE
-          type: string
-          enum:
-          - text
-          - checkbox
-          x-enumDescriptions:
-            text: _t__Sub::MergeField::EnumDescriptions::TEXT
-            checkbox: _t__Sub::MergeField::EnumDescriptions::CHECKBOX
-      type: object
     SubEditorOptions:
       description: _t__Sub::EditorOptions::DESCRIPTION
       properties:
@@ -411,18 +422,13 @@ components:
           type: boolean
           default: false
       type: object
-    EmbeddedEditUrlResponseEmbedded:
-      description: _t__EmbeddedEditUrlResponseEmbedded::DESCRIPTION
-      properties:
-        edit_url:
-          description: _t__EmbeddedEditUrlResponseEmbedded::EDIT_URL
-          type: string
-        expires_at:
-          description: _t__EmbeddedEditUrlResponseEmbedded::EXPIRES_AT
-          type: integer
-      type: object
-      x-internal: true
   headers:
+    X-RateLimit-Limit:
+      description: _t__Common::RateLimiting::LIMIT
+      schema:
+        type: integer
+        format: int32
+        example: 100
     X-Ratelimit-Reset:
       description: _t__Common::RateLimiting::RESET
       schema:
@@ -435,12 +441,6 @@ components:
         type: integer
         format: int32
         example: 99
-    X-RateLimit-Limit:
-      description: _t__Common::RateLimiting::LIMIT
-      schema:
-        type: integer
-        format: int32
-        example: 100
   securitySchemes:
     api_key:
       type: http

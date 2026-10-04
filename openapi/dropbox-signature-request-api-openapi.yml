@@ -2063,480 +2063,172 @@ paths:
           title: _t__SignatureRequestUpdate::SEO::TITLE
           description: _t__SignatureRequestUpdate::SEO::DESCRIPTION
 components:
+  examples:
+    SignatureRequestFilesResponseExample:
+      summary: _t__SignatureRequestFilesResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestFilesResponseExample.json
+    SignatureRequestEditWithTemplateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestEditWithTemplateRequestDefaultExample.json
+    SignatureRequestEditEmbeddedRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestEditEmbeddedRequestDefaultExample.json
+    SignatureRequestGetResponseExample:
+      summary: _t__SignatureRequestGetResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestGetResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    SignatureRequestBulkCreateEmbeddedWithTemplateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestBulkCreateEmbeddedWithTemplateRequestDefaultExample.json
+    SignatureRequestEditEmbeddedWithTemplateResponseExample:
+      summary: _t__SignatureRequestEditEmbeddedWithTemplateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestEditEmbeddedWithTemplateResponseExample.json
+    SignatureRequestSendWithTemplateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestSendWithTemplateRequestDefaultExample.json
+    SignatureRequestCreateEmbeddedRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestCreateEmbeddedRequestDefaultExample.json
+    SignatureRequestSendRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestSendRequestDefaultExample.json
+    SignatureRequestEditWithTemplateResponseExample:
+      summary: _t__SignatureRequestEditWithTemplateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestEditWithTemplateResponseExample.json
+    SignatureRequestEditRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestEditRequestDefaultExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    SignatureRequestCreateEmbeddedWithTemplateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestCreateEmbeddedWithTemplateRequestDefaultExample.json
+    SignatureRequestSendResponseExample:
+      summary: _t__SignatureRequestSendResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestSendResponseExample.json
+    Error410ResponseExample:
+      summary: _t__Error::410
+      value:
+        $ref: examples/json/Error410ResponseExample.json
+    SignatureRequestBulkSendWithTemplateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestBulkSendWithTemplateRequestDefaultExample.json
+    Error429ResponseExample:
+      summary: _t__Error::429
+      value:
+        $ref: examples/json/Error429ResponseExample.json
+    SignatureRequestBulkCreateEmbeddedWithTemplateResponseExample:
+      summary: _t__SignatureRequestBulkCreateEmbeddedWithTemplateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestBulkCreateEmbeddedWithTemplateResponseExample.json
+    SignatureRequestUpdateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestUpdateRequestDefaultExample.json
+    SignatureRequestRemindResponseExample:
+      summary: _t__SignatureRequestRemindResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestRemindResponseExample.json
+    SignatureRequestReleaseHoldResponseExample:
+      summary: _t__SignatureRequestReleaseHoldResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestReleaseHoldResponseExample.json
+    Error409ResponseExample:
+      summary: _t__Error::409
+      value:
+        $ref: examples/json/Error409ResponseExample.json
+    SignatureRequestEditEmbeddedWithTemplateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestEditEmbeddedWithTemplateRequestDefaultExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    SignatureRequestEditResponseExample:
+      summary: _t__SignatureRequestEditResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestEditResponseExample.json
+    SignatureRequestSendRequestGroupedSignersExample:
+      summary: Grouped Signers Example
+      value:
+        $ref: examples/json/SignatureRequestSendRequestGroupedSignersExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    SignatureRequestSendWithTemplateResponseExample:
+      summary: _t__SignatureRequestSendWithTemplateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestSendWithTemplateResponseExample.json
+    SignatureRequestEditRequestGroupedSignersExample:
+      summary: Grouped Signers Example
+      value:
+        $ref: examples/json/SignatureRequestEditRequestGroupedSignersExample.json
+    SignatureRequestBulkSendWithTemplateResponseExample:
+      summary: _t__SignatureRequestBulkSendWithTemplateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestBulkSendWithTemplateResponseExample.json
+    SignatureRequestEditEmbeddedResponseExample:
+      summary: _t__SignatureRequestEditEmbeddedResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestEditEmbeddedResponseExample.json
+    SignatureRequestListResponseExample:
+      summary: _t__SignatureRequestListResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestListResponseExample.json
+    SignatureRequestCreateEmbeddedRequestGroupedSignersExample:
+      summary: Grouped Signers Example
+      value:
+        $ref: examples/json/SignatureRequestCreateEmbeddedRequestGroupedSignersExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    SignatureRequestCreateEmbeddedWithTemplateResponseExample:
+      summary: _t__SignatureRequestCreateEmbeddedWithTemplateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestCreateEmbeddedWithTemplateResponseExample.json
+    SignatureRequestRemindRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/SignatureRequestRemindRequestDefaultExample.json
+    Error404ResponseExample:
+      summary: _t__Error::404
+      value:
+        $ref: examples/json/Error404ResponseExample.json
+    SignatureRequestCreateEmbeddedResponseExample:
+      summary: _t__SignatureRequestCreateEmbeddedResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestCreateEmbeddedResponseExample.json
+    SignatureRequestEditEmbeddedRequestGroupedSignersExample:
+      summary: Grouped Signers Example
+      value:
+        $ref: examples/json/SignatureRequestEditEmbeddedRequestGroupedSignersExample.json
+    SignatureRequestUpdateResponseExample:
+      summary: _t__SignatureRequestUpdateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/SignatureRequestUpdateResponseExample.json
   schemas:
-    SignatureRequestBulkCreateEmbeddedWithTemplateRequest:
-      required:
-      - client_id
-      - template_ids
-      properties:
-        template_ids:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::TEMPLATE_IDS
-          type: array
-          items:
-            type: string
-        signer_file:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNER_FILE
-          type: string
-          format: binary
-        signer_list:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNER_LIST
-          type: array
-          items:
-            $ref: '#/components/schemas/SubBulkSignerList'
-        allow_decline:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::ALLOW_DECLINE
-          type: boolean
-          default: false
-        ccs:
-          description: _t__Sub::CC::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCC'
-        client_id:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::CLIENT_ID
-          type: string
-        custom_fields:
-          description: _t__Sub::CustomField::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCustomField'
-        message:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::MESSAGE
-          type: string
-          maxLength: 5000
-        metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
-          type: object
-          maxItems: 10
-          additionalProperties: {}
-        signing_redirect_url:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL
-          type: string
-        subject:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SUBJECT
-          type: string
-          maxLength: 255
-        test_mode:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::TEST_MODE
-          type: boolean
-          default: false
-        title:
-          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::TITLE
-          type: string
-          maxLength: 255
-      type: object
-    ErrorResponse:
-      required:
-      - error
-      properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
-      type: object
-    SubAttachment:
-      required:
-      - name
-      - signer_index
-      properties:
-        instructions:
-          description: _t__Sub::Attachment::INSTRUCTIONS
-          type: string
-        name:
-          description: _t__Sub::Attachment::NAME
-          type: string
-        required:
-          description: _t__Sub::Attachment::REQUIRED
-          type: boolean
-          default: false
-        signer_index:
-          description: _t__Sub::Attachment::SIGNER_INDEX
-          type: integer
-      type: object
-    SignatureRequestEditEmbeddedRequest:
-      required:
-      - client_id
-      properties:
-        files:
-          description: _t__SignatureRequestCreateEmbedded::FILES
-          type: array
-          items:
-            type: string
-            format: binary
-        file_urls:
-          description: _t__SignatureRequestCreateEmbedded::FILE_URLS
-          type: array
-          items:
-            type: string
-        signers:
-          description: _t__Sub::SignatureRequestSigner::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestSigner'
-        grouped_signers:
-          description: _t__Sub::SignatureRequestGroupedSigners::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestGroupedSigners'
-        allow_decline:
-          description: _t__SignatureRequestCreateEmbedded::ALLOW_DECLINE
-          type: boolean
-          default: false
-        allow_reassign:
-          description: _t__SignatureRequestCreateEmbedded::ALLOW_REASSIGN
-          type: boolean
-          default: false
-        attachments:
-          description: _t__SubAttachment::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubAttachment'
-        cc_email_addresses:
-          description: _t__SignatureRequestCreateEmbedded::CC_EMAIL_ADDRESSES
-          type: array
-          items:
-            type: string
-            format: email
-        client_id:
-          description: _t__SignatureRequestCreateEmbedded::CLIENT_ID
-          type: string
-        custom_fields:
-          description: _t__Sub::CustomField::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCustomField'
-        field_options:
-          $ref: '#/components/schemas/SubFieldOptions'
-        form_field_groups:
-          description: _t__Sub::FormFieldGroup::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldGroup'
-        form_field_rules:
-          description: _t__Sub::FormFieldRule::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldRule'
-        form_fields_per_document:
-          description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        hide_text_tags:
-          description: _t__SignatureRequestCreateEmbedded::HIDE_TEXT_TAGS
-          type: boolean
-          default: false
-        message:
-          description: _t__SignatureRequestCreateEmbedded::MESSAGE
-          type: string
-          maxLength: 5000
-        metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
-          type: object
-          maxItems: 10
-          additionalProperties: {}
-        signing_options:
-          $ref: '#/components/schemas/SubSigningOptions'
-        subject:
-          description: _t__SignatureRequestCreateEmbedded::SUBJECT
-          type: string
-          maxLength: 255
-        test_mode:
-          description: _t__SignatureRequestCreateEmbedded::TEST_MODE
-          type: boolean
-          default: false
-        title:
-          description: _t__SignatureRequestCreateEmbedded::TITLE
-          type: string
-          maxLength: 255
-        use_text_tags:
-          description: _t__SignatureRequestCreateEmbedded::USE_TEXT_TAGS
-          type: boolean
-          default: false
-        populate_auto_fill_fields:
-          description: _t__SignatureRequestCreateEmbedded::POPULATE_AUTO_FILL_FIELDS
-          type: boolean
-          default: false
-        expires_at:
-          description: _t__SignatureRequestCreateEmbedded::EXPIRES_AT
-          type:
-          - integer
-          - 'null'
-      type: object
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
-          type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
-          type: string
-      type: object
-    SubFormFieldRuleAction:
-      required:
-      - hidden
-      - type
-      properties:
-        field_id:
-          description: _t__Sub::FormFieldRuleAction::FIELD_ID
-          type: string
-        group_id:
-          description: _t__Sub::FormFieldRuleAction::GROUP_ID
-          type: string
-        hidden:
-          description: _t__Sub::FormFieldRuleAction::HIDDEN
-          type: boolean
-        type:
-          type: string
-          enum:
-          - change-field-visibility
-          - change-group-visibility
-      type: object
-    SubFieldOptions:
-      description: _t__Sub::FieldOptions::DESCRIPTION
-      required:
-      - date_format
-      properties:
-        date_format:
-          description: _t__Sub::FieldOptions::DATE_FORMAT
-          type: string
-          enum:
-          - MM / DD / YYYY
-          - MM - DD - YYYY
-          - DD / MM / YYYY
-          - DD - MM - YYYY
-          - YYYY / MM / DD
-          - YYYY - MM - DD
-          x-enum-varnames:
-          - MMDDYYYY
-          - MM_DD_YYYY
-          - DDMMYYYY
-          - DD_MM_YYYY
-          - YYYYMMDD
-          - YYYY_MM_DD
-      type: object
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
-      properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
-          type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
-          type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
-          type: string
-      type: object
-    SignatureRequestEditWithTemplateRequest:
-      description: ''
-      required:
-      - signers
-      - template_ids
-      properties:
-        template_ids:
-          description: _t__SignatureRequestSendWithTemplate::TEMPLATE_IDS
-          type: array
-          items:
-            type: string
-        allow_decline:
-          description: _t__SignatureRequestSendWithTemplate::ALLOW_DECLINE
-          type: boolean
-          default: false
-        ccs:
-          description: _t__Sub::CC::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCC'
-        client_id:
-          description: _t__SignatureRequestSendWithTemplate::CLIENT_ID
-          type: string
-        custom_fields:
-          description: _t__Sub::CustomField::TEMPLATE
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCustomField'
-        files:
-          description: _t__SignatureRequestSendWithTemplate::FILES
-          type: array
-          items:
-            type: string
-            format: binary
-        file_urls:
-          description: _t__SignatureRequestSendWithTemplate::FILE_URLS
-          type: array
-          items:
-            type: string
-        is_qualified_signature:
-          description: _t__SignatureRequestSendWithTemplate::IS_QUALIFIED_SIGNATURE
-          type: boolean
-          default: false
-          deprecated: true
-          x-hideOn: doc
-        is_eid:
-          description: _t__SignatureRequestSendWithTemplate::IS_EID
-          type: boolean
-          default: false
-        message:
-          description: _t__SignatureRequestSendWithTemplate::MESSAGE
-          type: string
-          maxLength: 5000
-        metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
-          type: object
-          maxItems: 10
-          additionalProperties: {}
-        signers:
-          description: _t__Sub::SignatureRequestTemplateSigner::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
-        signing_options:
-          $ref: '#/components/schemas/SubSigningOptions'
-        signing_redirect_url:
-          description: _t__SignatureRequestSendWithTemplate::SIGNING_REDIRECT_URL
-          type: string
-        subject:
-          description: _t__SignatureRequestSendWithTemplate::SUBJECT
-          type: string
-          maxLength: 255
-        test_mode:
-          description: _t__SignatureRequestSendWithTemplate::TEST_MODE
-          type: boolean
-          default: false
-        title:
-          description: _t__SignatureRequestSendWithTemplate::TITLE
-          type: string
-          maxLength: 255
-      type: object
-    SubFormFieldsPerDocumentBase:
-      description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
-      required:
-      - document_index
-      - api_id
-      - type
-      - required
-      - signer
-      - width
-      - height
-      - x
-      - y
-      properties:
-        document_index:
-          description: _t__Sub::FormFieldsPerDocument::DOCUMENT_INDEX
-          type: integer
-        api_id:
-          description: _t__Sub::FormFieldsPerDocument::API_ID
-          type: string
-        height:
-          description: _t__Sub::FormFieldsPerDocument::HEIGHT
-          type: integer
-        name:
-          description: _t__Sub::FormFieldsPerDocument::NAME
-          type: string
-        page:
-          description: _t__Sub::FormFieldsPerDocument::PAGE
-          type:
-          - integer
-          - 'null'
-        required:
-          description: _t__Sub::FormFieldsPerDocument::REQUIRED
-          type: boolean
-        signer:
-          description: _t__Sub::FormFieldsPerDocument::SIGNER
-          type: string
-          x-int-or-string: true
-        type:
-          type: string
-        width:
-          description: _t__Sub::FormFieldsPerDocument::WIDTH
-          type: integer
-        x:
-          description: _t__Sub::FormFieldsPerDocument::X
-          type: integer
-        y:
-          description: _t__Sub::FormFieldsPerDocument::Y
-          type: integer
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/SubFormFieldsPerDocumentText'
-          dropdown: '#/components/schemas/SubFormFieldsPerDocumentDropdown'
-          hyperlink: '#/components/schemas/SubFormFieldsPerDocumentHyperlink'
-          checkbox: '#/components/schemas/SubFormFieldsPerDocumentCheckbox'
-          radio: '#/components/schemas/SubFormFieldsPerDocumentRadio'
-          signature: '#/components/schemas/SubFormFieldsPerDocumentSignature'
-          date_signed: '#/components/schemas/SubFormFieldsPerDocumentDateSigned'
-          initials: '#/components/schemas/SubFormFieldsPerDocumentInitials'
-          text-merge: '#/components/schemas/SubFormFieldsPerDocumentTextMerge'
-          checkbox-merge: '#/components/schemas/SubFormFieldsPerDocumentCheckboxMerge'
-      x-internal: true
-      x-base-class: true
-    SubSignatureRequestGroupedSigners:
-      required:
-      - group
-      - signers
-      properties:
-        group:
-          description: _t__Sub::SignatureRequestGroupedSigners::GROUP_NAME
-          type: string
-        order:
-          description: _t__Sub::SignatureRequestGroupedSigners::ORDER
-          type:
-          - integer
-          - 'null'
-        signers:
-          description: _t__Sub::SignatureRequestGroupedSigners::SIGNERS
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestSigner'
-      type: object
-    FileResponse:
-      properties:
-        file_url:
-          description: _t__FileResponse::FILE_URL
-          type: string
-        expires_at:
-          description: _t__FileResponse::EXPIRES_AT
-          type: integer
-      type: object
-      x-internal: true
-    SubSigningOptions:
-      description: _t__Sub::SigningOptions::DESCRIPTION
-      required:
-      - default_type
-      properties:
-        default_type:
-          description: _t__Sub::SigningOptions::DEFAULT
-          type: string
-          enum:
-          - draw
-          - phone
-          - type
-          - upload
-        draw:
-          description: _t__Sub::SigningOptions::DRAW
-          type: boolean
-          default: false
-        phone:
-          description: _t__Sub::SigningOptions::PHONE
-          type: boolean
-          default: false
-        type:
-          description: _t__Sub::SigningOptions::TYPE
-          type: boolean
-          default: false
-        upload:
-          description: _t__Sub::SigningOptions::UPLOAD
-          type: boolean
-          default: false
-      type: object
     SignatureRequestUpdateRequest:
       required:
       - signature_id
@@ -2557,161 +2249,121 @@ components:
           - integer
           - 'null'
       type: object
-    SubBulkSignerListCustomField:
-      required:
-      - name
-      - value
+    SignatureRequestResponse:
+      description: _t__SignatureRequestResponse::DESCRIPTION
       properties:
-        name:
-          description: _t__Sub::BulkCustomField::NAME
-          type: string
-        value:
-          description: _t__Sub::BulkCustomField::VALUE
-          type: string
-      type: object
-    SubFormFieldRuleTrigger:
-      required:
-      - id
-      - operator
-      properties:
-        id:
-          description: _t__Sub::FormFieldRuleTrigger::ID
-          type: string
-        operator:
-          description: _t__Sub::FormFieldRuleTrigger::OPERATOR
-          type: string
-          enum:
-          - any
-          - is
-          - match
-          - none
-          - not
-        value:
-          description: _t__Sub::FormFieldRuleTrigger::VALUE_SINGLE
-          type: string
-        values:
-          description: _t__Sub::FormFieldRuleTrigger::VALUE_MULTI
-          type: array
-          items:
-            type: string
-      type: object
-    SignatureRequestSendRequest:
-      properties:
-        files:
-          description: _t__SignatureRequestSend::FILES
-          type: array
-          items:
-            type: string
-            format: binary
-        file_urls:
-          description: _t__SignatureRequestSend::FILE_URLS
-          type: array
-          items:
-            type: string
-        signers:
-          description: _t__Sub::SignatureRequestSigner::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestSigner'
-        grouped_signers:
-          description: _t__Sub::SignatureRequestGroupedSigners::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestGroupedSigners'
-        allow_decline:
-          description: _t__SignatureRequestSend::ALLOW_DECLINE
-          type: boolean
+        test_mode:
+          description: _t__SignatureRequestResponse::TEST_MODE
+          type:
+          - boolean
+          - 'null'
           default: false
-        allow_reassign:
-          description: _t__SignatureRequestSend::ALLOW_REASSIGN
-          type: boolean
-          default: false
-        attachments:
-          description: _t__SubAttachment::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubAttachment'
-        cc_email_addresses:
-          description: _t__SignatureRequestSend::CC_EMAIL_ADDRESSES
-          type: array
-          items:
-            type: string
-            format: email
-        client_id:
-          description: _t__SignatureRequestSend::CLIENT_ID
+        signature_request_id:
+          description: _t__SignatureRequestResponse::SIGNATURE_REQUEST_ID
           type: string
-        custom_fields:
-          description: _t__Sub::CustomField::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCustomField'
-        field_options:
-          $ref: '#/components/schemas/SubFieldOptions'
-        form_field_groups:
-          description: _t__Sub::FormFieldGroup::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldGroup'
-        form_field_rules:
-          description: _t__Sub::FormFieldRule::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldRule'
-        form_fields_per_document:
-          description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        hide_text_tags:
-          description: _t__SignatureRequestSend::HIDE_TEXT_TAGS
-          type: boolean
-          default: false
-        is_qualified_signature:
-          description: _t__SignatureRequestSend::IS_QUALIFIED_SIGNATURE
-          type: boolean
-          default: false
-          deprecated: true
-          x-hideOn: doc
-        is_eid:
-          description: _t__SignatureRequestSend::IS_EID
-          type: boolean
-          default: false
-        message:
-          description: _t__SignatureRequestSend::MESSAGE
+        requester_email_address:
+          description: _t__SignatureRequestResponse::REQUESTER_EMAIL_ADDRESS
           type: string
-          maxLength: 5000
-        metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
-          type: object
-          maxItems: 10
-          additionalProperties: {}
-        signing_options:
-          $ref: '#/components/schemas/SubSigningOptions'
-        signing_redirect_url:
-          description: _t__SignatureRequestSend::SIGNING_REDIRECT_URL
+        title:
+          description: _t__SignatureRequestResponse::TITLE
+          type: string
+        original_title:
+          description: _t__SignatureRequestResponse::ORIGINAL_TITLE
           type: string
         subject:
-          description: _t__SignatureRequestSend::SUBJECT
-          type: string
-          maxLength: 255
-        test_mode:
-          description: _t__SignatureRequestSend::TEST_MODE
-          type: boolean
-          default: false
-        title:
-          description: _t__SignatureRequestSend::TITLE
-          type: string
-          maxLength: 255
-        use_text_tags:
-          description: _t__SignatureRequestSend::USE_PREEXISTING_FIELDS
-          type: boolean
-          default: false
-        expires_at:
-          description: _t__SignatureRequestSend::EXPIRES_AT
+          description: _t__SignatureRequestResponse::SUBJECT
           type:
-          - integer
+          - string
+          - 'null'
+        message:
+          description: _t__SignatureRequestResponse::MESSAGE
+          type:
+          - string
+          - 'null'
+        metadata:
+          description: _t__SignatureRequestResponse::METADATA
+          type: object
+        created_at:
+          description: _t__SignatureRequestResponse::CREATED_AT
+          type: integer
+        expires_at:
+          description: _t__SignatureRequestResponse::EXPIRES_AT
+          type: integer
+        is_complete:
+          description: _t__SignatureRequestResponse::IS_COMPLETE
+          type: boolean
+        is_declined:
+          description: _t__SignatureRequestResponse::IS_DECLINED
+          type: boolean
+        has_error:
+          description: _t__SignatureRequestResponse::HAS_ERROR
+          type: boolean
+        files_url:
+          description: _t__SignatureRequestResponse::FILES_URL
+          type: string
+        signing_url:
+          description: _t__SignatureRequestResponse::SIGNING_URL
+          type:
+          - string
+          - 'null'
+        details_url:
+          description: _t__SignatureRequestResponse::DETAILS_URL
+          type: string
+        cc_email_addresses:
+          description: _t__SignatureRequestResponse::CC_EMAIL_ADDRESSES
+          type: array
+          items:
+            type: string
+        signing_redirect_url:
+          description: _t__SignatureRequestResponse::SIGNING_REDIRECT_URL
+          type:
+          - string
+          - 'null'
+        final_copy_uri:
+          description: _t__SignatureRequestResponse::FINAL_COPY_URI
+          type:
+          - string
+          - 'null'
+        template_ids:
+          description: _t__SignatureRequestResponse::TEMPLATE_IDS
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        custom_fields:
+          description: _t__SignatureRequestResponseCustomField::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
+        attachments:
+          description: _t__SignatureRequestResponseAttachment::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseAttachment'
+        response_data:
+          description: _t__SignatureRequestResponseData::DESCRIPTION
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        signatures:
+          description: _t__SignatureRequestResponseSignatures::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseSignatures'
+        bulk_send_job_id:
+          description: _t__SignatureRequestResponse::BULK_SEND_JOB_ID
+          type:
+          - string
           - 'null'
       type: object
+      x-internal: true
     FileResponseDataUri:
       properties:
         data_uri:
@@ -2719,24 +2371,22 @@ components:
           type: string
       type: object
       x-internal: true
-    SubCustomField:
-      description: _t__Sub::CustomField::DESCRIPTION
-      required:
-      - name
+    FileResponse:
       properties:
-        editor:
-          description: _t__Sub::CustomField::EDITOR
+        file_url:
+          description: _t__FileResponse::FILE_URL
           type: string
-        name:
-          description: _t__Sub::CustomField::NAME
-          type: string
-        required:
-          description: _t__Sub::CustomField::REQUIRED
-          type: boolean
-          default: false
-        value:
-          description: _t__Sub::CustomField::VALUE
-          type: string
+        expires_at:
+          description: _t__FileResponse::EXPIRES_AT
+          type: integer
+      type: object
+      x-internal: true
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
       type: object
     SubSignatureRequestTemplateSigner:
       required:
@@ -2769,275 +2419,28 @@ components:
           - authentication
           - delivery
       type: object
-    SignatureRequestSendWithTemplateRequest:
-      description: ''
+    SubFieldOptions:
+      description: _t__Sub::FieldOptions::DESCRIPTION
       required:
-      - signers
-      - template_ids
+      - date_format
       properties:
-        template_ids:
-          description: _t__SignatureRequestSendWithTemplate::TEMPLATE_IDS
-          type: array
-          items:
-            type: string
-        allow_decline:
-          description: _t__SignatureRequestSendWithTemplate::ALLOW_DECLINE
-          type: boolean
-          default: false
-        ccs:
-          description: _t__Sub::CC::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCC'
-        client_id:
-          description: _t__SignatureRequestSendWithTemplate::CLIENT_ID
+        date_format:
+          description: _t__Sub::FieldOptions::DATE_FORMAT
           type: string
-        custom_fields:
-          description: _t__Sub::CustomField::TEMPLATE
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCustomField'
-        files:
-          description: _t__SignatureRequestSendWithTemplate::FILES
-          type: array
-          items:
-            type: string
-            format: binary
-        file_urls:
-          description: _t__SignatureRequestSendWithTemplate::FILE_URLS
-          type: array
-          items:
-            type: string
-        is_qualified_signature:
-          description: _t__SignatureRequestSendWithTemplate::IS_QUALIFIED_SIGNATURE
-          type: boolean
-          default: false
-          deprecated: true
-          x-hideOn: doc
-        is_eid:
-          description: _t__SignatureRequestSendWithTemplate::IS_EID
-          type: boolean
-          default: false
-        message:
-          description: _t__SignatureRequestSendWithTemplate::MESSAGE
-          type: string
-          maxLength: 5000
-        metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
-          type: object
-          maxItems: 10
-          additionalProperties: {}
-        signers:
-          description: _t__Sub::SignatureRequestTemplateSigner::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
-        signing_options:
-          $ref: '#/components/schemas/SubSigningOptions'
-        signing_redirect_url:
-          description: _t__SignatureRequestSendWithTemplate::SIGNING_REDIRECT_URL
-          type: string
-        subject:
-          description: _t__SignatureRequestSendWithTemplate::SUBJECT
-          type: string
-          maxLength: 255
-        test_mode:
-          description: _t__SignatureRequestSendWithTemplate::TEST_MODE
-          type: boolean
-          default: false
-        title:
-          description: _t__SignatureRequestSendWithTemplate::TITLE
-          type: string
-          maxLength: 255
-      type: object
-    BulkSendJobSendResponse:
-      properties:
-        bulk_send_job:
-          $ref: '#/components/schemas/BulkSendJobResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    SignatureRequestGetResponse:
-      properties:
-        signature_request:
-          $ref: '#/components/schemas/SignatureRequestResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    SignatureRequestRemindRequest:
-      required:
-      - email_address
-      properties:
-        email_address:
-          description: _t__SignatureRequestRemind::EMAIL_ADDRESS
-          type: string
-          format: email
-        name:
-          description: _t__SignatureRequestRemind::NAME
-          type: string
-      type: object
-    SignatureRequestResponseSignatures:
-      description: _t__SignatureRequestResponseSignatures::DESCRIPTION
-      properties:
-        signature_id:
-          description: _t__SignatureRequestResponseSignatures::SIGNATURE_ID
-          type: string
-        signer_group_guid:
-          description: _t__SignatureRequestResponseSignatures::SIGNER_GROUP_GUID
-          type:
-          - string
-          - 'null'
-        signer_email_address:
-          description: _t__SignatureRequestResponseSignatures::SIGNER_EMAIL_ADDRESS
-          type: string
-        signer_name:
-          description: _t__SignatureRequestResponseSignatures::SIGNER_NAME
-          type:
-          - string
-          - 'null'
-        signer_role:
-          description: _t__SignatureRequestResponseSignatures::SIGNER_ROLE
-          type:
-          - string
-          - 'null'
-        order:
-          description: _t__SignatureRequestResponseSignatures::ORDER
-          type:
-          - integer
-          - 'null'
-        status_code:
-          description: _t__SignatureRequestResponseSignatures::STATUS_CODE
-          type: string
-        decline_reason:
-          description: _t__SignatureRequestResponseSignatures::DECLINE_REASON
-          type:
-          - string
-          - 'null'
-        signed_at:
-          description: _t__SignatureRequestResponseSignatures::SIGNED_AT
-          type:
-          - integer
-          - 'null'
-        last_viewed_at:
-          description: _t__SignatureRequestResponseSignatures::LAST_VIEWED_AT
-          type:
-          - integer
-          - 'null'
-        last_reminded_at:
-          description: _t__SignatureRequestResponseSignatures::LAST_REMINDED_AT
-          type:
-          - integer
-          - 'null'
-        has_pin:
-          description: _t__SignatureRequestResponseSignatures::HAS_PIN
-          type: boolean
-        has_sms_auth:
-          description: _t__SignatureRequestResponseSignatures::HAS_SMS_AUTH
-          type:
-          - boolean
-          - 'null'
-        has_sms_delivery:
-          description: _t__SignatureRequestResponseSignatures::HAS_SMS_DELIVERY
-          type:
-          - boolean
-          - 'null'
-        sms_phone_number:
-          description: _t__SignatureRequestResponseSignatures::SMS_PHONE_NUMBER
-          type:
-          - string
-          - 'null'
-        reassigned_by:
-          description: _t__SignatureRequestResponseSignatures::REASSIGNED_BY
-          type:
-          - string
-          - 'null'
-        reassignment_reason:
-          description: _t__SignatureRequestResponseSignatures::REASSIGNMENT_REASON
-          type:
-          - string
-          - 'null'
-        reassigned_from:
-          description: _t__SignatureRequestResponseSignatures::REASSIGNED_FROM
-          type:
-          - string
-          - 'null'
-        error:
-          description: _t__SignatureRequestResponseSignatures::ERROR
-          type:
-          - string
-          - 'null'
-      type: object
-      x-internal: true
-    ListInfoResponse:
-      description: _t__ListInfoResponse::DESCRIPTION
-      properties:
-        num_pages:
-          description: _t__ListInfoResponse::NUM_PAGES
-          type: integer
-        num_results:
-          description: _t__ListInfoResponse::NUM_RESULTS
-          type:
-          - integer
-          - 'null'
-        page:
-          description: _t__ListInfoResponse::PAGE
-          type: integer
-        page_size:
-          description: _t__ListInfoResponse::PAGE_SIZE
-          type: integer
-      type: object
-      x-internal: true
-    SubFormFieldGroup:
-      required:
-      - group_id
-      - group_label
-      - requirement
-      properties:
-        group_id:
-          description: _t__Sub::FormFieldGroup::GROUP_ID_LABEL
-          type: string
-        group_label:
-          description: _t__Sub::FormFieldGroup::GROUP_LABEL
-          type: string
-        requirement:
-          description: _t__Sub::FormFieldGroup::REQUIREMENT
-          type: string
-      type: object
-    SubFormFieldRule:
-      required:
-      - id
-      - trigger_operator
-      - triggers
-      - actions
-      properties:
-        id:
-          description: _t__Sub::FormFieldRule::ID
-          type: string
-        trigger_operator:
-          description: _t__Sub::FormFieldRule::TRIGGER_OPERATOR
-          type: string
-          default: AND
-        triggers:
-          description: _t__Sub::FormFieldRuleTrigger::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldRuleTrigger'
-          maxItems: 1
-          minItems: 1
-        actions:
-          description: _t__Sub::FormFieldRuleAction::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldRuleAction'
-          minItems: 1
+          enum:
+          - MM / DD / YYYY
+          - MM - DD - YYYY
+          - DD / MM / YYYY
+          - DD - MM - YYYY
+          - YYYY / MM / DD
+          - YYYY - MM - DD
+          x-enum-varnames:
+          - MMDDYYYY
+          - MM_DD_YYYY
+          - DDMMYYYY
+          - DD_MM_YYYY
+          - YYYYMMDD
+          - YYYY_MM_DD
       type: object
     SignatureRequestResponseCustomFieldBase:
       description: _t__SignatureRequestResponseCustomField::DESCRIPTION
@@ -3068,82 +2471,165 @@ components:
           checkbox: '#/components/schemas/SignatureRequestResponseCustomFieldCheckbox'
       x-internal: true
       x-base-class: true
-    SignatureRequestResponseAttachment:
-      description: _t__SignatureRequestResponseAttachment::DESCRIPTION
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
       required:
-      - id
-      - signer
-      - name
-      - required
+      - error_msg
+      - error_name
       properties:
-        id:
-          description: _t__SignatureRequestResponseAttachment::ID
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
           type: string
-        signer:
-          description: _t__SignatureRequestResponseAttachment::SIGNER
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
           type: string
-        name:
-          description: _t__SignatureRequestResponseAttachment::NAME
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
           type: string
-        required:
-          description: _t__SignatureRequestResponseAttachment::REQUIRED
-          type: boolean
-        instructions:
-          description: _t__SignatureRequestResponseAttachment::INSTRUCTIONS
-          type:
-          - string
-          - 'null'
-        uploaded_at:
-          description: _t__SignatureRequestResponseAttachment::UPLOADED_AT
-          type:
-          - integer
-          - 'null'
       type: object
-      x-internal: true
-    SubBulkSignerList:
+    SignatureRequestEditEmbeddedWithTemplateRequest:
+      required:
+      - client_id
+      - template_ids
+      - signers
       properties:
-        custom_fields:
-          description: _t__Sub::BulkCustomField::DESCRIPTION
+        template_ids:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TEMPLATE_IDS
           type: array
           items:
-            $ref: '#/components/schemas/SubBulkSignerListCustomField'
+            type: string
+        allow_decline:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::ALLOW_DECLINE
+          type: boolean
+          default: false
+        ccs:
+          description: _t__Sub::CC::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCC'
+        client_id:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::TEMPLATE
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        files:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::FILES
+          type: array
+          items:
+            type: string
+            format: binary
+        file_urls:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::FILE_URLS
+          type: array
+          items:
+            type: string
+        message:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
         signers:
-          description: _t__Sub::BulkSigner::DESCRIPTION
+          description: _t__Sub::SignatureRequestTemplateSigner::DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
+        subject:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::SUBJECT
+          type: string
+          maxLength: 255
+        test_mode:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TEST_MODE
+          type: boolean
+          default: false
+        title:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TITLE
+          type: string
+          maxLength: 255
+        populate_auto_fill_fields:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS
+          type: boolean
+          default: false
       type: object
-    SubSignatureRequestSigner:
+    SignatureRequestCreateEmbeddedWithTemplateRequest:
       required:
-      - name
-      - email_address
+      - client_id
+      - template_ids
+      - signers
       properties:
-        name:
-          description: _t__Sub::SignatureRequestSigner::SIGNER_NAME
+        template_ids:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TEMPLATE_IDS
+          type: array
+          items:
+            type: string
+        allow_decline:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::ALLOW_DECLINE
+          type: boolean
+          default: false
+        ccs:
+          description: _t__Sub::CC::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCC'
+        client_id:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::CLIENT_ID
           type: string
-        email_address:
-          description: _t__Sub::SignatureRequestSigner::SIGNER_EMAIL_ADDRESS
+        custom_fields:
+          description: _t__Sub::CustomField::TEMPLATE
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        files:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::FILES
+          type: array
+          items:
+            type: string
+            format: binary
+        file_urls:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::FILE_URLS
+          type: array
+          items:
+            type: string
+        message:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::MESSAGE
           type: string
-          format: email
-        order:
-          description: _t__Sub::SignatureRequestSigner::SIGNER_ORDER
-          type:
-          - integer
-          - 'null'
-        pin:
-          description: _t__Sub::SignatureRequestSigner::SIGNER_PIN
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        signers:
+          description: _t__Sub::SignatureRequestTemplateSigner::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
+        subject:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::SUBJECT
           type: string
-          maxLength: 12
-          minLength: 4
-        sms_phone_number:
-          description: _t__Sub::SignatureRequestSigner::SIGNER_SMS_PHONE_NUMBER
+          maxLength: 255
+        test_mode:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TEST_MODE
+          type: boolean
+          default: false
+        title:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TITLE
           type: string
-        sms_phone_number_type:
-          description: _t__Sub::SignatureRequestSigner::SIGNER_SMS_PHONE_NUMBER_TYPE
-          type: string
-          enum:
-          - authentication
-          - delivery
+          maxLength: 255
+        populate_auto_fill_fields:
+          description: _t__SignatureRequestCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS
+          type: boolean
+          default: false
       type: object
     SignatureRequestEditRequest:
       properties:
@@ -3262,51 +2748,502 @@ components:
           - integer
           - 'null'
       type: object
-    SubCC:
+    SubAttachment:
       required:
-      - role
-      - email_address
+      - name
+      - signer_index
       properties:
-        role:
-          description: _t__Sub::CC::ROLE
-          type: string
-        email_address:
-          description: _t__Sub::CC::EMAIL_ADDRESS
-          type: string
-          format: email
-      type: object
-    SignatureRequestResponseDataBase:
-      description: _t__SignatureRequestResponseData::DESCRIPTION
-      properties:
-        api_id:
-          description: _t__SignatureRequestResponseData::API_ID
-          type: string
-        signature_id:
-          description: _t__SignatureRequestResponseData::SIGNATURE_ID
+        instructions:
+          description: _t__Sub::Attachment::INSTRUCTIONS
           type: string
         name:
-          description: _t__SignatureRequestResponseData::NAME
+          description: _t__Sub::Attachment::NAME
           type: string
         required:
-          description: _t__SignatureRequestResponseData::REQUIRED
+          description: _t__Sub::Attachment::REQUIRED
+          type: boolean
+          default: false
+        signer_index:
+          description: _t__Sub::Attachment::SIGNER_INDEX
+          type: integer
+      type: object
+    BulkSendJobResponse:
+      description: _t__BulkSendJobResponse::DESCRIPTION
+      properties:
+        bulk_send_job_id:
+          description: _t__BulkSendJobResponse::BULK_SEND_JOB_ID
+          type:
+          - string
+          - 'null'
+        total:
+          description: _t__BulkSendJobResponse::TOTAL
+          type: integer
+        is_creator:
+          description: _t__BulkSendJobResponse::IS_CREATOR
+          type: boolean
+        created_at:
+          description: _t__BulkSendJobResponse::CREATED_AT
+          type: integer
+      type: object
+      x-internal: true
+    SubFormFieldRule:
+      required:
+      - id
+      - trigger_operator
+      - triggers
+      - actions
+      properties:
+        id:
+          description: _t__Sub::FormFieldRule::ID
+          type: string
+        trigger_operator:
+          description: _t__Sub::FormFieldRule::TRIGGER_OPERATOR
+          type: string
+          default: AND
+        triggers:
+          description: _t__Sub::FormFieldRuleTrigger::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRuleTrigger'
+          maxItems: 1
+          minItems: 1
+        actions:
+          description: _t__Sub::FormFieldRuleAction::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRuleAction'
+          minItems: 1
+      type: object
+    SignatureRequestResponseSignatures:
+      description: _t__SignatureRequestResponseSignatures::DESCRIPTION
+      properties:
+        signature_id:
+          description: _t__SignatureRequestResponseSignatures::SIGNATURE_ID
+          type: string
+        signer_group_guid:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_GROUP_GUID
+          type:
+          - string
+          - 'null'
+        signer_email_address:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_EMAIL_ADDRESS
+          type: string
+        signer_name:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_NAME
+          type:
+          - string
+          - 'null'
+        signer_role:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_ROLE
+          type:
+          - string
+          - 'null'
+        order:
+          description: _t__SignatureRequestResponseSignatures::ORDER
+          type:
+          - integer
+          - 'null'
+        status_code:
+          description: _t__SignatureRequestResponseSignatures::STATUS_CODE
+          type: string
+        decline_reason:
+          description: _t__SignatureRequestResponseSignatures::DECLINE_REASON
+          type:
+          - string
+          - 'null'
+        signed_at:
+          description: _t__SignatureRequestResponseSignatures::SIGNED_AT
+          type:
+          - integer
+          - 'null'
+        last_viewed_at:
+          description: _t__SignatureRequestResponseSignatures::LAST_VIEWED_AT
+          type:
+          - integer
+          - 'null'
+        last_reminded_at:
+          description: _t__SignatureRequestResponseSignatures::LAST_REMINDED_AT
+          type:
+          - integer
+          - 'null'
+        has_pin:
+          description: _t__SignatureRequestResponseSignatures::HAS_PIN
+          type: boolean
+        has_sms_auth:
+          description: _t__SignatureRequestResponseSignatures::HAS_SMS_AUTH
+          type:
+          - boolean
+          - 'null'
+        has_sms_delivery:
+          description: _t__SignatureRequestResponseSignatures::HAS_SMS_DELIVERY
+          type:
+          - boolean
+          - 'null'
+        sms_phone_number:
+          description: _t__SignatureRequestResponseSignatures::SMS_PHONE_NUMBER
+          type:
+          - string
+          - 'null'
+        reassigned_by:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNED_BY
+          type:
+          - string
+          - 'null'
+        reassignment_reason:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNMENT_REASON
+          type:
+          - string
+          - 'null'
+        reassigned_from:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNED_FROM
+          type:
+          - string
+          - 'null'
+        error:
+          description: _t__SignatureRequestResponseSignatures::ERROR
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
+    SignatureRequestRemindRequest:
+      required:
+      - email_address
+      properties:
+        email_address:
+          description: _t__SignatureRequestRemind::EMAIL_ADDRESS
+          type: string
+          format: email
+        name:
+          description: _t__SignatureRequestRemind::NAME
+          type: string
+      type: object
+    SignatureRequestEditWithTemplateRequest:
+      description: ''
+      required:
+      - signers
+      - template_ids
+      properties:
+        template_ids:
+          description: _t__SignatureRequestSendWithTemplate::TEMPLATE_IDS
+          type: array
+          items:
+            type: string
+        allow_decline:
+          description: _t__SignatureRequestSendWithTemplate::ALLOW_DECLINE
+          type: boolean
+          default: false
+        ccs:
+          description: _t__Sub::CC::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCC'
+        client_id:
+          description: _t__SignatureRequestSendWithTemplate::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::TEMPLATE
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        files:
+          description: _t__SignatureRequestSendWithTemplate::FILES
+          type: array
+          items:
+            type: string
+            format: binary
+        file_urls:
+          description: _t__SignatureRequestSendWithTemplate::FILE_URLS
+          type: array
+          items:
+            type: string
+        is_qualified_signature:
+          description: _t__SignatureRequestSendWithTemplate::IS_QUALIFIED_SIGNATURE
+          type: boolean
+          default: false
+          deprecated: true
+          x-hideOn: doc
+        is_eid:
+          description: _t__SignatureRequestSendWithTemplate::IS_EID
+          type: boolean
+          default: false
+        message:
+          description: _t__SignatureRequestSendWithTemplate::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        signers:
+          description: _t__Sub::SignatureRequestTemplateSigner::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
+        signing_redirect_url:
+          description: _t__SignatureRequestSendWithTemplate::SIGNING_REDIRECT_URL
+          type: string
+        subject:
+          description: _t__SignatureRequestSendWithTemplate::SUBJECT
+          type: string
+          maxLength: 255
+        test_mode:
+          description: _t__SignatureRequestSendWithTemplate::TEST_MODE
+          type: boolean
+          default: false
+        title:
+          description: _t__SignatureRequestSendWithTemplate::TITLE
+          type: string
+          maxLength: 255
+      type: object
+    SubSigningOptions:
+      description: _t__Sub::SigningOptions::DESCRIPTION
+      required:
+      - default_type
+      properties:
+        default_type:
+          description: _t__Sub::SigningOptions::DEFAULT
+          type: string
+          enum:
+          - draw
+          - phone
+          - type
+          - upload
+        draw:
+          description: _t__Sub::SigningOptions::DRAW
+          type: boolean
+          default: false
+        phone:
+          description: _t__Sub::SigningOptions::PHONE
+          type: boolean
+          default: false
+        type:
+          description: _t__Sub::SigningOptions::TYPE
+          type: boolean
+          default: false
+        upload:
+          description: _t__Sub::SigningOptions::UPLOAD
+          type: boolean
+          default: false
+      type: object
+    SignatureRequestGetResponse:
+      properties:
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    SignatureRequestListResponse:
+      properties:
+        signature_requests:
+          description: _t__SignatureRequestListResponse::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    SubBulkSignerList:
+      properties:
+        custom_fields:
+          description: _t__Sub::BulkCustomField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubBulkSignerListCustomField'
+        signers:
+          description: _t__Sub::BulkSigner::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
+      type: object
+    SubBulkSignerListCustomField:
+      required:
+      - name
+      - value
+      properties:
+        name:
+          description: _t__Sub::BulkCustomField::NAME
+          type: string
+        value:
+          description: _t__Sub::BulkCustomField::VALUE
+          type: string
+      type: object
+    SubCustomField:
+      description: _t__Sub::CustomField::DESCRIPTION
+      required:
+      - name
+      properties:
+        editor:
+          description: _t__Sub::CustomField::EDITOR
+          type: string
+        name:
+          description: _t__Sub::CustomField::NAME
+          type: string
+        required:
+          description: _t__Sub::CustomField::REQUIRED
+          type: boolean
+          default: false
+        value:
+          description: _t__Sub::CustomField::VALUE
+          type: string
+      type: object
+    SubFormFieldRuleAction:
+      required:
+      - hidden
+      - type
+      properties:
+        field_id:
+          description: _t__Sub::FormFieldRuleAction::FIELD_ID
+          type: string
+        group_id:
+          description: _t__Sub::FormFieldRuleAction::GROUP_ID
+          type: string
+        hidden:
+          description: _t__Sub::FormFieldRuleAction::HIDDEN
           type: boolean
         type:
           type: string
+          enum:
+          - change-field-visibility
+          - change-group-visibility
       type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/SignatureRequestResponseDataValueText'
-          checkbox: '#/components/schemas/SignatureRequestResponseDataValueCheckbox'
-          dropdown: '#/components/schemas/SignatureRequestResponseDataValueDropdown'
-          radio: '#/components/schemas/SignatureRequestResponseDataValueRadio'
-          signature: '#/components/schemas/SignatureRequestResponseDataValueSignature'
-          date_signed: '#/components/schemas/SignatureRequestResponseDataValueDateSigned'
-          initials: '#/components/schemas/SignatureRequestResponseDataValueInitials'
-          text-merge: '#/components/schemas/SignatureRequestResponseDataValueTextMerge'
-          checkbox-merge: '#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge'
+    SignatureRequestBulkSendWithTemplateRequest:
+      required:
+      - template_ids
+      properties:
+        template_ids:
+          description: _t__SignatureRequestBulkSendWithTemplate::TEMPLATE_IDS
+          type: array
+          items:
+            type: string
+        signer_file:
+          description: _t__SignatureRequestBulkSendWithTemplate::SIGNER_FILE
+          type: string
+          format: binary
+        signer_list:
+          description: _t__SignatureRequestBulkSendWithTemplate::SIGNER_LIST
+          type: array
+          items:
+            $ref: '#/components/schemas/SubBulkSignerList'
+        allow_decline:
+          description: _t__SignatureRequestBulkSendWithTemplate::ALLOW_DECLINE
+          type: boolean
+          default: false
+        ccs:
+          description: _t__Sub::CC::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCC'
+        client_id:
+          description: _t__SignatureRequestBulkSendWithTemplate::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        message:
+          description: _t__SignatureRequestBulkSendWithTemplate::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        signing_redirect_url:
+          description: _t__SignatureRequestBulkSendWithTemplate::SIGNING_REDIRECT_URL
+          type: string
+        subject:
+          description: _t__SignatureRequestBulkSendWithTemplate::SUBJECT
+          type: string
+          maxLength: 255
+        test_mode:
+          description: _t__SignatureRequestBulkSendWithTemplate::TEST_MODE
+          type: boolean
+          default: false
+        title:
+          description: _t__SignatureRequestBulkSendWithTemplate::TITLE
+          type: string
+          maxLength: 255
+      type: object
+    SignatureRequestResponseAttachment:
+      description: _t__SignatureRequestResponseAttachment::DESCRIPTION
+      required:
+      - id
+      - signer
+      - name
+      - required
+      properties:
+        id:
+          description: _t__SignatureRequestResponseAttachment::ID
+          type: string
+        signer:
+          description: _t__SignatureRequestResponseAttachment::SIGNER
+          type: string
+        name:
+          description: _t__SignatureRequestResponseAttachment::NAME
+          type: string
+        required:
+          description: _t__SignatureRequestResponseAttachment::REQUIRED
+          type: boolean
+        instructions:
+          description: _t__SignatureRequestResponseAttachment::INSTRUCTIONS
+          type:
+          - string
+          - 'null'
+        uploaded_at:
+          description: _t__SignatureRequestResponseAttachment::UPLOADED_AT
+          type:
+          - integer
+          - 'null'
+      type: object
       x-internal: true
-      x-base-class: true
+    SubSignatureRequestSigner:
+      required:
+      - name
+      - email_address
+      properties:
+        name:
+          description: _t__Sub::SignatureRequestSigner::SIGNER_NAME
+          type: string
+        email_address:
+          description: _t__Sub::SignatureRequestSigner::SIGNER_EMAIL_ADDRESS
+          type: string
+          format: email
+        order:
+          description: _t__Sub::SignatureRequestSigner::SIGNER_ORDER
+          type:
+          - integer
+          - 'null'
+        pin:
+          description: _t__Sub::SignatureRequestSigner::SIGNER_PIN
+          type: string
+          maxLength: 12
+          minLength: 4
+        sms_phone_number:
+          description: _t__Sub::SignatureRequestSigner::SIGNER_SMS_PHONE_NUMBER
+          type: string
+        sms_phone_number_type:
+          description: _t__Sub::SignatureRequestSigner::SIGNER_SMS_PHONE_NUMBER_TYPE
+          type: string
+          enum:
+          - authentication
+          - delivery
+      type: object
     SignatureRequestCreateEmbeddedRequest:
       required:
       - client_id
@@ -3417,43 +3354,211 @@ components:
           - integer
           - 'null'
       type: object
-    SignatureRequestBulkSendWithTemplateRequest:
+    SubFormFieldsPerDocumentBase:
+      description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
       required:
-      - template_ids
+      - document_index
+      - api_id
+      - type
+      - required
+      - signer
+      - width
+      - height
+      - x
+      - y
       properties:
-        template_ids:
-          description: _t__SignatureRequestBulkSendWithTemplate::TEMPLATE_IDS
+        document_index:
+          description: _t__Sub::FormFieldsPerDocument::DOCUMENT_INDEX
+          type: integer
+        api_id:
+          description: _t__Sub::FormFieldsPerDocument::API_ID
+          type: string
+        height:
+          description: _t__Sub::FormFieldsPerDocument::HEIGHT
+          type: integer
+        name:
+          description: _t__Sub::FormFieldsPerDocument::NAME
+          type: string
+        page:
+          description: _t__Sub::FormFieldsPerDocument::PAGE
+          type:
+          - integer
+          - 'null'
+        required:
+          description: _t__Sub::FormFieldsPerDocument::REQUIRED
+          type: boolean
+        signer:
+          description: _t__Sub::FormFieldsPerDocument::SIGNER
+          type: string
+          x-int-or-string: true
+        type:
+          type: string
+        width:
+          description: _t__Sub::FormFieldsPerDocument::WIDTH
+          type: integer
+        x:
+          description: _t__Sub::FormFieldsPerDocument::X
+          type: integer
+        y:
+          description: _t__Sub::FormFieldsPerDocument::Y
+          type: integer
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SubFormFieldsPerDocumentText'
+          dropdown: '#/components/schemas/SubFormFieldsPerDocumentDropdown'
+          hyperlink: '#/components/schemas/SubFormFieldsPerDocumentHyperlink'
+          checkbox: '#/components/schemas/SubFormFieldsPerDocumentCheckbox'
+          radio: '#/components/schemas/SubFormFieldsPerDocumentRadio'
+          signature: '#/components/schemas/SubFormFieldsPerDocumentSignature'
+          date_signed: '#/components/schemas/SubFormFieldsPerDocumentDateSigned'
+          initials: '#/components/schemas/SubFormFieldsPerDocumentInitials'
+          text-merge: '#/components/schemas/SubFormFieldsPerDocumentTextMerge'
+          checkbox-merge: '#/components/schemas/SubFormFieldsPerDocumentCheckboxMerge'
+      x-internal: true
+      x-base-class: true
+    SubFormFieldRuleTrigger:
+      required:
+      - id
+      - operator
+      properties:
+        id:
+          description: _t__Sub::FormFieldRuleTrigger::ID
+          type: string
+        operator:
+          description: _t__Sub::FormFieldRuleTrigger::OPERATOR
+          type: string
+          enum:
+          - any
+          - is
+          - match
+          - none
+          - not
+        value:
+          description: _t__Sub::FormFieldRuleTrigger::VALUE_SINGLE
+          type: string
+        values:
+          description: _t__Sub::FormFieldRuleTrigger::VALUE_MULTI
           type: array
           items:
             type: string
-        signer_file:
-          description: _t__SignatureRequestBulkSendWithTemplate::SIGNER_FILE
+      type: object
+    SignatureRequestResponseDataBase:
+      description: _t__SignatureRequestResponseData::DESCRIPTION
+      properties:
+        api_id:
+          description: _t__SignatureRequestResponseData::API_ID
           type: string
-          format: binary
-        signer_list:
-          description: _t__SignatureRequestBulkSendWithTemplate::SIGNER_LIST
+        signature_id:
+          description: _t__SignatureRequestResponseData::SIGNATURE_ID
+          type: string
+        name:
+          description: _t__SignatureRequestResponseData::NAME
+          type: string
+        required:
+          description: _t__SignatureRequestResponseData::REQUIRED
+          type: boolean
+        type:
+          type: string
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SignatureRequestResponseDataValueText'
+          checkbox: '#/components/schemas/SignatureRequestResponseDataValueCheckbox'
+          dropdown: '#/components/schemas/SignatureRequestResponseDataValueDropdown'
+          radio: '#/components/schemas/SignatureRequestResponseDataValueRadio'
+          signature: '#/components/schemas/SignatureRequestResponseDataValueSignature'
+          date_signed: '#/components/schemas/SignatureRequestResponseDataValueDateSigned'
+          initials: '#/components/schemas/SignatureRequestResponseDataValueInitials'
+          text-merge: '#/components/schemas/SignatureRequestResponseDataValueTextMerge'
+          checkbox-merge: '#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge'
+      x-internal: true
+      x-base-class: true
+    SignatureRequestSendRequest:
+      properties:
+        files:
+          description: _t__SignatureRequestSend::FILES
           type: array
           items:
-            $ref: '#/components/schemas/SubBulkSignerList'
+            type: string
+            format: binary
+        file_urls:
+          description: _t__SignatureRequestSend::FILE_URLS
+          type: array
+          items:
+            type: string
+        signers:
+          description: _t__Sub::SignatureRequestSigner::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubSignatureRequestSigner'
+        grouped_signers:
+          description: _t__Sub::SignatureRequestGroupedSigners::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubSignatureRequestGroupedSigners'
         allow_decline:
-          description: _t__SignatureRequestBulkSendWithTemplate::ALLOW_DECLINE
+          description: _t__SignatureRequestSend::ALLOW_DECLINE
           type: boolean
           default: false
-        ccs:
-          description: _t__Sub::CC::DESCRIPTION
+        allow_reassign:
+          description: _t__SignatureRequestSend::ALLOW_REASSIGN
+          type: boolean
+          default: false
+        attachments:
+          description: _t__SubAttachment::LIST_DESCRIPTION
           type: array
           items:
-            $ref: '#/components/schemas/SubCC'
+            $ref: '#/components/schemas/SubAttachment'
+        cc_email_addresses:
+          description: _t__SignatureRequestSend::CC_EMAIL_ADDRESSES
+          type: array
+          items:
+            type: string
+            format: email
         client_id:
-          description: _t__SignatureRequestBulkSendWithTemplate::CLIENT_ID
+          description: _t__SignatureRequestSend::CLIENT_ID
           type: string
         custom_fields:
           description: _t__Sub::CustomField::DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/SubCustomField'
+        field_options:
+          $ref: '#/components/schemas/SubFieldOptions'
+        form_field_groups:
+          description: _t__Sub::FormFieldGroup::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldGroup'
+        form_field_rules:
+          description: _t__Sub::FormFieldRule::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRule'
+        form_fields_per_document:
+          description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        hide_text_tags:
+          description: _t__SignatureRequestSend::HIDE_TEXT_TAGS
+          type: boolean
+          default: false
+        is_qualified_signature:
+          description: _t__SignatureRequestSend::IS_QUALIFIED_SIGNATURE
+          type: boolean
+          default: false
+          deprecated: true
+          x-hideOn: doc
+        is_eid:
+          description: _t__SignatureRequestSend::IS_EID
+          type: boolean
+          default: false
         message:
-          description: _t__SignatureRequestBulkSendWithTemplate::MESSAGE
+          description: _t__SignatureRequestSend::MESSAGE
           type: string
           maxLength: 5000
         metadata:
@@ -3461,309 +3566,182 @@ components:
           type: object
           maxItems: 10
           additionalProperties: {}
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
         signing_redirect_url:
-          description: _t__SignatureRequestBulkSendWithTemplate::SIGNING_REDIRECT_URL
+          description: _t__SignatureRequestSend::SIGNING_REDIRECT_URL
           type: string
         subject:
-          description: _t__SignatureRequestBulkSendWithTemplate::SUBJECT
+          description: _t__SignatureRequestSend::SUBJECT
           type: string
           maxLength: 255
         test_mode:
-          description: _t__SignatureRequestBulkSendWithTemplate::TEST_MODE
+          description: _t__SignatureRequestSend::TEST_MODE
           type: boolean
           default: false
         title:
-          description: _t__SignatureRequestBulkSendWithTemplate::TITLE
+          description: _t__SignatureRequestSend::TITLE
           type: string
           maxLength: 255
-      type: object
-    SignatureRequestCreateEmbeddedWithTemplateRequest:
-      required:
-      - client_id
-      - template_ids
-      - signers
-      properties:
-        template_ids:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TEMPLATE_IDS
-          type: array
-          items:
-            type: string
-        allow_decline:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::ALLOW_DECLINE
+        use_text_tags:
+          description: _t__SignatureRequestSend::USE_PREEXISTING_FIELDS
           type: boolean
           default: false
-        ccs:
-          description: _t__Sub::CC::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCC'
-        client_id:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::CLIENT_ID
-          type: string
-        custom_fields:
-          description: _t__Sub::CustomField::TEMPLATE
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCustomField'
-        files:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::FILES
-          type: array
-          items:
-            type: string
-            format: binary
-        file_urls:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::FILE_URLS
-          type: array
-          items:
-            type: string
-        message:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::MESSAGE
-          type: string
-          maxLength: 5000
-        metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
-          type: object
-          maxItems: 10
-          additionalProperties: {}
-        signers:
-          description: _t__Sub::SignatureRequestTemplateSigner::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
-        signing_options:
-          $ref: '#/components/schemas/SubSigningOptions'
-        subject:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::SUBJECT
-          type: string
-          maxLength: 255
-        test_mode:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TEST_MODE
-          type: boolean
-          default: false
-        title:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TITLE
-          type: string
-          maxLength: 255
-        populate_auto_fill_fields:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS
-          type: boolean
-          default: false
-      type: object
-    SignatureRequestEditEmbeddedWithTemplateRequest:
-      required:
-      - client_id
-      - template_ids
-      - signers
-      properties:
-        template_ids:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TEMPLATE_IDS
-          type: array
-          items:
-            type: string
-        allow_decline:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::ALLOW_DECLINE
-          type: boolean
-          default: false
-        ccs:
-          description: _t__Sub::CC::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCC'
-        client_id:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::CLIENT_ID
-          type: string
-        custom_fields:
-          description: _t__Sub::CustomField::TEMPLATE
-          type: array
-          items:
-            $ref: '#/components/schemas/SubCustomField'
-        files:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::FILES
-          type: array
-          items:
-            type: string
-            format: binary
-        file_urls:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::FILE_URLS
-          type: array
-          items:
-            type: string
-        message:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::MESSAGE
-          type: string
-          maxLength: 5000
-        metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
-          type: object
-          maxItems: 10
-          additionalProperties: {}
-        signers:
-          description: _t__Sub::SignatureRequestTemplateSigner::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
-        signing_options:
-          $ref: '#/components/schemas/SubSigningOptions'
-        subject:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::SUBJECT
-          type: string
-          maxLength: 255
-        test_mode:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TEST_MODE
-          type: boolean
-          default: false
-        title:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::TITLE
-          type: string
-          maxLength: 255
-        populate_auto_fill_fields:
-          description: _t__SignatureRequestCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS
-          type: boolean
-          default: false
-      type: object
-    SignatureRequestResponse:
-      description: _t__SignatureRequestResponse::DESCRIPTION
-      properties:
-        test_mode:
-          description: _t__SignatureRequestResponse::TEST_MODE
-          type:
-          - boolean
-          - 'null'
-          default: false
-        signature_request_id:
-          description: _t__SignatureRequestResponse::SIGNATURE_REQUEST_ID
-          type: string
-        requester_email_address:
-          description: _t__SignatureRequestResponse::REQUESTER_EMAIL_ADDRESS
-          type: string
-        title:
-          description: _t__SignatureRequestResponse::TITLE
-          type: string
-        original_title:
-          description: _t__SignatureRequestResponse::ORIGINAL_TITLE
-          type: string
-        subject:
-          description: _t__SignatureRequestResponse::SUBJECT
-          type:
-          - string
-          - 'null'
-        message:
-          description: _t__SignatureRequestResponse::MESSAGE
-          type:
-          - string
-          - 'null'
-        metadata:
-          description: _t__SignatureRequestResponse::METADATA
-          type: object
-        created_at:
-          description: _t__SignatureRequestResponse::CREATED_AT
-          type: integer
         expires_at:
-          description: _t__SignatureRequestResponse::EXPIRES_AT
-          type: integer
-        is_complete:
-          description: _t__SignatureRequestResponse::IS_COMPLETE
-          type: boolean
-        is_declined:
-          description: _t__SignatureRequestResponse::IS_DECLINED
-          type: boolean
-        has_error:
-          description: _t__SignatureRequestResponse::HAS_ERROR
-          type: boolean
-        files_url:
-          description: _t__SignatureRequestResponse::FILES_URL
-          type: string
-        signing_url:
-          description: _t__SignatureRequestResponse::SIGNING_URL
+          description: _t__SignatureRequestSend::EXPIRES_AT
           type:
-          - string
+          - integer
           - 'null'
-        details_url:
-          description: _t__SignatureRequestResponse::DETAILS_URL
-          type: string
-        cc_email_addresses:
-          description: _t__SignatureRequestResponse::CC_EMAIL_ADDRESSES
+      type: object
+    ListInfoResponse:
+      description: _t__ListInfoResponse::DESCRIPTION
+      properties:
+        num_pages:
+          description: _t__ListInfoResponse::NUM_PAGES
+          type: integer
+        num_results:
+          description: _t__ListInfoResponse::NUM_RESULTS
+          type:
+          - integer
+          - 'null'
+        page:
+          description: _t__ListInfoResponse::PAGE
+          type: integer
+        page_size:
+          description: _t__ListInfoResponse::PAGE_SIZE
+          type: integer
+      type: object
+      x-internal: true
+    SignatureRequestEditEmbeddedRequest:
+      required:
+      - client_id
+      properties:
+        files:
+          description: _t__SignatureRequestCreateEmbedded::FILES
           type: array
           items:
             type: string
-        signing_redirect_url:
-          description: _t__SignatureRequestResponse::SIGNING_REDIRECT_URL
-          type:
-          - string
-          - 'null'
-        final_copy_uri:
-          description: _t__SignatureRequestResponse::FINAL_COPY_URI
-          type:
-          - string
-          - 'null'
-        template_ids:
-          description: _t__SignatureRequestResponse::TEMPLATE_IDS
-          type:
-          - array
-          - 'null'
+            format: binary
+        file_urls:
+          description: _t__SignatureRequestCreateEmbedded::FILE_URLS
+          type: array
           items:
             type: string
-        custom_fields:
-          description: _t__SignatureRequestResponseCustomField::DESCRIPTION
-          type:
-          - array
-          - 'null'
+        signers:
+          description: _t__Sub::SignatureRequestSigner::DESCRIPTION
+          type: array
           items:
-            $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
+            $ref: '#/components/schemas/SubSignatureRequestSigner'
+        grouped_signers:
+          description: _t__Sub::SignatureRequestGroupedSigners::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubSignatureRequestGroupedSigners'
+        allow_decline:
+          description: _t__SignatureRequestCreateEmbedded::ALLOW_DECLINE
+          type: boolean
+          default: false
+        allow_reassign:
+          description: _t__SignatureRequestCreateEmbedded::ALLOW_REASSIGN
+          type: boolean
+          default: false
         attachments:
-          description: _t__SignatureRequestResponseAttachment::DESCRIPTION
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/SignatureRequestResponseAttachment'
-        response_data:
-          description: _t__SignatureRequestResponseData::DESCRIPTION
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/SignatureRequestResponseDataBase'
-        signatures:
-          description: _t__SignatureRequestResponseSignatures::DESCRIPTION
+          description: _t__SubAttachment::LIST_DESCRIPTION
           type: array
           items:
-            $ref: '#/components/schemas/SignatureRequestResponseSignatures'
-        bulk_send_job_id:
-          description: _t__SignatureRequestResponse::BULK_SEND_JOB_ID
-          type:
-          - string
-          - 'null'
-      type: object
-      x-internal: true
-    BulkSendJobResponse:
-      description: _t__BulkSendJobResponse::DESCRIPTION
-      properties:
-        bulk_send_job_id:
-          description: _t__BulkSendJobResponse::BULK_SEND_JOB_ID
-          type:
-          - string
-          - 'null'
-        total:
-          description: _t__BulkSendJobResponse::TOTAL
-          type: integer
-        is_creator:
-          description: _t__BulkSendJobResponse::IS_CREATOR
+            $ref: '#/components/schemas/SubAttachment'
+        cc_email_addresses:
+          description: _t__SignatureRequestCreateEmbedded::CC_EMAIL_ADDRESSES
+          type: array
+          items:
+            type: string
+            format: email
+        client_id:
+          description: _t__SignatureRequestCreateEmbedded::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        field_options:
+          $ref: '#/components/schemas/SubFieldOptions'
+        form_field_groups:
+          description: _t__Sub::FormFieldGroup::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldGroup'
+        form_field_rules:
+          description: _t__Sub::FormFieldRule::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRule'
+        form_fields_per_document:
+          description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+        hide_text_tags:
+          description: _t__SignatureRequestCreateEmbedded::HIDE_TEXT_TAGS
           type: boolean
-        created_at:
-          description: _t__BulkSendJobResponse::CREATED_AT
-          type: integer
+          default: false
+        message:
+          description: _t__SignatureRequestCreateEmbedded::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
+        subject:
+          description: _t__SignatureRequestCreateEmbedded::SUBJECT
+          type: string
+          maxLength: 255
+        test_mode:
+          description: _t__SignatureRequestCreateEmbedded::TEST_MODE
+          type: boolean
+          default: false
+        title:
+          description: _t__SignatureRequestCreateEmbedded::TITLE
+          type: string
+          maxLength: 255
+        use_text_tags:
+          description: _t__SignatureRequestCreateEmbedded::USE_TEXT_TAGS
+          type: boolean
+          default: false
+        populate_auto_fill_fields:
+          description: _t__SignatureRequestCreateEmbedded::POPULATE_AUTO_FILL_FIELDS
+          type: boolean
+          default: false
+        expires_at:
+          description: _t__SignatureRequestCreateEmbedded::EXPIRES_AT
+          type:
+          - integer
+          - 'null'
       type: object
-      x-internal: true
-    SignatureRequestListResponse:
+    SubFormFieldGroup:
+      required:
+      - group_id
+      - group_label
+      - requirement
       properties:
-        signature_requests:
-          description: _t__SignatureRequestListResponse::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SignatureRequestResponse'
-        list_info:
-          $ref: '#/components/schemas/ListInfoResponse'
+        group_id:
+          description: _t__Sub::FormFieldGroup::GROUP_ID_LABEL
+          type: string
+        group_label:
+          description: _t__Sub::FormFieldGroup::GROUP_LABEL
+          type: string
+        requirement:
+          description: _t__Sub::FormFieldGroup::REQUIREMENT
+          type: string
+      type: object
+    BulkSendJobSendResponse:
+      properties:
+        bulk_send_job:
+          $ref: '#/components/schemas/BulkSendJobResponse'
         warnings:
           description: _t__WarningResponse::LIST_DESCRIPTION
           type: array
@@ -3771,171 +3749,193 @@ components:
             $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
-  examples:
-    SignatureRequestCreateEmbeddedRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestCreateEmbeddedRequestDefaultExample.json
-    Error404ResponseExample:
-      summary: _t__Error::404
-      value:
-        $ref: examples/json/Error404ResponseExample.json
-    SignatureRequestUpdateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestUpdateRequestDefaultExample.json
-    SignatureRequestUpdateResponseExample:
-      summary: _t__SignatureRequestUpdateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestUpdateResponseExample.json
-    SignatureRequestBulkCreateEmbeddedWithTemplateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestBulkCreateEmbeddedWithTemplateRequestDefaultExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    SignatureRequestFilesResponseExample:
-      summary: _t__SignatureRequestFilesResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestFilesResponseExample.json
-    SignatureRequestBulkCreateEmbeddedWithTemplateResponseExample:
-      summary: _t__SignatureRequestBulkCreateEmbeddedWithTemplateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestBulkCreateEmbeddedWithTemplateResponseExample.json
-    SignatureRequestRemindResponseExample:
-      summary: _t__SignatureRequestRemindResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestRemindResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    SignatureRequestEditRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestEditRequestDefaultExample.json
-    SignatureRequestSendResponseExample:
-      summary: _t__SignatureRequestSendResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestSendResponseExample.json
-    SignatureRequestEditEmbeddedRequestGroupedSignersExample:
-      summary: Grouped Signers Example
-      value:
-        $ref: examples/json/SignatureRequestEditEmbeddedRequestGroupedSignersExample.json
-    SignatureRequestSendRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestSendRequestDefaultExample.json
-    SignatureRequestEditEmbeddedWithTemplateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestEditEmbeddedWithTemplateRequestDefaultExample.json
-    SignatureRequestRemindRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestRemindRequestDefaultExample.json
-    SignatureRequestBulkSendWithTemplateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestBulkSendWithTemplateRequestDefaultExample.json
-    SignatureRequestCreateEmbeddedRequestGroupedSignersExample:
-      summary: Grouped Signers Example
-      value:
-        $ref: examples/json/SignatureRequestCreateEmbeddedRequestGroupedSignersExample.json
-    SignatureRequestEditEmbeddedRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestEditEmbeddedRequestDefaultExample.json
-    SignatureRequestSendWithTemplateResponseExample:
-      summary: _t__SignatureRequestSendWithTemplateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestSendWithTemplateResponseExample.json
-    SignatureRequestEditEmbeddedWithTemplateResponseExample:
-      summary: _t__SignatureRequestEditEmbeddedWithTemplateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestEditEmbeddedWithTemplateResponseExample.json
-    Error410ResponseExample:
-      summary: _t__Error::410
-      value:
-        $ref: examples/json/Error410ResponseExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    SignatureRequestBulkSendWithTemplateResponseExample:
-      summary: _t__SignatureRequestBulkSendWithTemplateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestBulkSendWithTemplateResponseExample.json
-    SignatureRequestReleaseHoldResponseExample:
-      summary: _t__SignatureRequestReleaseHoldResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestReleaseHoldResponseExample.json
-    SignatureRequestListResponseExample:
-      summary: _t__SignatureRequestListResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestListResponseExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    SignatureRequestEditRequestGroupedSignersExample:
-      summary: Grouped Signers Example
-      value:
-        $ref: examples/json/SignatureRequestEditRequestGroupedSignersExample.json
-    SignatureRequestEditEmbeddedResponseExample:
-      summary: _t__SignatureRequestEditEmbeddedResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestEditEmbeddedResponseExample.json
-    SignatureRequestSendWithTemplateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestSendWithTemplateRequestDefaultExample.json
-    Error409ResponseExample:
-      summary: _t__Error::409
-      value:
-        $ref: examples/json/Error409ResponseExample.json
-    Error429ResponseExample:
-      summary: _t__Error::429
-      value:
-        $ref: examples/json/Error429ResponseExample.json
-    SignatureRequestEditWithTemplateResponseExample:
-      summary: _t__SignatureRequestEditWithTemplateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestEditWithTemplateResponseExample.json
-    SignatureRequestCreateEmbeddedWithTemplateResponseExample:
-      summary: _t__SignatureRequestCreateEmbeddedWithTemplateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestCreateEmbeddedWithTemplateResponseExample.json
-    SignatureRequestEditResponseExample:
-      summary: _t__SignatureRequestEditResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestEditResponseExample.json
-    SignatureRequestCreateEmbeddedWithTemplateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestCreateEmbeddedWithTemplateRequestDefaultExample.json
-    SignatureRequestGetResponseExample:
-      summary: _t__SignatureRequestGetResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestGetResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    SignatureRequestCreateEmbeddedResponseExample:
-      summary: _t__SignatureRequestCreateEmbeddedResponseExample::SUMMARY
-      value:
-        $ref: examples/json/SignatureRequestCreateEmbeddedResponseExample.json
-    SignatureRequestSendRequestGroupedSignersExample:
-      summary: Grouped Signers Example
-      value:
-        $ref: examples/json/SignatureRequestSendRequestGroupedSignersExample.json
-    SignatureRequestEditWithTemplateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/SignatureRequestEditWithTemplateRequestDefaultExample.json
+    SubSignatureRequestGroupedSigners:
+      required:
+      - group
+      - signers
+      properties:
+        group:
+          description: _t__Sub::SignatureRequestGroupedSigners::GROUP_NAME
+          type: string
+        order:
+          description: _t__Sub::SignatureRequestGroupedSigners::ORDER
+          type:
+          - integer
+          - 'null'
+        signers:
+          description: _t__Sub::SignatureRequestGroupedSigners::SIGNERS
+          type: array
+          items:
+            $ref: '#/components/schemas/SubSignatureRequestSigner'
+      type: object
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
+      required:
+      - warning_msg
+      - warning_name
+      properties:
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
+      type: object
+    SignatureRequestSendWithTemplateRequest:
+      description: ''
+      required:
+      - signers
+      - template_ids
+      properties:
+        template_ids:
+          description: _t__SignatureRequestSendWithTemplate::TEMPLATE_IDS
+          type: array
+          items:
+            type: string
+        allow_decline:
+          description: _t__SignatureRequestSendWithTemplate::ALLOW_DECLINE
+          type: boolean
+          default: false
+        ccs:
+          description: _t__Sub::CC::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCC'
+        client_id:
+          description: _t__SignatureRequestSendWithTemplate::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::TEMPLATE
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        files:
+          description: _t__SignatureRequestSendWithTemplate::FILES
+          type: array
+          items:
+            type: string
+            format: binary
+        file_urls:
+          description: _t__SignatureRequestSendWithTemplate::FILE_URLS
+          type: array
+          items:
+            type: string
+        is_qualified_signature:
+          description: _t__SignatureRequestSendWithTemplate::IS_QUALIFIED_SIGNATURE
+          type: boolean
+          default: false
+          deprecated: true
+          x-hideOn: doc
+        is_eid:
+          description: _t__SignatureRequestSendWithTemplate::IS_EID
+          type: boolean
+          default: false
+        message:
+          description: _t__SignatureRequestSendWithTemplate::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        signers:
+          description: _t__Sub::SignatureRequestTemplateSigner::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubSignatureRequestTemplateSigner'
+        signing_options:
+          $ref: '#/components/schemas/SubSigningOptions'
+        signing_redirect_url:
+          description: _t__SignatureRequestSendWithTemplate::SIGNING_REDIRECT_URL
+          type: string
+        subject:
+          description: _t__SignatureRequestSendWithTemplate::SUBJECT
+          type: string
+          maxLength: 255
+        test_mode:
+          description: _t__SignatureRequestSendWithTemplate::TEST_MODE
+          type: boolean
+          default: false
+        title:
+          description: _t__SignatureRequestSendWithTemplate::TITLE
+          type: string
+          maxLength: 255
+      type: object
+    SubCC:
+      required:
+      - role
+      - email_address
+      properties:
+        role:
+          description: _t__Sub::CC::ROLE
+          type: string
+        email_address:
+          description: _t__Sub::CC::EMAIL_ADDRESS
+          type: string
+          format: email
+      type: object
+    SignatureRequestBulkCreateEmbeddedWithTemplateRequest:
+      required:
+      - client_id
+      - template_ids
+      properties:
+        template_ids:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::TEMPLATE_IDS
+          type: array
+          items:
+            type: string
+        signer_file:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNER_FILE
+          type: string
+          format: binary
+        signer_list:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNER_LIST
+          type: array
+          items:
+            $ref: '#/components/schemas/SubBulkSignerList'
+        allow_decline:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::ALLOW_DECLINE
+          type: boolean
+          default: false
+        ccs:
+          description: _t__Sub::CC::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCC'
+        client_id:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::CLIENT_ID
+          type: string
+        custom_fields:
+          description: _t__Sub::CustomField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCustomField'
+        message:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::MESSAGE
+          type: string
+          maxLength: 5000
+        metadata:
+          description: _t__Sub::Metadata::DESCRIPTION
+          type: object
+          maxItems: 10
+          additionalProperties: {}
+        signing_redirect_url:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SIGNING_REDIRECT_URL
+          type: string
+        subject:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::SUBJECT
+          type: string
+          maxLength: 255
+        test_mode:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::TEST_MODE
+          type: boolean
+          default: false
+        title:
+          description: _t__SignatureRequestBulkCreateEmbeddedWithTemplate::TITLE
+          type: string
+          maxLength: 255
+      type: object
   headers:
     X-Ratelimit-Reset:
       description: _t__Common::RateLimiting::RESET
