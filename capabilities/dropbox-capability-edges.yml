@@ -1,0 +1,37 @@
+slug: dropbox
+provider: Dropbox
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: API App
+  spec_file: dropbox-api-app-api-openapi.yml
+  capability_id: BC-4270.40
+  capability_id_l1: BC-4270
+  capability_name: Developer Identity & Credential Management
+  confidence: 0.75
+  evidence: POST /api_app  apiAppCreate; schemas ApiAppResponseOAuth, SubOAuth, ApiAppResponseWhiteLabelingOptions
+  reason: CRUD over API applications identified by {client_id} with OAuth configuration is registration
+    and stewardship of developer OAuth clients/credentials on the platform — Developer Identity & Credential
+    Management. Note the title's business nouns are unreliable; the operations are plainly app/client
+    registration.
+- tag: Signature Request
+  spec_file: dropbox-signature-request-api-openapi.yml
+  capability_id: BC-150.10
+  capability_id_l1: BC-150
+  capability_name: Contract Management
+  confidence: 0.75
+  evidence: POST /signature_request/cancel/{signature_request_id}; SignatureRequestSendRequest; "power
+    digital agreements"
+  reason: Create, send, edit, cancel and retrieve files for signature requests is the execution and closure
+    stage of agreement/contract lifecycle management. Confidence moderate because signed documents are
+    agreements generally, not strictly procurement/legal contracts.
