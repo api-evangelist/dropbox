@@ -83,3 +83,30 @@ plans:
       - name: Compliance tracking
       - name: SSO
       - name: Tiered admin
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - seat
+  units:
+  - data
+  - seat
+  plans:
+  - name: Standard
+    access: paid
+    model: seat
+    model_how: derived
+    units:
+    - data
+    - seat
+    periods:
+    - month
+  - name: Advanced
+    access: paid
+    model: seat
+    model_how: derived
+    units:
+    - data
+    - seat
+    periods:
+    - month
