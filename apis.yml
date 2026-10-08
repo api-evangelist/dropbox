@@ -609,6 +609,10 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dropbox.png
 common:
+- type: RateLimits
+  url: rate-limits/dropbox-rate-limits.yml
+- type: FinOps
+  url: finops/dropbox-finops.yml
 - type: Website
   url: https://www.dropbox.com/
 - type: CapabilityMap
