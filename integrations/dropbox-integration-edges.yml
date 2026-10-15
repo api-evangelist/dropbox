@@ -55,9 +55,27 @@ edges:
     detected: '2026-10-15'
   detected_by: sweep-higher-ed.py
   first_seen: '2026-10-15'
+- partner_name: Stripe (own)
+  partner: stripe
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.stripe.com/apps/dropbox
+  mirror_of: stripe/integrations/stripe-integration-edges.yml
+  apps:
+  - Dropbox
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: productivity
 method: searched
 checked:
 - https://hightouch.com/docs/destinations/dropbox
 - https://technical.edugain.org/api.php?action=list_entities&type=idp&format=json
 - https://technical.edugain.org/api.php?action=list_entities&type=sp&format=json
+- stripe/integrations/stripe-integration-edges.yml
 source: https://hightouch.com/docs/destinations/dropbox
