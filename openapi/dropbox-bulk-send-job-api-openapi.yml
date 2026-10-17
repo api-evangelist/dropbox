@@ -225,97 +225,7 @@ paths:
           title: _t__BulkSendJobList::SEO::TITLE
           description: _t__BulkSendJobList::SEO::DESCRIPTION
 components:
-  examples:
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    BulkSendJobListResponseExample:
-      summary: _t__BulkSendJobListResponseExample::SUMMARY
-      value:
-        $ref: examples/json/BulkSendJobListResponseExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    BulkSendJobGetResponseExample:
-      summary: _t__BulkSendJobGetResponseExample::SUMMARY
-      value:
-        $ref: examples/json/BulkSendJobGetResponseExample.json
-  headers:
-    X-RateLimit-Limit:
-      description: _t__Common::RateLimiting::LIMIT
-      schema:
-        type: integer
-        format: int32
-        example: 100
-    X-Ratelimit-Reset:
-      description: _t__Common::RateLimiting::RESET
-      schema:
-        type: integer
-        format: int64
-        example: 1430170900
-    X-RateLimit-Remaining:
-      description: _t__Common::RateLimiting::REMAINING
-      schema:
-        type: integer
-        format: int32
-        example: 99
   schemas:
-    SignatureRequestResponseAttachment:
-      description: _t__SignatureRequestResponseAttachment::DESCRIPTION
-      required:
-      - id
-      - signer
-      - name
-      - required
-      properties:
-        id:
-          description: _t__SignatureRequestResponseAttachment::ID
-          type: string
-        signer:
-          description: _t__SignatureRequestResponseAttachment::SIGNER
-          type: string
-        name:
-          description: _t__SignatureRequestResponseAttachment::NAME
-          type: string
-        required:
-          description: _t__SignatureRequestResponseAttachment::REQUIRED
-          type: boolean
-        instructions:
-          description: _t__SignatureRequestResponseAttachment::INSTRUCTIONS
-          type:
-          - string
-          - 'null'
-        uploaded_at:
-          description: _t__SignatureRequestResponseAttachment::UPLOADED_AT
-          type:
-          - integer
-          - 'null'
-      type: object
-      x-internal: true
-    BulkSendJobGetResponseSignatureRequests:
-      title: BulkSendJobGetResponseSignatureRequests
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/SignatureRequestResponse'
-      - properties:
-          bulk_send_job_id:
-            description: _t__BulkSendJobGetResponseSignatureRequests::BULK_SEND_JOB_ID
-            type: string
-      x-internal: true
     BulkSendJobResponse:
       description: _t__BulkSendJobResponse::DESCRIPTION
       properties:
@@ -335,6 +245,127 @@ components:
           type: integer
       type: object
       x-internal: true
+    WarningResponse:
+      description: _t__WarningResponse::LIST_DESCRIPTION
+      required:
+      - warning_msg
+      - warning_name
+      properties:
+        warning_msg:
+          description: _t__WarningResponse::WARNING_MSG
+          type: string
+        warning_name:
+          description: _t__WarningResponse::WARNING_NAME
+          type: string
+      type: object
+    SignatureRequestResponseSignatures:
+      description: _t__SignatureRequestResponseSignatures::DESCRIPTION
+      properties:
+        signature_id:
+          description: _t__SignatureRequestResponseSignatures::SIGNATURE_ID
+          type: string
+        signer_group_guid:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_GROUP_GUID
+          type:
+          - string
+          - 'null'
+        signer_email_address:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_EMAIL_ADDRESS
+          type: string
+        signer_name:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_NAME
+          type:
+          - string
+          - 'null'
+        signer_role:
+          description: _t__SignatureRequestResponseSignatures::SIGNER_ROLE
+          type:
+          - string
+          - 'null'
+        order:
+          description: _t__SignatureRequestResponseSignatures::ORDER
+          type:
+          - integer
+          - 'null'
+        status_code:
+          description: _t__SignatureRequestResponseSignatures::STATUS_CODE
+          type: string
+        decline_reason:
+          description: _t__SignatureRequestResponseSignatures::DECLINE_REASON
+          type:
+          - string
+          - 'null'
+        signed_at:
+          description: _t__SignatureRequestResponseSignatures::SIGNED_AT
+          type:
+          - integer
+          - 'null'
+        last_viewed_at:
+          description: _t__SignatureRequestResponseSignatures::LAST_VIEWED_AT
+          type:
+          - integer
+          - 'null'
+        last_reminded_at:
+          description: _t__SignatureRequestResponseSignatures::LAST_REMINDED_AT
+          type:
+          - integer
+          - 'null'
+        has_pin:
+          description: _t__SignatureRequestResponseSignatures::HAS_PIN
+          type: boolean
+        has_sms_auth:
+          description: _t__SignatureRequestResponseSignatures::HAS_SMS_AUTH
+          type:
+          - boolean
+          - 'null'
+        has_sms_delivery:
+          description: _t__SignatureRequestResponseSignatures::HAS_SMS_DELIVERY
+          type:
+          - boolean
+          - 'null'
+        sms_phone_number:
+          description: _t__SignatureRequestResponseSignatures::SMS_PHONE_NUMBER
+          type:
+          - string
+          - 'null'
+        reassigned_by:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNED_BY
+          type:
+          - string
+          - 'null'
+        reassignment_reason:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNMENT_REASON
+          type:
+          - string
+          - 'null'
+        reassigned_from:
+          description: _t__SignatureRequestResponseSignatures::REASSIGNED_FROM
+          type:
+          - string
+          - 'null'
+        error:
+          description: _t__SignatureRequestResponseSignatures::ERROR
+          type:
+          - string
+          - 'null'
+      type: object
+      x-internal: true
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
+      required:
+      - error_msg
+      - error_name
+      properties:
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
+          type: string
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
+          type: string
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
+          type: string
+      type: object
     SignatureRequestResponse:
       description: _t__SignatureRequestResponse::DESCRIPTION
       properties:
@@ -450,184 +481,6 @@ components:
           - 'null'
       type: object
       x-internal: true
-    BulkSendJobGetResponse:
-      properties:
-        bulk_send_job:
-          $ref: '#/components/schemas/BulkSendJobResponse'
-        list_info:
-          $ref: '#/components/schemas/ListInfoResponse'
-        signature_requests:
-          description: _t__BulkSendJobGetResponse::SIGNATURE_REQUESTS
-          type: array
-          items:
-            $ref: '#/components/schemas/BulkSendJobGetResponseSignatureRequests'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    BulkSendJobListResponse:
-      properties:
-        bulk_send_jobs:
-          description: _t__BulkSendJobListResponse::BULK_SEND_JOBS
-          type: array
-          items:
-            $ref: '#/components/schemas/BulkSendJobResponse'
-        list_info:
-          $ref: '#/components/schemas/ListInfoResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    SignatureRequestResponseDataBase:
-      description: _t__SignatureRequestResponseData::DESCRIPTION
-      properties:
-        api_id:
-          description: _t__SignatureRequestResponseData::API_ID
-          type: string
-        signature_id:
-          description: _t__SignatureRequestResponseData::SIGNATURE_ID
-          type: string
-        name:
-          description: _t__SignatureRequestResponseData::NAME
-          type: string
-        required:
-          description: _t__SignatureRequestResponseData::REQUIRED
-          type: boolean
-        type:
-          type: string
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/SignatureRequestResponseDataValueText'
-          checkbox: '#/components/schemas/SignatureRequestResponseDataValueCheckbox'
-          dropdown: '#/components/schemas/SignatureRequestResponseDataValueDropdown'
-          radio: '#/components/schemas/SignatureRequestResponseDataValueRadio'
-          signature: '#/components/schemas/SignatureRequestResponseDataValueSignature'
-          date_signed: '#/components/schemas/SignatureRequestResponseDataValueDateSigned'
-          initials: '#/components/schemas/SignatureRequestResponseDataValueInitials'
-          text-merge: '#/components/schemas/SignatureRequestResponseDataValueTextMerge'
-          checkbox-merge: '#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge'
-      x-internal: true
-      x-base-class: true
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
-          type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
-          type: string
-      type: object
-    SignatureRequestResponseSignatures:
-      description: _t__SignatureRequestResponseSignatures::DESCRIPTION
-      properties:
-        signature_id:
-          description: _t__SignatureRequestResponseSignatures::SIGNATURE_ID
-          type: string
-        signer_group_guid:
-          description: _t__SignatureRequestResponseSignatures::SIGNER_GROUP_GUID
-          type:
-          - string
-          - 'null'
-        signer_email_address:
-          description: _t__SignatureRequestResponseSignatures::SIGNER_EMAIL_ADDRESS
-          type: string
-        signer_name:
-          description: _t__SignatureRequestResponseSignatures::SIGNER_NAME
-          type:
-          - string
-          - 'null'
-        signer_role:
-          description: _t__SignatureRequestResponseSignatures::SIGNER_ROLE
-          type:
-          - string
-          - 'null'
-        order:
-          description: _t__SignatureRequestResponseSignatures::ORDER
-          type:
-          - integer
-          - 'null'
-        status_code:
-          description: _t__SignatureRequestResponseSignatures::STATUS_CODE
-          type: string
-        decline_reason:
-          description: _t__SignatureRequestResponseSignatures::DECLINE_REASON
-          type:
-          - string
-          - 'null'
-        signed_at:
-          description: _t__SignatureRequestResponseSignatures::SIGNED_AT
-          type:
-          - integer
-          - 'null'
-        last_viewed_at:
-          description: _t__SignatureRequestResponseSignatures::LAST_VIEWED_AT
-          type:
-          - integer
-          - 'null'
-        last_reminded_at:
-          description: _t__SignatureRequestResponseSignatures::LAST_REMINDED_AT
-          type:
-          - integer
-          - 'null'
-        has_pin:
-          description: _t__SignatureRequestResponseSignatures::HAS_PIN
-          type: boolean
-        has_sms_auth:
-          description: _t__SignatureRequestResponseSignatures::HAS_SMS_AUTH
-          type:
-          - boolean
-          - 'null'
-        has_sms_delivery:
-          description: _t__SignatureRequestResponseSignatures::HAS_SMS_DELIVERY
-          type:
-          - boolean
-          - 'null'
-        sms_phone_number:
-          description: _t__SignatureRequestResponseSignatures::SMS_PHONE_NUMBER
-          type:
-          - string
-          - 'null'
-        reassigned_by:
-          description: _t__SignatureRequestResponseSignatures::REASSIGNED_BY
-          type:
-          - string
-          - 'null'
-        reassignment_reason:
-          description: _t__SignatureRequestResponseSignatures::REASSIGNMENT_REASON
-          type:
-          - string
-          - 'null'
-        reassigned_from:
-          description: _t__SignatureRequestResponseSignatures::REASSIGNED_FROM
-          type:
-          - string
-          - 'null'
-        error:
-          description: _t__SignatureRequestResponseSignatures::ERROR
-          type:
-          - string
-          - 'null'
-      type: object
-      x-internal: true
-    ErrorResponse:
-      required:
-      - error
-      properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
-      type: object
     ListInfoResponse:
       description: _t__ListInfoResponse::DESCRIPTION
       properties:
@@ -676,22 +529,169 @@ components:
           checkbox: '#/components/schemas/SignatureRequestResponseCustomFieldCheckbox'
       x-internal: true
       x-base-class: true
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
+    SignatureRequestResponseDataBase:
+      description: _t__SignatureRequestResponseData::DESCRIPTION
       properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
+        api_id:
+          description: _t__SignatureRequestResponseData::API_ID
           type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
+        signature_id:
+          description: _t__SignatureRequestResponseData::SIGNATURE_ID
           type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
+        name:
+          description: _t__SignatureRequestResponseData::NAME
+          type: string
+        required:
+          description: _t__SignatureRequestResponseData::REQUIRED
+          type: boolean
+        type:
           type: string
       type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SignatureRequestResponseDataValueText'
+          checkbox: '#/components/schemas/SignatureRequestResponseDataValueCheckbox'
+          dropdown: '#/components/schemas/SignatureRequestResponseDataValueDropdown'
+          radio: '#/components/schemas/SignatureRequestResponseDataValueRadio'
+          signature: '#/components/schemas/SignatureRequestResponseDataValueSignature'
+          date_signed: '#/components/schemas/SignatureRequestResponseDataValueDateSigned'
+          initials: '#/components/schemas/SignatureRequestResponseDataValueInitials'
+          text-merge: '#/components/schemas/SignatureRequestResponseDataValueTextMerge'
+          checkbox-merge: '#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge'
+      x-internal: true
+      x-base-class: true
+    SignatureRequestResponseAttachment:
+      description: _t__SignatureRequestResponseAttachment::DESCRIPTION
+      required:
+      - id
+      - signer
+      - name
+      - required
+      properties:
+        id:
+          description: _t__SignatureRequestResponseAttachment::ID
+          type: string
+        signer:
+          description: _t__SignatureRequestResponseAttachment::SIGNER
+          type: string
+        name:
+          description: _t__SignatureRequestResponseAttachment::NAME
+          type: string
+        required:
+          description: _t__SignatureRequestResponseAttachment::REQUIRED
+          type: boolean
+        instructions:
+          description: _t__SignatureRequestResponseAttachment::INSTRUCTIONS
+          type:
+          - string
+          - 'null'
+        uploaded_at:
+          description: _t__SignatureRequestResponseAttachment::UPLOADED_AT
+          type:
+          - integer
+          - 'null'
+      type: object
+      x-internal: true
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    BulkSendJobGetResponseSignatureRequests:
+      title: BulkSendJobGetResponseSignatureRequests
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/SignatureRequestResponse'
+      - properties:
+          bulk_send_job_id:
+            description: _t__BulkSendJobGetResponseSignatureRequests::BULK_SEND_JOB_ID
+            type: string
+      x-internal: true
+    BulkSendJobGetResponse:
+      properties:
+        bulk_send_job:
+          $ref: '#/components/schemas/BulkSendJobResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        signature_requests:
+          description: _t__BulkSendJobGetResponse::SIGNATURE_REQUESTS
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkSendJobGetResponseSignatureRequests'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    BulkSendJobListResponse:
+      properties:
+        bulk_send_jobs:
+          description: _t__BulkSendJobListResponse::BULK_SEND_JOBS
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkSendJobResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+  examples:
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    BulkSendJobGetResponseExample:
+      summary: _t__BulkSendJobGetResponseExample::SUMMARY
+      value:
+        $ref: examples/json/BulkSendJobGetResponseExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    BulkSendJobListResponseExample:
+      summary: _t__BulkSendJobListResponseExample::SUMMARY
+      value:
+        $ref: examples/json/BulkSendJobListResponseExample.json
+  headers:
+    X-RateLimit-Limit:
+      description: _t__Common::RateLimiting::LIMIT
+      schema:
+        type: integer
+        format: int32
+        example: 100
+    X-RateLimit-Remaining:
+      description: _t__Common::RateLimiting::REMAINING
+      schema:
+        type: integer
+        format: int32
+        example: 99
+    X-Ratelimit-Reset:
+      description: _t__Common::RateLimiting::RESET
+      schema:
+        type: integer
+        format: int64
+        example: 1430170900
   securitySchemes:
     api_key:
       type: http

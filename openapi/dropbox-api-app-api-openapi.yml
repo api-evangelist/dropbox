@@ -500,123 +500,64 @@ paths:
           title: _t__ApiAppList::SEO::TITLE
           description: _t__ApiAppList::SEO::DESCRIPTION
 components:
+  examples:
+    ApiAppUpdateResponseExample:
+      summary: _t__ApiAppUpdateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/ApiAppUpdateResponseExample.json
+    ApiAppListResponseExample:
+      summary: _t__ApiAppListResponseExample::SUMMARY
+      value:
+        $ref: examples/json/ApiAppListResponseExample.json
+    Error4XXResponseExample:
+      summary: _t__Error::4XX
+      value:
+        $ref: examples/json/Error4XXResponseExample.json
+    Error402ResponseExample:
+      summary: _t__Error::402
+      value:
+        $ref: examples/json/Error402ResponseExample.json
+    ApiAppCreateResponseExample:
+      summary: _t__ApiAppCreateResponseExample::SUMMARY
+      value:
+        $ref: examples/json/ApiAppCreateResponseExample.json
+    Error404ResponseExample:
+      summary: _t__Error::404
+      value:
+        $ref: examples/json/Error404ResponseExample.json
+    ApiAppGetResponseExample:
+      summary: _t__ApiAppGetResponseExample::SUMMARY
+      value:
+        $ref: examples/json/ApiAppGetResponseExample.json
+    Error400ResponseExample:
+      summary: _t__Error::400
+      value:
+        $ref: examples/json/Error400ResponseExample.json
+    Error409ResponseExample:
+      summary: _t__Error::409
+      value:
+        $ref: examples/json/Error409ResponseExample.json
+    Error403ResponseExample:
+      summary: _t__Error::403
+      value:
+        $ref: examples/json/Error403ResponseExample.json
+    ApiAppCreateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/ApiAppCreateRequestDefaultExample.json
+    Error401ResponseExample:
+      summary: _t__Error::401
+      value:
+        $ref: examples/json/Error401ResponseExample.json
+    Error429ResponseExample:
+      summary: _t__Error::429
+      value:
+        $ref: examples/json/Error429ResponseExample.json
+    ApiAppUpdateRequestDefaultExample:
+      summary: Default Example
+      value:
+        $ref: examples/json/ApiAppUpdateRequestDefaultExample.json
   schemas:
-    ApiAppResponseOwnerAccount:
-      description: _t__ApiAppResponseOwnerAccount::DESCRIPTION
-      properties:
-        account_id:
-          description: _t__ApiAppResponseOwnerAccount::ACCOUNT_ID
-          type: string
-        email_address:
-          description: _t__ApiAppResponseOwnerAccount::EMAIL_ADDRESS
-          type: string
-      type: object
-      x-internal: true
-    ApiAppResponseOptions:
-      description: _t__ApiAppResponseOptions::DESCRIPTION
-      properties:
-        can_insert_everywhere:
-          description: _t__ApiAppResponseOptions::CAN_INSERT_EVERYWHERE
-          type: boolean
-      type:
-      - object
-      - 'null'
-      x-internal: true
-    ApiAppResponseWhiteLabelingOptions:
-      description: _t__ApiAppResponseWhiteLabelingOptions::DESCRIPTION
-      properties:
-        header_background_color:
-          type: string
-        legal_version:
-          type: string
-        link_color:
-          type: string
-        page_background_color:
-          type: string
-        primary_button_color:
-          type: string
-        primary_button_color_hover:
-          type: string
-        primary_button_text_color:
-          type: string
-        primary_button_text_color_hover:
-          type: string
-        secondary_button_color:
-          type: string
-        secondary_button_color_hover:
-          type: string
-        secondary_button_text_color:
-          type: string
-        secondary_button_text_color_hover:
-          type: string
-        text_color1:
-          type: string
-        text_color2:
-          type: string
-      type:
-      - object
-      - 'null'
-      x-internal: true
-    ApiAppResponse:
-      description: _t__ApiAppResponse::DESCRIPTION
-      properties:
-        callback_url:
-          description: _t__ApiAppResponse::CALLBACK_URL
-          type:
-          - string
-          - 'null'
-        client_id:
-          description: _t__ApiAppResponse::CLIENT_ID
-          type: string
-        created_at:
-          description: _t__ApiAppResponse::CREATED_AT
-          type: integer
-        domains:
-          description: _t__ApiAppResponse::DOMAINS
-          type: array
-          items:
-            type: string
-        name:
-          description: _t__ApiAppResponse::NAME
-          type: string
-        is_approved:
-          description: _t__ApiAppResponse::IS_APPROVED
-          type: boolean
-        oauth:
-          $ref: '#/components/schemas/ApiAppResponseOAuth'
-        options:
-          $ref: '#/components/schemas/ApiAppResponseOptions'
-        owner_account:
-          $ref: '#/components/schemas/ApiAppResponseOwnerAccount'
-        white_labeling_options:
-          $ref: '#/components/schemas/ApiAppResponseWhiteLabelingOptions'
-      type: object
-      x-internal: true
-    ApiAppUpdateRequest:
-      properties:
-        callback_url:
-          description: _t__ApiAppUpdate::CALLBACK_URL
-          type: string
-        custom_logo_file:
-          description: _t__ApiAppUpdate::CUSTOM_LOGO_FILE
-          type: string
-          format: binary
-        domains:
-          description: _t__ApiAppUpdate::DOMAINS
-          type: array
-          items:
-            type: string
-          maxItems: 2
-        name:
-          description: _t__ApiAppUpdate::NAME
-          type: string
-        oauth:
-          $ref: '#/components/schemas/SubOAuth'
-        options:
-          $ref: '#/components/schemas/SubOptions'
-        white_labeling_options:
-          $ref: '#/components/schemas/SubWhiteLabelingOptions'
-      type: object
     WarningResponse:
       description: _t__WarningResponse::LIST_DESCRIPTION
       required:
@@ -630,77 +571,22 @@ components:
           description: _t__WarningResponse::WARNING_NAME
           type: string
       type: object
-    SubOptions:
-      description: _t__Sub::Options::DESCRIPTION
-      properties:
-        can_insert_everywhere:
-          description: _t__Sub::Options::CAN_INSERT_EVERYWHERE
-          type: boolean
-          default: false
-      type: object
-    ApiAppListResponse:
-      properties:
-        api_apps:
-          description: _t__ApiAppListResponse::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/ApiAppResponse'
-        list_info:
-          $ref: '#/components/schemas/ListInfoResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    ErrorResponse:
+    ErrorResponseError:
+      description: _t__ErrorResponseError::DESCRIPTION
       required:
-      - error
+      - error_msg
+      - error_name
       properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
-      type: object
-    ApiAppCreateRequest:
-      required:
-      - name
-      - domains
-      properties:
-        callback_url:
-          description: _t__ApiAppCreate::CALLBACK_URL
+        error_msg:
+          description: _t__ErrorResponseError::ERROR_MSG
           type: string
-        custom_logo_file:
-          description: _t__ApiAppCreate::CUSTOM_LOGO_FILE
+        error_path:
+          description: _t__ErrorResponseError::ERROR_PATH
           type: string
-          format: binary
-        domains:
-          description: _t__ApiAppCreate::DOMAINS
-          type: array
-          items:
-            type: string
-          maxItems: 2
-          minItems: 1
-        name:
-          description: _t__ApiAppCreate::NAME
+        error_name:
+          description: _t__ErrorResponseError::ERROR_NAME
           type: string
-        oauth:
-          $ref: '#/components/schemas/SubOAuth'
-        options:
-          $ref: '#/components/schemas/SubOptions'
-        white_labeling_options:
-          $ref: '#/components/schemas/SubWhiteLabelingOptions'
       type: object
-    ApiAppGetResponse:
-      properties:
-        api_app:
-          $ref: '#/components/schemas/ApiAppResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
     SubWhiteLabelingOptions:
       description: _t__Sub::WhiteLabelingOptions::DESCRIPTION
       properties:
@@ -772,42 +658,30 @@ components:
           type: integer
       type: object
       x-internal: true
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
-      properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
-          type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
-          type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
-          type: string
-      type: object
-    SubOAuth:
-      description: _t__Sub::OAuth::DESCRIPTION
+    ApiAppUpdateRequest:
       properties:
         callback_url:
-          description: _t__Sub::OAuth::CALLBACK_URL
+          description: _t__ApiAppUpdate::CALLBACK_URL
           type: string
-        scopes:
-          description: _t__Sub::OAuth::SCOPES
+        custom_logo_file:
+          description: _t__ApiAppUpdate::CUSTOM_LOGO_FILE
+          type: string
+          format: binary
+        domains:
+          description: _t__ApiAppUpdate::DOMAINS
           type: array
           items:
             type: string
-            enum:
-            - request_signature
-            - basic_account_info
-            - account_access
-            - signature_request_access
-            - template_access
-            - team_access
-            - api_app_access
-            - ''
+          maxItems: 2
+        name:
+          description: _t__ApiAppUpdate::NAME
+          type: string
+        oauth:
+          $ref: '#/components/schemas/SubOAuth'
+        options:
+          $ref: '#/components/schemas/SubOptions'
+        white_labeling_options:
+          $ref: '#/components/schemas/SubWhiteLabelingOptions'
       type: object
     ApiAppResponseOAuth:
       description: _t__ApiAppResponseOAuth::DESCRIPTION
@@ -830,63 +704,189 @@ components:
       - object
       - 'null'
       x-internal: true
-  examples:
-    ApiAppListResponseExample:
-      summary: _t__ApiAppListResponseExample::SUMMARY
-      value:
-        $ref: examples/json/ApiAppListResponseExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    ApiAppUpdateResponseExample:
-      summary: _t__ApiAppUpdateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/ApiAppUpdateResponseExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    ApiAppCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/ApiAppCreateRequestDefaultExample.json
-    ApiAppCreateResponseExample:
-      summary: _t__ApiAppCreateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/ApiAppCreateResponseExample.json
-    Error404ResponseExample:
-      summary: _t__Error::404
-      value:
-        $ref: examples/json/Error404ResponseExample.json
-    ApiAppUpdateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/ApiAppUpdateRequestDefaultExample.json
-    Error429ResponseExample:
-      summary: _t__Error::429
-      value:
-        $ref: examples/json/Error429ResponseExample.json
-    Error409ResponseExample:
-      summary: _t__Error::409
-      value:
-        $ref: examples/json/Error409ResponseExample.json
-    ApiAppGetResponseExample:
-      summary: _t__ApiAppGetResponseExample::SUMMARY
-      value:
-        $ref: examples/json/ApiAppGetResponseExample.json
+    ApiAppListResponse:
+      properties:
+        api_apps:
+          description: _t__ApiAppListResponse::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiAppResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    ApiAppGetResponse:
+      properties:
+        api_app:
+          $ref: '#/components/schemas/ApiAppResponse'
+        warnings:
+          description: _t__WarningResponse::LIST_DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+      type: object
+      x-internal: true
+    ApiAppResponse:
+      description: _t__ApiAppResponse::DESCRIPTION
+      properties:
+        callback_url:
+          description: _t__ApiAppResponse::CALLBACK_URL
+          type:
+          - string
+          - 'null'
+        client_id:
+          description: _t__ApiAppResponse::CLIENT_ID
+          type: string
+        created_at:
+          description: _t__ApiAppResponse::CREATED_AT
+          type: integer
+        domains:
+          description: _t__ApiAppResponse::DOMAINS
+          type: array
+          items:
+            type: string
+        name:
+          description: _t__ApiAppResponse::NAME
+          type: string
+        is_approved:
+          description: _t__ApiAppResponse::IS_APPROVED
+          type: boolean
+        oauth:
+          $ref: '#/components/schemas/ApiAppResponseOAuth'
+        options:
+          $ref: '#/components/schemas/ApiAppResponseOptions'
+        owner_account:
+          $ref: '#/components/schemas/ApiAppResponseOwnerAccount'
+        white_labeling_options:
+          $ref: '#/components/schemas/ApiAppResponseWhiteLabelingOptions'
+      type: object
+      x-internal: true
+    ErrorResponse:
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      type: object
+    ApiAppResponseOptions:
+      description: _t__ApiAppResponseOptions::DESCRIPTION
+      properties:
+        can_insert_everywhere:
+          description: _t__ApiAppResponseOptions::CAN_INSERT_EVERYWHERE
+          type: boolean
+      type:
+      - object
+      - 'null'
+      x-internal: true
+    SubOptions:
+      description: _t__Sub::Options::DESCRIPTION
+      properties:
+        can_insert_everywhere:
+          description: _t__Sub::Options::CAN_INSERT_EVERYWHERE
+          type: boolean
+          default: false
+      type: object
+    ApiAppResponseOwnerAccount:
+      description: _t__ApiAppResponseOwnerAccount::DESCRIPTION
+      properties:
+        account_id:
+          description: _t__ApiAppResponseOwnerAccount::ACCOUNT_ID
+          type: string
+        email_address:
+          description: _t__ApiAppResponseOwnerAccount::EMAIL_ADDRESS
+          type: string
+      type: object
+      x-internal: true
+    ApiAppResponseWhiteLabelingOptions:
+      description: _t__ApiAppResponseWhiteLabelingOptions::DESCRIPTION
+      properties:
+        header_background_color:
+          type: string
+        legal_version:
+          type: string
+        link_color:
+          type: string
+        page_background_color:
+          type: string
+        primary_button_color:
+          type: string
+        primary_button_color_hover:
+          type: string
+        primary_button_text_color:
+          type: string
+        primary_button_text_color_hover:
+          type: string
+        secondary_button_color:
+          type: string
+        secondary_button_color_hover:
+          type: string
+        secondary_button_text_color:
+          type: string
+        secondary_button_text_color_hover:
+          type: string
+        text_color1:
+          type: string
+        text_color2:
+          type: string
+      type:
+      - object
+      - 'null'
+      x-internal: true
+    ApiAppCreateRequest:
+      required:
+      - name
+      - domains
+      properties:
+        callback_url:
+          description: _t__ApiAppCreate::CALLBACK_URL
+          type: string
+        custom_logo_file:
+          description: _t__ApiAppCreate::CUSTOM_LOGO_FILE
+          type: string
+          format: binary
+        domains:
+          description: _t__ApiAppCreate::DOMAINS
+          type: array
+          items:
+            type: string
+          maxItems: 2
+          minItems: 1
+        name:
+          description: _t__ApiAppCreate::NAME
+          type: string
+        oauth:
+          $ref: '#/components/schemas/SubOAuth'
+        options:
+          $ref: '#/components/schemas/SubOptions'
+        white_labeling_options:
+          $ref: '#/components/schemas/SubWhiteLabelingOptions'
+      type: object
+    SubOAuth:
+      description: _t__Sub::OAuth::DESCRIPTION
+      properties:
+        callback_url:
+          description: _t__Sub::OAuth::CALLBACK_URL
+          type: string
+        scopes:
+          description: _t__Sub::OAuth::SCOPES
+          type: array
+          items:
+            type: string
+            enum:
+            - request_signature
+            - basic_account_info
+            - account_access
+            - signature_request_access
+            - template_access
+            - team_access
+            - api_app_access
+            - ''
+      type: object
   headers:
     X-RateLimit-Limit:
       description: _t__Common::RateLimiting::LIMIT
@@ -894,18 +894,18 @@ components:
         type: integer
         format: int32
         example: 100
-    X-Ratelimit-Reset:
-      description: _t__Common::RateLimiting::RESET
-      schema:
-        type: integer
-        format: int64
-        example: 1430170900
     X-RateLimit-Remaining:
       description: _t__Common::RateLimiting::REMAINING
       schema:
         type: integer
         format: int32
         example: 99
+    X-Ratelimit-Reset:
+      description: _t__Common::RateLimiting::RESET
+      schema:
+        type: integer
+        format: int64
+        example: 1430170900
   securitySchemes:
     api_key:
       type: http
