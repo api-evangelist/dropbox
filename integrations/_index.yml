@@ -110,7 +110,7 @@
     - connectors/files/dropbox
     vendor_link: https://www.dropbox.com/hellosign
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: dropbox-google-workspace-own
   label: Google Workspace (own)
