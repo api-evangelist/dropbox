@@ -1,11 +1,12 @@
 openapi: 3.2.0
 info:
   title: Dropbox Account API
-  version: '1.0'
-  description: 'Operations tagged Account across 2 of this provider''s published API definitions: dropbox-openapi-original.yml, dropbox-sign-openapi-original.yml. Each path carries the servers of the definition it was published in.'
+  version: 1.0.0
+  description: 'Operations tagged Account across 2 of this provider''s published API definitions: dropbox-openapi-original.yml, dropbox-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://api.dropbox.com
 - url: https://api.hellosign.com/v3
+  description: https://api.hellosign.com/v3
 tags:
 - name: Account
 paths:
@@ -57,469 +58,160 @@ paths:
       x-operation-id-source: derived
     servers:
     - url: https://api.dropbox.com
-  /account/create:
-    post:
-      tags:
-      - Account
-      summary: Dropbox _t__AccountCreate::SUMMARY
-      description: _t__AccountCreate::DESCRIPTION
-      operationId: accountCreate
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AccountCreateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/AccountCreateRequestDefaultExample'
-              oauth:
-                $ref: '#/components/examples/AccountCreateRequestOAuthExample'
-      responses:
-        '200':
-          description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccountCreateResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/AccountCreateResponseExample'
-                oauth:
-                  $ref: '#/components/examples/AccountCreateOAuthResponseExample'
-        4XX:
-          description: failed_operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - account_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/AccountCreate.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/AccountCreate.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/AccountCreate.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/AccountCreate.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/AccountCreate.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/AccountCreate.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/AccountCreate.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/AccountCreate.sh
-      x-meta:
-        seo:
-          title: _t__AccountCreate::SEO::TITLE
-          description: _t__AccountCreate::SEO::DESCRIPTION
-    servers:
-    - url: https://api.hellosign.com/v3
   /account:
     get:
+      operationId: account_get
+      summary: Get Account
+      description: Returns the properties and settings of your Account.
       tags:
       - Account
-      summary: Dropbox _t__AccountGet::SUMMARY
-      description: _t__AccountGet::DESCRIPTION
-      operationId: accountGet
       parameters:
       - name: account_id
         in: query
-        description: _t__AccountGet::ACCOUNT_ID
+        description: '`account_id` or `email_address` is required. If both are provided, the account id prevails.
+
+
+          The ID of the Account.'
         required: false
         schema:
           type: string
       - name: email_address
         in: query
-        description: _t__AccountGet::EMAIL_ADDRESS
+        description: '`account_id` or `email_address` is required, If both are provided, the account id prevails.
+
+
+          The email address of the Account.'
         required: false
         schema:
           type: string
       responses:
         '200':
           description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AccountGetResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/AccountGetResponseExample'
-        4XX:
+        '400':
           description: failed_operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
       security:
-      - api_key: []
-      - oauth2:
-        - account_access
-        - basic_account_info
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/AccountGet.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/AccountGet.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/AccountGet.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/AccountGet.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/AccountGet.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/AccountGet.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/AccountGet.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/AccountGet.sh
-      x-meta:
-        seo:
-          title: _t__AccountGet::SEO::TITLE
-          description: _t__AccountGet::SEO::DESCRIPTION
+      - Basic: []
     put:
+      operationId: account_update
+      summary: Update Account
+      description: Updates the properties and settings of your Account. Currently only allows for updates to the Callback URL and locale.
       tags:
       - Account
-      summary: Dropbox _t__AccountUpdate::SUMMARY
-      description: _t__AccountUpdate::DESCRIPTION
-      operationId: accountUpdate
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
       requestBody:
-        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/AccountUpdateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/AccountUpdateRequestDefaultExample'
+      security:
+      - Basic: []
+    servers:
+    - url: https://api.hellosign.com/v3
+      description: https://api.hellosign.com/v3
+  /account/create:
+    post:
+      operationId: account_create
+      summary: Create Account
+      description: Creates a new Dropbox Sign Account that is associated with the specified `email_address`.
+      tags:
+      - Account
       responses:
         '200':
           description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AccountGetResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/AccountUpdateResponseExample'
-        4XX:
+                $ref: '#/components/schemas/AccountCreateResponse'
+        '400':
           description: failed_operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - account_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/AccountUpdate.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/AccountUpdate.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/AccountUpdate.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/AccountUpdate.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/AccountUpdate.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/AccountUpdate.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/AccountUpdate.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/AccountUpdate.sh
-      x-meta:
-        seo:
-          title: _t__AccountUpdate::SEO::TITLE
-          description: _t__AccountUpdate::SEO::DESCRIPTION
-    servers:
-    - url: https://api.hellosign.com/v3
-  /account/verify:
-    post:
-      tags:
-      - Account
-      summary: Dropbox _t__AccountVerify::SUMMARY
-      description: _t__AccountVerify::DESCRIPTION
-      operationId: accountVerify
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AccountVerifyRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/AccountVerifyRequestDefaultExample'
+              $ref: '#/components/schemas/AccountCreateRequest'
+      security:
+      - Basic: []
+    servers:
+    - url: https://api.hellosign.com/v3
+      description: https://api.hellosign.com/v3
+  /account/verify:
+    post:
+      operationId: account_verify
+      summary: Verify Account
+      description: Verifies whether an Dropbox Sign Account exists for the given email address.
+      tags:
+      - Account
       responses:
         '200':
           description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AccountVerifyResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/AccountVerifyFoundResponseExample'
-                not_found:
-                  $ref: '#/components/examples/AccountVerifyNotFoundResponseExample'
-        4XX:
+        '400':
           description: failed_operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountVerifyRequest'
       security:
-      - api_key: []
-      - oauth2:
-        - account_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/AccountVerify.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/AccountVerify.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/AccountVerify.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/AccountVerify.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/AccountVerify.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/AccountVerify.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/AccountVerify.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/AccountVerify.sh
-      x-meta:
-        seo:
-          title: _t__AccountVerify::SEO::TITLE
-          description: _t__AccountVerify::SEO::DESCRIPTION
+      - Basic: []
     servers:
     - url: https://api.hellosign.com/v3
+      description: https://api.hellosign.com/v3
 components:
-  examples:
-    AccountCreateOAuthResponseExample:
-      summary: _t__AccountCreateOAuthResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountCreateOAuthResponseExample.json
-    AccountUpdateResponseExample:
-      summary: _t__AccountUpdateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountUpdateResponseExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    AccountUpdateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/AccountUpdateRequestDefaultExample.json
-    AccountVerifyRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/AccountVerifyRequestDefaultExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    AccountVerifyNotFoundResponseExample:
-      summary: _t__AccountVerifyNotFoundResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountVerifyNotFoundResponseExample.json
-    AccountGetResponseExample:
-      summary: _t__AccountGetResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountGetResponseExample.json
-    AccountVerifyFoundResponseExample:
-      summary: _t__AccountVerifyFoundResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountVerifyFoundResponseExample.json
-    AccountCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/AccountCreateRequestDefaultExample.json
-    AccountCreateRequestOAuthExample:
-      summary: OAuth Example
-      value:
-        $ref: examples/json/AccountCreateRequestOAuthExample.json
-    Error409ResponseExample:
-      summary: _t__Error::409
-      value:
-        $ref: examples/json/Error409ResponseExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    AccountCreateResponseExample:
-      summary: _t__AccountCreateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/AccountCreateResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
   schemas:
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
-          type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
-          type: string
+    AccountVerifyResponseAccount:
       type: object
+      properties:
+        email_address:
+          type: string
+          description: The email address associated with the Account.
+      title: AccountVerifyResponseAccount
+    AccountGetResponse:
+      type: object
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - account
+      title: AccountGetResponse
     OAuthTokenResponse:
+      type: object
       properties:
         access_token:
           type: string
@@ -528,226 +220,244 @@ components:
         refresh_token:
           type: string
         expires_in:
-          description: _t__OAuthTokenResponse::EXPIRES_IN
           type: integer
+          description: Number of seconds until the `access_token` expires. Uses epoch time.
         state:
           type:
           - string
           - 'null'
-      type: object
-      x-internal: true
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
-      properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
-          type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
-          type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
-          type: string
-      type: object
-    AccountCreateRequest:
-      required:
-      - email_address
-      properties:
-        client_id:
-          description: _t__AccountCreate::CLIENT_ID
-          type: string
-        client_secret:
-          description: _t__AccountCreate::CLIENT_SECRET
-          type: string
-        email_address:
-          description: _t__AccountCreate::EMAIL_ADDRESS
-          type: string
-          format: email
-        locale:
-          description: _t__AccountCreate::LOCALE
-          type: string
-      type: object
-    AccountVerifyResponseAccount:
-      properties:
-        email_address:
-          description: _t__Account::EMAIL_ADDRESS
-          type: string
-      type: object
-      x-internal: true
+      title: OAuthTokenResponse
     AccountResponse:
+      type: object
       properties:
         account_id:
-          description: _t__Account::ACCOUNT_ID
           type: string
+          description: The ID of the Account
         email_address:
-          description: _t__Account::EMAIL_ADDRESS
           type: string
+          description: The email address associated with the Account.
         is_locked:
-          description: _t__Account::IS_LOCKED
           type: boolean
+          description: Returns `true` if the user has been locked out of their account by a team admin.
         is_paid_hs:
-          description: _t__Account::IS_PAID_HS
           type: boolean
+          description: Returns `true` if the user has a paid Dropbox Sign account.
         is_paid_hf:
-          description: _t__Account::IS_PAID_HF
           type: boolean
+          description: Returns `true` if the user has a paid HelloFax account.
         quotas:
           $ref: '#/components/schemas/AccountResponseQuotas'
         callback_url:
-          description: _t__Account::CALLBACK_URL
           type:
           - string
           - 'null'
+          description: The URL that Dropbox Sign events will `POST` to.
         role_code:
-          description: _t__Account::ROLE_CODE
           type:
           - string
           - 'null'
+          description: The membership role for the team.
         team_id:
-          description: _t__Account::TEAM_ID
           type:
           - string
           - 'null'
+          description: The id of the team account belongs to.
         locale:
-          description: _t__Account::LOCALE
           type:
           - string
           - 'null'
+          description: The locale used in this Account. Check out the list of [supported locales](/api/reference/constants/#supported-locales) to learn more about the possible values.
+        usage:
+          $ref: '#/components/schemas/AccountResponseUsage'
+        settings:
+          $ref: '#/components/schemas/AccountResponseSettings'
+      title: AccountResponse
+    AccountResponseUsage:
       type: object
-      x-internal: true
-    AccountUpdateRequest:
       properties:
-        account_id:
-          description: _t__AccountUpdate::ACCOUNT_ID
+        fax_pages_sent:
           type:
-          - string
+          - integer
           - 'null'
-        callback_url:
-          description: _t__AccountUpdate::CALLBACK_URL
+          description: Number of fax pages sent
+      description: Details concerning monthly usage
+      title: AccountResponseUsage
+    AccountCreateRequest:
+      type: object
+      properties:
+        client_id:
           type: string
+          description: 'Used when creating a new account with OAuth authorization.
+
+
+            See [OAuth 2.0 Authorization](https://app.hellosign.com/api/oauthWalkthrough#OAuthAuthorization)'
+        client_secret:
+          type: string
+          description: 'Used when creating a new account with OAuth authorization.
+
+
+            See [OAuth 2.0 Authorization](https://app.hellosign.com/api/oauthWalkthrough#OAuthAuthorization)'
+        email_address:
+          type: string
+          format: email
+          description: The email address which will be associated with the new Account.
         locale:
-          description: _t__AccountUpdate::LOCALE
           type: string
-      type: object
-    AccountGetResponse:
-      properties:
-        account:
-          $ref: '#/components/schemas/AccountResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    AccountResponseQuotas:
-      description: _t__Account::QUOTA
-      properties:
-        api_signature_requests_left:
-          description: _t__AccountQuota::API_SIGNATURE_REQUESTS_LEFT
-          type:
-          - integer
-          - 'null'
-        documents_left:
-          description: _t__AccountQuota::DOCUMENTS_LEFT
-          type:
-          - integer
-          - 'null'
-        templates_total:
-          description: _t__AccountQuota::TEMPLATES_TOTAL
-          type:
-          - integer
-          - 'null'
-        templates_left:
-          description: _t__AccountQuota::TEMPLATES_LEFT
-          type:
-          - integer
-          - 'null'
-        sms_verifications_left:
-          description: _t__AccountQuota::SMS_VERIFICATIONS_LEFT
-          type:
-          - integer
-          - 'null'
-      type: object
-      x-internal: true
-    ErrorResponse:
+          description: The locale used in this Account. Check out the list of [supported locales](/api/reference/constants/#supported-locales) to learn more about the possible values.
       required:
-      - error
+      - email_address
+      title: AccountCreateRequest
+    ErrorResponse:
+      type: object
       properties:
         error:
           $ref: '#/components/schemas/ErrorResponseError'
+      required:
+      - error
+      title: ErrorResponse
+    AccountUpdateRequest:
       type: object
+      properties:
+        account_id:
+          type:
+          - string
+          - 'null'
+          description: The ID of the Account
+        callback_url:
+          type: string
+          description: The URL that Dropbox Sign should POST events to.
+        locale:
+          type: string
+          description: The locale used in this Account. Check out the list of [supported locales](/api/reference/constants/#supported-locales) to learn more about the possible values.
+      title: AccountUpdateRequest
+    AccountResponseQuotas:
+      type: object
+      properties:
+        api_signature_requests_left:
+          type:
+          - integer
+          - 'null'
+          description: API signature requests remaining.
+        documents_left:
+          type:
+          - integer
+          - 'null'
+          description: Signature requests remaining.
+        templates_total:
+          type:
+          - integer
+          - 'null'
+          description: Total API templates allowed.
+        templates_left:
+          type:
+          - integer
+          - 'null'
+          description: API templates remaining.
+        sms_verifications_left:
+          type:
+          - integer
+          - 'null'
+          description: SMS verifications remaining.
+        num_fax_pages_left:
+          type:
+          - integer
+          - 'null'
+          description: Number of fax pages left
+      description: Details concerning remaining monthly quotas.
+      title: AccountResponseQuotas
     AccountCreateResponse:
+      type: object
       properties:
         account:
           $ref: '#/components/schemas/AccountResponse'
         oauth_data:
           $ref: '#/components/schemas/OAuthTokenResponse'
         warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - account
+      title: AccountCreateResponse
+    ErrorResponseError:
       type: object
-      x-internal: true
+      properties:
+        error_msg:
+          type: string
+          description: Message describing an error.
+        error_path:
+          type: string
+          description: Path at which an error occurred.
+        error_name:
+          type: string
+          description: Name of the error. See the `x-error-codes` catalog in openapi file for a complete list of possible error codes with detailed information including HTTP status codes, causes, remediation steps, and retry guidance.
+      required:
+      - error_msg
+      - error_name
+      description: Contains information about an error that occurred.
+      title: ErrorResponseError
+    AccountResponseSettings:
+      type: object
+      properties:
+        signer_access_codes:
+          type: boolean
+          description: Returns `true` if _Custom access codes_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+        sms_delivery:
+          type: boolean
+          description: Returns `true` if _Text message_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+        sms_authentication:
+          type: boolean
+          description: Returns `true` if _Signer authentication_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+      description: Subset of configured settings
+      title: AccountResponseSettings
+    WarningResponse:
+      type: object
+      properties:
+        warning_msg:
+          type: string
+          description: Warning message
+        warning_name:
+          type: string
+          description: Warning name
+      required:
+      - warning_msg
+      - warning_name
+      description: A list of warnings.
+      title: WarningResponse
+    AccountVerifyRequest:
+      type: object
+      properties:
+        email_address:
+          type: string
+          format: email
+          description: Email address to run the verification for.
+      required:
+      - email_address
+      title: AccountVerifyRequest
     AccountVerifyResponse:
+      type: object
       properties:
         account:
           $ref: '#/components/schemas/AccountVerifyResponseAccount'
         warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    AccountVerifyRequest:
-      required:
-      - email_address
-      properties:
-        email_address:
-          description: _t__AccountVerify::EMAIL_ADDRESS
-          type: string
-          format: email
-      type: object
-  headers:
-    X-RateLimit-Limit:
-      description: _t__Common::RateLimiting::LIMIT
-      schema:
-        type: integer
-        format: int32
-        example: 100
-    X-RateLimit-Remaining:
-      description: _t__Common::RateLimiting::REMAINING
-      schema:
-        type: integer
-        format: int32
-        example: 99
-    X-Ratelimit-Reset:
-      description: _t__Common::RateLimiting::RESET
-      schema:
-        type: integer
-        format: int64
-        example: 1430170900
+          description: A list of warnings.
+      title: AccountVerifyResponse
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
-    api_key:
+    Basic:
       type: http
-      description: _t__OpenApi::AUTH::API_KEY
       scheme: basic
-    oauth2:
+      description: "Use your API key with HTTP Basic authentication in the form `Basic <api_key>`. See [Authentication](/api/reference/authentication) for more information.\n✅ Supported by Try it console (calls sent in `test_mode` only).            \n"
+    Bearer:
       type: http
-      description: _t__OpenApi::AUTH::OAUTH
-      bearerFormat: JWT
       scheme: bearer
-externalDocs:
-  description: Legacy API Reference
-  url: https://app.hellosign.com/api/reference
+      description: "You can use an Access Token issued through an OAuth flow to send calls to the Dropbox Sign API from your app. The access scopes required by this endpoint are listed in the gray box above. See [Authentication](/api/reference/authentication) for more information.\n  ❌ **Not supported** by Try it console.\n"
 x-refined-from:
 - dropbox-openapi-original.yml
-- dropbox-sign-openapi-original.yml
+- dropbox-openapi.yml

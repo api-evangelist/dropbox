@@ -1,0 +1,521 @@
+openapi: 3.2.0
+info:
+  title: Reference API App API
+  version: 1.0.0
+servers:
+- url: https://api.hellosign.com/v3
+  description: https://api.hellosign.com/v3
+tags:
+- name: apiApp
+paths:
+  /api_app/{client_id}:
+    get:
+      operationId: apiApp_get
+      summary: Get API App
+      description: Returns an object with information about an API App.
+      tags:
+      - apiApp
+      parameters:
+      - name: client_id
+        in: path
+        description: The client id of the API App to retrieve.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiAppGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+    put:
+      operationId: apiApp_update
+      summary: Update API App
+      description: Updates an existing API App. Can only be invoked for apps you own. Only the fields you provide will be updated. If you wish to clear an existing optional field, provide an empty string.
+      tags:
+      - apiApp
+      parameters:
+      - name: client_id
+        in: path
+        description: The client id of the API App to update.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiAppGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiAppUpdateRequest'
+      security:
+      - Basic: []
+    delete:
+      operationId: apiApp_delete
+      summary: Delete API App
+      description: Deletes an API App. Can only be invoked for apps you own.
+      tags:
+      - apiApp
+      parameters:
+      - name: client_id
+        in: path
+        description: The client id of the API App to delete.
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /api_app/list:
+    get:
+      operationId: apiApp_list
+      summary: List API Apps
+      description: Returns a list of API Apps that are accessible by you. If you are on a team with an Admin or Developer role, this list will include apps owned by teammates.
+      tags:
+      - apiApp
+      parameters:
+      - name: page
+        in: query
+        description: Which page number of the API App List to return. Defaults to `1`.
+        required: false
+        schema:
+          type: integer
+          default: 1
+      - name: page_size
+        in: query
+        description: Number of objects to be returned per page. Must be between `1` and `100`. Default is `20`.
+        required: false
+        schema:
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiAppListResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /api_app:
+    post:
+      operationId: apiApp_create
+      summary: Create API App
+      description: Creates a new API App.
+      tags:
+      - apiApp
+      responses:
+        '201':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiAppGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiAppCreateRequest'
+      security:
+      - Basic: []
+components:
+  schemas:
+    SubOAuth:
+      type: object
+      properties:
+        callback_url:
+          type: string
+          description: The callback URL to be used for OAuth flows. (Required if `oauth[scopes]` is provided)
+        scopes:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubOAuthScopesItems'
+          description: A list of [OAuth scopes](/api/reference/tag/OAuth) to be granted to the app. (Required if `oauth[callback_url]` is provided).
+      description: OAuth related parameters.
+      title: SubOAuth
+    ApiAppResponseOAuth:
+      type: object
+      properties:
+        callback_url:
+          type: string
+          description: The app's OAuth callback URL.
+        secret:
+          type:
+          - string
+          - 'null'
+          description: The app's OAuth secret, or null if the app does not belong to user.
+        scopes:
+          type: array
+          items:
+            type: string
+          description: Array of OAuth scopes used by the app.
+        charges_users:
+          type: boolean
+          description: Boolean indicating whether the app owner or the account granting permission is billed for OAuth requests.
+      description: An object describing the app's OAuth properties, or null if OAuth is not configured for the app.
+      title: ApiAppResponseOAuth
+    SubOAuthScopesItems:
+      type: string
+      enum:
+      - request_signature
+      - basic_account_info
+      - account_access
+      - signature_request_access
+      - template_access
+      - team_access
+      - api_app_access
+      - ''
+      title: SubOAuthScopesItems
+    ApiAppUpdateRequest:
+      type: object
+      properties:
+        callback_url:
+          type: string
+          description: The URL at which the API App should receive event callbacks.
+        custom_logo_file:
+          type: string
+          format: binary
+          description: An image file to use as a custom logo in embedded contexts. (Only applies to some API plans)
+        domains:
+          type: array
+          items:
+            type: string
+          description: The domain names the ApiApp will be associated with.
+        name:
+          type: string
+          description: The name you want to assign to the ApiApp.
+        oauth:
+          $ref: '#/components/schemas/SubOAuth'
+        options:
+          $ref: '#/components/schemas/SubOptions'
+        white_labeling_options:
+          $ref: '#/components/schemas/SubWhiteLabelingOptions'
+      title: ApiAppUpdateRequest
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      required:
+      - error
+      title: ErrorResponse
+    ApiAppListResponse:
+      type: object
+      properties:
+        api_apps:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiAppResponse'
+          description: Contains information about API Apps.
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - api_apps
+      - list_info
+      title: ApiAppListResponse
+    ApiAppResponseOwnerAccount:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: The owner account's ID
+        email_address:
+          type: string
+          description: The owner account's email address
+      description: An object describing the app's owner
+      title: ApiAppResponseOwnerAccount
+    ApiAppCreateRequest:
+      type: object
+      properties:
+        callback_url:
+          type: string
+          description: The URL at which the ApiApp should receive event callbacks.
+        custom_logo_file:
+          type: string
+          format: binary
+          description: An image file to use as a custom logo in embedded contexts. (Only applies to some API plans)
+        domains:
+          type: array
+          items:
+            type: string
+          description: The domain names the ApiApp will be associated with.
+        name:
+          type: string
+          description: The name you want to assign to the ApiApp.
+        oauth:
+          $ref: '#/components/schemas/SubOAuth'
+        options:
+          $ref: '#/components/schemas/SubOptions'
+        white_labeling_options:
+          $ref: '#/components/schemas/SubWhiteLabelingOptions'
+      required:
+      - domains
+      - name
+      title: ApiAppCreateRequest
+    SubWhiteLabelingOptions:
+      type: object
+      properties:
+        header_background_color:
+          type: string
+          default: '#1a1a1a'
+        legal_version:
+          $ref: '#/components/schemas/SubWhiteLabelingOptionsLegalVersion'
+          default: terms1
+        link_color:
+          type: string
+          default: '#0061FE'
+        page_background_color:
+          type: string
+          default: '#f7f8f9'
+        primary_button_color:
+          type: string
+          default: '#0061FE'
+        primary_button_color_hover:
+          type: string
+          default: '#0061FE'
+        primary_button_text_color:
+          type: string
+          default: '#ffffff'
+        primary_button_text_color_hover:
+          type: string
+          default: '#ffffff'
+        secondary_button_color:
+          type: string
+          default: '#ffffff'
+        secondary_button_color_hover:
+          type: string
+          default: '#ffffff'
+        secondary_button_text_color:
+          type: string
+          default: '#0061FE'
+        secondary_button_text_color_hover:
+          type: string
+          default: '#0061FE'
+        text_color1:
+          type: string
+          default: '#808080'
+        text_color2:
+          type: string
+          default: '#ffffff'
+        reset_to_default:
+          type: boolean
+          description: Resets white labeling options to defaults. Only useful when updating an API App.
+      description: 'An array of elements and values serialized to a string, to be used to customize the app''s signer page. (Only applies to some API plans)
+
+
+        Take a look at our [white labeling guide](https://developers.hellosign.com/api/reference/premium-branding/) to learn more.'
+      title: SubWhiteLabelingOptions
+    ErrorResponseError:
+      type: object
+      properties:
+        error_msg:
+          type: string
+          description: Message describing an error.
+        error_path:
+          type: string
+          description: Path at which an error occurred.
+        error_name:
+          type: string
+          description: Name of the error. See the `x-error-codes` catalog in openapi file for a complete list of possible error codes with detailed information including HTTP status codes, causes, remediation steps, and retry guidance.
+      required:
+      - error_msg
+      - error_name
+      description: Contains information about an error that occurred.
+      title: ErrorResponseError
+    ApiAppResponseWhiteLabelingOptions:
+      type: object
+      properties:
+        header_background_color:
+          type: string
+        legal_version:
+          type: string
+        link_color:
+          type: string
+        page_background_color:
+          type: string
+        primary_button_color:
+          type: string
+        primary_button_color_hover:
+          type: string
+        primary_button_text_color:
+          type: string
+        primary_button_text_color_hover:
+          type: string
+        secondary_button_color:
+          type: string
+        secondary_button_color_hover:
+          type: string
+        secondary_button_text_color:
+          type: string
+        secondary_button_text_color_hover:
+          type: string
+        text_color1:
+          type: string
+        text_color2:
+          type: string
+      description: An object with options to customize the app's signer page
+      title: ApiAppResponseWhiteLabelingOptions
+    SubOptions:
+      type: object
+      properties:
+        can_insert_everywhere:
+          type: boolean
+          default: false
+          description: Determines if signers can use "Insert Everywhere" when signing a document.
+      description: Additional options supported by API App.
+      title: SubOptions
+    SubWhiteLabelingOptionsLegalVersion:
+      type: string
+      enum:
+      - terms1
+      - terms2
+      default: terms1
+      title: SubWhiteLabelingOptionsLegalVersion
+    ApiAppResponseOptions:
+      type: object
+      properties:
+        can_insert_everywhere:
+          type: boolean
+          description: Boolean denoting if signers can "Insert Everywhere" in one click while signing a document
+      description: An object with options that override account settings.
+      title: ApiAppResponseOptions
+    ListInfoResponse:
+      type: object
+      properties:
+        num_pages:
+          type: integer
+          description: Total number of pages available.
+        num_results:
+          type:
+          - integer
+          - 'null'
+          description: Total number of objects available.
+        page:
+          type: integer
+          description: Number of the page being returned.
+        page_size:
+          type: integer
+          description: Objects returned per page.
+      description: Contains pagination information about the data returned.
+      title: ListInfoResponse
+    WarningResponse:
+      type: object
+      properties:
+        warning_msg:
+          type: string
+          description: Warning message
+        warning_name:
+          type: string
+          description: Warning name
+      required:
+      - warning_msg
+      - warning_name
+      description: A list of warnings.
+      title: WarningResponse
+    ApiAppGetResponse:
+      type: object
+      properties:
+        api_app:
+          $ref: '#/components/schemas/ApiAppResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - api_app
+      title: ApiAppGetResponse
+    ApiAppResponse:
+      type: object
+      properties:
+        callback_url:
+          type:
+          - string
+          - 'null'
+          description: The app's callback URL (for events)
+        client_id:
+          type: string
+          description: The app's client id
+        created_at:
+          type: integer
+          description: The time that the app was created
+        domains:
+          type: array
+          items:
+            type: string
+          description: The domain name(s) associated with the app
+        name:
+          type: string
+          description: The name of the app
+        is_approved:
+          type: boolean
+          description: Boolean to indicate if the app has been approved
+        oauth:
+          $ref: '#/components/schemas/ApiAppResponseOAuth'
+        options:
+          $ref: '#/components/schemas/ApiAppResponseOptions'
+        owner_account:
+          $ref: '#/components/schemas/ApiAppResponseOwnerAccount'
+        white_labeling_options:
+          $ref: '#/components/schemas/ApiAppResponseWhiteLabelingOptions'
+      description: Contains information about an API App.
+      title: ApiAppResponse
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: "Use your API key with HTTP Basic authentication in the form `Basic <api_key>`. See [Authentication](/api/reference/authentication) for more information.\n✅ Supported by Try it console (calls sent in `test_mode` only).            \n"
+    Bearer:
+      type: http
+      scheme: bearer
+      description: "You can use an Access Token issued through an OAuth flow to send calls to the Dropbox Sign API from your app. The access scopes required by this endpoint are listed in the gray box above. See [Authentication](/api/reference/authentication) for more information.\n  ❌ **Not supported** by Try it console.\n"

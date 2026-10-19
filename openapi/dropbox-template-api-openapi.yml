@@ -1,2282 +1,2784 @@
 openapi: 3.2.0
 info:
-  title: Dropbox Sign Template API
-  description: The Dropbox Sign API offers a reliable, flexible set of eSignature tools that can be used to power digital agreements and turn slow, outdated business processes into a competitive advantage. With a broad range of highly-configurable features, the Dropbox Sign API empowers you to build secure signing experiences and document workflows that delight your users.
-  termsOfService: https://www.hellosign.com/terms
-  contact:
-    email: apisupport@hellosign.com
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
-  version: 3.0.0
+  title: Reference Template API
+  version: 1.0.0
 servers:
 - url: https://api.hellosign.com/v3
-security:
-- api_key: []
-  oauth2:
-  - account_access
-  - signature_request_access
-  - template_access
-  - team_access
-  - api_app_access
-  - basic_account_info
-  - request_signature
+  description: https://api.hellosign.com/v3
 tags:
 - name: Template
-  description: _md__OpenApi::TAG::TEMPLATE::DESCRIPTION
 paths:
-  /template/add_user/{template_id}:
-    post:
-      tags:
-      - Template
-      summary: Dropbox _t__TemplateAddUser::SUMMARY
-      description: _t__TemplateAddUser::DESCRIPTION
-      operationId: templateAddUser
-      parameters:
-      - name: template_id
-        in: path
-        description: _t__TemplateAddUser::TEMPLATE_ID
-        required: true
-        schema:
-          type: string
-        example: f57db65d3f933b5316d398057a36176831451a35
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TemplateAddUserRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/TemplateAddUserRequestDefaultExample'
-      responses:
-        '200':
-          description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TemplateGetResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateAddUserResponseExample'
-        4XX:
-          description: failed_operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateAddUser.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateAddUser.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateAddUser.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateAddUser.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateAddUser.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateAddUser.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateAddUser.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateAddUser.sh
-      x-meta:
-        seo:
-          title: _t__TemplateAddUser::SEO::TITLE
-          description: _t__TemplateAddUser::SEO::DESCRIPTION
-  /template/create:
-    post:
-      tags:
-      - Template
-      summary: Dropbox _t__TemplateCreate::SUMMARY
-      description: _t__TemplateCreate::DESCRIPTION
-      operationId: templateCreate
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TemplateCreateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/TemplateCreateRequestDefaultExample'
-              form_fields_per_document:
-                $ref: '#/components/examples/TemplateCreateRequestFormFieldsPerDocumentExample'
-              form_field_groups:
-                $ref: '#/components/examples/TemplateCreateRequestFormFieldGroupsExample'
-              form_field_rules:
-                $ref: '#/components/examples/TemplateCreateRequestFormFieldRulesExample'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/TemplateCreateRequest'
-      responses:
-        '200':
-          description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TemplateCreateResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateCreateResponseExample'
-        4XX:
-          description: failed_operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateCreate.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateCreate.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateCreate.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateCreate.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateCreate.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateCreate.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateCreate.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateCreate.sh
-      x-meta:
-        seo:
-          title: _t__TemplateCreate::SEO::TITLE
-          description: _t__TemplateCreate::SEO::DESCRIPTION
-  /template/create_embedded_draft:
-    post:
-      tags:
-      - Template
-      summary: Dropbox _t__TemplateCreateEmbeddedDraft::SUMMARY
-      description: _t__TemplateCreateEmbeddedDraft::DESCRIPTION
-      operationId: templateCreateEmbeddedDraft
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TemplateCreateEmbeddedDraftRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/TemplateCreateEmbeddedDraftRequestDefaultExample'
-              form_fields_per_document:
-                $ref: '#/components/examples/TemplateCreateEmbeddedDraftRequestFormFieldsPerDocumentExample'
-              form_field_groups:
-                $ref: '#/components/examples/TemplateCreateEmbeddedDraftRequestFormFieldGroupsExample'
-              form_field_rules:
-                $ref: '#/components/examples/TemplateCreateEmbeddedDraftRequestFormFieldRulesExample'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/TemplateCreateEmbeddedDraftRequest'
-      responses:
-        '200':
-          description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TemplateCreateEmbeddedDraftResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateCreateEmbeddedDraftResponseExample'
-        4XX:
-          description: failed_operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateCreateEmbeddedDraft.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateCreateEmbeddedDraft.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateCreateEmbeddedDraft.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateCreateEmbeddedDraft.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateCreateEmbeddedDraft.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateCreateEmbeddedDraft.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateCreateEmbeddedDraft.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateCreateEmbeddedDraft.sh
-      x-meta:
-        seo:
-          title: _t__TemplateCreateEmbeddedDraft::SEO::TITLE
-          description: _t__TemplateCreateEmbeddedDraft::SEO::DESCRIPTION
-  /template/delete/{template_id}:
-    post:
-      tags:
-      - Template
-      summary: Dropbox _t__TemplateDelete::SUMMARY
-      description: _t__TemplateDelete::DESCRIPTION
-      operationId: templateDelete
-      parameters:
-      - name: template_id
-        in: path
-        description: _t__TemplateDelete::TEMPLATE_ID
-        required: true
-        schema:
-          type: string
-        example: f57db65d3f933b5316d398057a36176831451a35
-      responses:
-        '200':
-          description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
-          content:
-            application/json: {}
-        4XX:
-          description: failed_operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateDelete.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateDelete.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateDelete.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateDelete.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateDelete.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateDelete.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateDelete.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateDelete.sh
-      x-meta:
-        seo:
-          title: _t__TemplateDelete::SEO::TITLE
-          description: _t__TemplateDelete::SEO::DESCRIPTION
-  /template/files/{template_id}:
-    get:
-      tags:
-      - Template
-      summary: Dropbox _t__TemplateFiles::SUMMARY
-      description: _t__TemplateFiles::DESCRIPTION
-      operationId: templateFiles
-      parameters:
-      - name: template_id
-        in: path
-        description: _t__TemplateFiles::TEMPLATE_ID
-        required: true
-        schema:
-          type: string
-        example: f57db65d3f933b5316d398057a36176831451a35
-      - name: file_type
-        in: query
-        description: _t__TemplateFiles::FILE_TYPE
-        schema:
-          type: string
-          enum:
-          - pdf
-          - zip
-      responses:
-        '200':
-          description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
-          content:
-            application/pdf:
-              schema:
-                type: string
-                format: binary
-            application/zip:
-              schema:
-                type: string
-                format: binary
-        4XX:
-          description: failed_operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                422_example:
-                  $ref: '#/components/examples/Error422ResponseExample'
-                429_example:
-                  $ref: '#/components/examples/Error429ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateFiles.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateFiles.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateFiles.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateFiles.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateFiles.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateFiles.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateFiles.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateFiles.sh
-      x-meta:
-        seo:
-          title: _t__TemplateFiles::SEO::TITLE
-          description: _t__TemplateFiles::SEO::DESCRIPTION
-  /template/files_as_data_uri/{template_id}:
-    get:
-      tags:
-      - Template
-      summary: Dropbox _t__TemplateFilesAsDataUri::SUMMARY
-      description: _t__TemplateFilesAsDataUri::DESCRIPTION
-      operationId: templateFilesAsDataUri
-      parameters:
-      - name: template_id
-        in: path
-        description: _t__TemplateFiles::TEMPLATE_ID
-        required: true
-        schema:
-          type: string
-        example: f57db65d3f933b5316d398057a36176831451a35
-      responses:
-        '200':
-          description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/FileResponseDataUri'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateFilesResponseExample'
-        4XX:
-          description: failed_operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                422_example:
-                  $ref: '#/components/examples/Error422ResponseExample'
-                429_example:
-                  $ref: '#/components/examples/Error429ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateFilesAsDataUri.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateFilesAsDataUri.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateFilesAsDataUri.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateFilesAsDataUri.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateFilesAsDataUri.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateFilesAsDataUri.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateFilesAsDataUri.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateFilesAsDataUri.sh
-      x-meta:
-        seo:
-          title: _t__TemplateFiles::SEO::TITLE
-          description: _t__TemplateFiles::SEO::DESCRIPTION
-  /template/files_as_file_url/{template_id}:
-    get:
-      tags:
-      - Template
-      summary: Dropbox _t__TemplateFilesAsFileUrl::SUMMARY
-      description: _t__TemplateFilesAsFileUrl::DESCRIPTION
-      operationId: templateFilesAsFileUrl
-      parameters:
-      - name: template_id
-        in: path
-        description: _t__TemplateFiles::TEMPLATE_ID
-        required: true
-        schema:
-          type: string
-        example: f57db65d3f933b5316d398057a36176831451a35
-      - name: force_download
-        in: query
-        description: _t__TemplateFiles::FORCE_DOWNLOAD
-        schema:
-          type: integer
-          default: 1
-      responses:
-        '200':
-          description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/FileResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateFilesResponseExample'
-        4XX:
-          description: failed_operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                422_example:
-                  $ref: '#/components/examples/Error422ResponseExample'
-                429_example:
-                  $ref: '#/components/examples/Error429ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
-      security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateFilesAsFileUrl.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateFilesAsFileUrl.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateFilesAsFileUrl.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateFilesAsFileUrl.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateFilesAsFileUrl.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateFilesAsFileUrl.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateFilesAsFileUrl.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateFilesAsFileUrl.sh
-      x-meta:
-        seo:
-          title: _t__TemplateFiles::SEO::TITLE
-          description: _t__TemplateFiles::SEO::DESCRIPTION
   /template/{template_id}:
     get:
+      operationId: template_get
+      summary: Get Template
+      description: Returns the Template specified by the `template_id` parameter.
       tags:
       - Template
-      summary: Dropbox _t__TemplateGet::SUMMARY
-      description: _t__TemplateGet::DESCRIPTION
-      operationId: templateGet
       parameters:
       - name: template_id
         in: path
-        description: _t__TemplateGet::TEMPLATE_ID
+        description: The id of the Template to retrieve.
         required: true
         schema:
           type: string
-        example: f57db65d3f933b5316d398057a36176831451a35
       responses:
         '200':
           description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TemplateGetResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateGetResponseExample'
-        4XX:
+        '400':
           description: failed_operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                429_example:
-                  $ref: '#/components/examples/Error429ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
       security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateGet.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateGet.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateGet.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateGet.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateGet.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateGet.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateGet.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateGet.sh
-      x-meta:
-        seo:
-          title: _t__TemplateGet::SEO::TITLE
-          description: _t__TemplateGet::SEO::DESCRIPTION
+      - Basic: []
   /template/list:
     get:
+      operationId: template_list
+      summary: List Templates
+      description: 'Returns a list of the Templates that are accessible by you.
+
+
+        Take a look at our search guide to learn more about querying templates.'
       tags:
       - Template
-      summary: Dropbox _t__TemplateList::SUMMARY
-      description: _t__TemplateList::DESCRIPTION
-      operationId: templateList
       parameters:
       - name: account_id
         in: query
-        description: _t__TemplateList::ACCOUNT_ID
+        description: Which account to return Templates for. Must be a team member. Use `all` to indicate all team members. Defaults to your account.
+        required: false
         schema:
           type: string
       - name: page
         in: query
-        description: _t__TemplateList::PAGE
+        description: Which page number of the Template List to return. Defaults to `1`.
+        required: false
         schema:
           type: integer
           default: 1
       - name: page_size
         in: query
-        description: _t__TemplateList::PAGE_SIZE
+        description: Number of objects to be returned per page. Must be between `1` and `100`. Default is `20`.
+        required: false
         schema:
           type: integer
-          default: 20
-          maximum: 100
           minimum: 1
+          maximum: 100
+          default: 20
       - name: query
         in: query
-        description: _t__TemplateList::QUERY
+        description: String that includes search terms and/or fields to be used to filter the Template objects.
+        required: false
         schema:
           type: string
       responses:
         '200':
           description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TemplateListResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateListResponseExample'
-        4XX:
+        '400':
           description: failed_operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                429_example:
-                  $ref: '#/components/examples/Error429ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
       security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateList.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateList.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateList.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateList.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateList.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateList.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateList.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateList.sh
-      x-meta:
-        seo:
-          title: _t__TemplateList::SEO::TITLE
-          description: _t__TemplateList::SEO::DESCRIPTION
-  /template/remove_user/{template_id}:
+      - Basic: []
+  /template/create:
     post:
+      operationId: template_create
+      summary: Create Template
+      description: 'Creates a template that can be used in future signature requests.
+
+
+        If `client_id` is provided, the template will be created as an embedded template. Embedded templates can be used for embedded signature requests and can be edited later by generating a new `edit_url` with /embedded/edit_url/{template_id}.
+
+
+        Template creation may complete asynchronously after the initial request is accepted. It is recommended that a callback be implemented to listen for the callback event. A `template_created` event indicates the template is ready to use, while a `template_error` event indicates there was a problem while creating the template. If a callback handler has been configured and the event has not been received within 60 minutes of making the call, check the status of the request in the API dashboard and retry the request if necessary.'
       tags:
       - Template
-      summary: Dropbox _t__TemplateRemoveUser::SUMMARY
-      description: _t__TemplateRemoveUser::DESCRIPTION
-      operationId: templateRemoveUser
-      parameters:
-      - name: template_id
-        in: path
-        description: _t__TemplateRemoveUser::TEMPLATE_ID
-        required: true
-        schema:
-          type: string
-        example: f57db65d3f933b5316d398057a36176831451a35
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TemplateRemoveUserRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/TemplateRemoveUserRequestDefaultExample'
       responses:
         '200':
           description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TemplateGetResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateRemoveUserResponseExample'
-        4XX:
+                $ref: '#/components/schemas/TemplateCreateResponse'
+        '400':
           description: failed_operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateCreateRequest'
       security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateRemoveUser.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateRemoveUser.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateRemoveUser.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateRemoveUser.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateRemoveUser.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateRemoveUser.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateRemoveUser.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateRemoveUser.sh
-      x-meta:
-        seo:
-          title: _t__TemplateRemoveUser::SEO::TITLE
-          description: _t__TemplateRemoveUser::SEO::DESCRIPTION
+      - Basic: []
+  /template/create_embedded_draft:
+    post:
+      operationId: template_createEmbeddedDraft
+      summary: Create Embedded Template Draft
+      description: The first step in an embedded template workflow. Creates a draft template that can then be further set up in the template 'edit' stage.
+      tags:
+      - Template
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateCreateEmbeddedDraftResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateCreateEmbeddedDraftRequest'
+      security:
+      - Basic: []
+  /template/delete/{template_id}:
+    post:
+      operationId: template_delete
+      summary: Delete Template
+      description: Completely deletes the template specified from the account.
+      tags:
+      - Template
+      parameters:
+      - name: template_id
+        in: path
+        description: The id of the Template to delete.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/template_delete_Response_200'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /template/files/{template_id}:
+    get:
+      operationId: template_files
+      summary: Get Template Files
+      description: 'Obtain a copy of the current documents specified by the `template_id` parameter. Returns a PDF or ZIP file.
+
+
+        If the files are currently being prepared, a status code of `409` will be returned instead. In this case please wait for the `template_created` callback event.'
+      tags:
+      - Template
+      parameters:
+      - name: template_id
+        in: path
+        description: The id of the template files to retrieve.
+        required: true
+        schema:
+          type: string
+      - name: file_type
+        in: query
+        description: Set to `pdf` for a single merged document or `zip` for a collection of individual documents.
+        required: false
+        schema:
+          $ref: '#/components/schemas/TemplateFilesTemplateIdGetParametersFileType'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /template/files_as_data_uri/{template_id}:
+    get:
+      operationId: template_filesAsDataUri
+      summary: Get Template Files as Data Uri
+      description: 'Obtain a copy of the current documents specified by the `template_id` parameter. Returns a JSON object with a `data_uri` representing the base64 encoded file (PDFs only).
+
+
+        If the files are currently being prepared, a status code of `409` will be returned instead. In this case please wait for the `template_created` callback event.'
+      tags:
+      - Template
+      parameters:
+      - name: template_id
+        in: path
+        description: The id of the template files to retrieve.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileResponseDataUri'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /template/files_as_file_url/{template_id}:
+    get:
+      operationId: template_filesAsFileUrl
+      summary: Get Template Files as File Url
+      description: 'Obtain a copy of the current documents specified by the `template_id` parameter. Returns a JSON object with a url to the file (PDFs only).
+
+
+        If the files are currently being prepared, a status code of `409` will be returned instead. In this case please wait for the `template_created` callback event.'
+      tags:
+      - Template
+      parameters:
+      - name: template_id
+        in: path
+        description: The id of the template files to retrieve.
+        required: true
+        schema:
+          type: string
+      - name: force_download
+        in: query
+        description: By default when opening the `file_url` a browser will download the PDF and save it locally. When set to `0` the PDF file will be displayed in the browser.
+        required: false
+        schema:
+          type: integer
+          default: 1
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
   /template/update_files/{template_id}:
     post:
+      operationId: template_updateFiles
+      summary: Update Template Files
+      description: 'Overlays a new file with the overlay of an existing template. The new file(s) must:
+
+
+        1. have the same or higher page count
+
+        2. the same orientation as the file(s) being replaced.
+
+
+        This will not overwrite or in any way affect the existing template. Both the existing template and new template will be available for use after executing this endpoint. Also note that this will decrement your template quota.
+
+
+        Overlaying new files is asynchronous and a successful call to this endpoint will return 200 OK response if the request passes initial validation checks.
+
+
+        It is recommended that a callback be implemented to listen for the callback event. A `template_created` event will be sent when the files are updated or a `template_error` event will be sent if there was a problem while updating the files. If a callback handler has been configured and the event has not been received within 60 minutes of making the call, check the status of the request in the API dashboard and retry the request if necessary.
+
+
+        If the page orientation or page count is different from the original template document, we will notify you with a `template_error` callback event.'
       tags:
       - Template
-      summary: Dropbox _t__TemplateUpdateFiles::SUMMARY
-      description: _t__TemplateUpdateFiles::DESCRIPTION
-      operationId: templateUpdateFiles
       parameters:
       - name: template_id
         in: path
-        description: _t__TemplateUpdateFiles::TEMPLATE_ID
+        description: The ID of the template whose files to update.
         required: true
         schema:
           type: string
-        example: f57db65d3f933b5316d398057a36176831451a35
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TemplateUpdateFilesRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/TemplateUpdateFilesRequestDefaultExample'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/TemplateUpdateFilesRequest'
       responses:
         '200':
           description: successful operation
-          headers:
-            X-RateLimit-Limit:
-              $ref: '#/components/headers/X-RateLimit-Limit'
-            X-RateLimit-Remaining:
-              $ref: '#/components/headers/X-RateLimit-Remaining'
-            X-Ratelimit-Reset:
-              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TemplateUpdateFilesResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateUpdateFilesResponseExample'
-        4XX:
+        '400':
           description: failed_operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                400_example:
-                  $ref: '#/components/examples/Error400ResponseExample'
-                401_example:
-                  $ref: '#/components/examples/Error401ResponseExample'
-                402_example:
-                  $ref: '#/components/examples/Error402ResponseExample'
-                403_example:
-                  $ref: '#/components/examples/Error403ResponseExample'
-                404_example:
-                  $ref: '#/components/examples/Error404ResponseExample'
-                409_example:
-                  $ref: '#/components/examples/Error409ResponseExample'
-                429_example:
-                  $ref: '#/components/examples/Error429ResponseExample'
-                4XX_example:
-                  $ref: '#/components/examples/Error4XXResponseExample'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateUpdateFilesRequest'
       security:
-      - api_key: []
-      - oauth2:
-        - template_access
-      x-codeSamples:
-      - lang: PHP
-        label: PHP
-        source:
-          $ref: examples/TemplateUpdateFiles.php
-      - lang: C#
-        label: C#
-        source:
-          $ref: examples/TemplateUpdateFiles.cs
-      - lang: JavaScript
-        label: JavaScript
-        source:
-          $ref: examples/TemplateUpdateFiles.js
-      - lang: TypeScript
-        label: TypeScript
-        source:
-          $ref: examples/TemplateUpdateFiles.ts
-      - lang: Java
-        label: Java
-        source:
-          $ref: examples/TemplateUpdateFiles.java
-      - lang: Ruby
-        label: Ruby
-        source:
-          $ref: examples/TemplateUpdateFiles.rb
-      - lang: Python
-        label: Python
-        source:
-          $ref: examples/TemplateUpdateFiles.py
-      - lang: cURL
-        label: cURL
-        source:
-          $ref: examples/TemplateUpdateFiles.sh
-      x-meta:
-        seo:
-          title: _t__TemplateUpdateFiles::SEO::TITLE
-          description: _t__TemplateUpdateFiles::SEO::DESCRIPTION
+      - Basic: []
+  /template/add_user/{template_id}:
+    post:
+      operationId: template_addUser
+      summary: Add User to Template
+      description: Gives the specified Account access to the specified Template. The specified Account must be a part of your Team.
+      tags:
+      - Template
+      parameters:
+      - name: template_id
+        in: path
+        description: The id of the Template to give the Account access to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateAddUserRequest'
+      security:
+      - Basic: []
+  /template/remove_user/{template_id}:
+    post:
+      operationId: template_removeUser
+      summary: Remove User from Template
+      description: Removes the specified Account's access to the specified Template.
+      tags:
+      - Template
+      parameters:
+      - name: template_id
+        in: path
+        description: The id of the Template to remove the Account's access to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateRemoveUserRequest'
+      security:
+      - Basic: []
 components:
   schemas:
-    TemplateCreateEmbeddedDraftResponse:
-      properties:
-        template:
-          $ref: '#/components/schemas/TemplateCreateEmbeddedDraftResponseTemplate'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
+    TemplateResponseDocumentStaticFieldBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      discriminator:
+        propertyName: type
+      description: An array describing static overlay fields. **NOTE:** Only available for certain subscriptions.
+      title: TemplateResponseDocumentStaticFieldBase
     TemplateResponseAccount:
+      type: object
       properties:
         account_id:
-          description: _t__TemplateResponseAccount::ACCOUNT_ID
           type: string
+          description: The id of the Account.
         email_address:
-          description: _t__TemplateResponseAccount::EMAIL_ADDRESS
           type: string
+          description: The email address associated with the Account.
         is_locked:
-          description: _t__TemplateResponseAccount::IS_LOCKED
           type: boolean
+          description: Returns `true` if the user has been locked out of their account by a team admin.
         is_paid_hs:
-          description: _t__TemplateResponseAccount::IS_PAID_HS
           type: boolean
+          description: Returns `true` if the user has a paid Dropbox Sign account.
         is_paid_hf:
-          description: _t__TemplateResponseAccount::IS_PAID_HF
           type: boolean
+          description: Returns `true` if the user has a paid HelloFax account.
         quotas:
           $ref: '#/components/schemas/TemplateResponseAccountQuota'
-      type: object
-      x-internal: true
-    TemplateResponseDocumentCustomFieldBase:
-      description: _t__TemplateResponseDocumentCustomField::DESCRIPTION
-      required:
-      - type
-      properties:
-        api_id:
-          description: _t__TemplateResponseDocumentCustomField::API_ID
-          type: string
-        name:
-          description: _t__TemplateResponseDocumentCustomField::NAME
-          type: string
-        type:
-          type: string
-        signer:
-          description: _t__TemplateResponseDocumentCustomField::SIGNER
-          type:
-          - string
-          - 'null'
-        x:
-          description: _t__TemplateResponseDocumentCustomField::X
-          type: integer
-        y:
-          description: _t__TemplateResponseDocumentCustomField::Y
-          type: integer
-        width:
-          description: _t__TemplateResponseDocumentCustomField::WIDTH
-          type: integer
-        height:
-          description: _t__TemplateResponseDocumentCustomField::HEIGHT
-          type: integer
-        required:
-          description: _t__TemplateResponseDocumentStaticField::REQUIRED
-          type: boolean
-        group:
-          description: _t__TemplateResponseDocumentCustomField::GROUP
-          type:
-          - string
-          - 'null'
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/TemplateResponseDocumentCustomFieldText'
-          checkbox: '#/components/schemas/TemplateResponseDocumentCustomFieldCheckbox'
-      x-internal: true
-      x-base-class: true
-    TemplateCreateEmbeddedDraftRequest:
-      required:
-      - client_id
-      properties:
-        files:
-          description: _t__TemplateCreateEmbeddedDraft::FILES
-          type: array
-          items:
-            type: string
-            format: binary
-        file_urls:
-          description: _t__TemplateCreateEmbeddedDraft::FILE_URLS
-          type: array
-          items:
-            type: string
-        allow_ccs:
-          description: _t__TemplateCreateEmbeddedDraft::ALLOW_CCS
-          type: boolean
-          default: true
-        allow_reassign:
-          description: _t__TemplateCreateEmbeddedDraft::ALLOW_REASSIGN
-          type: boolean
-          default: false
-        attachments:
-          description: _t__SubAttachment::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubAttachment'
-        cc_roles:
-          description: _t__TemplateCreateEmbeddedDraft::CC_ROLES
-          type: array
-          items:
-            type: string
-        client_id:
-          description: _t__TemplateCreateEmbeddedDraft::CLIENT_ID
-          type: string
-        editor_options:
-          $ref: '#/components/schemas/SubEditorOptions'
-        field_options:
-          $ref: '#/components/schemas/SubFieldOptions'
-        force_signer_roles:
-          description: _t__TemplateCreateEmbeddedDraft::FORCE_SIGNER_ROLES
-          type: boolean
-          default: false
-        force_subject_message:
-          description: _t__TemplateCreateEmbeddedDraft::FORCE_SUBJECT_MESSAGE
-          type: boolean
-          default: false
-        form_field_groups:
-          description: _t__Sub::FormFieldGroup::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldGroup'
-        form_field_rules:
-          description: _t__Sub::FormFieldRule::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldRule'
-        form_fields_per_document:
-          description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
-        merge_fields:
-          description: _t__TemplateCreateEmbeddedDraft::MERGE_FIELDS
-          type: array
-          items:
-            $ref: '#/components/schemas/SubMergeField'
-        message:
-          description: _t__TemplateCreateEmbeddedDraft::MESSAGE
-          type: string
-          maxLength: 5000
-        metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
-          type: object
-          maxItems: 10
-          additionalProperties: {}
-        show_preview:
-          description: _t__TemplateCreateEmbeddedDraft::SHOW_PREVIEW
-          type: boolean
-          default: false
-        show_progress_stepper:
-          description: _t__TemplateCreateEmbeddedDraft::SHOW_PROGRESS_STEPPER
-          type: boolean
-          default: true
-        signer_roles:
-          description: _t__TemplateCreateEmbeddedDraft::SIGNER_ROLES
-          type: array
-          items:
-            $ref: '#/components/schemas/SubTemplateRole'
-        skip_me_now:
-          description: _t__TemplateCreateEmbeddedDraft::SKIP_ME_NOW
-          type: boolean
-          default: false
-        subject:
-          description: _t__TemplateCreateEmbeddedDraft::SUBJECT
-          type: string
-          maxLength: 200
-        test_mode:
-          description: _t__TemplateCreateEmbeddedDraft::TEST_MODE
-          type: boolean
-          default: false
-        title:
-          description: _t__TemplateCreateEmbeddedDraft::TITLE
-          type: string
-        use_preexisting_fields:
-          description: _t__TemplateCreateEmbeddedDraft::USE_PREEXISTING_FIELDS
-          type: boolean
-          default: false
-      type: object
-    WarningResponse:
-      description: _t__WarningResponse::LIST_DESCRIPTION
-      required:
-      - warning_msg
-      - warning_name
-      properties:
-        warning_msg:
-          description: _t__WarningResponse::WARNING_MSG
-          type: string
-        warning_name:
-          description: _t__WarningResponse::WARNING_NAME
-          type: string
-      type: object
-    ErrorResponseError:
-      description: _t__ErrorResponseError::DESCRIPTION
-      required:
-      - error_msg
-      - error_name
-      properties:
-        error_msg:
-          description: _t__ErrorResponseError::ERROR_MSG
-          type: string
-        error_path:
-          description: _t__ErrorResponseError::ERROR_PATH
-          type: string
-        error_name:
-          description: _t__ErrorResponseError::ERROR_NAME
-          type: string
-      type: object
-    SubAttachment:
-      required:
-      - name
-      - signer_index
-      properties:
-        instructions:
-          description: _t__Sub::Attachment::INSTRUCTIONS
-          type: string
-        name:
-          description: _t__Sub::Attachment::NAME
-          type: string
-        required:
-          description: _t__Sub::Attachment::REQUIRED
-          type: boolean
-          default: false
-        signer_index:
-          description: _t__Sub::Attachment::SIGNER_INDEX
-          type: integer
-      type: object
-    TemplateResponseDocumentStaticFieldBase:
-      description: _t__TemplateResponseDocumentStaticField::DESCRIPTION
-      required:
-      - type
-      properties:
-        api_id:
-          description: _t__TemplateResponseDocumentStaticField::API_ID
-          type: string
-        name:
-          description: _t__TemplateResponseDocumentStaticField::NAME
-          type: string
-        type:
-          type: string
-        signer:
-          description: _t__TemplateResponseDocumentStaticField::SIGNER
-          type: string
-          default: me_now
-        x:
-          description: _t__TemplateResponseDocumentStaticField::X
-          type: integer
-        y:
-          description: _t__TemplateResponseDocumentStaticField::Y
-          type: integer
-        width:
-          description: _t__TemplateResponseDocumentStaticField::WIDTH
-          type: integer
-        height:
-          description: _t__TemplateResponseDocumentStaticField::HEIGHT
-          type: integer
-        required:
-          description: _t__TemplateResponseDocumentStaticField::REQUIRED
-          type: boolean
-        group:
-          description: _t__TemplateResponseDocumentStaticField::GROUP
-          type:
-          - string
-          - 'null'
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/TemplateResponseDocumentStaticFieldText'
-          dropdown: '#/components/schemas/TemplateResponseDocumentStaticFieldDropdown'
-          hyperlink: '#/components/schemas/TemplateResponseDocumentStaticFieldHyperlink'
-          checkbox: '#/components/schemas/TemplateResponseDocumentStaticFieldCheckbox'
-          radio: '#/components/schemas/TemplateResponseDocumentStaticFieldRadio'
-          signature: '#/components/schemas/TemplateResponseDocumentStaticFieldSignature'
-          date_signed: '#/components/schemas/TemplateResponseDocumentStaticFieldDateSigned'
-          initials: '#/components/schemas/TemplateResponseDocumentStaticFieldInitials'
-      x-internal: true
-      x-base-class: true
-    SubFieldOptions:
-      description: _t__Sub::FieldOptions::DESCRIPTION
-      required:
-      - date_format
-      properties:
-        date_format:
-          description: _t__Sub::FieldOptions::DATE_FORMAT
-          type: string
-          enum:
-          - MM / DD / YYYY
-          - MM - DD - YYYY
-          - DD / MM / YYYY
-          - DD - MM - YYYY
-          - YYYY / MM / DD
-          - YYYY - MM - DD
-          x-enum-varnames:
-          - MMDDYYYY
-          - MM_DD_YYYY
-          - DDMMYYYY
-          - DD_MM_YYYY
-          - YYYYMMDD
-          - YYYY_MM_DD
-      type: object
-    TemplateResponse:
-      description: _t__TemplateResponse::DESCRIPTION
-      properties:
-        template_id:
-          description: _t__TemplateResponse::TEMPLATE_ID
-          type: string
-        title:
-          description: _t__TemplateResponse::TITLE
-          type: string
-        message:
-          description: _t__TemplateResponse::MESSAGE
-          type: string
-        updated_at:
-          description: _t__TemplateResponse::UPDATED_AT
-          type: integer
-        is_embedded:
-          description: _t__TemplateResponse::IS_EMBEDDED
-          type:
-          - boolean
-          - 'null'
-        is_creator:
-          description: _t__TemplateResponse::IS_CREATOR
-          type:
-          - boolean
-          - 'null'
-        can_edit:
-          description: _t__TemplateResponse::CAN_EDIT
-          type:
-          - boolean
-          - 'null'
-        is_locked:
-          description: _t__TemplateResponse::IS_LOCKED
-          type:
-          - boolean
-          - 'null'
-        metadata:
-          description: _t__TemplateResponse::METADATA
-          type: object
-        signer_roles:
-          description: _t__TemplateResponse::SIGNER_ROLES
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseSignerRole'
-        cc_roles:
-          description: _t__TemplateResponse::CC_ROLES
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseCCRole'
-        documents:
-          description: _t__TemplateResponse::DOCUMENTS
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocument'
-        custom_fields:
-          description: _t__TemplateResponseCustomField::DESCRIPTION
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
-          deprecated: true
-        named_form_fields:
-          description: _t__TemplateResponseNamedFormField::DESCRIPTION
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
-          deprecated: true
-        accounts:
-          description: _t__TemplateResponse::ACCOUNTS
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/TemplateResponseAccount'
-      type: object
-      x-internal: true
+      title: TemplateResponseAccount
     TemplateCreateResponse:
+      type: object
       properties:
         template:
           $ref: '#/components/schemas/TemplateCreateResponseTemplate'
         warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - template
+      title: TemplateCreateResponse
+    SubEditorOptions:
       type: object
-      x-internal: true
-    FileResponseDataUri:
       properties:
-        data_uri:
-          description: _t__FileResponse::DATA_URI
-          type: string
-      type: object
-      x-internal: true
-    TemplateAddUserRequest:
-      properties:
-        account_id:
-          description: _t__TemplateAddUser::ACCOUNT_ID
-          type: string
-        email_address:
-          description: _t__TemplateAddUser::EMAIL_ADDRESS
-          type: string
-          format: email
-        skip_notification:
-          description: _t__TemplateAddUser::SKIP_NOTIFICATION
+        allow_edit_signers:
           type: boolean
           default: false
+          description: Allows requesters to edit the list of signers
+        allow_edit_documents:
+          type: boolean
+          default: false
+          description: Allows requesters to edit documents, including delete and add
+      description: This allows the requester to specify editor options when a preparing a document
+      title: SubEditorOptions
+    ErrorResponseError:
       type: object
-    SubTemplateRole:
       properties:
-        name:
-          description: _t__Sub::SignerRole::NAME
+        error_msg:
           type: string
-        order:
-          description: _t__Sub::SignerRole::ORDER
-          type:
-          - integer
-          - 'null'
-      type: object
+          description: Message describing an error.
+        error_path:
+          type: string
+          description: Path at which an error occurred.
+        error_name:
+          type: string
+          description: Name of the error. See the `x-error-codes` catalog in openapi file for a complete list of possible error codes with detailed information including HTTP status codes, causes, remediation steps, and retry guidance.
+      required:
+      - error_msg
+      - error_name
+      description: Contains information about an error that occurred.
+      title: ErrorResponseError
     TemplateCreateResponseTemplate:
-      description: _t__TemplateCreateResponseTemplate::DESCRIPTION
+      type: object
       properties:
         template_id:
-          description: _t__TemplateResponse::TEMPLATE_ID
           type: string
-      type: object
-      x-internal: true
-    TemplateResponseAccountQuota:
-      description: _t__TemplateResponseAccountQuota::DESCRIPTION
-      properties:
-        templates_left:
-          description: _t__TemplateResponseAccountQuota::TEMPLATES_LEFT
-          type: integer
-        api_signature_requests_left:
-          description: _t__TemplateResponseAccountQuota::API_SIGNATURE_REQUESTS_LEFT
-          type: integer
-        documents_left:
-          description: _t__TemplateResponseAccountQuota::DOCUMENTS_LEFT
-          type: integer
-        sms_verifications_left:
-          description: _t__TemplateResponseAccountQuota::SMS_VERIFICATIONS_LEFT
-          type: integer
-      type: object
-      x-internal: true
-    ListInfoResponse:
-      description: _t__ListInfoResponse::DESCRIPTION
-      properties:
-        num_pages:
-          description: _t__ListInfoResponse::NUM_PAGES
-          type: integer
-        num_results:
-          description: _t__ListInfoResponse::NUM_RESULTS
+          description: The id of the Template.
+      description: 'Template object with parameters: `template_id`.'
+      title: TemplateCreateResponseTemplate
+    TemplateResponseDocumentCustomFieldBase:
+      oneOf:
+      - type: object
+        properties:
           type:
-          - integer
-          - 'null'
-        page:
-          description: _t__ListInfoResponse::PAGE
-          type: integer
-        page_size:
-          description: _t__ListInfoResponse::PAGE_SIZE
-          type: integer
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          name:
+            type: string
+            description: The name of the Custom Field.
+          signer:
+            type:
+            - string
+            - 'null'
+            description: The signer of the Custom Field. Can be `null` if field is a merge field (assigned to Sender).
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+          avg_text_length:
+            $ref: '#/components/schemas/TemplateResponseFieldAvgTextLength'
+          isMultiline:
+            type: boolean
+            description: Whether this form field is multiline text.
+          originalFontSize:
+            type: integer
+            description: Original font size used in this form field's text.
+          fontFamily:
+            type: string
+            description: Font family used in this form field's text.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentCustomFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          name:
+            type: string
+            description: The name of the Custom Field.
+          signer:
+            type:
+            - string
+            - 'null'
+            description: The signer of the Custom Field. Can be `null` if field is a merge field (assigned to Sender).
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentCustomFieldBase`
+      discriminator:
+        propertyName: type
+      description: An array of Form Field objects containing the name and type of each named field.
+      title: TemplateResponseDocumentCustomFieldBase
+    TemplateGetResponse:
       type: object
-      x-internal: true
-    TemplateRemoveUserRequest:
       properties:
-        account_id:
-          description: _t__TemplateRemoveUser::ACCOUNT_ID
-          type: string
-        email_address:
-          description: _t__TemplateRemoveUser::EMAIL_ADDRESS
-          type: string
-          format: email
-      type: object
-    FileResponse:
-      properties:
-        file_url:
-          description: _t__FileResponse::FILE_URL
-          type: string
-        expires_at:
-          description: _t__FileResponse::EXPIRES_AT
-          type: integer
-      type: object
-      x-internal: true
-    TemplateUpdateFilesResponseTemplate:
-      description: _t__TemplateUpdateFilesResponseTemplate::DESCRIPTION
-      properties:
-        template_id:
-          description: _t__TemplateResponse::TEMPLATE_ID
-          type: string
+        template:
+          $ref: '#/components/schemas/TemplateResponse'
         warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/WarningResponse'
-          deprecated: true
-      type: object
-      x-internal: true
-    SubMergeField:
+          description: A list of warnings.
       required:
-      - name
-      - type
-      properties:
-        name:
-          description: _t__Sub::MergeField::NAME
-          type: string
-        type:
-          description: _t__Sub::MergeField::TYPE
-          type: string
-          enum:
-          - text
-          - checkbox
-          x-enumDescriptions:
-            text: _t__Sub::MergeField::EnumDescriptions::TEXT
-            checkbox: _t__Sub::MergeField::EnumDescriptions::CHECKBOX
+      - template
+      title: TemplateGetResponse
+    FileResponseDataUri:
       type: object
-    TemplateResponseCCRole:
       properties:
-        name:
-          description: _t__TemplateResponseCCRole::TEMPLATES_LEFT
+        data_uri:
           type: string
+          description: File as base64 encoded string.
+      required:
+      - data_uri
+      title: FileResponseDataUri
+    FileResponse:
       type: object
-      x-internal: true
+      properties:
+        file_url:
+          type: string
+          description: URL to the file.
+        expires_at:
+          type: integer
+          description: When the link expires.
+      required:
+      - file_url
+      - expires_at
+      title: FileResponse
+    TemplateRemoveUserRequest:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: The id or email address of the Account to remove access to the Template. The account id prevails if both are provided.
+        email_address:
+          type: string
+          format: email
+          description: The id or email address of the Account to remove access to the Template. The account id prevails if both are provided.
+      title: TemplateRemoveUserRequest
+    SubFieldOptions:
+      type: object
+      properties:
+        date_format:
+          $ref: '#/components/schemas/SubFieldOptionsDateFormat'
+          description: 'Allows requester to specify the date format (see list of allowed [formats](/api/reference/constants/#date-formats))
+
+
+            **NOTE:** Only available for Premium and higher.'
+      required:
+      - date_format
+      description: This allows the requester to specify field options for a signature request.
+      title: SubFieldOptions
+    SubFieldOptionsDateFormat:
+      type: string
+      enum:
+      - MM / DD / YYYY
+      - MM - DD - YYYY
+      - DD / MM / YYYY
+      - DD - MM - YYYY
+      - YYYY / MM / DD
+      - YYYY - MM - DD
+      description: 'Allows requester to specify the date format (see list of allowed [formats](/api/reference/constants/#date-formats))
+
+
+        **NOTE:** Only available for Premium and higher.'
+      title: SubFieldOptionsDateFormat
     SubFormFieldRuleAction:
+      type: object
+      properties:
+        field_id:
+          type: string
+          description: '**field_id** or **group_id** is required, but not both.
+
+
+            Must reference the `api_id` of an existing field defined within `form_fields_per_document`.
+
+
+            Cannot use with `group_id`. Trigger and action fields must belong to the same signer.'
+        group_id:
+          type: string
+          description: '**group_id** or **field_id** is required, but not both.
+
+
+            Must reference the ID of an existing group defined within `form_field_groups`.
+
+
+            Cannot use with `field_id`. Trigger and action fields and groups must belong to the same signer.'
+        hidden:
+          type: boolean
+          description: '`true` to hide the target field when rule is satisfied, otherwise `false`.'
+        type:
+          $ref: '#/components/schemas/SubFormFieldRuleActionType'
       required:
       - hidden
       - type
-      properties:
-        field_id:
-          description: _t__Sub::FormFieldRuleAction::FIELD_ID
-          type: string
-        group_id:
-          description: _t__Sub::FormFieldRuleAction::GROUP_ID
-          type: string
-        hidden:
-          description: _t__Sub::FormFieldRuleAction::HIDDEN
-          type: boolean
-        type:
-          type: string
-          enum:
-          - change-field-visibility
-          - change-group-visibility
+      title: SubFormFieldRuleAction
+    TemplateUpdateFilesResponseTemplate:
       type: object
+      properties:
+        template_id:
+          type: string
+          description: The id of the Template.
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+          deprecated: true
+      description: Contains template id
+      title: TemplateUpdateFilesResponseTemplate
     SubFormFieldRule:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Must be unique across all defined rules.
+        trigger_operator:
+          type: string
+          default: AND
+          description: Currently only `AND` is supported. Support for `OR` is being worked on.
+        triggers:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRuleTrigger'
+          description: An array of trigger definitions, the "if this" part of "**if this**, then that". Currently only a single trigger per rule is allowed.
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRuleAction'
+          description: An array of action definitions, the "then that" part of "if this, **then that**". Any number of actions may be attached to a single rule.
       required:
       - id
       - trigger_operator
       - triggers
       - actions
+      title: SubFormFieldRule
+    SubFormFieldRuleTrigger:
+      type: object
       properties:
         id:
-          description: _t__Sub::FormFieldRule::ID
           type: string
-        trigger_operator:
-          description: _t__Sub::FormFieldRule::TRIGGER_OPERATOR
+          description: Must reference the `api_id` of an existing field defined within `form_fields_per_document`. Trigger and action fields and groups must belong to the same signer.
+        operator:
+          $ref: '#/components/schemas/SubFormFieldRuleTriggerOperator'
+          description: "Different field types allow different `operator` values:\n- Field type of **text**:\n  - **is**: exact match\n  - **not**: not exact match\n  - **match**: regular expression, without /. Example:\n    - OK `[a-zA-Z0-9]`\n    - Not OK `/[a-zA-Z0-9]/`\n- Field type of **dropdown**:\n  - **is**: exact match, single value\n  - **not**: not exact match, single value\n  - **any**: exact match, array of values.\n  - **none**: not exact match, array of values.\n- Field type of **checkbox**:\n  - **is**: exact match, single value\n  - **not**: not exact match, single value\n- Field type of **radio**:\n  - **is**: exact match, single value\n  - **not**: not exact match, single value"
+        value:
           type: string
-          default: AND
-        triggers:
-          description: _t__Sub::FormFieldRuleTrigger::DESCRIPTION
+          description: "**value** or **values** is required, but not both.\n\nThe value to match against **operator**.\n\n- When **operator** is one of the following, **value** must be `String`:\n  - `is`\n  - `not`\n  - `match`\n\nOtherwise,\n- **checkbox**: When **type** of trigger is **checkbox**, **value** must be `0` or `1`\n- **radio**: When **type** of trigger is **radio**, **value** must be `1`"
+        values:
           type: array
           items:
-            $ref: '#/components/schemas/SubFormFieldRuleTrigger'
-          maxItems: 1
-          minItems: 1
-        actions:
-          description: _t__Sub::FormFieldRuleAction::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/SubFormFieldRuleAction'
-          minItems: 1
-      type: object
-    SubFormFieldsPerDocumentBase:
-      description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
-      required:
-      - document_index
-      - api_id
-      - type
-      - required
-      - signer
-      - width
-      - height
-      - x
-      - y
-      properties:
-        document_index:
-          description: _t__Sub::FormFieldsPerDocument::DOCUMENT_INDEX
-          type: integer
-        api_id:
-          description: _t__Sub::FormFieldsPerDocument::API_ID
-          type: string
-        height:
-          description: _t__Sub::FormFieldsPerDocument::HEIGHT
-          type: integer
-        name:
-          description: _t__Sub::FormFieldsPerDocument::NAME
-          type: string
-        page:
-          description: _t__Sub::FormFieldsPerDocument::PAGE
-          type:
-          - integer
-          - 'null'
-        required:
-          description: _t__Sub::FormFieldsPerDocument::REQUIRED
-          type: boolean
-        signer:
-          description: _t__Sub::FormFieldsPerDocument::SIGNER
-          type: string
-          x-int-or-string: true
-        type:
-          type: string
-        width:
-          description: _t__Sub::FormFieldsPerDocument::WIDTH
-          type: integer
-        x:
-          description: _t__Sub::FormFieldsPerDocument::X
-          type: integer
-        y:
-          description: _t__Sub::FormFieldsPerDocument::Y
-          type: integer
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/SubFormFieldsPerDocumentText'
-          dropdown: '#/components/schemas/SubFormFieldsPerDocumentDropdown'
-          hyperlink: '#/components/schemas/SubFormFieldsPerDocumentHyperlink'
-          checkbox: '#/components/schemas/SubFormFieldsPerDocumentCheckbox'
-          radio: '#/components/schemas/SubFormFieldsPerDocumentRadio'
-          signature: '#/components/schemas/SubFormFieldsPerDocumentSignature'
-          date_signed: '#/components/schemas/SubFormFieldsPerDocumentDateSigned'
-          initials: '#/components/schemas/SubFormFieldsPerDocumentInitials'
-          text-merge: '#/components/schemas/SubFormFieldsPerDocumentTextMerge'
-          checkbox-merge: '#/components/schemas/SubFormFieldsPerDocumentCheckboxMerge'
-      x-internal: true
-      x-base-class: true
-    TemplateCreateEmbeddedDraftResponseTemplate:
-      description: _t__TemplateCreateEmbeddedDraftResponseTemplate::DESCRIPTION
-      properties:
-        template_id:
-          description: _t__TemplateResponse::TEMPLATE_ID
-          type: string
-        edit_url:
-          description: _t__TemplateCreateEmbeddedDraftResponseTemplate::EDIT_URL
-          type: string
-        expires_at:
-          description: _t__TemplateCreateEmbeddedDraftResponseTemplate::EXPIRES_AT
-          type: integer
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-          deprecated: true
-      type: object
-      x-internal: true
-    TemplateResponseDocumentFormFieldBase:
-      description: _t__TemplateResponseDocumentFormField::DESCRIPTION
-      required:
-      - type
-      properties:
-        api_id:
-          description: _t__TemplateResponseDocumentFormField::API_ID
-          type: string
-        name:
-          description: _t__TemplateResponseDocumentFormField::NAME
-          type: string
-        type:
-          type: string
-        signer:
-          description: _t__TemplateResponseDocumentFormField::SIGNER
-          type: string
-        x:
-          description: _t__TemplateResponseDocumentFormField::X
-          type: integer
-        y:
-          description: _t__TemplateResponseDocumentFormField::Y
-          type: integer
-        width:
-          description: _t__TemplateResponseDocumentFormField::WIDTH
-          type: integer
-        height:
-          description: _t__TemplateResponseDocumentFormField::HEIGHT
-          type: integer
-        required:
-          description: _t__TemplateResponseDocumentFormField::REQUIRED
-          type: boolean
-        group:
-          description: _t__TemplateResponseDocumentFormField::GROUP
-          type:
-          - string
-          - 'null'
-      type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          text: '#/components/schemas/TemplateResponseDocumentFormFieldText'
-          dropdown: '#/components/schemas/TemplateResponseDocumentFormFieldDropdown'
-          hyperlink: '#/components/schemas/TemplateResponseDocumentFormFieldHyperlink'
-          checkbox: '#/components/schemas/TemplateResponseDocumentFormFieldCheckbox'
-          radio: '#/components/schemas/TemplateResponseDocumentFormFieldRadio'
-          signature: '#/components/schemas/TemplateResponseDocumentFormFieldSignature'
-          date_signed: '#/components/schemas/TemplateResponseDocumentFormFieldDateSigned'
-          initials: '#/components/schemas/TemplateResponseDocumentFormFieldInitials'
-      x-internal: true
-      x-base-class: true
-    TemplateResponseDocumentFieldGroup:
-      properties:
-        name:
-          description: _t__TemplateResponseDocumentFieldGroup::NAME
-          type: string
-        rule:
-          $ref: '#/components/schemas/TemplateResponseDocumentFieldGroupRule'
-      type: object
-      x-internal: true
-    TemplateListResponse:
-      properties:
-        templates:
-          description: _t__TemplateListResponse::DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/TemplateResponse'
-        list_info:
-          $ref: '#/components/schemas/ListInfoResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    TemplateGetResponse:
-      properties:
-        template:
-          $ref: '#/components/schemas/TemplateResponse'
-        warnings:
-          description: _t__WarningResponse::LIST_DESCRIPTION
-          type: array
-          items:
-            $ref: '#/components/schemas/WarningResponse'
-      type: object
-      x-internal: true
-    ErrorResponse:
-      required:
-      - error
-      properties:
-        error:
-          $ref: '#/components/schemas/ErrorResponseError'
-      type: object
-    SubFormFieldGroup:
-      required:
-      - group_id
-      - group_label
-      - requirement
-      properties:
-        group_id:
-          description: _t__Sub::FormFieldGroup::GROUP_ID_LABEL
-          type: string
-        group_label:
-          description: _t__Sub::FormFieldGroup::GROUP_LABEL
-          type: string
-        requirement:
-          description: _t__Sub::FormFieldGroup::REQUIREMENT
-          type: string
-      type: object
-    SubEditorOptions:
-      description: _t__Sub::EditorOptions::DESCRIPTION
-      properties:
-        allow_edit_signers:
-          description: _t__Sub::EditorOptions::ALLOW_EDIT_SIGNERS
-          type: boolean
-          default: false
-        allow_edit_documents:
-          description: _t__Sub::EditorOptions::ALLOW_EDIT_DOCUMENTS
-          type: boolean
-          default: false
-      type: object
-    TemplateResponseDocumentFieldGroupRule:
-      description: _t__TemplateResponseDocumentFieldGroup::RULE
-      properties:
-        requirement:
-          description: _t__TemplateResponseDocumentFieldGroupRule::REQUIREMENT
-          type: string
-        groupLabel:
-          description: _t__TemplateResponseDocumentFieldGroupRule::GROUP_LABEL
-          type: string
-      type: object
-      x-internal: true
-    TemplateUpdateFilesResponse:
-      properties:
-        template:
-          $ref: '#/components/schemas/TemplateUpdateFilesResponseTemplate'
-      type: object
-      x-internal: true
-    TemplateResponseSignerRole:
-      properties:
-        name:
-          description: _t__TemplateResponseSignerRole::NAME
-          type: string
-        order:
-          description: _t__TemplateResponseSignerRole::ORDER
-          type: integer
-      type: object
-      x-internal: true
-    SubFormFieldRuleTrigger:
+            type: string
+          description: '**values** or **value** is required, but not both.
+
+
+            The values to match against **operator** when it is one of the following:
+
+
+            - `any`
+
+            - `none`'
       required:
       - id
       - operator
-      properties:
-        id:
-          description: _t__Sub::FormFieldRuleTrigger::ID
-          type: string
-        operator:
-          description: _t__Sub::FormFieldRuleTrigger::OPERATOR
-          type: string
-          enum:
-          - any
-          - is
-          - match
-          - none
-          - not
-        value:
-          description: _t__Sub::FormFieldRuleTrigger::VALUE_SINGLE
-          type: string
-        values:
-          description: _t__Sub::FormFieldRuleTrigger::VALUE_MULTI
-          type: array
-          items:
-            type: string
-      type: object
-    TemplateUpdateFilesRequest:
-      properties:
-        client_id:
-          description: _t__TemplateUpdateFiles::CLIENT_ID
-          type: string
-        files:
-          description: _t__TemplateUpdateFiles::FILES
-          type: array
-          items:
-            type: string
-            format: binary
-        file_urls:
-          description: _t__TemplateUpdateFiles::FILE_URLS
-          type: array
-          items:
-            type: string
-        message:
-          description: _t__TemplateUpdateFiles::MESSAGE
-          type: string
-          maxLength: 5000
-        subject:
-          description: _t__TemplateUpdateFiles::SUBJECT
-          type: string
-          maxLength: 100
-        test_mode:
-          description: _t__TemplateUpdateFiles::TEST_MODE
-          type: boolean
-          default: false
-      type: object
+      title: SubFormFieldRuleTrigger
+    SubFormFieldRuleActionType:
+      type: string
+      enum:
+      - change-field-visibility
+      - change-group-visibility
+      title: SubFormFieldRuleActionType
     TemplateResponseDocument:
+      type: object
       properties:
         name:
-          description: _t__TemplateResponseDocument::NAME
           type: string
+          description: Name of the associated file.
         index:
-          description: _t__TemplateResponseDocument::INDEX
           type: integer
+          description: Document ordering, the lowest index is displayed first and the highest last (0-based indexing).
         field_groups:
-          description: _t__TemplateResponseDocument::FIELD_GROUPS
           type: array
           items:
             $ref: '#/components/schemas/TemplateResponseDocumentFieldGroup'
+          description: An array of Form Field Group objects.
         form_fields:
-          description: _t__TemplateResponseDocumentFormField::DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+          description: An array of Form Field objects containing the name and type of each named field.
         custom_fields:
-          description: _t__TemplateResponseDocumentCustomField::DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+          description: An array of Form Field objects containing the name and type of each named field.
         static_fields:
-          description: _t__TemplateResponseDocumentStaticField::DESCRIPTION
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+          description: An array describing static overlay fields. **NOTE:** Only available for certain subscriptions.
+      title: TemplateResponseDocument
+    TemplateResponse:
+      type: object
+      properties:
+        template_id:
+          type: string
+          description: The id of the Template.
+        title:
+          type: string
+          description: The title of the Template. This will also be the default subject of the message sent to signers when using this Template to send a SignatureRequest. This can be overridden when sending the SignatureRequest.
+        message:
+          type: string
+          description: The default message that will be sent to signers when using this Template to send a SignatureRequest. This can be overridden when sending the SignatureRequest.
+        updated_at:
+          type: integer
+          description: Time the template was last updated.
+        is_embedded:
+          type:
+          - boolean
+          - 'null'
+          description: '`true` if this template was created using an embedded flow, `false` if it was created on our website. Will be `null` when you are not the creator of the Template.'
+        is_creator:
+          type: boolean
+          description: '`true` if you are the owner of this template, `false` if it''s been shared with you by a team member.'
+        can_edit:
+          type: boolean
+          description: Indicates whether edit rights have been granted to you by the owner (always `true` if that's you).
+        is_locked:
+          type: boolean
+          description: 'Indicates whether the template is locked.
+
+            If `true`, then the template was created outside your quota and can only be used in `test_mode`.
+
+            If `false`, then the template is within your quota and can be used to create signature requests.'
+        metadata:
+          type: object
+          additionalProperties:
+            description: Any type
+          description: The metadata attached to the template.
+        signer_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseSignerRole'
+          description: An array of the designated signer roles that must be specified when sending a SignatureRequest using this Template.
+        cc_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseCCRole'
+          description: An array of the designated CC roles that must be specified when sending a SignatureRequest using this Template.
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocument'
+          description: An array describing each document associated with this Template. Includes form field data for each document.
+        custom_fields:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+          description: Deprecated. Use `custom_fields` inside the [documents](https://developers.hellosign.com/api/reference/operation/templateGet/#!c=200&path=template/documents&t=response) array instead.
+          deprecated: true
+        named_form_fields:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+          description: Deprecated. Use `form_fields` inside the [documents](https://developers.hellosign.com/api/reference/operation/templateGet/#!c=200&path=template/documents&t=response) array instead.
+          deprecated: true
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseAccount'
+          description: An array of the Accounts that can use this Template.
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseAttachment'
+          description: Signer attachments.
+      description: Contains information about the templates you and your team have created.
+      title: TemplateResponse
+    SignatureRequestResponseAttachment:
       type: object
-      x-internal: true
-    TemplateCreateRequest:
+      properties:
+        id:
+          type: string
+          description: The unique ID for this attachment.
+        signer:
+          type: string
+          description: The Signer this attachment is assigned to.
+        name:
+          type: string
+          description: The name of this attachment.
+        required:
+          type: boolean
+          description: A boolean value denoting if this attachment is required.
+        instructions:
+          type:
+          - string
+          - 'null'
+          description: Instructions for Signer.
+        uploaded_at:
+          type:
+          - integer
+          - 'null'
+          description: Timestamp when attachment was uploaded by Signer.
       required:
-      - signer_roles
-      - form_fields_per_document
+      - id
+      - signer
+      - name
+      - required
+      description: Signer attachments.
+      title: SignatureRequestResponseAttachment
+    SubMergeField:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the merge field. Must be unique.
+        type:
+          $ref: '#/components/schemas/SubMergeFieldType'
+          description: The type of merge field.
+      required:
+      - name
+      - type
+      title: SubMergeField
+    TemplateCreateEmbeddedDraftRequest:
+      type: object
       properties:
         files:
-          description: _t__TemplateCreate::FILES
           type: array
           items:
             type: string
             format: binary
+          description: 'Use `files[]` to indicate the uploaded file(s) to send for signature.
+
+
+            This endpoint requires either **files** or **file_urls[]**, but not both.'
         file_urls:
-          description: _t__TemplateCreate::FILE_URLS
           type: array
           items:
             type: string
+          description: 'Use `file_urls[]` to have Dropbox Sign download the file(s) to send for signature.
+
+
+            This endpoint requires either **files** or **file_urls[]**, but not both.'
+        allow_ccs:
+          type: boolean
+          default: true
+          description: This allows the requester to specify whether the user is allowed to provide email addresses to CC when creating a template.
         allow_reassign:
-          description: _t__TemplateCreate::ALLOW_REASSIGN
           type: boolean
           default: false
+          description: 'Allows signers to reassign their signature requests to other signers if set to `true`. Defaults to `false`.
+
+
+            **NOTE:** Only available for Premium plan and higher.'
         attachments:
-          description: _t__SubAttachment::LIST_DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/SubAttachment'
+          description: A list describing the attachments
         cc_roles:
-          description: _t__TemplateCreate::CC_ROLES
           type: array
           items:
             type: string
+          description: The CC roles that must be assigned when using the template to send a signature request
         client_id:
-          description: _t__TemplateCreate::CLIENT_ID
           type: string
+          description: Client id of the app you're using to create this draft. Used to apply the branding and callback url defined for the app.
+        editor_options:
+          $ref: '#/components/schemas/SubEditorOptions'
         field_options:
           $ref: '#/components/schemas/SubFieldOptions'
+        force_signer_roles:
+          type: boolean
+          default: false
+          description: Provide users the ability to review/edit the template signer roles.
+        force_subject_message:
+          type: boolean
+          default: false
+          description: Provide users the ability to review/edit the template subject and message.
         form_field_groups:
-          description: _t__Sub::FormFieldGroup::DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/SubFormFieldGroup'
+          description: Group information for fields defined in `form_fields_per_document`. String-indexed JSON array with `group_label` and `requirement` keys. `form_fields_per_document` must contain fields referencing a group defined in `form_field_groups`.
         form_field_rules:
-          description: _t__Sub::FormFieldRule::DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/SubFormFieldRule'
+          description: Conditional Logic rules for fields defined in `form_fields_per_document`.
         form_fields_per_document:
-          description: _t__Sub::FormFieldsPerDocument::DESCRIPTION
           type: array
           items:
             $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+          description: 'The fields that should appear on the document, expressed as an array of objects. (For more details you can read about it here: [Using Form Fields per Document](/docs/openapi/form-fields-per-document).)
+
+
+            **NOTE:** Fields like **text**, **dropdown**, **checkbox**, **radio**, and **hyperlink** have additional required and optional parameters. Check out the list of [additional parameters](/api/reference/constants/#form-fields-per-document) for these field types.
+
+
+            * Text Field use `SubFormFieldsPerDocumentText`
+
+            * Dropdown Field use `SubFormFieldsPerDocumentDropdown`
+
+            * Hyperlink Field use `SubFormFieldsPerDocumentHyperlink`
+
+            * Checkbox Field use `SubFormFieldsPerDocumentCheckbox`
+
+            * Radio Field use `SubFormFieldsPerDocumentRadio`
+
+            * Signature Field use `SubFormFieldsPerDocumentSignature`
+
+            * Date Signed Field use `SubFormFieldsPerDocumentDateSigned`
+
+            * Initials Field use `SubFormFieldsPerDocumentInitials`
+
+            * Text Merge Field use `SubFormFieldsPerDocumentTextMerge`
+
+            * Checkbox Merge Field use `SubFormFieldsPerDocumentCheckboxMerge`'
         merge_fields:
-          description: _t__TemplateCreate::MERGE_FIELDS
           type: array
           items:
             $ref: '#/components/schemas/SubMergeField'
+          description: 'Add merge fields to the template. Merge fields are placed by the user creating the template and used to pre-fill data by passing values into signature requests with the `custom_fields` parameter.
+
+            If the signature request using that template *does not* pass a value into a merge field, then an empty field remains in the document.'
         message:
-          description: _t__TemplateCreate::MESSAGE
           type: string
           maxLength: 5000
+          description: The default template email message.
         metadata:
-          description: _t__Sub::Metadata::DESCRIPTION
           type: object
-          maxItems: 10
-          additionalProperties: {}
+          additionalProperties:
+            description: Any type
+          description: 'Key-value data that should be attached to the signature request. This metadata is included in all API responses and events involving the signature request. For example, use the metadata field to store a signer''s order number for look up when receiving events for the signature request.
+
+
+            Each request can include up to 10 metadata keys (or 50 nested metadata keys), with key names up to 40 characters long and values up to 1000 characters long.'
+        show_preview:
+          type: boolean
+          default: false
+          description: 'This allows the requester to enable the editor/preview experience.
+
+
+            - `show_preview=true`: Allows requesters to enable the editor/preview experience.
+
+            - `show_preview=false`: Allows requesters to disable the editor/preview experience.'
+        show_progress_stepper:
+          type: boolean
+          default: true
+          description: When only one step remains in the signature request process and this parameter is set to `false` then the progress stepper will be hidden.
         signer_roles:
-          description: _t__TemplateCreate::SIGNER_ROLES
           type: array
           items:
             $ref: '#/components/schemas/SubTemplateRole'
+          description: An array of the designated signer roles that must be specified when sending a SignatureRequest using this Template.
+        skip_me_now:
+          type: boolean
+          default: false
+          description: Disables the "Me (Now)" option for the person preparing the document. Does not work with type `send_document`. Defaults to `false`.
         subject:
-          description: _t__TemplateCreate::SUBJECT
           type: string
           maxLength: 200
+          description: The template title (alias).
         test_mode:
-          description: _t__TemplateCreate::TEST_MODE
           type: boolean
           default: false
+          description: Whether this is a test, the signature request created from this draft will not be legally binding if set to `true`. Defaults to `false`.
         title:
-          description: _t__TemplateCreate::TITLE
           type: string
+          description: The title you want to assign to the SignatureRequest.
         use_preexisting_fields:
-          description: _t__TemplateCreate::USE_PREEXISTING_FIELDS
           type: boolean
           default: false
+          description: Enable the detection of predefined PDF fields by setting the `use_preexisting_fields` to `true` (defaults to disabled, or `false`).
+        ignore_text_tags_extraction_errors:
+          type: boolean
+          default: false
+          description: Sent with a value of `true` to ignore the validation errors from text tags extraction. Defaults to `false`.
+      required:
+      - client_id
+      title: TemplateCreateEmbeddedDraftRequest
+    TemplateResponseFieldAvgTextLength:
       type: object
-  examples:
-    TemplateCreateRequestFormFieldsPerDocumentExample:
-      summary: Form Fields Per Document Example
-      value:
-        $ref: examples/json/TemplateCreateRequestFormFieldsPerDocumentExample.json
-    TemplateCreateRequestFormFieldRulesExample:
-      summary: Form Fields Per Document and Rules Example
-      value:
-        $ref: examples/json/TemplateCreateRequestFormFieldRulesExample.json
-    TemplateRemoveUserRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateRemoveUserRequestDefaultExample.json
-    TemplateFilesResponseExample:
-      summary: _t__TemplateFilesResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateFilesResponseExample.json
-    TemplateCreateEmbeddedDraftRequestFormFieldsPerDocumentExample:
-      summary: Form Fields Per Document Example
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldsPerDocumentExample.json
-    Error4XXResponseExample:
-      summary: _t__Error::4XX
-      value:
-        $ref: examples/json/Error4XXResponseExample.json
-    Error404ResponseExample:
-      summary: _t__Error::404
-      value:
-        $ref: examples/json/Error404ResponseExample.json
-    Error402ResponseExample:
-      summary: _t__Error::402
-      value:
-        $ref: examples/json/Error402ResponseExample.json
-    Error400ResponseExample:
-      summary: _t__Error::400
-      value:
-        $ref: examples/json/Error400ResponseExample.json
-    TemplateCreateRequestFormFieldGroupsExample:
-      summary: Form Fields Per Document and Groups Example
-      value:
-        $ref: examples/json/TemplateCreateRequestFormFieldGroupsExample.json
-    TemplateUpdateFilesResponseExample:
-      summary: _t__TemplateUpdateFilesResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateUpdateFilesResponseExample.json
-    Error409ResponseExample:
-      summary: _t__Error::409
-      value:
-        $ref: examples/json/Error409ResponseExample.json
-    TemplateListResponseExample:
-      summary: _t__TemplateListResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateListResponseExample.json
-    Error403ResponseExample:
-      summary: _t__Error::403
-      value:
-        $ref: examples/json/Error403ResponseExample.json
-    TemplateCreateRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateCreateRequestDefaultExample.json
-    TemplateRemoveUserResponseExample:
-      summary: _t__TemplateRemoveUserResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateRemoveUserResponseExample.json
-    TemplateUpdateFilesRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateUpdateFilesRequestDefaultExample.json
-    TemplateAddUserRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateAddUserRequestDefaultExample.json
-    Error422ResponseExample:
-      summary: _t__Error::422
-      value:
-        $ref: examples/json/Error422ResponseExample.json
-    Error401ResponseExample:
-      summary: _t__Error::401
-      value:
-        $ref: examples/json/Error401ResponseExample.json
-    TemplateCreateEmbeddedDraftRequestFormFieldRulesExample:
-      summary: Form Fields Per Document and Rules Example
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldRulesExample.json
-    TemplateCreateResponseExample:
-      summary: _t__TemplateCreateResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateCreateResponseExample.json
-    Error429ResponseExample:
-      summary: _t__Error::429
-      value:
-        $ref: examples/json/Error429ResponseExample.json
-    TemplateCreateEmbeddedDraftResponseExample:
-      summary: _t__TemplateCreateEmbeddedDraftResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftResponseExample.json
-    TemplateGetResponseExample:
-      summary: _t__TemplateGetResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateGetResponseExample.json
-    TemplateAddUserResponseExample:
-      summary: _t__TemplateAddUserResponseExample::SUMMARY
-      value:
-        $ref: examples/json/TemplateAddUserResponseExample.json
-    TemplateCreateEmbeddedDraftRequestDefaultExample:
-      summary: Default Example
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestDefaultExample.json
-    TemplateCreateEmbeddedDraftRequestFormFieldGroupsExample:
-      summary: Form Fields Per Document and Groups Example
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldGroupsExample.json
-  headers:
-    X-RateLimit-Limit:
-      description: _t__Common::RateLimiting::LIMIT
-      schema:
-        type: integer
-        format: int32
-        example: 100
-    X-RateLimit-Remaining:
-      description: _t__Common::RateLimiting::REMAINING
-      schema:
-        type: integer
-        format: int32
-        example: 99
-    X-Ratelimit-Reset:
-      description: _t__Common::RateLimiting::RESET
-      schema:
-        type: integer
-        format: int64
-        example: 1430170900
+      properties:
+        num_lines:
+          type: integer
+          description: Number of lines.
+        num_chars_per_line:
+          type: integer
+          description: Number of characters per line.
+      description: Average text length in this field.
+      title: TemplateResponseFieldAvgTextLength
+    TemplateListResponse:
+      type: object
+      properties:
+        templates:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponse'
+          description: List of templates that the API caller has access to.
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - templates
+      - list_info
+      title: TemplateListResponse
+    SubMergeFieldType:
+      type: string
+      enum:
+      - text
+      - checkbox
+      description: The type of merge field.
+      title: SubMergeFieldType
+    TemplateResponseDocumentFieldGroup:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the form field group.
+        rule:
+          $ref: '#/components/schemas/TemplateResponseDocumentFieldGroupRule'
+      title: TemplateResponseDocumentFieldGroup
+    SubTemplateRole:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The role name of the signer that will be displayed when the template is used to create a signature request.
+        order:
+          type:
+          - integer
+          - 'null'
+          description: The order in which this signer role is required to sign.
+      title: SubTemplateRole
+    TemplateFilesTemplateIdGetParametersFileType:
+      type: string
+      enum:
+      - pdf
+      - zip
+      title: TemplateFilesTemplateIdGetParametersFileType
+    TemplateResponseCCRole:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the Role.
+      title: TemplateResponseCCRole
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      required:
+      - error
+      title: ErrorResponse
+    TemplateResponseDocumentFormFieldTextValidationType:
+      type: string
+      enum:
+      - numbers_only
+      - letters_only
+      - phone_number
+      - bank_routing_number
+      - bank_account_number
+      - email_address
+      - zip_code
+      - social_security_number
+      - employer_identification_number
+      - custom_regex
+      description: Each text field may contain a `validation_type` parameter. Check out the list of [validation types](https://faq.hellosign.com/hc/en-us/articles/217115577) to learn more about the possible values.
+      title: TemplateResponseDocumentFormFieldTextValidationType
+    TemplateResponseAccountQuota:
+      type: object
+      properties:
+        templates_left:
+          type: integer
+          description: API templates remaining.
+        api_signature_requests_left:
+          type: integer
+          description: API signature requests remaining.
+        documents_left:
+          type: integer
+          description: Signature requests remaining.
+        sms_verifications_left:
+          type: integer
+          description: SMS verifications remaining.
+      description: An array of the designated CC roles that must be specified when sending a SignatureRequest using this Template.
+      title: TemplateResponseAccountQuota
+    TemplateUpdateFilesRequest:
+      type: object
+      properties:
+        client_id:
+          type: string
+          description: Client id of the app you're using to update this template.
+        files:
+          type: array
+          items:
+            type: string
+            format: binary
+          description: 'Use `files[]` to indicate the uploaded file(s) to use for the template.
+
+
+            This endpoint requires either **files** or **file_urls[]**, but not both.'
+        file_urls:
+          type: array
+          items:
+            type: string
+          description: 'Use `file_urls[]` to have Dropbox Sign download the file(s) to use for the template.
+
+
+            This endpoint requires either **files** or **file_urls[]**, but not both.'
+        message:
+          type: string
+          maxLength: 5000
+          description: The new default template email message.
+        subject:
+          type: string
+          maxLength: 100
+          description: The new default template email subject.
+        test_mode:
+          type: boolean
+          default: false
+          description: Whether this is a test, the signature request created from this draft will not be legally binding if set to `true`. Defaults to `false`.
+      title: TemplateUpdateFilesRequest
+    TemplateResponseSignerRole:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the Role.
+        order:
+          type: integer
+          description: If signer order is assigned this is the 0-based index for this role.
+      title: TemplateResponseSignerRole
+    SubAttachment:
+      type: object
+      properties:
+        instructions:
+          type: string
+          description: The instructions for uploading the attachment.
+        name:
+          type: string
+          description: The name of attachment.
+        required:
+          type: boolean
+          default: false
+          description: Determines if the attachment must be uploaded.
+        signer_index:
+          type: integer
+          description: 'The signer''s index in the `signers` parameter (0-based indexing).
+
+
+            **NOTE:** Only one signer can be assigned per attachment.'
+      required:
+      - name
+      - signer_index
+      title: SubAttachment
+    TemplateAddUserRequest:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: 'The id of the Account to give access to the Template.
+
+            **NOTE:** The account id prevails if email address is also provided.'
+        email_address:
+          type: string
+          format: email
+          description: 'The email address of the Account to give access to the Template.
+
+            **NOTE:** The account id prevails if it is also provided.'
+        skip_notification:
+          type: boolean
+          default: false
+          description: If set to `true`, the user does not receive an email notification when a template has been shared with them. Defaults to `false`.
+      title: TemplateAddUserRequest
+    TemplateUpdateFilesResponse:
+      type: object
+      properties:
+        template:
+          $ref: '#/components/schemas/TemplateUpdateFilesResponseTemplate'
+      required:
+      - template
+      title: TemplateUpdateFilesResponse
+    TemplateCreateEmbeddedDraftResponseTemplate:
+      type: object
+      properties:
+        template_id:
+          type: string
+          description: The id of the Template.
+        edit_url:
+          type: string
+          description: Link to edit the template.
+        expires_at:
+          type: integer
+          description: When the link expires.
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+          deprecated: true
+      description: 'Template object with parameters: `template_id`, `edit_url`, `expires_at`.'
+      title: TemplateCreateEmbeddedDraftResponseTemplate
+    SubFormFieldsPerDocumentBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+          document_index:
+            type: integer
+            description: Represents the integer index of the `file` or `file_url` document the field should be attached to.
+          api_id:
+            type: string
+            description: An identifier for the field that is unique across all documents in the request.
+          height:
+            type: integer
+            description: Size of the field in pixels.
+          name:
+            type: string
+            description: Display name for the field.
+          page:
+            type:
+            - integer
+            - 'null'
+            description: 'Page in the document where the field should be placed (requires documents be PDF files).
+
+
+              - When the page number parameter is supplied, the API will use the new coordinate system.
+
+              - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.'
+          required:
+            type: boolean
+            description: Whether this field is required.
+          signer:
+            type: string
+            description: 'Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
+
+
+              **NOTE:** To set the value of the field as the preparer you must set this to `me_now`
+
+
+              **NOTE:** If type is `text-merge` or `checkbox-merge`, you must set this to sender in order to use pre-filled data.'
+          width:
+            type: integer
+            description: Size of the field in pixels.
+          x:
+            type: integer
+            description: Location coordinates of the field in pixels.
+          y:
+            type: integer
+            description: Location coordinates of the field in pixels.
+        required:
+        - type
+        - document_index
+        - api_id
+        - height
+        - required
+        - signer
+        - width
+        - x
+        - y
+        description: This class extends `SubFormFieldsPerDocumentBase`.
+      discriminator:
+        propertyName: type
+      description: 'The fields that should appear on the document, expressed as an array of objects. (For more details you can read about it here: [Using Form Fields per Document](/docs/openapi/form-fields-per-document).)
+
+
+        **NOTE:** Fields like **text**, **dropdown**, **checkbox**, **radio**, and **hyperlink** have additional required and optional parameters. Check out the list of [additional parameters](/api/reference/constants/#form-fields-per-document) for these field types.
+
+
+        * Text Field use `SubFormFieldsPerDocumentText`
+
+        * Dropdown Field use `SubFormFieldsPerDocumentDropdown`
+
+        * Hyperlink Field use `SubFormFieldsPerDocumentHyperlink`
+
+        * Checkbox Field use `SubFormFieldsPerDocumentCheckbox`
+
+        * Radio Field use `SubFormFieldsPerDocumentRadio`
+
+        * Signature Field use `SubFormFieldsPerDocumentSignature`
+
+        * Date Signed Field use `SubFormFieldsPerDocumentDateSigned`
+
+        * Initials Field use `SubFormFieldsPerDocumentInitials`
+
+        * Text Merge Field use `SubFormFieldsPerDocumentTextMerge`
+
+        * Checkbox Merge Field use `SubFormFieldsPerDocumentCheckboxMerge`'
+      title: SubFormFieldsPerDocumentBase
+    WarningResponse:
+      type: object
+      properties:
+        warning_msg:
+          type: string
+          description: Warning message
+        warning_name:
+          type: string
+          description: Warning name
+      required:
+      - warning_msg
+      - warning_name
+      description: A list of warnings.
+      title: WarningResponse
+    template_delete_Response_200:
+      type: object
+      properties: {}
+      description: Empty response body
+      title: template_delete_Response_200
+    TemplateCreateEmbeddedDraftResponse:
+      type: object
+      properties:
+        template:
+          $ref: '#/components/schemas/TemplateCreateEmbeddedDraftResponseTemplate'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - template
+      title: TemplateCreateEmbeddedDraftResponse
+    SubFormFieldGroup:
+      type: object
+      properties:
+        group_id:
+          type: string
+          description: ID of group. Use this to reference a specific group from the `group` value in `form_fields_per_document`.
+        group_label:
+          type: string
+          description: Name of the group
+        requirement:
+          type: string
+          description: 'Examples: `require_0-1` `require_1` `require_1-ormore`
+
+
+            - Check out the list of [acceptable `requirement` checkbox type values](/api/reference/constants/#checkbox-field-grouping).
+
+            - Check out the list of [acceptable `requirement` radio type fields](/api/reference/constants/#radio-field-grouping).
+
+            - Radio groups require **at least** two fields per group.'
+      required:
+      - group_id
+      - group_label
+      - requirement
+      title: SubFormFieldGroup
+    TemplateResponseDocumentFormFieldBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          avg_text_length:
+            $ref: '#/components/schemas/TemplateResponseFieldAvgTextLength'
+          isMultiline:
+            type: boolean
+            description: Whether this form field is multiline text.
+          originalFontSize:
+            type: integer
+            description: Original font size used in this form field's text.
+          fontFamily:
+            type: string
+            description: Font family used in this form field's text.
+          validation_type:
+            oneOf:
+            - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldTextValidationType'
+            - type: 'null'
+            description: Each text field may contain a `validation_type` parameter. Check out the list of [validation types](https://faq.hellosign.com/hc/en-us/articles/217115577) to learn more about the possible values.
+          validation_custom_regex:
+            type:
+            - string
+            - 'null'
+            description: When `validation_type` is set to `custom_regex`, this specifies the custom regular expression pattern that will be used to validate the text field.
+          validation_custom_regex_format_label:
+            type:
+            - string
+            - 'null'
+            description: When `validation_type` is set to `custom_regex`, this specifies the error message displayed to the signer when the text does not match the provided regex pattern.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+          options:
+            type: array
+            items:
+              type: string
+            description: The options available for this dropdown form field.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          avg_text_length:
+            $ref: '#/components/schemas/TemplateResponseFieldAvgTextLength'
+          isMultiline:
+            type: boolean
+            description: Whether this form field is multiline text.
+          originalFontSize:
+            type: integer
+            description: Original font size used in this form field's text.
+          fontFamily:
+            type: string
+            description: Font family used in this form field's text.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type: string
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        - group
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      discriminator:
+        propertyName: type
+      description: An array of Form Field objects containing the name and type of each named field.
+      title: TemplateResponseDocumentFormFieldBase
+    SubFormFieldRuleTriggerOperator:
+      type: string
+      enum:
+      - any
+      - is
+      - match
+      - none
+      - not
+      description: "Different field types allow different `operator` values:\n- Field type of **text**:\n  - **is**: exact match\n  - **not**: not exact match\n  - **match**: regular expression, without /. Example:\n    - OK `[a-zA-Z0-9]`\n    - Not OK `/[a-zA-Z0-9]/`\n- Field type of **dropdown**:\n  - **is**: exact match, single value\n  - **not**: not exact match, single value\n  - **any**: exact match, array of values.\n  - **none**: not exact match, array of values.\n- Field type of **checkbox**:\n  - **is**: exact match, single value\n  - **not**: not exact match, single value\n- Field type of **radio**:\n  - **is**: exact match, single value\n  - **not**: not exact match, single value"
+      title: SubFormFieldRuleTriggerOperator
+    TemplateCreateRequest:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+            format: binary
+          description: 'Use `files[]` to indicate the uploaded file(s) to send for signature.
+
+
+            This endpoint requires either **files** or **file_urls[]**, but not both.'
+        file_urls:
+          type: array
+          items:
+            type: string
+          description: 'Use `file_urls[]` to have Dropbox Sign download the file(s) to send for signature.
+
+
+            This endpoint requires either **files** or **file_urls[]**, but not both.'
+        allow_reassign:
+          type: boolean
+          default: false
+          description: 'Allows signers to reassign their signature requests to other signers if set to `true`. Defaults to `false`.
+
+
+            **NOTE:** Only available for Premium plan and higher.'
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubAttachment'
+          description: A list describing the attachments
+        cc_roles:
+          type: array
+          items:
+            type: string
+          description: The CC roles that must be assigned when using the template to send a signature request
+        client_id:
+          type: string
+          description: Client id of the app you're using to create this draft. Used to apply the branding and callback url defined for the app.
+        field_options:
+          $ref: '#/components/schemas/SubFieldOptions'
+        form_field_groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldGroup'
+          description: Group information for fields defined in `form_fields_per_document`. String-indexed JSON array with `group_label` and `requirement` keys. `form_fields_per_document` must contain fields referencing a group defined in `form_field_groups`.
+        form_field_rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldRule'
+          description: Conditional Logic rules for fields defined in `form_fields_per_document`.
+        form_fields_per_document:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubFormFieldsPerDocumentBase'
+          description: 'The fields that should appear on the document, expressed as an array of objects. (For more details you can read about it here: [Using Form Fields per Document](/docs/openapi/form-fields-per-document).)
+
+
+            **NOTE:** Fields like **text**, **dropdown**, **checkbox**, **radio**, and **hyperlink** have additional required and optional parameters. Check out the list of [additional parameters](/api/reference/constants/#form-fields-per-document) for these field types.
+
+
+            * Text Field use `SubFormFieldsPerDocumentText`
+
+            * Dropdown Field use `SubFormFieldsPerDocumentDropdown`
+
+            * Hyperlink Field use `SubFormFieldsPerDocumentHyperlink`
+
+            * Checkbox Field use `SubFormFieldsPerDocumentCheckbox`
+
+            * Radio Field use `SubFormFieldsPerDocumentRadio`
+
+            * Signature Field use `SubFormFieldsPerDocumentSignature`
+
+            * Date Signed Field use `SubFormFieldsPerDocumentDateSigned`
+
+            * Initials Field use `SubFormFieldsPerDocumentInitials`
+
+            * Text Merge Field use `SubFormFieldsPerDocumentTextMerge`
+
+            * Checkbox Merge Field use `SubFormFieldsPerDocumentCheckboxMerge`'
+        merge_fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubMergeField'
+          description: 'Add merge fields to the template. Merge fields are placed by the user creating the template and used to pre-fill data by passing values into signature requests with the `custom_fields` parameter.
+
+            If the signature request using that template *does not* pass a value into a merge field, then an empty field remains in the document.'
+        message:
+          type: string
+          maxLength: 5000
+          description: The default template email message.
+        metadata:
+          type: object
+          additionalProperties:
+            description: Any type
+          description: 'Key-value data that should be attached to the signature request. This metadata is included in all API responses and events involving the signature request. For example, use the metadata field to store a signer''s order number for look up when receiving events for the signature request.
+
+
+            Each request can include up to 10 metadata keys (or 50 nested metadata keys), with key names up to 40 characters long and values up to 1000 characters long.'
+        signer_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubTemplateRole'
+          description: An array of the designated signer roles that must be specified when sending a SignatureRequest using this Template.
+        subject:
+          type: string
+          maxLength: 200
+          description: The template title (alias).
+        test_mode:
+          type: boolean
+          default: false
+          description: Whether this is a test, the signature request created from this draft will not be legally binding if set to `true`. Defaults to `false`.
+        title:
+          type: string
+          description: The title you want to assign to the SignatureRequest.
+        use_preexisting_fields:
+          type: boolean
+          default: false
+          description: Enable the detection of predefined PDF fields by setting the `use_preexisting_fields` to `true` (defaults to disabled, or `false`).
+        ignore_text_tags_extraction_errors:
+          type: boolean
+          default: false
+          description: Sent with a value of `true` to ignore the validation errors from text tags extraction. Defaults to `false`.
+      required:
+      - form_fields_per_document
+      - signer_roles
+      title: TemplateCreateRequest
+    ListInfoResponse:
+      type: object
+      properties:
+        num_pages:
+          type: integer
+          description: Total number of pages available.
+        num_results:
+          type:
+          - integer
+          - 'null'
+          description: Total number of objects available.
+        page:
+          type: integer
+          description: Number of the page being returned.
+        page_size:
+          type: integer
+          description: Objects returned per page.
+      description: Contains pagination information about the data returned.
+      title: ListInfoResponse
+    TemplateResponseDocumentFieldGroupRule:
+      type: object
+      properties:
+        requirement:
+          type: string
+          description: 'Examples: `require_0-1` `require_1` `require_1-ormore`
+
+
+            - Check out the list of [acceptable `requirement` checkbox type values](/api/reference/constants/#checkbox-field-grouping).
+
+            - Check out the list of [acceptable `requirement` radio type fields](/api/reference/constants/#radio-field-grouping).
+
+            - Radio groups require **at least** two fields per group.'
+        groupLabel:
+          type: string
+          description: Name of the group
+      description: The rule used to validate checkboxes in the form field group. See [checkbox field grouping](/api/reference/constants/#checkbox-field-grouping).
+      title: TemplateResponseDocumentFieldGroupRule
   securitySchemes:
-    api_key:
+    Basic:
       type: http
-      description: _t__OpenApi::AUTH::API_KEY
       scheme: basic
-    oauth2:
+      description: "Use your API key with HTTP Basic authentication in the form `Basic <api_key>`. See [Authentication](/api/reference/authentication) for more information.\n✅ Supported by Try it console (calls sent in `test_mode` only).            \n"
+    Bearer:
       type: http
-      description: _t__OpenApi::AUTH::OAUTH
-      bearerFormat: JWT
       scheme: bearer
-externalDocs:
-  description: Legacy API Reference
-  url: https://app.hellosign.com/api/reference
+      description: "You can use an Access Token issued through an OAuth flow to send calls to the Dropbox Sign API from your app. The access scopes required by this endpoint are listed in the gray box above. See [Authentication](/api/reference/authentication) for more information.\n  ❌ **Not supported** by Try it console.\n"

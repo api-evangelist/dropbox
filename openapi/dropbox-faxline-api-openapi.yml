@@ -1,0 +1,619 @@
+openapi: 3.2.0
+info:
+  title: Reference Fax Line API
+  version: 1.0.0
+servers:
+- url: https://api.hellosign.com/v3
+  description: https://api.hellosign.com/v3
+tags:
+- name: faxLine
+paths:
+  /fax_line:
+    get:
+      operationId: faxLine_get
+      summary: Get Fax Line
+      description: Returns the properties and settings of a Fax Line.
+      tags:
+      - faxLine
+      parameters:
+      - name: number
+        in: query
+        description: The Fax Line number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxLineResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+    delete:
+      operationId: faxLine_delete
+      summary: Delete Fax Line
+      description: Deletes the specified Fax Line from the subscription.
+      tags:
+      - faxLine
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/faxLine_delete_Response_200'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaxLineDeleteRequest'
+      security:
+      - Basic: []
+  /fax_line/list:
+    get:
+      operationId: faxLine_list
+      summary: List Fax Lines
+      description: Returns the properties and settings of multiple Fax Lines.
+      tags:
+      - faxLine
+      parameters:
+      - name: account_id
+        in: query
+        description: Account ID
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Which page number of the Fax Line List to return. Defaults to `1`.
+        required: false
+        schema:
+          type: integer
+          default: 1
+      - name: page_size
+        in: query
+        description: Number of objects to be returned per page. Must be between `1` and `100`. Default is `20`.
+        required: false
+        schema:
+          type: integer
+          default: 20
+      - name: show_team_lines
+        in: query
+        description: Include Fax Lines belonging to team members in the list
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxLineListResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /fax_line/create:
+    post:
+      operationId: faxLine_create
+      summary: Purchase Fax Line
+      description: Purchases a new Fax Line
+      tags:
+      - faxLine
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxLineResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaxLineCreateRequest'
+      security:
+      - Basic: []
+  /fax_line/add_user:
+    put:
+      operationId: faxLine_addUser
+      summary: Add Fax Line User
+      description: Grants a user access to the specified Fax Line.
+      tags:
+      - faxLine
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxLineResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaxLineAddUserRequest'
+      security:
+      - Basic: []
+  /fax_line/remove_user:
+    put:
+      operationId: faxLine_removeUser
+      summary: Remove Fax Line Access
+      description: Removes a user's access to the specified Fax Line
+      tags:
+      - faxLine
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxLineResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaxLineRemoveUserRequest'
+      security:
+      - Basic: []
+  /fax_line/area_codes:
+    get:
+      operationId: faxLine_areaCodeGet
+      summary: Get Available Fax Line Area Codes
+      description: Returns a list of available area codes for a given state/province and city
+      tags:
+      - faxLine
+      parameters:
+      - name: country
+        in: query
+        description: Filter area codes by country
+        required: true
+        schema:
+          $ref: '#/components/schemas/FaxLineAreaCodesGetParametersCountry'
+      - name: state
+        in: query
+        description: Filter area codes by state
+        required: false
+        schema:
+          $ref: '#/components/schemas/FaxLineAreaCodesGetParametersState'
+      - name: province
+        in: query
+        description: Filter area codes by province
+        required: false
+        schema:
+          $ref: '#/components/schemas/FaxLineAreaCodesGetParametersProvince'
+      - name: city
+        in: query
+        description: Filter area codes by city
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxLineAreaCodeGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+components:
+  schemas:
+    FaxLineAddUserRequest:
+      type: object
+      properties:
+        number:
+          type: string
+          description: The Fax Line number
+        account_id:
+          type: string
+          description: Account ID
+        email_address:
+          type: string
+          format: email
+          description: Email address
+      required:
+      - number
+      title: FaxLineAddUserRequest
+    ErrorResponseError:
+      type: object
+      properties:
+        error_msg:
+          type: string
+          description: Message describing an error.
+        error_path:
+          type: string
+          description: Path at which an error occurred.
+        error_name:
+          type: string
+          description: Name of the error. See the `x-error-codes` catalog in openapi file for a complete list of possible error codes with detailed information including HTTP status codes, causes, remediation steps, and retry guidance.
+      required:
+      - error_msg
+      - error_name
+      description: Contains information about an error that occurred.
+      title: ErrorResponseError
+    FaxLineRemoveUserRequest:
+      type: object
+      properties:
+        number:
+          type: string
+          description: The Fax Line number
+        account_id:
+          type: string
+          description: Account ID of the user to remove access
+        email_address:
+          type: string
+          format: email
+          description: Email address of the user to remove access
+      required:
+      - number
+      title: FaxLineRemoveUserRequest
+    FaxLineAreaCodeGetResponse:
+      type: object
+      properties:
+        area_codes:
+          type: array
+          items:
+            type: integer
+      required:
+      - area_codes
+      title: FaxLineAreaCodeGetResponse
+    FaxLineAreaCodesGetParametersProvince:
+      type: string
+      enum:
+      - AB
+      - BC
+      - MB
+      - NB
+      - NL
+      - NT
+      - NS
+      - NU
+      - 'ON'
+      - PE
+      - QC
+      - SK
+      - YT
+      title: FaxLineAreaCodesGetParametersProvince
+    FaxLineResponse:
+      type: object
+      properties:
+        fax_line:
+          $ref: '#/components/schemas/FaxLineResponseFaxLine'
+        warnings:
+          $ref: '#/components/schemas/WarningResponse'
+      required:
+      - fax_line
+      title: FaxLineResponse
+    FaxLineResponseFaxLine:
+      type: object
+      properties:
+        number:
+          type: string
+          description: Number
+        created_at:
+          type: integer
+          description: Created at
+        updated_at:
+          type: integer
+          description: Updated at
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountResponse'
+      title: FaxLineResponseFaxLine
+    AccountResponseSettings:
+      type: object
+      properties:
+        signer_access_codes:
+          type: boolean
+          description: Returns `true` if _Custom access codes_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+        sms_delivery:
+          type: boolean
+          description: Returns `true` if _Text message_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+        sms_authentication:
+          type: boolean
+          description: Returns `true` if _Signer authentication_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+      description: Subset of configured settings
+      title: AccountResponseSettings
+    AccountResponse:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: The ID of the Account
+        email_address:
+          type: string
+          description: The email address associated with the Account.
+        is_locked:
+          type: boolean
+          description: Returns `true` if the user has been locked out of their account by a team admin.
+        is_paid_hs:
+          type: boolean
+          description: Returns `true` if the user has a paid Dropbox Sign account.
+        is_paid_hf:
+          type: boolean
+          description: Returns `true` if the user has a paid HelloFax account.
+        quotas:
+          $ref: '#/components/schemas/AccountResponseQuotas'
+        callback_url:
+          type:
+          - string
+          - 'null'
+          description: The URL that Dropbox Sign events will `POST` to.
+        role_code:
+          type:
+          - string
+          - 'null'
+          description: The membership role for the team.
+        team_id:
+          type:
+          - string
+          - 'null'
+          description: The id of the team account belongs to.
+        locale:
+          type:
+          - string
+          - 'null'
+          description: The locale used in this Account. Check out the list of [supported locales](/api/reference/constants/#supported-locales) to learn more about the possible values.
+        usage:
+          $ref: '#/components/schemas/AccountResponseUsage'
+        settings:
+          $ref: '#/components/schemas/AccountResponseSettings'
+      title: AccountResponse
+    faxLine_delete_Response_200:
+      type: object
+      properties: {}
+      description: Empty response body
+      title: faxLine_delete_Response_200
+    AccountResponseUsage:
+      type: object
+      properties:
+        fax_pages_sent:
+          type:
+          - integer
+          - 'null'
+          description: Number of fax pages sent
+      description: Details concerning monthly usage
+      title: AccountResponseUsage
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      required:
+      - error
+      title: ErrorResponse
+    FaxLineAreaCodesGetParametersState:
+      type: string
+      enum:
+      - AK
+      - AL
+      - AR
+      - AZ
+      - CA
+      - CO
+      - CT
+      - DC
+      - DE
+      - FL
+      - GA
+      - HI
+      - IA
+      - ID
+      - IL
+      - IN
+      - KS
+      - KY
+      - LA
+      - MA
+      - MD
+      - ME
+      - MI
+      - MN
+      - MO
+      - MS
+      - MT
+      - NC
+      - ND
+      - NE
+      - NH
+      - NJ
+      - NM
+      - NV
+      - NY
+      - OH
+      - OK
+      - OR
+      - PA
+      - RI
+      - SC
+      - SD
+      - TN
+      - TX
+      - UT
+      - VA
+      - VT
+      - WA
+      - WI
+      - WV
+      - WY
+      title: FaxLineAreaCodesGetParametersState
+    FaxLineListResponse:
+      type: object
+      properties:
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        fax_lines:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaxLineResponseFaxLine'
+        warnings:
+          $ref: '#/components/schemas/WarningResponse'
+      required:
+      - list_info
+      - fax_lines
+      title: FaxLineListResponse
+    FaxLineCreateRequestCountry:
+      type: string
+      enum:
+      - CA
+      - US
+      - UK
+      description: Country of the area code
+      title: FaxLineCreateRequestCountry
+    WarningResponse:
+      type: object
+      properties:
+        warning_msg:
+          type: string
+          description: Warning message
+        warning_name:
+          type: string
+          description: Warning name
+      required:
+      - warning_msg
+      - warning_name
+      description: A list of warnings.
+      title: WarningResponse
+    FaxLineAreaCodesGetParametersCountry:
+      type: string
+      enum:
+      - CA
+      - US
+      - UK
+      title: FaxLineAreaCodesGetParametersCountry
+    FaxLineDeleteRequest:
+      type: object
+      properties:
+        number:
+          type: string
+          description: The Fax Line number
+      required:
+      - number
+      title: FaxLineDeleteRequest
+    AccountResponseQuotas:
+      type: object
+      properties:
+        api_signature_requests_left:
+          type:
+          - integer
+          - 'null'
+          description: API signature requests remaining.
+        documents_left:
+          type:
+          - integer
+          - 'null'
+          description: Signature requests remaining.
+        templates_total:
+          type:
+          - integer
+          - 'null'
+          description: Total API templates allowed.
+        templates_left:
+          type:
+          - integer
+          - 'null'
+          description: API templates remaining.
+        sms_verifications_left:
+          type:
+          - integer
+          - 'null'
+          description: SMS verifications remaining.
+        num_fax_pages_left:
+          type:
+          - integer
+          - 'null'
+          description: Number of fax pages left
+      description: Details concerning remaining monthly quotas.
+      title: AccountResponseQuotas
+    FaxLineCreateRequest:
+      type: object
+      properties:
+        area_code:
+          type: integer
+          description: Area code of the new Fax Line
+        country:
+          $ref: '#/components/schemas/FaxLineCreateRequestCountry'
+          description: Country of the area code
+        city:
+          type: string
+          description: City of the area code
+        account_id:
+          type: string
+          description: Account ID of the account that will be assigned this new Fax Line
+      required:
+      - area_code
+      - country
+      title: FaxLineCreateRequest
+    ListInfoResponse:
+      type: object
+      properties:
+        num_pages:
+          type: integer
+          description: Total number of pages available.
+        num_results:
+          type:
+          - integer
+          - 'null'
+          description: Total number of objects available.
+        page:
+          type: integer
+          description: Number of the page being returned.
+        page_size:
+          type: integer
+          description: Objects returned per page.
+      description: Contains pagination information about the data returned.
+      title: ListInfoResponse
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: "Use your API key with HTTP Basic authentication in the form `Basic <api_key>`. See [Authentication](/api/reference/authentication) for more information.\n✅ Supported by Try it console (calls sent in `test_mode` only).            \n"
+    Bearer:
+      type: http
+      scheme: bearer
+      description: "You can use an Access Token issued through an OAuth flow to send calls to the Dropbox Sign API from your app. The access scopes required by this endpoint are listed in the gray box above. See [Authentication](/api/reference/authentication) for more information.\n  ❌ **Not supported** by Try it console.\n"

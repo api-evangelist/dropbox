@@ -1,0 +1,395 @@
+openapi: 3.2.0
+info:
+  title: Reference Fax API
+  version: 1.0.0
+servers:
+- url: https://api.hellosign.com/v3
+  description: https://api.hellosign.com/v3
+tags:
+- name: Fax
+paths:
+  /fax/{fax_id}:
+    get:
+      operationId: fax_get
+      summary: Get Fax
+      description: Returns information about a Fax
+      tags:
+      - Fax
+      parameters:
+      - name: fax_id
+        in: path
+        description: Fax ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+    delete:
+      operationId: fax_delete
+      summary: Delete Fax
+      description: Deletes the specified Fax from the system
+      tags:
+      - Fax
+      parameters:
+      - name: fax_id
+        in: path
+        description: Fax ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /fax/list:
+    get:
+      operationId: fax_list
+      summary: Lists Faxes
+      description: Returns properties of multiple Faxes
+      tags:
+      - Fax
+      parameters:
+      - name: page
+        in: query
+        description: Which page number of the Fax List to return. Defaults to `1`.
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          default: 1
+      - name: page_size
+        in: query
+        description: Number of objects to be returned per page. Must be between `1` and `100`. Default is `20`.
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 20
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxListResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /fax/files/{fax_id}:
+    get:
+      operationId: fax_files
+      summary: Download Fax Files
+      description: Downloads files associated with a Fax
+      tags:
+      - Fax
+      parameters:
+      - name: fax_id
+        in: path
+        description: Fax ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /fax/send:
+    post:
+      operationId: fax_send
+      summary: Send Fax
+      description: Creates and sends a new Fax with the submitted file(s)
+      tags:
+      - Fax
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaxGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaxSendRequest'
+      security:
+      - Basic: []
+components:
+  schemas:
+    FaxSendRequest:
+      type: object
+      properties:
+        recipient:
+          type: string
+          description: "Recipient of the fax \nCan be a phone number in E.164 format or email address"
+        sender:
+          type: string
+          description: Fax Send From Sender (used only with fax number)
+        files:
+          type: array
+          items:
+            type: string
+            format: binary
+          description: 'Use `files[]` to indicate the uploaded file(s) to fax
+
+
+            This endpoint requires either **files** or **file_urls[]**, but not both.'
+        file_urls:
+          type: array
+          items:
+            type: string
+          description: 'Use `file_urls[]` to have Dropbox Fax download the file(s) to fax
+
+
+            This endpoint requires either **files** or **file_urls[]**, but not both.'
+        test_mode:
+          type: boolean
+          default: false
+          description: API Test Mode Setting
+        cover_page_to:
+          type: string
+          description: Fax cover page recipient information
+        cover_page_from:
+          type: string
+          description: Fax cover page sender information
+        cover_page_message:
+          type: string
+          description: Fax Cover Page Message
+        title:
+          type: string
+          description: Fax Title
+      required:
+      - recipient
+      title: FaxSendRequest
+    FaxListResponse:
+      type: object
+      properties:
+        faxes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaxResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+      required:
+      - faxes
+      - list_info
+      title: FaxListResponse
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      required:
+      - error
+      title: ErrorResponse
+    FaxGetResponse:
+      type: object
+      properties:
+        fax:
+          $ref: '#/components/schemas/FaxResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - fax
+      title: FaxGetResponse
+    FaxResponseTransmission:
+      type: object
+      properties:
+        recipient:
+          type: string
+          description: Fax Transmission Recipient
+        status_code:
+          $ref: '#/components/schemas/FaxResponseTransmissionStatusCode'
+          description: Fax Transmission Status Code
+        sent_at:
+          type: integer
+          description: Fax Transmission Sent Timestamp
+      required:
+      - recipient
+      - status_code
+      title: FaxResponseTransmission
+    WarningResponse:
+      type: object
+      properties:
+        warning_msg:
+          type: string
+          description: Warning message
+        warning_name:
+          type: string
+          description: Warning name
+      required:
+      - warning_msg
+      - warning_name
+      description: A list of warnings.
+      title: WarningResponse
+    ErrorResponseError:
+      type: object
+      properties:
+        error_msg:
+          type: string
+          description: Message describing an error.
+        error_path:
+          type: string
+          description: Path at which an error occurred.
+        error_name:
+          type: string
+          description: Name of the error. See the `x-error-codes` catalog in openapi file for a complete list of possible error codes with detailed information including HTTP status codes, causes, remediation steps, and retry guidance.
+      required:
+      - error_msg
+      - error_name
+      description: Contains information about an error that occurred.
+      title: ErrorResponseError
+    ListInfoResponse:
+      type: object
+      properties:
+        num_pages:
+          type: integer
+          description: Total number of pages available.
+        num_results:
+          type:
+          - integer
+          - 'null'
+          description: Total number of objects available.
+        page:
+          type: integer
+          description: Number of the page being returned.
+        page_size:
+          type: integer
+          description: Objects returned per page.
+      description: Contains pagination information about the data returned.
+      title: ListInfoResponse
+    FaxResponseTransmissionStatusCode:
+      type: string
+      enum:
+      - success
+      - transmitting
+      - error_could_not_fax
+      - error_unknown
+      - error_busy
+      - error_no_answer
+      - error_disconnected
+      - error_bad_destination
+      description: Fax Transmission Status Code
+      title: FaxResponseTransmissionStatusCode
+    FaxResponse:
+      type: object
+      properties:
+        fax_id:
+          type: string
+          description: Fax ID
+        title:
+          type: string
+          description: Fax Title
+        original_title:
+          type: string
+          description: Fax Original Title
+        subject:
+          type:
+          - string
+          - 'null'
+          description: Fax Subject
+        message:
+          type:
+          - string
+          - 'null'
+          description: Fax Message
+        metadata:
+          type: object
+          additionalProperties:
+            description: Any type
+          description: Fax Metadata
+        created_at:
+          type: integer
+          description: Fax Created At Timestamp
+        sender:
+          type: string
+          description: Fax Sender Email
+        files_url:
+          type: string
+          description: Fax Files URL
+        final_copy_uri:
+          type:
+          - string
+          - 'null'
+          description: The path where the completed document can be downloaded
+        transmissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaxResponseTransmission'
+          description: Fax Transmissions List
+        test_mode:
+          type: boolean
+          default: false
+          description: Whether this is a test fax. Test faxes are not delivered to the recipient. Defaults to `false`.
+      required:
+      - fax_id
+      - title
+      - original_title
+      - metadata
+      - created_at
+      - sender
+      - files_url
+      - transmissions
+      - test_mode
+      title: FaxResponse
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: "Use your API key with HTTP Basic authentication in the form `Basic <api_key>`. See [Authentication](/api/reference/authentication) for more information.\n✅ Supported by Try it console (calls sent in `test_mode` only).            \n"
+    Bearer:
+      type: http
+      scheme: bearer
+      description: "You can use an Access Token issued through an OAuth flow to send calls to the Dropbox Sign API from your app. The access scopes required by this endpoint are listed in the gray box above. See [Authentication](/api/reference/authentication) for more information.\n  ❌ **Not supported** by Try it console.\n"

@@ -1,0 +1,2749 @@
+openapi: 3.2.0
+info:
+  title: API Reference API
+  version: 1.0.0
+servers:
+- url: https://api.hellosign.com/v3
+  description: https://api.hellosign.com/v3
+tags:
+- name: API Reference
+paths: {}
+webhooks:
+  callbacksAndEvents_accountUpdateEventCallback:
+    post:
+      operationId: callbacksAndEvents_accountUpdateEventCallback
+      summary: Account Callbacks
+      description: 'This type of callback URL can be set up at the account level (either by setting it through an API request to "/v3/account" or on the Account Settings page on hellosign.com).
+
+
+        All signature request events that involve your account are reported to this URL. This includes events such as receiving a signature request, or when a signature request you''ve sent is signed by someone. Events are reported to the account callback URL for either requests originating on hellosign.com, or on a partner site, via an embedded flow.
+
+
+        You can set your account callback by using the account API call or manually on the settings page.'
+      responses:
+        '200':
+          description: Webhook received successfully
+      requestBody:
+        description: "**Account Callback Payloads --**\n      Events that are reported at the Account level through the the *Account callback URL* defined in your [API settings](https://app.hellosign.com/home/myAccount#api). The *Account callback URL* can also be updated by calling [Update Account](/api/reference/operation/accountUpdate) and passing a `callback_url`.\n\n> **Delivery format:** This payload is delivered to your callback URL as an HTTP `POST` with `Content-Type: multipart/form-data`. The JSON structure documented below is sent as the value of a single form field named `json`. The schema below describes that JSON value."
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventCallbackPayload'
+      tags:
+      - API Reference
+  callbacksAndEvents_apiAppCreateEventCallback:
+    post:
+      operationId: callbacksAndEvents_apiAppCreateEventCallback
+      summary: App Callbacks
+      description: 'This type of callback URL is set up at the API app level. API apps are used to identify a partner integration and configure embedded flows (embedded signign, embedded requesting, and embedded templates) and OAuth providers
+
+
+        All events that involve signature requests created by an API app are reported to this URL. The event will include a `client_id` field to indicate which app the event is being reported for, which allows multiple API apps to share the same callback URL.
+
+
+        You can manage your apps and their callbacks from the settings page.'
+      responses:
+        '200':
+          description: Webhook received successfully
+      requestBody:
+        description: '**API App Callback Payloads --**
+
+          Events that are reported at the API App level through the *Event callback URL* defined in your [API settings](https://app.hellosign.com/home/myAccount#api) for a specific app. The *Event callback URL* can also be updated by calling [Update API App](/api/reference/operation/apiAppUpdate) and passing a `callback_url`.
+
+
+          > **Delivery format:** This payload is delivered to your callback URL as an HTTP `POST` with `Content-Type: multipart/form-data`. The JSON structure documented below is sent as the value of a single form field named `json`. The schema below describes that JSON value.'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventCallbackPayload'
+      tags:
+      - API Reference
+components:
+  schemas:
+    EventCallbackTemplateError:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackTemplateErrorEvent'
+        template:
+          $ref: '#/components/schemas/TemplateResponse'
+      required:
+      - event
+      title: EventCallbackTemplateError
+    EventCallbackFaxSentEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackFaxSentEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackFaxSentEvent
+    EventCallbackSignUrlInvalidEventEventType:
+      type: string
+      enum:
+      - sign_url_invalid
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignUrlInvalidEventEventType
+    EventCallbackFaxNoAnswerEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackFaxNoAnswerEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackFaxNoAnswerEvent
+    EventCallbackUnknownErrorEventEventType:
+      type: string
+      enum:
+      - unknown_error
+      description: Type of callback event that was triggered.
+      title: EventCallbackUnknownErrorEventEventType
+    EventCallbackSignatureRequestEmailBounceEventEventType:
+      type: string
+      enum:
+      - signature_request_email_bounce
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestEmailBounceEventEventType
+    EventCallbackSignatureRequestSentEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestSentEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestSentEvent
+    EventCallbackSignatureRequestExpiredEventEventType:
+      type: string
+      enum:
+      - signature_request_expired
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestExpiredEventEventType
+    EventCallbackAccountConfirmedEventEventType:
+      type: string
+      enum:
+      - account_confirmed
+      description: Type of callback event that was triggered.
+      title: EventCallbackAccountConfirmedEventEventType
+    TemplateResponseDocumentFieldGroup:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the form field group.
+        rule:
+          $ref: '#/components/schemas/TemplateResponseDocumentFieldGroupRule'
+      title: TemplateResponseDocumentFieldGroup
+    EventCallbackFaxOnHoldEventEventType:
+      type: string
+      enum:
+      - fax_on_hold
+      description: Type of callback event that was triggered.
+      title: EventCallbackFaxOnHoldEventEventType
+    SignatureRequestResponseCustomFieldBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+            description: The type of this Custom Field. Only 'text' and 'checkbox' are currently supported.
+          name:
+            type: string
+            description: The name of the Custom Field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          editor:
+            type:
+            - string
+            - 'null'
+            description: The name of the Role that is able to edit this field.
+          value:
+            type: string
+            description: A text string for text fields
+        required:
+        - type
+        - name
+        description: This class extends `SignatureRequestResponseCustomFieldBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+            description: The type of this Custom Field. Only 'text' and 'checkbox' are currently supported.
+          name:
+            type: string
+            description: The name of the Custom Field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          editor:
+            type:
+            - string
+            - 'null'
+            description: The name of the Role that is able to edit this field.
+          value:
+            type: boolean
+            description: A true/false for checkbox fields
+        required:
+        - type
+        - name
+        description: This class extends `SignatureRequestResponseCustomFieldBase`.
+      discriminator:
+        propertyName: type
+      description: 'An array of Custom Field objects containing the name and type of each custom field.
+
+
+        * Text Field uses `SignatureRequestResponseCustomFieldText`
+
+        * Checkbox Field uses `SignatureRequestResponseCustomFieldCheckbox`'
+      title: SignatureRequestResponseCustomFieldBase
+    TemplateResponseDocumentFormFieldTextValidationType:
+      type: string
+      enum:
+      - numbers_only
+      - letters_only
+      - phone_number
+      - bank_routing_number
+      - bank_account_number
+      - email_address
+      - zip_code
+      - social_security_number
+      - employer_identification_number
+      - custom_regex
+      description: Each text field may contain a `validation_type` parameter. Check out the list of [validation types](https://faq.hellosign.com/hc/en-us/articles/217115577) to learn more about the possible values.
+      title: TemplateResponseDocumentFormFieldTextValidationType
+    TemplateResponseAccountQuota:
+      type: object
+      properties:
+        templates_left:
+          type: integer
+          description: API templates remaining.
+        api_signature_requests_left:
+          type: integer
+          description: API signature requests remaining.
+        documents_left:
+          type: integer
+          description: Signature requests remaining.
+        sms_verifications_left:
+          type: integer
+          description: SMS verifications remaining.
+      description: An array of the designated CC roles that must be specified when sending a SignatureRequest using this Template.
+      title: TemplateResponseAccountQuota
+    SignatureRequestResponseDataBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: text variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: checkbox variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: dropdown variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: radio variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: signature variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: date_signed variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: initials variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: text-merge variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: checkbox-merge variant
+      discriminator:
+        propertyName: type
+      description: An array of form field objects containing the name, value, and type of each textbox or checkmark field filled in by the signers.
+      title: SignatureRequestResponseDataBase
+    EventCallbackSignatureRequestAllSignedEventEventType:
+      type: string
+      enum:
+      - signature_request_all_signed
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestAllSignedEventEventType
+    EventCallbackSignatureRequestSent:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestSentEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestSent
+    AccountResponseQuotas:
+      type: object
+      properties:
+        api_signature_requests_left:
+          type:
+          - integer
+          - 'null'
+          description: API signature requests remaining.
+        documents_left:
+          type:
+          - integer
+          - 'null'
+          description: Signature requests remaining.
+        templates_total:
+          type:
+          - integer
+          - 'null'
+          description: Total API templates allowed.
+        templates_left:
+          type:
+          - integer
+          - 'null'
+          description: API templates remaining.
+        sms_verifications_left:
+          type:
+          - integer
+          - 'null'
+          description: SMS verifications remaining.
+        num_fax_pages_left:
+          type:
+          - integer
+          - 'null'
+          description: Number of fax pages left
+      description: Details concerning remaining monthly quotas.
+      title: AccountResponseQuotas
+    EventCallbackSignatureRequestDestroyedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestDestroyedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestDestroyedEvent
+    EventCallbackFaxReceivedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackFaxReceivedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackFaxReceivedEvent
+    EventCallbackSignatureRequestSignerRemovedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestSignerRemovedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestSignerRemovedEvent
+    EventCallbackSignatureRequestSigned:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestSignedEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestSigned
+    EventCallbackSignatureRequestInvalidEventEventType:
+      type: string
+      enum:
+      - signature_request_invalid
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestInvalidEventEventType
+    EventCallbackSignatureRequestDestroyed:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestDestroyedEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestDestroyed
+    SignatureRequestResponse:
+      type: object
+      properties:
+        test_mode:
+          type: boolean
+          default: false
+          description: Whether this is a test signature request. Test requests have no legal value. Defaults to `false`.
+        signature_request_id:
+          type: string
+          description: The id of the SignatureRequest.
+        requester_email_address:
+          type:
+          - string
+          - 'null'
+          description: The email address of the initiator of the SignatureRequest.
+        title:
+          type: string
+          description: The title the specified Account uses for the SignatureRequest.
+        original_title:
+          type: string
+          description: Default Label for account.
+        subject:
+          type:
+          - string
+          - 'null'
+          description: The subject in the email that was initially sent to the signers.
+        message:
+          type:
+          - string
+          - 'null'
+          description: The custom message in the email that was initially sent to the signers.
+        metadata:
+          type: object
+          additionalProperties:
+            description: Any type
+          description: The metadata attached to the signature request.
+        created_at:
+          type: integer
+          description: Time the signature request was created.
+        expires_at:
+          type:
+          - integer
+          - 'null'
+          description: The time when the signature request will expire unsigned signatures. See [Signature Request Expiration Date](https://developers.hellosign.com/docs/signature-request/expiration/) for details.
+        is_complete:
+          type: boolean
+          description: Whether or not the SignatureRequest has been fully executed by all signers.
+        is_declined:
+          type: boolean
+          description: Whether or not the SignatureRequest has been declined by a signer.
+        has_error:
+          type: boolean
+          description: Whether or not an error occurred (either during the creation of the SignatureRequest or during one of the signings).
+        files_url:
+          type: string
+          description: The URL where a copy of the request's documents can be downloaded.
+        signing_url:
+          type:
+          - string
+          - 'null'
+          description: The URL where a signer, after authenticating, can sign the documents. This should only be used by users with existing Dropbox Sign accounts as they will be required to log in before signing.
+        details_url:
+          type: string
+          description: The URL where the requester and the signers can view the current status of the SignatureRequest.
+        cc_email_addresses:
+          type: array
+          items:
+            type: string
+          description: A list of email addresses that were CCed on the SignatureRequest. They will receive a copy of the final PDF once all the signers have signed.
+        signing_redirect_url:
+          type:
+          - string
+          - 'null'
+          description: The URL you want the signer redirected to after they successfully sign.
+        final_copy_uri:
+          type:
+          - string
+          - 'null'
+          description: The path where the completed document can be downloaded
+        template_ids:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: Templates IDs used in this SignatureRequest (if any).
+        custom_fields:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
+          description: 'An array of Custom Field objects containing the name and type of each custom field.
+
+
+            * Text Field uses `SignatureRequestResponseCustomFieldText`
+
+            * Checkbox Field uses `SignatureRequestResponseCustomFieldCheckbox`'
+        attachments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseAttachment'
+          description: Signer attachments.
+        response_data:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+          description: An array of form field objects containing the name, value, and type of each textbox or checkmark field filled in by the signers.
+        signatures:
+          type: array
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseSignatures'
+          description: An array of signature objects, 1 for each signer.
+        bulk_send_job_id:
+          type:
+          - string
+          - 'null'
+          description: The ID of the Bulk Send job which sent the signature request, if applicable.
+      description: Contains information about a signature request.
+      title: SignatureRequestResponse
+    EventCallbackSignatureRequestPreparedEventEventType:
+      type: string
+      enum:
+      - signature_request_prepared
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestPreparedEventEventType
+    EventCallbackSignatureRequestDeclinedEventEventType:
+      type: string
+      enum:
+      - signature_request_declined
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestDeclinedEventEventType
+    EventCallbackCallbackTest:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackCallbackTestEvent'
+      required:
+      - event
+      title: EventCallbackCallbackTest
+    EventCallbackAccountConfirmed:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackAccountConfirmedEvent'
+        account:
+          $ref: '#/components/schemas/AccountResponse'
+      required:
+      - event
+      title: EventCallbackAccountConfirmed
+    EventCallbackSignatureRequestViewedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestViewedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestViewedEvent
+    EventCallbackSignatureRequestSignedEventEventType:
+      type: string
+      enum:
+      - signature_request_signed
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestSignedEventEventType
+    EventCallbackSignatureRequestReassignedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestReassignedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestReassignedEvent
+    TemplateResponseDocument:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the associated file.
+        index:
+          type: integer
+          description: Document ordering, the lowest index is displayed first and the highest last (0-based indexing).
+        field_groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFieldGroup'
+          description: An array of Form Field Group objects.
+        form_fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+          description: An array of Form Field objects containing the name and type of each named field.
+        custom_fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+          description: An array of Form Field objects containing the name and type of each named field.
+        static_fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentStaticFieldBase'
+          description: An array describing static overlay fields. **NOTE:** Only available for certain subscriptions.
+      title: TemplateResponseDocument
+    TemplateResponse:
+      type: object
+      properties:
+        template_id:
+          type: string
+          description: The id of the Template.
+        title:
+          type: string
+          description: The title of the Template. This will also be the default subject of the message sent to signers when using this Template to send a SignatureRequest. This can be overridden when sending the SignatureRequest.
+        message:
+          type: string
+          description: The default message that will be sent to signers when using this Template to send a SignatureRequest. This can be overridden when sending the SignatureRequest.
+        updated_at:
+          type: integer
+          description: Time the template was last updated.
+        is_embedded:
+          type:
+          - boolean
+          - 'null'
+          description: '`true` if this template was created using an embedded flow, `false` if it was created on our website. Will be `null` when you are not the creator of the Template.'
+        is_creator:
+          type: boolean
+          description: '`true` if you are the owner of this template, `false` if it''s been shared with you by a team member.'
+        can_edit:
+          type: boolean
+          description: Indicates whether edit rights have been granted to you by the owner (always `true` if that's you).
+        is_locked:
+          type: boolean
+          description: 'Indicates whether the template is locked.
+
+            If `true`, then the template was created outside your quota and can only be used in `test_mode`.
+
+            If `false`, then the template is within your quota and can be used to create signature requests.'
+        metadata:
+          type: object
+          additionalProperties:
+            description: Any type
+          description: The metadata attached to the template.
+        signer_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseSignerRole'
+          description: An array of the designated signer roles that must be specified when sending a SignatureRequest using this Template.
+        cc_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseCCRole'
+          description: An array of the designated CC roles that must be specified when sending a SignatureRequest using this Template.
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocument'
+          description: An array describing each document associated with this Template. Includes form field data for each document.
+        custom_fields:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentCustomFieldBase'
+          description: Deprecated. Use `custom_fields` inside the [documents](https://developers.hellosign.com/api/reference/operation/templateGet/#!c=200&path=template/documents&t=response) array instead.
+          deprecated: true
+        named_form_fields:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemplateResponseDocumentFormFieldBase'
+          description: Deprecated. Use `form_fields` inside the [documents](https://developers.hellosign.com/api/reference/operation/templateGet/#!c=200&path=template/documents&t=response) array instead.
+          deprecated: true
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemplateResponseAccount'
+          description: An array of the Accounts that can use this Template.
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseAttachment'
+          description: Signer attachments.
+      description: Contains information about the templates you and your team have created.
+      title: TemplateResponse
+    SignatureRequestResponseAttachment:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique ID for this attachment.
+        signer:
+          type: string
+          description: The Signer this attachment is assigned to.
+        name:
+          type: string
+          description: The name of this attachment.
+        required:
+          type: boolean
+          description: A boolean value denoting if this attachment is required.
+        instructions:
+          type:
+          - string
+          - 'null'
+          description: Instructions for Signer.
+        uploaded_at:
+          type:
+          - integer
+          - 'null'
+          description: Timestamp when attachment was uploaded by Signer.
+      required:
+      - id
+      - signer
+      - name
+      - required
+      description: Signer attachments.
+      title: SignatureRequestResponseAttachment
+    EventCallbackSignatureRequestExpired:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestExpiredEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestExpired
+    EventCallbackTemplateErrorEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackTemplateErrorEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackTemplateErrorEvent
+    TemplateResponseFieldAvgTextLength:
+      type: object
+      properties:
+        num_lines:
+          type: integer
+          description: Number of lines.
+        num_chars_per_line:
+          type: integer
+          description: Number of characters per line.
+      description: Average text length in this field.
+      title: TemplateResponseFieldAvgTextLength
+    EventCallbackSignatureRequestSentEventEventType:
+      type: string
+      enum:
+      - signature_request_sent
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestSentEventEventType
+    EventCallbackFaxOnHold:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackFaxOnHoldEvent'
+        transmission:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackFaxOnHold
+    TemplateResponseCCRole:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the Role.
+      title: TemplateResponseCCRole
+    EventCallbackFaxBusyEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackFaxBusyEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackFaxBusyEvent
+    EventCallbackCallbackTestEventEventType:
+      type: string
+      enum:
+      - callback_test
+      description: Type of callback event that was triggered.
+      title: EventCallbackCallbackTestEventEventType
+    TemplateResponseSignerRole:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the Role.
+        order:
+          type: integer
+          description: If signer order is assigned this is the 0-based index for this role.
+      title: TemplateResponseSignerRole
+    EventCallbackUnknownError:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackUnknownErrorEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackUnknownError
+    EventCallbackSignatureRequestInvalidEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestInvalidEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestInvalidEvent
+    EventCallbackFaxDisconnected:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackFaxDisconnectedEvent'
+        transmission:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackFaxDisconnected
+    EventCallbackSignUrlInvalidEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignUrlInvalidEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignUrlInvalidEvent
+    EventCallbackRequestEventMetadata:
+      type: object
+      properties:
+        related_signature_id:
+          type:
+          - string
+          - 'null'
+          description: Signature ID for a specific signer. Applicable to `signature_request_signed` and `signature_request_viewed` events.
+        reported_for_account_id:
+          type:
+          - string
+          - 'null'
+          description: Account ID the event was reported for.
+        reported_for_app_id:
+          type:
+          - string
+          - 'null'
+          description: App ID the event was reported for.
+        event_message:
+          type:
+          - string
+          - 'null'
+          description: Message about a declined or failed (due to error) signature flow.
+      description: Specific metadata about the event.
+      title: EventCallbackRequestEventMetadata
+    TemplateResponseDocumentFormFieldBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          avg_text_length:
+            $ref: '#/components/schemas/TemplateResponseFieldAvgTextLength'
+          isMultiline:
+            type: boolean
+            description: Whether this form field is multiline text.
+          originalFontSize:
+            type: integer
+            description: Original font size used in this form field's text.
+          fontFamily:
+            type: string
+            description: Font family used in this form field's text.
+          validation_type:
+            oneOf:
+            - $ref: '#/components/schemas/TemplateResponseDocumentFormFieldTextValidationType'
+            - type: 'null'
+            description: Each text field may contain a `validation_type` parameter. Check out the list of [validation types](https://faq.hellosign.com/hc/en-us/articles/217115577) to learn more about the possible values.
+          validation_custom_regex:
+            type:
+            - string
+            - 'null'
+            description: When `validation_type` is set to `custom_regex`, this specifies the custom regular expression pattern that will be used to validate the text field.
+          validation_custom_regex_format_label:
+            type:
+            - string
+            - 'null'
+            description: When `validation_type` is set to `custom_regex`, this specifies the error message displayed to the signer when the text does not match the provided regex pattern.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+          options:
+            type: array
+            items:
+              type: string
+            description: The options available for this dropdown form field.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          avg_text_length:
+            $ref: '#/components/schemas/TemplateResponseFieldAvgTextLength'
+          isMultiline:
+            type: boolean
+            description: Whether this form field is multiline text.
+          originalFontSize:
+            type: integer
+            description: Original font size used in this form field's text.
+          fontFamily:
+            type: string
+            description: Font family used in this form field's text.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type: string
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        - group
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the form field.
+          name:
+            type: string
+            description: The name of the form field.
+          signer:
+            type: string
+            description: The signer of the Form Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null` except for Radio fields.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentFormFieldBase`
+      discriminator:
+        propertyName: type
+      description: An array of Form Field objects containing the name and type of each named field.
+      title: TemplateResponseDocumentFormFieldBase
+    EventCallbackSignatureRequestAllSigned:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestAllSignedEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestAllSigned
+    EventCallbackTemplateCreatedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackTemplateCreatedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackTemplateCreatedEvent
+    EventCallbackSignatureRequestRemind:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestRemindEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestRemind
+    EventCallbackPayload:
+      oneOf:
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestViewed'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestSigned'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestSignerRemoved'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestDownloadable'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestSent'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestAllSigned'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestInvalid'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestEmailBounce'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestRemind'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestIncompleteQes'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestDestroyed'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestCanceled'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestDeclined'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestExpired'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestReassigned'
+      - $ref: '#/components/schemas/EventCallbackSignatureRequestPrepared'
+      - $ref: '#/components/schemas/EventCallbackAccountConfirmed'
+      - $ref: '#/components/schemas/EventCallbackUnknownError'
+      - $ref: '#/components/schemas/EventCallbackFileError'
+      - $ref: '#/components/schemas/EventCallbackTemplateCreated'
+      - $ref: '#/components/schemas/EventCallbackTemplateError'
+      - $ref: '#/components/schemas/EventCallbackSignUrlInvalid'
+      - $ref: '#/components/schemas/EventCallbackCallbackTest'
+      - $ref: '#/components/schemas/EventCallbackFaxReceived'
+      - $ref: '#/components/schemas/EventCallbackFaxSent'
+      - $ref: '#/components/schemas/EventCallbackFaxOnHold'
+      - $ref: '#/components/schemas/EventCallbackFaxBusy'
+      - $ref: '#/components/schemas/EventCallbackFaxNoAnswer'
+      - $ref: '#/components/schemas/EventCallbackFaxDisconnected'
+      - $ref: '#/components/schemas/EventCallbackFaxBlacklisted'
+      description: JSON payload delivered for a webhook event. The concrete shape is selected by `event.event_type`.
+      title: EventCallbackPayload
+    EventCallbackFileErrorEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackFileErrorEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackFileErrorEvent
+    EventCallbackSignatureRequestExpiredEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestExpiredEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestExpiredEvent
+    EventCallbackSignatureRequestViewed:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestViewedEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestViewed
+    EventCallbackSignatureRequestRemindEventEventType:
+      type: string
+      enum:
+      - signature_request_remind
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestRemindEventEventType
+    EventCallbackSignatureRequestEmailBounce:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestEmailBounceEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestEmailBounce
+    EventCallbackFaxReceivedEventEventType:
+      type: string
+      enum:
+      - fax_received
+      description: Type of callback event that was triggered.
+      title: EventCallbackFaxReceivedEventEventType
+    EventCallbackFaxDisconnectedEventEventType:
+      type: string
+      enum:
+      - fax_disconnected
+      description: Type of callback event that was triggered.
+      title: EventCallbackFaxDisconnectedEventEventType
+    TemplateResponseAccount:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: The id of the Account.
+        email_address:
+          type: string
+          description: The email address associated with the Account.
+        is_locked:
+          type: boolean
+          description: Returns `true` if the user has been locked out of their account by a team admin.
+        is_paid_hs:
+          type: boolean
+          description: Returns `true` if the user has a paid Dropbox Sign account.
+        is_paid_hf:
+          type: boolean
+          description: Returns `true` if the user has a paid HelloFax account.
+        quotas:
+          $ref: '#/components/schemas/TemplateResponseAccountQuota'
+      title: TemplateResponseAccount
+    EventCallbackSignatureRequestDownloadableEventEventType:
+      type: string
+      enum:
+      - signature_request_downloadable
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestDownloadableEventEventType
+    EventCallbackSignatureRequestDownloadableEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestDownloadableEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestDownloadableEvent
+    EventCallbackSignatureRequestIncompleteQesEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestIncompleteQesEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestIncompleteQesEvent
+    TemplateResponseDocumentCustomFieldBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          name:
+            type: string
+            description: The name of the Custom Field.
+          signer:
+            type:
+            - string
+            - 'null'
+            description: The signer of the Custom Field. Can be `null` if field is a merge field (assigned to Sender).
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+          avg_text_length:
+            $ref: '#/components/schemas/TemplateResponseFieldAvgTextLength'
+          isMultiline:
+            type: boolean
+            description: Whether this form field is multiline text.
+          originalFontSize:
+            type: integer
+            description: Original font size used in this form field's text.
+          fontFamily:
+            type: string
+            description: Font family used in this form field's text.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentCustomFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          name:
+            type: string
+            description: The name of the Custom Field.
+          signer:
+            type:
+            - string
+            - 'null'
+            description: The signer of the Custom Field. Can be `null` if field is a merge field (assigned to Sender).
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this form field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this form field.
+          width:
+            type: integer
+            description: The width in pixels of this form field.
+          height:
+            type: integer
+            description: The height in pixels of this form field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentCustomFieldBase`
+      discriminator:
+        propertyName: type
+      description: An array of Form Field objects containing the name and type of each named field.
+      title: TemplateResponseDocumentCustomFieldBase
+    EventCallbackTemplateErrorEventEventType:
+      type: string
+      enum:
+      - template_error
+      description: Type of callback event that was triggered.
+      title: EventCallbackTemplateErrorEventEventType
+    EventCallbackSignatureRequestCanceled:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestCanceledEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestCanceled
+    EventCallbackFaxBlacklisted:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackFaxBlacklistedEvent'
+        transmission:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackFaxBlacklisted
+    EventCallbackSignatureRequestInvalid:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestInvalidEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestInvalid
+    EventCallbackFaxNoAnswer:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackFaxNoAnswerEvent'
+        transmission:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackFaxNoAnswer
+    EventCallbackSignatureRequestPrepared:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestPreparedEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestPrepared
+    EventCallbackSignatureRequestIncompleteQes:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestIncompleteQesEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestIncompleteQes
+    SignatureRequestResponseSignatures:
+      type: object
+      properties:
+        signature_id:
+          type: string
+          description: Signature identifier.
+        signer_group_guid:
+          type:
+          - string
+          - 'null'
+          description: Signer Group GUID
+        signer_email_address:
+          type: string
+          description: The email address of the signer.
+        signer_name:
+          type:
+          - string
+          - 'null'
+          description: The name of the signer.
+        signer_role:
+          type:
+          - string
+          - 'null'
+          description: The role of the signer.
+        order:
+          type:
+          - integer
+          - 'null'
+          description: If signer order is assigned this is the 0-based index for this signer.
+        status_code:
+          type: string
+          description: 'The current status of the signature. eg: awaiting_signature, signed, declined.'
+        decline_reason:
+          type:
+          - string
+          - 'null'
+          description: The reason provided by the signer for declining the request.
+        signed_at:
+          type:
+          - integer
+          - 'null'
+          description: Time that the document was signed or null.
+        last_viewed_at:
+          type:
+          - integer
+          - 'null'
+          description: The time that the document was last viewed by this signer or null.
+        last_reminded_at:
+          type:
+          - integer
+          - 'null'
+          description: The time the last reminder email was sent to the signer or null.
+        has_pin:
+          type: boolean
+          description: Boolean to indicate whether this signature requires a PIN to access.
+        has_sms_auth:
+          type:
+          - boolean
+          - 'null'
+          description: Boolean to indicate whether this signature has SMS authentication enabled.
+        has_sms_delivery:
+          type:
+          - boolean
+          - 'null'
+          description: Boolean to indicate whether this signature has SMS delivery enabled.
+        sms_phone_number:
+          type:
+          - string
+          - 'null'
+          description: The SMS phone number used for authentication or signature request delivery.
+        reassigned_by:
+          type:
+          - string
+          - 'null'
+          description: Email address of original signer who reassigned to this signer.
+        reassignment_reason:
+          type:
+          - string
+          - 'null'
+          description: Reason provided by original signer who reassigned to this signer.
+        reassigned_from:
+          type:
+          - string
+          - 'null'
+          description: Previous signature identifier.
+        error:
+          type:
+          - string
+          - 'null'
+          description: Error message pertaining to this signer, or null.
+      description: An array of signature objects, 1 for each signer.
+      title: SignatureRequestResponseSignatures
+    EventCallbackFaxDisconnectedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackFaxDisconnectedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackFaxDisconnectedEvent
+    EventCallbackSignatureRequestDeclined:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestDeclinedEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestDeclined
+    EventCallbackFaxBlacklistedEventEventType:
+      type: string
+      enum:
+      - fax_blacklisted
+      description: Type of callback event that was triggered.
+      title: EventCallbackFaxBlacklistedEventEventType
+    EventCallbackFaxBusy:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackFaxBusyEvent'
+        transmission:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackFaxBusy
+    EventCallbackSignatureRequestDownloadable:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestDownloadableEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestDownloadable
+    EventCallbackFaxBlacklistedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackFaxBlacklistedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackFaxBlacklistedEvent
+    AccountResponseUsage:
+      type: object
+      properties:
+        fax_pages_sent:
+          type:
+          - integer
+          - 'null'
+          description: Number of fax pages sent
+      description: Details concerning monthly usage
+      title: AccountResponseUsage
+    EventCallbackTemplateCreated:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackTemplateCreatedEvent'
+        template:
+          $ref: '#/components/schemas/TemplateResponse'
+      required:
+      - event
+      title: EventCallbackTemplateCreated
+    EventCallbackFaxSentEventEventType:
+      type: string
+      enum:
+      - fax_sent
+      description: Type of callback event that was triggered.
+      title: EventCallbackFaxSentEventEventType
+    EventCallbackSignatureRequestDestroyedEventEventType:
+      type: string
+      enum:
+      - signature_request_destroyed
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestDestroyedEventEventType
+    EventCallbackUnknownErrorEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackUnknownErrorEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackUnknownErrorEvent
+    EventCallbackFaxNoAnswerEventEventType:
+      type: string
+      enum:
+      - fax_no_answer
+      description: Type of callback event that was triggered.
+      title: EventCallbackFaxNoAnswerEventEventType
+    EventCallbackSignatureRequestEmailBounceEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestEmailBounceEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestEmailBounceEvent
+    EventCallbackTemplateCreatedEventEventType:
+      type: string
+      enum:
+      - template_created
+      description: Type of callback event that was triggered.
+      title: EventCallbackTemplateCreatedEventEventType
+    EventCallbackSignatureRequestIncompleteQesEventEventType:
+      type: string
+      enum:
+      - signature_request_incomplete_qes
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestIncompleteQesEventEventType
+    EventCallbackSignatureRequestReassigned:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestReassignedEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestReassigned
+    TemplateResponseDocumentFieldGroupRule:
+      type: object
+      properties:
+        requirement:
+          type: string
+          description: 'Examples: `require_0-1` `require_1` `require_1-ormore`
+
+
+            - Check out the list of [acceptable `requirement` checkbox type values](/api/reference/constants/#checkbox-field-grouping).
+
+            - Check out the list of [acceptable `requirement` radio type fields](/api/reference/constants/#radio-field-grouping).
+
+            - Radio groups require **at least** two fields per group.'
+        groupLabel:
+          type: string
+          description: Name of the group
+      description: The rule used to validate checkboxes in the form field group. See [checkbox field grouping](/api/reference/constants/#checkbox-field-grouping).
+      title: TemplateResponseDocumentFieldGroupRule
+    TemplateResponseDocumentStaticFieldBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: A unique id for the static field.
+          name:
+            type: string
+            description: The name of the static field.
+          signer:
+            type: string
+            default: me_now
+            description: The signer of the Static Field.
+          x:
+            type: integer
+            description: The horizontal offset in pixels for this static field.
+          y:
+            type: integer
+            description: The vertical offset in pixels for this static field.
+          width:
+            type: integer
+            description: The width in pixels of this static field.
+          height:
+            type: integer
+            description: The height in pixels of this static field.
+          required:
+            type: boolean
+            description: Boolean showing whether or not this field is required.
+          group:
+            type:
+            - string
+            - 'null'
+            description: The name of the group this field is in. If this field is not a group, this defaults to `null`.
+        required:
+        - type
+        description: This class extends `TemplateResponseDocumentStaticFieldBase`
+      discriminator:
+        propertyName: type
+      description: An array describing static overlay fields. **NOTE:** Only available for certain subscriptions.
+      title: TemplateResponseDocumentStaticFieldBase
+    EventCallbackFileError:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackFileErrorEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackFileError
+    EventCallbackFaxOnHoldEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackFaxOnHoldEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackFaxOnHoldEvent
+    EventCallbackSignatureRequestViewedEventEventType:
+      type: string
+      enum:
+      - signature_request_viewed
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestViewedEventEventType
+    EventCallbackFaxSent:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackFaxSentEvent'
+        transmission:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackFaxSent
+    EventCallbackSignatureRequestCanceledEventEventType:
+      type: string
+      enum:
+      - signature_request_canceled
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestCanceledEventEventType
+    EventCallbackSignUrlInvalid:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignUrlInvalidEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignUrlInvalid
+    EventCallbackSignatureRequestPreparedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestPreparedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestPreparedEvent
+    EventCallbackSignatureRequestCanceledEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestCanceledEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestCanceledEvent
+    EventCallbackSignatureRequestReassignedEventEventType:
+      type: string
+      enum:
+      - signature_request_reassigned
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestReassignedEventEventType
+    EventCallbackSignatureRequestSignerRemoved:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestSignerRemovedEvent'
+        signature_request:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackSignatureRequestSignerRemoved
+    AccountResponseSettings:
+      type: object
+      properties:
+        signer_access_codes:
+          type: boolean
+          description: Returns `true` if _Custom access codes_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+        sms_delivery:
+          type: boolean
+          description: Returns `true` if _Text message_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+        sms_authentication:
+          type: boolean
+          description: Returns `true` if _Signer authentication_ is enabled in Admin Console. [Read more](https://developers.hellosign.com/docs/sms-tools/walkthrough).
+      description: Subset of configured settings
+      title: AccountResponseSettings
+    EventCallbackSignatureRequestDeclinedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestDeclinedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestDeclinedEvent
+    EventCallbackCallbackTestEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackCallbackTestEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackCallbackTestEvent
+    EventCallbackSignatureRequestRemindEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestRemindEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestRemindEvent
+    AccountResponse:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: The ID of the Account
+        email_address:
+          type: string
+          description: The email address associated with the Account.
+        is_locked:
+          type: boolean
+          description: Returns `true` if the user has been locked out of their account by a team admin.
+        is_paid_hs:
+          type: boolean
+          description: Returns `true` if the user has a paid Dropbox Sign account.
+        is_paid_hf:
+          type: boolean
+          description: Returns `true` if the user has a paid HelloFax account.
+        quotas:
+          $ref: '#/components/schemas/AccountResponseQuotas'
+        callback_url:
+          type:
+          - string
+          - 'null'
+          description: The URL that Dropbox Sign events will `POST` to.
+        role_code:
+          type:
+          - string
+          - 'null'
+          description: The membership role for the team.
+        team_id:
+          type:
+          - string
+          - 'null'
+          description: The id of the team account belongs to.
+        locale:
+          type:
+          - string
+          - 'null'
+          description: The locale used in this Account. Check out the list of [supported locales](/api/reference/constants/#supported-locales) to learn more about the possible values.
+        usage:
+          $ref: '#/components/schemas/AccountResponseUsage'
+        settings:
+          $ref: '#/components/schemas/AccountResponseSettings'
+      title: AccountResponse
+    EventCallbackSignatureRequestSignerRemovedEventEventType:
+      type: string
+      enum:
+      - signature_request_signer_removed
+      description: Type of callback event that was triggered.
+      title: EventCallbackSignatureRequestSignerRemovedEventEventType
+    EventCallbackSignatureRequestAllSignedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestAllSignedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestAllSignedEvent
+    EventCallbackFaxReceived:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/EventCallbackFaxReceivedEvent'
+        transmission:
+          $ref: '#/components/schemas/SignatureRequestResponse'
+      required:
+      - event
+      title: EventCallbackFaxReceived
+    EventCallbackFileErrorEventEventType:
+      type: string
+      enum:
+      - file_error
+      description: Type of callback event that was triggered.
+      title: EventCallbackFileErrorEventEventType
+    EventCallbackSignatureRequestSignedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackSignatureRequestSignedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackSignatureRequestSignedEvent
+    EventCallbackAccountConfirmedEvent:
+      type: object
+      properties:
+        event_time:
+          type: string
+          description: Time the event was created (using Unix time).
+        event_type:
+          $ref: '#/components/schemas/EventCallbackAccountConfirmedEventEventType'
+          description: Type of callback event that was triggered.
+        event_hash:
+          type: string
+          description: Generated hash used to verify source of event data.
+        event_metadata:
+          $ref: '#/components/schemas/EventCallbackRequestEventMetadata'
+      required:
+      - event_time
+      - event_type
+      - event_hash
+      description: Basic information about the event that occurred.
+      title: EventCallbackAccountConfirmedEvent
+    EventCallbackFaxBusyEventEventType:
+      type: string
+      enum:
+      - fax_busy
+      description: Type of callback event that was triggered.
+      title: EventCallbackFaxBusyEventEventType
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: "Use your API key with HTTP Basic authentication in the form `Basic <api_key>`. See [Authentication](/api/reference/authentication) for more information.\n✅ Supported by Try it console (calls sent in `test_mode` only).            \n"
+    Bearer:
+      type: http
+      scheme: bearer
+      description: "You can use an Access Token issued through an OAuth flow to send calls to the Dropbox Sign API from your app. The access scopes required by this endpoint are listed in the gray box above. See [Authentication](/api/reference/authentication) for more information.\n  ❌ **Not supported** by Try it console.\n"

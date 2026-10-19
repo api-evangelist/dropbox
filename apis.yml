@@ -22,26 +22,6 @@ apis:
     url: https://developers.hellosign.com/docs/sdks/overview/
   - type: GettingStarted
     url: https://developers.hellosign.com/api/quickstart/
-- aid: dropbox:dropbox-api-app-api
-  name: Dropbox Api App API
-  description: _md__OpenApi::TAG::API_APP::DESCRIPTION
-  humanURL: https://www.dropbox.com/developers/documentation/http/overview
-  baseURL: https://api.dropboxapi.com
-  tags:
-  - API App
-  tags_raw:
-  - Api App
-  properties:
-  - type: OpenAPI
-    url: openapi/dropbox-api-app-api-openapi.yml
-  - type: Documentation
-    url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: Documentation
-    url: https://developers.hellosign.com/
-  - type: SDKs
-    url: https://developers.hellosign.com/docs/sdks/overview/
-  - type: GettingStarted
-    url: https://developers.hellosign.com/api/quickstart/
 - aid: dropbox:dropbox-auth-api
   name: Dropbox Auth API
   description: The Auth API from Dropbox — 2 operation(s) for auth.
@@ -54,24 +34,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/dropbox-auth-api-openapi.yml
-  - type: Documentation
-    url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: Documentation
-    url: https://developers.hellosign.com/
-  - type: SDKs
-    url: https://developers.hellosign.com/docs/sdks/overview/
-  - type: GettingStarted
-    url: https://developers.hellosign.com/api/quickstart/
-- aid: dropbox:dropbox-bulk-send-job-api
-  name: Dropbox Bulk Send Job API
-  description: _md__OpenApi::TAG::BULK_SEND_JOB::DESCRIPTION
-  humanURL: https://www.dropbox.com/developers/documentation/http/overview
-  baseURL: https://api.dropboxapi.com
-  tags:
-  - Bulk Send Job
-  properties:
-  - type: OpenAPI
-    url: openapi/dropbox-bulk-send-job-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
   - type: Documentation
@@ -259,24 +221,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/dropbox-sharing-api-openapi.yml
-  - type: Documentation
-    url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: Documentation
-    url: https://developers.hellosign.com/
-  - type: SDKs
-    url: https://developers.hellosign.com/docs/sdks/overview/
-  - type: GettingStarted
-    url: https://developers.hellosign.com/api/quickstart/
-- aid: dropbox:dropbox-signature-request-api
-  name: Dropbox Signature Request API
-  description: _md__OpenApi::TAG::SIGNATURE_REQUEST::DESCRIPTION
-  humanURL: https://www.dropbox.com/developers/documentation/http/overview
-  baseURL: https://api.dropboxapi.com
-  tags:
-  - Signature Request
-  properties:
-  - type: OpenAPI
-    url: openapi/dropbox-signature-request-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
   - type: Documentation
@@ -506,24 +450,6 @@ apis:
     url: https://developers.hellosign.com/docs/sdks/overview/
   - type: GettingStarted
     url: https://developers.hellosign.com/api/quickstart/
-- aid: dropbox:dropbox-unclaimed-draft-api
-  name: Dropbox Unclaimed Draft API
-  description: _md__OpenApi::TAG::UNCLAIMED_DRAFT::DESCRIPTION
-  humanURL: https://www.dropbox.com/developers/documentation/http/overview
-  baseURL: https://api.dropboxapi.com
-  tags:
-  - Unclaimed Draft
-  properties:
-  - type: OpenAPI
-    url: openapi/dropbox-unclaimed-draft-api-openapi.yml
-  - type: Documentation
-    url: https://www.dropbox.com/developers/documentation/http/overview
-  - type: Documentation
-    url: https://developers.hellosign.com/
-  - type: SDKs
-    url: https://developers.hellosign.com/docs/sdks/overview/
-  - type: GettingStarted
-    url: https://developers.hellosign.com/api/quickstart/
 - aid: dropbox:dropbox-users-api
   name: Dropbox Users API
   description: This namespace contains endpoints and data types for user management.
@@ -554,18 +480,142 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/dropbox-callbacks-and-events-api-openapi.yml
-- aid: dropbox:dropbox-oauth-api
-  name: Dropbox O Auth API
-  description: _md__OpenApi::TAG::OAUTH::DESCRIPTION
+- aid: dropbox:dropbox-api-reference-api
+  name: Dropbox API Reference API
+  description: The API Reference API from Dropbox — 0 operation(s) for api reference.
   humanURL: https://www.dropbox.com/developers/documentation/http/overview
   baseURL: https://api.dropboxapi.com
   tags:
-  - Authentication
-  tags_raw:
-  - OAuth
+  - API Reference
   properties:
   - type: OpenAPI
-    url: openapi/dropbox-oauth-api-openapi.yml
+    url: openapi/dropbox-api-reference-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+- aid: dropbox:dropbox-apiapp-api
+  name: Dropbox API App API
+  description: The apiApp API from Dropbox — 3 operation(s) for apiapp.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - apiApp
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-apiapp-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+- aid: dropbox:dropbox-bulksendjob-api
+  name: Dropbox Bulk Send Job API
+  description: The bulkSendJob API from Dropbox — 2 operation(s) for bulksendjob.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - bulkSendJob
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-bulksendjob-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+- aid: dropbox:dropbox-document-api
+  name: Dropbox Document API
+  description: The document API from Dropbox — 1 operation(s) for document.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - document
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-document-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+- aid: dropbox:dropbox-fax-api
+  name: Dropbox Fax API
+  description: The Fax API from Dropbox — 4 operation(s) for fax.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - Fax
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-fax-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+- aid: dropbox:dropbox-faxline-api
+  name: Dropbox Fax Line API
+  description: The faxLine API from Dropbox — 6 operation(s) for faxline.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - faxLine
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-faxline-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+- aid: dropbox:dropbox-signaturerequest-api
+  name: Dropbox Signature Request API
+  description: The signatureRequest API from Dropbox — 20 operation(s) for signaturerequest.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - signatureRequest
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-signaturerequest-api-openapi.yml
+  - type: Documentation
+    url: https://www.dropbox.com/developers/documentation/http/overview
+  - type: Documentation
+    url: https://developers.hellosign.com/
+  - type: SDKs
+    url: https://developers.hellosign.com/docs/sdks/overview/
+  - type: GettingStarted
+    url: https://developers.hellosign.com/api/quickstart/
+- aid: dropbox:dropbox-unclaimeddraft-api
+  name: Dropbox Unclaimed Draft API
+  description: The unclaimedDraft API from Dropbox — 4 operation(s) for unclaimeddraft.
+  humanURL: https://www.dropbox.com/developers/documentation/http/overview
+  baseURL: https://api.dropboxapi.com
+  tags:
+  - unclaimedDraft
+  properties:
+  - type: OpenAPI
+    url: openapi/dropbox-unclaimeddraft-api-openapi.yml
   - type: Documentation
     url: https://www.dropbox.com/developers/documentation/http/overview
   - type: Documentation

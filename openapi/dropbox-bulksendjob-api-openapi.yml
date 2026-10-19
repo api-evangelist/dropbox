@@ -1,0 +1,706 @@
+openapi: 3.2.0
+info:
+  title: Reference Bulk Send Job API
+  version: 1.0.0
+servers:
+- url: https://api.hellosign.com/v3
+  description: https://api.hellosign.com/v3
+tags:
+- name: bulkSendJob
+paths:
+  /bulk_send_job/{bulk_send_job_id}:
+    get:
+      operationId: bulkSendJob_get
+      summary: Get Bulk Send Job
+      description: Returns the status of the BulkSendJob and its SignatureRequests specified by the `bulk_send_job_id` parameter.
+      tags:
+      - bulkSendJob
+      parameters:
+      - name: bulk_send_job_id
+        in: path
+        description: The id of the BulkSendJob to retrieve.
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Which page number of the BulkSendJob list to return. Defaults to `1`.
+        required: false
+        schema:
+          type: integer
+          default: 1
+      - name: page_size
+        in: query
+        description: Number of objects to be returned per page. Must be between `1` and `100`. Default is 20.
+        required: false
+        schema:
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkSendJobGetResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+  /bulk_send_job/list:
+    get:
+      operationId: bulkSendJob_list
+      summary: List Bulk Send Jobs
+      description: Returns a list of BulkSendJob that you can access.
+      tags:
+      - bulkSendJob
+      parameters:
+      - name: page
+        in: query
+        description: Which page number of the BulkSendJob List to return. Defaults to `1`.
+        required: false
+        schema:
+          type: integer
+          default: 1
+      - name: page_size
+        in: query
+        description: Number of objects to be returned per page. Must be between `1` and `100`. Default is 20.
+        required: false
+        schema:
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkSendJobListResponse'
+        '400':
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - Basic: []
+components:
+  schemas:
+    SignatureRequestResponseCustomFieldBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+            description: The type of this Custom Field. Only 'text' and 'checkbox' are currently supported.
+          name:
+            type: string
+            description: The name of the Custom Field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          editor:
+            type:
+            - string
+            - 'null'
+            description: The name of the Role that is able to edit this field.
+          value:
+            type: string
+            description: A text string for text fields
+        required:
+        - type
+        - name
+        description: This class extends `SignatureRequestResponseCustomFieldBase`.
+      - type: object
+        properties:
+          type:
+            type: string
+            description: The type of this Custom Field. Only 'text' and 'checkbox' are currently supported.
+          name:
+            type: string
+            description: The name of the Custom Field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          editor:
+            type:
+            - string
+            - 'null'
+            description: The name of the Role that is able to edit this field.
+          value:
+            type: boolean
+            description: A true/false for checkbox fields
+        required:
+        - type
+        - name
+        description: This class extends `SignatureRequestResponseCustomFieldBase`.
+      discriminator:
+        propertyName: type
+      description: 'An array of Custom Field objects containing the name and type of each custom field.
+
+
+        * Text Field uses `SignatureRequestResponseCustomFieldText`
+
+        * Checkbox Field uses `SignatureRequestResponseCustomFieldCheckbox`'
+      title: SignatureRequestResponseCustomFieldBase
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponseError'
+      required:
+      - error
+      title: ErrorResponse
+    SignatureRequestResponseDataBase:
+      oneOf:
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: text variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: checkbox variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: dropdown variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: radio variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: signature variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: date_signed variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: initials variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: text-merge variant
+      - type: object
+        properties:
+          type:
+            type: string
+          api_id:
+            type: string
+            description: The unique ID for this field.
+          signature_id:
+            type: string
+            description: The ID of the signature to which this response is linked.
+          name:
+            type: string
+            description: The name of the form field.
+          required:
+            type: boolean
+            description: A boolean value denoting if this field is required.
+        required:
+        - type
+        description: checkbox-merge variant
+      discriminator:
+        propertyName: type
+      description: An array of form field objects containing the name, value, and type of each textbox or checkmark field filled in by the signers.
+      title: SignatureRequestResponseDataBase
+    ErrorResponseError:
+      type: object
+      properties:
+        error_msg:
+          type: string
+          description: Message describing an error.
+        error_path:
+          type: string
+          description: Path at which an error occurred.
+        error_name:
+          type: string
+          description: Name of the error. See the `x-error-codes` catalog in openapi file for a complete list of possible error codes with detailed information including HTTP status codes, causes, remediation steps, and retry guidance.
+      required:
+      - error_msg
+      - error_name
+      description: Contains information about an error that occurred.
+      title: ErrorResponseError
+    SignatureRequestResponseSignatures:
+      type: object
+      properties:
+        signature_id:
+          type: string
+          description: Signature identifier.
+        signer_group_guid:
+          type:
+          - string
+          - 'null'
+          description: Signer Group GUID
+        signer_email_address:
+          type: string
+          description: The email address of the signer.
+        signer_name:
+          type:
+          - string
+          - 'null'
+          description: The name of the signer.
+        signer_role:
+          type:
+          - string
+          - 'null'
+          description: The role of the signer.
+        order:
+          type:
+          - integer
+          - 'null'
+          description: If signer order is assigned this is the 0-based index for this signer.
+        status_code:
+          type: string
+          description: 'The current status of the signature. eg: awaiting_signature, signed, declined.'
+        decline_reason:
+          type:
+          - string
+          - 'null'
+          description: The reason provided by the signer for declining the request.
+        signed_at:
+          type:
+          - integer
+          - 'null'
+          description: Time that the document was signed or null.
+        last_viewed_at:
+          type:
+          - integer
+          - 'null'
+          description: The time that the document was last viewed by this signer or null.
+        last_reminded_at:
+          type:
+          - integer
+          - 'null'
+          description: The time the last reminder email was sent to the signer or null.
+        has_pin:
+          type: boolean
+          description: Boolean to indicate whether this signature requires a PIN to access.
+        has_sms_auth:
+          type:
+          - boolean
+          - 'null'
+          description: Boolean to indicate whether this signature has SMS authentication enabled.
+        has_sms_delivery:
+          type:
+          - boolean
+          - 'null'
+          description: Boolean to indicate whether this signature has SMS delivery enabled.
+        sms_phone_number:
+          type:
+          - string
+          - 'null'
+          description: The SMS phone number used for authentication or signature request delivery.
+        reassigned_by:
+          type:
+          - string
+          - 'null'
+          description: Email address of original signer who reassigned to this signer.
+        reassignment_reason:
+          type:
+          - string
+          - 'null'
+          description: Reason provided by original signer who reassigned to this signer.
+        reassigned_from:
+          type:
+          - string
+          - 'null'
+          description: Previous signature identifier.
+        error:
+          type:
+          - string
+          - 'null'
+          description: Error message pertaining to this signer, or null.
+      description: An array of signature objects, 1 for each signer.
+      title: SignatureRequestResponseSignatures
+    SignatureRequestResponseAttachment:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique ID for this attachment.
+        signer:
+          type: string
+          description: The Signer this attachment is assigned to.
+        name:
+          type: string
+          description: The name of this attachment.
+        required:
+          type: boolean
+          description: A boolean value denoting if this attachment is required.
+        instructions:
+          type:
+          - string
+          - 'null'
+          description: Instructions for Signer.
+        uploaded_at:
+          type:
+          - integer
+          - 'null'
+          description: Timestamp when attachment was uploaded by Signer.
+      required:
+      - id
+      - signer
+      - name
+      - required
+      description: Signer attachments.
+      title: SignatureRequestResponseAttachment
+    BulkSendJobResponse:
+      type: object
+      properties:
+        bulk_send_job_id:
+          type:
+          - string
+          - 'null'
+          description: The id of the BulkSendJob.
+        total:
+          type: integer
+          description: The total amount of Signature Requests queued for sending.
+        is_creator:
+          type: boolean
+          description: True if you are the owner of this BulkSendJob, false if it's been shared with you by a team member.
+        created_at:
+          type: integer
+          description: Time that the BulkSendJob was created.
+      description: Contains information about the BulkSendJob such as when it was created and how many signature requests are queued.
+      title: BulkSendJobResponse
+    BulkSendJobGetResponseSignatureRequests:
+      type: object
+      properties:
+        test_mode:
+          type: boolean
+          default: false
+          description: Whether this is a test signature request. Test requests have no legal value. Defaults to `false`.
+        signature_request_id:
+          type: string
+          description: The id of the SignatureRequest.
+        requester_email_address:
+          type:
+          - string
+          - 'null'
+          description: The email address of the initiator of the SignatureRequest.
+        title:
+          type: string
+          description: The title the specified Account uses for the SignatureRequest.
+        original_title:
+          type: string
+          description: Default Label for account.
+        subject:
+          type:
+          - string
+          - 'null'
+          description: The subject in the email that was initially sent to the signers.
+        message:
+          type:
+          - string
+          - 'null'
+          description: The custom message in the email that was initially sent to the signers.
+        metadata:
+          type: object
+          additionalProperties:
+            description: Any type
+          description: The metadata attached to the signature request.
+        created_at:
+          type: integer
+          description: Time the signature request was created.
+        expires_at:
+          type:
+          - integer
+          - 'null'
+          description: The time when the signature request will expire unsigned signatures. See [Signature Request Expiration Date](https://developers.hellosign.com/docs/signature-request/expiration/) for details.
+        is_complete:
+          type: boolean
+          description: Whether or not the SignatureRequest has been fully executed by all signers.
+        is_declined:
+          type: boolean
+          description: Whether or not the SignatureRequest has been declined by a signer.
+        has_error:
+          type: boolean
+          description: Whether or not an error occurred (either during the creation of the SignatureRequest or during one of the signings).
+        files_url:
+          type: string
+          description: The URL where a copy of the request's documents can be downloaded.
+        signing_url:
+          type:
+          - string
+          - 'null'
+          description: The URL where a signer, after authenticating, can sign the documents. This should only be used by users with existing Dropbox Sign accounts as they will be required to log in before signing.
+        details_url:
+          type: string
+          description: The URL where the requester and the signers can view the current status of the SignatureRequest.
+        cc_email_addresses:
+          type: array
+          items:
+            type: string
+          description: A list of email addresses that were CCed on the SignatureRequest. They will receive a copy of the final PDF once all the signers have signed.
+        signing_redirect_url:
+          type:
+          - string
+          - 'null'
+          description: The URL you want the signer redirected to after they successfully sign.
+        final_copy_uri:
+          type:
+          - string
+          - 'null'
+          description: The path where the completed document can be downloaded
+        template_ids:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: Templates IDs used in this SignatureRequest (if any).
+        custom_fields:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseCustomFieldBase'
+          description: 'An array of Custom Field objects containing the name and type of each custom field.
+
+
+            * Text Field uses `SignatureRequestResponseCustomFieldText`
+
+            * Checkbox Field uses `SignatureRequestResponseCustomFieldCheckbox`'
+        attachments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseAttachment'
+          description: Signer attachments.
+        response_data:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+          description: An array of form field objects containing the name, value, and type of each textbox or checkmark field filled in by the signers.
+        signatures:
+          type: array
+          items:
+            $ref: '#/components/schemas/SignatureRequestResponseSignatures'
+          description: An array of signature objects, 1 for each signer.
+        bulk_send_job_id:
+          type:
+          - string
+          - 'null'
+          description: The id of the BulkSendJob.
+      title: BulkSendJobGetResponseSignatureRequests
+    BulkSendJobGetResponse:
+      type: object
+      properties:
+        bulk_send_job:
+          $ref: '#/components/schemas/BulkSendJobResponse'
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        signature_requests:
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkSendJobGetResponseSignatureRequests'
+          description: Contains information about the Signature Requests sent in bulk.
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - bulk_send_job
+      - list_info
+      - signature_requests
+      title: BulkSendJobGetResponse
+    ListInfoResponse:
+      type: object
+      properties:
+        num_pages:
+          type: integer
+          description: Total number of pages available.
+        num_results:
+          type:
+          - integer
+          - 'null'
+          description: Total number of objects available.
+        page:
+          type: integer
+          description: Number of the page being returned.
+        page_size:
+          type: integer
+          description: Objects returned per page.
+      description: Contains pagination information about the data returned.
+      title: ListInfoResponse
+    WarningResponse:
+      type: object
+      properties:
+        warning_msg:
+          type: string
+          description: Warning message
+        warning_name:
+          type: string
+          description: Warning name
+      required:
+      - warning_msg
+      - warning_name
+      description: A list of warnings.
+      title: WarningResponse
+    BulkSendJobListResponse:
+      type: object
+      properties:
+        bulk_send_jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkSendJobResponse'
+          description: Contains a list of BulkSendJobs that the API caller has access to.
+        list_info:
+          $ref: '#/components/schemas/ListInfoResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
+          description: A list of warnings.
+      required:
+      - bulk_send_jobs
+      - list_info
+      title: BulkSendJobListResponse
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: "Use your API key with HTTP Basic authentication in the form `Basic <api_key>`. See [Authentication](/api/reference/authentication) for more information.\n✅ Supported by Try it console (calls sent in `test_mode` only).            \n"
+    Bearer:
+      type: http
+      scheme: bearer
+      description: "You can use an Access Token issued through an OAuth flow to send calls to the Dropbox Sign API from your app. The access scopes required by this endpoint are listed in the gray box above. See [Authentication](/api/reference/authentication) for more information.\n  ❌ **Not supported** by Try it console.\n"
