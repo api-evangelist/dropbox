@@ -282,6 +282,35 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-compliance-assurance.py
   first_seen: '2026-10-20'
+- partner_name: Y Combinator
+  partner: y-combinator
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.ycombinator.com/companies/dropbox
+  category: accelerator portfolio participation
+  contract_reference:
+    register: Y Combinator company directory (ycombinator.com/companies/<slug>)
+    standard: null
+    spec_file: null
+    role: accelerator-portfolio-company
+    registered_name: Dropbox
+    register_id: https://www.ycombinator.com/companies/dropbox
+    register_country: US
+    register_website: http://dropbox.com
+    matched_domain: dropbox.com
+    matched_by: domain
+    signal_note: 'participation only: the accelerator''s own portfolio register lists the company (cohort / investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-accelerator-portfolios.py
+    detected: '2026-10-21'
+    batch: Summer 2007
+    year: '2008'
+    status: Public
+  detected_by: sweep-accelerator-portfolios.py
+  first_seen: '2026-10-21'
 method: searched
 checked:
 - google-workspace/integrations/google-workspace-integration-edges.yml
@@ -298,5 +327,10 @@ checked:
 - slack/integrations/slack-integration-edges.yml
 - stripe/integrations/stripe-integration-edges.yml
 - zoom/integrations/zoom-integration-edges.yml
+- https://500.co/api/startups
+- https://500.co/companies
+- https://www.antler.co/portfolio
+- https://www.techstars.com/portfolio
+- https://www.ycombinator.com/companies
 source: https://hightouch.com/docs/destinations/dropbox
 marketplace_apps: []
