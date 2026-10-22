@@ -288,3 +288,79 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: dropbox-ismap
+  label: ISMAP
+  partner_name: ISMAP
+  category: Japan government cloud security assessment (ISMAP)
+  type: contract
+  channel: regulator-register
+  evidence: https://www.ismap.go.jp/csm?id=cloud_service_list
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: ISMAP / ISMAP-LIU cloud service lists (www.ismap.go.jp)
+    standard: ISMAP
+    spec_file: null
+    role: ismap-registered
+    registrations:
+    - register_number: C24-0075-2
+      registration_type: ISMAP
+      service: Dropbox Business、Dropbox Business Plus、Dropbox Standard、Dropbox Advanced、Dropbox Enterprise、およびDropbox
+        Education
+      registered_name: Dropbox, Inc.
+      service_url: https://www.dropbox.com
+      matched_domain: dropbox.com
+      matched_by: domain
+      evidence_url: https://www.ismap.go.jp/csm?id=cloud_service_list
+      scope_of_statement: https://www.ismap.go.jp/sys_attachment.do?sys_id=6eb05fd083b93a50aa68c6a8beaad3c2
+    signal_note: certified_products = one entry per ISMAP registration TYPE (ISMAP, ISMAP-LIU), never per service;
+      services are context, never counted. The lists carry current registrations only (a filed renewal keeps a registration
+      valid), so lapsed is always false
+    certified_products:
+    - product: ISMAP
+      standard: ISMAP
+      registration_type: ISMAP
+      lapsed: false
+    detected_by: sweep-japan-ismap-tisax-assessments.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
+- slug: dropbox-obsidian
+  label: Obsidian
+  partner: obsidian
+  partner_name: Obsidian
+  category: Obsidian community plugin
+  type: marketplace
+  marketplace: obsidian-community-plugins
+  channel: community-plugin
+  evidence: https://github.com/ryanpcmcquen/obsidian-dropbox-backups
+  source: edge
+  relationship: connector-listing
+  contract_reference:
+    register: Obsidian community-plugins.json (obsidianmd/obsidian-releases@793b5211) + plugin repo README / manifest
+      / source
+    spec_file: null
+    role: obsidian-community-plugin:community
+    registered_name: ryanpcmcquen
+    register_id: https://github.com/ryanpcmcquen/obsidian-dropbox-backups
+    matched_domain: dropbox.com
+    matched_by: domain+name-in-listing
+    matched_where: source
+    matched_host: dropbox.com
+    builder: community
+    plugins:
+    - obsidian-dropbox-backups
+    - air-sync
+    - powerconnect
+    - vaultbox
+    - archivist
+    - dropbox-photo-grid
+    - multisync
+    downloads_context: 29526
+    signal_note: 'ONE edge per provider: a community plugin names the provider in its name/description AND carries
+      the provider''s domain or API host in its README or source. Builder is a named community author (not the provider).
+      Plugin and download counts are context, never counted.'
+    detected_by: sweep-obsidian-community-plugins.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
