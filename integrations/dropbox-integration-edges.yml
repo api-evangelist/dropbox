@@ -311,6 +311,23 @@ edges:
     status: Public
   detected_by: sweep-accelerator-portfolios.py
   first_seen: '2026-10-21'
+- partner_name: Miro (own)
+  partner: miro
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://miro.com/marketplace/dropbox-dash/
+  mirror_of: miro/integrations/miro-integration-edges.yml
+  apps:
+  - Dropbox Dash
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Miro app
 method: searched
 checked:
 - google-workspace/integrations/google-workspace-integration-edges.yml
@@ -332,5 +349,6 @@ checked:
 - https://www.antler.co/portfolio
 - https://www.techstars.com/portfolio
 - https://www.ycombinator.com/companies
+- miro/integrations/miro-integration-edges.yml
 source: https://hightouch.com/docs/destinations/dropbox
 marketplace_apps: []
