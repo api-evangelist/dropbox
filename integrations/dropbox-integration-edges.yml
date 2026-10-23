@@ -492,6 +492,40 @@ edges:
   detected: '2026-10-23'
   detected_by: mirror-platform-listings.py
   category: Adobe Exchange Creative Cloud listing (After Effects, Premiere Pro)
+- partner_name: Arch User Repository (AUR)
+  partner: null
+  partner_match: null
+  type: register
+  direction: provider-built
+  category: official CLI (Arch User Repository (AUR))
+  evidence: https://aur.archlinux.org/packages/dropbox-cli
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: Arch User Repository (AUR) (public package index)
+    spec_file: null
+    packages:
+    - name: dropbox-cli
+      kind: aur
+      version: 2024.04.17-2
+      released: '2024-04-21'
+      released_field: AUR LastModified
+      out_of_date: false
+      lapsed: true
+      page: https://aur.archlinux.org/packages/dropbox-cli
+      upstream: https://www.dropbox.com
+      cli: 'AUR description: Command line interface for Dropbox'
+      repo_leg: domain:dropbox.com
+      publisher_leg: artifact-domain:dropbox.com
+      matched_by: domain
+    current: false
+    signal_note: 'the provider''s own command-line tool packaged for Arch Linux (community-maintained PKGBUILD whose
+      upstream and source artifact are the provider''s): distribution, not an integration; lapsed = flagged out-of-date
+      or not updated in 24 months'
+    detected_by: sweep-aur-vendor-cli-packages.py
+    detected: '2026-10-23'
+  detected_by: sweep-aur-vendor-cli-packages.py
+  first_seen: '2026-10-23'
 method: searched
 checked:
 - google-workspace/integrations/google-workspace-integration-edges.yml
@@ -523,5 +557,8 @@ checked:
 - https://dir.texas.gov/resource-library-item/tx-ramp-certified-cloud-products
 - adobe-creative-cloud/integrations/adobe-creative-cloud-integration-edges.yml
 - adobe-premiere/integrations/adobe-premiere-integration-edges.yml
+- https://aur.archlinux.org/cgit/aur.git/tree/.SRCINFO
+- https://aur.archlinux.org/packages-meta-ext-v1.json.gz
+- https://aur.archlinux.org/rpc/v5/info
 source: https://hightouch.com/docs/destinations/dropbox
 marketplace_apps: []
