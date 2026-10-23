@@ -1,22 +1,5 @@
 generated: '2026-10-14'
 edges:
-- partner_name: Stripe (own)
-  partner: stripe
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.stripe.com/apps/dropbox
-  mirror_of: stripe/integrations/stripe-integration-edges.yml
-  apps:
-  - Dropbox
-  listing_count: 1
-  detected: '2026-10-15'
-  detected_by: mirror-platform-listings.py
-  category: productivity
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -42,77 +25,6 @@ edges:
     builder: unknown (not in the directory record)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
-- partner_name: Google Workspace (own)
-  partner: google-workspace
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://workspace.google.com/marketplace/app/dropbox_sign_fka_as_hellosign_for_google/1094820495693
-  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
-  apps:
-  - Dropbox Sign (fka as HelloSign) for Google Drive™
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Google Workspace app
-- partner_name: Microsoft Teams (own)
-  partner: microsoft-teams
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://appsource.microsoft.com/en-us/product/office/WA200006808
-  mirror_of: microsoft-teams/integrations/microsoft-teams-integration-edges.yml
-  apps:
-  - Dropbox
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Microsoft Teams app
-  publisher_verified:
-  - Microsoft 365 Certified
-  - Microsoft 365 Publisher Attestation
-- partner_name: Slack (own)
-  partner: slack
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://slack.com/marketplace/A08Q84QDV-dropbox-sign
-  mirror_of: slack/integrations/slack-integration-edges.yml
-  apps:
-  - Dropbox Sign
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Slack app
-- partner_name: Zoom (own)
-  partner: zoom
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.zoom.us/apps/4qTXYwx2QtuAKJ-DV3zR3Q
-  mirror_of: zoom/integrations/zoom-integration-edges.yml
-  apps:
-  - Dropbox Dash
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Zoom app
 - partner_name: Hightouch
   partner: hightouch
   partner_match: aggregator
@@ -311,23 +223,6 @@ edges:
     status: Public
   detected_by: sweep-accelerator-portfolios.py
   first_seen: '2026-10-21'
-- partner_name: Miro (own)
-  partner: miro
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://miro.com/marketplace/dropbox-dash/
-  mirror_of: miro/integrations/miro-integration-edges.yml
-  apps:
-  - Dropbox Dash
-  listing_count: 1
-  detected: '2026-10-22'
-  detected_by: mirror-platform-listings.py
-  category: Miro app
 - partner_name: ISMAP
   partner: null
   partner_match: register
@@ -458,6 +353,145 @@ edges:
     detected: '2026-10-22'
   detected_by: sweep-tx-ramp-certified-cloud.py
   first_seen: '2026-10-22'
+- partner_name: Stripe (own)
+  partner: stripe
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.stripe.com/apps/dropbox
+  mirror_of: stripe/integrations/stripe-integration-edges.yml
+  apps:
+  - Dropbox
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: productivity
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/dropbox_sign_fka_as_hellosign_for_google/1094820495693
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Dropbox Sign (fka as HelloSign) for Google Drive™
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
+- partner_name: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200006808
+  mirror_of: microsoft-teams/integrations/microsoft-teams-integration-edges.yml
+  apps:
+  - Dropbox
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Microsoft Teams app
+  publisher_verified:
+  - Microsoft 365 Certified
+  - Microsoft 365 Publisher Attestation
+- partner_name: Slack (own)
+  partner: slack
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://slack.com/marketplace/A08Q84QDV-dropbox-sign
+  mirror_of: slack/integrations/slack-integration-edges.yml
+  apps:
+  - Dropbox Sign
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Slack app
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/4qTXYwx2QtuAKJ-DV3zR3Q
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - Dropbox Dash
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
+- partner_name: Miro (own)
+  partner: miro
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://miro.com/marketplace/dropbox-dash/
+  mirror_of: miro/integrations/miro-integration-edges.yml
+  apps:
+  - Dropbox Dash
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Miro app
+- partner_name: Adobe Creative Cloud (own)
+  partner: adobe-creative-cloud
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/107770/dropbox-replay
+  mirror_of: adobe-creative-cloud/integrations/adobe-creative-cloud-integration-edges.yml
+  apps:
+  - Dropbox Replay
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (After Effects, Premiere Pro)
+- partner_name: Adobe Premiere Pro (own)
+  partner: adobe-premiere
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/107770/dropbox-replay
+  mirror_of: adobe-premiere/integrations/adobe-premiere-integration-edges.yml
+  apps:
+  - Dropbox Replay
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (After Effects, Premiere Pro)
 method: searched
 checked:
 - google-workspace/integrations/google-workspace-integration-edges.yml
@@ -487,5 +521,7 @@ checked:
 - https://raw.githubusercontent.com/obsidianmd/obsidian-releases/793b52114f54b055b760ef47761ec5c93d689804/community-plugin-stats.json
 - https://raw.githubusercontent.com/obsidianmd/obsidian-releases/793b52114f54b055b760ef47761ec5c93d689804/community-plugins.json
 - https://dir.texas.gov/resource-library-item/tx-ramp-certified-cloud-products
+- adobe-creative-cloud/integrations/adobe-creative-cloud-integration-edges.yml
+- adobe-premiere/integrations/adobe-premiere-integration-edges.yml
 source: https://hightouch.com/docs/destinations/dropbox
 marketplace_apps: []
