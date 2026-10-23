@@ -2782,3 +2782,9 @@ components:
       type: http
       scheme: bearer
       description: "You can use an Access Token issued through an OAuth flow to send calls to the Dropbox Sign API from your app. The access scopes required by this endpoint are listed in the gray box above. See [Authentication](/api/reference/authentication) for more information.\n  ❌ **Not supported** by Try it console.\n"
+x-provenance:
+  method: harvested
+  publisher: Dropbox
+  source: https://developers.hellosign.com/openapi/api-reference.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
