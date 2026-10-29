@@ -1,4 +1,4 @@
-# Dropbox (dropbox)
+# Dropbox
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,82 +64,256 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Dropbox is a file hosting service operated by the American company Dropbox,
-Inc., headquartered in San Francisco, California, U.S. that offers cloud
-storage, file synchronization, personal cloud, and client software. 
+Dropbox is a file hosting service operated by the American company Dropbox, Inc., headquartered in San Francisco, California, U.S. that offers cloud storage, file synchronization, personal cloud, and client software.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/dropbox/refs/heads/main/apis.yml)
+**Areas:** Documents · Collaboration · Storage · Cloud Storage · File Sharing
 
-## Scope
+## Dropbox on APIs.io
 
-- **Type:** Contract 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+Everything profiled for Dropbox is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/dropbox/](https://apis.io/providers/dropbox/)** — or go straight to one of the APIs or properties below.
 
-## Tags:
+### APIs (32)
 
- - Documents
+- [Dropbox Account API](https://apis.io/apis/dropbox/dropbox-account-api/) — The Account API from Dropbox — 4 operation(s) for account.
+- [Dropbox Auth API](https://apis.io/apis/dropbox/dropbox-auth-api/) — The Auth API from Dropbox — 2 operation(s) for auth.
+- [Dropbox Check API](https://apis.io/apis/dropbox/dropbox-check-api/) — The Check API from Dropbox — 2 operation(s) for check.
+- [Dropbox Contacts API](https://apis.io/apis/dropbox/dropbox-contacts-api/) — The Contacts API from Dropbox — 2 operation(s) for contacts.
+- [Dropbox Embedded API](https://apis.io/apis/dropbox/dropbox-embedded-api/) — _md__OpenApi::TAG::EMBEDDED::DESCRIPTION
+- [Dropbox File_properties API](https://apis.io/apis/dropbox/dropbox-file-properties-api/) — This namespace contains helpers for property and template metadata endpoints. These endpoints enable you to tag arbitrary key/value data to Dropbox files.…
+- [Dropbox File_requests API](https://apis.io/apis/dropbox/dropbox-file-requests-api/) — This namespace contains endpoints and data types for file request operations.
+- [Dropbox Files API](https://apis.io/apis/dropbox/dropbox-files-api/) — This namespace contains endpoints and data types for basic file operations.
+- [Dropbox Report API](https://apis.io/apis/dropbox/dropbox-report-api/) — _md__OpenApi::TAG::REPORT::DESCRIPTION
+- [Dropbox Sharing API](https://apis.io/apis/dropbox/dropbox-sharing-api/) — This namespace contains endpoints and data types for creating and managing shared links and shared folders.
+- [Dropbox Team API](https://apis.io/apis/dropbox/dropbox-team-api/) — The Team API from Dropbox — 12 operation(s) for team.
+- [Dropbox Team > Devices API](https://apis.io/apis/dropbox/dropbox-team-devices-api/) — The Team > Devices API from Dropbox — 4 operation(s) for team > devices.
+- [Dropbox Team > Groups API](https://apis.io/apis/dropbox/dropbox-team-groups-api/) — The Team > Groups API from Dropbox — 12 operation(s) for team > groups.
+- [Dropbox Team > Legal_holds API](https://apis.io/apis/dropbox/dropbox-team-legal-holds-api/) — The Team > Legal_holds API from Dropbox — 7 operation(s) for team > legal_holds.
+- [Dropbox Team > Linked_apps API](https://apis.io/apis/dropbox/dropbox-team-linked-apps-api/) — The Team > Linked_apps API from Dropbox — 4 operation(s) for team > linked_apps.
+- [Dropbox Team_log API](https://apis.io/apis/dropbox/dropbox-team-log-api/) — The Team_log API from Dropbox — 2 operation(s) for team_log.
+- [Dropbox Team > Member_space_limits API](https://apis.io/apis/dropbox/dropbox-team-member-space-limits-api/) — The Team > Member_space_limits API from Dropbox — 7 operation(s) for team > member_space_limits.
+- [Dropbox Team > Members API](https://apis.io/apis/dropbox/dropbox-team-members-api/) — The Team > Members API from Dropbox — 20 operation(s) for team > members.
+- [Dropbox Team > Namespaces API](https://apis.io/apis/dropbox/dropbox-team-namespaces-api/) — The Team > Namespaces API from Dropbox — 2 operation(s) for team > namespaces.
+- [Dropbox Team > Reports API](https://apis.io/apis/dropbox/dropbox-team-reports-api/) — The Team > Reports API from Dropbox — 4 operation(s) for team > reports.
+- [Dropbox Team > Team_folder API](https://apis.io/apis/dropbox/dropbox-team-team-folder-api/) — The Team > Team_folder API from Dropbox — 10 operation(s) for team > team_folder.
+- [Dropbox Template API](https://apis.io/apis/dropbox/dropbox-template-api/) — _md__OpenApi::TAG::TEMPLATE::DESCRIPTION
+- [Dropbox Users API](https://apis.io/apis/dropbox/dropbox-users-api/) — This namespace contains endpoints and data types for user management.
+- [Dropbox Callbacks and Events API](https://apis.io/apis/dropbox/dropbox-callbacks-and-events-api/) — The Callbacks and Events API from Dropbox — 0 operation(s) for callbacks and events.
+- [Dropbox API Reference API](https://apis.io/apis/dropbox/dropbox-api-reference-api/) — The API Reference API from Dropbox — 0 operation(s) for api reference.
+- [Dropbox API App API](https://apis.io/apis/dropbox/dropbox-apiapp-api/) — The apiApp API from Dropbox — 3 operation(s) for apiapp.
+- [Dropbox Bulk Send Job API](https://apis.io/apis/dropbox/dropbox-bulksendjob-api/) — The bulkSendJob API from Dropbox — 2 operation(s) for bulksendjob.
+- [Dropbox Document API](https://apis.io/apis/dropbox/dropbox-document-api/) — The document API from Dropbox — 1 operation(s) for document.
+- [Dropbox Fax API](https://apis.io/apis/dropbox/dropbox-fax-api/) — The Fax API from Dropbox — 4 operation(s) for fax.
+- [Dropbox Fax Line API](https://apis.io/apis/dropbox/dropbox-faxline-api/) — The faxLine API from Dropbox — 6 operation(s) for faxline.
+- [Dropbox Signature Request API](https://apis.io/apis/dropbox/dropbox-signaturerequest-api/) — The signatureRequest API from Dropbox — 20 operation(s) for signaturerequest.
+- [Dropbox Unclaimed Draft API](https://apis.io/apis/dropbox/dropbox-unclaimeddraft-api/) — The unclaimedDraft API from Dropbox — 4 operation(s) for unclaimeddraft.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-06-07T00:00:00.000Z 
-- **Modified:** 2026-04-28 
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Dropbox API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Dropbox is a file hosting service operated by the American company
-Dropbox, Inc., headquartered in San Francisco, California, U.S. that
-offers cloud storage, file synchronization, personal cloud, and client
-software.
+- [Dropbox Agentic Access](https://apis.io/agentic-access/dropbox/dropbox-agentic-access/)
 
-**Human URL:** [https://www.dropbox.com/developers/documentation/http/overview](https://www.dropbox.com/developers/documentation/http/overview)
+#### JSON Schema (175)
 
-#### Tags:
+The data models the API reads and writes.
 
- - Documents, Storage
+- [AccountCreateRequest](https://apis.io/schemas/dropbox/dropbox-accountcreaterequest/)
+- [AccountCreateResponse](https://apis.io/schemas/dropbox/dropbox-accountcreateresponse/)
+- [AccountGetResponse](https://apis.io/schemas/dropbox/dropbox-accountgetresponse/)
+- [AccountResponse](https://apis.io/schemas/dropbox/dropbox-accountresponse/)
+- [AccountResponseQuotas](https://apis.io/schemas/dropbox/dropbox-accountresponsequotas/)
+- [AccountUpdateRequest](https://apis.io/schemas/dropbox/dropbox-accountupdaterequest/)
+- [AccountVerifyRequest](https://apis.io/schemas/dropbox/dropbox-accountverifyrequest/)
+- [AccountVerifyResponse](https://apis.io/schemas/dropbox/dropbox-accountverifyresponse/)
+- [AccountVerifyResponseAccount](https://apis.io/schemas/dropbox/dropbox-accountverifyresponseaccount/)
+- [ApiAppCreateRequest](https://apis.io/schemas/dropbox/dropbox-apiappcreaterequest/)
+- [ApiAppGetResponse](https://apis.io/schemas/dropbox/dropbox-apiappgetresponse/)
+- [ApiAppListResponse](https://apis.io/schemas/dropbox/dropbox-apiapplistresponse/)
+- [ApiAppResponse](https://apis.io/schemas/dropbox/dropbox-apiappresponse/)
+- [ApiAppResponseOAuth](https://apis.io/schemas/dropbox/dropbox-apiappresponseoauth/)
+- [ApiAppResponseOptions](https://apis.io/schemas/dropbox/dropbox-apiappresponseoptions/)
+- [ApiAppResponseOwnerAccount](https://apis.io/schemas/dropbox/dropbox-apiappresponseowneraccount/)
+- [ApiAppResponseWhiteLabelingOptions](https://apis.io/schemas/dropbox/dropbox-apiappresponsewhitelabelingoptions/)
+- [ApiAppUpdateRequest](https://apis.io/schemas/dropbox/dropbox-apiappupdaterequest/)
+- [BulkSendJobGetResponse](https://apis.io/schemas/dropbox/dropbox-bulksendjobgetresponse/)
+- [BulkSendJobGetResponseSignatureRequests](https://apis.io/schemas/dropbox/dropbox-bulksendjobgetresponsesignaturerequests/)
+- [BulkSendJobListResponse](https://apis.io/schemas/dropbox/dropbox-bulksendjoblistresponse/)
+- [BulkSendJobResponse](https://apis.io/schemas/dropbox/dropbox-bulksendjobresponse/)
+- [BulkSendJobSendResponse](https://apis.io/schemas/dropbox/dropbox-bulksendjobsendresponse/)
+- [EmbeddedEditUrlRequest](https://apis.io/schemas/dropbox/dropbox-embeddedediturlrequest/)
+- [EmbeddedEditUrlResponse](https://apis.io/schemas/dropbox/dropbox-embeddedediturlresponse/)
+- …and 150 more published on APIs.io
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://www.dropbox.com/developers/documentation/http/overview)
-- [OpenAPI](openapi/dropbox-openapi-original.yml)
+Data models expressed in JSON Structure.
 
-### Dropbox Sign API
+- [Dropbox Structure](https://apis.io/json-structure/dropbox/dropbox-structure/)
 
-The Dropbox Sign API offers a reliable, flexible set of eSignature tools
-that can be used to power digital agreements and turn slow, outdated
-business processes into a competitive advantage. With a broad range of
-highly-configurable features, the Dropbox Sign API empowers you to build
-secure signing experiences and document workflows that delight your users.
+#### Vocabulary (1)
 
-**Human URL:** [https://developers.hellosign.com/](https://developers.hellosign.com/)
+The provider's domain terms, defined.
 
-#### Tags:
+- [Dropbox Domain Vocabulary](https://apis.io/vocabularies/dropbox/dropbox-vocabulary/)
 
- - Signatures, Documents
+#### Examples (155)
 
-#### Properties
+Example requests and responses.
 
-- [Documentation](https://developers.hellosign.com/)
-- [SDKs](https://developers.hellosign.com/docs/sdks/overview/)
-- [Quickstart](https://developers.hellosign.com/api/quickstart/)
-- [OpenAPI](openapi/dropbox-sign-openapi-original.yml)
+- [Dropbox Post 2Accountset Profile Photo Example](https://apis.io/examples/dropbox/dropbox-post-2accountset-profile-photo-example/)
+- [Dropbox Post 2Authtokenfrom Oauth1 Example](https://apis.io/examples/dropbox/dropbox-post-2authtokenfrom-oauth1-example/)
+- [Dropbox Post 2Checkapp Example](https://apis.io/examples/dropbox/dropbox-post-2checkapp-example/)
+- [Dropbox Post 2Checkuser Example](https://apis.io/examples/dropbox/dropbox-post-2checkuser-example/)
+- [Dropbox Post 2File Propertiespropertiessearch Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiespropertiessearch-example/)
+- [Dropbox Post 2File Propertiespropertiessearchcontinue Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiespropertiessearchcontinue-example/)
+- [Dropbox Post 2File Propertiestemplatesadd For Team Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiestemplatesadd-for-team-example/)
+- [Dropbox Post 2File Propertiestemplatesadd For User Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiestemplatesadd-for-user-example/)
+- [Dropbox Post 2File Propertiestemplatesget For Team Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiestemplatesget-for-team-example/)
+- [Dropbox Post 2File Propertiestemplatesget For User Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiestemplatesget-for-user-example/)
+- [Dropbox Post 2File Propertiestemplateslist For Team Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiestemplateslist-for-team-example/)
+- [Dropbox Post 2File Propertiestemplateslist For User Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiestemplateslist-for-user-example/)
+- [Dropbox Post 2File Propertiestemplatesupdate For Team Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiestemplatesupdate-for-team-example/)
+- [Dropbox Post 2File Propertiestemplatesupdate For User Example](https://apis.io/examples/dropbox/dropbox-post-2file-propertiestemplatesupdate-for-user-example/)
+- [Dropbox Post 2File Requestscount Example](https://apis.io/examples/dropbox/dropbox-post-2file-requestscount-example/)
+- [Dropbox Post 2File Requestscreate Example](https://apis.io/examples/dropbox/dropbox-post-2file-requestscreate-example/)
+- [Dropbox Post 2File Requestsdelete All Closed Example](https://apis.io/examples/dropbox/dropbox-post-2file-requestsdelete-all-closed-example/)
+- [Dropbox Post 2File Requestsdelete Example](https://apis.io/examples/dropbox/dropbox-post-2file-requestsdelete-example/)
+- [Dropbox Post 2File Requestsget Example](https://apis.io/examples/dropbox/dropbox-post-2file-requestsget-example/)
+- [Dropbox Post 2File Requestslist V2 Example](https://apis.io/examples/dropbox/dropbox-post-2file-requestslist-v2-example/)
+- [Dropbox Post 2File Requestslistcontinue Example](https://apis.io/examples/dropbox/dropbox-post-2file-requestslistcontinue-example/)
+- [Dropbox Post 2File Requestsupdate Example](https://apis.io/examples/dropbox/dropbox-post-2file-requestsupdate-example/)
+- [Dropbox Post 2Filescopy Batch V2 Example](https://apis.io/examples/dropbox/dropbox-post-2filescopy-batch-v2-example/)
+- [Dropbox Post 2Filescopy Batchcheck V2 Example](https://apis.io/examples/dropbox/dropbox-post-2filescopy-batchcheck-v2-example/)
+- [Dropbox Post 2Filescopy Referenceget Example](https://apis.io/examples/dropbox/dropbox-post-2filescopy-referenceget-example/)
+- …and 130 more published on APIs.io
 
-## Common Properties
+#### Collections (28)
 
-- [Portal](https://www.dropbox.com/developers)
+Postman and Open Collection request collections.
+
+- [Dropbox API Reference Account API](https://apis.io/collections/dropbox/open-dropbox-account-api/)
+- [Dropbox API Reference Account Api App API](https://apis.io/collections/dropbox/open-dropbox-api-app-api/)
+- [Dropbox API Reference Account Auth API](https://apis.io/collections/dropbox/open-dropbox-auth-api/)
+- [Dropbox API Reference Account Bulk Send Job API](https://apis.io/collections/dropbox/open-dropbox-bulk-send-job-api/)
+- [Dropbox API Reference Account Check API](https://apis.io/collections/dropbox/open-dropbox-check-api/)
+- [Dropbox API Reference Account Contacts API](https://apis.io/collections/dropbox/open-dropbox-contacts-api/)
+- [Dropbox API Reference Account Embedded API](https://apis.io/collections/dropbox/open-dropbox-embedded-api/)
+- [Dropbox API Reference Account File_properties API](https://apis.io/collections/dropbox/open-dropbox-file-properties-api/)
+- [Dropbox API Reference Account File_requests API](https://apis.io/collections/dropbox/open-dropbox-file-requests-api/)
+- [Dropbox API Reference Account Files API](https://apis.io/collections/dropbox/open-dropbox-files-api/)
+- [Dropbox API Reference Account OAuth API](https://apis.io/collections/dropbox/open-dropbox-oauth-api/)
+- [Dropbox API Reference Account Report API](https://apis.io/collections/dropbox/open-dropbox-report-api/)
+- [Dropbox API Reference Account Sharing API](https://apis.io/collections/dropbox/open-dropbox-sharing-api/)
+- [Dropbox API Reference Account Signature Request API](https://apis.io/collections/dropbox/open-dropbox-signature-request-api/)
+- [Dropbox API Reference Account Team API](https://apis.io/collections/dropbox/open-dropbox-team-api/)
+- [Dropbox API Reference Account Team > Devices API](https://apis.io/collections/dropbox/open-dropbox-team-devices-api/)
+- [Dropbox API Reference Account Team > Groups API](https://apis.io/collections/dropbox/open-dropbox-team-groups-api/)
+- [Dropbox API Reference Account Team > Legal_holds API](https://apis.io/collections/dropbox/open-dropbox-team-legal-holds-api/)
+- [Dropbox API Reference Account Team > Linked_apps API](https://apis.io/collections/dropbox/open-dropbox-team-linked-apps-api/)
+- [Dropbox API Reference Account Team_log API](https://apis.io/collections/dropbox/open-dropbox-team-log-api/)
+- [Dropbox API Reference Account Team > Member_space_limits API](https://apis.io/collections/dropbox/open-dropbox-team-member-space-limits-api/)
+- [Dropbox API Reference Account Team > Members API](https://apis.io/collections/dropbox/open-dropbox-team-members-api/)
+- [Dropbox API Reference Account Team > Namespaces API](https://apis.io/collections/dropbox/open-dropbox-team-namespaces-api/)
+- [Dropbox API Reference Account Team > Reports API](https://apis.io/collections/dropbox/open-dropbox-team-reports-api/)
+- [Dropbox API Reference Account Team > Team_folder API](https://apis.io/collections/dropbox/open-dropbox-team-team-folder-api/)
+- …and 3 more published on APIs.io
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Dropbox — jsonschema rules](https://apis.io/rules/dropbox/dropbox-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Dropbox Authentication](https://apis.io/security/dropbox/dropbox-authentication/)
+- [Dropbox Domain Security](https://apis.io/security/dropbox/dropbox-domain-security/)
+- [Dropbox Trust Center](https://apis.io/security/dropbox/dropbox-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Dropbox Plans Pricing](https://apis.io/plans/dropbox/dropbox-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Dropbox Rate Limits](https://apis.io/rate-limits/dropbox/dropbox-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Dropbox Finops](https://apis.io/finops/dropbox/dropbox-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.dropbox.com/)
 - [Support](https://www.dropbox.com/developers/support)
-- [Plans](https://www.dropbox.com/plans)
-- [Signup](https://www.dropbox.com/register)
-- [Guides](https://www.dropbox.com/developers/reference)
-- [Change Log](https://github.com/dropbox/dropbox-api-spec/commits/main)
-- [GitHub Org](https://github.com/dropbox)
-- [Community SDKs](https://www.dropbox.com/developers/documentation/communitysdks)
+- [Changelog](https://github.com/dropbox/dropbox-api-spec/commits/main)
 - [Blog](https://blog.dropbox.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** API Evangelist
+**Kin Score 40.7** — developing · rubric 0.25.0 · scored 2026-10-23
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 51.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 57.1 |
+| Access clarity | 26.3 |
+
+**Agent readiness 40.4** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | verified |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/dropbox/](https://apis.io/providers/dropbox/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Dropbox: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/dropbox/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
